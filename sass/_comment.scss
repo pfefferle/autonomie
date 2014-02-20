@@ -1,0 +1,81 @@
+/* =Comments
+-------------------------------------------------------------- */
+
+article.comment {
+  display: block;
+  position: relative;
+  padding: 25px 0;
+}
+
+#comments input {
+  display: block;
+}
+#comments input[type="checkbox"] {
+  display: inline;
+}
+#respond .form-allowed-tags {
+  clear: both;
+  width: 98%;
+}
+#respond .form-allowed-tags code {
+  display: block;
+}
+.form-allowed-tags {
+  display: none;
+}
+#reply-title {
+  padding-top: 0;
+  margin-top: 0;
+}
+a.comment-reply-link {
+  font-size: 0.9em;
+  &:before {
+    font-family: 'Genericons';
+    content: '\f412';
+    padding-right: 5px;
+  }
+}
+li.comment {
+  list-style: none outside none;
+  margin: 10px 0;
+
+  cite {
+    font-style: normal;
+    font-weight: normal;
+  }
+  img.avatar {
+    float: right;
+  }
+}
+.comment-meta, .comment-notes, .logged-in-as {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+}
+.comment-meta a, .comment-reply-link {
+  text-decoration: none;
+  color: #999;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+ol.commentlist {
+  margin: 0;
+  padding: 0;
+}
+.comment-content {
+  font-size: 1.2em;
+}
+.webmention, .pingback, .trackback {
+  .comment-content {
+    font-size: 0.9em;
+  }
+}
+.commentlist .odd article {
+}
+.bypostauthor {
+  color: inherit;
+}
+.comment-respond {
+  padding: 25px 0;
+}

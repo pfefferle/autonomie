@@ -1,0 +1,51 @@
+{
+  "name": "ZenPress",
+  "version": "1.0.0-dev",
+  "description": "Pure Zen",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pfefferle/ZenPress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pfefferle/ZenPress/issues"
+  },
+  "keywords": [
+    "white",
+    "gray",
+    "light",
+    "black",
+    "custom-menu",
+    "custom-colors",
+    "custom-header",
+    "custom-background",
+    "sticky-post",
+    "microformats",
+    "rtl-language-support",
+    "translation-ready",
+    "full-width-template",
+    "post-formats",
+    "threaded-comments",
+    "flexible-width",
+    "right-sidebar",
+    "two-columns",
+    "one-column",
+    "editor-style",
+    "featured-images"
+  ],
+  "author": {
+    "name": "Matthias Pfefferle",
+    "url": "http://notizblog.org/"
+  },
+  "license": {
+    "name": "GNU General Public License",
+    "version": "3",
+    "url": "http://www.gnu.org/licenses/gpl.html"
+  },
+  "homepage": "https://github.com/pfefferle/ZenPress",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.7.2",
+    "grunt-replace": "~0.6.1"
+  }
+}

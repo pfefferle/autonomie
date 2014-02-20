@@ -1,0 +1,204 @@
+#page {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 900px;
+}
+
+#branding {
+  color: #444;
+  margin-top: 50px;
+
+  #site-title, #site-title a {
+    font-size: 2em;
+    color: #444;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #site-title a:hover {
+    color: #666;
+  }
+
+  #site-description {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#sidebar {
+  margin-top: 50px;
+  overflow: hidden;
+
+  .widget-area {
+    width: 400px;
+
+  }
+
+  #secondary {
+    float: left;
+  }
+
+  #tertiary {
+    float: right;
+  }
+}
+
+#colophon {
+  clear: both;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.screen-reader-text,
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.post {
+  position: relative;
+  margin-bottom: 100px;
+  font-size: 1.2em;
+
+  .entry-header {
+    .entry-title {
+      margin: 0;
+      padding: 0;
+
+      a {
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 1.1em;
+        color: #444;
+        text-decoration: none;
+        font-weight: 700;
+
+        &:hover {
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .entry-content,
+  .entry-summary {
+    color: #444;
+    font-size: 1.2em;
+  }
+
+  .entry-meta, .comment-meta, .comment-notes, .logged-in-as {
+    clear: both;
+    display: block;
+    color: #999;
+    font-size: 0.8em;
+
+    a {
+      color: #666;
+    }
+
+    .avatar {
+      display: none;
+    }
+  }
+}
+
+.format-aside,
+.format-link,
+.format-status {
+  .entry-content,
+  .entry-summary {
+    font-size: 1.6em;
+  }
+}
+
+.format-quote {
+  .entry-content,
+  .entry-summary {
+    blockquote {
+      font-size: 1.6em;
+    }
+  }
+}
+
+/* Custom Post Types */
+.format-aside:before,
+.format-video:before,
+.format-audio:before,
+.format-image:before,
+.format-gallery:before,
+.format-link:before,
+.format-quote:before,
+.format-chat:before,
+.error404:before,
+.sticky:before,
+.format-status .entry-meta .avatar {
+  font-family: 'Genericons';
+  display: block;
+  font-size: 50px;
+  font-style: normal;
+  position: absolute;
+  left: -90px;
+  top: 0px;
+}
+.format-aside:before {
+  content: '\f101';
+}
+.format-video:before {
+  content: '\f104';
+}
+.format-audio:before {
+  content: '\f109';
+}
+.format-image:before {
+  content: '\f102';
+}
+.format-gallery:before {
+  content: '\f103';
+}
+.format-link:before {
+  content: '\f107';
+}
+.format-quote:before {
+  content: '\f106';
+}
+.sticky:before {
+  content: '\f308';
+}
+
+/* 404 page */
+.error404 .widget {
+  float: left;
+  width: 33%;
+}
+.error404 .widget .widgettitle,
+.error404 .widget ul {
+  margin-right: 1em;
+}
+.error404 .widget_tag_cloud {
+  clear: both;
+  float: none;
+  width: 100%;
+}
+
+/* Notices */
+.post .notice,
+.error404 #searchform {
+  background: #eee;
+  display: block;
+  padding: 1em;
+}
+
+.avatar {
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+}
