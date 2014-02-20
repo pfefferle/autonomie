@@ -14,7 +14,7 @@
   <footer id="colophon" role="contentinfo">
     <div id="site-generator">
       <?php do_action( 'sempress_credits' ); ?>
-      <?php printf( __( 'This site is powered by %1$s and styled with %2$s (with a little pinch of %3$s)', 'zenpress' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="http://notizblog.org/projects/sempress/">SemPress</a>', '<a href="http://notizblog.org/projects/zenpress/">Zen</a>'); ?>
+      <?php printf( __( 'This site is powered by %1$s and styled with %2$s (with a little pinch of %3$s)', 'zenpress' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="http://notizblog.org/projects/sempress/">SemPress</a>', '<a href="https://github.com/pfefferle/ZenPress">Zen</a>'); ?>
     </div>
   </footer><!-- #colophon -->
 </div><!-- #page -->
