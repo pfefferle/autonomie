@@ -28,7 +28,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   font-style: normal;
 }
 
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -422,7 +422,7 @@ th {
   padding: 0;
 }
 
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/* HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -719,6 +719,25 @@ input[type="reset"] {
   padding: 0;
 }
 
+.page-header {
+  position: relative;
+  margin-bottom: 50px;
+  clear: both;
+  font-size: 1.4em;
+}
+.page-header h1.page-title {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #444;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
 #sidebar {
   margin-top: 50px;
   overflow: hidden;
@@ -755,7 +774,7 @@ input[type="reset"] {
 }
 .post .entry-header .entry-title, .page .entry-header .entry-title {
   margin: 0;
-  padding: 0;
+  padding: 5px 0;
 }
 .post .entry-header .entry-title a, .page .entry-header .entry-title a {
   -webkit-hyphens: auto;
@@ -867,14 +886,15 @@ input[type="reset"] {
 .format-chat:before,
 .error404:before,
 .sticky:before,
-.format-status .entry-meta .avatar {
+.format-status .entry-meta .avatar,
+.page-header .avatar {
   font-family: 'Genericons';
   display: block;
   font-size: 50px;
   font-style: normal;
   position: absolute;
   left: -90px;
-  top: -7px;
+  top: 0px;
 }
 
 .format-aside:before {

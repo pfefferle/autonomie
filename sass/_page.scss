@@ -28,6 +28,26 @@
   }
 }
 
+.page-header {
+  position: relative;
+  margin-bottom: 50px;
+  clear: both;
+  font-size: 1.4em;
+
+  h1.page-title {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #444;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+}
+
 #sidebar {
   margin-top: 50px;
   overflow: hidden;
@@ -68,7 +88,7 @@
   .entry-header {
     .entry-title {
       margin: 0;
-      padding: 0;
+      padding: 5px 0;
 
       a {
         -webkit-hyphens: auto;
@@ -159,14 +179,15 @@
 .format-chat:before,
 .error404:before,
 .sticky:before,
-.format-status .entry-meta .avatar {
+.format-status .entry-meta .avatar,
+.page-header .avatar {
   font-family: 'Genericons';
   display: block;
   font-size: 50px;
   font-style: normal;
   position: absolute;
   left: -90px;
-  top: -7px;
+  top: 0px;
 }
 .format-aside:before {
   content: '\f101';
