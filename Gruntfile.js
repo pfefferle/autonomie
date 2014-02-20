@@ -51,5 +51,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'replace', 'watch']);
+  grunt.registerTask('default', ['sass', 'replace']);
 };

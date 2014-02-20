@@ -1,13 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
 /*
-Theme Name: @@name
-Theme URI: @@homepage
-Author: @@author
-Author URI: @@author_url
-Description: @@description
-Version: @@version
-License: @@license Version @@license_version
-License URI: @@license_url
+Theme Name: ZenPress
+Theme URI: https://github.com/pfefferle/ZenPress
+Author: Matthias Pfefferle
+Author URI: http://notizblog.org/
+Description: Pure Zen
+Version: 1.0.0-dev
+License: GNU General Public License Version 3
+License URI: http://www.gnu.org/licenses/gpl.html
 Template: sempress
 Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options
 Text Domain: sempress
