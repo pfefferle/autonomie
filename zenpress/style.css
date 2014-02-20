@@ -722,9 +722,10 @@ input[type="reset"] {
 #sidebar {
   margin-top: 50px;
   overflow: hidden;
+  font-size: 1.2em;
 }
 #sidebar .widget-area {
-  width: 400px;
+  width: 40%;
 }
 #sidebar #secondary {
   float: left;
@@ -1050,6 +1051,10 @@ ol.commentlist {
   margin: 1em 0;
 }
 
+.gallery {
+  padding: 1em 0;
+}
+
 /* =Menu
 -------------------------------------------------------------- */
 #access {
@@ -1122,6 +1127,80 @@ ol.commentlist {
 
 #nav-below {
   margin-bottom: 50px;
+}
+
+/* =Tables
+-------------------------------------------------------------- */
+table {
+  width: 100%;
+  overflow: scroll;
+  overflow-x: scroll;
+  background-color: transparent;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+  border-left: 0;
+  table-layout: fixed;
+}
+
+table th,
+table td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table thead th {
+  vertical-align: bottom;
+}
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+
+table th,
+table td {
+  padding: 4px 5px;
+  border-left: 1px solid #ddd;
+}
+
+table caption + thead tr:first-child th,
+table caption + tbody tr:first-child th,
+table caption + tbody tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + tbody tr:first-child th,
+table colgroup + tbody tr:first-child td,
+table thead:first-child tr:first-child th,
+table tbody:first-child tr:first-child th,
+table tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table tbody tr:nth-child(odd) td,
+table tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover td,
+table tbody tr:hover th {
+  background-color: #f5f5f5;
 }
 
 body {
@@ -1269,11 +1348,55 @@ ins {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+  #page {
+    width: 90%;
+    margin: 0px auto;
+  }
+
+  .entry-content iframe, .entry-content object, .entry-content embed {
+    max-width: 100%;
+  }
+
+  /*
+  Resize images to fit the main content area.
+  - Applies only to images uploaded via WordPress by targeting size-* classes.
+  - Other images will be left alone. Use "size-auto" class to apply to other images.
+  */
+  img.size-auto,
+  img.size-full,
+  img.size-large,
+  img.size-medium,
+  .attachment img,
+  .widget-area img,
+  .wp-caption,
+  .post img,
+  .page img {
+    max-width: 100%;
+    /* When images are too wide for containing element, force them to fit. */
+    height: auto;
+    /* Override height to match resized width for correct aspect ratio. */
+  }
 }
-@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 0.8em;
+  }
+
+  #sidebar .widget-area {
+    width: 90%;
+  }
+  #sidebar #secondary, #sidebar #tertiary {
+    float: none;
+  }
+}
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  html {
+    font-size: 0.8em;
+  }
 }
 /* ==========================================================================
    Print styles.

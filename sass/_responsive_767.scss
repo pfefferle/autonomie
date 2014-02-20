@@ -1,0 +1,13 @@
+html {
+  font-size: 0.8em;
+}
+
+#sidebar {
+  .widget-area {
+    width: 90%;
+  }
+
+  #secondary, #tertiary {
+    float: none;
+  }
+}

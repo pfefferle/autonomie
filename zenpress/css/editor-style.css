@@ -18,3 +18,6 @@ body#tinymce.wp-editor .aligncenter, body#tinymce.wp-editor .alignnone {
   display: block;
   margin: 1em 0;
 }
+body#tinymce.wp-editor .gallery {
+  padding: 1em 0;
+}
