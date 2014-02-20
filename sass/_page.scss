@@ -60,7 +60,7 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.post {
+.post, .page {
   position: relative;
   margin-bottom: 100px;
   font-size: 1.2em;
@@ -95,7 +95,26 @@
     font-size: 1.2em;
   }
 
-  .entry-meta, .comment-meta, .comment-notes, .logged-in-as {
+  .page-link, .page-links {
+    margin-bottom: 1em;
+  }
+
+  .wp-caption-text {
+    margin-top: 0.5em;
+  }
+
+  .wp-audio-shortcode {
+    margin: 1em auto;
+  }
+
+  .entry-meta,
+  .comment-meta,
+  .comment-notes,
+  .logged-in-as,
+  .wp-caption-text,
+  .gallery-caption,
+  .page-link,
+  .page-links {
     clear: both;
     display: block;
     color: #999;
@@ -147,7 +166,7 @@
   font-style: normal;
   position: absolute;
   left: -90px;
-  top: 0px;
+  top: -7px;
 }
 .format-aside:before {
   content: '\f101';
