@@ -17,7 +17,7 @@ function zenpress_setup() {
   remove_theme_support( 'custom-background' );
   remove_theme_support( 'custom-header' );
 
-  // remove some unneded actions
+  // remove some unneeded actions
   remove_action( 'wp_head', 'sempress_customize_css');
   remove_action( 'customize_register', 'sempress_customize_register' );
 }
