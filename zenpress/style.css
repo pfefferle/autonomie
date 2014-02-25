@@ -767,16 +767,16 @@ input[type="reset"] {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.post, .page {
+#content .post, #content .page {
   position: relative;
   margin-bottom: 100px;
   font-size: 1.2em;
 }
-.post .entry-header .entry-title, .page .entry-header .entry-title {
+#content .post .entry-header .entry-title, #content .page .entry-header .entry-title {
   margin: 0;
   padding: 5px 0;
 }
-.post .entry-header .entry-title a, .page .entry-header .entry-title a {
+#content .post .entry-header .entry-title a, #content .page .entry-header .entry-title a {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -788,76 +788,76 @@ input[type="reset"] {
   text-decoration: none;
   font-weight: 700;
 }
-.post .entry-header .entry-title a:hover, .page .entry-header .entry-title a:hover {
+#content .post .entry-header .entry-title a:hover, #content .page .entry-header .entry-title a:hover {
   color: #666;
 }
-.post .entry-content,
-.post .entry-summary, .page .entry-content,
-.page .entry-summary {
+#content .post .entry-content,
+#content .post .entry-summary, #content .page .entry-content,
+#content .page .entry-summary {
   color: #444;
   font-size: 1.2em;
 }
-.post .page-link, .post .page-links, .page .page-link, .page .page-links {
+#content .post .page-link, #content .post .page-links, #content .page .page-link, #content .page .page-links {
   margin-bottom: 1em;
 }
-.post .wp-caption-text, .page .wp-caption-text {
+#content .post .wp-caption-text, #content .page .wp-caption-text {
   margin-top: 0.5em;
 }
-.post .wp-audio-shortcode, .page .wp-audio-shortcode {
+#content .post .wp-audio-shortcode, #content .page .wp-audio-shortcode {
   margin: 1em auto;
 }
-.post .entry-meta,
-.post .comment-meta,
-.post .comment-notes,
-.post .logged-in-as,
-.post .wp-caption-text,
-.post .gallery-caption,
-.post .page-link,
-.post .page-links, .page .entry-meta,
-.page .comment-meta,
-.page .comment-notes,
-.page .logged-in-as,
-.page .wp-caption-text,
-.page .gallery-caption,
-.page .page-link,
-.page .page-links {
+#content .post .entry-meta,
+#content .post .comment-meta,
+#content .post .comment-notes,
+#content .post .logged-in-as,
+#content .post .wp-caption-text,
+#content .post .gallery-caption,
+#content .post .page-link,
+#content .post .page-links, #content .page .entry-meta,
+#content .page .comment-meta,
+#content .page .comment-notes,
+#content .page .logged-in-as,
+#content .page .wp-caption-text,
+#content .page .gallery-caption,
+#content .page .page-link,
+#content .page .page-links {
   clear: both;
   display: block;
   color: #999;
   font-size: 0.8em;
 }
-.post .entry-meta a,
-.post .comment-meta a,
-.post .comment-notes a,
-.post .logged-in-as a,
-.post .wp-caption-text a,
-.post .gallery-caption a,
-.post .page-link a,
-.post .page-links a, .page .entry-meta a,
-.page .comment-meta a,
-.page .comment-notes a,
-.page .logged-in-as a,
-.page .wp-caption-text a,
-.page .gallery-caption a,
-.page .page-link a,
-.page .page-links a {
+#content .post .entry-meta a,
+#content .post .comment-meta a,
+#content .post .comment-notes a,
+#content .post .logged-in-as a,
+#content .post .wp-caption-text a,
+#content .post .gallery-caption a,
+#content .post .page-link a,
+#content .post .page-links a, #content .page .entry-meta a,
+#content .page .comment-meta a,
+#content .page .comment-notes a,
+#content .page .logged-in-as a,
+#content .page .wp-caption-text a,
+#content .page .gallery-caption a,
+#content .page .page-link a,
+#content .page .page-links a {
   color: #666;
 }
-.post .entry-meta .avatar,
-.post .comment-meta .avatar,
-.post .comment-notes .avatar,
-.post .logged-in-as .avatar,
-.post .wp-caption-text .avatar,
-.post .gallery-caption .avatar,
-.post .page-link .avatar,
-.post .page-links .avatar, .page .entry-meta .avatar,
-.page .comment-meta .avatar,
-.page .comment-notes .avatar,
-.page .logged-in-as .avatar,
-.page .wp-caption-text .avatar,
-.page .gallery-caption .avatar,
-.page .page-link .avatar,
-.page .page-links .avatar {
+#content .post .entry-meta .avatar,
+#content .post .comment-meta .avatar,
+#content .post .comment-notes .avatar,
+#content .post .logged-in-as .avatar,
+#content .post .wp-caption-text .avatar,
+#content .post .gallery-caption .avatar,
+#content .post .page-link .avatar,
+#content .post .page-links .avatar, #content .page .entry-meta .avatar,
+#content .page .comment-meta .avatar,
+#content .page .comment-notes .avatar,
+#content .page .logged-in-as .avatar,
+#content .page .wp-caption-text .avatar,
+#content .page .gallery-caption .avatar,
+#content .page .page-link .avatar,
+#content .page .page-links .avatar {
   display: none;
 }
 
