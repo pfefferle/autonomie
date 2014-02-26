@@ -886,7 +886,7 @@ input[type="reset"] {
 .format-chat:before,
 .error404:before,
 .sticky:before,
-.format-status .entry-meta .avatar,
+#content .format-status .entry-meta .avatar,
 .page-header .avatar {
   font-family: 'Genericons';
   display: block;
@@ -1167,11 +1167,11 @@ table {
 
 table th,
 table td {
-  padding: 8px;
-  line-height: 18px;
+  padding: 10px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 
 table th {
@@ -1193,12 +1193,6 @@ table thead:first-child tr:first-child td {
 
 table tbody + tbody {
   border-top: 2px solid #ddd;
-}
-
-table th,
-table td {
-  padding: 4px 5px;
-  border-left: 1px solid #ddd;
 }
 
 table caption + thead tr:first-child th,
