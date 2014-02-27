@@ -899,6 +899,7 @@ input[type="reset"] {
 
 .format-aside:before {
   content: '\f101';
+  top: -15px;
 }
 
 .format-video:before {
@@ -919,10 +920,12 @@ input[type="reset"] {
 
 .format-link:before {
   content: '\f107';
+  top: -15px;
 }
 
 .format-quote:before {
   content: '\f106';
+  top: -10px;
 }
 
 .sticky:before {
@@ -1410,6 +1413,10 @@ ins {
 @media only screen and (max-width: 479px) {
   html {
     font-size: 0.8em;
+  }
+
+  .entry-content iframe, .entry-content object, .entry-content embed {
+    height: auto;
   }
 }
 /* ==========================================================================

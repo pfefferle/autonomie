@@ -191,6 +191,7 @@
 }
 .format-aside:before {
   content: '\f101';
+  top: -15px;
 }
 .format-video:before {
   content: '\f104';
@@ -206,9 +207,11 @@
 }
 .format-link:before {
   content: '\f107';
+  top: -15px;
 }
 .format-quote:before {
   content: '\f106';
+  top: -10px;
 }
 .sticky:before {
   content: '\f308';
