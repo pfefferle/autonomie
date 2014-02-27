@@ -925,7 +925,7 @@ input[type="reset"] {
 
 .format-quote:before {
   content: '\f106';
-  top: -10px;
+  top: -12px;
 }
 
 .sticky:before {
@@ -1267,7 +1267,7 @@ blockquote small, blockquote cite {
   display: block;
   color: #999;
   font-style: normal;
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 blockquote small:before, blockquote cite:before {
   content: '\2014 \00A0';
