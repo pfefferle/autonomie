@@ -1,3 +1,5 @@
 body#tinymce.wp-editor {
+  @import "normalize";
+  @import "normalize_custom";
   @import "post";
 }
