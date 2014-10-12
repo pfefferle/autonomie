@@ -7,11 +7,10 @@ Description: @@description
 Version: @@version
 License: @@license Version @@license_version
 License URI: @@license_url
-Template: sempress
 Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options
-Text Domain: sempress
+Text Domain: zenpress
 
-This is a child theme for the SemPress theme (http://wordpress.org/themes/sempress)
+This is a child theme for the ZenPress theme (http://wordpress.org/themes/zenpress)
 and, like WordPress, licensed under the GPL.
 
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -24,11 +23,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
  */
 @font-face {
   font-family: 'Genericons';
-  src: url('font/genericons-regular-webfont.eot');
-  src: url('font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('font/genericons-regular-webfont.woff') format('woff'),
-       url('font/genericons-regular-webfont.ttf') format('truetype'),
-       url('font/genericons-regular-webfont.svg#genericonsregular') format('svg');
+  src: url('font/Genericons.eot');
+  src: url('font/Genericons.eot?#iefix') format('embedded-opentype'),
+       url('font/Genericons.woff') format('woff'),
+       url('font/Genericons.ttf') format('truetype'),
+       url('font/Genericons.svg#genericonsregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

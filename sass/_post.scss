@@ -1,4 +1,179 @@
+#content .post, #content .page {
+  position: relative;
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid #eee;
 
+  .sep {
+    visibility: hidden;
+    width: 0.5em;
+    display: inline-block;
+  }
+
+  .entry-header {
+    .entry-title {
+      margin: 0;
+      padding: 5px 0;
+
+      a {
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 1.5em;
+        color: #444;
+        text-decoration: none;
+        font-weight: 700;
+
+        &:hover {
+          color: #666;
+        }
+      }
+    }
+  }
+
+  &.format-quote .post-format:before {
+    content: '\f106';
+  }
+
+  &.format-aside .post-format:before {
+    content: '\f101';
+  }
+
+  &.format-video .post-format:before {
+    content: '\f104';
+  }
+
+  &.format-audio .post-format:before {
+    content: '\f109';
+  }
+
+  &.format-image .post-format:before,
+  &.format-photo .post-format:before {
+    content: '\f102';
+  }
+
+  &.format-gallery .post-format:before {
+    content: '\f103';
+  }
+
+  &.format-link .post-format:before {
+    content: '\f107';
+  }
+
+  .entry-content,
+  .entry-summary {
+    color: #555;
+    font-size: 1.1em;
+  }
+
+  .page-link, .page-links {
+    margin-bottom: 1em;
+  }
+
+  .wp-caption-text {
+    margin-top: 0.5em;
+  }
+
+  .wp-audio-shortcode {
+    margin: 1em auto;
+  }
+
+  .entry-meta {
+    position: relative;
+
+    .post-format a, .post-format:before {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .cat-links:before,
+    .comments-link:before,
+    .edit-link:before,
+    .entry-date:before,
+    .author:before,
+    .tag-links:before,
+    .post-format:before {
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font: normal 1.1em Genericons;
+      text-decoration: inherit;
+      vertical-align: text-bottom;
+      margin-right: 0px;
+      position: relative;
+      top: 2px;
+    }
+
+    .cat-links:before {
+      content: '\f301';
+    }
+
+    .tag-links:before {
+      content: '\f302';
+    }
+
+    .comments-link:before {
+      content: '\f300';
+      margin-right: 5px;
+    }
+
+    .edit-link:before {
+      content: '\f411';
+      margin-right: 3px;
+    }
+
+    .entry-date:before {
+      content: '\f303';
+      top: 3px;
+      margin-right: 3px;
+    }
+
+    .author:before {
+      content: '\f304';
+      top: 3px;
+    }
+  }
+
+  .entry-meta,
+  .comment-meta,
+  .comment-notes,
+  .logged-in-as,
+  .wp-caption-text,
+  .gallery-caption,
+  .page-link,
+  .page-links {
+    clear: both;
+    display: block;
+    color: #ccc;
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .avatar {
+      display: none;
+    }
+  }
+}
+
+#content {
+  .format-aside,
+  .format-link,
+  .format-status {
+    .entry-content,
+    .entry-summary {
+      font-size: 1.5em;
+    }
+  }
+}
 
 /* Alignment */
 .alignleft {

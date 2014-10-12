@@ -384,9 +384,10 @@ body#tinymce.wp-editor abbr[title] {
 }
 body#tinymce.wp-editor blockquote {
   font-family: Georgia,"Times New Roman",Times,serif;
-  border-left: 3px solid #ddd;
-  margin: 15px 0;
-  padding-left: 20px;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.3em;
+  margin: 50px -70px;
 }
 body#tinymce.wp-editor blockquote p {
   margin-bottom: 0;
@@ -404,7 +405,7 @@ body#tinymce.wp-editor blockquote small:before, body#tinymce.wp-editor blockquot
 body#tinymce.wp-editor pre {
   background-color: #f5f5f5;
   display: block;
-  margin: 2em 0;
+  margin: 50px -70px;
   padding: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -415,6 +416,204 @@ body#tinymce.wp-editor code {
 body#tinymce.wp-editor ins {
   background: #fff9c0;
   text-decoration: none;
+}
+body#tinymce.wp-editor #content .post, body#tinymce.wp-editor #content .page {
+  position: relative;
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid #eee;
+}
+body#tinymce.wp-editor #content .post .sep, body#tinymce.wp-editor #content .page .sep {
+  visibility: hidden;
+  width: 0.5em;
+  display: inline-block;
+}
+body#tinymce.wp-editor #content .post .entry-header .entry-title, body#tinymce.wp-editor #content .page .entry-header .entry-title {
+  margin: 0;
+  padding: 5px 0;
+}
+body#tinymce.wp-editor #content .post .entry-header .entry-title a, body#tinymce.wp-editor #content .page .entry-header .entry-title a {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1.5em;
+  color: #444;
+  text-decoration: none;
+  font-weight: 700;
+}
+body#tinymce.wp-editor #content .post .entry-header .entry-title a:hover, body#tinymce.wp-editor #content .page .entry-header .entry-title a:hover {
+  color: #666;
+}
+body#tinymce.wp-editor #content .post.format-quote .post-format:before, body#tinymce.wp-editor #content .page.format-quote .post-format:before {
+  content: '\f106';
+}
+body#tinymce.wp-editor #content .post.format-aside .post-format:before, body#tinymce.wp-editor #content .page.format-aside .post-format:before {
+  content: '\f101';
+}
+body#tinymce.wp-editor #content .post.format-video .post-format:before, body#tinymce.wp-editor #content .page.format-video .post-format:before {
+  content: '\f104';
+}
+body#tinymce.wp-editor #content .post.format-audio .post-format:before, body#tinymce.wp-editor #content .page.format-audio .post-format:before {
+  content: '\f109';
+}
+body#tinymce.wp-editor #content .post.format-image .post-format:before, body#tinymce.wp-editor #content .post.format-photo .post-format:before, body#tinymce.wp-editor #content .page.format-image .post-format:before, body#tinymce.wp-editor #content .page.format-photo .post-format:before {
+  content: '\f102';
+}
+body#tinymce.wp-editor #content .post.format-gallery .post-format:before, body#tinymce.wp-editor #content .page.format-gallery .post-format:before {
+  content: '\f103';
+}
+body#tinymce.wp-editor #content .post.format-link .post-format:before, body#tinymce.wp-editor #content .page.format-link .post-format:before {
+  content: '\f107';
+}
+body#tinymce.wp-editor #content .post .entry-content,
+body#tinymce.wp-editor #content .post .entry-summary, body#tinymce.wp-editor #content .page .entry-content,
+body#tinymce.wp-editor #content .page .entry-summary {
+  color: #555;
+  font-size: 1.1em;
+}
+body#tinymce.wp-editor #content .post .page-link, body#tinymce.wp-editor #content .post .page-links, body#tinymce.wp-editor #content .page .page-link, body#tinymce.wp-editor #content .page .page-links {
+  margin-bottom: 1em;
+}
+body#tinymce.wp-editor #content .post .wp-caption-text, body#tinymce.wp-editor #content .page .wp-caption-text {
+  margin-top: 0.5em;
+}
+body#tinymce.wp-editor #content .post .wp-audio-shortcode, body#tinymce.wp-editor #content .page .wp-audio-shortcode {
+  margin: 1em auto;
+}
+body#tinymce.wp-editor #content .post .entry-meta, body#tinymce.wp-editor #content .page .entry-meta {
+  position: relative;
+}
+body#tinymce.wp-editor #content .post .entry-meta .post-format a, body#tinymce.wp-editor #content .post .entry-meta .post-format:before, body#tinymce.wp-editor #content .page .entry-meta .post-format a, body#tinymce.wp-editor #content .page .entry-meta .post-format:before {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #444;
+}
+body#tinymce.wp-editor #content .post .entry-meta .cat-links:before,
+body#tinymce.wp-editor #content .post .entry-meta .comments-link:before,
+body#tinymce.wp-editor #content .post .entry-meta .edit-link:before,
+body#tinymce.wp-editor #content .post .entry-meta .entry-date:before,
+body#tinymce.wp-editor #content .post .entry-meta .author:before,
+body#tinymce.wp-editor #content .post .entry-meta .tag-links:before,
+body#tinymce.wp-editor #content .post .entry-meta .post-format:before, body#tinymce.wp-editor #content .page .entry-meta .cat-links:before,
+body#tinymce.wp-editor #content .page .entry-meta .comments-link:before,
+body#tinymce.wp-editor #content .page .entry-meta .edit-link:before,
+body#tinymce.wp-editor #content .page .entry-meta .entry-date:before,
+body#tinymce.wp-editor #content .page .entry-meta .author:before,
+body#tinymce.wp-editor #content .page .entry-meta .tag-links:before,
+body#tinymce.wp-editor #content .page .entry-meta .post-format:before {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font: normal 1.1em Genericons;
+  text-decoration: inherit;
+  vertical-align: text-bottom;
+  margin-right: 0px;
+  position: relative;
+  top: 2px;
+}
+body#tinymce.wp-editor #content .post .entry-meta .cat-links:before, body#tinymce.wp-editor #content .page .entry-meta .cat-links:before {
+  content: '\f301';
+}
+body#tinymce.wp-editor #content .post .entry-meta .tag-links:before, body#tinymce.wp-editor #content .page .entry-meta .tag-links:before {
+  content: '\f302';
+}
+body#tinymce.wp-editor #content .post .entry-meta .comments-link:before, body#tinymce.wp-editor #content .page .entry-meta .comments-link:before {
+  content: '\f300';
+  margin-right: 5px;
+}
+body#tinymce.wp-editor #content .post .entry-meta .edit-link:before, body#tinymce.wp-editor #content .page .entry-meta .edit-link:before {
+  content: '\f411';
+  margin-right: 3px;
+}
+body#tinymce.wp-editor #content .post .entry-meta .entry-date:before, body#tinymce.wp-editor #content .page .entry-meta .entry-date:before {
+  content: '\f303';
+  top: 3px;
+  margin-right: 3px;
+}
+body#tinymce.wp-editor #content .post .entry-meta .author:before, body#tinymce.wp-editor #content .page .entry-meta .author:before {
+  content: '\f304';
+  top: 3px;
+}
+body#tinymce.wp-editor #content .post .entry-meta,
+body#tinymce.wp-editor #content .post .comment-meta,
+body#tinymce.wp-editor #content .post .comment-notes,
+body#tinymce.wp-editor #content .post .logged-in-as,
+body#tinymce.wp-editor #content .post .wp-caption-text,
+body#tinymce.wp-editor #content .post .gallery-caption,
+body#tinymce.wp-editor #content .post .page-link,
+body#tinymce.wp-editor #content .post .page-links, body#tinymce.wp-editor #content .page .entry-meta,
+body#tinymce.wp-editor #content .page .comment-meta,
+body#tinymce.wp-editor #content .page .comment-notes,
+body#tinymce.wp-editor #content .page .logged-in-as,
+body#tinymce.wp-editor #content .page .wp-caption-text,
+body#tinymce.wp-editor #content .page .gallery-caption,
+body#tinymce.wp-editor #content .page .page-link,
+body#tinymce.wp-editor #content .page .page-links {
+  clear: both;
+  display: block;
+  color: #ccc;
+}
+body#tinymce.wp-editor #content .post .entry-meta a,
+body#tinymce.wp-editor #content .post .comment-meta a,
+body#tinymce.wp-editor #content .post .comment-notes a,
+body#tinymce.wp-editor #content .post .logged-in-as a,
+body#tinymce.wp-editor #content .post .wp-caption-text a,
+body#tinymce.wp-editor #content .post .gallery-caption a,
+body#tinymce.wp-editor #content .post .page-link a,
+body#tinymce.wp-editor #content .post .page-links a, body#tinymce.wp-editor #content .page .entry-meta a,
+body#tinymce.wp-editor #content .page .comment-meta a,
+body#tinymce.wp-editor #content .page .comment-notes a,
+body#tinymce.wp-editor #content .page .logged-in-as a,
+body#tinymce.wp-editor #content .page .wp-caption-text a,
+body#tinymce.wp-editor #content .page .gallery-caption a,
+body#tinymce.wp-editor #content .page .page-link a,
+body#tinymce.wp-editor #content .page .page-links a {
+  color: #ccc;
+  text-decoration: none;
+}
+body#tinymce.wp-editor #content .post .entry-meta a:hover,
+body#tinymce.wp-editor #content .post .comment-meta a:hover,
+body#tinymce.wp-editor #content .post .comment-notes a:hover,
+body#tinymce.wp-editor #content .post .logged-in-as a:hover,
+body#tinymce.wp-editor #content .post .wp-caption-text a:hover,
+body#tinymce.wp-editor #content .post .gallery-caption a:hover,
+body#tinymce.wp-editor #content .post .page-link a:hover,
+body#tinymce.wp-editor #content .post .page-links a:hover, body#tinymce.wp-editor #content .page .entry-meta a:hover,
+body#tinymce.wp-editor #content .page .comment-meta a:hover,
+body#tinymce.wp-editor #content .page .comment-notes a:hover,
+body#tinymce.wp-editor #content .page .logged-in-as a:hover,
+body#tinymce.wp-editor #content .page .wp-caption-text a:hover,
+body#tinymce.wp-editor #content .page .gallery-caption a:hover,
+body#tinymce.wp-editor #content .page .page-link a:hover,
+body#tinymce.wp-editor #content .page .page-links a:hover {
+  text-decoration: underline;
+}
+body#tinymce.wp-editor #content .post .entry-meta .avatar,
+body#tinymce.wp-editor #content .post .comment-meta .avatar,
+body#tinymce.wp-editor #content .post .comment-notes .avatar,
+body#tinymce.wp-editor #content .post .logged-in-as .avatar,
+body#tinymce.wp-editor #content .post .wp-caption-text .avatar,
+body#tinymce.wp-editor #content .post .gallery-caption .avatar,
+body#tinymce.wp-editor #content .post .page-link .avatar,
+body#tinymce.wp-editor #content .post .page-links .avatar, body#tinymce.wp-editor #content .page .entry-meta .avatar,
+body#tinymce.wp-editor #content .page .comment-meta .avatar,
+body#tinymce.wp-editor #content .page .comment-notes .avatar,
+body#tinymce.wp-editor #content .page .logged-in-as .avatar,
+body#tinymce.wp-editor #content .page .wp-caption-text .avatar,
+body#tinymce.wp-editor #content .page .gallery-caption .avatar,
+body#tinymce.wp-editor #content .page .page-link .avatar,
+body#tinymce.wp-editor #content .page .page-links .avatar {
+  display: none;
+}
+body#tinymce.wp-editor #content .format-aside .entry-content,
+body#tinymce.wp-editor #content .format-aside .entry-summary,
+body#tinymce.wp-editor #content .format-link .entry-content,
+body#tinymce.wp-editor #content .format-link .entry-summary,
+body#tinymce.wp-editor #content .format-status .entry-content,
+body#tinymce.wp-editor #content .format-status .entry-summary {
+  font-size: 1.5em;
 }
 body#tinymce.wp-editor .alignleft {
   display: inline;
