@@ -36,14 +36,13 @@ blockquote {
   font-style: italic;
   text-align: center;
 
-  font-size: 1.3em;
-  margin: 50px -70px;
+  margin: 1.5em -3em;
 
 	p {
-	  margin-bottom: 0;
 	  font-weight: 300;
 	}
   small, cite {
+    text-align: left;
     display: block;
     color: #999;
     font-style: normal;
@@ -57,8 +56,8 @@ blockquote {
 pre {
   background-color: #f5f5f5;
   display: block;
-  margin: 50px -70px;
-  padding: 14px;
+  margin: 2em -3em;
+  padding: 3em;
   white-space: pre-wrap;
   word-wrap: break-word;
 }

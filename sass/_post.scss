@@ -1,8 +1,6 @@
 #content .post, #content .page {
   position: relative;
-  margin-bottom: 70px;
-  padding-bottom: 70px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 10em;
 
   .sep {
     visibility: hidden;
@@ -13,7 +11,7 @@
   .entry-header {
     .entry-title {
       margin: 0;
-      padding: 5px 0;
+      padding: 0;
 
       a {
         -webkit-hyphens: auto;
@@ -22,7 +20,7 @@
         hyphens: auto;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-size: 1.5em;
+        font-size: 1.7em;
         color: #444;
         text-decoration: none;
         font-weight: 700;
@@ -66,7 +64,8 @@
   .entry-content,
   .entry-summary {
     color: #555;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    line-height: 1.7em;
   }
 
   .page-link, .page-links {
@@ -101,7 +100,7 @@
       display: inline-block;
       font: normal 1.1em Genericons;
       text-decoration: inherit;
-      vertical-align: text-bottom;
+      vertical-align: text-middle;
       margin-right: 0px;
       position: relative;
       top: 2px;
@@ -147,10 +146,10 @@
   .page-links {
     clear: both;
     display: block;
-    color: #ccc;
+    color: #aaa;
 
     a {
-      color: #ccc;
+      color: #aaa;
       text-decoration: none;
     }
 
@@ -160,17 +159,6 @@
 
     .avatar {
       display: none;
-    }
-  }
-}
-
-#content {
-  .format-aside,
-  .format-link,
-  .format-status {
-    .entry-content,
-    .entry-summary {
-      font-size: 1.5em;
     }
   }
 }

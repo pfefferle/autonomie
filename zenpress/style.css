@@ -432,7 +432,7 @@ th {
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 /*
@@ -694,7 +694,7 @@ input[type="reset"] {
   display: block;
   margin: 0 auto;
   position: relative;
-  width: 700px;
+  width: 800px;
 }
 
 #branding {
@@ -889,9 +889,7 @@ ol.commentlist {
 
 #content .post, #content .page {
   position: relative;
-  margin-bottom: 70px;
-  padding-bottom: 70px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 10em;
 }
 #content .post .sep, #content .page .sep {
   visibility: hidden;
@@ -900,7 +898,7 @@ ol.commentlist {
 }
 #content .post .entry-header .entry-title, #content .page .entry-header .entry-title {
   margin: 0;
-  padding: 5px 0;
+  padding: 0;
 }
 #content .post .entry-header .entry-title a, #content .page .entry-header .entry-title a {
   -webkit-hyphens: auto;
@@ -909,7 +907,7 @@ ol.commentlist {
   hyphens: auto;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 1.5em;
+  font-size: 1.7em;
   color: #444;
   text-decoration: none;
   font-weight: 700;
@@ -942,7 +940,8 @@ ol.commentlist {
 #content .post .entry-summary, #content .page .entry-content,
 #content .page .entry-summary {
   color: #555;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  line-height: 1.7em;
 }
 #content .post .page-link, #content .post .page-links, #content .page .page-link, #content .page .page-links {
   margin-bottom: 1em;
@@ -978,7 +977,7 @@ ol.commentlist {
   display: inline-block;
   font: normal 1.1em Genericons;
   text-decoration: inherit;
-  vertical-align: text-bottom;
+  vertical-align: text-middle;
   margin-right: 0px;
   position: relative;
   top: 2px;
@@ -1023,7 +1022,7 @@ ol.commentlist {
 #content .page .page-links {
   clear: both;
   display: block;
-  color: #ccc;
+  color: #aaa;
 }
 #content .post .entry-meta a,
 #content .post .comment-meta a,
@@ -1040,7 +1039,7 @@ ol.commentlist {
 #content .page .gallery-caption a,
 #content .page .page-link a,
 #content .page .page-links a {
-  color: #ccc;
+  color: #aaa;
   text-decoration: none;
 }
 #content .post .entry-meta a:hover,
@@ -1076,15 +1075,6 @@ ol.commentlist {
 #content .page .page-link .avatar,
 #content .page .page-links .avatar {
   display: none;
-}
-
-#content .format-aside .entry-content,
-#content .format-aside .entry-summary,
-#content .format-link .entry-content,
-#content .format-link .entry-summary,
-#content .format-status .entry-content,
-#content .format-status .entry-summary {
-  font-size: 1.5em;
 }
 
 /* Alignment */
@@ -1291,14 +1281,13 @@ blockquote {
   font-family: Georgia,"Times New Roman",Times,serif;
   font-style: italic;
   text-align: center;
-  font-size: 1.3em;
-  margin: 50px -70px;
+  margin: 1.5em -3em;
 }
 blockquote p {
-  margin-bottom: 0;
   font-weight: 300;
 }
 blockquote small, blockquote cite {
+  text-align: left;
   display: block;
   color: #999;
   font-style: normal;
@@ -1311,8 +1300,8 @@ blockquote small:before, blockquote cite:before {
 pre {
   background-color: #f5f5f5;
   display: block;
-  margin: 50px -70px;
-  padding: 14px;
+  margin: 2em -3em;
+  padding: 3em;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
