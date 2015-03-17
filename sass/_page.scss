@@ -1,18 +1,24 @@
-#page {
+#primary {
   display: block;
   margin: 0 auto;
   position: relative;
   width: 800px;
 }
 
+#sidebar {
+  display: block;
+  padding: 0 auto;
+  position: relative;
+  background-color: #ccc;
+}
+
 #branding {
-  color: #444;
-  margin-top: 50px;
+  margin: 100px auto;
   text-align: center;
+  width: 1024px;
 
   #site-title, #site-title a {
     font-size: 1.8em;
-    color: #444;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -23,6 +29,7 @@
   }
 
   #site-description {
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
@@ -42,7 +49,6 @@
     hyphens: auto;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: #444;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.2em;
@@ -69,8 +75,8 @@
 
 #colophon {
   clear: both;
-  text-align: center;
   margin: 50px 0;
+  text-align: center;
 }
 
 .screen-reader-text,

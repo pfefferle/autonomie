@@ -1,7 +1,7 @@
   <header class="entry-header">
     <div class="entry-meta">
       <span class="post-format">
-        <a class="entry-format" href="<?php echo esc_url( get_post_format_link(get_post_format()) ); ?>"><?php echo get_post_format_string(get_post_format()); ?></a>
+        <a class="entry-format entry-format-<?php echo get_post_format(); ?>" href="<?php echo esc_url( get_post_format_link(get_post_format()) ); ?>"><?php echo get_post_format_string(get_post_format()); ?></a>
       </span>
     </div>
 

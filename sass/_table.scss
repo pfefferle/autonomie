@@ -7,7 +7,6 @@ table {
   overflow-x: scroll;
   background-color: transparent;
   margin-bottom: 18px;
-  border: 1px solid #ddd;
   border-spacing: 0;
   border-collapse: separate;
   *border-collapse: collapsed;
@@ -20,7 +19,6 @@ table td {
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
 }
 table th {
   font-weight: bold;

@@ -8,7 +8,8 @@ module.exports = function(grunt) {
         options: {
           style: 'expanded',
           line_comments: false,
-          line_numbers: false
+          line_numbers: false,
+          sourcemap: 'none'
         },
         files: {
           'zenpress/style.css': 'sass/style.scss',
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         files: ['**/*.scss'],
-        tasks: ['sass']
+        tasks: ['default']
       }
     }
   });

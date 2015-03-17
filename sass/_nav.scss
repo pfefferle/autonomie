@@ -4,10 +4,8 @@
 #access {
   display: block;
   width:  100%;
-  float: left;
   margin: 50px 0;
   z-index: 3;
-  position: relative;
   ul {
     margin: 0;
     padding-left: 0px;
@@ -52,7 +50,6 @@
 }
 
 #content nav {
-  display: block;
   overflow: hidden;
   clear: both;
 
@@ -68,9 +65,10 @@
   }
 }
 #nav-above {
-  margin-bottom: 50px;
+  display: none;
 }
 
 #nav-below {
-  margin-bottom: 50px;
+  display: block;
+  margin-bottom: 160px;
 }

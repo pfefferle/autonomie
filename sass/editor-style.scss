@@ -1,5 +1,6 @@
 body#tinymce.wp-editor {
+  @import "colors";
   @import "normalize";
-  @import "normalize_custom";
+  @import "base";
   @import "post";
 }

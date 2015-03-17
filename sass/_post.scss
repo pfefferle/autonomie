@@ -1,11 +1,12 @@
-#content .post, #content .page {
-  position: relative;
+#content .post,
+#content .page {
   margin-bottom: 10em;
+  position: relative;
 
   .sep {
-    visibility: hidden;
-    width: 0.5em;
     display: inline-block;
+    visibility: hidden;
+    width: .5em;
   }
 
   .entry-header {
@@ -21,12 +22,12 @@
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 1.7em;
-        color: #444;
         text-decoration: none;
         font-weight: 700;
+        color: #444;
 
         &:hover {
-          color: #666;
+          color: #444;
         }
       }
     }
@@ -64,6 +65,7 @@
   .entry-content,
   .entry-summary {
     color: #555;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 1.3em;
     line-height: 1.7em;
   }
@@ -86,7 +88,6 @@
     .post-format a, .post-format:before {
       text-transform: uppercase;
       font-weight: bold;
-      color: #444;
     }
 
     .cat-links:before,
@@ -146,10 +147,10 @@
   .page-links {
     clear: both;
     display: block;
-    color: #aaa;
+    color: #7AB317;
 
     a {
-      color: #aaa;
+      color: #7AB317;
       text-decoration: none;
     }
 
@@ -179,7 +180,8 @@
 .aligncenter, .alignnone {
   clear: both;
   display: block;
-  margin: 1em 0;
+  margin: 1em auto;
+  text-align: center;
 }
 
 .gallery {
