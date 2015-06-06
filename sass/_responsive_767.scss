@@ -1,5 +1,9 @@
 html {
-  font-size: 0.8em;
+  font-size: .8em;
+}
+
+#primary {
+  width: 100%;
 }
 
 #sidebar {
@@ -7,7 +11,8 @@ html {
     width: 90%;
   }
 
-  #secondary, #tertiary {
+  #secondary,
+  #tertiary {
     float: none;
   }
 }

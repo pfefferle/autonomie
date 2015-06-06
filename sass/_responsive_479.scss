@@ -1,9 +1,11 @@
 html {
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 .entry-content {
-  iframe, object, embed {
+  iframe,
+  object,
+  embed {
     height: auto;
   }
 }

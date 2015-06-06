@@ -1,46 +1,53 @@
-#primary {
+#sidebar {
+  background-color: $gray;
+  display: block;
+  padding: 0 auto;
+  position: relative;
+}
+
+#content {
   display: block;
   margin: 0 auto;
   position: relative;
   width: 800px;
 }
 
-#sidebar {
-  display: block;
-  padding: 0 auto;
-  position: relative;
-  background-color: #ccc;
-}
-
 #branding {
-  margin: 100px auto;
+  font-weight: 400;
   text-align: center;
-  width: 1024px;
+  background-color: $blue;
+  margin-bottom: 50px;
 
   #site-title, #site-title a {
-    font-size: 1.8em;
-    text-decoration: none;
-    margin: 0;
+    color: $dark-gray;
+    font-size: 2em;
+    font-weight: 400;
+    margin: 0 auto;
     padding: 0;
+    text-decoration: none;
+    width: 1024px;
+    padding-top: 100px;
   }
 
   #site-title a:hover {
-    color: #666;
+    color: $dark-gray;
   }
 
   #site-description {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: 300;
-    margin: 0;
+    font-weight: 400;
+    margin: 0 auto;
     padding: 0;
+    width: 1024px;
+    padding-bottom: 100px;
   }
 }
 
 .page-header {
-  position: relative;
-  margin-bottom: 50px;
   clear: both;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 50px;
+  position: relative;
 
   h1.page-title {
     -webkit-hyphens: auto;
@@ -50,15 +57,13 @@
     text-overflow: ellipsis;
     overflow: hidden;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.2em;
   }
 }
 
 #sidebar {
+  font-size: 1.2em;
   margin-top: 50px;
   overflow: hidden;
-  font-size: 1.2em;
 
   .widget-area {
     width: 40%;
@@ -81,28 +86,30 @@
 
 .screen-reader-text,
 .assistive-text {
-  position: absolute !important;
   clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
+  // IE6, IE7
   clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
 }
 
-/* 404 page */
+// 404 page
 .error404 .widget {
   float: left;
   width: 33%;
 }
+
 .error404 .widget .widgettitle,
 .error404 .widget ul {
   margin-right: 1em;
 }
+
 .error404 .widget_tag_cloud {
   clear: both;
   float: none;
   width: 100%;
 }
 
-/* Notices */
+// Notices
 .post .notice,
 .error404 #searchform {
   background: #eee;

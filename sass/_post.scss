@@ -21,13 +21,14 @@
         hyphens: auto;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-size: 1.7em;
+        font-size: 1.5em;
+        line-height: 1.5;
         text-decoration: none;
-        font-weight: 700;
-        color: #444;
+        font-weight: 400;
+        color: $dark-gray;
 
         &:hover {
-          color: #444;
+          color: $dark-gray;
         }
       }
     }
@@ -62,20 +63,25 @@
     content: '\f107';
   }
 
-  .entry-content,
-  .entry-summary {
-    color: #555;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.3em;
-    line-height: 1.7em;
+  &.format-status .post-format:before {
+    content: '\f105';
   }
 
-  .page-link, .page-links {
+  .entry-content,
+  .entry-summary {
+    color: $dark-gray;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 2;
+  }
+
+  .page-link,
+  .page-links {
     margin-bottom: 1em;
   }
 
   .wp-caption-text {
-    margin-top: 0.5em;
+    margin-top: .5em;
   }
 
   .wp-audio-shortcode {
@@ -83,11 +89,13 @@
   }
 
   .entry-meta {
+    font-family: "Open Sans", sans-serif;
     position: relative;
 
-    .post-format a, .post-format:before {
-      text-transform: uppercase;
+    .post-format a,
+    .post-format:before {
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     .cat-links:before,
@@ -97,14 +105,14 @@
     .author:before,
     .tag-links:before,
     .post-format:before {
-      -webkit-font-smoothing: antialiased;
       display: inline-block;
       font: normal 1.1em Genericons;
-      text-decoration: inherit;
-      vertical-align: text-middle;
-      margin-right: 0px;
+      -webkit-font-smoothing: antialiased;
+      margin-right: 0;
       position: relative;
+      text-decoration: inherit;
       top: 2px;
+      vertical-align: text-middle;
     }
 
     .cat-links:before {
@@ -127,8 +135,8 @@
 
     .entry-date:before {
       content: '\f303';
-      top: 3px;
       margin-right: 3px;
+      top: 3px;
     }
 
     .author:before {
@@ -146,11 +154,11 @@
   .page-link,
   .page-links {
     clear: both;
+    color: #9a9a9a;
     display: block;
-    color: #7AB317;
 
     a {
-      color: #7AB317;
+      color: #9a9a9a;
       text-decoration: none;
     }
 
@@ -164,20 +172,23 @@
   }
 }
 
-/* Alignment */
+// Alignment
 .alignleft {
   display: inline;
   float: left;
   margin-right: 1em;
-  margin-top: 0.3em;
+  margin-top: .3em;
 }
+
 .alignright {
   display: inline;
   float: right;
   margin-left: 1em;
-  margin-top: 0.3em;
+  margin-top: .3em;
 }
-.aligncenter, .alignnone {
+
+.aligncenter,
+.alignnone {
   clear: both;
   display: block;
   margin: 1em auto;

@@ -1,7 +1,8 @@
 body {
-  background-color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  background-color: $white;
+  color: $dark-gray;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
   word-wrap: break-word;
 }
 
@@ -11,23 +12,20 @@ figure {
 
   blockquote {
     border: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.2em;
     font-style: italic;
-
+    font-weight: bold;
     margin: 1.5em -3em;
-
-    text-align: center;
+    text-align: justify;
 
     p {
-      font-weight: 300;
+      font-weight: bold;
     }
   }
 
   > small,
   > cite,
   > figcaption {
-    color: #999;
+    color: $gray;
     display: block;
     font-size: .7em;
     font-style: normal;
@@ -48,7 +46,7 @@ address {
 }
 
 a {
-  color: #555;
+  color: $dark-gray;
 }
 
 a:hover {
@@ -59,20 +57,16 @@ abbr {
   font-variant: small-caps;
 
   &[title] {
-    border-bottom: 1px dotted #999;
+    border-bottom: 1px dotted $gray;
     cursor: help;
   }
 }
 
 blockquote {
-  border-left: .2em solid #A0C55F;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.2em;
+  border-left: .2em solid $green;
   font-style: italic;
-
   margin: 0;
   padding-left: 1em;
-
   text-align: left;
 
   p {
@@ -81,7 +75,7 @@ blockquote {
 
   small,
   cite {
-    color: #999;
+    color: $gray;
     display: block;
     font-size: .7em;
     font-style: normal;
@@ -107,6 +101,16 @@ code {
 }
 
 ins {
-  background: #fff9c0;
+  background: $yellow;
   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
 }

@@ -51,55 +51,60 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 output {
+  color: $dark-gray;
   display: block;
-  padding-top: 7px;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #555;
+  padding-top: 7px;
 }
+
 input,
 textarea {
-  display: block;
-  width: 90%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #555;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
+  border: 1px solid $gray;
   border-radius: 4px;
+  color: $dark-gray;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.428571429;
+  padding: 6px 12px;
+  width: 90%;
 
   &:focus {
     outline: 0;
   }
 
   &:-moz-placeholder {
-    color: #999;
+    color: $gray;
   }
+
   &::-moz-placeholder {
-    color: #999;
+    color: $gray;
     opacity: 1;
   }
+
   &:-ms-input-placeholder {
-    color: #999;
+    color: $gray;
   }
+
   &::-webkit-input-placeholder {
-    color: #999;
+    color: $gray;
   }
 }
 
 input[disabled],
 input[readonly],
 fieldset[disabled] {
-  cursor: not-allowed;
   background-color: #eee;
+  cursor: not-allowed;
   opacity: 1;
 }
 
 textarea {
   height: auto;
+  padding: 12px;
 }
 
 input[type="date"] {
@@ -110,39 +115,39 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  color: #333;
   background-color: #fff;
-  width: auto;
+  background-image: none;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
   display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.428571429;
+  margin-bottom: 0;
+  padding: 6px 12px;
   text-align: center;
-  white-space: nowrap;
   vertical-align: middle;
-  cursor: pointer;
+  white-space: nowrap;
+  width: auto;
+
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
        -o-user-select: none;
           user-select: none;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 
   &:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
   }
 
   &:hover,
   &:focus {
-    color: #333;
     background-color: #ebebeb;
     border-color: #adadad;
+    color: #333;
     text-decoration: none;
   }
 
@@ -153,9 +158,9 @@ input[type="reset"] {
 
   &[disabled],
   fieldset[disabled] & {
-    pointer-events: none;
     cursor: not-allowed;
     filter: alpha(opacity=65);
     opacity: .65;
+    pointer-events: none;
   }
 }

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     sass: {
       expanded: {
         options: {
-          style: 'expanded',
+          style: 'compressed',
           line_comments: false,
           line_numbers: false,
           sourcemap: 'none'
