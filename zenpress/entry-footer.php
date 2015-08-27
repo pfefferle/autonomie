@@ -1,4 +1,4 @@
-<footer class="entry-meta">
+<footer class="entry-footer entry-meta">
   <?php
     if (in_array(get_post_format(), array("aside", "link", "status", "quote"))) {
       zenpress_posted_on();

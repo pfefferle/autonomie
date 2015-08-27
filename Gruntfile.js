@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           prefix: '@@'
         },
         files: [
-          { expand: true, flatten: true, src: ['zenpress/style.css'], dest: 'zenpress' }
+          {expand: true, flatten: true, src: ['zenpress/style.css'], dest: 'zenpress'}
         ]
       }
     },

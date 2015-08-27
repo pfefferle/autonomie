@@ -22,7 +22,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         font-size: 1.5em;
-        line-height: 1.5;
+        line-height: 1;
         text-decoration: none;
         font-weight: 400;
         color: $dark-gray;
@@ -71,7 +71,7 @@
   .entry-summary {
     color: $dark-gray;
     font-size: 1.3em;
-    font-weight: 300;
+    font-style: normal;
     line-height: 2;
   }
 
@@ -170,6 +170,22 @@
       display: none;
     }
   }
+}
+
+.entry-header,
+.entry-footer,
+.entry-content > p,
+.entry-content > ul,
+.entry-content > ol,
+.entry-content > h1,
+.entry-content > h2,
+.entry-content > h3,
+.entry-content > h4,
+.entry-content > h5,
+.entry-content > h6,
+.entry-content > div {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 // Alignment

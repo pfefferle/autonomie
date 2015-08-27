@@ -17,7 +17,7 @@
 <!--[if IE 8]>
 <html id="ie8" <?php language_attributes(); ?>>
 <![endif]-->
-<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)	]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
@@ -31,23 +31,23 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?><?php zenpress_semantics("body"); ?>>
+<body <?php body_class(); ?><?php zenpress_semantics( 'body' ); ?>>
 <div id="page">
 <?php do_action( 'before' ); ?>
-  <header id="branding" role="banner">
-    <h1 id="site-title"<?php zenpress_semantics("site-title"); ?>><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics("site-url"); ?>><?php bloginfo( 'name' ); ?></a></h1>
-    <h2 id="site-description"<?php zenpress_semantics("site-description"); ?>><?php bloginfo( 'description' ); ?></h2>
+	<header id="branding" role="banner">
+		<nav id="access" role="navigation">
+			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="assistive-text"><a href="#access" title="<?php esc_attr_e( 'Main menu', 'zenpress' ); ?>"><?php _e( 'Main menu', 'zenpress' ); ?></a></div>
+			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
 
-    <?php if (get_header_image()) { ?>
-      <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="header image" id="site-image" />
-    <?php } ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 
-    <nav id="access" role="navigation">
-      <h1 class="assistive-text section-heading"><a href="#access" title="<?php esc_attr_e( 'Main menu', 'zenpress' ); ?>"><?php _e( 'Main menu', 'zenpress' ); ?></a></h1>
-      <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
+			<?php get_search_form( true ); ?>
+		</nav><!-- #access -->
 
-      <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    </nav><!-- #access -->
-  </header><!-- #branding -->
+		<div class="hero">
+			<h2 id="site-description"<?php zenpress_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></h2>
+		</div>
+	</header><!-- #branding -->
 
-  <div id="main">
+	<div id="main">

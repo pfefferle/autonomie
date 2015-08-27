@@ -29,34 +29,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   font-style: normal;
 }
 
-// open-sans-regular - latin
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('font/open-sans-v13-latin-regular.eot'); // IE9 Compat Modes
-  src: local('Open Sans'), local('OpenSans'),
-       url('font/open-sans-v13-latin-regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
-       url('font/open-sans-v13-latin-regular.woff2') format('woff2'), // Super Modern Browsers
-       url('font/open-sans-v13-latin-regular.woff') format('woff'), // Modern Browsers
-       url('font/open-sans-v13-latin-regular.ttf') format('truetype'), // Safari, Android, iOS
-       url('font/open-sans-v13-latin-regular.svg#OpenSans') format('svg'); // Legacy iOS
-}
-
-// open-sans-italic - latin
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: url('font/open-sans-v13-latin-italic.eot'); // IE9 Compat Modes
-  src: local('Open Sans Italic'), local('OpenSans-Italic'),
-       url('font/open-sans-v13-latin-italic.eot?#iefix') format('embedded-opentype'), // IE6-IE8
-       url('font/open-sans-v13-latin-italic.woff2') format('woff2'), // Super Modern Browsers
-       url('font/open-sans-v13-latin-italic.woff') format('woff'), // Modern Browsers
-       url('font/open-sans-v13-latin-italic.ttf') format('truetype'), // Safari, Android, iOS
-       url('font/open-sans-v13-latin-italic.svg#OpenSans') format('svg'); // Legacy iOS
-}
-
 // merriweather-300 - latin
 @font-face {
   font-family: 'Merriweather';

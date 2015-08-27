@@ -5,47 +5,32 @@
   position: relative;
 }
 
+#branding {
+  position: relative;
+
+  .hero {
+    background-color: $blue;
+    height: 500px;
+    width: 100%;
+
+    h2 {
+      bottom: 25px;
+      margin: 0 auto;
+      width: 1000px;
+    }
+  }
+}
+
 #content {
   display: block;
   margin: 0 auto;
-  position: relative;
-  width: 800px;
-}
-
-#branding {
-  font-weight: 400;
-  text-align: center;
-  background-color: $blue;
-  margin-bottom: 50px;
-
-  #site-title, #site-title a {
-    color: $dark-gray;
-    font-size: 2em;
-    font-weight: 400;
-    margin: 0 auto;
-    padding: 0;
-    text-decoration: none;
-    width: 1024px;
-    padding-top: 100px;
-  }
-
-  #site-title a:hover {
-    color: $dark-gray;
-  }
-
-  #site-description {
-    font-weight: 400;
-    margin: 0 auto;
-    padding: 0;
-    width: 1024px;
-    padding-bottom: 100px;
-  }
+  width: 1000px;
 }
 
 .page-header {
   clear: both;
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 100;
   margin-bottom: 50px;
   position: relative;
 
