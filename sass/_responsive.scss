@@ -1,14 +1,7 @@
-// Tablet Portrait size to standard 960 (devices and browsers)
-@media only screen and (max-width: 1001px) {
-  @import 'responsive_959';
+@media only screen and (min-width: 1024px) {
+	@import 'responsive_1024';
 }
 
-// Mobile Landscape Size to Tablet Portrait (devices and browsers)
-@media only screen and (max-width: 767px) {
-  @import 'responsive_767';
-}
-
-// Mobile Landscape Size to Tablet Portrait (devices and browsers)
-@media only screen and (max-width: 479px) {
-  @import 'responsive_479';
+@media only screen and (min-width: 1250px) {
+	@import 'responsive_1250';
 }

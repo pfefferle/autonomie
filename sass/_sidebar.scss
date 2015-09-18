@@ -1,0 +1,66 @@
+#sidebar {
+	font-family: Lato, sans-serif;
+	font-weight: normal;
+
+	display: block;
+	padding: 100px 0;
+	position: relative;
+	font-size: .9em;
+	margin: 0 auto;
+	margin-top: 100px;
+	color: $white;
+	width: 90%;
+	font-size: 18px;
+
+	@include clearfix;
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 20px;
+		border-bottom: 1px solid #444;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style-type: none;
+			line-height: 1.5;
+		}
+	}
+
+	a {
+		color: $white;
+	}
+
+	#secondary {
+		width: 40%;
+		display: inline-block;
+		margin-right: 18%;
+		float: left;
+	}
+
+	#tertiary {
+		width: 40%;
+		display: inline-block;
+		float: left;
+	}
+
+	input {
+		color: $dark-gray;
+	}
+
+	button,
+	input[type="submit"] {
+		padding: .5em 1em;
+		border: none;
+		background-color: $white;
+		color: $dark-gray;
+
+		&:hover {
+			background-color: $gray;
+		}
+	}
+}

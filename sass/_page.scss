@@ -1,109 +1,124 @@
-#sidebar {
-  background-color: $gray;
-  display: block;
-  padding: 0 auto;
-  position: relative;
-}
-
 #branding {
-  position: relative;
+	display: block;
+	position: relative;
+	margin-bottom: 100px;
+	width: 100%;
 
-  .hero {
-    background-color: $blue;
-    height: 500px;
-    width: 100%;
+	#site-title {
+		margin: 35px 0 40px 0;
+		padding: 0;
+		display: inline-block;
+		font-size: 2.7em;
 
-    h2 {
-      bottom: 25px;
-      margin: 0 auto;
-      width: 1000px;
-    }
-  }
+		a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.hero {
+		background-color: $blue;
+		width: 100%;
+		min-height: 500px;
+
+		h2 {
+			padding-top: 200px;
+			padding-bottom: 200px;
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+			display: block;
+			vertical-align: bottom;
+			text-align: center;
+			color: $white;
+			text-shadow: 0 -2px 5px $dark-gray, 2px 0 5px $dark-gray, 0 2px 5px $dark-gray, -2px 0 5px $dark-gray;
+			font-size: 2em;
+		}
+	}
+
+	.search-form {
+		display: inline-block;
+		margin: 50px 0 30px 0;
+		padding: 0;
+		float: right;
+	}
 }
 
-#content {
-  display: block;
-  margin: 0 auto;
-  width: 1000px;
+#primary {
+	display: block;
+	margin: 0 auto;
+	width: 90%;
 }
 
 .page-header {
-  clear: both;
-  font-size: 1.5em;
-  font-weight: 100;
-  margin-bottom: 50px;
-  position: relative;
+	clear: both;
+	font-size: 1.5em;
+	font-weight: 100;
+	margin-bottom: 50px;
+	position: relative;
 
-  h1.page-title {
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-decoration: none;
-  }
-}
-
-#sidebar {
-  font-size: 1.2em;
-  margin-top: 50px;
-  overflow: hidden;
-
-  .widget-area {
-    width: 40%;
-  }
-
-  #secondary {
-    float: left;
-  }
-
-  #tertiary {
-    float: right;
-  }
+	h1.page-title {
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		text-decoration: none;
+	}
 }
 
 #colophon {
-  clear: both;
-  margin: 50px 0;
-  text-align: center;
+	@include clearfix;
+	width: 100%;
+	background-color: $dark-gray;
+}
+
+#site-generator {
+	clear: both;
+	padding: 50px 0;
+	text-align: center;
+	background-color: $white;
 }
 
 .screen-reader-text,
 .assistive-text {
-  clip: rect(1px 1px 1px 1px);
-  // IE6, IE7
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	// IE6, IE7
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
 }
 
 // 404 page
 .error404 .widget {
-  float: left;
-  width: 33%;
+	float: left;
+	width: 33%;
 }
 
 .error404 .widget .widgettitle,
 .error404 .widget ul {
-  margin-right: 1em;
+	margin-right: 1em;
 }
 
 .error404 .widget_tag_cloud {
-  clear: both;
-  float: none;
-  width: 100%;
+	clear: both;
+	float: none;
+	width: 100%;
 }
 
 // Notices
 .post .notice,
 .error404 #searchform {
-  background: #eee;
-  display: block;
-  padding: 1em;
+	background: #eee;
+	display: block;
+	padding: 1em;
 }
 
 .avatar {
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
-  border-radius: 500px;
+	-webkit-border-radius: 500px;
+	-moz-border-radius: 500px;
+	border-radius: 500px;
 }

@@ -1,0 +1,78 @@
+// Alignment
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1em;
+	margin-top: .3em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1em;
+	margin-top: .3em;
+}
+
+.aligncenter,
+.alignnone,
+.wp-post-image {
+	clear: both;
+	display: block;
+	margin: 1em auto;
+	text-align: center;
+	max-width: 100%;
+	height: auto;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.gallery {
+	padding: 1em 0;
+}
+
+.entry-content {
+	img,
+	figure,
+	object,
+	embed,
+	iframe,
+	audio,
+	video {
+		max-width: 100%;
+	}
+
+	img,
+	video,
+	audio {
+		height: auto;
+	}
+}
+
+.wp-audio-shortcode {
+	margin: 1em auto;
+}
+
+.gallery {
+	margin: auto;
+}
+
+.gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 33%;
+}
+.gallery img {
+	border: 2px solid $gray;
+}
+
+.gallery-caption {
+	margin-left: 0;
+}

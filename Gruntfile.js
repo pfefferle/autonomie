@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         },
         files: {
           'zenpress/style.css': 'sass/style.scss',
+          'zenpress/css/merriweather-font.css': 'sass/merriweather-font.scss',
           'zenpress/css/editor-style.css': 'sass/editor-style.scss'
         }
       }

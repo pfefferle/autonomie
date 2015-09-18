@@ -1,0 +1,173 @@
+/* Starter CSS for Menu */
+#access {
+	padding: 0;
+	margin: 0 auto;
+	border: 0;
+	width: 90%;
+}
+
+#access .menu {
+	border-top: 1px solid $light-gray;
+
+	@include clearfix;
+}
+
+#access .menu ul,
+#access .menu li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#access .menu ul {
+	position: relative;
+	z-index: 597;
+}
+
+#access .menu ul li {
+	float: left;
+	min-height: 1px;
+	vertical-align: middle;
+}
+
+#access .menu ul li.hover,
+#access .menu ul li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: default;
+}
+
+#access .menu ul ul {
+	visibility: hidden;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 598;
+	width: 100%;
+}
+
+#access .menu ul ul li {
+	float: none;
+}
+
+#access .menu ul ul ul {
+	top: 0;
+	left: 190px;
+	width: 190px;
+}
+
+#access .menu ul li:hover > ul {
+	visibility: visible;
+}
+
+#access .menu ul ul {
+	bottom: 0;
+	left: 0;
+}
+
+#access .menu ul ul {
+	margin-top: 0;
+}
+
+#access .menu ul ul li {
+	font-weight: normal;
+}
+
+#access .menu a {
+	display: block;
+	text-decoration: none;
+	line-height: 150%;
+	padding: 30px 20px 30px 0;
+	color: $dark-gray;
+}
+
+/* Custom CSS Styles */
+#access .menu {
+	border-bottom: 4px solid $white;
+}
+
+#access .menu > ul {
+	*display: inline-block;
+}
+
+#access .menu ul ul {
+	text-transform: none;
+	min-width: 190px;
+}
+
+#access .menu ul ul a {
+	background: $white;
+	color: $dark-gray;
+	border-top: 0 none;
+	line-height: 150%;
+	padding: 16px 20px;
+}
+
+#access .menu ul ul ul {
+	border-top: 0 none;
+}
+
+#access .menu ul ul li {
+	position: relative;
+}
+
+#access .menu ul ul li:hover > a {
+	background: $dark-gray;
+	color: $white;
+}
+
+#access .menu ul ul li:last-child > a {
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+#access .menu ul ul li:last-child:hover > a {
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+#access .menu ul ul li.has-sub > a:after {
+	content: '+';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -8px;
+}
+
+#access .menu ul li:hover > a,
+#access .menu ul li.active > a {
+	text-decoration: underline;
+}
+
+#access .menu ul li.has-sub > a:after {
+	content: '+';
+	margin-left: 5px;
+}
+
+#access .menu ul li.last ul {
+	left: auto;
+	right: 0;
+}
+
+#access .menu ul li.last ul ul {
+	left: auto;
+	right: 99.5%;
+}
+
+#nav-above,
+#nav-below {
+	display: block;
+	@include clearfix;
+
+	.nav-previous {
+		float: left;
+		margin-bottom: 100px;
+	}
+
+	.nav-next {
+		float: right;
+		margin-bottom: 100px;
+	}
+}

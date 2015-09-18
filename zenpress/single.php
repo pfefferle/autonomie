@@ -8,27 +8,25 @@
 
 get_header(); ?>
 
-    <section id="primary">
-      <main id="content" role="main">
+			<main id="primary">
 
-      <?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-        <?php zenpress_content_nav( 'nav-above' ); ?>
+				<?php zenpress_content_nav( 'nav-above' ); ?>
 
-        <?php get_template_part( 'content', get_post_format() ); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
 
-        <?php zenpress_content_nav( 'nav-below' ); ?>
+				<?php zenpress_content_nav( 'nav-below' ); ?>
 
-        <?php
-          // If comments are open or we have at least one comment, load up the comment template
-          if ( comments_open() || '0' != get_comments_number() )
-            comments_template( '', true );
-        ?>
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() ) {
+					comments_template( '', true );
+				}
+				?>
 
-      <?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop. ?>
 
-      </main><!-- #content -->
-    </section><!-- #primary -->
+			</main><!-- #content -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

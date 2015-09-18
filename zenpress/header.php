@@ -23,7 +23,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://microformats.org/profile/specs" />
 <link rel="profile" href="http://microformats.org/profile/hatom" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -34,20 +33,27 @@
 <body <?php body_class(); ?><?php zenpress_semantics( 'body' ); ?>>
 <div id="page">
 <?php do_action( 'before' ); ?>
-	<header id="branding" role="banner">
-		<nav id="access" role="navigation">
-			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>><?php bloginfo( 'name' ); ?></a></h1>
+	<header id="branding">
+		<nav id="access">
+			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
+				<?php if ( get_theme_mod( 'website_logo' ) ) { ?>
+					<img src="<?php echo get_theme_mod( 'website_logo' ); ?>" height="60" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				<?php } else { ?>
+					<?php bloginfo( 'name' ); ?>
+				<?php } ?>
+				</a>
+			</h1>
+
+			<?php get_search_form( true ); ?>
+
 			<div class="assistive-text"><a href="#access" title="<?php esc_attr_e( 'Main menu', 'zenpress' ); ?>"><?php _e( 'Main menu', 'zenpress' ); ?></a></div>
 			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-
-			<?php get_search_form( true ); ?>
 		</nav><!-- #access -->
 
 		<div class="hero">
 			<h2 id="site-description"<?php zenpress_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</header><!-- #branding -->
-
-	<div id="main">
