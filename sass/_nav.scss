@@ -1,159 +1,145 @@
 /* Starter CSS for Menu */
-#access {
+.site-navigation {
 	padding: 0;
 	margin: 0 auto;
 	border: 0;
-	width: 90%;
-}
-
-#access .menu {
-	border-top: 1px solid $light-gray;
+	width: $default-width;
 
 	@include clearfix;
-}
 
-#access .menu ul,
-#access .menu li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
+	ul {
+		border-top: 1px solid $light-gray;
+		position: relative;
+		z-index: 597;
+		*display: inline-block;
 
-#access .menu ul {
-	position: relative;
-	z-index: 597;
-}
+		@include clearfix;
 
-#access .menu ul li {
-	float: left;
-	min-height: 1px;
-	vertical-align: middle;
-}
+		a {
+			border-top: 0 none;
+			color: $dark-gray;
+			background: $white;
+			display: block;
+			line-height: 150%;
+			padding: 20px 20px 20px 0;
+			text-decoration: none;
+		}
 
-#access .menu ul li.hover,
-#access .menu ul li:hover {
-	position: relative;
-	z-index: 599;
-	cursor: default;
-}
+		li {
+			float: left;
+			min-height: 1px;
+			vertical-align: middle;
 
-#access .menu ul ul {
-	visibility: hidden;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 598;
-	width: 100%;
-}
+			&.hover,
+			&:hover,
+			&.focus {
+				cursor: default;
+				position: relative;
+				z-index: 599;
 
-#access .menu ul ul li {
-	float: none;
-}
+				& > ul {
+					visibility: visible;
+				}
 
-#access .menu ul ul ul {
-	top: 0;
-	left: 190px;
-	width: 190px;
-}
+				& > a {
+					text-decoration: underline;
+				}
+			}
 
-#access .menu ul li:hover > ul {
-	visibility: visible;
-}
+			&.page_item_has_children,
+			&.menu-item-has-children {
+				& > a:after {
+					content: '+';
+					margin-left: 5px;
+				}
+			}
 
-#access .menu ul ul {
-	bottom: 0;
-	left: 0;
-}
+			.last ul {
+				left: auto;
+				right: 0;
 
-#access .menu ul ul {
-	margin-top: 0;
-}
+				ul {
+					left: auto;
+					right: 99.5%;
+				}
+			}
+		}
 
-#access .menu ul ul li {
-	font-weight: normal;
-}
+		ul {
+			border: none;
+			bottom: 0;
+			left: 0;
+			margin-top: 0;
+			min-width: 190px;
+			position: absolute;
+			text-transform: none;
+			top: 100%;
+			visibility: hidden;
+			width: 100%;
+			z-index: 598;
 
-#access .menu a {
-	display: block;
-	text-decoration: none;
-	line-height: 150%;
-	padding: 30px 20px 30px 0;
-	color: $dark-gray;
-}
+			a {
+				background: $white;
+				color: $dark-gray;
+				border-top: 0 none;
+				line-height: 150%;
+				padding: 16px 20px;
+			}
 
-/* Custom CSS Styles */
-#access .menu {
-	border-bottom: 4px solid $white;
-}
+			li {
+				float: none;
+				font-weight: normal;
+				position: relative;
 
-#access .menu > ul {
-	*display: inline-block;
-}
+				&:hover,
+				&.focus {
+					& > a {
+						background: $dark-gray;
+						color: $white;
+					}
+				}
 
-#access .menu ul ul {
-	text-transform: none;
-	min-width: 190px;
-}
+				&:last-child {
+					& > a {
+						-moz-background-clip: padding;
+						-webkit-background-clip: padding-box;
+						background-clip: padding-box;
+					}
 
-#access .menu ul ul a {
-	background: $white;
-	color: $dark-gray;
-	border-top: 0 none;
-	line-height: 150%;
-	padding: 16px 20px;
-}
+					&:hover,
+					&.focus {
+						& > a {
+							-moz-background-clip: padding;
+							-webkit-background-clip: padding-box;
+							background-clip: padding-box;
+						}
+					}
+				}
 
-#access .menu ul ul ul {
-	border-top: 0 none;
-}
+				&.page_item_has_children,
+				&.menu-item-has-children {
+					& > a:after {
+						content: '+';
+						margin-left: 5px;
+					}
+				}
+			}
 
-#access .menu ul ul li {
-	position: relative;
-}
+			ul {
+				border-top: 0 none;
+				left: 190px;
+				top: 0;
+				width: 190px;
+			}
+		}
+	}
 
-#access .menu ul ul li:hover > a {
-	background: $dark-gray;
-	color: $white;
-}
-
-#access .menu ul ul li:last-child > a {
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
-}
-
-#access .menu ul ul li:last-child:hover > a {
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
-}
-
-#access .menu ul ul li.has-sub > a:after {
-	content: '+';
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	margin-top: -8px;
-}
-
-#access .menu ul li:hover > a,
-#access .menu ul li.active > a {
-	text-decoration: underline;
-}
-
-#access .menu ul li.has-sub > a:after {
-	content: '+';
-	margin-left: 5px;
-}
-
-#access .menu ul li.last ul {
-	left: auto;
-	right: 0;
-}
-
-#access .menu ul li.last ul ul {
-	left: auto;
-	right: 99.5%;
+	ul,
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 }
 
 #nav-above,
@@ -170,4 +156,8 @@
 		float: right;
 		margin-bottom: 100px;
 	}
+}
+
+.menu-toggle {
+	display: none;
 }

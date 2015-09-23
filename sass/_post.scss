@@ -2,12 +2,11 @@
 #primary .page {
 	margin-bottom: 10em;
 	position: relative;
-	clear: both;
+
+	@include clearfix;
 
 	.sep {
-		display: inline-block;
-		visibility: hidden;
-		width: .5em;
+		display: none;
 	}
 
 	.entry-header {
@@ -16,13 +15,10 @@
 			padding: 0;
 
 			a {
-				-webkit-hyphens: auto;
-				-moz-hyphens: auto;
-				-ms-hyphens: auto;
 				hyphens: auto;
 				text-overflow: ellipsis;
 				overflow: hidden;
-				font-size: 1.3em;
+				font-size: 1.5em;
 				line-height: 1;
 				text-decoration: none;
 				font-weight: 400;
@@ -86,21 +82,18 @@
 	}
 
 	.entry-meta {
-		font-family: Lato, sans-serif;
 		position: relative;
+
+		margin-top: 15px;
+		margin-bottom: 15px;
 
 		.post-format a,
 		.post-format:before {
+			color: $gray;
 			font-weight: bold;
 			text-transform: uppercase;
 		}
 
-		.cat-links:before,
-		.comments-link:before,
-		.edit-link:before,
-		.entry-date:before,
-		.author:before,
-		.tag-links:before,
 		.post-format:before {
 			display: inline-block;
 			font: normal 1.1em Genericons;
@@ -112,54 +105,28 @@
 			vertical-align: text-middle;
 		}
 
-		.cat-links:before {
-			content: '\f301';
+		address {
+			font-size: 1em;
+			line-height: 1.2;
 		}
 
-		.tag-links:before {
-			content: '\f302';
+		time {
+			font-size: .7em;
 		}
-
-		.comments-link:before {
-			content: '\f300';
-			margin-right: 5px;
-		}
-
-		.edit-link:before {
-			content: '\f411';
-			margin-right: 3px;
-		}
-
-		.entry-date:before {
-			content: '\f303';
-			margin-right: 3px;
-			top: 3px;
-		}
-
-		.author:before {
-			content: '\f304';
-			top: 3px;
-		}
-	}
-
-	.entry-meta address {
-		display: inline;
 	}
 
 	.entry-meta,
-	.comment-meta,
-	.comment-notes,
-	.logged-in-as,
 	.wp-caption-text,
 	.gallery-caption,
 	.page-link,
 	.page-links {
+		font-family: Lato, sans-serif;
 		clear: both;
-		color: #9a9a9a;
+		color: $gray;
 		display: block;
 
 		a {
-			color: #9a9a9a;
+			color: $gray;
 			text-decoration: none;
 		}
 
@@ -168,7 +135,56 @@
 		}
 
 		.avatar {
-			display: none;
+			float: left;
+			margin-right: 10px;
 		}
+	}
+
+	.entry-footer {
+		margin-top: 30px;
+	}
+
+	.comments-link {
+		font-size: 1.2em;
+		display: block;
+		margin-top: 30px;
+
+		&:before {
+			display: inline-block;
+			font: normal 1.1em Genericons;
+			-webkit-font-smoothing: antialiased;
+			margin-right: 0;
+			position: relative;
+			text-decoration: inherit;
+			top: 2px;
+			vertical-align: text-middle;
+			margin-right: 6px;
+			content: '\f300';
+		}
+	}
+
+	.tag-links,
+	.cat-links {
+		display: inline-block;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+		}
+
+		li {
+			display: inline-block;
+			margin: 15px 8px 0 0;
+			list-style-type: none;
+
+			@include label;
+		}
+	}
+
+	.edit-link {
+		float: right;
+
+		@include label;
 	}
 }

@@ -1,7 +1,11 @@
-@media only screen and (min-width: 1024px) {
-	@import 'responsive_1024';
+@media only screen and (max-width: $default-width + 100px) {
+	@import 'responsive_narrow';
 }
 
-@media only screen and (min-width: 1250px) {
-	@import 'responsive_1250';
+@media only screen and (min-width: $default-width + 100px) {
+	@import 'responsive_default';
+}
+
+@media only screen and (min-width: $wide-width) {
+	@import 'responsive_wide';
 }

@@ -32,9 +32,10 @@
 
 <body <?php body_class(); ?><?php zenpress_semantics( 'body' ); ?>>
 <div id="page">
+	<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
 <?php do_action( 'before' ); ?>
-	<header id="branding">
-		<nav id="access">
+	<header id="site-header" class="site-header">
+		<div class="site-branding">
 			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
 				<?php if ( get_theme_mod( 'website_logo' ) ) { ?>
@@ -46,9 +47,10 @@
 			</h1>
 
 			<?php get_search_form( true ); ?>
+		</div>
 
-			<div class="assistive-text"><a href="#access" title="<?php esc_attr_e( 'Main menu', 'zenpress' ); ?>"><?php _e( 'Main menu', 'zenpress' ); ?></a></div>
-			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
+		<nav id="site-navigation" class="site-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'zenpress' ); ?></button>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #access -->

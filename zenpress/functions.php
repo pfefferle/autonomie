@@ -72,7 +72,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		// Register custom image size for image post formats.
 		add_image_size( 'zenpress-image-post', $content_width, 1288 );
 
-		// Switches default core markup for search form to output valid HTML5.
+		// Switches default core markup for search form to output valid .
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets' ) );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -112,7 +112,7 @@ add_action( 'after_setup_theme', 'zenpress_setup' );
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
-function zenpress_page_menu_args($args) {
+function zenpress_page_menu_args( $args ) {
 	$args['show_home'] = true;
 
 	return $args;
@@ -145,15 +145,19 @@ function zenpress_widgets_init() {
 add_action( 'init', 'zenpress_widgets_init' );
 
 function zenpress_head() {
-	if (get_header_image()) {
+	if ( get_header_image() ) {
 ?>
 		<style type="text/css">
-			#branding .hero {
+			.site-header .hero {
 				background: url(<?php header_image(); ?>) no-repeat center center scroll;
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;
 				background-size: cover;
+			}
+
+			.site-header .hero h2 {
+				text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
 			}
 		</style>
 <?php
@@ -203,17 +207,20 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		// Add HTML5 support to older versions of IE
+		// Add  support to older versions of IE
 		if ( isset( $_SERVER['HTTP_USER_AGENT'] ) &&
-			 ( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
-			 ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
+			( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
+			( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
 
-			wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', false, '3.7.3' );
+			wp_enqueue_script( '', get_template_directory_uri() . '/js/shiv.min.js', false, '3.7.3' );
 		}
 
 		$vars = array(
 			'template_url' => get_template_directory_uri(),
 		);
+
+		wp_enqueue_script( 'zenpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'zenpress-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
 		// Loads our main stylesheet.
 		wp_enqueue_style( 'zenpress-style', get_stylesheet_uri() );
@@ -285,45 +292,39 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
 				<div class="comment-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
-				<footer>
-					<div class="comment-meta commentmetadata">
-						<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-							<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
-						</address>
-						<span class="sep">-</span>
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
-							<?php
-							/* translators: 1: date, 2: time */
-							printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
-						</time></a>
-						<?php edit_comment_link( __( '(Edit)', 'zenpress' ), ' ' ); ?>
-					</div>
+				<footer class="comment-meta commentmetadata">
+					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
+					</address>
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
+						<?php
+						/* translators: 1: date, 2: time */
+						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
+					</time></a>
+					<?php edit_comment_link( __( '(Edit)', 'zenpress' ), ' ' ); ?>
 				</footer>
 			</article>
 		<?php
-					break;
+				break;
 			default :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
-				<footer>
+				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
 						<?php echo get_avatar( $comment, 50 ); ?>
-						<?php printf( __( '%s <span class="says">says:</span>', 'zenpress' ), sprintf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ) ); ?>
+						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
 					</address><!-- .comment-author .vcard -->
 					<?php if ( '0' == $comment->comment_approved ) : ?>
 						<em><?php _e( 'Your comment is awaiting moderation.', 'zenpress' ); ?></em>
-						<br />
 					<?php endif; ?>
 
-					<div class="comment-meta commentmetadata">
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
-						<?php
-							/* translators: 1: date, 2: time */
-							printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
-						</time></a>
-						<?php edit_comment_link( __( '(Edit)', 'zenpress' ), ' ' ); ?>
-					</div><!-- .comment-meta .commentmetadata -->
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
+					<?php
+						/* translators: 1: date, 2: time */
+						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
+					</time></a>
+					<?php edit_comment_link( __( '(Edit)', 'zenpress' ), ' ' ); ?>
 				</footer>
 
 				<div class="comment-content e-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
@@ -346,7 +347,7 @@ if ( ! function_exists( 'zenpress_posted_on' ) ) :
 	 * @since ZenPress 1.0.0
 	 */
 	function zenpress_posted_on() {
-		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified">%4$s</time></a> <span class="sep"> | </span> <address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address>', 'zenpress' ),
+		printf( __( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified">%4$s</time></a>', 'zenpress' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),

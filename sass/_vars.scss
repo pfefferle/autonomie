@@ -1,0 +1,30 @@
+// Colors
+
+// mixed
+$yellow: #fff9c0;
+$white: #fff;
+
+// grayscale
+$gray: #8c8c8c;
+$dark-gray: darken($gray, 35%);
+$light-gray: lighten($gray, 35%);
+
+// blue
+$blue: #5fa7c5;
+$dark-blue: darken($blue, 35%);
+$lighter-blue: lighten($blue, 35%);
+
+// green
+$green: #a0c55f;
+$dark-green: darken($green, 35%);
+$light-green: lighten($green, 35%);
+
+// brown
+$brown: #8c612f;
+$dark-brown: darken($brown, 35%);
+$light-brown: lighten($brown, 35%);
+
+// Dimensions
+$wide-width: 1250px;
+$default-width: $wide-width - 300px;
+$margin: ($wide-width - $default-width) / 2;

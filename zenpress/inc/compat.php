@@ -3,7 +3,7 @@
  * ZenPress back compat handling
  *
  * Some functions to add backwards compatibility to older WordPress versions
- * or to add some new functions to be more (for example) HTML5 compatible
+ * or to add some new functions to be more (for example)  compatible
  *
  * @package ZenPress
  * @subpackage compat
@@ -17,7 +17,7 @@
  */
 
 /**
- * adds the new HTML5 input types to the comment-form
+ * adds the new  input types to the comment-form
  *
  * @param string $form
  * @return string

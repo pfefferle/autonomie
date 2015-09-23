@@ -18,7 +18,7 @@ get_header(); ?>
 				<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title">
+					<h2 class="page-title">
 						<?php
 							if ( is_date() ) :
 								$link = "";
@@ -35,7 +35,7 @@ get_header(); ?>
 								_e( 'Archives', 'zenpress' );
 							endif;
 						?>
-					</h1>
+					</h2>
 				</header>
 
 				<?php rewind_posts(); ?>
@@ -61,7 +61,7 @@ get_header(); ?>
 
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
-						<h1 class="entry-title p-entry-title"><?php _e( 'Nothing Found', 'zenpress' ); ?></h1>
+						<h2 class="entry-title p-entry-title"><?php _e( 'Nothing Found', 'zenpress' ); ?></h2>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content e-entry-content">

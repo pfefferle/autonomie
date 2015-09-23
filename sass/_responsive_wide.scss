@@ -1,5 +1,5 @@
 #primary {
-	width: 1250px;
+	width: $wide-width;
 }
 
 .entry-content > *,
@@ -9,16 +9,16 @@
 #comments,
 #nav-above,
 #nav-below {
-	margin-left: 150px;
-	margin-right: 150px;
+	margin-left: $margin;
+	margin-right: $margin;
 }
 
 .entry-content > div,
 .entry-content > audio {
 	margin-left: 0px;
 	margin-right: 0px;
-	padding-left: 150px;
-	padding-right: 150px;
+	padding-left: $margin;
+	padding-right: $margin;
 }
 
 .entry-content,
@@ -46,7 +46,7 @@ figure {
 		float: left;
 		margin-right: 1em;
 		margin-top: .3em;
-		margin-left: 150px;
+		margin-left: $margin;
 	}
 
 	&.alignright {
@@ -54,7 +54,7 @@ figure {
 		float: right;
 		margin-left: 1em;
 		margin-top: .3em;
-		margin-right: 150px;
+		margin-right: $margin;
 	}
 }
 
@@ -62,12 +62,12 @@ figure {
 	figcaption {
 		display: block;
 		height: 68px;
-		right: -150px;
+		right: -$margin;
 		margin-top: 0px;
 		position: absolute;
 		text-align: left;
 		top: 0px;
-		width: 130px;
+		width: $margin - 20;
 		word-break: break-word;
 		word-wrap: break-word;
 
@@ -86,12 +86,12 @@ figure {
 	figcaption {
 		display: block;
 		height: 68px;
-		left: -150px;
+		left: -$margin;
 		margin-top: 0px;
 		position: absolute;
 		text-align: right;
 		top: 0px;
-		width: 130px;
+		width: $margin - 20;
 		word-break: break-word;
 		word-wrap: break-word;
 
@@ -107,6 +107,6 @@ figure {
 }
 
 .wp-audio-shortcode {
-	margin: 1em 150px !important;
-	width: 650px !important;
+	margin: 1em $margin !important;
+	width: $default-width - (2 * $margin) !important;
 }

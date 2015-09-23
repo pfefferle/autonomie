@@ -1,7 +1,46 @@
 @mixin clearfix {
 	&:after {
-		content: "";
+		content: " ";
 		display: table;
 		clear: both;
+	}
+}
+
+@mixin label {
+	a {
+		font-size: 1em;
+		font-family: Lato, sans-serif;
+		background-color: $light-gray;
+		border-radius: 3px;
+		color: $dark-gray;
+		line-height: 1;
+		padding: 5px 8px;
+		text-decoration: none;
+
+		&:hover {
+			background-color: $light-green;
+			color: $dark-green;
+		}
+	}
+}
+
+@mixin meta-text {
+	font-family: Lato, sans-serif;
+	clear: both;
+	color: #9a9a9a;
+	display: block;
+
+	a {
+		color: #9a9a9a;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 10px;
 	}
 }

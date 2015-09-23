@@ -51,7 +51,7 @@
 				 * define zenpress_comment() and that will be used instead.
 				 * See zenpress_comment() in zenpress/functions.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'zenpress_comment', 'format' => 'html5' ) );
+				wp_list_comments( array( 'callback' => 'zenpress_comment', 'format' => '' ) );
 			?>
 		</ol>
 
@@ -72,6 +72,6 @@
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'zenpress' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 'format' => 'html5' ) ); ?>
+	<?php comment_form( array( 'format' => '' ) ); ?>
 
 </div><!-- #comments -->

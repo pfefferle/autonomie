@@ -13,45 +13,58 @@
 	label {
 		display: block;
 	}
+
+	.says {
+		display: none;
+	}
 }
 
 article.comment {
 	display: block;
 	position: relative;
 	padding: 25px 0;
-	line-height: 24px;
+	line-height: 2;
+	font-family: Lato, sans-serif;
 }
 
 #comments input {
 	display: block;
 }
+
 #comments input[type="checkbox"] {
 	display: inline;
 }
+
 #respond .form-allowed-tags {
 	clear: both;
 	width: 98%;
 }
+
 #respond .form-allowed-tags code {
 	display: block;
 }
+
 .form-allowed-tags {
 	display: none;
 }
+
 #reply-title {
 	padding-top: 0;
 	margin-top: 0;
 }
+
 a.comment-reply-link {
 	font-size: 12px;
 	height: 16px;
 	line-height: 16px;
+
 	&:before {
 		font-family: 'Genericons';
 		content: '\f412';
 		padding-right: 5px;
 	}
 }
+
 li.comment {
 	list-style: none outside none;
 	margin: 10px 0;
@@ -60,28 +73,65 @@ li.comment {
 		font-style: normal;
 		font-weight: normal;
 	}
+
 	img.avatar {
-		float: right;
+		float: left;
 	}
 }
-.comment-meta, .comment-notes, .logged-in-as {
-	display: block;
-	font-size: 12px;
+
+.comment-meta time:before {
+	content:"\2014\a0";
 }
-.comment-meta a, .comment-reply-link {
+
+.comment-meta,
+.comment-notes,
+.logged-in-as {
+	display: block;
+	font-size: .8em;
+}
+
+.comment-meta a,
+.comment-reply-link {
 	text-decoration: none;
+
 	&:hover {
 		text-decoration: underline;
 	}
 }
+
 ol.commentlist {
 	margin: 0;
 	padding: 0;
+	margin-left: 60px;
+
+	.avatar {
+		float: left;
+		margin-right: 6px;
+		margin-left: -60px;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+	}
 }
+
+ul.children .avatar {
+	margin-left: -44px;
+	width: 32px;
+	height: 32px;
+}
+
 .comment-content {
-	font-size: 1em;
+	font-size: 1.1em;
+	line-height: 2em;
 }
-.webmention, .pingback, .trackback {
+
+.webmention,
+.pingback,
+.trackback {
+	address {
+		display: inline;
+	}
+
 	.comment-content {
 		font-size: 0.9em;
 	}

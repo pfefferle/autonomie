@@ -15,9 +15,9 @@
 	@include clearfix;
 
 	h2 {
-		text-transform: uppercase;
+		// border-bottom: 1px solid $dark-gray;
 		font-size: 20px;
-		border-bottom: 1px solid #444;
+		text-transform: uppercase;
 	}
 
 	ul,
@@ -36,16 +36,16 @@
 	}
 
 	#secondary {
-		width: 40%;
 		display: inline-block;
-		margin-right: 18%;
 		float: left;
+		margin-right: 18%;
+		width: 40%;
 	}
 
 	#tertiary {
-		width: 40%;
 		display: inline-block;
 		float: left;
+		width: 40%;
 	}
 
 	input {
@@ -54,10 +54,10 @@
 
 	button,
 	input[type="submit"] {
-		padding: .5em 1em;
-		border: none;
-		background-color: $white;
 		color: $dark-gray;
+		background-color: $white;
+		border: none;
+		padding: .5em 1em;
 
 		&:hover {
 			background-color: $gray;

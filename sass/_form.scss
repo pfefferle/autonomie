@@ -34,3 +34,9 @@ input[type="submit"] {
 		background-color: $gray;
 	}
 }
+
+.search-form {
+	.search-submit {
+		display: none;
+	}
+}
