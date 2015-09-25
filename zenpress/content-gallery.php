@@ -9,11 +9,11 @@
  */
 ?>
 
-<article <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics("post"); ?>>
+<article <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics( 'post' ); ?>>
 	<?php get_template_part( 'partials/entry', 'header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
-	<div class="entry-summary p-summary" itemprop="description">
+	<div class="entry-summary p-summary" itemprop="description articleBody">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>

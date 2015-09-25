@@ -20,6 +20,6 @@
 	<?php endif; // End if $tags_list ?>
 
 	<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-	<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'zenpress' ), __( '1 Comment', 'zenpress' ), __( '% Comments', 'zenpress' ) ); ?></span>
+	<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'zenpress' ), __( '1 Comment', 'zenpress' ), __( '% Comments', 'zenpress' ) ); ?></div>
 	<?php endif; ?>
 </footer><!-- #entry-meta -->

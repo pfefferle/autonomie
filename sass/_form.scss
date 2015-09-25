@@ -4,9 +4,9 @@ input[type="email"],
 input[type="url"],
 textarea {
 	border: none;
-	border-bottom: 2px solid $gray;
+	border-bottom: 1px dashed $gray;
 	padding: .5em 1em;
-	background-color: $light-gray;
+	background-color: darken($white, 2%);
 
 	&:focus {
 		outline: 0;
@@ -15,8 +15,8 @@ textarea {
 
 input[type="search"] {
 	border: 1px solid $light-gray;
-	border-radius: 2em;
-	padding: .5em 1em;
+	border-radius: 50px;
+	padding: 10px 20px;
 
 	&:focus {
 		outline: 0;
@@ -24,14 +24,28 @@ input[type="search"] {
 }
 
 button,
-input[type="submit"] {
-	padding: .5em 1em;
-	border: none;
-	background-color: $dark-gray;
-	color: $white;
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button {
+	color: $gray;
+	border: 1px solid $light-gray;
+	background-color: $white;
+	border-radius: 50px;
+	padding: 10px 20px;
+
+	&:focus {
+		outline: 0;
+	}
 
 	&:hover {
-		background-color: $gray;
+		background-color: darken($white, 2%);
+		color: darken($gray, 2%);
+	}
+
+	&:active {
+		background-color: darken($white, 4%);
+		color: darken($gray, 4%);
 	}
 }
 

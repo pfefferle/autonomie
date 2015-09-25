@@ -1,6 +1,8 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template for displaying pages on index and archive pages
+ *
+ * Learn more: http://codex.wordpress.org/Post_Formats
  *
  * @package ZenPress
  * @since ZenPress 1.0.0

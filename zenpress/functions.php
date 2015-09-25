@@ -97,7 +97,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		// This theme supports a custom header
 		$custom_header_args = array(
 			'width'		 	=> 1250,
-			'height'		=> 500,
+			'height'		=> 600,
 			'header-text'   => false,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
@@ -149,7 +149,7 @@ function zenpress_head() {
 ?>
 		<style type="text/css">
 			.site-header .hero {
-				background: url(<?php header_image(); ?>) no-repeat center center scroll;
+				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php header_image(); ?>) no-repeat center center scroll;
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;
@@ -291,6 +291,7 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'zenpress' ), ' ' ); ?></div>
 				<div class="comment-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
@@ -301,7 +302,6 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'zenpress' ), ' ' ); ?>
 				</footer>
 			</article>
 		<?php
@@ -310,6 +310,7 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'zenpress' ), ' ' ); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
 						<?php echo get_avatar( $comment, 50 ); ?>
@@ -324,7 +325,6 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'zenpress' ), ' ' ); ?>
 				</footer>
 
 				<div class="comment-content e-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>

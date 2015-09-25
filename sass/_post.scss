@@ -1,6 +1,18 @@
+.single,
+.page {
+	#primary .post,
+	#primary .page {
+		margin-bottom: 100px;
+
+		.comments-link {
+			display: none;
+		}
+	}
+}
+
 #primary .post,
 #primary .page {
-	margin-bottom: 10em;
+	margin-bottom: 130px;
 	position: relative;
 
 	@include clearfix;
@@ -18,10 +30,10 @@
 				hyphens: auto;
 				text-overflow: ellipsis;
 				overflow: hidden;
-				font-size: 1.5em;
+				font-size: 1.8em;
 				line-height: 1;
 				text-decoration: none;
-				font-weight: 400;
+				font-weight: normal;
 				color: $dark-gray;
 
 				&:hover {
@@ -180,11 +192,5 @@
 
 			@include label;
 		}
-	}
-
-	.edit-link {
-		float: right;
-
-		@include label;
 	}
 }

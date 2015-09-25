@@ -22,7 +22,7 @@
  * @param string $form
  * @return string
  */
-function zenpress_comment_autocomplete($fields) {
+function zenpress_comment_autocomplete( $fields ) {
 	$fields['author'] = preg_replace( '/<input/', '<input autocomplete="nickname name" ', $fields['author'] );
 	$fields['email'] = preg_replace( '/<input/', '<input autocomplete="email" ', $fields['email'] );
 	$fields['url'] = preg_replace( '/<input/', '<input autocomplete="url" ', $fields['url'] );

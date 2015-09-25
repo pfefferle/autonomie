@@ -93,7 +93,8 @@ textarea {
 // Browse Happy prompt
 // =============================================================================
 
-.browsehappy {
+.browsehappy,
+.browserupgrade {
 	background: $gray;
 	color: #000;
 	margin: .2em 0;
@@ -157,26 +158,6 @@ textarea {
 	visibility: hidden;
 }
 
-// Clearfix: contain floats
-//
-// For modern browsers
-// 1. The space content is one way to avoid an Opera bug when the
-//		`contenteditable` attribute is included anywhere else in the document.
-//		Otherwise it causes space to appear at the top and bottom of elements
-//		that receive the `clearfix` class.
-// 2. The use of `table` rather than `block` is only necessary if using
-//		`:before` to contain the top-margins of child elements.
-
-.clearfix:before,
-.clearfix:after {
-	content: ' '; // 1
-	display: table; // 2
-}
-
-.clearfix:after {
-	clear: both;
-}
-
 // =============================================================================
 // EXAMPLE Media Queries for Responsive Design.
 // These examples override the primary ('mobile first') styles.
@@ -185,16 +166,22 @@ textarea {
 
 @import 'responsive';
 
-// =============================================================================
-// Print styles.
-// Inlined to avoid required HTTP connection: h5bp.com/r
-// =============================================================================
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
 
 @media print {
-	* {
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line {
 		background: transparent !important;
+		color: #000 !important; /* Black prints faster:
+								   http://www.sanbeiji.com/archives/953 */
 		box-shadow: none !important;
-		color: #000 !important; // Black prints faster: h5bp.com/s
 		text-shadow: none !important;
 	}
 
@@ -211,11 +198,14 @@ textarea {
 		content: " (" attr(title) ")";
 	}
 
-	// Don't show links for images, or javascript/internal links
+	/*
+	 * Don't show links that are fragment identifiers,
+	 * or use the `javascript:` pseudo protocol
+	 */
 
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {
-		content: '';
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
 	}
 
 	pre,
@@ -224,8 +214,13 @@ textarea {
 		page-break-inside: avoid;
 	}
 
+	/*
+	 * Printing Tables:
+	 * http://css-discuss.incutio.com/wiki/Printing_Tables
+	 */
+
 	thead {
-		display: table-header-group; // h5bp.com/t
+		display: table-header-group;
 	}
 
 	tr,

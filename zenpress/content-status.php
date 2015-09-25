@@ -13,7 +13,7 @@
 	<?php get_template_part( 'partials/entry', 'header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
-	<div class="entry-summary p-summary entry-title p-name" itemprop="name description">
+	<div class="entry-summary p-summary entry-title p-name" itemprop="name description articleBody">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>

@@ -10,12 +10,25 @@
 		width: 70%;
 	}
 
+	input {
+		display: block;
+	}
+
+	input[type="checkbox"] {
+		display: inline;
+	}
+
 	label {
 		display: block;
 	}
 
 	.says {
 		display: none;
+	}
+
+	h2#comments-title {
+		margin-top: 0;
+		padding-top: 0;
 	}
 }
 
@@ -25,14 +38,6 @@ article.comment {
 	padding: 25px 0;
 	line-height: 2;
 	font-family: Lato, sans-serif;
-}
-
-#comments input {
-	display: block;
-}
-
-#comments input[type="checkbox"] {
-	display: inline;
 }
 
 #respond .form-allowed-tags {
@@ -102,22 +107,20 @@ li.comment {
 ol.commentlist {
 	margin: 0;
 	padding: 0;
-	margin-left: 60px;
+	//margin-left: 60px;
 
 	.avatar {
 		float: left;
-		margin-right: 6px;
-		margin-left: -60px;
+		margin-right: 10px;
 		width: 48px;
 		height: 48px;
-		border-radius: 50%;
 	}
 }
 
 ul.children .avatar {
-	margin-left: -44px;
-	width: 32px;
-	height: 32px;
+	margin-right: 10px;
+	width: 48px;
+	height: 48px;
 }
 
 .comment-content {
@@ -141,9 +144,7 @@ ul.children .avatar {
 .bypostauthor {
 	color: inherit;
 }
-#comments {
-	padding-top: 40px;
-}
+
 .comment-respond {
 	padding: 25px 0;
 }

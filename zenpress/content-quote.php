@@ -9,16 +9,16 @@
  */
 ?>
 
-<article <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics("post"); ?>>
+<article <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics( 'post' ); ?>>
 	<?php get_template_part( 'partials/entry', 'header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
-	<div class="entry-summary p-summary" itemprop="description">
+	<div class="entry-summary p-summary" itemprop="description articleBody">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-title p-name entry-content e-content" itemprop="name headline description articleBody">
-		<?php zenpress_the_post_thumbnail('<p>', '</p>'); ?>
+		<?php zenpress_the_post_thumbnail( '<p>', '</p>' ); ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'zenpress' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'zenpress' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->

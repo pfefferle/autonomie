@@ -12,7 +12,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php zenpress_content_nav( 'nav-above' ); ?>
+				<?php // zenpress_content_nav( 'nav-above' ); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
 

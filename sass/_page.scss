@@ -29,7 +29,7 @@
 	.hero {
 		background-color: $blue;
 		width: 100%;
-		min-height: 500px;
+		min-height: 600px;
 
 		h2 {
 			padding-top: 200px;
@@ -40,7 +40,7 @@
 			vertical-align: bottom;
 			text-align: center;
 			color: $white;
-			font-size: 2em;
+			font-size: 2.5em;
 			// font-weight: normal;
 		}
 	}
@@ -63,8 +63,10 @@
 	clear: both;
 	font-size: 1.5em;
 	font-weight: 100;
-	margin-bottom: 50px;
 	position: relative;
+	margin: 0 auto;
+	margin-bottom: 100px;
+	width: $default-width;
 
 	h1.page-title {
 		hyphens: auto;
@@ -72,12 +74,22 @@
 		overflow: hidden;
 		text-decoration: none;
 	}
+
+	.tag-archive-meta,
+	.category-archive-meta {
+
+	}
+
+	.avatar {
+		margin: 0 5px;
+	}
 }
 
 #colophon {
-	@include clearfix;
 	width: 100%;
 	background-color: $dark-gray;
+
+	@include clearfix;
 }
 
 #site-generator {
@@ -115,13 +127,19 @@
 // Notices
 .post .notice,
 .error404 #searchform {
-	background: #eee;
+	background: $light-gray;
 	display: block;
 	padding: 1em;
 }
 
 .avatar {
-	-webkit-border-radius: 500px;
-	-moz-border-radius: 500px;
-	border-radius: 500px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.edit-link {
+	float: right;
+
+	@include label;
 }

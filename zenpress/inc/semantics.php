@@ -21,8 +21,6 @@
  * @since ZenPress 1.0.0
  */
 function zenpress_body_classes( $classes ) {
-	$classes[] = get_theme_mod( 'zenpress_columns', 'multi' ) . '-column';
-
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
 		$classes[] = 'single-author';
@@ -133,13 +131,18 @@ add_filter( 'get_comment_author_link', 'zenpress_author_link' );
 /**
  * Adds microformats v2 support to the get_avatar() method.
  *
- * @since ZenPress 1.0.0
+ * @since SemPress 1.0.0
  */
-function zenpress_get_avatar( $tag ) {
+function zenpress_pre_get_avatar_data( $args, $id_or_email ) {
+	if ( ! isset( $args['class'] ) ) {
+		$args['class'] = array();
+	}
 	// Adds a class for microformats v2
-	return preg_replace( '/(class\s*=\s*[\"|\'])/i', '${1}u-photo ', $tag );
+	$args['class'] = array_unique( array_merge( $args['class'], array( 'u-photo' ) ) );
+
+	return $args;
 }
-add_filter( 'get_avatar', 'zenpress_get_avatar' );
+add_filter( 'pre_get_avatar_data', 'zenpress_pre_get_avatar_data', 99, 2 );
 
 /**
  * add rel-prev attribute to previous_image_link
@@ -170,7 +173,7 @@ add_filter( 'next_image_link', 'zenpress_semantic_next_image_link' );
  * @return string
  */
 function zenpress_next_posts_link_attributes( $attr ) {
-	return $attr.' rel="prev"';
+	return trim( $attr . ' rel="prev" ' );
 }
 add_filter( 'next_posts_link_attributes', 'zenpress_next_posts_link_attributes' );
 
@@ -181,7 +184,7 @@ add_filter( 'next_posts_link_attributes', 'zenpress_next_posts_link_attributes' 
  * @return string
  */
 function zenpress_previous_posts_link_attributes( $attr ) {
-	return $attr.' rel="next"';
+	return trim( $attr . ' rel="next" ' );
 }
 add_filter( 'previous_posts_link_attributes', 'zenpress_previous_posts_link_attributes' );
 

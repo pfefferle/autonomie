@@ -4,7 +4,18 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
-      expanded: {
+      compact: {
+        options: {
+          style: 'compact',
+          line_comments: false,
+          line_numbers: false,
+          sourcemap: 'none'
+        },
+        files: {
+          'zenpress/style.css': 'sass/style.scss',
+        }
+      },
+      compressed: {
         options: {
           style: 'compressed',
           line_comments: false,
@@ -12,7 +23,6 @@ module.exports = function(grunt) {
           sourcemap: 'none'
         },
         files: {
-          'zenpress/style.css': 'sass/style.scss',
           'zenpress/css/merriweather-font.css': 'sass/merriweather-font.scss',
           'zenpress/css/editor-style.css': 'sass/editor-style.scss'
         }
