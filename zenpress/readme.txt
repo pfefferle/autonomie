@@ -1,6 +1,6 @@
 == Copyright ==
 
-ZenPress WordPress Theme, Copyright 2013 Matthias Pfefferle
+ZenPress WordPress Theme, Copyright 2015 Matthias Pfefferle
 ZenPress is distributed under the terms of the GNU GPL Version 3
 
 == Licenses ==
@@ -14,74 +14,13 @@ The exceptions to this license are as follows:
 
 == Changelog ==
 
-= 1.4.6 =
-* nicer mobile view
-* changed pingback/trackback template
-
-= 1.4.5 =
-* improved editor-style
-
-= 1.4.4 =
-* more advanced "editor style"
-* fixed h1-style (sidebar)
-* indonesian language file
-* optimized rtl-styles
-
-= 1.4.3 =
-* fixed german language file
-* fixed h1-style
-
-= 1.4.2 =
-* fixed display for large media-types (images/iframes/embeds)
-* fixed translations
-* added schema.org/UserComments support
-* added nicer semantic layer (still some more work to do)
-* nicer blockquote stylings
-
-= 1.4 =
-* added genericons instead of font-awesome
-* optimized the mf2 support
-* added IndieWeb compatibility
-* optimized  markup
-
-= 1.3.3 =
-* fixed compatibility issues
-
-= 1.3.0 =
-* added custom-header support
-* added custom-background support
-* added support for jetpacks "infinite-scroll"
-* some css changes
-* fixed menu bug in ie7
-
-= 1.2.1 =
-* some css and html fixes
-* added micro formats v2 activity extension
-
-= 1.2.0 =
-* fixed microdata/schema.org and some microformats
-* added "editor style" support
-* several fixes to comply with the wordpress-directory rules
-
-= 1.1.0 =
-* complete redesign
-* some microdata/schema.org improvements
-
 = 1.0.0 =
 * initial release
 
 
 == Credits ==
 
-* ZenPress is based on the Toolbox Theme - http://wordpress.org/extend/themes/toolbox
+* ZenPress is based on the SemPress Theme - https://github.com/pfefferle/SemPress
 * Some CSS is lend from Twitters Bootstrap - http://twitter.github.com/bootstrap/
 * Genericons by Automattic - http://genericons.com
-* shiv - http://code.google.com/p/shiv/
-* Translator:
-** de_DE: Benjamin Hartwich - http://www.benjaminhartwich.de/
-** sv_SE: Christopher Anderton - http://deluxive.se/blog/
-** ru_RU: Oleg - http://0leg.net
-** fr_FR: Julien Pierré - http://www.jp-software.fr/en/
-** id_ID: Sugeng TiGeFa - http://tigefa4u.github.io
-** nb_NO: Kristoffer Risanger - https://twitter.com/kristofferR
-** ko_KR: CARLITO - http://www.calitosway.net
+* shiv - https://github.com/afarkas/html5shiv

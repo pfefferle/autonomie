@@ -37,7 +37,6 @@ article.comment {
 	position: relative;
 	padding: 25px 0;
 	line-height: 2;
-	font-family: Lato, sans-serif;
 }
 
 #respond .form-allowed-tags {
@@ -93,6 +92,7 @@ li.comment {
 .logged-in-as {
 	display: block;
 	font-size: .8em;
+	font-family: Lato, sans-serif;
 }
 
 .comment-meta a,
@@ -107,7 +107,6 @@ li.comment {
 ol.commentlist {
 	margin: 0;
 	padding: 0;
-	//margin-left: 60px;
 
 	.avatar {
 		float: left;

@@ -223,7 +223,7 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 #comments .says { display: none; }
 #comments h2#comments-title { margin-top: 0; padding-top: 0; }
 
-article.comment { display: block; position: relative; padding: 25px 0; line-height: 2; font-family: Lato, sans-serif; }
+article.comment { display: block; position: relative; padding: 25px 0; line-height: 2; }
 
 #respond .form-allowed-tags { clear: both; width: 98%; }
 
@@ -242,7 +242,7 @@ li.comment img.avatar { float: left; }
 
 .comment-meta time:before { content: "\2014\a0"; }
 
-.comment-meta, .comment-notes, .logged-in-as { display: block; font-size: .8em; }
+.comment-meta, .comment-notes, .logged-in-as { display: block; font-size: .8em; font-family: Lato, sans-serif; }
 
 .comment-meta a, .comment-reply-link { text-decoration: none; }
 .comment-meta a:hover, .comment-reply-link:hover { text-decoration: underline; }

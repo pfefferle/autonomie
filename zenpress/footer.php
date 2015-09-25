@@ -13,7 +13,7 @@
 
 		<div id="site-generator">
 			<?php do_action( 'zenpress_credits' ); ?>
-			<?php printf( __( 'This site is powered by %1$s and styled with %2$s', 'zenpress' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="http://notizblog.org/projects/zenpress/">ZenPress</a>' ); ?>
+			<?php printf( __( 'This site is powered by %1$s and styled with %2$s', 'zenpress' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://github.com/pfefferle/ZenPress">ZenPress</a>' ); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
