@@ -3,7 +3,6 @@
 	font-weight: normal;
 
 	display: block;
-	padding: 100px 0;
 	position: relative;
 	font-size: .9em;
 	margin: 0 auto;
@@ -14,8 +13,11 @@
 
 	@include clearfix;
 
+	#colophon {
+		margin-top: 100px;
+	}
+
 	h2 {
-		// border-bottom: 1px solid $dark-gray;
 		font-size: 20px;
 		text-transform: uppercase;
 	}

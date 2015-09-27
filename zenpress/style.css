@@ -378,9 +378,10 @@ table tbody tr:hover td, table tbody tr:hover th { background-color: #f5f5f5; }
 
 .gallery-caption { margin-left: 0; }
 
-#sidebar { font-family: Lato, sans-serif; font-weight: normal; display: block; padding: 100px 0; position: relative; font-size: .9em; margin: 0 auto; margin-top: 100px; color: #fff; width: 90%; font-size: 18px; }
+#sidebar { font-family: Lato, sans-serif; font-weight: normal; display: block; position: relative; font-size: .9em; margin: 0 auto; margin-top: 100px; color: #fff; width: 90%; font-size: 18px; }
 #sidebar:before, #sidebar:after { content: ' '; display: table; }
 #sidebar:after { clear: both; }
+#sidebar #colophon { margin-top: 100px; }
 #sidebar h2 { font-size: 20px; text-transform: uppercase; }
 #sidebar ul, #sidebar ol { margin: 0; padding: 0; }
 #sidebar ul li, #sidebar ol li { list-style-type: none; line-height: 1.5; }
