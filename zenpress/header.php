@@ -33,7 +33,7 @@
 <body <?php body_class(); ?><?php zenpress_semantics( 'body' ); ?>>
 <div id="page">
 	<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
-<?php do_action( 'before' ); ?>
+	<?php do_action( 'before' ); ?>
 	<header id="site-header" class="site-header">
 		<div class="site-branding">
 			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>

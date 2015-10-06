@@ -4,7 +4,7 @@ input[type="email"],
 input[type="url"],
 textarea {
 	border: none;
-	border-bottom: 1px dashed $gray;
+	border-bottom: 1px solid $light-gray;
 	padding: .5em 1em;
 	background-color: darken($white, 2%);
 

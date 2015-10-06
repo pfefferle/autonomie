@@ -41,7 +41,6 @@
 			text-align: center;
 			color: $white;
 			font-size: 2.5em;
-			// font-weight: normal;
 		}
 	}
 
@@ -88,6 +87,7 @@
 #colophon {
 	width: 100%;
 	background-color: $dark-gray;
+	margin-top: 100px;
 
 	@include clearfix;
 }

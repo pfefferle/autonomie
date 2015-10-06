@@ -163,7 +163,7 @@ textarea { resize: vertical; }
 
 .browsehappy, .browserupgrade { background: #8c8c8c; color: #000; margin: .2em 0; padding: .2em 0; }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea { border: none; border-bottom: 1px dashed #8c8c8c; padding: .5em 1em; background-color: #fafafa; }
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea { border: none; border-bottom: 1px solid #e5e5e5; padding: .5em 1em; background-color: #fafafa; }
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, textarea:focus { outline: 0; }
 
 input[type="search"] { border: 1px solid #e5e5e5; border-radius: 50px; padding: 10px 20px; }
@@ -193,7 +193,7 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 .page-header h1.page-title { hyphens: auto; text-overflow: ellipsis; overflow: hidden; text-decoration: none; }
 .page-header .avatar { margin: 0 5px; }
 
-#colophon { width: 100%; background-color: #333333; }
+#colophon { width: 100%; background-color: #333333; margin-top: 100px; }
 #colophon:before, #colophon:after { content: ' '; display: table; }
 #colophon:after { clear: both; }
 
@@ -216,7 +216,7 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 .edit-link a:hover { background-color: #eef4e2; color: #40531e; }
 
 #comments { clear: both; }
-#comments input[type="text"], #comments input[type="password"], #comments input[type="email"], #comments input[type="url"], #comments textarea { display: block; width: 70%; }
+#comments input[type="text"], #comments input[type="password"], #comments input[type="email"], #comments input[type="url"], #comments textarea { display: block; width: 95%; }
 #comments input { display: block; }
 #comments input[type="checkbox"] { display: inline; }
 #comments label { display: block; }
@@ -378,7 +378,7 @@ table tbody tr:hover td, table tbody tr:hover th { background-color: #f5f5f5; }
 
 .gallery-caption { margin-left: 0; }
 
-#sidebar { font-family: Lato, sans-serif; font-weight: normal; display: block; position: relative; font-size: .9em; margin: 0 auto; margin-top: 100px; color: #fff; width: 90%; font-size: 18px; }
+#sidebar { font-family: Lato, sans-serif; font-weight: normal; display: block; position: relative; font-size: .9em; margin: 100px auto; color: #fff; width: 90%; font-size: 18px; }
 #sidebar:before, #sidebar:after { content: ' '; display: table; }
 #sidebar:after { clear: both; }
 #sidebar #colophon { margin-top: 100px; }
