@@ -148,7 +148,7 @@ function zenpress_head() {
 	if ( get_header_image() ) {
 ?>
 		<style type="text/css">
-			.site-header .hero {
+			.site-header .site-banner {
 				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php header_image(); ?>) no-repeat center center scroll;
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
@@ -156,7 +156,7 @@ function zenpress_head() {
 				background-size: cover;
 			}
 
-			.site-header .hero h2 {
+			.site-header .site-banner #site-description {
 				text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
 			}
 		</style>
@@ -313,7 +313,7 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'zenpress' ), ' ' ); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-						<?php echo get_avatar( $comment, 50 ); ?>
+						<?php echo get_avatar( $comment, 40 ); ?>
 						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
 					</address><!-- .comment-author .vcard -->
 					<?php if ( '0' == $comment->comment_approved ) : ?>
@@ -347,7 +347,7 @@ if ( ! function_exists( 'zenpress_posted_on' ) ) :
 	 * @since ZenPress 1.0.0
 	 */
 	function zenpress_posted_on() {
-		printf( __( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified">%4$s</time></a>', 'zenpress' ),
+		printf( __( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'zenpress' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),

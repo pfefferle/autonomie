@@ -8,6 +8,7 @@
  * @since ZenPress 1.0.0
  */
 ?>
+
 <article <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics( 'post' ); ?>>
 	<?php get_template_part( 'partials/entry', 'header' ); ?>
 

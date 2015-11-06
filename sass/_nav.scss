@@ -142,8 +142,7 @@
 	}
 }
 
-#nav-above,
-#nav-below {
+#nav-above {
 	display: block;
 	@include clearfix;
 
@@ -155,6 +154,19 @@
 	.nav-next {
 		float: right;
 		margin-bottom: 100px;
+	}
+}
+
+#nav-below {
+	display: block;
+	@include clearfix;
+
+	.nav-previous {
+		float: left;
+	}
+
+	.nav-next {
+		float: right;
 	}
 }
 

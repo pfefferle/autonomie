@@ -83,20 +83,27 @@ li.comment {
 	}
 }
 
-.comment-meta time:before {
-	content:"\2014\a0";
-}
-
 .comment-meta,
 .comment-notes,
 .logged-in-as {
 	display: block;
-	font-size: .8em;
 	font-family: Lato, sans-serif;
+}
+
+.comment-meta {
+	address {
+		font-size: 1em;
+		line-height: 1.2;
+	}
+
+	time {
+		font-size: .7em;
+	}
 }
 
 .comment-meta a,
 .comment-reply-link {
+	color: $gray;
 	text-decoration: none;
 
 	&:hover {

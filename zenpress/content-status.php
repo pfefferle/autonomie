@@ -9,7 +9,7 @@
  */
 ?>
 
-<article <?php zenpress_post_id(); ?> <?php post_class(); ?>>
+<aside <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics( 'post' ); ?>>
 	<?php get_template_part( 'partials/entry', 'header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
@@ -25,4 +25,4 @@
 	<?php endif; ?>
 
 	<?php get_template_part( 'partials/entry', 'footer' ); ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</aside><!-- #post-<?php the_ID(); ?> -->

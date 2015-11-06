@@ -1,7 +1,6 @@
 .site-header {
 	display: block;
 	position: relative;
-	margin-bottom: 100px;
 	width: 100%;
 
 	.site-branding {
@@ -26,21 +25,23 @@
 		}
 	}
 
-	.hero {
+	.site-banner {
 		background-color: $blue;
 		width: 100%;
 		min-height: 600px;
+		margin-bottom: 100px;
 
-		h2 {
-			padding-top: 200px;
-			padding-bottom: 200px;
+		#site-description {
+			padding-top: 300px;
+			padding-bottom: 300px;
 			display: block;
-			width: 100%;
+			width: 90%;
 			margin: 0 auto;
 			vertical-align: bottom;
 			text-align: center;
 			color: $white;
 			font-size: 2.5em;
+			font-weigth: bold;
 		}
 	}
 
@@ -108,20 +109,22 @@
 }
 
 // 404 page
-.error404 .widget {
-	float: left;
-	width: 33%;
-}
+.error404 {
+	.widget {
+		float: left;
+		width: 33%;
 
-.error404 .widget .widgettitle,
-.error404 .widget ul {
-	margin-right: 1em;
-}
+		.widgettitle,
+		ul {
+			margin-right: 1em;
+		}
+	}
 
-.error404 .widget_tag_cloud {
-	clear: both;
-	float: none;
-	width: 100%;
+	.widget_tag_cloud {
+		clear: both;
+		float: none;
+		width: 100%;
+	}
 }
 
 // Notices
