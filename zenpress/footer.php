@@ -15,6 +15,7 @@
 			<meta itemprop="name" content="get_bloginfo( 'name', 'display' )" />
 			<meta itemprop="url" content="<?php echo home_url( '/' ); ?>" />
 			<?php
+
 			if ( has_custom_logo() ) {
 				$image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) );
 			?>

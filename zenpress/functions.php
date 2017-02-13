@@ -94,6 +94,12 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		// custom logo support
+		add_theme_support( 'custom-logo', array(
+			'height'      => 60,
+			'width'       => 60,
+		) );
+
 		// This theme supports a custom header
 		$custom_header_args = array(
 			'width'		 	=> 1250,
@@ -164,29 +170,6 @@ function zenpress_head() {
 	}
 }
 add_action( 'wp_head', 'zenpress_head' );
-
-/**
- * Add theme settings
- *
- * @since ZenPress 1.0.0
- *
- * @param  WP_Customize_Manager $wp_customize
- * @return WP_Customize_Manager
- */
-function zenpress_customize_register( $wp_customize ) {
-	$wp_customize->add_setting( 'website_logo', array(
-		'default' => false,
-		'sanitize_callback' => 'esc_url_raw',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'website_logo', array(
-		'label' => 'Website-Logo',
-		'section' => 'title_tagline',
-		'description' => 'Display a custom logo?',
-		'settings' => 'website_logo',
-	) ) );
-}
-add_action( 'customize_register', 'zenpress_customize_register' );
 
 if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 	/**

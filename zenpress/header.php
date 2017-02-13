@@ -26,11 +26,13 @@
 	<header id="site-header" class="site-header">
 		<div class="site-branding">
 			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
+				<?php
+				if ( has_custom_logo() ) {
+					echo get_custom_logo();
+				}
+				?>
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
-				<?php if ( get_theme_mod( 'website_logo' ) ) { ?>
-					<img src="<?php echo get_theme_mod( 'website_logo' ); ?>" height="60" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-				<?php } ?>
-					<?php bloginfo( 'name' ); ?>
+				<?php bloginfo( 'name' ); ?>
 				</a>
 			</h1>
 
