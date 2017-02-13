@@ -252,6 +252,7 @@ function zenpress_get_semantics( $id = null ) {
 				$classes['itemprop'] = array( 'blogPost' );
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
+				$classes['itemref'] = array( 'site-publisher' );
 			}
 			break;
 	}
