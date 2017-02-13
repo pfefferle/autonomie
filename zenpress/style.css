@@ -207,12 +207,12 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 .site-header #site-title a { text-decoration: none; }
 .site-header #site-title a:hover { text-decoration: underline; }
 .site-header .site-banner { background-color: #5fa7c5; width: 100%; min-height: 400px; }
-.site-header .site-banner #site-description { padding-top: 300px; padding-bottom: 100px; display: block; width: 1250px; margin: 0 auto; vertical-align: bottom; text-align: left; color: #fff; font-size: 2em; font-weigth: bold; }
+.site-header .site-banner #site-description { padding-top: 300px; padding-bottom: 100px; display: block; margin: 0 auto; vertical-align: bottom; text-align: left; color: #fff; font-size: 2em; font-weigth: bold; }
 .site-header .search-form { display: inline-block; margin: 35px 0 20px 0; padding: 0; float: right; }
 
 #primary { display: block; margin: 0 auto; width: 1250px; }
 
-.page-header { clear: both; font-size: 1.5em; font-weight: 100; position: relative; margin: 0 auto; margin-bottom: 100px; width: 850px; }
+.page-header { clear: both; font-size: 1.5em; font-weight: 100; position: relative; margin: 0 auto; width: 850px; }
 .page-header h1.page-title { hyphens: auto; text-overflow: ellipsis; overflow: hidden; text-decoration: none; }
 .page-header .avatar { margin: 0 5px; }
 
@@ -444,12 +444,10 @@ blockquote small:before, blockquote figcaption:before, blockquote cite:before, f
 
 body { background-color: #fff; color: #2f2f2f; font-family: 'Merriweather', serif; font-weight: 400; word-wrap: break-word; }
 
-.wf-active body { font-family: 'Merriweather', serif; }
-
 code { word-wrap: break-word; }
 
 figure { margin: 0; padding: 0; }
-figure blockquote { border: none; padding: 0; margin: 0; text-align: center; font-size: 1.3em; }
+figure blockquote { border: none; padding: 0; margin: 0; text-align: center; font-size: 1.1em; }
 
 ins { background: #fff9c0; text-decoration: none; }
 
@@ -468,10 +466,11 @@ pre { background-color: #e1e1e1; display: block; padding: 50px; white-space: pre
 .invisible { visibility: hidden; }
 
 @media only screen and (max-width: 950px) { html { font-size: .9em; }
-  #primary, #sidebar, .site-header .site-branding, .site-navigation { width: 90%; }
+  #primary, #sidebar, .site-header .site-branding, .site-header .site-banner #site-description, .site-navigation { width: 90%; }
   .page-header { width: 100%; } }
-@media only screen and (min-width: 950px) { #primary, .site-navigation, .site-header .site-branding, #sidebar { width: 850px; } }
+@media only screen and (min-width: 950px) { #primary, .site-navigation, .site-header .site-branding, .site-header .site-banner #site-description, #sidebar { width: 850px; } }
 @media only screen and (min-width: 1250px) { #primary { width: 1250px; }
+  .site-header .site-banner #site-description { width: 1250px; }
   .entry-content > *, .entry-summary > *, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { margin-left: 200px; margin-right: 200px; }
   .entry-content > div, .entry-content > audio { margin-left: 0px; margin-right: 0px; padding-left: 200px; padding-right: 200px; }
   .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > table, .entry-content > pre, .entry-content > figure, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > table, .entry-summary > pre, .entry-summary > figure { margin: 0 auto; max-width: 100%; }
