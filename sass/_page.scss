@@ -20,7 +20,7 @@
 			text-decoration: none;
 
 			&:hover {
-				text-decoration: underline;
+
 			}
 		}
 	}
@@ -28,19 +28,18 @@
 	.site-banner {
 		background-color: $blue;
 		width: 100%;
-		min-height: 600px;
-		margin-bottom: 100px;
+		min-height: 400px;
 
 		#site-description {
 			padding-top: 300px;
-			padding-bottom: 300px;
+			padding-bottom: 100px;
 			display: block;
-			width: 90%;
+			width: $wide-width;
 			margin: 0 auto;
 			vertical-align: bottom;
-			text-align: center;
+			text-align: left;
 			color: $white;
-			font-size: 2.5em;
+			font-size: 2em;
 			font-weigth: bold;
 		}
 	}
@@ -87,7 +86,7 @@
 
 #colophon {
 	width: 100%;
-	background-color: $dark-gray;
+	background-color: $light-gray;
 	margin-top: 100px;
 
 	@include clearfix;

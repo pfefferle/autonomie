@@ -29,9 +29,8 @@
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
 				<?php if ( get_theme_mod( 'website_logo' ) ) { ?>
 					<img src="<?php echo get_theme_mod( 'website_logo' ); ?>" height="60" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-				<?php } else { ?>
-					<?php bloginfo( 'name' ); ?>
 				<?php } ?>
+					<?php bloginfo( 'name' ); ?>
 				</a>
 			</h1>
 
@@ -44,9 +43,9 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php // if ( ! is_singular() ) : ?>
+		<?php if ( ! is_singular() ) : ?>
 		<div class="site-banner">
 			<div id="site-description"<?php zenpress_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></div>
 		</div>
-		<?php // endif; ?>
+		<?php endif; ?>
 	</header><!-- #site-header -->

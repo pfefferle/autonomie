@@ -38,6 +38,31 @@
 	}
 }
 
+@mixin button {
+	a {
+		text-decoration: none;
+	}
+	color: $gray;
+	border: 1px solid $light-gray;
+	background-color: $white;
+	border-radius: 50px;
+	padding: 10px 20px;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:hover {
+		background-color: darken($white, 2%);
+		color: darken($gray, 2%);
+	}
+
+	&:active {
+		background-color: darken($white, 4%);
+		color: darken($gray, 4%);
+	}
+}
+
 @mixin meta-text {
 	font-family: Lato, sans-serif;
 	clear: both;

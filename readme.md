@@ -35,7 +35,7 @@ ZenPress' code is marked-up with microformats and microdata:
 * used [microdata](http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html):
 	* http://schema.org/Blog
 	* http://schema.org/BlogPosting
-	* http://schema.org/UserComments
+	* http://schema.org/Comment
 	* http://schema.org/WebPage
 	* http://schema.org/Person
 

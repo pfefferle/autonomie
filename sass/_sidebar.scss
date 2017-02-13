@@ -1,12 +1,10 @@
 #sidebar {
-	font-family: Lato, sans-serif;
 	font-weight: normal;
 
 	display: block;
 	position: relative;
 	font-size: .9em;
 	margin: 100px auto;
-	color: $white;
 	width: 90%;
 	font-size: 18px;
 
@@ -30,10 +28,6 @@
 			list-style-type: none;
 			line-height: 1.5;
 		}
-	}
-
-	a {
-		color: $white;
 	}
 
 	#secondary {

@@ -23,7 +23,6 @@ module.exports = function(grunt) {
           sourcemap: 'none'
         },
         files: {
-          'zenpress/css/merriweather-font.css': 'sass/merriweather-font.scss',
           'zenpress/css/editor-style.css': 'sass/editor-style.scss'
         }
       }

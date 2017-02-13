@@ -26,7 +26,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 950; /* pixels */
+	$content_width = 1250; /* pixels */
 }
 
 /**
@@ -281,7 +281,7 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 	 *
 	 * @since ZenPress 1.0.0
 	 */
-	function zenpress_comment($comment, $args, $depth) {
+	function zenpress_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 
 		switch ( $comment->comment_type ) :
@@ -290,14 +290,14 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 			case 'webmention' :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'zenpress' ), ' ' ); ?></div>
-				<div class="comment-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
+				<div class="comment-content p-summary p-name" itemprop="text name description"><?php comment_text(); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
 						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
 					</address>
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 						<?php
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
@@ -309,7 +309,7 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 			default :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'zenpress' ), ' ' ); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
@@ -320,14 +320,14 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 						<em><?php _e( 'Your comment is awaiting moderation.', 'zenpress' ); ?></em>
 					<?php endif; ?>
 
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 					<?php
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
 				</footer>
 
-				<div class="comment-content e-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
+				<div class="comment-content e-content p-summary p-name" itemprop="text name description"><?php comment_text(); ?></div>
 
 				<div class="reply">
 					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
@@ -365,7 +365,7 @@ endif;
  *
  * @since ZenPress 1.0.0
  */
-function zenpress_the_post_thumbnail($before = '', $after = '') {
+function zenpress_the_post_thumbnail( $before = '', $after = '' ) {
 	if ( '' != get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
 		$class = '';
@@ -389,7 +389,7 @@ function zenpress_the_post_thumbnail($before = '', $after = '') {
  * @param int $id the post-id
  * @return string the filtered post-title
  */
-function zenpress_the_title($title, $id) {
+function zenpress_the_title( $title, $id ) {
 	// if title is empty, return the id
 	if ( empty( $title ) ) {
 		return "#$id";
@@ -406,7 +406,7 @@ add_filter( 'the_title', 'zenpress_the_title', 10, 2 );
  * @param string $url
  * @return string
  */
-function zenpress_enhanced_image_navigation($url) {
+function zenpress_enhanced_image_navigation( $url ) {
 	if ( is_admin() ) {
 		return $url;
 	}
@@ -428,11 +428,11 @@ add_filter( 'attachment_link', 'zenpress_enhanced_image_navigation' );
  *
  * @param string $id.
  */
-function zenpress_post_id($post_id = null) {
+function zenpress_post_id( $post_id = null ) {
 	if ( $post_id ) {
-		echo 'id="' . $post_id	. '"';
+		echo 'id="' . $post_id . '"';
 	} else {
-		echo 'id="' . zenpress_get_post_id()	. '"';
+		echo 'id="' . zenpress_get_post_id() . '"';
 	}
 }
 

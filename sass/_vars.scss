@@ -5,7 +5,7 @@ $yellow: #fff9c0;
 $white: #fff;
 
 // grayscale
-$gray: #8c8c8c;
+$gray: #888;
 $dark-gray: darken($gray, 35%);
 $light-gray: lighten($gray, 35%);
 
@@ -26,5 +26,5 @@ $light-brown: lighten($brown, 35%);
 
 // Dimensions
 $wide-width: 1250px;
-$default-width: $wide-width - 300px;
+$default-width: $wide-width - 400px;
 $margin: ($wide-width - $default-width) / 2;

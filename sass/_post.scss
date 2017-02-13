@@ -12,7 +12,7 @@
 
 #primary .post,
 #primary .page {
-	margin-bottom: 130px;
+	padding: 80px 0;
 	position: relative;
 
 	@include clearfix;
@@ -108,7 +108,7 @@
 
 		.post-format:before {
 			display: inline-block;
-			font: normal 1.1em Genericons;
+			font: normal 1.1em 'Genericons';
 			-webkit-font-smoothing: antialiased;
 			margin-right: 0;
 			position: relative;
@@ -163,7 +163,7 @@
 
 		&:before {
 			display: inline-block;
-			font: normal 1.1em Genericons;
+			font: normal 1.1em 'Genericons';
 			-webkit-font-smoothing: antialiased;
 			margin-right: 0;
 			position: relative;

@@ -146,14 +146,18 @@
 	display: block;
 	@include clearfix;
 
+	margin-top: 100px;
+
 	.nav-previous {
 		float: left;
-		margin-bottom: 100px;
+
+		@include button;
 	}
 
 	.nav-next {
 		float: right;
-		margin-bottom: 100px;
+
+		@include button;
 	}
 }
 

@@ -21,6 +21,8 @@
  * @since ZenPress 1.0.0
  */
 function zenpress_body_classes( $classes ) {
+	$classes[] = get_theme_mod( 'zenpress_columns', 'multi' ) . '-column';
+
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
 		$classes[] = 'single-author';
@@ -65,8 +67,9 @@ add_filter( 'post_class', 'zenpress_post_classes', 99 );
  */
 function zenpress_comment_classes( $classes ) {
 	$classes[] = 'h-as-comment';
-	$classes[] = 'p-comment';
 	$classes[] = 'h-entry';
+	$classes[] = 'h-cite';
+	$classes[] = 'p-comment';
 	$classes[] = 'comment';
 
 	return array_unique( $classes );
@@ -85,10 +88,10 @@ function zenpress_get_post_classes( $classes = array() ) {
 
 	// adds microformats 2 activity-stream support
 	// for pages and articles
-	if ( get_post_type() == 'page' ) {
+	if ( get_post_type() === 'page' ) {
 		$classes[] = 'h-as-page';
 	}
-	if ( ! get_post_format() && get_post_type() == 'post' ) {
+	if ( ! get_post_format() && 'post' === get_post_type() ) {
 		$classes[] = 'h-as-article';
 	}
 
@@ -131,14 +134,16 @@ add_filter( 'get_comment_author_link', 'zenpress_author_link' );
 /**
  * Adds microformats v2 support to the get_avatar() method.
  *
- * @since SemPress 1.0.0
+ * @since ZenPress 1.0.0
  */
 function zenpress_pre_get_avatar_data( $args, $id_or_email ) {
 	if ( ! isset( $args['class'] ) ) {
 		$args['class'] = array();
 	}
+
 	// Adds a class for microformats v2
 	$args['class'] = array_unique( array_merge( $args['class'], array( 'u-photo' ) ) );
+	$args['extra_attr'] = 'itemprop="image"';
 
 	return $args;
 }
@@ -161,7 +166,7 @@ add_filter( 'previous_image_link', 'zenpress_semantic_previous_image_link' );
  * @param string a-tag
  * @return string
  */
-function zenpress_semantic_next_image_link($link) {
+function zenpress_semantic_next_image_link( $link ) {
 	return preg_replace( '/<a/i', '<a rel="next"', $link );
 }
 add_filter( 'next_image_link', 'zenpress_semantic_next_image_link' );
@@ -173,7 +178,7 @@ add_filter( 'next_image_link', 'zenpress_semantic_next_image_link' );
  * @return string
  */
 function zenpress_next_posts_link_attributes( $attr ) {
-	return trim( $attr . ' rel="prev" ' );
+	return $attr . ' rel="prev"';
 }
 add_filter( 'next_posts_link_attributes', 'zenpress_next_posts_link_attributes' );
 
@@ -184,9 +189,22 @@ add_filter( 'next_posts_link_attributes', 'zenpress_next_posts_link_attributes' 
  * @return string
  */
 function zenpress_previous_posts_link_attributes( $attr ) {
-	return trim( $attr . ' rel="next" ' );
+	return $attr . ' rel="next"';
 }
 add_filter( 'previous_posts_link_attributes', 'zenpress_previous_posts_link_attributes' );
+
+/**
+ *
+ *
+ */
+function zenpress_get_search_form( $form ) {
+	$form = preg_replace( '/<form/i', '<form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction"', $form );
+	$form = preg_replace( '/<\/form>/i', '<meta itemprop="target" content="' . site_url( '/?s={search} ' ) . '"/></form>', $form );
+	$form = preg_replace( '/<input type="search"/i', '<input type="search" itemprop="query-input"', $form );
+
+	return $form;
+}
+add_filter( 'get_search_form', 'zenpress_get_search_form' );
 
 /**
  * add semantics
@@ -202,7 +220,7 @@ function zenpress_get_semantics( $id = null ) {
 		case 'body':
 			if ( ! is_singular() ) {
 				$classes['itemscope'] = array( '' );
-				$classes['itemtype'] = array( 'http://schema.org/Blog' );
+				$classes['itemtype'] = array( 'http://schema.org/Blog', 'http://schema.org/WebPage' );
 			} elseif ( is_single() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
