@@ -25,16 +25,22 @@
 	<?php do_action( 'before' ); ?>
 	<header id="site-header" class="site-header">
 		<div class="site-branding">
-			<h1 id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
-				<?php
-				if ( has_custom_logo() ) {
-					echo get_custom_logo();
-				}
-				?>
+			<?php
+			if ( has_custom_logo() ) {
+				echo get_custom_logo();
+			}
+
+			if ( is_home() ) {
+				$site_title_element = 'h1';
+			} else {
+				$site_title_element = 'div';
+			}
+			?>
+			<<?php echo $site_title_element ?> id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
 				<?php bloginfo( 'name' ); ?>
 				</a>
-			</h1>
+			</<?php echo $site_title_element ?>>
 
 			<?php get_search_form( true ); ?>
 		</div>
@@ -47,7 +53,8 @@
 
 		<?php if ( ! is_singular() ) : ?>
 		<div class="site-banner">
-			<div id="site-description"<?php zenpress_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></div>
+			<?php get_template_part( 'partials/page', 'title' ); ?>
+			<?php get_template_part( 'partials/page', 'description' ); ?>
 		</div>
 		<?php endif; ?>
 	</header><!-- #site-header -->

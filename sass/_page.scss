@@ -10,11 +10,19 @@
 		@include clearfix;
 	}
 
+	.custom-logo {
+		margin-top: 25px;
+		margin-right: 10px;
+		vertical-align: top;
+	}
+
 	#site-title {
 		margin: 20px 0 20px 0;
 		padding: 0;
 		display: inline-block;
 		font-size: 2.7em;
+		font-family: Lato;
+		font-weight: bold;
 
 		a {
 			text-decoration: none;
@@ -28,18 +36,22 @@
 	.site-banner {
 		background-color: $blue;
 		width: 100%;
-		min-height: 400px;
+		padding-top: 300px;
+		padding-bottom: 100px;
+		position: relative;
 
-		#site-description {
-			padding-top: 300px;
-			padding-bottom: 100px;
+		#page-title, #page-description {
 			display: block;
 			margin: 0 auto;
-			vertical-align: bottom;
 			text-align: left;
 			color: $white;
-			font-size: 2em;
+			font-size: 1.5em;
 			font-weigth: bold;
+		}
+
+		#page-title {
+			font-size: 2em;
+			font-weight: bold;
 		}
 	}
 
@@ -55,31 +67,6 @@
 	display: block;
 	margin: 0 auto;
 	width: $wide-width;
-}
-
-.page-header {
-	clear: both;
-	font-size: 1.5em;
-	font-weight: 100;
-	position: relative;
-	margin: 0 auto;
-	width: $default-width;
-
-	h1.page-title {
-		hyphens: auto;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		text-decoration: none;
-	}
-
-	.tag-archive-meta,
-	.category-archive-meta {
-
-	}
-
-	.avatar {
-		margin: 0 5px;
-	}
 }
 
 #colophon {
@@ -142,4 +129,9 @@
 	float: right;
 
 	@include label;
+}
+
+.more-link {
+	font-size: .8em;
+	color: $gray;
 }

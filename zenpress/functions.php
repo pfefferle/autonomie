@@ -162,7 +162,8 @@ function zenpress_head() {
 				background-size: cover;
 			}
 
-			.site-header .site-banner #site-description {
+			.site-header .site-banner #page-description,
+			.site-header .site-banner #page-title {
 				text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
 			}
 		</style>

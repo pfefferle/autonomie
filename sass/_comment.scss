@@ -53,9 +53,11 @@ article.comment {
 	display: none;
 }
 
+#comments-title,
 #reply-title {
-	padding-top: 0;
-	margin-top: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 2em;
 }
 
 a.comment-reply-link {
@@ -89,6 +91,7 @@ li.comment {
 .logged-in-as {
 	display: block;
 	font-family: Lato, sans-serif;
+	color: $gray;
 }
 
 .comment-meta {
@@ -103,7 +106,8 @@ li.comment {
 }
 
 .comment-meta a,
-.comment-reply-link {
+.comment-reply-link,
+.logged-in-as a {
 	color: $gray;
 	text-decoration: none;
 

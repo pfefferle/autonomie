@@ -230,12 +230,18 @@ function zenpress_get_semantics( $id = null ) {
 			}
 			break;
 		case 'site-title':
-			if ( ! is_singular() ) {
+			if ( is_home() ) {
 				$classes['itemprop'] = array( 'name' );
 				$classes['class'] = array( 'p-name' );
 			}
 			break;
-		case 'site-description':
+		case 'page-title':
+			if ( ! is_singular() && ! is_home() ) {
+				$classes['itemprop'] = array( 'name' );
+				$classes['class'] = array( 'p-name' );
+			}
+			break;
+		case 'page-description':
 			if ( ! is_singular() ) {
 				$classes['itemprop'] = array( 'description' );
 				$classes['class'] = array( 'p-summary', 'e-content' );
@@ -261,6 +267,28 @@ function zenpress_get_semantics( $id = null ) {
 	$classes = apply_filters( "zenpress_semantics_{$id}", $classes, $id );
 
 	return $classes;
+}
+
+/**
+ * echos the semantic classes added via
+ * the "zenpress_semantics" filters
+ *
+ * @param string $id the class identifier
+ */
+function zenpress_get_the_semantics( $id ) {
+	$classes = zenpress_get_semantics( $id );
+
+	if ( ! $classes ) {
+		return;
+	}
+
+	$class = '';
+
+	foreach ( $classes as $key => $value ) {
+		$class .= ' ' . esc_attr( $key ) . '="' . esc_attr( join( ' ', $value ) ) . '"';
+	}
+
+	return $class;
 }
 
 /**
