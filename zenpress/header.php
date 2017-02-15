@@ -52,9 +52,11 @@
 		</nav><!-- #site-navigation -->
 
 		<?php if ( ! is_singular() ) : ?>
-		<div class="site-banner">
-			<?php get_template_part( 'partials/page', 'title' ); ?>
-			<?php get_template_part( 'partials/page', 'description' ); ?>
+		<div class="page-banner">
+			<div class="page-branding">
+				<?php get_template_part( 'partials/page', 'title' ); ?>
+				<?php get_template_part( 'partials/page', 'description' ); ?>
+			</div>
 		</div>
 		<?php endif; ?>
 	</header><!-- #site-header -->

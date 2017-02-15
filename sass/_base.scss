@@ -22,10 +22,10 @@ abbr {
 blockquote,
 figure {
 	color: $gray;
-	font-size: 1.2em;
+	font-size: 1.25em;
 	font-style: italic;
 	position: relative;
-	line-height: 1.2;
+	line-height: 1.5;
 
 	small,
 	figcaption,
@@ -45,11 +45,10 @@ figure {
 
 blockquote {
 	border: 0;
-	border-left: 3px solid $light-gray;
+	//border-left: 3px solid $light-gray;
 	margin: 0;
-	padding: 0;
-	padding-left: 30px;
-	line-height: 1.5;
+	padding: 1px 0 1px 30px;
+	line-height: 2;
 }
 
 body {
@@ -91,6 +90,32 @@ h5,
 h6 {
 	font-family: Lato, sans-serif;
 	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.6em;
+}
+
+h3 {
+	font-size: 2.2em;
+}
+
+h4 {
+	font-size: 1.8em;
+}
+
+h5 {
+	font-size: 1.6em;
+}
+
+h6 {
+	font-size: 1.4em;
 }
 
 hr {
@@ -103,7 +128,9 @@ hr {
 }
 
 pre {
-	background-color: $light-gray;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background-color: $background-gray;
 	display: block;
 	padding: 50px;
 	white-space: pre-wrap;

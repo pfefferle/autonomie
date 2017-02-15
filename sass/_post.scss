@@ -28,7 +28,7 @@
 				hyphens: auto;
 				text-overflow: ellipsis;
 				overflow: hidden;
-				font-size: 2em;
+				font-size: 1em;
 				line-height: 1;
 				text-decoration: none;
 				color: $dark-gray;
@@ -78,6 +78,7 @@
 		color: $dark-gray;
 		font-style: normal;
 		line-height: 2;
+		font-size: 1.1em
 	}
 
 	.page-link,
@@ -122,7 +123,7 @@
 
 		.post-format a,
 		.post-format:before {
-			color: $gray;
+			color: $light-gray;
 			font-weight: bold;
 			text-transform: uppercase;
 		}
@@ -136,6 +137,7 @@
 			text-decoration: inherit;
 			top: 2px;
 			vertical-align: text-middle;
+			color: $light-gray;
 		}
 
 		address {

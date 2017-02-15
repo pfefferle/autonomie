@@ -154,17 +154,12 @@ function zenpress_head() {
 	if ( get_header_image() ) {
 ?>
 		<style type="text/css">
-			.site-header .site-banner {
+			.site-header .page-banner {
 				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php header_image(); ?>) no-repeat center center scroll;
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;
 				background-size: cover;
-			}
-
-			.site-header .site-banner #page-description,
-			.site-header .site-banner #page-title {
-				text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
 			}
 		</style>
 <?php

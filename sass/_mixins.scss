@@ -24,7 +24,7 @@
 	a {
 		font-size: 1em;
 		font-family: Lato, sans-serif;
-		background-color: lighten($light-gray, 5%);
+		background-color: $background-gray;
 		border-radius: 3px;
 		color: $dark-gray;
 		line-height: 1;
@@ -66,11 +66,11 @@
 @mixin meta-text {
 	font-family: Lato, sans-serif;
 	clear: both;
-	color: #9a9a9a;
+	color: $light-gray;
 	display: block;
 
 	a {
-		color: #9a9a9a;
+		color: $light-gray;
 		text-decoration: none;
 	}
 

@@ -4,11 +4,12 @@
 	margin: 0 auto;
 	border: 0;
 	width: $default-width;
+	font-family: Lato, sans-serif;
 
 	@include clearfix;
 
 	ul {
-		border-top: 1px solid $light-gray;
+		border-top: 1px solid $background-gray;
 		position: relative;
 		z-index: 597;
 		*display: inline-block;
@@ -167,10 +168,14 @@
 
 	.nav-previous {
 		float: left;
+
+		@include button;
 	}
 
 	.nav-next {
 		float: right;
+
+		@include button;
 	}
 }
 
@@ -178,8 +183,6 @@
 	#nav-below {
 		padding: 50px inherit;
 		margin-bottom: 100px;
-		border-top: 1px solid $light-gray;
-		border-bottom: 1px solid $light-gray;
 
 		.nav-previous {
 			float: left;

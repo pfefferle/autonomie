@@ -2,6 +2,7 @@
 	display: block;
 	position: relative;
 	width: 100%;
+	border-bottom: 1px solid $background-gray;
 
 	.site-branding {
 		margin: 0 auto;
@@ -33,13 +34,21 @@
 		}
 	}
 
-	.site-banner {
+	.page-banner {
 		background-color: $blue;
 		width: 100%;
-		padding-top: 500px;
-		padding-bottom: 100px;
 		position: relative;
-		max-height: 600px;
+		height: 75vh;
+		max-height: 75%;
+		position: relative;
+
+		.page-branding {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 50px 0;
+		}
 
 		#page-title, #page-description {
 			display: block;
@@ -48,6 +57,7 @@
 			color: $white;
 			font-size: 1.5em;
 			font-weigth: bold;
+			width: $wide-width;
 		}
 
 		#page-title {
@@ -64,6 +74,10 @@
 	}
 }
 
+.custom-header .site-header .page-branding {
+	text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
+}
+
 #primary {
 	display: block;
 	margin: 0 auto;
@@ -72,7 +86,7 @@
 
 #colophon {
 	width: 100%;
-	background-color: $light-gray;
+	background-color: $background-gray;
 	margin-top: 100px;
 
 	@include clearfix;
