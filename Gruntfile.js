@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
-      compact: {
+      main: {
         options: {
           style: 'compact',
           line_comments: false,
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           'zenpress/style.css': 'sass/style.scss',
         }
       },
-      compressed: {
+      editor: {
         options: {
           style: 'compressed',
           line_comments: false,

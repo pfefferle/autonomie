@@ -10,7 +10,7 @@
 
 #primary .post,
 #primary .page {
-	padding: 80px 0;
+	padding: 50px 0;
 	position: relative;
 
 	@include clearfix;
@@ -23,20 +23,18 @@
 		.entry-title {
 			margin: 0;
 			padding: 0;
-			font-weight: normal;
 
 			a {
 				hyphens: auto;
 				text-overflow: ellipsis;
 				overflow: hidden;
-				font-size: 1.5em;
+				font-size: 2em;
 				line-height: 1;
 				text-decoration: none;
-				font-weight: normal;
 				color: $dark-gray;
 
 				&:hover {
-					color: $dark-gray;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -78,7 +76,6 @@
 	.entry-content,
 	.entry-summary {
 		color: $dark-gray;
-		font-size: 1.2em;
 		font-style: normal;
 		line-height: 2;
 	}
@@ -90,6 +87,31 @@
 
 	.wp-caption-text {
 		margin-top: .5em;
+	}
+
+	.entry-meta,
+	.wp-caption-text,
+	.gallery-caption,
+	.page-link,
+	.page-links {
+		font-family: Lato, sans-serif;
+		clear: both;
+		color: $gray;
+		display: block;
+
+		a {
+			color: $gray;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.avatar {
+			float: left;
+			margin-right: 10px;
+		}
 	}
 
 	.entry-meta {
@@ -119,35 +141,11 @@
 		address {
 			font-size: 1em;
 			line-height: 1.2;
+			color: $dark-gray;
 		}
 
 		time {
-			font-size: .7em;
-		}
-	}
-
-	.entry-meta,
-	.wp-caption-text,
-	.gallery-caption,
-	.page-link,
-	.page-links {
-		font-family: Lato, sans-serif;
-		clear: both;
-		color: $gray;
-		display: block;
-
-		a {
-			color: $gray;
-			text-decoration: none;
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
-		.avatar {
-			float: left;
-			margin-right: 10px;
+			font-size: .8em;
 		}
 	}
 

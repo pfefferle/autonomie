@@ -12,7 +12,7 @@
 
 	.custom-logo {
 		margin-top: 25px;
-		margin-right: 10px;
+		margin-right: 5px;
 		vertical-align: top;
 	}
 
@@ -20,7 +20,7 @@
 		margin: 20px 0 20px 0;
 		padding: 0;
 		display: inline-block;
-		font-size: 2.7em;
+		font-size: 1.5em;
 		font-family: Lato;
 		font-weight: bold;
 
@@ -36,9 +36,10 @@
 	.site-banner {
 		background-color: $blue;
 		width: 100%;
-		padding-top: 300px;
+		padding-top: 500px;
 		padding-bottom: 100px;
 		position: relative;
+		max-height: 600px;
 
 		#page-title, #page-description {
 			display: block;
@@ -57,7 +58,7 @@
 
 	.search-form {
 		display: inline-block;
-		margin: 35px 0 20px 0;
+		margin: 20px 0 20px 0;
 		padding: 0;
 		float: right;
 	}

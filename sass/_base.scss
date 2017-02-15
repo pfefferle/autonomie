@@ -19,21 +19,13 @@ abbr {
 	}
 }
 
-blockquote {
-	border: 0;
-	border-left: 3px solid $green;
-	font-style: italic;
-	margin: 0;
-	padding: 0;
-	padding-left: 30px;
-	text-align: justify;
-}
-
 blockquote,
 figure {
-	font-size: 1.3em;
-	font-family: Georgia;
+	color: $gray;
+	font-size: 1.2em;
+	font-style: italic;
 	position: relative;
+	line-height: 1.2;
 
 	small,
 	figcaption,
@@ -49,6 +41,15 @@ figure {
 			content: '\2014 \00A0';
 		}
 	}
+}
+
+blockquote {
+	border: 0;
+	border-left: 3px solid $light-gray;
+	margin: 0;
+	padding: 0;
+	padding-left: 30px;
+	line-height: 1.5;
 }
 
 body {
@@ -73,6 +74,7 @@ figure {
 		margin: 0;
 		text-align: center;
 		font-size: 1.1em;
+		font-family: Georgia;
 	}
 }
 
@@ -88,7 +90,7 @@ h4,
 h5,
 h6 {
 	font-family: Lato, sans-serif;
-	font-weight: normal;
+	font-weight: bold;
 }
 
 hr {

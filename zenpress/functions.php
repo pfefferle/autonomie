@@ -26,7 +26,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 1250; /* pixels */
+	$content_width = 900; /* pixels */
 }
 
 /**
@@ -96,8 +96,8 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 
 		// custom logo support
 		add_theme_support( 'custom-logo', array(
-			'height'      => 60,
-			'width'       => 60,
+			'height'      => 30,
+			'width'       => 30,
 		) );
 
 		// This theme supports a custom header

@@ -1,9 +1,9 @@
-#primary {
-	width: $wide-width;
-}
-
+#primary,
+.site-navigation,
+.site-header .site-branding,
 .site-header .site-banner #page-description,
-.site-header .site-banner #page-title {
+.site-header .site-banner #page-title,
+#sidebar {
 	width: $wide-width;
 }
 

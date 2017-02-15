@@ -55,5 +55,3 @@ ZenPress supports:
 * [Automatic Feed Links](http://codex.wordpress.org/Automatic_Feed_Links)
 * [Custom-Header](http://codex.wordpress.org/Custom_Headers)
 * [Custom-Backgrounds](http://codex.wordpress.org/Custom_Backgrounds)
-
-[![endorse](http://api.coderwall.com/pfefferle/endorsecount.png)](http://coderwall.com/pfefferle)
