@@ -18,7 +18,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./zenpress:/var/www/html/wp-content/themes/zenpress
+      - ./:/var/www/html/wp-content/themes/zenpress
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
