@@ -1,0 +1,10 @@
+sass/ export-ignore
+.DS_Store export-ignore
+.editorconfig export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+docker-compose.yml export-ignore
+Gruntfile.js export-ignore
+package.json export-ignore
+phpcs.xml export-ignore
+readme.md export-ignore

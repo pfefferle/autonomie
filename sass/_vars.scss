@@ -5,11 +5,11 @@ $yellow: #fff9c0;
 $white: #fff;
 
 // grayscale
-$gray: rgba(0, 0, 0, 0.4);
-$dark-gray: rgba(0, 0, 0, .7);
-$light-gray: rgba(0, 0, 0, .2);
+$gray: #8c979a;
+$dark-gray: #373d3f;
+$light-gray: #dadedf;
 
-$background-gray: rgba(0, 0, 0, .05);
+$background-gray: #f2f3f4;
 
 // blue
 $blue: #5fa7c5;
@@ -27,6 +27,6 @@ $dark-brown: darken($brown, 35%);
 $light-brown: lighten($brown, 35%);
 
 // Dimensions
-$wide-width: 1000px;
-$default-width: $wide-width - 300px;
+$wide-width: 900px;
+$default-width: $wide-width - 200px;
 $margin: ($wide-width - $default-width) / 2;

@@ -16,9 +16,9 @@
 		</h2>
 		<?php endif; ?>
 
-		<?php //if ( ! in_array( get_post_format(), array( 'aside', 'status', 'link' ) ) ) : ?>
+		<?php // if ( ! in_array( get_post_format(), array( 'aside', 'status', 'link' ) ) ) : ?>
 		<div class="entry-meta">
 			<?php zenpress_posted_on(); ?>
 		</div>
-		<?php //endif; ?>
+		<?php // endif; ?>
 	</header><!-- .entry-header -->

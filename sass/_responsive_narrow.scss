@@ -2,6 +2,8 @@ html {
 	font-size: 1em;
 }
 
+
+
 #primary,
 #sidebar,
 .site-header .site-branding,
@@ -9,6 +11,16 @@ html {
 .site-header .page-banner #page-title,
 .site-navigation {
 	width: 90%;
+}
+
+.site-header {
+	.page-branding {
+		font-size: .8em;
+	}
+
+	.search-field {
+		width: 150px;
+	}
 }
 
 .page-header {

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
           sourcemap: 'none'
         },
         files: {
-          'zenpress/style.css': 'sass/style.scss',
+          'style.css': 'sass/style.scss',
         }
       },
       editor: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           sourcemap: 'none'
         },
         files: {
-          'zenpress/css/editor-style.css': 'sass/editor-style.scss'
+          'css/editor-style.css': 'sass/editor-style.scss'
         }
       }
     },
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           prefix: '@@'
         },
         files: [
-          {expand: true, flatten: true, src: ['zenpress/style.css'], dest: 'zenpress'}
+          {expand: true, flatten: true, src: ['style.css'], dest: ''}
         ]
       }
     },
