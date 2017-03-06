@@ -458,7 +458,7 @@ body { background-color: #fff; color: #373d3f; font-family: 'Merriweather', seri
 code { word-wrap: break-word; }
 
 figure { margin: 0; padding: 0; }
-figure blockquote { hyphens: auto; word-wrap: break-word; border: none; padding: 0; margin: 0; text-align: justify; font-size: 1.1em; font-family: Georgia; }
+figure blockquote { hyphens: auto; word-wrap: break-word; border: none; padding: 0; margin: 0; text-align: center; font-size: 1.1em; font-family: Georgia; }
 
 ins { background: #fff9c0; text-decoration: none; }
 
