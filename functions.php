@@ -73,7 +73,17 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_image_size( 'zenpress-image-post', $content_width, 1288 );
 
 		// Switches default core markup for search form to output valid .
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets' ) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+				'widgets',
+			)
+		);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -81,7 +91,19 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		) );
 
 		// Add support for the Aside, Gallery Post Formats...
-		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'status', 'image', 'video', 'audio', 'quote' ) );
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'gallery',
+				'link',
+				'status',
+				'image',
+				'video',
+				'audio',
+				'quote',
+			)
+		);
 
 		// Nicer WYSIWYG editor
 		add_editor_style( 'css/editor-style.css' );
@@ -95,10 +117,13 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		// custom logo support
-		add_theme_support( 'custom-logo', array(
-			'height'      => 30,
-			'width'       => 30,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 30,
+				'width'       => 30,
+			)
+		);
 
 		// This theme supports a custom header
 		$custom_header_args = array(
@@ -150,23 +175,6 @@ function zenpress_widgets_init() {
 }
 add_action( 'init', 'zenpress_widgets_init' );
 
-function zenpress_head() {
-	if ( get_header_image() ) {
-?>
-		<style type="text/css">
-			.site-header .page-banner {
-				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php header_image(); ?>) no-repeat center center scroll;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
-		</style>
-<?php
-	}
-}
-add_action( 'wp_head', 'zenpress_head' );
-
 if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 	/**
 	 * Enqueue theme scripts
@@ -176,8 +184,6 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 	 * @since ZenPress 1.0.0
 	 */
 	function zenpress_enqueue_scripts() {
-		wp_register_script( 'zenpress', get_template_directory_uri() . '/js/zenpress.js' );
-
 		/*
 		 * Adds JavaScript to pages with the comment form to support sites with
 		 * threaded comments (when in use).
@@ -191,12 +197,8 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 			( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
 			( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
 
-			wp_enqueue_script( '', get_template_directory_uri() . '/js/shiv.min.js', false, '3.7.3' );
+			wp_enqueue_script( '', get_template_directory_uri() . '/js/html5shiv.min.js', false, '3.7.3' );
 		}
-
-		$vars = array(
-			'template_url' => get_template_directory_uri(),
-		);
 
 		wp_enqueue_script( 'zenpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'zenpress-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
@@ -204,11 +206,25 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 		// Loads our main stylesheet.
 		wp_enqueue_style( 'zenpress-style', get_stylesheet_uri() );
 
-		wp_enqueue_script( 'webfontloader', get_template_directory_uri() . '/js/webfontloader.js', false, '1.6.6' );
+		wp_localize_script(
+			'zenpress',
+			'vars',
+			array(
+				'template_url' => get_template_directory_uri(),
+			)
+		);
 
-		wp_localize_script( 'zenpress', 'vars', $vars );
+		if ( get_header_image() ) {
+			$css = '.site-header .page-banner {
+				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(' . get_header_image() . ') no-repeat center center scroll;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}' . PHP_EOL;
 
-		//wp_enqueue_script( 'zenpress', null, array( 'webfontloader', 'jquery' ), '1.0.0' );
+			wp_add_inline_style( 'zenpress-style', $css );
+		}
 	}
 endif;
 
@@ -397,6 +413,66 @@ function zenpress_enhanced_image_navigation( $url ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'zenpress_enhanced_image_navigation' );
+
+/*
+ * Add a checkbox for Post Covers to the featured image metabox
+ */
+function zenpress_featured_image_meta( $content ) {
+	// If we don't have a featured image, nothing to do.
+	if ( ! has_post_thumbnail() ) {
+		return $content;
+	}
+	global $post;
+
+	// Text for checkbox
+	$text = __( 'Use as post cover (full-width)', 'zenpress' );
+
+	// Get the current setting
+	$value = esc_attr( get_post_meta( $post->ID, 'full_width_featured_image', '1' ) );
+	// Output the checkbox HTML
+	$label = '<input type="hidden" name="full_width_featured_image" value="0">';
+	$label .= '<label for="full_width_featured_image" class="selectit"><input name="full_width_featured_image" type="checkbox" id="full_width_featured_image" value="1" ' . checked( $value, 1, 0 ) . '> ' . $text . '</label>';
+
+	$label = wp_nonce_field( basename( __FILE__ ), 'zenpress_full_width_featured_image_meta_nonce' ) . $label;
+	return $content .= $label;
+}
+add_filter( 'admin_post_thumbnail_html', 'zenpress_featured_image_meta' );
+
+/**
+ * Return true if Auto-Set Featured Image as Post Cover is enabled and it hasn't
+ * been disabled for this post.
+ *
+ * Returns true if the current post has Full Width Featured Image enabled.
+ *
+ * Returns false if not a Single post type or there is no Featured Image selected
+ * or none of the above conditions are true.
+ */
+function zenpress_has_full_width_featured_image() {
+	// If this isn't a Single post type or we don't have a Featured Image set
+	if ( ! ( is_single() || is_page() ) || ! has_post_thumbnail() ) {
+		return false;
+	}
+
+	$full_width_featured_image = get_post_meta( get_the_ID(), 'full_width_featured_image' );
+
+	// If Use featured image as Post Cover has been checked in the Featured Image meta box, return true.
+	if ( $full_width_featured_image ) {
+		return true;
+	}
+
+	return false; // Default
+}
+
+/**
+ * Add full-width-featured-image to body class when displaying a post with Full Width Featured Image enabled
+ */
+function zenpress_full_width_featured_image_body_class( $classes ) {
+	if ( zenpress_has_full_width_featured_image() ) {
+		$classes[] = 'full-width-featured-image';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'zenpress_full_width_featured_image_body_class' );
 
 /**
  * Display the id for the post div.

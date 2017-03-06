@@ -295,6 +295,7 @@ ul.children .avatar { margin-right: 10px; width: 48px; height: 48px; }
 #primary .post .entry-header .entry-title, #primary .page .entry-header .entry-title { margin: 0; padding: 0; }
 #primary .post .entry-header .entry-title a, #primary .page .entry-header .entry-title a { hyphens: auto; text-overflow: ellipsis; overflow: hidden; font-size: 1em; line-height: 1; text-decoration: none; color: #373d3f; }
 #primary .post .entry-header .entry-title a:hover, #primary .page .entry-header .entry-title a:hover { text-decoration: underline; }
+#primary .post.format-quote blockquote, #primary .page.format-quote blockquote { font-size: 1.5em; }
 #primary .post.format-quote .post-format:before, #primary .page.format-quote .post-format:before { content: '\f106'; }
 #primary .post.format-aside .post-format:before, #primary .page.format-aside .post-format:before { content: '\f101'; }
 #primary .post.format-video .post-format:before, #primary .page.format-video .post-format:before { content: '\f104'; }
@@ -446,18 +447,18 @@ a:hover { text-decoration: none; }
 abbr { font-variant: small-caps; }
 abbr[title] { border-bottom: 1px dotted #8c979a; cursor: help; }
 
-blockquote, figure { color: #8c979a; font-size: 1.25em; font-style: italic; position: relative; line-height: 1.5; }
+blockquote, figure { color: #8c979a; font-size: 1em; font-style: italic; position: relative; line-height: 1.5; }
 blockquote small, blockquote figcaption, blockquote cite, figure small, figure figcaption, figure cite { color: #8c979a; display: block; font-size: .7em; font-style: normal; font-weight: normal; text-align: right; }
 blockquote small:before, blockquote figcaption:before, blockquote cite:before, figure small:before, figure figcaption:before, figure cite:before { content: '\2014 \00A0'; }
 
-blockquote { border: 0; border-left: 3px solid #f2f3f4; margin: 0; padding: 1px 0 1px 30px; line-height: 2; }
+blockquote { border: 0; border-left: 3px solid #f2f3f4; margin: 0; padding-left: 30px; line-height: 1.8; }
 
 body { background-color: #fff; color: #373d3f; font-family: 'Merriweather', serif; font-weight: 400; word-wrap: break-word; }
 
 code { word-wrap: break-word; }
 
 figure { margin: 0; padding: 0; }
-figure blockquote { hyphens: auto; word-wrap: break-word; border: none; padding: 0; margin: 0 50px; text-align: center; font-size: 1.1em; font-family: Georgia; }
+figure blockquote { hyphens: auto; word-wrap: break-word; border: none; padding: 0; margin: 0; text-align: justify; font-size: 1.1em; font-family: Georgia; }
 
 ins { background: #fff9c0; text-decoration: none; }
 
