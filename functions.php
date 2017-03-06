@@ -29,16 +29,6 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 900; /* pixels */
 }
 
-/**
- * Set a default theme color array for WP.com.
- */
-$themecolors = array(
-	'bg' => 'f0f0f0',
-	'border' => 'cccccc',
-	'text' => '555555',
-	'shadow' => 'ffffff',
-);
-
 if ( ! function_exists( 'zenpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -51,7 +41,6 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 	 * functions.php file.
 	 */
 	function zenpress_setup() {
-		global $themecolors;
 		global $content_width;
 
 		/**
