@@ -35,6 +35,8 @@
 
 .gallery {
 	padding: 1em 0;
+
+	@include clearfix;
 }
 
 .entry-content {

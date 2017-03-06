@@ -417,6 +417,8 @@ table tbody tr:hover td, table tbody tr:hover th { background-color: #fafafb; }
 .size-auto, .size-full, .size-large, .size-medium, .size-thumbnail { max-width: 100%; height: auto; }
 
 .gallery { padding: 1em 0; }
+.gallery:before, .gallery:after { content: ' '; display: table; }
+.gallery:after { clear: both; }
 
 .entry-content img, .entry-content figure, .entry-content object, .entry-content embed, .entry-content iframe, .entry-content audio, .entry-content video { max-width: 100%; }
 .entry-content img, .entry-content video, .entry-content audio { height: auto; }
