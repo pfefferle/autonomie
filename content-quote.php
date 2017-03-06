@@ -10,7 +10,7 @@
 ?>
 
 <article <?php zenpress_post_id(); ?> <?php post_class(); ?><?php zenpress_semantics( 'post' ); ?>>
-	<?php get_template_part( 'partials/entry', 'header' ); ?>
+	<?php get_template_part( 'partials/content', 'header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
 	<div class="entry-summary p-summary" itemprop="description articleBody">
@@ -24,5 +24,5 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<?php get_template_part( 'partials/entry', 'footer' ); ?>
+	<?php get_template_part( 'partials/content', 'footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

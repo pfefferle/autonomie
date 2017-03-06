@@ -125,14 +125,19 @@
 		margin-top: 15px;
 		margin-bottom: 15px;
 
-		.post-format a,
-		.post-format:before {
+		&.post-format {
+			padding: 0;
+			margin: 0;
+		}
+
+		&.post-format a,
+		&.post-format:before {
 			color: $light-gray;
 			font-weight: bold;
 			text-transform: uppercase;
 		}
 
-		.post-format:before {
+		&.post-format:before {
 			display: inline-block;
 			font: normal 1.1em 'Genericons';
 			-webkit-font-smoothing: antialiased;
@@ -142,6 +147,11 @@
 			top: 2px;
 			vertical-align: text-middle;
 			color: $light-gray;
+		}
+
+		.entry-format {
+			margin-left: 5px;
+			line-height: 1;
 		}
 
 		address {
@@ -157,6 +167,30 @@
 
 	.entry-footer {
 		margin-top: 30px;
+
+		.author {
+			padding: 50px 0;
+			margin: 70px 0;
+			border-top: 1px solid $border-gray;
+			border-bottom: 1px solid $border-gray;
+			font-family: 'Merriweather', serif;
+			line-height: 1.5;
+
+			.fn, .note {
+				margin-left: 140px;
+				display: block;
+			}
+
+			.fn {
+				font-size: 1.3em;
+				margin-bottom: 10px;
+			}
+
+			.note {
+				font-size: .9em;
+				color: $gray;
+			}
+		}
 	}
 
 	.comments-link {
@@ -180,18 +214,18 @@
 
 	.tag-links,
 	.cat-links {
-		display: inline-block;
+		margin: 50px 0;
 
 		ul {
 			margin: 0;
 			padding: 0;
-			display: inline-block;
 		}
 
 		li {
 			display: inline-block;
 			margin: 15px 8px 0 0;
 			list-style-type: none;
+			font-size: 1.2em;
 
 			@include label;
 		}
