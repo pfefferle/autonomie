@@ -163,36 +163,27 @@
 }
 
 #nav-below {
-	display: block;
-	@include clearfix;
-
 	.nav-previous {
-		float: left;
-
-		@include button;
+		position: fixed;
+		left: 20px;
+		bottom: 30%;
 	}
 
 	.nav-next {
-		float: right;
-
-		@include button;
+		position: fixed;
+		right: 20px;
+		bottom: 30%;
 	}
-}
 
-.single {
-	#nav-below {
-		padding: 50px inherit;
-		margin-bottom: 100px;
+	a {
+		color: rgba(0, 0, 0, 0.2);
+		text-decoration: none;
+		font-size: 5em;
+		margin: 100px 0;
+	}
 
-		.nav-previous {
-			float: left;
-			margin-bottom: 0px;
-		}
-
-		.nav-next {
-			float: right;
-			margin-bottom: 0px;
-		}
+	a:hover {
+		color: $dark-gray;
 	}
 }
 

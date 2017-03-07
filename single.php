@@ -14,8 +14,6 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
 
-				<?php zenpress_content_nav( 'nav-below' ); ?>
-
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() ) {
@@ -26,5 +24,7 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #content -->
+
+			<?php zenpress_content_nav( 'nav-below' ); ?>
 
 <?php get_footer(); ?>

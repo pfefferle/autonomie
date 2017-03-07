@@ -31,8 +31,6 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php zenpress_content_nav( 'nav-below' ); ?>
-
 		<?php else : ?>
 
 			<article id="post-0" class="post no-results not-found">
@@ -49,5 +47,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #content -->
+
+		<?php zenpress_content_nav( 'nav-below' ); ?>
 
 <?php get_footer(); ?>

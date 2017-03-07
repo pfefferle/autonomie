@@ -51,12 +51,14 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php if ( ! is_singular() ) : ?>
+		<?php if ( ! is_singular() || zenpress_has_full_width_featured_image() ) : ?>
 		<div class="page-banner">
+			<?php if ( ! is_singular() ) : ?>
 			<div class="page-branding">
 				<?php get_template_part( 'partials/page', 'title' ); ?>
 				<?php get_template_part( 'partials/page', 'description' ); ?>
 			</div>
+			<?php endif; ?>
 		</div>
 		<?php endif; ?>
 	</header><!-- #site-header -->

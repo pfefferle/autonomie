@@ -203,9 +203,21 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 			)
 		);
 
-		if ( get_header_image() ) {
+		if ( zenpress_has_full_width_featured_image() ) {
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
+
 			$css = '.site-header .page-banner {
-				background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(' . get_header_image() . ') no-repeat center center scroll;
+				background: url(' . $image[0] . ') no-repeat center center scroll;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}' . PHP_EOL;
+
+			wp_add_inline_style( 'zenpress-style', $css );
+		} elseif ( get_header_image() ) {
+			$css = '.site-header .page-banner {
+				background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(' . get_header_image() . ') no-repeat center center scroll;
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;
@@ -231,18 +243,18 @@ if ( ! function_exists( 'zenpress_content_nav' ) ) :
 		<?php if ( is_single() ) : // navigation links for single posts ?>
 		<nav id="<?php echo $nav_id; ?>">
 			<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'zenpress' ); ?></h1>
-			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'zenpress' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'zenpress' ) . '</span>' ); ?>
+			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">&laquo;</span>' ); ?>
+			<?php next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav">&raquo;</span>' ); ?>
 		</nav><!-- #<?php echo $nav_id; ?> -->
 		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 		<nav id="<?php echo $nav_id; ?>">
 			<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'zenpress' ); ?></h1>
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'zenpress' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span>', 'zenpress' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'zenpress' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&raquo;</span>', 'zenpress' ) ); ?></div>
 			<?php endif; ?>
 		</nav><!-- #<?php echo $nav_id; ?> -->
 		<?php endif; ?>
@@ -341,26 +353,6 @@ if ( ! function_exists( 'zenpress_posted_on' ) ) :
 endif;
 
 /**
- * Adds post-thumbnail support :)
- *
- * @since ZenPress 1.0.0
- */
-function zenpress_the_post_thumbnail( $before = '', $after = '' ) {
-	if ( '' != get_the_post_thumbnail() ) {
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
-		$class = '';
-
-		if ( $image['1'] < '300' ) {
-			$class = 'alignright';
-		}
-
-		echo $before;
-		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class . ' photo u-photo', 'itemprop' => 'image' ) );
-		echo $after;
-	}
-}
-
-/**
  * replace post-title with id when empty
  *
  * @since ZenPress 1.4.6
@@ -403,66 +395,6 @@ function zenpress_enhanced_image_navigation( $url ) {
 }
 add_filter( 'attachment_link', 'zenpress_enhanced_image_navigation' );
 
-/*
- * Add a checkbox for Post Covers to the featured image metabox
- */
-function zenpress_featured_image_meta( $content ) {
-	// If we don't have a featured image, nothing to do.
-	if ( ! has_post_thumbnail() ) {
-		return $content;
-	}
-	global $post;
-
-	// Text for checkbox
-	$text = __( 'Use as post cover (full-width)', 'zenpress' );
-
-	// Get the current setting
-	$value = esc_attr( get_post_meta( $post->ID, 'full_width_featured_image', '1' ) );
-	// Output the checkbox HTML
-	$label = '<input type="hidden" name="full_width_featured_image" value="0">';
-	$label .= '<label for="full_width_featured_image" class="selectit"><input name="full_width_featured_image" type="checkbox" id="full_width_featured_image" value="1" ' . checked( $value, 1, 0 ) . '> ' . $text . '</label>';
-
-	$label = wp_nonce_field( basename( __FILE__ ), 'zenpress_full_width_featured_image_meta_nonce' ) . $label;
-	return $content .= $label;
-}
-add_filter( 'admin_post_thumbnail_html', 'zenpress_featured_image_meta' );
-
-/**
- * Return true if Auto-Set Featured Image as Post Cover is enabled and it hasn't
- * been disabled for this post.
- *
- * Returns true if the current post has Full Width Featured Image enabled.
- *
- * Returns false if not a Single post type or there is no Featured Image selected
- * or none of the above conditions are true.
- */
-function zenpress_has_full_width_featured_image() {
-	// If this isn't a Single post type or we don't have a Featured Image set
-	if ( ! ( is_single() || is_page() ) || ! has_post_thumbnail() ) {
-		return false;
-	}
-
-	$full_width_featured_image = get_post_meta( get_the_ID(), 'full_width_featured_image' );
-
-	// If Use featured image as Post Cover has been checked in the Featured Image meta box, return true.
-	if ( $full_width_featured_image ) {
-		return true;
-	}
-
-	return false; // Default
-}
-
-/**
- * Add full-width-featured-image to body class when displaying a post with Full Width Featured Image enabled
- */
-function zenpress_full_width_featured_image_body_class( $classes ) {
-	if ( zenpress_has_full_width_featured_image() ) {
-		$classes[] = 'full-width-featured-image';
-	}
-	return $classes;
-}
-add_filter( 'body_class', 'zenpress_full_width_featured_image_body_class' );
-
 /**
  * Display the id for the post div.
  *
@@ -486,6 +418,11 @@ function zenpress_get_post_id() {
 
 	return apply_filters( 'zenpress_post_id', $post_id, get_the_ID() );
 }
+
+/**
+ * Adds the featured image functionality
+ */
+require( get_template_directory() . '/inc/featured-image.php' );
 
 /**
  * Adds some awesome websemantics like microformats(2) and microdata

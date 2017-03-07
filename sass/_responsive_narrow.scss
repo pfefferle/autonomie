@@ -2,8 +2,6 @@ html {
 	font-size: 1em;
 }
 
-
-
 #primary,
 #sidebar,
 .site-header .site-branding,
@@ -30,4 +28,16 @@ html {
 #primary .post,
 #primary .page {
 	padding: 40px 0;
+}
+
+#nav-below {
+	.nav-previous {
+		bottom: 20px;
+		z-index: 1;
+	}
+
+	.nav-next {
+		bottom: 20px;
+		z-index: 1;
+	}
 }
