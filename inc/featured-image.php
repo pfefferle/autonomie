@@ -102,10 +102,10 @@ function zenpress_has_full_width_featured_image() {
 		return false;
 	}
 
-	$full_width_featured_image = get_post_meta( get_the_ID(), 'full_width_featured_image' );
+	$full_width_featured_image = get_post_meta( get_the_ID(), 'full_width_featured_image', true );
 
 	// If Use featured image as Post Cover has been checked in the Featured Image meta box, return true.
-	if ( $full_width_featured_image ) {
+	if ( '1' == $full_width_featured_image ) {
 		return true;
 	}
 
