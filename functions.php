@@ -217,7 +217,7 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 			wp_add_inline_style( 'zenpress-style', $css );
 		} elseif ( get_header_image() ) {
 			$css = '.site-header .page-banner {
-				background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(' . get_header_image() . ') no-repeat center center scroll;
+				background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5)), url(' . get_header_image() . ') no-repeat center center scroll;
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;

@@ -414,6 +414,8 @@ table tbody tr:hover td, table tbody tr:hover th { background-color: #fafafb; }
 
 .wp-audio-shortcode { margin: 1em auto; }
 
+.wp-embedded-content { width: 100%; }
+
 .gallery { margin: auto; }
 
 .gallery-item { float: left; margin-top: 10px; text-align: center; width: 33%; }
