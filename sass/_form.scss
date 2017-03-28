@@ -4,7 +4,7 @@ input[type="email"],
 input[type="url"],
 textarea {
 	border: none;
-	border: 1px solid $light-gray;
+	border: 1px solid $border-gray;
 	border-radius: 5px;
 	padding: .5em;
 
@@ -14,7 +14,7 @@ textarea {
 }
 
 input[type="search"] {
-	border: 1px solid $light-gray;
+	border: 1px solid $border-gray;
 	border-radius: 50px;
 	padding: 5px 15px;
 

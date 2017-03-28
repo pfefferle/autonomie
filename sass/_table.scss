@@ -24,7 +24,7 @@ table {
 
 table th,
 table td {
-	border-top: 1px solid $light-gray;
+	border-top: 1px solid $border-gray;
 	padding: 10px;
 	text-align: left;
 	vertical-align: top;
@@ -40,7 +40,7 @@ table thead:first-child tr:first-child td {
 }
 
 table tbody + tbody {
-	border-top: 2px solid $light-gray;
+	border-top: 2px solid $border-gray;
 }
 
 table caption + thead tr:first-child th,
