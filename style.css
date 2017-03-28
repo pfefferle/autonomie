@@ -491,6 +491,7 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #fafafb; display:
 
 @media only screen and (max-width: 800px) { html { font-size: 1em; }
   #primary, #sidebar, .site-header .site-branding, .site-header .page-banner #page-description, .site-header .page-banner #page-title, .site-navigation { width: 90%; }
+  #primary .post .entry-header .entry-title, #primary .page .entry-header .entry-title { font-size: 2.5em; }
   .site-header .page-branding { font-size: .8em; }
   .site-header .search-field { width: 150px; }
   .page-header { width: 100%; }
