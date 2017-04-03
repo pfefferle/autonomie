@@ -38,15 +38,15 @@
 		background-color: $blue;
 		width: 100%;
 		position: relative;
-		height: 60vh;
-		max-height: 60%;
+		height: 75vh;
+		max-height: 75%;
 
 		.page-branding {
 			position: absolute;
 			left: 0;
 			bottom: 0;
 			width: 100%;
-			padding: 50px 0;
+			margin-bottom: 50px;
 		}
 
 		#page-title, #page-description {
@@ -74,7 +74,7 @@
 }
 
 .custom-header .site-header .page-branding {
-	text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
+	// text-shadow: 0 -5px 30px rgba(0, 0, 0, 0.7), 5px 0 30px rgba(0, 0, 0, 0.7), 0 5px 30px rgba(0, 0, 0, 0.7), -5px 0 30px rgba(0, 0, 0, 0.7);
 }
 
 #primary {
