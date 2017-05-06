@@ -204,7 +204,7 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 .site-header .site-branding:before, .site-header .site-branding:after { content: ' '; display: table; }
 .site-header .site-branding:after { clear: both; }
 .site-header .custom-logo { margin-top: 25px; margin-right: 5px; vertical-align: top; }
-.site-header #site-title { margin: 20px 0 20px 0; padding: 0; display: inline-block; font-size: 1.5em; font-family: Lato; font-weight: bold; }
+.site-header #site-title { margin: 20px 0 20px 0; padding: 0; display: inline-block; font-size: 1.5em; font-family: Lato; font-weight: bold; line-height: 1.5; }
 .site-header #site-title a { text-decoration: none; }
 .site-header #site-title a:hover { text-decoration: underline; }
 .site-header .page-banner { background-color: #5fa7c5; width: 100%; position: relative; height: 75vh; max-height: 75%; }
