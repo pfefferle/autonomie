@@ -12,7 +12,7 @@
 		<?php get_sidebar(); ?>
 
 		<div id="site-publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-			<meta itemprop="name" content="get_bloginfo( 'name', 'display' )" />
+			<meta itemprop="name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>" />
 			<meta itemprop="url" content="<?php echo home_url( '/' ); ?>" />
 			<?php
 
