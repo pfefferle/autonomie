@@ -22,7 +22,7 @@ function zenpress_the_post_thumbnail( $before = '', $after = '' ) {
 		$post_format = get_post_format();
 
 		// use `u-photo` on photo/gallery posts
-		if ( in_array( $post_format, array( 'image', 'gallery' ) ) {
+		if ( in_array( $post_format, array( 'image', 'gallery' ) ) ) {
 			$class .= ' u-photo';
 		} else { // otherwise use `u-featured`
 			$class .= ' u-featured';
