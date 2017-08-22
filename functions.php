@@ -440,7 +440,7 @@ require( get_template_directory() . '/inc/compat.php' );
 require( get_template_directory() . '/inc/syndication_links.php');
 
 /**
- * Adds Indiweb Post Kind support
+ * Adds Indieweb Post Kinds support
  */
 require( get_template_directory() . '/inc/post_kinds.php' );
 
