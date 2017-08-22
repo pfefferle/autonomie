@@ -17,12 +17,12 @@ add_action( 'init', 'zenpress_post_kinds_init' );
 
 function zenpress_post_kinds_init() {
 	if(method_exists('Kind_Taxonomy','get_icon')) {
-		add_filter('kind_icon_sprite','zenpress_kind_icon_sprite',10,2);
+		add_filter('kind_icon_display','zenpress_kind_icon_display',10,2);
 	}
 }
 
-if(!function_exists('zenpress_kind_icon_sprite')) {
-	function zenpress_kind_icon_sprite($url, $kind) {
-		return '';
+if(!function_exists('zenpress_kind_icon_display')) {
+	function zenpress_kind_icon_display($bool) {
+		return false;
 	}
 }
