@@ -24,6 +24,6 @@ function zenpress_syndication_links_init() {
 if(!function_exists('zenpress_syndication_links')) {
 	function zenpress_syndication_links() {
 		if(function_exists('get_post_syndication_links'))
-			echo get_post_syndication_links(null,array('show_textbefore' => true));
+			echo get_post_syndication_links(null,array('show_textbefore' => false));
 	}
 }

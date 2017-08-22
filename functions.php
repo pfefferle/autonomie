@@ -440,5 +440,10 @@ require( get_template_directory() . '/inc/compat.php' );
 require( get_template_directory() . '/inc/syndication_links.php');
 
 /**
+ * Adds Indiweb Post Kind support
+ */
+require( get_template_directory() . '/inc/post_kinds.php' );
+
+/**
  * This theme was built with PHP, Semantic HTML, CSS, love, and ZenPress.
  */
