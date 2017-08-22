@@ -435,12 +435,13 @@ require( get_template_directory() . '/inc/compat.php' );
 
 /**
  * Adds compatability for indieweb syndication links
- * if github.com/dshanske/syndication-links is installed
+ * if github.com/dshanske/syndication-links is activated
  */
 require( get_template_directory() . '/inc/syndication_links.php');
 
 /**
  * Adds Indieweb Post Kinds support
+ * if github.com/dshanske/indieweb-post-kinds is activated
  */
 require( get_template_directory() . '/inc/post_kinds.php' );
 
