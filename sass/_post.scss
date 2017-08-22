@@ -144,12 +144,13 @@
 		margin-top: 15px;
 		margin-bottom: 15px;
 
-		&.post-format {
+		&.post-format, &.post-kind {
 			padding: 0;
 			margin: 0;
 		}
 
 		&.post-format a,
+		&.post-kind a,
 		&.post-format:before {
 			color: $light-gray;
 			font-weight: bold;
@@ -168,9 +169,18 @@
 			color: $light-gray;
 		}
 
-		.entry-format {
+		.entry-format, .kind {
 			margin-left: 5px;
 			line-height: 1;
+		}
+
+		&.post-kind .svg-icon {
+			width: 32px;
+			height: 32px;
+			vertical-align: text-middle;
+			margin-right: 0;
+			position: relative;
+			display: inline-block;
 		}
 
 		address {

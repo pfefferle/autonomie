@@ -275,7 +275,6 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 	 */
 	function zenpress_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
-
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
 			case 'trackback' :
@@ -433,6 +432,18 @@ require( get_template_directory() . '/inc/semantics.php' );
  * Adds back compat handling for older WP versions
  */
 require( get_template_directory() . '/inc/compat.php' );
+
+/**
+ * Adds compatability for indieweb syndication links
+ * if github.com/dshanske/syndication-links is activated
+ */
+require( get_template_directory() . '/inc/syndication_links.php');
+
+/**
+ * Adds Indieweb Post Kinds support
+ * if github.com/dshanske/indieweb-post-kinds is activated
+ */
+require( get_template_directory() . '/inc/post_kinds.php' );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and ZenPress.
