@@ -55,8 +55,8 @@
 		<div class="page-banner">
 			<?php if ( ! is_singular() ) : ?>
 			<div class="page-branding">
-				<?php get_template_part( 'partials/page', 'title' ); ?>
-				<?php get_template_part( 'partials/page', 'description' ); ?>
+				<?php get_template_part( 'templates/partials/page', 'title' ); ?>
+				<?php get_template_part( 'templates/partials/page', 'description' ); ?>
 			</div>
 			<?php endif; ?>
 		</div>

@@ -2,19 +2,21 @@
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1em;
+	margin-right: 1.2em;
 	margin-top: .3em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1em;
+	margin-left: 1.2em;
 	margin-top: .3em;
 }
 
 .aligncenter,
 .alignnone,
+.alignfull,
+.alignwide,
 .wp-post-image {
 	clear: both;
 	display: block;

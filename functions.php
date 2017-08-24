@@ -61,7 +61,10 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		// Register custom image size for image post formats.
 		add_image_size( 'zenpress-image-post', $content_width, 1288 );
 
-		// Switches default core markup for search form to output valid .
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
 		add_theme_support(
 			'html5',
 			array(
@@ -73,6 +76,16 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 				'widgets',
 			)
 		);
+
+		add_theme_support( 'gutenberg', array(
+			'wide-images' => true,
+			'colors' => array(
+				'#0073aa',
+				'#229fd8',
+				'#eee',
+				'#444',
+			),
+		) );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -194,6 +207,9 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 
 		// Loads our main stylesheet.
 		wp_enqueue_style( 'zenpress-style', get_stylesheet_uri() );
+
+		wp_dequeue_style( 'gutenbergthemeblocks-style' );
+		wp_dequeue_style( 'gutenbergtheme-fonts' );
 
 		wp_localize_script(
 			'zenpress',
@@ -422,17 +438,17 @@ function zenpress_get_post_id() {
 /**
  * Adds the featured image functionality
  */
-require( get_template_directory() . '/inc/featured-image.php' );
+require( get_template_directory() . '/includes/featured-image.php' );
 
 /**
  * Adds some awesome websemantics like microformats(2) and microdata
  */
-require( get_template_directory() . '/inc/semantics.php' );
+require( get_template_directory() . '/includes/semantics.php' );
 
 /**
  * Adds back compat handling for older WP versions
  */
-require( get_template_directory() . '/inc/compat.php' );
+require( get_template_directory() . '/includes/compat.php' );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and ZenPress.

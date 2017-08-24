@@ -6,7 +6,7 @@
 
 	.site-branding {
 		margin: 0 auto;
-		width: $wide-width;
+		width: $default-width;
 
 		@include clearfix;
 	}
@@ -81,7 +81,6 @@
 #primary {
 	display: block;
 	margin: 0 auto;
-	width: $wide-width;
 }
 
 #colophon {

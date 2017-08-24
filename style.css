@@ -200,7 +200,7 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 .search-form .search-submit { display: none; }
 
 .site-header { display: block; position: relative; width: 100%; border-bottom: 1px solid #d1d5d7; }
-.site-header .site-branding { margin: 0 auto; width: 900px; }
+.site-header .site-branding { margin: 0 auto; width: 700px; }
 .site-header .site-branding:before, .site-header .site-branding:after { content: ' '; display: table; }
 .site-header .site-branding:after { clear: both; }
 .site-header .custom-logo { margin-top: 25px; margin-right: 5px; vertical-align: top; }
@@ -213,7 +213,7 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 .site-header .page-banner #page-title { font-size: 2em; font-weight: bold; }
 .site-header .search-form { display: inline-block; margin: 20px 0 20px 0; padding: 0; float: right; }
 
-#primary { display: block; margin: 0 auto; width: 900px; }
+#primary { display: block; margin: 0 auto; }
 
 #colophon { width: 100%; background-color: #fafafb; margin-top: 100px; }
 #colophon:before, #colophon:after { content: ' '; display: table; }
@@ -397,11 +397,11 @@ table tbody tr:nth-child(odd) td, table tbody tr:nth-child(odd) th { background-
 
 table tbody tr:hover td, table tbody tr:hover th { background-color: #fafafb; }
 
-.alignleft { display: inline; float: left; margin-right: 1em; margin-top: .3em; }
+.alignleft { display: inline; float: left; margin-right: 1.2em; margin-top: .3em; }
 
-.alignright { display: inline; float: right; margin-left: 1em; margin-top: .3em; }
+.alignright { display: inline; float: right; margin-left: 1.2em; margin-top: .3em; }
 
-.aligncenter, .alignnone, .wp-post-image { clear: both; display: block; margin: 1em auto; text-align: center; max-width: 100%; height: auto; }
+.aligncenter, .alignnone, .alignfull, .alignwide, .wp-post-image { clear: both; display: block; margin: 1em auto; text-align: center; max-width: 100%; height: auto; }
 
 .size-auto, .size-full, .size-large, .size-medium, .size-thumbnail { max-width: 100%; height: auto; }
 
@@ -477,7 +477,7 @@ h6 { font-size: 1.4em; }
 
 hr { display: block; width: 200px; margin: 40px auto !important; border: 0; border-top: 1px solid #d1d5d7; text-align: center; }
 
-pre { margin-top: 50px; margin-bottom: 50px; background-color: #fafafb; display: block; padding: 50px; white-space: pre-wrap; word-wrap: break-word; }
+pre { margin-top: 50px; margin-bottom: 50px; background-color: #000; color: #fff; display: block; padding: 50px; white-space: pre-wrap; word-wrap: break-word; }
 
 .hidden { display: none !important; visibility: hidden; }
 
@@ -496,19 +496,16 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #fafafb; display:
   #nav-below .nav-previous { bottom: 20px; z-index: 1; }
   #nav-below .nav-next { bottom: 20px; z-index: 1; } }
 @media only screen and (min-width: 800px) { #primary, .site-navigation, .site-header .site-branding, .site-header .page-banner #page-description, .site-header .page-banner #page-title, #sidebar { width: 700px; } }
-@media only screen and (min-width: 900px) { #primary, .site-navigation, .site-header .site-branding, .site-header .page-banner #page-description, .site-header .page-banner #page-title, #sidebar { width: 900px; }
-  .entry-content > *, .entry-summary > *, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { margin-left: 100px; margin-right: 100px; }
-  .entry-content > div, .entry-content > audio { margin-left: 0px; margin-right: 0px; padding-left: 100px; padding-right: 100px; }
-  .entry-content > table, .entry-content > pre { margin-left: 0px; margin-right: 0px; }
-  .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > figure, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > figure { margin: 0 auto; max-width: 100%; }
-  figure.alignleft, figure.alignright { padding: 0; margin: 0; }
-  figure.alignleft { display: inline; float: left; margin-right: 1em; margin-top: .3em; margin-left: 100px; }
-  figure.alignright { display: inline; float: right; margin-left: 1em; margin-top: .3em; margin-right: 100px; }
+@media only screen and (min-width: 900px) { #primary { width: 100%; }
+  .entry-content > *, .entry-summary > *, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { width: 700px; margin: 1.2em auto; }
+  .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > figure, .entry-content > table, .entry-content > pre, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > figure, .entry-summary > table, .entry-summary > pre { width: 900px; }
+  .entry-content .wp-block-cover-image, .entry-content .alignfull, .entry-summary .wp-block-cover-image, .entry-summary .alignfull { width: 100%; }
+  figure.alignleft { float: left; width: 350px; margin-top: .3em; margin-right: 1.2em; margin-left: calc( 50% - 350px ); }
+  figure.alignright { float: right; width: 350px; margin-top: .3em; margin-left: 1.2em; margin-right: calc( 50% - 350px ); }
   .alignright figcaption { display: block; height: 68px; right: -100px; margin-top: 0px; position: absolute; text-align: left; top: 0px; width: 80px; word-break: break-word; word-wrap: break-word; }
   .alignright figcaption:before { width: 25%; margin-right: 75%; border-top: 1px solid #677275; display: block; content: ""; margin-bottom: 10px; }
   .alignleft figcaption { display: block; height: 68px; left: -100px; margin-top: 0px; position: absolute; text-align: right; top: 0px; width: 80px; word-break: break-word; word-wrap: break-word; }
-  .alignleft figcaption:before { width: 25%; margin-left: 75%; border-top: 1px solid rgba(0, 0, 0, 0.15); display: block; content: ""; margin-bottom: 10px; }
-  .wp-audio-shortcode { margin: 1em 100px !important; width: 500px !important; } }
+  .alignleft figcaption:before { width: 25%; margin-left: 75%; border-top: 1px solid rgba(0, 0, 0, 0.15); display: block; content: ""; margin-bottom: 10px; } }
 /* ========================================================================== Print styles. Inlined to avoid the additional HTTP request: http://www.phpied.com/delay-loading-your-print-css/ ========================================================================== */
 @media print { *, *:before, *:after, *:first-letter, *:first-line { background: transparent !important; color: #000 !important;                         /* Black prints faster:
 						   http://www.sanbeiji.com/archives/953 */ box-shadow: none !important; text-shadow: none !important; }
