@@ -502,7 +502,7 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #000; color: #fff
 @media only screen and (min-width: 800px) { #primary, .site-navigation, .site-header .site-branding, .site-header .page-banner #page-description, .site-header .page-banner #page-title, #sidebar { width: 700px; } }
 @media only screen and (min-width: 900px) { #primary { width: 100%; }
   .site-header .page-banner #page-description { width: 900px; }
-  .entry-content > *, .entry-summary > *, .entry-content form, .entry-content div, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { width: 700px; margin: 1.2em auto; }
+  .entry-content > *, .entry-summary > *, .entry-content form, .entry-content div, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { width: 700px; margin: 1.2em auto; box-sizing: border-box; }
   .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > figure, .entry-content > table, .entry-content > pre, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > figure, .entry-summary > table, .entry-summary > pre { width: 900px; box-sizing: border-box; }
   .wp-audio-shortcode { width: 700px !important; }
   .entry-content .wp-block-cover-image, .entry-content .alignfull, .entry-summary .wp-block-cover-image, .entry-summary .alignfull { width: 100%; }
