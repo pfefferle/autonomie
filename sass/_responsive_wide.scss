@@ -2,6 +2,10 @@
 	width: 100%;
 }
 
+.site-header .page-banner #page-description {
+	width: $wide-width;
+}
+
 .entry-content > *,
 .entry-summary > *,
 .entry-header,
@@ -22,6 +26,7 @@
 	> table,
 	> pre {
 		width: $wide-width;
+		box-sizing: border-box;
 	}
 }
 

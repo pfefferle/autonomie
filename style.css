@@ -501,8 +501,9 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #000; color: #fff
   #nav-below .nav-next { bottom: 20px; z-index: 1; } }
 @media only screen and (min-width: 800px) { #primary, .site-navigation, .site-header .site-branding, .site-header .page-banner #page-description, .site-header .page-banner #page-title, #sidebar { width: 700px; } }
 @media only screen and (min-width: 900px) { #primary { width: 100%; }
+  .site-header .page-banner #page-description { width: 900px; }
   .entry-content > *, .entry-summary > *, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { width: 700px; margin: 1.2em auto; }
-  .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > figure, .entry-content > table, .entry-content > pre, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > figure, .entry-summary > table, .entry-summary > pre { width: 900px; }
+  .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > figure, .entry-content > table, .entry-content > pre, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > figure, .entry-summary > table, .entry-summary > pre { width: 900px; box-sizing: border-box; }
   .entry-content .wp-block-cover-image, .entry-content .alignfull, .entry-summary .wp-block-cover-image, .entry-summary .alignfull { width: 100%; }
   figure.alignleft { float: left; width: 350px; margin-top: .3em; margin-right: 1.2em; margin-left: calc( 50% - 350px ); }
   figure.alignright { float: right; width: 350px; margin-top: .3em; margin-left: 1.2em; margin-right: calc( 50% - 350px ); }
