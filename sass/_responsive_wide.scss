@@ -32,6 +32,10 @@
 	}
 }
 
+.wp-audio-shortcode {
+	width: $default-width !important;
+}
+
 .entry-content,
 .entry-summary {
 	.wp-block-cover-image,
