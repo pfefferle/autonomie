@@ -41,6 +41,7 @@
 @mixin button {
 	a {
 		text-decoration: none;
+		color: $gray;
 	}
 	color: $gray;
 	border: 1px solid $border-gray;
@@ -52,14 +53,13 @@
 		outline: 0;
 	}
 
-	&:hover {
-		background-color: darken($white, 2%);
-		color: darken($gray, 2%);
-	}
-
-	&:active {
-		background-color: darken($white, 4%);
-		color: darken($gray, 4%);
+	&:hover,
+	&:active,
+	&:hover a,
+	&:active a {
+		border: 1px solid $gray;
+		background-color: $gray;
+		color: $white
 	}
 }
 

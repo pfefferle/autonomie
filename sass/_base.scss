@@ -1,3 +1,11 @@
+body {
+	background-color: $white;
+	color: $dark-gray;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+	word-wrap: break-word;
+}
+
 address {
 	font-style: normal;
 }
@@ -54,32 +62,19 @@ blockquote {
 	line-height: 1.8;
 }
 
-body {
-	background-color: $white;
-	color: $dark-gray;
-	font-family: 'Merriweather', serif;
-	font-weight: 400;
-	word-wrap: break-word;
-}
-
 code {
 	word-wrap: break-word;
 }
 
-figure {
-	margin: 0;
+figure blockquote {
+	hyphens: auto;
+	word-wrap: break-word;
+	border: none;
 	padding: 0;
-
-	blockquote {
-		hyphens: auto;
-		word-wrap: break-word;
-		border: none;
-		padding: 0;
-		margin: 0;
-		text-align: center;
-		font-size: 1.1em;
-		font-family: Georgia;
-	}
+	margin: 0;
+	text-align: center;
+	font-size: 1.1em;
+	font-family: Georgia;
 }
 
 ins {

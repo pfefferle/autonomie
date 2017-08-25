@@ -27,6 +27,7 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
+.wp-block-button,
 .button {
 	@include button;
 }
@@ -35,4 +36,9 @@ input[type="reset"],
 	.search-submit {
 		display: none;
 	}
+}
+
+.wp-block-button.aligncenter {
+	display: block;
+	width: auto;
 }
