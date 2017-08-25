@@ -121,7 +121,7 @@ figure {
 		&:before {
 			width: 25%;
 			margin-left: 75%;
-			border-top: 1px solid rgba(0,0,0,0.15);
+			border-top: 1px solid $light-gray;
 			display: block;
 			content: "";
 			margin-bottom: 10px;

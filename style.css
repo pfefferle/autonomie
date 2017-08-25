@@ -306,7 +306,6 @@ ul.children .avatar { margin-right: 10px; width: 48px; height: 48px; }
 #primary .post.format-status .post-format:before, #primary .page.format-status .post-format:before { content: '\f105'; }
 #primary .post .entry-content, #primary .post .entry-summary, #primary .page .entry-content, #primary .page .entry-summary { color: #373d3f; font-style: normal; line-height: 2; font-size: 1.1em; margin: 0 auto; }
 #primary .post .page-link, #primary .post .page-links, #primary .page .page-link, #primary .page .page-links { margin-bottom: 1em; }
-#primary .post .wp-caption-text, #primary .page .wp-caption-text { margin-top: .5em; }
 #primary .post .entry-meta, #primary .post .wp-caption-text, #primary .post .gallery-caption, #primary .post .page-link, #primary .post .page-links, #primary .page .entry-meta, #primary .page .wp-caption-text, #primary .page .gallery-caption, #primary .page .page-link, #primary .page .page-links { font-family: Lato, sans-serif; clear: both; color: #4f575a; display: block; }
 #primary .post .entry-meta a, #primary .post .wp-caption-text a, #primary .post .gallery-caption a, #primary .post .page-link a, #primary .post .page-links a, #primary .page .entry-meta a, #primary .page .wp-caption-text a, #primary .page .gallery-caption a, #primary .page .page-link a, #primary .page .page-links a { color: #4f575a; text-decoration: none; }
 #primary .post .entry-meta a:hover, #primary .post .wp-caption-text a:hover, #primary .post .gallery-caption a:hover, #primary .post .page-link a:hover, #primary .post .page-links a:hover, #primary .page .entry-meta a:hover, #primary .page .wp-caption-text a:hover, #primary .page .gallery-caption a:hover, #primary .page .page-link a:hover, #primary .page .page-links a:hover { text-decoration: underline; }
@@ -418,19 +417,27 @@ img.aligncenter, img.alignnone, img.alignfull, img.alignwide, img.wp-post-image 
 
 .wp-embedded-content { width: 100%; }
 
-.gallery { margin: auto; }
+.gallery { margin: 0 auto 18px; }
 
-.gallery-item { float: left; margin-top: 10px; width: 33%; }
+.gallery .gallery-item { float: left; margin: 10px 0; text-align: center; width: 33%; }
 
 .gallery-columns-1 .gallery-item { width: 100%; }
 
 .gallery-columns-2 .gallery-item { width: 50%; }
 
-.gallery img { border: 2px solid #4f575a; }
+.gallery-columns-4 .gallery-item { width: 25%; }
 
-.gallery-caption { margin-left: 0; }
+.gallery img { border-radius: 5px; }
+
+.gallery-columns-2 .attachment-medium { max-width: 92%; height: auto; }
+
+.gallery-columns-4 .attachment-thumbnail { max-width: 84%; height: auto; }
+
+.gallery .gallery-caption { color: #888; font-size: 12px; margin: 0 0 12px; }
 
 .wp-block-embed > * { margin: 0 auto; }
+
+.wp-caption-text { margin-top: .5em; }
 
 #sidebar { font-weight: normal; display: block; position: relative; font-size: .9em; margin: 100px auto; width: 90%; font-size: 18px; }
 #sidebar:before, #sidebar:after { content: ' '; display: table; }
@@ -455,8 +462,8 @@ abbr { font-variant: small-caps; }
 abbr[title] { border-bottom: 1px dotted #4f575a; cursor: help; }
 
 blockquote, figure { color: #4f575a; font-size: 1em; font-style: italic; position: relative; line-height: 1.5; }
-blockquote small, blockquote figcaption, blockquote cite, figure small, figure figcaption, figure cite { color: #4f575a; display: block; font-size: .7em; font-style: normal; font-weight: normal; text-align: right; }
-blockquote small:before, blockquote figcaption:before, blockquote cite:before, figure small:before, figure figcaption:before, figure cite:before { content: '\2014 \00A0'; }
+blockquote small, blockquote figcaption, blockquote cite, figure small, figure figcaption, figure cite { color: #4f575a; display: block; font-size: .7em; font-style: normal; font-weight: normal; text-align: center; }
+blockquote cite:before, blockquote small:before, figure cite:before, figure small:before { content: '\2014 \00A0'; }
 
 blockquote { border: 0; border-left: 3px solid #fafafb; margin: 0; padding-left: 30px; line-height: 1.8; }
 
@@ -518,7 +525,7 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #000; color: #fff
   .alignright figcaption { display: block; height: 68px; right: -100px; margin-top: 0px; position: absolute; text-align: left; top: 0px; width: 80px; word-break: break-word; word-wrap: break-word; }
   .alignright figcaption:before { width: 25%; margin-right: 75%; border-top: 1px solid #677275; display: block; content: ""; margin-bottom: 10px; }
   .alignleft figcaption { display: block; height: 68px; left: -100px; margin-top: 0px; position: absolute; text-align: right; top: 0px; width: 80px; word-break: break-word; word-wrap: break-word; }
-  .alignleft figcaption:before { width: 25%; margin-left: 75%; border-top: 1px solid rgba(0, 0, 0, 0.15); display: block; content: ""; margin-bottom: 10px; }
+  .alignleft figcaption:before { width: 25%; margin-left: 75%; border-top: 1px solid #677275; display: block; content: ""; margin-bottom: 10px; }
   article.error404 .entry-content { width: 900px; margin: auto auto; } }
 /* ========================================================================== Print styles. Inlined to avoid the additional HTTP request: http://www.phpied.com/delay-loading-your-print-css/ ========================================================================== */
 @media print { *, *:before, *:after, *:first-letter, *:first-line { background: transparent !important; color: #000 !important;                         /* Black prints faster:

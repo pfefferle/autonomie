@@ -76,12 +76,13 @@ img.wp-post-image {
 }
 
 .gallery {
-	margin: auto;
+	margin: 0 auto 18px;
 }
 
-.gallery-item {
+.gallery .gallery-item {
 	float: left;
-	margin-top: 10px;
+	margin: 10px 0;
+	text-align: center;
 	width: 33%;
 }
 
@@ -93,16 +94,34 @@ img.wp-post-image {
 	width: 50%;
 }
 
-.gallery img {
-	border: 2px solid $gray;
+.gallery-columns-4 .gallery-item {
+	width: 25%;
 }
 
-.gallery-caption {
-	margin-left: 0;
+.gallery img {
+	border-radius: 5px;
+}
+
+.gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+	max-width: 84%;
+	height: auto;
+}
+.gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
 }
 
 .wp-block-embed {
 	> * {
 		margin: 0 auto;
 	}
+}
+
+.wp-caption-text {
+	margin-top: .5em;
 }

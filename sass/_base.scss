@@ -35,8 +35,11 @@ figure {
 		font-size: .7em;
 		font-style: normal;
 		font-weight: normal;
-		text-align: right;
+		text-align: center;
+	}
 
+	cite,
+	small {
 		&:before {
 			content: '\2014 \00A0';
 		}
