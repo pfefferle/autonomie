@@ -26,7 +26,11 @@
 	height: auto;
 }
 
-.wp-post-image {
+img.aligncenter,
+img.alignnone,
+img.alignfull,
+img.alignwide,
+img.wp-post-image {
 	display: block;
 }
 

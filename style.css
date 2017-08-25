@@ -403,7 +403,7 @@ table tbody tr:hover td, table tbody tr:hover th { background-color: #fafafb; }
 
 .aligncenter, .alignnone, .alignfull, .alignwide, .wp-post-image { clear: both; margin: 1em auto; text-align: center; width: auto; max-width: 100%; height: auto; }
 
-.wp-post-image { display: block; }
+img.aligncenter, img.alignnone, img.alignfull, img.alignwide, img.wp-post-image { display: block; }
 
 .size-auto, .size-full, .size-large, .size-medium, .size-thumbnail { max-width: 100%; height: auto; }
 
