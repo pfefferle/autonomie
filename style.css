@@ -223,9 +223,9 @@ button:active, input[type="button"]:active, input[type="submit"]:active, input[t
 
 .screen-reader-text, .assistive-text { clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); position: absolute !important; }
 
-.error404 .widget { float: left; width: 33%; }
-.error404 .widget .widgettitle, .error404 .widget ul { margin-right: 1em; }
-.error404 .widget_tag_cloud { clear: both; float: none; width: 100%; }
+.error404 .entry-content .widget { float: left; width: 33%; }
+.error404 .entry-content .widget .widgettitle, .error404 .entry-content .widget ul { margin-right: 1em; }
+.error404 .entry-content .widget_tag_cloud { clear: both; float: none; width: 100%; }
 
 .post .notice, .error404 #searchform { background: #677275; display: block; padding: 1em; }
 
@@ -498,11 +498,12 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #000; color: #fff
   .site-header .search-field { width: 150px; }
   .page-header { width: 100%; }
   #nav-below .nav-previous { bottom: 20px; z-index: 1; }
-  #nav-below .nav-next { bottom: 20px; z-index: 1; } }
+  #nav-below .nav-next { bottom: 20px; z-index: 1; }
+  .error404 .entry-content .widget, #sidebar #secondary, #sidebar #tertiary { width: 100%; clear: both; } }
 @media only screen and (min-width: 800px) { #primary, .site-navigation, .site-header .site-branding, .site-header .page-banner #page-description, .site-header .page-banner #page-title, #sidebar { width: 700px; } }
-@media only screen and (min-width: 900px) { #primary { width: 100%; }
-  .site-header .page-banner #page-description { width: 900px; }
-  .entry-content > *, .entry-summary > *, .entry-content form, .entry-content div, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { width: 700px; margin: 1.2em auto; box-sizing: border-box; }
+@media only screen and (min-width: 1000px) { #primary { width: 100%; }
+  #sidebar, .site-navigation, .site-header .site-branding, .site-header .page-banner #page-title, .site-header .page-banner #page-description { width: 900px; }
+  .entry-content > *, .entry-summary > *, .entry-content > form, .entry-content > div, .entry-header, .entry-footer, #comments, #nav-above, #nav-below { width: 700px; margin: 1.2em auto; box-sizing: border-box; }
   .entry-content > object, .entry-content > embed, .entry-content > iframe, .entry-content > figure, .entry-content > table, .entry-content > pre, .entry-summary > object, .entry-summary > embed, .entry-summary > iframe, .entry-summary > figure, .entry-summary > table, .entry-summary > pre { width: 900px; box-sizing: border-box; }
   .wp-audio-shortcode { width: 700px !important; }
   .entry-content .wp-block-cover-image, .entry-content .alignfull, .entry-summary .wp-block-cover-image, .entry-summary .alignfull { width: 100%; }
@@ -511,7 +512,8 @@ pre { margin-top: 50px; margin-bottom: 50px; background-color: #000; color: #fff
   .alignright figcaption { display: block; height: 68px; right: -100px; margin-top: 0px; position: absolute; text-align: left; top: 0px; width: 80px; word-break: break-word; word-wrap: break-word; }
   .alignright figcaption:before { width: 25%; margin-right: 75%; border-top: 1px solid #677275; display: block; content: ""; margin-bottom: 10px; }
   .alignleft figcaption { display: block; height: 68px; left: -100px; margin-top: 0px; position: absolute; text-align: right; top: 0px; width: 80px; word-break: break-word; word-wrap: break-word; }
-  .alignleft figcaption:before { width: 25%; margin-left: 75%; border-top: 1px solid rgba(0, 0, 0, 0.15); display: block; content: ""; margin-bottom: 10px; } }
+  .alignleft figcaption:before { width: 25%; margin-left: 75%; border-top: 1px solid rgba(0, 0, 0, 0.15); display: block; content: ""; margin-bottom: 10px; }
+  article.error404 .entry-content { width: 900px; margin: auto auto; } }
 /* ========================================================================== Print styles. Inlined to avoid the additional HTTP request: http://www.phpied.com/delay-loading-your-print-css/ ========================================================================== */
 @media print { *, *:before, *:after, *:first-letter, *:first-line { background: transparent !important; color: #000 !important;                         /* Black prints faster:
 						   http://www.sanbeiji.com/archives/953 */ box-shadow: none !important; text-shadow: none !important; }

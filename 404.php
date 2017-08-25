@@ -12,10 +12,10 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title p-entry-title"><?php _e( 'Well this is somewhat embarrassing, isn&rsquo;t it?', 'zenpress' ); ?></h1>
+					<h1 class="entry-title p-name"><?php _e( 'Well this is somewhat embarrassing, isn&rsquo;t it?', 'zenpress' ); ?></h1>
 				</header>
 
-				<div class="entry-content e-entry-content">
+				<div class="entry-content e-content">
 					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'zenpress' ); ?></p>
 
 					<?php get_search_form(); ?>

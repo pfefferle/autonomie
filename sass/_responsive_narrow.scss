@@ -43,3 +43,10 @@ html {
 		z-index: 1;
 	}
 }
+
+.error404 .entry-content .widget,
+#sidebar #secondary,
+#sidebar #tertiary {
+	width: 100%;
+	clear: both;
+}

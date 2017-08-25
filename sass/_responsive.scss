@@ -6,6 +6,6 @@
 	@import 'responsive_default';
 }
 
-@media only screen and (min-width: $wide-width) {
+@media only screen and (min-width: $wide-width + 100px) {
 	@import 'responsive_wide';
 }
