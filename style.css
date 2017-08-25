@@ -439,7 +439,7 @@ img.aligncenter, img.alignnone, img.alignfull, img.alignwide, img.wp-post-image 
 
 .wp-caption-text { margin-top: .5em; }
 
-#sidebar { font-weight: normal; display: block; position: relative; font-size: .9em; margin: 100px auto; width: 90%; font-size: 18px; }
+#sidebar { font-weight: normal; font-family: Lato, sans-serif; display: block; position: relative; font-size: .9em; margin: 100px auto; width: 90%; font-size: 18px; }
 #sidebar:before, #sidebar:after { content: ' '; display: table; }
 #sidebar:after { clear: both; }
 #sidebar #colophon { margin-top: 100px; }
