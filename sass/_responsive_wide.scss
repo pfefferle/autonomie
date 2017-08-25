@@ -19,7 +19,7 @@
 #comments,
 #nav-above,
 #nav-below {
-	width: $default-width;
+	max-width: $default-width;
 	margin: 1.2em auto;
 	box-sizing: border-box;
 }
@@ -29,10 +29,18 @@
 	> object,
 	> embed,
 	> iframe,
-	> figure,
+	> figure {
+		max-width: $wide-width;
+		box-sizing: border-box;
+	}
+}
+
+.entry-content,
+.entry-summary {
 	> table,
 	> pre {
 		width: $wide-width;
+		max-width: $wide-width;
 		box-sizing: border-box;
 	}
 }
@@ -45,7 +53,13 @@
 .entry-summary {
 	.wp-block-cover-image,
 	.alignfull {
+		max-width: 100%;
 		width: 100%;
+	}
+
+	.alignwide {
+		width: auto;
+		max-width: $wide-width;
 	}
 }
 

@@ -51,7 +51,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php if ( ! is_singular() || zenpress_has_full_width_featured_image() ) : ?>
+		<?php if ( is_home() || is_archive() || is_search() || zenpress_has_full_width_featured_image() ) : ?>
 		<div class="page-banner">
 			<?php if ( ! is_singular() ) : ?>
 			<div class="page-branding">

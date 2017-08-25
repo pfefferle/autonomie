@@ -19,11 +19,15 @@
 .alignwide,
 .wp-post-image {
 	clear: both;
-	display: block;
 	margin: 1em auto;
 	text-align: center;
+	width: auto;
 	max-width: 100%;
 	height: auto;
+}
+
+.wp-post-image {
+	display: block;
 }
 
 .size-auto,
@@ -91,4 +95,10 @@
 
 .gallery-caption {
 	margin-left: 0;
+}
+
+.wp-block-embed {
+	> * {
+		margin: 0 auto;
+	}
 }
