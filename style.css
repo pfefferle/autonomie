@@ -1,23 +1,4 @@
-/**
- * Theme Name: @@name
- * Theme URI: @@homepage
- * Author: @@author
- * Author URI: @@author_url
- * Description: @@description
- * Version: @@version
- * License: @@license Version @@license_version
- * License URI: @@license_url
- * Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options
- * Text Domain: zenpress
- *
- * GitHub Theme URI: pfefferle/ZenPress
- * GitHub Theme URI: https://github.com/pfefferle/ZenPress
- *
- * This is a child theme for the ZenPress theme (http://wordpress.org/themes/zenpress)
- * and, like WordPress, licensed under the GPL.
- *
- * Use it to make something cool, have fun, and share what you've learned with others.
- */
+/** Theme Name: ZenPress Theme URI: https://github.com/pfefferle/ZenPress Author: Matthias Pfefferle Author URI: http://notizblog.org/ Description: Pure Zen Version: 1.0.0-dev License: GNU General Public License Version 3 License URI: http://www.gnu.org/licenses/gpl.html Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options Text Domain: zenpress  GitHub Theme URI: pfefferle/ZenPress GitHub Theme URI: https://github.com/pfefferle/ZenPress  This is a child theme for the ZenPress theme (http://wordpress.org/themes/zenpress) and, like WordPress, licensed under the GPL.  Use it to make something cool, have fun, and share what you've learned with others. */
 /* lato-300 - latin */
 @font-face { font-family: 'Lato'; font-style: normal; font-weight: normal; src: url("font/lato/lato-v13-latin-300.eot");
   /* IE9 Compat Modes */
