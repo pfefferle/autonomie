@@ -6,24 +6,14 @@ module.exports = function(grunt) {
     sass: {
       main: {
         options: {
-          style: 'compact',
-          line_comments: false,
-          line_numbers: false,
-          sourcemap: 'none'
-        },
-        files: {
-          'style.css': 'sass/style.scss',
-        }
-      },
-      editor: {
-        options: {
           style: 'compressed',
           line_comments: false,
           line_numbers: false,
           sourcemap: 'none'
         },
         files: {
-          'css/editor-style.css': 'sass/editor-style.scss'
+          'css/editor-style.css': 'sass/editor-style.scss',
+          'style.css': 'sass/style.scss'
         }
       }
     },
