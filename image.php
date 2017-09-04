@@ -87,7 +87,7 @@ get_header(); ?>
 
 					</div><!-- .entry-content -->
 
-					<footer class="entry-meta">
+					<footer class="entry-footer entry-meta">
 						<?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open ?>
 							<?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'zenpress' ), get_trackback_url() ); ?>
 						<?php elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open ?>
