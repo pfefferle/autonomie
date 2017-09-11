@@ -207,6 +207,10 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 
 		// Loads our main stylesheet.
 		wp_enqueue_style( 'zenpress-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'zenpress-print-style', get_stylesheet_directory_uri() . '/css/print.css', array( 'zenpress-style' ), '1.0.0', 'print' );
+		wp_enqueue_style( 'zenpress-narrow-style', get_stylesheet_directory_uri() . '/css/narrow-width.css', array( 'zenpress-style' ), '1.0.0', '(max-width: 800px)' );
+		wp_enqueue_style( 'zenpress-default-style', get_stylesheet_directory_uri() . '/css/default-width.css', array( 'zenpress-style' ), '1.0.0', '(min-width: 800px)' );
+		wp_enqueue_style( 'zenpress-wide-style', get_stylesheet_directory_uri() . '/css/wide-width.css', array( 'zenpress-style' ), '1.0.0', '(min-width: 1000px)' );
 
 		wp_dequeue_style( 'gutenbergthemeblocks-style' );
 		wp_dequeue_style( 'gutenbergtheme-fonts' );

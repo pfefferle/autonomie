@@ -13,6 +13,10 @@ module.exports = function(grunt) {
         },
         files: {
           'css/editor-style.css': 'sass/editor-style.scss',
+          'css/print.css': 'sass/print.scss',
+          'css/narrow-width.css': 'sass/responsive_narrow.scss',
+          'css/default-width.css': 'sass/responsive_default.scss',
+          'css/wide-width.css': 'sass/responsive_wide.scss',
           'style.css': 'sass/style.scss'
         }
       }
