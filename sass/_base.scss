@@ -43,7 +43,6 @@ figure {
 		font-size: .7em;
 		font-style: normal;
 		font-weight: normal;
-		text-align: left;
 	}
 
 	cite,
@@ -51,6 +50,22 @@ figure {
 		&:before {
 			content: '\2014 \00A0';
 		}
+	}
+}
+
+blockquote {
+	small,
+	figcaption,
+	cite {
+		text-align: left;
+	}
+}
+
+figure {
+	small,
+	figcaption,
+	cite {
+		text-align: center;
 	}
 }
 
