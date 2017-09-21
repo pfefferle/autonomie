@@ -224,7 +224,7 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 		);
 
 		if ( zenpress_has_full_width_featured_image() ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 			$css = '.site-header .page-banner {
 				background: url(' . $image[0] . ') no-repeat center center scroll;
