@@ -131,7 +131,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		$custom_header_args = array(
 			'width'		 	=> 1250,
 			'height'		=> 600,
-			'header-text'   => false,
+			'header-text'   => true,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 	}
@@ -232,6 +232,7 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 				-moz-background-size: cover;
 				-o-background-size: cover;
 				background-size: cover;
+
 			}' . PHP_EOL;
 
 			wp_add_inline_style( 'zenpress-style', $css );
