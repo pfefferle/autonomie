@@ -12,6 +12,9 @@
 		border-top: 1px solid $border-gray;
 		position: relative;
 		z-index: 597;
+		list-style: none;
+		margin: 0;
+		padding: 7.5px 0;
 		*display: inline-block;
 
 		@include clearfix;
@@ -22,7 +25,8 @@
 			background: $white;
 			display: block;
 			line-height: 150%;
-			padding: 20px 20px 20px 0;
+			padding: 7.5px 0;
+			margin-right: 20px;
 			text-decoration: none;
 		}
 
@@ -135,7 +139,6 @@
 		}
 	}
 
-	ul,
 	li {
 		list-style: none;
 		margin: 0;

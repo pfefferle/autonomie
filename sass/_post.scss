@@ -8,6 +8,11 @@
 	}
 }
 
+#primary .post:first-child,
+#primary .page:first-child {
+	margin-top: 50px;
+}
+
 .home,
 .archive {
 	#primary .post,
