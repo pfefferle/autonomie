@@ -193,3 +193,20 @@
 .menu-toggle {
 	display: none;
 }
+
+#primary .post,
+#primary .page {
+	nav {
+		background-color: #eee;
+		max-width: $default-width / 2;
+		margin-right: calc( 50% - 350px );
+		float: right;
+		padding: 10px;
+		font-size: .8em;
+
+		h1, h2, h3, h4 {
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+}
