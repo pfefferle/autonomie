@@ -50,3 +50,10 @@ html {
 	width: 100%;
 	clear: both;
 }
+
+#primary .post,
+#primary .page {
+	nav {
+		clear: both;
+	}
+}

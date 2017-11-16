@@ -13,6 +13,11 @@ textarea {
 	}
 }
 
+input,
+textarea {
+	max-width: 90%;
+}
+
 input[type="search"] {
 	border: 1px solid $border-gray;
 	border-radius: 50px;
