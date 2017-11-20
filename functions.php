@@ -134,6 +134,13 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 			'header-text'   => true,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
+
+		/**
+		 * Draw attention to supported WebSemantics
+		 */
+		add_theme_support( 'microformats2' );
+		add_theme_support( 'microformats' );
+		add_theme_support( 'microdata' );
 	}
 endif; // zenpress_setup
 
