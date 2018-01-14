@@ -38,6 +38,12 @@ input[type="reset"],
 	@include button;
 }
 
+a.button,
+a.button:hover,
+a.button:active {
+	text-decoration: none;
+}
+
 .search-form {
 	.search-submit {
 		display: none;
