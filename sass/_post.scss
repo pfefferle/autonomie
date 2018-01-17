@@ -103,19 +103,23 @@
 	margin-top: 15px;
 	margin-bottom: 15px;
 
-	&.post-format {
+	&.post-format,
+	&.post-kind {
 		padding: 0;
 		margin: 0;
 	}
 
 	&.post-format a,
-	&.post-format:before {
+	&.post-format:before,
+	&.post-kind a,
+	&.post-kind:before {
 		color: $light-gray;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
 
-	&.post-format:before {
+	&.post-format:before,
+	&.post-kind:before {
 		display: inline-block;
 		font: normal 1.1em 'Genericons';
 		-webkit-font-smoothing: antialiased;
@@ -127,7 +131,18 @@
 		color: $light-gray;
 	}
 
-	.entry-format {
+	&.post-kind .svg-icon {
+		width: 16px;
+		height: 16px;
+		vertical-align: text-middle;
+		margin-right: 0;
+		top: -2px;
+		position: relative;
+		display: inline-block;
+	}
+
+	.entry-format,
+	.kind {
 		margin-left: 5px;
 		line-height: 1;
 	}

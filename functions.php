@@ -463,5 +463,12 @@ require( get_template_directory() . '/includes/semantics.php' );
 require( get_template_directory() . '/includes/compat.php' );
 
 /**
+ * Adds Indieweb Post Kinds support
+ * if github.com/dshanske/indieweb-post-kinds is activated
+ */
+require( get_template_directory() . '/includes/indieweb-post-kinds.php' );
+
+
+/**
  * This theme was built with PHP, Semantic HTML, CSS, love, and ZenPress.
  */
