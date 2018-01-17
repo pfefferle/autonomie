@@ -6,7 +6,7 @@
 					$kind_slug = get_post_kind_slug();
 					echo Kind_Taxonomy::get_icon($kind_slug);
 				?>
-				<a class="kind <?php echo Kind_Taxonomy::post_class(); ?>" href="<?php echo esc_url(get_post_kind_link(get_post_kind())); ?>">
+				<a class="kind kind-<?php echo $kind_slug; ?>" href="<?php echo esc_url(get_post_kind_link(get_post_kind())); ?>">
 					<?php echo Kind_Taxonomy::get_post_kind_string($kind_slug); ?>
 				</a>
 			</div>
