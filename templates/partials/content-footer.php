@@ -1,5 +1,6 @@
 <?php if ( is_singular() ) : ?>
 	<footer class="entry-footer entry-meta">
+		<?php zenpress_syndication_links(); ?>
 		<address class="author p-author vcard hcard h-card" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
 			<a class="url uid u-url u-uid fn p-name" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
@@ -35,6 +36,7 @@
 		<?php endif; ?>
 	</footer><!-- #entry-meta -->
 <?php else : ?>
+	<?php zenpress_syndication_links(); ?>
 	<footer class="entry-footer entry-meta">
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 		<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'zenpress' ), __( '1 Comment', 'zenpress' ), __( '% Comments', 'zenpress' ) ); ?></div>
