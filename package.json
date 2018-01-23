@@ -34,12 +34,11 @@
   ],
   "author": {
     "name": "Matthias Pfefferle",
-    "url": "http://notizblog.org/"
+    "url": "https://notiz.blog/"
   },
   "license": {
-    "name": "GNU General Public License",
-    "version": "3",
-    "url": "http://www.gnu.org/licenses/gpl.html"
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/mit"
   },
   "homepage": "https://github.com/pfefferle/ZenPress",
   "devDependencies": {
