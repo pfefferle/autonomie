@@ -22,13 +22,6 @@
  * @since ZenPress 1.0.0
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 900; /* pixels */
-}
-
 if ( ! function_exists( 'zenpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -41,7 +34,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 	 * functions.php file.
 	 */
 	function zenpress_setup() {
-		global $content_width;
+		$content_width = 900;
 
 		/**
 		 * Make theme available for translation
@@ -59,7 +52,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		set_post_thumbnail_size( $content_width, 9999 ); // Unlimited height, soft crop
 
 		// Register custom image size for image post formats.
-		add_image_size( 'zenpress-image-post', $content_width, 1288 );
+		add_image_size( 'zenpress-image-post', $content_width, 1250 );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -156,7 +149,7 @@ add_action( 'after_setup_theme', 'zenpress_setup' );
  * @global int $content_width
  */
 function zenpress_content_width() {
-	global $content_width;
+	$content_width = 900;
 
 	$GLOBALS['content_width'] = apply_filters( 'zenpress_content_width', $content_width );
 }
