@@ -77,15 +77,14 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 			)
 		);
 
-		add_theme_support( 'gutenberg', array(
-			'wide-images' => true,
-			'colors' => array(
-				'#0073aa',
-				'#229fd8',
-				'#eee',
-				'#444',
-			),
-		) );
+		add_theme_support( 'align-wide' );
+
+		add_theme_support( 'editor-color-palette',
+			'#0073aa',
+			'#229fd8',
+			'#eee',
+			'#444'
+		);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -122,8 +121,8 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 30,
-				'width'       => 30,
+				'height'	=> 30,
+				'width'		=> 30,
 			)
 		);
 
@@ -131,7 +130,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		$custom_header_args = array(
 			'width'		 	=> 1250,
 			'height'		=> 600,
-			'header-text'   => true,
+			'header-text'	=> true,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
