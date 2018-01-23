@@ -149,6 +149,20 @@ endif; // zenpress_setup
 add_action( 'after_setup_theme', 'zenpress_setup' );
 
 /**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function zenpress_content_width() {
+	global $content_width;
+
+	$GLOBALS['content_width'] = apply_filters( 'zenpress_content_width', $content_width );
+}
+add_action( 'after_setup_theme', 'zenpress_content_width', 0 );
+
+/**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
 function zenpress_page_menu_args( $args ) {
@@ -217,9 +231,6 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 		wp_enqueue_style( 'zenpress-narrow-style', get_stylesheet_directory_uri() . '/css/narrow-width.css', array( 'zenpress-style' ), '1.0.0', '(max-width: 800px)' );
 		wp_enqueue_style( 'zenpress-default-style', get_stylesheet_directory_uri() . '/css/default-width.css', array( 'zenpress-style' ), '1.0.0', '(min-width: 800px)' );
 		wp_enqueue_style( 'zenpress-wide-style', get_stylesheet_directory_uri() . '/css/wide-width.css', array( 'zenpress-style' ), '1.0.0', '(min-width: 1000px)' );
-
-		wp_dequeue_style( 'gutenbergthemeblocks-style' );
-		wp_dequeue_style( 'gutenbergtheme-fonts' );
 
 		wp_localize_script(
 			'zenpress',
