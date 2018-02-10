@@ -133,6 +133,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support( 'microformats2' );
 		add_theme_support( 'microformats' );
 		add_theme_support( 'microdata' );
+		add_theme_support( 'indieweb' );
 	}
 endif; // zenpress_setup
 
@@ -464,6 +465,14 @@ require( get_template_directory() . '/includes/semantics.php' );
  * Adds back compat handling for older WP versions
  */
 require( get_template_directory() . '/includes/compat.php' );
+
+if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
+	/**
+	 * Adds Indieweb Syndcation Links
+	 * if github.com/dshanske/syndication-links is activated
+	 */
+	require( get_template_directory() . '/integrations/syndication-links.php' );
+}
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and ZenPress.
