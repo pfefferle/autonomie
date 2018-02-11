@@ -161,7 +161,4 @@ textarea {
 	visibility: hidden;
 }
 
-ul.relsyn {
-	display: block !important;
-	margin: inherit !important;
-}
+@import 'integrations';
