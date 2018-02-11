@@ -107,7 +107,7 @@ $icons: apml "\f001" "#AFDD63",
 
 // set "icon" as default prefix
 $prefix: icon;
-$font_path: "./font/openwebicons";
+$font_path: "font/openwebicons";
 
 @mixin font_face {
   @font-face {
