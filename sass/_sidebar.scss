@@ -1,11 +1,9 @@
 #sidebar {
 	font-weight: normal;
-	font-family: Lato, sans-serif;
-
 	display: block;
 	position: relative;
-	font-size: .9em;
-	margin: 100px auto;
+	font-size: .7em;
+	margin: 50px auto;
 	width: 90%;
 	font-size: 18px;
 
@@ -16,8 +14,9 @@
 	}
 
 	h2 {
-		font-size: 20px;
+		font-size: 1.2em;
 		text-transform: uppercase;
+		padding-bottom: .7em;
 	}
 
 	ul,
