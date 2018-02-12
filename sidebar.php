@@ -36,4 +36,10 @@
 			<?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</div><!-- #tertiary .widget-area -->
 		<?php endif; ?>
+
+		<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+		<div id="quaternary" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-3' ); ?>
+		</div><!-- #quaternary .widget-area -->
+		<?php endif; ?>
 	</div>
