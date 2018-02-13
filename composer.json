@@ -6,11 +6,11 @@
 		"composer/installers": "~1.0"
 	},
 	"type": "wordpress-theme",
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Matthias Pfefferle",
-			"homepage": "http://notiz.blog"
+			"homepage": "https://notiz.blog"
 		}
 	],
 	"extra": {

@@ -1,13 +1,10 @@
 #sidebar {
 	font-weight: normal;
-	font-family: Lato, sans-serif;
-
 	display: block;
 	position: relative;
 	font-size: .9em;
-	margin: 100px auto;
+	margin: 50px auto;
 	width: 90%;
-	font-size: 18px;
 
 	@include clearfix;
 
@@ -16,8 +13,9 @@
 	}
 
 	h2 {
-		font-size: 20px;
+		font-size: 1.2em;
 		text-transform: uppercase;
+		padding-bottom: .7em;
 	}
 
 	ul,
@@ -29,19 +27,6 @@
 			list-style-type: none;
 			line-height: 1.5;
 		}
-	}
-
-	#secondary {
-		display: inline-block;
-		float: left;
-		margin-right: 18%;
-		width: 40%;
-	}
-
-	#tertiary {
-		display: inline-block;
-		float: left;
-		width: 40%;
 	}
 
 	input {

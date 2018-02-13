@@ -22,13 +22,6 @@
  * @since ZenPress 1.0.0
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 900; /* pixels */
-}
-
 if ( ! function_exists( 'zenpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -41,7 +34,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 	 * functions.php file.
 	 */
 	function zenpress_setup() {
-		global $content_width;
+		$content_width = 900;
 
 		/**
 		 * Make theme available for translation
@@ -59,7 +52,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		set_post_thumbnail_size( $content_width, 9999 ); // Unlimited height, soft crop
 
 		// Register custom image size for image post formats.
-		add_image_size( 'zenpress-image-post', $content_width, 1288 );
+		add_image_size( 'zenpress-image-post', $content_width, 1250 );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -77,15 +70,14 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 			)
 		);
 
-		add_theme_support( 'gutenberg', array(
-			'wide-images' => true,
-			'colors' => array(
-				'#0073aa',
-				'#229fd8',
-				'#eee',
-				'#444',
-			),
-		) );
+		add_theme_support( 'align-wide' );
+
+		add_theme_support( 'editor-color-palette',
+			'#0073aa',
+			'#229fd8',
+			'#eee',
+			'#444'
+		);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -122,8 +114,8 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 30,
-				'width'       => 30,
+				'height'	=> 30,
+				'width'		=> 30,
 			)
 		);
 
@@ -131,7 +123,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		$custom_header_args = array(
 			'width'		 	=> 1250,
 			'height'		=> 600,
-			'header-text'   => true,
+			'header-text'	=> true,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
@@ -141,6 +133,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support( 'microformats2' );
 		add_theme_support( 'microformats' );
 		add_theme_support( 'microdata' );
+		add_theme_support( 'indieweb' );
 	}
 endif; // zenpress_setup
 
@@ -148,6 +141,20 @@ endif; // zenpress_setup
  * Tell WordPress to run zenpress_setup() when the 'after_setup_theme' hook is run.
  */
 add_action( 'after_setup_theme', 'zenpress_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function zenpress_content_width() {
+	$content_width = 900;
+
+	$GLOBALS['content_width'] = apply_filters( 'zenpress_content_width', $content_width );
+}
+add_action( 'after_setup_theme', 'zenpress_content_width', 0 );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -175,6 +182,16 @@ function zenpress_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar 2', 'zenpress' ),
 		'id' => 'sidebar-2',
+		'description' => __( 'An optional second sidebar area', 'zenpress' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Sidebar 3', 'zenpress' ),
+		'id' => 'sidebar-3',
 		'description' => __( 'An optional second sidebar area', 'zenpress' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -218,9 +235,6 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 		wp_enqueue_style( 'zenpress-narrow-style', get_stylesheet_directory_uri() . '/css/narrow-width.css', array( 'zenpress-style' ), '1.0.0', '(max-width: 800px)' );
 		wp_enqueue_style( 'zenpress-default-style', get_stylesheet_directory_uri() . '/css/default-width.css', array( 'zenpress-style' ), '1.0.0', '(min-width: 800px)' );
 		wp_enqueue_style( 'zenpress-wide-style', get_stylesheet_directory_uri() . '/css/wide-width.css', array( 'zenpress-style' ), '1.0.0', '(min-width: 1000px)' );
-
-		wp_dequeue_style( 'gutenbergthemeblocks-style' );
-		wp_dequeue_style( 'gutenbergtheme-fonts' );
 
 		wp_localize_script(
 			'zenpress',
@@ -461,6 +475,14 @@ require( get_template_directory() . '/includes/semantics.php' );
  * Adds back compat handling for older WP versions
  */
 require( get_template_directory() . '/includes/compat.php' );
+
+if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
+	/**
+	 * Adds Indieweb Syndcation Links
+	 * if github.com/dshanske/syndication-links is activated
+	 */
+	require( get_template_directory() . '/integrations/syndication-links.php' );
+}
 
 /**
  * Adds Wordpress Micropub

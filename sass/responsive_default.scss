@@ -26,3 +26,29 @@
 		}
 	}
 }
+
+#sidebar {
+	width: 100%;
+
+	aside {
+		margin: 50px 50px;
+	}
+
+	#secondary {
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+
+	#tertiary {
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+
+	#quaternary {
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+}

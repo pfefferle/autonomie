@@ -13,6 +13,32 @@
 	width: $wide-width;
 }
 
+#sidebar {
+	width: 100%;
+
+	aside {
+		margin: 50px 50px;
+	}
+
+	#secondary {
+		display: inline-block;
+		float: left;
+		width: 33%;
+	}
+
+	#tertiary {
+		display: inline-block;
+		float: left;
+		width: 33%;
+	}
+
+	#quaternary {
+		display: inline-block;
+		float: left;
+		width: 33%;
+	}
+}
+
 .entry-content > *,
 .entry-summary > *,
 .entry-content > form,

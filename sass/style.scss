@@ -5,7 +5,7 @@
  * Author URI: @@author_url
  * Description: @@description
  * Version: @@version
- * License: @@license Version @@license_version
+ * License: @@license
  * License URI: @@license_url
  * Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options
  * Text Domain: zenpress
@@ -35,6 +35,8 @@
 
 @import 'vars';
 @import 'mixins';
+
+@import 'openwebicons';
 
 @import 'normalize';
 
@@ -158,3 +160,5 @@ textarea {
 .invisible {
 	visibility: hidden;
 }
+
+@import 'integrations';
