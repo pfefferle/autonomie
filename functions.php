@@ -395,25 +395,6 @@ if ( ! function_exists( 'zenpress_posted_on' ) ) :
 endif;
 
 /**
- * replace post-title with id when empty
- *
- * @since ZenPress 1.4.6
- *
- * @param string $title the post-title
- * @param int $id the post-id
- * @return string the filtered post-title
- */
-function zenpress_the_title( $title, $id ) {
-	// if title is empty, return the id
-	if ( empty( $title ) ) {
-		return "#$id";
-	}
-
-	return $title;
-}
-add_filter( 'the_title', 'zenpress_the_title', 10, 2 );
-
-/**
  * Filter in a link to a content ID attribute for the next/previous image links on
  * image attachment pages
  *
