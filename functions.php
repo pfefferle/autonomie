@@ -457,6 +457,10 @@ require( get_template_directory() . '/includes/semantics.php' );
  */
 require( get_template_directory() . '/includes/compat.php' );
 
+/**
+ * Compatibility with other plugins, mostly IndieWeb related
+ */
+
 if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 	/**
 	 * Adds Indieweb Syndcation Links
