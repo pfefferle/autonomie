@@ -18,15 +18,15 @@
 		padding-bottom: .7em;
 	}
 
-	ul,
-	ol {
+	> ul,
+	> ol {
 		margin: 0;
 		padding: 0;
+	}
 
-		li {
-			list-style-type: none;
-			line-height: 1.5;
-		}
+	li {
+		list-style-type: none;
+		line-height: 1.5;
 	}
 
 	input {
