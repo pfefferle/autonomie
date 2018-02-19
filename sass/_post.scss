@@ -29,7 +29,10 @@
 	}
 }
 
-.entry-title {
+h1.entry-title,
+h2.entry-title,
+h3.entry-title,
+h4.entry-title {
 	margin: 0;
 	padding: 0;
 	font-size: 3.5em;
