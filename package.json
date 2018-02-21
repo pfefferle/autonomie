@@ -1,7 +1,7 @@
 {
   "name": "ZenPress",
   "version": "1.0.0-dev",
-  "description": "Pure Zen",
+  "description": "ZenPress is a highly semantic, responsive, accessible and seo optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). ZenPress supports a lot of OpenWeb plugins and is fully IndieWeb compatible.",
   "repository": {
     "type": "git",
     "url": "https://github.com/pfefferle/ZenPress.git"
