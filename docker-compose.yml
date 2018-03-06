@@ -16,7 +16,7 @@ services:
     links:
       - db
     ports:
-      - "80:80"
+      - "4223:80"
     volumes:
       - ./:/var/www/html/wp-content/themes/zenpress
     restart: always

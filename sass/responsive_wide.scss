@@ -112,6 +112,34 @@ figure {
 	}
 }
 
+p {
+	&.alignleft {
+		font-size: .9em;
+		font-style: italic;
+		float: left;
+		color: $light-gray;
+		padding: 1em 0 1em 0;
+		margin-right: 2.5em;
+		margin-left: calc( 50% - 450px );
+		width: 400px;
+		border-top: 1px solid $light-gray;
+		border-bottom: 1px solid $light-gray;
+	}
+
+	&.alignright {
+		font-size: .9em;
+		font-style: italic;
+		float: right;
+		color: $light-gray;
+		padding: 1em 0 1em 0;
+		margin-left: 2.5em;
+		margin-right: calc( 50% - 450px );
+		width: 400px;
+		border-top: 1px solid $light-gray;
+		border-bottom: 1px solid $light-gray;
+	}
+}
+
 .alignright {
 	figcaption {
 		display: block;
