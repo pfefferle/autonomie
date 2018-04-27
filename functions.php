@@ -166,41 +166,6 @@ function zenpress_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'zenpress_page_menu_args' );
 
-/**
- * Register widgetized area and update sidebar with default widgets
- */
-function zenpress_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Sidebar 1', 'zenpress' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Sidebar 2', 'zenpress' ),
-		'id' => 'sidebar-2',
-		'description' => __( 'An optional second sidebar area', 'zenpress' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Sidebar 3', 'zenpress' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'An optional second sidebar area', 'zenpress' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'init', 'zenpress_widgets_init' );
-
 if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 	/**
 	 * Enqueue theme scripts
@@ -441,6 +406,11 @@ function zenpress_get_post_id() {
 
 	return apply_filters( 'zenpress_post_id', $post_id, get_the_ID() );
 }
+
+/**
+ * Widget handling
+ */
+require( get_template_directory() . '/includes/widgets.php' );
 
 /**
  * Adds the featured image functionality
