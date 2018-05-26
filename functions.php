@@ -73,10 +73,22 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support( 'align-wide' );
 
 		add_theme_support( 'editor-color-palette',
-			'#0073aa',
-			'#229fd8',
-			'#eee',
-			'#444'
+			array(
+				'name' => 'blue',
+				'color' => '#0073aa',
+			),
+			array(
+				'name' => 'lighter blue',
+				'color' => '#229fd8',
+			),
+			array(
+				'name' => 'very light gray',
+				'color' => '#eee',
+			),
+			array(
+				'name' => 'very dark gray',
+				'color' => '#444',
+			)
 		);
 
 		// This theme uses wp_nav_menu() in one location.
