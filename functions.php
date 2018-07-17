@@ -169,6 +169,16 @@ function zenpress_content_width() {
 add_action( 'after_setup_theme', 'zenpress_content_width', 0 );
 
 /**
+ * Set the default with for the embeds
+ */
+function zenpress_embed_defaults() {
+    return array(
+        'width'  => 900
+    );
+}
+add_filter( 'embed_defaults', 'zenpress_embed_defaults' );
+
+/**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
 function zenpress_page_menu_args( $args ) {
