@@ -173,7 +173,8 @@ add_action( 'after_setup_theme', 'zenpress_content_width', 0 );
  */
 function zenpress_embed_defaults() {
     return array(
-        'width'  => 900
+        'width'  => 900,
+		'height' => 600
     );
 }
 add_filter( 'embed_defaults', 'zenpress_embed_defaults' );
