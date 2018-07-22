@@ -147,7 +147,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support( 'microdata' );
 		add_theme_support( 'indieweb' );
 		
-		add_theme_support( 'amp' );
+		//add_theme_support( 'amp' );
 	}
 endif; // zenpress_setup
 
