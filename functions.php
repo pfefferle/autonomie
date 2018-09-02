@@ -171,15 +171,27 @@ function zenpress_content_width() {
 add_action( 'after_setup_theme', 'zenpress_content_width', 0 );
 
 /**
- * Set the default with for the embeds
+ * Set the default maxwith for the embeds
  */
 function zenpress_embed_defaults() {
-    return array(
-        'width'  => 900,
-		'height' => 600
-    );
+	return array(
+		'width'  => 900,
+		'height' => 600,
+	);
 }
 add_filter( 'embed_defaults', 'zenpress_embed_defaults' );
+
+/**
+ * Set the default with for the embeds
+ * Fixes issues with Vimeo
+ */
+function zenpress_oembed_fetch_url( $provider ) {
+	$provider = add_query_arg( 'width', 900, $provider );
+	$provider = add_query_arg( 'height', 600, $provider );
+
+	return $provider;
+}
+add_filter( 'oembed_fetch_url', 'zenpress_oembed_fetch_url', 99 );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
