@@ -26,8 +26,11 @@
 	height: auto;
 }
 
-.aligncenter {
-	width: $default-width;
+.entry-content,
+.entry-summary {
+	> .aligncenter {
+		width: $default-width;
+	}
 }
 
 img.aligncenter,
