@@ -262,3 +262,18 @@ h4.entry-title {
 		content: '\f105';
 	}
 }
+
+.edit-link {
+	position: absolute;
+	right: 0;
+	top: 50px;
+
+	@include label;
+}
+
+.more-link {
+	display: block;
+	font-size: .8em;
+	color: $gray;
+	@include button;
+}

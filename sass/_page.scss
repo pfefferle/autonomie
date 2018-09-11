@@ -135,16 +135,3 @@
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
-
-.edit-link {
-	position: absolute;
-	right: 0;
-	top: 50px;
-
-	@include label;
-}
-
-.more-link {
-	font-size: .8em;
-	color: $gray;
-}
