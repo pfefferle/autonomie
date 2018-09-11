@@ -26,12 +26,13 @@
 	height: auto;
 }
 
-.entry-content,
-.entry-summary {
-	> .aligncenter,
-	> .wp-block-image .aligncenter {
-		width: $default-width;
-	}
+.aligncenter {
+	width: $default-width;
+}
+
+.wp-block-columns .aligncenter {
+	width: auto;
+	display: block;
 }
 
 img.aligncenter,
