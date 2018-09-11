@@ -28,7 +28,8 @@
 
 .entry-content,
 .entry-summary {
-	> .aligncenter {
+	> .aligncenter,
+	> .wp-block-image .aligncenter {
 		width: $default-width;
 	}
 }
