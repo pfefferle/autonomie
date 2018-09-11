@@ -62,7 +62,8 @@
 	> object,
 	> embed,
 	> iframe,
-	> figure {
+	> figure,
+	.wp-block-pullquote {
 		max-width: $wide-width;
 		box-sizing: border-box;
 	}
