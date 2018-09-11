@@ -61,7 +61,8 @@ blockquote {
 	}
 }
 
-figure {
+figure,
+.wp-block-pullquote {
 	small,
 	figcaption,
 	cite {
@@ -89,7 +90,7 @@ figure blockquote,
 	padding: 0;
 	margin: 0;
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 1.5em;
 }
 
 ins {
