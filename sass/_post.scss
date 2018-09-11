@@ -104,10 +104,11 @@ h4.entry-title {
 	}
 
 	&.post-format a,
+	&.post-format span,
 	&.post-format:before {
-		color: $light-gray;
+		color: $lighter-gray;
 		font-weight: bold;
-		text-transform: uppercase;
+		text-transform: lowercase;
 	}
 
 	&.post-format:before {
@@ -119,11 +120,10 @@ h4.entry-title {
 		text-decoration: inherit;
 		top: 2px;
 		vertical-align: text-middle;
-		color: $light-gray;
+		color: $lighter-gray;
 	}
 
 	.entry-format {
-		margin-left: 5px;
 		line-height: 1;
 	}
 
@@ -256,6 +256,10 @@ h4.entry-title {
 
 	&.format-status .post-format:before {
 		content: '\f105';
+	}
+
+	&.format-standard .post-format:before {
+		content: '\f100';
 	}
 }
 

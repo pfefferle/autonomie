@@ -1,10 +1,14 @@
 	<header class="entry-header">
 		<?php edit_post_link( __( 'Edit', 'zenpress' ), '<div class="edit-link">', '</div>' ); ?>
-		<?php if ( get_post_format() !== false ) : ?>
+		<?php if ( get_post_format() !== false ) { ?>
 		<div class="entry-meta post-format">
 			<a class="entry-format entry-format-<?php echo get_post_format(); ?>" href="<?php echo esc_url( get_post_format_link( get_post_format() ) ); ?>"><?php echo get_post_format_string( get_post_format() ); ?></a>
 		</div>
-		<?php endif; ?>
+		<?php } else { ?>
+		<div class="entry-meta post-format">
+			<span class="entry-format entry-format-standard"><?php echo __( 'Article', 'ZenPress' ); ?></span>
+		</div>
+		<?php } ?>
 
 		<?php if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'link', 'status' ) ) ) : ?>
 		<h2 class="entry-title p-name" itemprop="name headline">
