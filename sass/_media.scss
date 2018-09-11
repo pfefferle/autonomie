@@ -30,11 +30,6 @@
 	width: $default-width;
 }
 
-.wp-block-columns .aligncenter {
-	width: auto;
-	display: block;
-}
-
 img.aligncenter,
 img.alignnone,
 img.alignfull,
@@ -123,12 +118,6 @@ img.wp-post-image {
 	color: #888;
 	font-size: 12px;
 	margin: 0 0 12px;
-}
-
-.wp-block-embed {
-	> * {
-		margin: 0 auto;
-	}
 }
 
 .wp-caption-text {
