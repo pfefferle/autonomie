@@ -144,12 +144,12 @@ p {
 	figcaption {
 		display: block;
 		height: 68px;
-		right: -$margin;
+		right: -($margin + 20);
 		margin-top: 0px;
 		position: absolute;
 		text-align: left;
 		top: 0px;
-		width: $margin - 5;
+		width: $margin;
 		word-break: break-word;
 		word-wrap: break-word;
 
