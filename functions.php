@@ -74,19 +74,19 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 
 		add_theme_support( 'editor-color-palette',
 			array(
-				'name' => 'blue',
+				'name'  => 'blue',
 				'color' => '#0073aa',
 			),
 			array(
-				'name' => 'lighter blue',
+				'name'  => 'lighter blue',
 				'color' => '#229fd8',
 			),
 			array(
-				'name' => 'very light gray',
+				'name'  => 'very light gray',
 				'color' => '#eee',
 			),
 			array(
-				'name' => 'very dark gray',
+				'name'  => 'very dark gray',
 				'color' => '#444',
 			)
 		);
@@ -126,16 +126,16 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'	=> 30,
-				'width'		=> 30,
+				'height' => 30,
+				'width'  => 30,
 			)
 		);
 
 		// This theme supports a custom header
 		$custom_header_args = array(
-			'width'		 	=> 1250,
-			'height'		=> 600,
-			'header-text'	=> true,
+			'width'       => 1250,
+			'height'      => 600,
+			'header-text' => true,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
@@ -146,7 +146,7 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		add_theme_support( 'microformats' );
 		add_theme_support( 'microdata' );
 		add_theme_support( 'indieweb' );
-		
+
 		//add_theme_support( 'amp' );
 	}
 endif; // zenpress_setup
@@ -320,10 +320,10 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 	function zenpress_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 
-		switch ( $comment->comment_type ) :
-			case 'pingback' :
-			case 'trackback' :
-			case 'webmention' :
+		switch ( $comment->comment_type ):
+			case 'pingback':
+			case 'trackback':
+			case 'webmention':
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
@@ -336,7 +336,8 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 						<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() );
+						?>
 					</time></a>
 				</footer>
 			</article>
@@ -359,14 +360,17 @@ if ( ! function_exists( 'zenpress_comment' ) ) :
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s at %2$s', 'zenpress' ), get_comment_date(), get_comment_time() );
+					?>
 					</time></a>
 				</footer>
 
 				<div class="comment-content e-content p-summary p-name" itemprop="text name description"><?php comment_text(); ?></div>
 
 				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<?php
+					comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+					?>
 				</div><!-- .reply -->
 			</article><!-- #comment-## -->
 		<?php
@@ -410,7 +414,7 @@ function zenpress_enhanced_image_navigation( $url ) {
 
 	global $post, $wp_rewrite;
 
-	$id = (int) $post->ID;
+	$id     = (int) $post->ID;
 	$object = get_post( $id );
 	if ( wp_attachment_is_image( $post->ID ) && ( $wp_rewrite->using_permalinks() && ( $object->post_parent > 0 ) && ( $object->post_parent != $id ) ) ) {
 		$url = $url . '#main';

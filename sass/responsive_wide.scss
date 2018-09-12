@@ -14,7 +14,8 @@
 }
 
 #sidebar {
-	width: 100%;
+	width: $wide-width + 400;
+	max-width: 100%;
 
 	aside {
 		margin: 50px 50px;

@@ -4,7 +4,7 @@
 		<div class="entry-meta post-format">
 			<a class="entry-format entry-format-<?php echo get_post_format(); ?>" href="<?php echo esc_url( get_post_format_link( get_post_format() ) ); ?>"><?php echo get_post_format_string( get_post_format() ); ?></a>
 		</div>
-		<?php } else { ?>
+		<?php } elseif ( ! is_page() ) { ?>
 		<div class="entry-meta post-format">
 			<span class="entry-format entry-format-standard"><?php echo __( 'Article', 'ZenPress' ); ?></span>
 		</div>
