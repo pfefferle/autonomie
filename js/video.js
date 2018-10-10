@@ -96,6 +96,8 @@ SimpleVideo.prototype.muteUnmute = function () {
     }
 };
 
-$('video').each(function () {
-  	new SimpleVideo(this);
+jQuery(document).ready(function() {
+  jQuery("video").each(function () {
+      new SimpleVideo(this);
+  });
 });

@@ -22,14 +22,14 @@ function zenpress_video_shortcode( $output, $atts, $video, $post_id, $library ) 
 			}
 	}
 
-	$attr_strings = array();
+	$attr_strings = array('control');
 	foreach ( $html_atts as $k => $v ) {
 			$attr_strings[] = $k . '="' . esc_attr( $v ) . '"';
 	}
 
 ?>
 <div class="video-wrapper">
-    <video width="<?php echo $content_width; ?>" <?php echo join( ' ', $attr_strings )." " ?>controls>
+    <video width="<?php echo $content_width; ?>" <?php echo join( ' ', $attr_strings )." " ?>>
         <source src="<?php echo $atts['src']; ?>"></source>
         Your browser does not support the <code>video</code> tag.
     </video>
