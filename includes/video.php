@@ -35,7 +35,7 @@ function zenpress_video_shortcode( $output, $atts, $video, $post_id, $library ) 
     </video>
     <div class="video-controls">
         <button data-media="play-pause"></button>
-        <button data-media="mute-unmute"></button>
+        <button data-media="mute-unmute"><span></span></button>
     </div>
 </div>
 <?php
