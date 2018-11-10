@@ -33,7 +33,8 @@ module.exports = function(grunt) {
             'license_url': '<%= pkg.license.url %>',
             'name': '<%= pkg.name %>',
             'description': '<%= pkg.description %>',
-            'homepage': '<%= pkg.homepage %>'
+            'homepage': '<%= pkg.homepage %>',
+            'tags': '<%= pkg.keywords.join(", ") %>'
           },
           prefix: '@@'
         },
@@ -41,6 +42,13 @@ module.exports = function(grunt) {
           {expand: true, flatten: true, src: ['style.css'], dest: ''}
         ]
       }
+    },
+    wp_readme_to_markdown: {
+      target: {
+        files: {
+          'readme.md': 'readme.txt'
+        },
+      },
     },
     watch: {
       styles: {
@@ -54,7 +62,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-replace');
+  grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'replace']);
+  grunt.registerTask('default', ['sass', 'replace', 'wp_readme_to_markdown']);
 };
