@@ -50,6 +50,17 @@ module.exports = function(grunt) {
         },
       },
     },
+	makepot: {
+      target: {
+        options: {
+          domainPath: 'languages',
+          exclude: ['bin/.*', '.git/.*', 'vendor/.*', 'node_modules/.*'],
+          potFilename: 'zenpress.pot',
+          type: 'wp-theme',
+          updateTimestamp: true
+        }
+      }
+    },
     watch: {
       styles: {
         files: ['**/*.scss'],
@@ -63,7 +74,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
+  grunt.loadNpmTasks('grunt-wp-i18n');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'replace', 'wp_readme_to_markdown']);
+  grunt.registerTask('default', ['sass', 'replace', 'wp_readme_to_markdown', 'makepot']);
 };

@@ -1,0 +1,290 @@
+# <!=Copyright (C) 2018 Matthias Pfefferle
+# This file is distributed under the MIT.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: ZenPress 1.0.0-dev\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
+"POT-Creation-Date: 2018-11-15 13:01:53+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
+
+#: 404.php:15
+msgid "Well this is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching, or one of the links below, can help."
+msgstr ""
+
+#: 404.php:26
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:34
+#. translators: %1$s: smilie
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:41 index.php:38
+msgid "Nothing Found"
+msgstr ""
+
+#: archive.php:45 index.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: comments.php:16
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:33
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:61
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:62
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:32
+msgid "This site is powered by %1$s and styled with %2$s"
+msgstr ""
+
+#: functions.php:96 header.php:49
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:289 functions.php:295
+msgid "Post navigation"
+msgstr ""
+
+#: functions.php:297
+msgid "<span class=\"meta-nav\">&laquo;</span>"
+msgstr ""
+
+#: functions.php:301
+msgid "<span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
+
+#: functions.php:330 functions.php:350 image.php:32 image.php:100
+#: templates/partials/entry-header.php:2
+msgid "Edit"
+msgstr ""
+
+#: functions.php:339 functions.php:363
+#. translators: 1: date, 2: time
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:357
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:390
+msgid ""
+"<address class=\"byline\"><span class=\"author p-author vcard hcard "
+"h-card\" itemprop=\"author\" itemscope "
+"itemtype=\"http://schema.org/Person\">%5$s <a class=\"url uid u-url u-uid "
+"fn p-name\" href=\"%6$s\" title=\"%7$s\" rel=\"author\" "
+"itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a></span></address> "
+"<span class=\"sep\"> | </span> <a href=\"%1$s\" title=\"%2$s\" "
+"rel=\"bookmark\" class=\"url u-url\"><time class=\"entry-date updated "
+"published dt-updated dt-published\" datetime=\"%3$s\" "
+"itemprop=\"dateModified datePublished\">%4$s</time></a>"
+msgstr ""
+
+#: functions.php:397
+msgid "View all posts by %s"
+msgstr ""
+
+#: header.php:24
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:22
+msgid ""
+"Published <time class=\"entry-date updated dt-updated\" datetime=\"%1$s\" "
+"itemprop=\"dateModified\">%2$s</time> at <a href=\"%3$s\" title=\"Link to "
+"full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return "
+"to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:36
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:37
+msgid "Next &rarr;"
+msgstr ""
+
+#: image.php:86 templates/content-aside.php:23 templates/content-audio.php:27
+#: templates/content-chat.php:23 templates/content-gallery.php:22
+#: templates/content-image.php:22 templates/content-link.php:23
+#: templates/content-quote.php:23 templates/content-single.php:23
+#: templates/content-status.php:23 templates/content-video.php:23
+msgid "Pages:"
+msgstr ""
+
+#: image.php:92
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:94
+msgid ""
+"Comments are closed, but you can leave a trackback: <a "
+"class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" "
+"rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:96
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" "
+"href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: includes/featured-image.php:48
+msgid "Use as post cover (full-width)"
+msgstr ""
+
+#: includes/widgets.php:7
+msgid "Sidebar 1"
+msgstr ""
+
+#: includes/widgets.php:16
+msgid "Sidebar 2"
+msgstr ""
+
+#: includes/widgets.php:18 includes/widgets.php:28
+msgid "An optional second sidebar area"
+msgstr ""
+
+#: includes/widgets.php:26
+msgid "Sidebar 3"
+msgstr ""
+
+#: includes/widgets.php:36
+msgid "Entry-Meta"
+msgstr ""
+
+#: includes/widgets.php:38
+msgid "Extend the Entry-Meta"
+msgstr ""
+
+#: integrations/syndication-links.php:26
+msgid "Syndication Links"
+msgstr ""
+
+#: sidebar.php:16
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:23
+msgid "Meta"
+msgstr ""
+
+#: templates/content-aside.php:22 templates/content-audio.php:26
+#: templates/content-chat.php:22 templates/content-gallery.php:21
+#: templates/content-image.php:21 templates/content-link.php:22
+#: templates/content-quote.php:22 templates/content-single.php:22
+#: templates/content-status.php:22 templates/content-video.php:22
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: templates/partials/entry-footer.php:9
+msgid "Subscribe to author feed"
+msgstr ""
+
+#: templates/partials/entry-footer.php:18
+#. translators: used between list items, there is a space after the comma
+msgid "Categories"
+msgstr ""
+
+#: templates/partials/entry-footer.php:19
+#: templates/partials/entry-footer.php:30
+msgid "%1$s"
+msgstr ""
+
+#: templates/partials/entry-footer.php:29
+#. translators: used between list items, there is a space after the comma
+msgid "Tags"
+msgstr ""
+
+#: templates/partials/entry-footer.php:38
+#: templates/partials/entry-footer.php:44
+msgid "Leave a comment"
+msgstr ""
+
+#: templates/partials/entry-footer.php:38
+#: templates/partials/entry-footer.php:44
+msgid "1 Comment"
+msgstr ""
+
+#: templates/partials/entry-footer.php:38
+#: templates/partials/entry-footer.php:44
+msgid "% Comments"
+msgstr ""
+
+#: templates/partials/entry-header.php:9
+msgid "Article"
+msgstr ""
+
+#: templates/partials/entry-header.php:15
+msgid "Permalink to %s"
+msgstr ""
+
+#: templates/partials/page-title.php:4
+msgid "Search Results for: %s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "ZenPress"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/pfefferle/ZenPress"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"ZenPress is a highly semantic, responsive, accessible and seo optimized "
+"WordPress Theme. It provides HTML5 templates refined with microformats, "
+"microformats v2 and microdata (Schema.org). ZenPress supports a lot of "
+"OpenWeb plugins and is fully IndieWeb compatible."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Matthias Pfefferle"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://notiz.blog/"
+msgstr ""
