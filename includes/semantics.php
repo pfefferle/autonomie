@@ -167,7 +167,7 @@ add_filter( 'previous_posts_link_attributes', 'zenpress_previous_posts_link_attr
  */
 function zenpress_get_search_form( $form ) {
 	$form = preg_replace( '/<form/i', '<form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction"', $form );
-	$form = preg_replace( '/<\/form>/i', '<meta itemprop="target" content="' . site_url( '/?s={search} ' ) . '"/></form>', $form );
+	$form = preg_replace( '/<\/form>/i', '<meta itemprop="target" content="' . home_url( '/?s={search} ' ) . '"/></form>', $form );
 	$form = preg_replace( '/<input type="search"/i', '<input type="search" itemprop="query-input"', $form );
 
 	return $form;
