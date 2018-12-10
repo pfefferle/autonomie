@@ -10,7 +10,7 @@
 		</div>
 		<?php } ?>
 
-		<?php if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'status' ) ) ) : ?>
+		<?php if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'status' ) ) && ! empty( get_the_title() ) ) : ?>
 		<h2 class="entry-title p-name" itemprop="name headline">
 			<a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Permalink to %s', 'zenpress' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
 				<?php the_title(); ?>
