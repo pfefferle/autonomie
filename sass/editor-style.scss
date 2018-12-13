@@ -1,5 +1,21 @@
-body#tinymce.wp-editor {
+body .editor-styles-wrapper {
 	@import 'vars';
+
+	/* Main column width */
+	.wp-block {
+		max-width: $default-width;
+	}
+
+	/* Width of "wide" blocks */
+	.wp-block[data-align="wide"] {
+		max-width: $wide-width;
+	}
+
+	/* Width of "full-wide" blocks */
+	.wp-block[data-align="full"] {
+		max-width: none;
+	}
+
 	@import 'mixins';
 	@import 'normalize';
 	@import 'base';

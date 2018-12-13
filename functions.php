@@ -72,24 +72,28 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 
 		add_theme_support( 'align-wide' );
 
-		add_theme_support( 'editor-color-palette',
+		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name'  => 'blue',
+				'slug'  => 'blue',
 				'color' => '#0073aa',
 			),
 			array(
 				'name'  => 'lighter blue',
+				'slug'  => 'lighter-blue',
 				'color' => '#229fd8',
 			),
 			array(
 				'name'  => 'very light gray',
+				'slug'  => 'very-light-gray',
 				'color' => '#eee',
 			),
 			array(
 				'name'  => 'very dark gray',
+				'slug'  => 'very-dark-gray',
 				'color' => '#444',
 			)
-		);
+		) );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -112,7 +116,10 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 		);
 
 		// Nicer WYSIWYG editor
+		add_theme_support( 'editor-styles' );
 		add_editor_style( 'css/editor-style.css' );
+
+		add_theme_support( 'responsive-embeds' );
 
 		/*
 		 * Let WordPress manage the document title.

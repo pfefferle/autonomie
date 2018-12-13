@@ -10,8 +10,7 @@
 **License:** MIT  
 **License URI:** https://opensource.org/licenses/mit  
 
-ZenPress is a very clean WordPress theme inspired by Medium.com. It is SEO optimized, accessibility ready and highly semantic.
-The is made with HTML5 (POSH) and flavoured with Microformats(2) and Microdata/Schema.org.
+ZenPress is a very clean WordPress theme inspired by Medium.com. It is SEO optimized, accessibility ready and highly semantic. The theme is made with HTML5 (POSH) and flavoured with Microformats(2) and Microdata/Schema.org.
 
 ## Description ##
 
@@ -56,7 +55,7 @@ ZenPress supports:
 * [Custom-Header](http://codex.wordpress.org/Custom_Headers)
 * [Custom-Backgrounds](http://codex.wordpress.org/Custom_Backgrounds)
 
-### What is POST ###
+### What is POSH ###
 
 From the [micrormats wiki](http://microformats.org/wiki/posh):
 

@@ -48,7 +48,8 @@
 .entry-footer,
 #comments,
 #nav-above,
-#nav-below {
+#nav-below,
+.wp-block-quote.is-style-large {
 	max-width: $default-width;
 	margin: 1.2em auto;
 	box-sizing: border-box;
