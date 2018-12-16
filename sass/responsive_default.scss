@@ -1,12 +1,10 @@
 @import 'vars';
 @import 'mixins';
 
-#primary,
 .site-navigation,
 .site-header .site-branding,
-.site-header .page-banner #page-description,
 .site-header .page-banner #page-title,
-#sidebar {
+.site-header .page-banner #page-description {
 	width: $default-width;
 }
 
@@ -25,6 +23,21 @@
 			padding-top: 0;
 		}
 	}
+}
+
+.entry-content > *,
+.entry-summary > *,
+.entry-content > form,
+.entry-content > div,
+.entry-header,
+.entry-footer,
+#comments,
+#nav-above,
+#nav-below,
+.wp-block-quote.is-style-large {
+	max-width: $default-width;
+	margin: 1.2em auto;
+	box-sizing: border-box;
 }
 
 #sidebar {

@@ -5,13 +5,34 @@ html {
 	font-size: 1em;
 }
 
-#primary,
 #sidebar,
 .site-header .site-branding,
 .site-header .page-banner #page-description,
 .site-header .page-banner #page-title,
 .site-navigation {
 	width: 90%;
+}
+
+.entry-content,
+.entry-summary {
+	p.has-background {
+		padding: 30px 5%;
+	}
+}
+
+.entry-content > *,
+.entry-summary > *,
+.entry-content > form,
+.entry-content > div,
+.entry-header,
+.entry-footer,
+#comments,
+#nav-above,
+#nav-below,
+.wp-block-quote.is-style-large {
+	max-width: 90%;
+	margin: 1.2em auto;
+	box-sizing: border-box;
 }
 
 .entry-header .entry-title {

@@ -1,10 +1,6 @@
 @import 'vars';
 @import 'mixins';
 
-#primary {
-	width: 100%;
-}
-
 #sidebar,
 .site-navigation,
 .site-header .site-branding,
@@ -40,21 +36,6 @@
 	}
 }
 
-.entry-content > *,
-.entry-summary > *,
-.entry-content > form,
-.entry-content > div,
-.entry-header,
-.entry-footer,
-#comments,
-#nav-above,
-#nav-below,
-.wp-block-quote.is-style-large {
-	max-width: $default-width;
-	margin: 1.2em auto;
-	box-sizing: border-box;
-}
-
 .entry-content > span {
 	display: inline-block;
 }
@@ -83,20 +64,6 @@
 
 .wp-audio-shortcode {
 	width: $default-width !important;
-}
-
-.entry-content,
-.entry-summary {
-	.wp-block-cover-image,
-	.alignfull {
-		max-width: 100%;
-		width: 100%;
-	}
-
-	.alignwide {
-		width: auto;
-		max-width: $wide-width;
-	}
 }
 
 figure {

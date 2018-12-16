@@ -60,6 +60,24 @@ h4.entry-title {
 	line-height: 2;
 	font-size: 1.1em;
 	margin: 0 auto;
+
+	.wp-block-cover-image,
+	.alignfull {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.alignwide {
+		width: auto;
+		max-width: $wide-width;
+	}
+
+	p.has-background {
+		width: 100%;
+		max-width: 100%;
+		padding: 30px calc( ( 100% - 700px ) / 2 );
+		margin: 0;
+	}
 }
 
 .page-link,
@@ -275,4 +293,68 @@ h4.entry-title {
 	display: block;
 	font-size: .8em;
 	color: $gray;
+}
+
+.has-orioles-orange-background-color {
+	background-color: $orioles-orange;
+}
+
+.has-orioles-orange-color {
+	color: $orioles-orange;
+}
+
+.has-usc-gold-background-color {
+	background-color: $usc-gold;
+}
+
+.has-usc-gold-color {
+	color: $usc-gold;
+}
+
+.has-gargoyle-gas-background-color {
+	background-color: $gargoyle-gas;
+}
+
+.has-gargoyle-gas-color {
+	color: $gargoyle-gas;
+}
+
+.has-yellow-background-color {
+	background-color: $yellow;
+}
+
+.has-yellow-color {
+	color: $yellow;
+}
+
+.has-android-green-background-color {
+	background-color: $android-green;
+}
+
+.has-android-green-color {
+	color: $android-green;
+}
+
+.has-white-background-color {
+	background-color: $white;
+}
+
+.has-white-color {
+	color: $white;
+}
+
+.has-very-light-gray-background-color {
+	background-color: $very-light-gray;
+}
+
+.has-very-light-gray-color {
+	color: $very-light-gray;
+}
+
+.has-very-dark-gray-background-color {
+	background-color: $very-dark-gray;
+}
+
+.has-very-dark-gray-color {
+	color: $very-dark-gray;
 }

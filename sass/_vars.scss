@@ -18,6 +18,8 @@ $blue: #5fa7c5;
 $dark-blue: darken($blue, 35%);
 $lighter-blue: lighten($blue, 35%);
 
+$blue-jeans: #5bc0eb;
+
 // green
 $green: #a0c55f;
 $dark-green: darken($green, 35%);
@@ -27,6 +29,16 @@ $light-green: lighten($green, 35%);
 $brown: #8c612f;
 $dark-brown: darken($brown, 35%);
 $light-brown: lighten($brown, 35%);
+
+// editor colors
+$orioles-orange: #fa5b0f;
+$usc-gold: #ffcc00;
+$gargoyle-gas: #fde74c;
+$yellow: #fff9c0;
+$android-green: #9bc53d;
+$white: #fff;
+$very-light-gray: #eee;
+$very-dark-gray: #444;
 
 // Dimensions
 $wide-width: 900px;
