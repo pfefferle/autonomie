@@ -74,22 +74,57 @@ if ( ! function_exists( 'zenpress_setup' ) ) :
 
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => 'blue',
+				'name'  => __( 'Blue', 'zenpress' ),
 				'slug'  => 'blue',
 				'color' => '#0073aa',
 			),
 			array(
-				'name'  => 'lighter blue',
+				'name'  => __( 'Lighter blue', 'zenpress' ),
 				'slug'  => 'lighter-blue',
 				'color' => '#229fd8',
 			),
 			array(
-				'name'  => 'very light gray',
+				'name'  => __( 'Blue jeans', 'zenpress' ),
+				'slug'  => 'blue-jeans',
+				'color' => '#5bc0eb',
+			),
+			array(
+				'name'  => __( 'Orioles orange', 'zenpress' ),
+				'slug'  => 'orioles-orange',
+				'color' => '#fa5b0f',
+			),
+			array(
+				'name'  => __( 'USC gold', 'zenpress' ),
+				'slug'  => 'usc-gold',
+				'color' => '#ffcc00',
+			),
+			array(
+				'name'  => __( 'Gargoyle gas', 'zenpress' ),
+				'slug'  => 'gargoyle-gas',
+				'color' => '#fde74c',
+			),
+			array(
+				'name'  => __( 'Yellow', 'zenpress' ),
+				'slug'  => 'yellow',
+				'color' => '#fff9c0',
+			),
+			array(
+				'name'  => __( 'Android green', 'zenpress' ),
+				'slug'  => 'android-green',
+				'color' => '#9bc53d',
+			),
+			array(
+				'name'  => __( 'White', 'zenpress' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+			array(
+				'name'  => __( 'Very light gray', 'zenpress' ),
 				'slug'  => 'very-light-gray',
 				'color' => '#eee',
 			),
 			array(
-				'name'  => 'very dark gray',
+				'name'  => __( 'Very dark gray', 'zenpress' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#444',
 			)
