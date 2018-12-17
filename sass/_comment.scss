@@ -86,23 +86,12 @@ li.comment {
 		font-weight: normal;
 	}
 
-	cite {
-		font-style: normal;
-		font-weight: normal;
-		font-size: 12px;
-	}
-
 	img.avatar {
 		float: left;
 	}
 
 	.reply {
-		visibility: none;
 		margin-left: 58px;
-	}
-
-	&:hover .reply {
-		visibility: block;
 	}
 }
 
@@ -147,16 +136,26 @@ ol.commentlist {
 	}
 }
 
-ul.children .avatar {
-	margin-right: 10px;
-	width: 48px;
-	height: 48px;
+ul.children {
+	padding-left: 58px;
+
+	.avatar {
+		margin-right: 10px;
+		width: 48px;
+		height: 48px;
+	}
 }
 
 .comment-content {
 	font-size: 1.1em;
 	line-height: 2em;
 	margin-left: 58px;
+
+	cite {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+	}
 }
 
 .webmention,
