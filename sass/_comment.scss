@@ -91,12 +91,12 @@ li.comment {
 	}
 
 	.reply {
-		visibility: hidden;
+		visibility: none;
 		margin-left: 58px;
 	}
 
 	&:hover .reply {
-		visibility: visible;
+		visibility: block;
 	}
 }
 
