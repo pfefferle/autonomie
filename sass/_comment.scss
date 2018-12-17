@@ -81,14 +81,22 @@ li.comment {
 	list-style: none outside none;
 	margin: 10px 0;
 
-	cite {
+	.comment-meta cite {
 		font-style: normal;
 		font-weight: normal;
-		font-size: 12px;
 	}
 
 	img.avatar {
 		float: left;
+	}
+
+	.reply {
+		visibility: hidden;
+		margin-left: 58px;
+	}
+
+	&:hover .reply {
+		visibility: visible;
 	}
 }
 
@@ -102,7 +110,6 @@ li.comment {
 
 .comment-meta {
 	address {
-		font-size: 1em;
 		line-height: 1.2;
 	}
 
@@ -143,6 +150,7 @@ ul.children .avatar {
 .comment-content {
 	font-size: 1.1em;
 	line-height: 2em;
+	margin-left: 58px;
 }
 
 .webmention,
