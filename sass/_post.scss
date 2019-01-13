@@ -5,6 +5,48 @@
 		.comments-link {
 			display: none;
 		}
+
+		&.has-full-width-featured-image {
+			margin-top: 0px;
+		}
+	}
+}
+
+.has-full-width-featured-image {
+	.entry-header {
+		margin: 0;
+		width: 100%;
+		max-width: 100%;
+		position: relative;
+		height: 75vh;
+		max-height: 75%;
+		min-height: 500px;
+		margin-bottom: 50px;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+		.entry-title, .entry-meta, .entry-format {
+			color: $white;
+
+			a {
+				color: $white;
+			}
+		}
+
+		.entry-header-wrapper {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			margin-bottom: 50px;
+		}
+
+		.entry-header-wrapper > * {
+			margin: 0 auto;
+			width: $default-width;
+		}
 	}
 }
 

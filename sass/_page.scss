@@ -36,26 +36,19 @@
 	}
 
 	.page-banner {
-		background-color: $blue;
 		width: 100%;
-		position: relative;
-		height: 75vh;
-		max-height: 75%;
-		min-height: 500px;
+		border-top: 1px solid $border-gray;
 
 		.page-branding {
-			position: absolute;
-			left: 0;
-			bottom: 0;
 			width: 100%;
-			margin-bottom: 50px;
+			margin: 50px 0;
 		}
 
 		#page-title, #page-description {
 			display: block;
 			margin: 0 auto;
 			text-align: left;
-			color: $white;
+			color: $dark-gray;
 			font-size: 1.5em;
 			font-weigth: bold;
 			width: $wide-width;
@@ -72,6 +65,31 @@
 		margin: 15px 0 15px 0;
 		padding: 0;
 		float: right;
+	}
+}
+
+.custom-header {
+	.page-banner {
+		width: 100%;
+		position: relative;
+		height: 75vh;
+		max-height: 75%;
+		min-height: 500px;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+		#page-title, #page-description {
+			color: $white;
+		}
+
+		.page-branding {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
 	}
 }
 

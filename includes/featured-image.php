@@ -124,12 +124,32 @@ function zenpress_has_full_width_featured_image() {
 }
 
 /**
+ * Enqueue theme scripts
+ *
+ * @uses wp_enqueue_scripts() To enqueue scripts
+ *
+ * @since ZenPress 1.0.0
+ */
+function zenpress_enqueue_features_image_scripts() {
+	if ( is_singular() && zenpress_has_full_width_featured_image() ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+
+		$css = '.entry-header {
+			background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(' . $image[0] . ') no-repeat center center scroll;
+		}' . PHP_EOL;
+
+		wp_add_inline_style( 'zenpress-style', $css );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'zenpress_enqueue_features_image_scripts' );
+
+/**
  * Add full-width-featured-image to body class when displaying a post with Full Width Featured Image enabled
  */
-function zenpress_full_width_featured_image_body_class( $classes ) {
-	if ( zenpress_has_full_width_featured_image() ) {
-		$classes[] = 'full-width-featured-image';
+function zenpress_full_width_featured_image_post_class( $classes ) {
+	if ( is_singular() && zenpress_has_full_width_featured_image() ) {
+		$classes[] = 'has-full-width-featured-image';
 	}
 	return $classes;
 }
-add_filter( 'body_class', 'zenpress_full_width_featured_image_body_class' );
+add_filter( 'post_class', 'zenpress_full_width_featured_image_post_class' );

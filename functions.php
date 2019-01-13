@@ -288,26 +288,9 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 			)
 		);
 
-		if ( zenpress_has_full_width_featured_image() ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-
-			$css = '.site-header .page-banner {
-				background: url(' . $image[0] . ') no-repeat center center scroll;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-
-			}' . PHP_EOL;
-
-			wp_add_inline_style( 'zenpress-style', $css );
-		} elseif ( get_header_image() ) {
-			$css = '.site-header .page-banner {
+		if ( has_header_image() ) {
+			$css = '.page-banner {
 				background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url(' . get_header_image() . ') no-repeat center center scroll;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
 			}' . PHP_EOL;
 
 			wp_add_inline_style( 'zenpress-style', $css );
@@ -488,6 +471,48 @@ function zenpress_get_post_id() {
 	$post_id = 'post-' . get_the_ID();
 
 	return apply_filters( 'zenpress_post_id', $post_id, get_the_ID() );
+}
+
+function zenpress_get_the_archive_title() {
+	if ( is_archive() ) {
+		return get_the_archive_title();
+	} elseif ( is_search() ) {
+		return sprintf( __( 'Search Results for: %s', 'zenpress' ), '<span>' . get_search_query() . '</span>' );
+	}
+}
+
+/**
+ * Returns the page description
+ *
+ * @return string The page description
+ */
+function zenpress_get_the_archive_description() {
+	if ( is_home() ) {
+		return get_bloginfo( 'description' );
+	} elseif ( is_author() ) {
+		return get_the_author_meta( 'description' );
+	} elseif ( is_archive() ) {
+		return get_the_archive_description();
+	} elseif ( is_search() ) {
+		// @see https://github.com/raamdev/independent-publisher/blob/513e7ff71312f585f13eb1460b4d9bc74d0b59bd/inc/template-tags.php#L674
+		global $wp_query;
+		$total = $wp_query->found_posts;
+		$stats_text = sprintf( _n( 'Found one search result for <strong>%2$s</strong>.', 'Found %1$s search results for <strong>%2$s</strong>.', $total, 'zenpress' ), number_format_i18n( $total ), get_search_query() );
+
+		return wpautop( $stats_text );
+	}
+}
+
+function zenpress_show_page_banner() {
+	if ( is_home() && ! display_header_text() ) {
+		return false;
+	}
+	
+	if ( is_home() || is_archive() || is_search() ) {
+		return true;
+	}
+
+	return false;
 }
 
 /**

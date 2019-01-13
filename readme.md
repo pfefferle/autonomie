@@ -2,7 +2,7 @@
 **Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle)  
 **Tags:** white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options  
 **Requires at least:** 4.0  
-**Tested up to:** 4.9.9  
+**Tested up to:** 5.0  
 **Stable tag:** 1.0.0-dev  
 **Author:** Matthias Pfefferle  
 **Author URI:** https://notiz.blog/  
@@ -14,7 +14,15 @@ ZenPress is a very clean WordPress theme inspired by Medium.com. It is SEO optim
 
 ## Description ##
 
-Theme desc.
+ZenPress is a "living theme". I use it for my own blog and so it may change completely over time. Why ZenPress?
+
+> **Zen** (Chinese: 禪; pinyin: Chán; Korean: 선, translit. Seon) [...] emphasizes rigorous self-control [...]
+
+– [Wikipedia](https://en.wikipedia.org/wiki/Zen)
+
+>  [...] **Press** refers to the world of reporters, journalists, columnists, and photographers. An aptly chosen name, because WordPress serves as the printing press that enables its users to publish their words.
+
+– [WordPress Codex](https://codex.wordpress.org/WordPress_Semantics#History_of_the_WordPress_Name)
 
 ## Frequently Asked Questions ##
 

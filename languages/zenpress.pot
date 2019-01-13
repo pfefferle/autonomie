@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2018 Matthias Pfefferle
+# <!=Copyright (C) 2019 Matthias Pfefferle
 # This file is distributed under the MIT.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ZenPress 1.0.0-dev\n"
+"Project-Id-Version: ZenPress 1.0.0-beta-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2018-12-17 09:24:50+00:00\n"
+"POT-Creation-Date: 2019-01-13 22:55:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n1.0.2\n"
@@ -120,33 +120,32 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:331 functions.php:337
+#: functions.php:314 functions.php:320
 msgid "Post navigation"
 msgstr ""
 
-#: functions.php:339
+#: functions.php:322
 msgid "<span class=\"meta-nav\">&laquo;</span>"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:326
 msgid "<span class=\"meta-nav\">&raquo;</span>"
 msgstr ""
 
-#: functions.php:372 functions.php:392 image.php:32 image.php:100
-#: templates/partials/entry-header.php:2
+#: functions.php:355 functions.php:375 image.php:32 image.php:100
 msgid "Edit"
 msgstr ""
 
-#: functions.php:381 functions.php:405
+#: functions.php:364 functions.php:388
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:399
+#: functions.php:382
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:432
+#: functions.php:415
 msgid ""
 "<address class=\"byline\"><span class=\"author p-author vcard hcard "
 "h-card\" itemprop=\"author\" itemscope "
@@ -159,9 +158,19 @@ msgid ""
 "itemprop=\"dateModified datePublished\">%4$s</time></a>"
 msgstr ""
 
-#: functions.php:439
+#: functions.php:422
 msgid "View all posts by %s"
 msgstr ""
+
+#: functions.php:480
+msgid "Search Results for: %s"
+msgstr ""
+
+#: functions.php:500
+msgid "Found one search result for <strong>%2$s</strong>."
+msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
+msgstr[0] ""
+msgstr[1] ""
 
 #: header.php:24
 msgid "Skip to content"
@@ -303,10 +312,6 @@ msgstr ""
 
 #: templates/partials/entry-header.php:15
 msgid "Permalink to %s"
-msgstr ""
-
-#: templates/partials/page-title.php:4
-msgid "Search Results for: %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme

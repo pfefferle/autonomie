@@ -36,11 +36,11 @@
 				$site_title_element = 'div';
 			}
 			?>
-			<<?php echo $site_title_element ?> id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
+			<<?php echo $site_title_element; ?> id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
 				<?php bloginfo( 'name' ); ?>
 				</a>
-			</<?php echo $site_title_element ?>>
+			</<?php echo $site_title_element; ?>>
 
 			<?php get_search_form( true ); ?>
 		</div>
@@ -51,12 +51,16 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php if ( is_home() || is_archive() || is_search() || zenpress_has_full_width_featured_image() ) : ?>
+		<?php if ( zenpress_show_page_banner() ) : ?>
 		<div class="page-banner">
 			<?php if ( ! is_singular() ) : ?>
 			<div class="page-branding">
-				<?php get_template_part( 'templates/partials/page', 'title' ); ?>
-				<?php get_template_part( 'templates/partials/page', 'description' ); ?>
+				<?php if ( zenpress_get_the_archive_title() ) { ?>
+				<h1 id="page-title"<?php zenpress_semantics( 'page-title' ); ?>><?php echo zenpress_get_the_archive_title(); ?></h1>
+				<?php } ?>
+				<?php if ( zenpress_get_the_archive_description() ) { ?>
+				<div id="page-description"<?php zenpress_semantics( 'page-description' ); ?>><?php echo zenpress_get_the_archive_description(); ?></div>
+				<?php } ?>
 			</div>
 			<?php endif; ?>
 		</div>
