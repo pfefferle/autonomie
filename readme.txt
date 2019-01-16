@@ -3,14 +3,14 @@ Contributors: pfefferle
 Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options
 Requires at least: 4.0
 Tested up to: 5.0
-Stable tag: 1.0.0-dev
+Stable tag: 1.0.0-beta-1
 Author: Matthias Pfefferle
 Author URI: https://notiz.blog/
 Donate link: https://notiz.blog/donate/
 License: MIT
 License URI: https://opensource.org/licenses/mit
 
-ZenPress is a very clean WordPress theme inspired by Medium.com. It is SEO optimized, accessibility ready and highly semantic. The theme is made with HTML5 (POSH) and flavoured with Microformats(2) and Microdata/Schema.org.
+ZenPress is a highly semantic, responsive, accessible and search engine optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats2 and microdata (Schema.org). ZenPress supports a lot of OpenWeb plugins and is fully IndieWeb compatible.
 
 == Description ==
 
@@ -62,6 +62,10 @@ ZenPress supports:
 * [Automatic Feed Links](http://codex.wordpress.org/Automatic_Feed_Links)
 * [Custom-Header](http://codex.wordpress.org/Custom_Headers)
 * [Custom-Backgrounds](http://codex.wordpress.org/Custom_Backgrounds)
+* [Gutenberg/Block-Editor](https://wordpress.org/gutenberg/)
+	* [Editor Colors](https://wordpress.org/gutenberg/handbook/extensibility/theme-support/)
+	* [Wide Alignment](https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#wide-alignment	)
+
 
 = What is POSH =
 
