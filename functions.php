@@ -507,7 +507,7 @@ function zenpress_show_page_banner() {
 	if ( is_home() && ! display_header_text() ) {
 		return false;
 	}
-	
+
 	if ( is_home() || is_archive() || is_search() ) {
 		return true;
 	}
@@ -545,6 +545,10 @@ if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 	 * if github.com/dshanske/syndication-links is activated
 	 */
 	require( get_template_directory() . '/integrations/syndication-links.php' );
+}
+
+if class_exists('Post_Kinds_Plugin')) {
+	require( get_template_directory() . '/integrations/indieweb-post-kinds.php' );
 }
 
 /**
