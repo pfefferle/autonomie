@@ -158,20 +158,23 @@ h4.entry-title {
 	margin-top: 15px;
 	margin-bottom: 15px;
 
-	&.post-format {
+	&.post-format,
+	%.post-kind {
 		padding: 0;
 		margin: 0;
 	}
 
 	&.post-format a,
 	&.post-format span,
-	&.post-format:before {
+	&.post-format:before,
+	&.post-kind a {
 		color: $lighter-gray;
 		font-weight: bold;
 		text-transform: lowercase;
 	}
 
-	&.post-format:before {
+	&.post-format:before,
+	&.post-kind:before {
 		display: inline-block;
 		font: normal 1.1em 'Genericons';
 		-webkit-font-smoothing: antialiased;
@@ -183,7 +186,18 @@ h4.entry-title {
 		color: $lighter-gray;
 	}
 
-	.entry-format {
+	&.post-kind .svg-icon {
+		width: 16px;
+		height: 16px;
+		vertical-align: text-middle;
+		margin-right: 0;
+		top: -2px;
+		position: relative;
+		display: inline-block;
+	}
+
+	.entry-format,
+	.kind {
 		line-height: 1;
 	}
 

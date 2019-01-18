@@ -547,7 +547,7 @@ if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 	require( get_template_directory() . '/integrations/syndication-links.php' );
 }
 
-if class_exists('Post_Kinds_Plugin')) {
+if ( class_exists('Post_Kinds_Plugin') ) {
 	require( get_template_directory() . '/integrations/indieweb-post-kinds.php' );
 }
 
