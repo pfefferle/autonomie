@@ -24,7 +24,16 @@ ZenPress is a "living theme". I use it for my own blog and so it may change comp
 
 – [WordPress Codex](https://codex.wordpress.org/WordPress_Semantics#History_of_the_WordPress_Name)
 
+= Thanks =
+
+* Greg Tangey ([Ruxton](https://github.com/Ruxton)) - for the "Post Kinds" and "Syndication Links" implementations
+
 == Frequently Asked Questions ==
+
+= Supported Plugins =
+
+* Post Kinds: <https://wordpress.org/plugins/indieweb-post-kinds/>
+* Syndication Links: <https://wordpress.org/plugins/syndication-links/>
 
 = What Websemantics are supported by ZenPress =
 

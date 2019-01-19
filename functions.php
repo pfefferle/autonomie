@@ -309,22 +309,10 @@ if ( ! function_exists( 'zenpress_content_nav' ) ) :
 	function zenpress_content_nav( $nav_id ) {
 		global $wp_query;
 		?>
-		<?php if ( is_single() ) : // navigation links for single posts ?>
-		<nav id="<?php echo $nav_id; ?>">
+		<?php if ( is_home() || is_archive() || is_search() ) : // navigation links for home, archive, and search pages ?>
+		<nav id="archive-nav">
 			<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'zenpress' ); ?></h1>
-			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">&laquo;</span>' ); ?>
-			<?php next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav">&raquo;</span>' ); ?>
-		</nav><!-- #<?php echo $nav_id; ?> -->
-		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-		<nav id="<?php echo $nav_id; ?>">
-			<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'zenpress' ); ?></h1>
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span>', 'zenpress' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&raquo;</span>', 'zenpress' ) ); ?></div>
-			<?php endif; ?>
+			<?php echo paginate_links(); ?>
 		</nav><!-- #<?php echo $nav_id; ?> -->
 		<?php endif; ?>
 		<?php
@@ -507,12 +495,24 @@ function zenpress_show_page_banner() {
 	if ( is_home() && ! display_header_text() ) {
 		return false;
 	}
-	
+
 	if ( is_home() || is_archive() || is_search() ) {
 		return true;
 	}
 
 	return false;
+}
+
+function zenpress_get_post_format() {
+	return get_post_format() ? : 'standard';
+}
+
+function zenpress_get_post_format_string() {
+	if ( get_post_format() ) {
+		return get_post_format_link( get_post_format() );
+	} else {
+		return __( 'Article', 'zenpress' );
+	}
 }
 
 /**
@@ -545,6 +545,10 @@ if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 	 * if github.com/dshanske/syndication-links is activated
 	 */
 	require( get_template_directory() . '/integrations/syndication-links.php' );
+}
+
+if ( class_exists('Post_Kinds_Plugin') ) {
+	require( get_template_directory() . '/integrations/post-kinds.php' );
 }
 
 /**

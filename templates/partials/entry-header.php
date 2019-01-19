@@ -1,14 +1,13 @@
 	<header class="entry-header">
 		<div class="entry-header-wrapper">
-			<?php if ( get_post_format() !== false ) { ?>
 			<div class="entry-meta post-format">
-				<a class="entry-format entry-format-<?php echo get_post_format(); ?>" href="<?php echo esc_url( get_post_format_link( get_post_format() ) ); ?>"><?php echo get_post_format_string( get_post_format() ); ?></a>
+				<?php echo apply_filters( 'zenpress_post_format', sprintf(
+					'<a class="entry-format entry-format-%s" href="%s">%s</a>',
+					zenpress_get_post_format(),
+					esc_url( get_post_format_link( zenpress_get_post_format() ) ),
+					zenpress_get_post_format_string()
+				) ); ?>
 			</div>
-			<?php } elseif ( ! is_page() ) { ?>
-			<div class="entry-meta post-format">
-				<span class="entry-format entry-format-standard"><?php echo __( 'Article', 'ZenPress' ); ?></span>
-			</div>
-			<?php } ?>
 
 			<?php if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'status' ) ) && ! empty( get_the_title() ) ) : ?>
 			<h1 class="entry-title p-name" itemprop="name headline">
@@ -25,3 +24,5 @@
 			<?php // endif; ?>
 		</div>
 	</header><!-- .entry-header -->
+
+	<?php do_action( 'zenpress_before_entry_content' ); ?>

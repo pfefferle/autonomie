@@ -17,8 +17,8 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
+	<?php zenpress_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
 	<div class="entry-title p-name entry-content e-content" itemprop="name headline description articleBody">
-		<?php zenpress_the_post_thumbnail( '<p>', '</p>' ); ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'zenpress' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'zenpress' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->

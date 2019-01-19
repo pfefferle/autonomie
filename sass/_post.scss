@@ -165,13 +165,13 @@ h4.entry-title {
 
 	&.post-format a,
 	&.post-format span,
-	&.post-format:before {
+	&.post-format .entry-format:before {
 		color: $lighter-gray;
 		font-weight: bold;
 		text-transform: lowercase;
 	}
 
-	&.post-format:before {
+	&.post-format .entry-format:before {
 		display: inline-block;
 		font: normal 1.1em 'Genericons';
 		-webkit-font-smoothing: antialiased;
@@ -285,40 +285,40 @@ h4.entry-title {
 		display: none;
 	}
 
-	&.format-quote .post-format:before {
+	&.format-quote .post-format .entry-format:before {
 		content: '\f106';
 	}
 
-	&.format-aside .post-format:before {
+	&.format-aside .post-format .entry-format:before {
 		content: '\f101';
 	}
 
-	&.format-video .post-format:before {
+	&.format-video .post-format .entry-format:before {
 		content: '\f104';
 	}
 
-	&.format-audio .post-format:before {
+	&.format-audio .post-format .entry-format:before {
 		content: '\f109';
 	}
 
-	&.format-image .post-format:before,
-	&.format-photo .post-format:before {
+	&.format-image .post-format .entry-format:before,
+	&.format-photo .post-format .entry-format:before {
 		content: '\f102';
 	}
 
-	&.format-gallery .post-format:before {
+	&.format-gallery .post-format .entry-format:before {
 		content: '\f103';
 	}
 
-	&.format-link .post-format:before {
+	&.format-link .post-format .entry-format:before {
 		content: '\f107';
 	}
 
-	&.format-status .post-format:before {
+	&.format-status .post-format .entry-format:before {
 		content: '\f105';
 	}
 
-	&.format-standard .post-format:before {
+	&.format-standard .post-format .entry-format:before {
 		content: '\f100';
 	}
 }

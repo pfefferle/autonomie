@@ -36,8 +36,10 @@ function zenpress_query_format_standard( $query ) {
 		isset( $query->query_vars['post_format'] ) &&
 		'post-format-standard' == $query->query_vars['post_format']
 	) {
+		$post_formats = get_theme_support( 'post-formats' );
+
 		if (
-			( $post_formats = get_theme_support( 'post-formats' ) ) &&
+			$post_formats &&
 			is_array( $post_formats[0] ) && count( $post_formats[0] )
 		) {
 			$terms = array();

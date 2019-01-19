@@ -165,7 +165,7 @@
 	}
 }
 
-#nav-below {
+#nav-below-123 {
 	.nav-previous {
 		position: fixed;
 		left: 20px;
@@ -186,6 +186,51 @@
 	}
 
 	a:hover {
+		color: $dark-gray;
+	}
+}
+
+#post-nav {
+	.previous-post, .next-post {
+		width: 49%;
+		display: inline-block;
+		position: relative;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		width: 49%;
+		height: 200px;
+	}
+}
+
+#archive-nav {
+	margin: 0 auto;
+	display: block;
+	width: auto;
+	text-align: center;
+	margin-top: 100px;
+
+	.page-numbers {
+		font-size: 1.5em;
+		display: inline-block;
+		margin: 0 5px;
+		color: $light-gray;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+			color: $dark-gray;
+		}
+	}
+
+	.current {
 		color: $dark-gray;
 	}
 }

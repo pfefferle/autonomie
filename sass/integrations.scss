@@ -3,3 +3,16 @@ ul.relsyn {
 	display: block !important;
 	margin: inherit !important;
 }
+
+.kind .svg-icon {
+	height: 20px;
+	width: 20px;
+	color: $light-gray;
+	fill: currentColor;
+	vertical-align: middle;
+}
+
+.has-full-width-featured-image .entry-header .kind .svg-icon {
+	color: $white;
+	fill: currentColor;
+}

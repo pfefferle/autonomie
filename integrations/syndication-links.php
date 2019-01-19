@@ -23,7 +23,7 @@ add_action( 'init', 'zenpress_syndication_links_init' );
  */
 function zenpress_syndication_links() {
 	if ( function_exists( 'get_syndication_links' ) ) {
-		echo __( 'Syndication Links', 'zenpress' );
+		_e( 'Syndication Links', 'zenpress' );
 		echo get_syndication_links( null, array( 'show_text_before' => null) );
 	}
 }

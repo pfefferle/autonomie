@@ -11,13 +11,12 @@ function zenpress_the_post_thumbnail( $before = '', $after = '' ) {
 
 	if ( '' != get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
-		$class = '';
 
-		if ( $image['1'] < '300' ) {
-			$class = 'alignright';
+		if ( $image['1'] < '350' ) {
+			return;
 		}
 
-		$class .= ' photo';
+		$class = 'photo';
 
 		$post_format = get_post_format();
 
@@ -33,6 +32,37 @@ function zenpress_the_post_thumbnail( $before = '', $after = '' ) {
 		echo $after;
 	}
 }
+
+/**
+ * Adds post-thumbnail support :)
+ *
+ * @since ZenPress 1.0.0
+ */
+function zenpress_content_post_thumbnail( $content ) {
+	if ( '' != get_the_post_thumbnail() ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
+
+		if ( $image['1'] >= '350' ) {
+			return $content;
+		}
+
+		$class = 'alignright photo';
+
+		$post_format = get_post_format();
+
+		// use `u-photo` on photo/gallery posts
+		if ( in_array( $post_format, array( 'image', 'gallery' ) ) ) {
+			$class .= ' u-photo';
+		} else { // otherwise use `u-featured`
+			$class .= ' u-featured';
+		}
+
+		return '<p>' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'class' => $class, 'itemprop' => 'image' ) ) . '</p>' . $content;
+	}
+
+	return $content;
+}
+add_filter( 'the_content', 'zenpress_content_post_thumbnail' );
 
 /**
  * Add a checkbox for Post Covers to the featured image metabox
