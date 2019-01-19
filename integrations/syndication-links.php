@@ -15,8 +15,14 @@
  */
 function zenpress_syndication_links_init() {
 	remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ) , 30 );
+	wp_dequeue_style( 'syndication-style' );
 }
 add_action( 'init', 'zenpress_syndication_links_init' );
+
+function zenpress_syndication_links_print_scripts() {
+	wp_dequeue_style( 'syndication-style' );
+}
+add_action( 'wp_print_styles', 'zenpress_syndication_links_print_scripts', 100 );
 
 /**
  * Added links to the post-footer
