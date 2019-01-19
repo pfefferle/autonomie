@@ -51,5 +51,5 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php get_template_part( 'templates/partials/page-banner' ); ?>
+		<?php get_template_part( 'templates/partials/page-banner', zenpress_get_archive_type() ); ?>
 	</header><!-- #site-header -->

@@ -39,18 +39,49 @@
 		width: 100%;
 		border-top: 1px solid $border-gray;
 
+		a {
+			color: $white;
+		}
+
 		.page-branding {
 			width: 100%;
 			margin: 50px 0;
 		}
 
-		#page-title, #page-description {
+		.page-branding.author {
+			text-align: center;
+
+			.avatar {
+				display: block;
+				margin: 0 auto;
+				padding: 12.5px 0;
+			}
+
+			#page-title, #page-description, #page-meta {
+				text-align: center;
+			}
+
+			#page-title {
+				font-size: 3em;
+				padding: 12.5px 0;
+			}
+
+			#page-description {
+				padding: 12.5px 0;
+			}
+
+			#page-meta {
+				font-size: 1em;
+				margin: 0 auto;
+			}
+		}
+
+		#page-title, #page-description, #page-meta {
 			display: block;
 			margin: 0 auto;
 			text-align: left;
-			color: $dark-gray;
+			color: $white;
 			font-size: 1.5em;
-			font-weigth: bold;
 			width: $wide-width;
 		}
 

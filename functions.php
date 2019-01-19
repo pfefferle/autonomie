@@ -515,6 +515,27 @@ function zenpress_get_post_format_string() {
 	}
 }
 
+function zenpress_get_archive_type() {
+	$type = null;
+
+	if ( is_author() ) {
+		$type = 'author';
+	}
+
+	return apply_filters( 'zenpress_archive_type', $type );
+}
+
+function zenpress_get_author_meta() {
+	$meta = array();
+
+	$meta[] = sprintf( __( '%s Posts', 'zenpress' ), count_user_posts( get_the_author_meta( 'ID' ) ) );
+	$meta[] = sprintf( '<a rel="alternate" class="feed u-feed" href="%s">%s</a>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'zenpress' ) );
+
+	$meta = apply_filters( 'zenpress_author_meta', $meta, get_the_author_meta( 'ID' ) );
+
+	return implode( ' | ', $meta );
+}
+
 /**
  * Widget handling
  */
@@ -549,6 +570,10 @@ if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 
 if ( class_exists('Post_Kinds_Plugin') ) {
 	require( get_template_directory() . '/integrations/post-kinds.php' );
+}
+
+if ( class_exists('ActivityPub') ) {
+	require( get_template_directory() . '/integrations/activitypub.php' );
 }
 
 /**
