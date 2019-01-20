@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZenPress 1.0.0-beta-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-01-20 21:55:16+00:00\n"
+"POT-Creation-Date: 2019-01-20 22:15:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,11 +168,11 @@ msgstr[1] ""
 msgid "Article"
 msgstr ""
 
-#: functions.php:531
+#: functions.php:541
 msgid "%s Posts"
 msgstr ""
 
-#: functions.php:532
+#: functions.php:542
 msgid "Subscribe"
 msgstr ""
 
@@ -256,15 +256,15 @@ msgstr ""
 msgid "Extend the Entry-Meta"
 msgstr ""
 
-#: integrations/activitypub.php:22
+#: integrations/activitypub.php:30
 msgid "%s Followers"
 msgstr ""
 
-#: integrations/activitypub.php:24
+#: integrations/activitypub.php:32
 msgid "Follow <code>%s</code> (fediverse)"
 msgstr ""
 
-#: integrations/syndication-links.php:32
+#: integrations/syndication-links.php:34
 msgid "Syndication Links"
 msgstr ""
 

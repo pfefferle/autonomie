@@ -11,14 +11,16 @@
  */
 
 /**
- * Remove the integration into `the_content`
+ * Remove the integration of `the_content` filter
  */
 function zenpress_syndication_links_init() {
 	remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ) , 30 );
-	wp_dequeue_style( 'syndication-style' );
 }
 add_action( 'init', 'zenpress_syndication_links_init' );
 
+/**
+ * Remove the Syndication-Links CSS
+ */
 function zenpress_syndication_links_print_scripts() {
 	wp_dequeue_style( 'syndication-style' );
 }

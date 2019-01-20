@@ -10,7 +10,15 @@
  * @subpackage indieweb
  */
 
-function zenpress_activitypub_author_meta( $meta, $author_id ) {
+/**
+ * Add ActivityPub informations to the archive author meta data
+ *
+ * @param  array $meta      the meta array
+ * @param  int   $author_id the author id
+ *
+ * @return array            the filtered meta array
+ */
+function zenpress_activitypub_archive_author_meta( $meta, $author_id ) {
 	$followers = get_user_option( 'activitypub_followers', $author_id );
 
 	if ( $followers ) {
@@ -25,4 +33,4 @@ function zenpress_activitypub_author_meta( $meta, $author_id ) {
 
 	return $meta;
 }
-add_filter( 'zenpress_author_meta', 'zenpress_activitypub_author_meta', 10, 2 );
+add_filter( 'zenpress_archive_author_meta', 'zenpress_activitypub_archive_author_meta', 10, 2 );

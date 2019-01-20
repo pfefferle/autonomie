@@ -515,6 +515,11 @@ function zenpress_get_post_format_string() {
 	}
 }
 
+/**
+ *
+ *
+ * @return string
+ */
 function zenpress_get_archive_type() {
 	$type = null;
 
@@ -525,13 +530,18 @@ function zenpress_get_archive_type() {
 	return apply_filters( 'zenpress_archive_type', $type );
 }
 
-function zenpress_get_author_meta() {
+/**
+ * Returns Meta-Data like "number of posts" and "subscribe buttons" for the Author.
+ *
+ * @return string
+ */
+function zenpress_get_archive_author_meta() {
 	$meta = array();
 
 	$meta[] = sprintf( __( '%s Posts', 'zenpress' ), count_user_posts( get_the_author_meta( 'ID' ) ) );
 	$meta[] = sprintf( '<a rel="alternate" class="feed u-feed" href="%s">%s</a>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'zenpress' ) );
 
-	$meta = apply_filters( 'zenpress_author_meta', $meta, get_the_author_meta( 'ID' ) );
+	$meta = apply_filters( 'zenpress_archive_author_meta', $meta, get_the_author_meta( 'ID' ) );
 
 	return implode( ' | ', $meta );
 }

@@ -34,8 +34,9 @@ ZenPress is a "living theme". I use it for my own blog and so it may change comp
 
 * Post Kinds: <https://wordpress.org/plugins/indieweb-post-kinds/>
 * Syndication Links: <https://wordpress.org/plugins/syndication-links/>
+* ActivityPub: <https://wordpress.org/plugins/activitypub/>
 
-= What Websemantics are supported by ZenPress =
+= Supported Websemantics =
 
 ZenPress' code is marked-up with microformats and microdata:
 
