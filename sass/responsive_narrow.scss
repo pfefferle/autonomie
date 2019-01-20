@@ -9,9 +9,15 @@ html {
 .site-header .site-branding,
 .site-header .page-banner #page-description,
 .site-header .page-banner #page-title,
+.site-header .page-banner #page-meta,
 .site-navigation,
 .has-full-width-featured-image .entry-header .entry-header-wrapper > * {
 	width: 90%;
+}
+
+.page-banner .avatar {
+	width: 80px;
+	height: 80px;
 }
 
 .entry-content,

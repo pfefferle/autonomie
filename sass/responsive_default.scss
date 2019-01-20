@@ -4,8 +4,14 @@
 .site-navigation,
 .site-header .site-branding,
 .site-header .page-banner #page-title,
-.site-header .page-banner #page-description {
+.site-header .page-banner #page-description,
+.site-header .page-banner #page-meta {
 	width: $default-width;
+}
+
+.page-banner .avatar {
+	width: 120px;
+	height: 120px;
 }
 
 #primary .post,
