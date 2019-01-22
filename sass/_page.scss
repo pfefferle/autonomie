@@ -40,7 +40,7 @@
 		border-top: 1px solid $border-gray;
 
 		a {
-			color: $white;
+			color: $dark-gray;
 		}
 
 		.page-branding {
@@ -80,7 +80,7 @@
 			display: block;
 			margin: 0 auto;
 			text-align: left;
-			color: $white;
+			color: $dark-gray;
 			font-size: 1.5em;
 			width: $wide-width;
 		}
@@ -111,7 +111,11 @@
 		-o-background-size: cover;
 		background-size: cover;
 
-		#page-title, #page-description {
+		a {
+			color: $white;
+		}
+
+		#page-title, #page-description, #page-meta {
 			color: $white;
 		}
 
