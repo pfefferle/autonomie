@@ -199,6 +199,16 @@ endif; // zenpress_setup
 add_action( 'after_setup_theme', 'zenpress_setup' );
 
 /**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function zenpress_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%1$s" />', esc_url( get_bloginfo( 'pingback_url' ) ) );
+	}
+}
+add_action( 'wp_head', 'zenpress_pingback_header' );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.

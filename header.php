@@ -14,7 +14,6 @@
 	<meta name="viewport" content="width=device-width" />
 	<link rel="profile" href="http://microformats.org/profile/specs" />
 	<link rel="profile" href="http://microformats.org/profile/hatom" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<?php wp_head(); ?>
 </head>
