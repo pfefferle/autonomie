@@ -519,7 +519,7 @@ function zenpress_get_post_format() {
 
 function zenpress_get_post_format_string() {
 	if ( get_post_format() ) {
-		return get_post_format_link( get_post_format() );
+		return get_post_format();
 	} else {
 		return __( 'Article', 'zenpress' );
 	}
