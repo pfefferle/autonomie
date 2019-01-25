@@ -575,7 +575,7 @@ function zenpress_get_archive_author_meta() {
 	$meta = array();
 
 	$meta[] = sprintf( __( '%s Posts', 'zenpress' ), count_user_posts( get_the_author_meta( 'ID' ) ) );
-	$meta[] = sprintf( '<a rel="alternate" class="feed u-feed" href="%s">%s</a>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'zenpress' ) );
+	$meta[] = sprintf( '<a rel="alternate" class="feed u-feed openwebicons-feed" href="%s">%s</a>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'zenpress' ) );
 
 	$meta = apply_filters( 'zenpress_archive_author_meta', $meta, get_the_author_meta( 'ID' ) );
 

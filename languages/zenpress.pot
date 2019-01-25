@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZenPress 1.0.0-beta-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-01-25 16:05:05+00:00\n"
+"POT-Creation-Date: 2019-01-25 21:57:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,11 +168,11 @@ msgstr[1] ""
 msgid "Article"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:577
 msgid "%s Posts"
 msgstr ""
 
-#: functions.php:558
+#: functions.php:578
 msgid "Subscribe"
 msgstr ""
 
