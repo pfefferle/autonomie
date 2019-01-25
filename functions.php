@@ -525,6 +525,26 @@ function zenpress_get_post_format_string() {
 	}
 }
 
+function zenpress_get_post_format_link( $post_format ) {
+	if ( 'standard' !== $post_format ) {
+		return get_post_format_link( $post_format );
+	}
+
+	global $wp_rewrite;
+
+	$termlink = $wp_rewrite->get_extra_permastruct( 'post_format' );
+
+	if ( empty($termlink) ) {
+		$termlink = '?post_format=standard';
+		$termlink = home_url($termlink);
+	} else {
+		$termlink = str_replace('%post_format%', 'standard', $termlink);
+		$termlink = home_url( user_trailingslashit($termlink, 'category') );
+	}
+
+	return $termlink;
+}
+
 /**
  *
  *

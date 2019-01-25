@@ -5,7 +5,7 @@
 				<?php echo apply_filters( 'zenpress_post_format', sprintf(
 					'<a class="entry-format entry-format-%s" href="%s">%s</a>',
 					zenpress_get_post_format(),
-					esc_url( get_post_format_link( zenpress_get_post_format() ) ),
+					esc_url( zenpress_get_post_format_link( zenpress_get_post_format() ) ),
 					zenpress_get_post_format_string()
 				) ); ?>
 			</div>
