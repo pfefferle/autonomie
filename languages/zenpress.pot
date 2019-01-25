@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZenPress 1.0.0-beta-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-01-22 20:11:57+00:00\n"
+"POT-Creation-Date: 2019-01-25 16:05:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -116,28 +116,28 @@ msgstr ""
 msgid "Very dark gray"
 msgstr ""
 
-#: functions.php:135 header.php:49
+#: functions.php:135 header.php:48
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:330
 msgid "Post navigation"
 msgstr ""
 
-#: functions.php:343 functions.php:363 image.php:32 image.php:100
+#: functions.php:359 functions.php:379 image.php:32 image.php:100
 msgid "Edit"
 msgstr ""
 
-#: functions.php:352 functions.php:376
+#: functions.php:368 functions.php:392
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:386
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:403
+#: functions.php:419
 msgid ""
 "<address class=\"byline\"><span class=\"author p-author vcard hcard "
 "h-card\" itemprop=\"author\" itemscope "
@@ -150,33 +150,33 @@ msgid ""
 "itemprop=\"dateModified datePublished\">%4$s</time></a>"
 msgstr ""
 
-#: functions.php:410
+#: functions.php:426
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:468
+#: functions.php:484
 msgid "Search Results for: %s"
 msgstr ""
 
-#: functions.php:488
+#: functions.php:504
 msgid "Found one search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:514
+#: functions.php:530
 msgid "Article"
 msgstr ""
 
-#: functions.php:541
+#: functions.php:557
 msgid "%s Posts"
 msgstr ""
 
-#: functions.php:542
+#: functions.php:558
 msgid "Subscribe"
 msgstr ""
 
-#: header.php:24
+#: header.php:23
 msgid "Skip to content"
 msgstr ""
 

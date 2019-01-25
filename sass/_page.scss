@@ -53,8 +53,8 @@
 
 			.avatar {
 				display: block;
-				margin: 0 auto;
-				padding: 12.5px 0;
+				margin: 12.5px auto;
+				border: 5px solid $white;
 			}
 
 			#page-title, #page-description, #page-meta {

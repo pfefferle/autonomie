@@ -299,9 +299,15 @@ if ( ! function_exists( 'zenpress_enqueue_scripts' ) ) :
 		);
 
 		if ( has_header_image() ) {
-			$css = '.page-banner {
-				background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url(' . get_header_image() . ') no-repeat center center scroll;
-			}' . PHP_EOL;
+			if ( is_author() ) {
+				$css = '.page-banner {
+					background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(' . get_header_image() . ') no-repeat center center scroll;
+				}' . PHP_EOL;
+			} else {
+				$css = '.page-banner {
+					background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url(' . get_header_image() . ') no-repeat center center scroll;
+				}' . PHP_EOL;
+			}
 
 			wp_add_inline_style( 'zenpress-style', $css );
 		}
