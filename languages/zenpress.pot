@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZenPress 1.0.0-beta-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-01-27 14:38:08+00:00\n"
+"POT-Creation-Date: 2019-01-27 16:58:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -120,60 +120,17 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:330
-msgid "Post navigation"
-msgstr ""
-
-#: functions.php:359 functions.php:379 image.php:32 image.php:100
+#: functions.php:340 functions.php:360 image.php:32 image.php:100
 msgid "Edit"
 msgstr ""
 
-#: functions.php:368 functions.php:392
+#: functions.php:349 functions.php:373
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:386
+#: functions.php:367
 msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:419
-msgid ""
-"<address class=\"byline\"><span class=\"author p-author vcard hcard "
-"h-card\" itemprop=\"author\" itemscope "
-"itemtype=\"http://schema.org/Person\">%5$s <a class=\"url uid u-url u-uid "
-"fn p-name\" href=\"%6$s\" title=\"%7$s\" rel=\"author\" "
-"itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a></span></address> "
-"<span class=\"sep\"> | </span> <a href=\"%1$s\" title=\"%2$s\" "
-"rel=\"bookmark\" class=\"url u-url\"><time class=\"entry-date updated "
-"published dt-updated dt-published\" datetime=\"%3$s\" "
-"itemprop=\"dateModified datePublished\">%4$s</time></a>"
-msgstr ""
-
-#: functions.php:426
-msgid "View all posts by %s"
-msgstr ""
-
-#: functions.php:484
-msgid "Search Results for: %s"
-msgstr ""
-
-#: functions.php:504
-msgid "Found one search result for <strong>%2$s</strong>."
-msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:530
-msgid "Article"
-msgstr ""
-
-#: functions.php:577
-msgid "%s Posts"
-msgstr ""
-
-#: functions.php:578
-msgid "Subscribe"
 msgstr ""
 
 #: header.php:23
@@ -231,6 +188,54 @@ msgstr ""
 #: includes/featured-image.php:78
 msgid "Use as post cover (full-width)"
 msgstr ""
+
+#: includes/template-functions.php:13
+msgid "Post navigation"
+msgstr ""
+
+#: includes/template-functions.php:30
+#. translators: the author byline
+msgid ""
+"<address class=\"byline\"><span class=\"author p-author vcard hcard "
+"h-card\" itemprop=\"author\" itemscope "
+"itemtype=\"http://schema.org/Person\">%5$s <a class=\"url uid u-url u-uid "
+"fn p-name\" href=\"%6$s\" title=\"%7$s\" rel=\"author\" "
+"itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a></span></address> "
+"<span class=\"sep\"> | </span> <a href=\"%1$s\" title=\"%2$s\" "
+"rel=\"bookmark\" class=\"url u-url\"><time class=\"entry-date updated "
+"published dt-updated dt-published\" datetime=\"%3$s\" "
+"itemprop=\"dateModified datePublished\">%4$s</time></a>"
+msgstr ""
+
+#: includes/template-functions.php:38
+#. translators:
+msgid "View all posts by %s"
+msgstr ""
+
+#: includes/template-functions.php:73
+#. translators: The title of the search results page
+msgid "Search Results for: %s"
+msgstr ""
+
+#: includes/template-functions.php:97
+msgid "Article"
+msgstr ""
+
+#: includes/template-functions.php:145
+#. translators: a post counter
+msgid "%s Posts"
+msgstr ""
+
+#: includes/template-functions.php:146
+msgid "Subscribe"
+msgstr ""
+
+#: includes/template-functions.php:170
+#. translators: Description for search results
+msgid "Found %1$s search result for <strong>%2$s</strong>."
+msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
+msgstr[0] ""
+msgstr[1] ""
 
 #: includes/widgets.php:7
 msgid "Sidebar 1"
