@@ -35,6 +35,10 @@
 			}
 		}
 
+		.entry-meta.post-format .entry-format::before {
+			color: $white;
+		}
+
 		.entry-header-wrapper {
 			position: absolute;
 			left: 0;
