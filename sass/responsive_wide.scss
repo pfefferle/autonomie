@@ -55,6 +55,12 @@
 	.wp-block-pullquote {
 		max-width: $wide-width;
 		box-sizing: border-box;
+
+		small,
+		figcaption,
+		cite {
+			margin-left: $margin;
+		}
 	}
 }
 
