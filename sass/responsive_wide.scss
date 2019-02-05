@@ -10,6 +10,11 @@
 	width: $wide-width;
 }
 
+.entry-content .wp-block-image {
+	width: $wide-width;
+	max-width: $wide-width;
+}
+
 #sidebar {
 	width: $wide-width + 400;
 	max-width: 100%;
@@ -115,14 +120,13 @@ p {
 	figcaption {
 		display: block;
 		height: 68px;
-		right: -($margin + 20);
 		margin-top: 0px;
-		position: absolute;
 		text-align: left;
-		top: 0px;
-		width: $margin;
+		width: $margin - 20px;
+		margin-left: 20px;
 		word-break: break-word;
 		word-wrap: break-word;
+		float: right;
 
 		&:before {
 			width: 25%;
@@ -139,14 +143,13 @@ p {
 	figcaption {
 		display: block;
 		height: 68px;
-		left: -$margin;
 		margin-top: 0px;
-		position: absolute;
 		text-align: right;
-		top: 0px;
-		width: $margin - 20;
+		width: $margin - 20px;
+		margin-right: 20px;
 		word-break: break-word;
 		word-wrap: break-word;
+		float: left;
 
 		&:before {
 			width: 25%;
