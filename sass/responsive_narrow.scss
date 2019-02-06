@@ -35,6 +35,14 @@ html {
 	}
 }
 
+.alignright,
+.alignleft,
+.wp-block-image .alignright,
+.wp-block-image .alignleft {
+	clear: both;
+	margin: 1.2em auto;
+}
+
 .entry-content > *,
 .entry-summary > *,
 .entry-content > form,
