@@ -39,6 +39,7 @@ html {
 .alignleft,
 .wp-block-image .alignright,
 .wp-block-image .alignleft {
+	float: none;
 	clear: both;
 	margin: 1.2em auto;
 }
