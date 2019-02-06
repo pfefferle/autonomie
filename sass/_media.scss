@@ -29,7 +29,9 @@
 	width: $default-width;
 }
 
-.wp-block-image .aligncenter {
+.wp-block-image.aligncenter,
+.wp-block-image .aligncenter,
+.entry-content .wp-block-image.aligncenter {
 	width: auto;
 }
 
