@@ -4,6 +4,7 @@
 **Requires at least:** 4.0  
 **Tested up to:** 5.0  
 **Stable tag:** 1.0.0-beta-1  
+**Requires PHP:** 5.6  
 **Author:** Matthias Pfefferle  
 **Author URI:** https://notiz.blog/  
 **Donate link:** https://notiz.blog/donate/  

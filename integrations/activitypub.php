@@ -27,9 +27,9 @@ function zenpress_activitypub_archive_author_meta( $meta, $author_id ) {
 		$followers = 0;
 	}
 
-	array_unshift( $meta, sprintf( __( '%s Followers' ), $followers ) );
+	array_unshift( $meta, sprintf( __( '%s Followers', 'zenpress' ), $followers ) );
 
-	$meta[] = sprintf( __( 'Follow <code>%s</code> (fediverse)' ), activitypub_get_webfinger_resource( $author_id ) );
+	$meta[] = sprintf( __( 'Follow <code>%s</code> (fediverse)', 'zenpress' ), activitypub_get_webfinger_resource( $author_id ) );
 
 	return $meta;
 }

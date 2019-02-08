@@ -40,4 +40,4 @@ function zenpress_widgets_init() {
 		'after_widget'  => '',
 	) );
 }
-add_action( 'init', 'zenpress_widgets_init' );
+add_action( 'widgets_init', 'zenpress_widgets_init' );
