@@ -131,3 +131,8 @@ img.wp-post-image {
 .wp-caption-text {
 	margin-top: .5em;
 }
+
+.entry-content .wp-block-columns .wp-block-image {
+	width: auto;
+	max-width: auto;
+}
