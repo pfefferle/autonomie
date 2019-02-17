@@ -141,6 +141,8 @@ function zenpress_get_archive_type() {
 function zenpress_get_archive_author_meta() {
 	$meta = array();
 
+	// translators: list of followers
+	$meta[] = sprintf( __( '%s Followers', 'zenpress' ), apply_filters( 'zenpress_archive_author_followers', 0, get_the_author_meta( 'ID' ) ) );
 	// translators: a post counter
 	$meta[] = sprintf( __( '%s Posts', 'zenpress' ), count_user_posts( get_the_author_meta( 'ID' ) ) );
 	$meta[] = sprintf( '<a rel="alternate" class="feed u-feed openwebicons-feed" href="%s">%s</a>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'zenpress' ) );
