@@ -440,7 +440,7 @@ if ( class_exists('Post_Kinds_Plugin') ) {
 	require( get_template_directory() . '/integrations/post-kinds.php' );
 }
 
-if ( class_exists('ActivityPub') ) {
+if ( class_exists('\ActivityPub\ActivityPub') ) {
 	require( get_template_directory() . '/integrations/activitypub.php' );
 }
 

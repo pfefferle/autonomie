@@ -20,7 +20,7 @@
  */
 function zenpress_activitypub_archive_author_meta( $meta, $author_id ) {
 	// translators: how to follow
-	$meta[] = sprintf( __( 'Follow <code>%s</code> (fediverse)', 'zenpress' ), activitypub_get_webfinger_resource( $author_id ) );
+	$meta[] = sprintf( __( 'Follow <code>%s</code> (fediverse)', 'zenpress' ), \ActivitPub\get_webfinger_resource( $author_id ) );
 
 	return $meta;
 }
