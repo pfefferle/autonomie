@@ -41,5 +41,5 @@ get_header(); ?>
 			</article><!-- #post-0 -->
 
 		</main><!-- #content -->
-
+		
 <?php get_footer(); ?>
