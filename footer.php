@@ -29,7 +29,7 @@
 
 		<div id="site-generator">
 			<?php do_action( 'autonom_credits' ); ?>
-			<?php printf( __( 'This site is powered by %1$s and styled with some %2$s', 'autonom' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://github.com/pfefferle/Autonom">Zen</a>' ); ?>
+			<?php printf( __( 'This site is powered by %1$s and styled with the %2$s theme', 'autonom' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://github.com/pfefferle/Autonom">Autonom</a>' ); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

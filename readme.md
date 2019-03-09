@@ -17,13 +17,7 @@ Autonom is a highly semantic, responsive, accessible and search engine optimized
 
 Autonom is a "living theme". I use it for my own blog and so it may change completely over time. Why Autonom?
 
-> **Zen** (Chinese: 禪; pinyin: Chán; Korean: 선, translit. Seon) [...] emphasizes rigorous self-control [...]
-
-– [Wikipedia](https://en.wikipedia.org/wiki/Zen)
-
->  [...] **Press** refers to the world of reporters, journalists, columnists, and photographers. An aptly chosen name, because WordPress serves as the printing press that enables its users to publish their words.
-
-– [WordPress Codex](https://codex.wordpress.org/WordPress_Semantics#History_of_the_WordPress_Name)
+"Autonom" is the german word for "autonomous" which is a synonym to independent!
 
 ### Thanks ###
 
