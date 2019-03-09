@@ -7,8 +7,8 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package ZenPress
- * @since ZenPress 1.0.0
+ * @package Autonom
+ * @since Autonom 1.0.0
  */
 
 get_header(); ?>

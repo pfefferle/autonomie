@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package ZenPress
- * @since ZenPress 1.0.0
+ * @package Autonom
+ * @since Autonom 1.0.0
  */
 
 get_header(); ?>
@@ -35,11 +35,11 @@ get_header(); ?>
 
 			<article id="post-0" class="post no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title p-entry-title"><?php _e( 'Nothing Found', 'zenpress' ); ?></h1>
+					<h1 class="entry-title p-entry-title"><?php _e( 'Nothing Found', 'autonom' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content e-entry-content">
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'zenpress' ); ?></p>
+					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'autonom' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
@@ -48,6 +48,6 @@ get_header(); ?>
 
 		</main><!-- #content -->
 
-		<?php zenpress_content_nav( 'nav-below' ); ?>
+		<?php autonom_content_nav( 'nav-below' ); ?>
 
 <?php get_footer(); ?>

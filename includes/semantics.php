@@ -1,6 +1,6 @@
 <?php
 /**
- * ZenPress websemantics polyfill
+ * Autonom websemantics polyfill
  *
  * Some functions to add backwards compatibility to older WordPress versions
  * Adds some awesome websemantics like microformats(2) and microdata
@@ -10,18 +10,18 @@
  * @link http://schema.org
  * @link http://indiewebcamp.com
  *
- * @package ZenPress
+ * @package Autonom
  * @subpackage semantics
- * @since ZenPress 1.5.0
+ * @since Autonom 1.5.0
  */
 
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since ZenPress 1.0.0
+ * @since Autonom 1.0.0
  */
-function zenpress_body_classes( $classes ) {
-	$classes[] = get_theme_mod( 'zenpress_columns', 'multi' ) . '-column';
+function autonom_body_classes( $classes ) {
+	$classes[] = get_theme_mod( 'autonom_columns', 'multi' ) . '-column';
 
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
@@ -37,35 +37,35 @@ function zenpress_body_classes( $classes ) {
 		$classes[] = 'h-feed';
 		$classes[] = 'feed';
 	} else {
-		$classes = zenpress_get_post_classes( $classes );
+		$classes = autonom_get_post_classes( $classes );
 	}
 
 	return $classes;
 }
-add_filter( 'body_class', 'zenpress_body_classes' );
+add_filter( 'body_class', 'autonom_body_classes' );
 
 /**
  * Adds custom classes to the array of post classes.
  *
- * @since ZenPress 1.0.0
+ * @since Autonom 1.0.0
  */
-function zenpress_post_classes( $classes ) {
+function autonom_post_classes( $classes ) {
 	$classes = array_diff( $classes, array( 'hentry' ) );
 
 	if ( ! is_singular() ) {
-		return zenpress_get_post_classes( $classes );
+		return autonom_get_post_classes( $classes );
 	} else {
 		return $classes;
 	}
 }
-add_filter( 'post_class', 'zenpress_post_classes', 99 );
+add_filter( 'post_class', 'autonom_post_classes', 99 );
 
 /**
  * Adds custom classes to the array of comment classes.
  *
- * @since ZenPress 1.4.0
+ * @since Autonom 1.4.0
  */
-function zenpress_comment_classes( $classes ) {
+function autonom_comment_classes( $classes ) {
 	$classes[] = 'h-entry';
 	$classes[] = 'h-cite';
 	$classes[] = 'p-comment';
@@ -73,12 +73,12 @@ function zenpress_comment_classes( $classes ) {
 
 	return array_unique( $classes );
 }
-add_filter( 'comment_class', 'zenpress_comment_classes', 99 );
+add_filter( 'comment_class', 'autonom_comment_classes', 99 );
 
 /**
  * encapsulates post-classes to use them on different tags
  */
-function zenpress_get_post_classes( $classes = array() ) {
+function autonom_get_post_classes( $classes = array() ) {
 	// Adds a class for microformats v2
 	$classes[] = 'h-entry';
 
@@ -91,20 +91,20 @@ function zenpress_get_post_classes( $classes = array() ) {
 /**
  * Adds microformats v2 support to the comment_author_link.
  *
- * @since ZenPress 1.0.0
+ * @since Autonom 1.0.0
  */
-function zenpress_author_link( $link ) {
+function autonom_author_link( $link ) {
 	// Adds a class for microformats v2
 	return preg_replace( '/(class\s*=\s*[\"|\'])/i', '${1}u-url ', $link );
 }
-add_filter( 'get_comment_author_link', 'zenpress_author_link' );
+add_filter( 'get_comment_author_link', 'autonom_author_link' );
 
 /**
  * Adds microformats v2 support to the get_avatar() method.
  *
- * @since ZenPress 1.0.0
+ * @since Autonom 1.0.0
  */
-function zenpress_pre_get_avatar_data( $args, $id_or_email ) {
+function autonom_pre_get_avatar_data( $args, $id_or_email ) {
 	if ( ! isset( $args['class'] ) ) {
 		$args['class'] = array();
 	}
@@ -115,7 +115,7 @@ function zenpress_pre_get_avatar_data( $args, $id_or_email ) {
 
 	return $args;
 }
-add_filter( 'pre_get_avatar_data', 'zenpress_pre_get_avatar_data', 99, 2 );
+add_filter( 'pre_get_avatar_data', 'autonom_pre_get_avatar_data', 99, 2 );
 
 /**
  * add rel-prev attribute to previous_image_link
@@ -123,10 +123,10 @@ add_filter( 'pre_get_avatar_data', 'zenpress_pre_get_avatar_data', 99, 2 );
  * @param string a-tag
  * @return string
  */
-function zenpress_semantic_previous_image_link( $link ) {
+function autonom_semantic_previous_image_link( $link ) {
 	return preg_replace( '/<a/i', '<a rel="prev"', $link );
 }
-add_filter( 'previous_image_link', 'zenpress_semantic_previous_image_link' );
+add_filter( 'previous_image_link', 'autonom_semantic_previous_image_link' );
 
 /**
  * add rel-next attribute to next_image_link
@@ -134,10 +134,10 @@ add_filter( 'previous_image_link', 'zenpress_semantic_previous_image_link' );
  * @param string a-tag
  * @return string
  */
-function zenpress_semantic_next_image_link( $link ) {
+function autonom_semantic_next_image_link( $link ) {
 	return preg_replace( '/<a/i', '<a rel="next"', $link );
 }
-add_filter( 'next_image_link', 'zenpress_semantic_next_image_link' );
+add_filter( 'next_image_link', 'autonom_semantic_next_image_link' );
 
 /**
  * add rel-prev attribute to next_posts_link_attributes
@@ -145,10 +145,10 @@ add_filter( 'next_image_link', 'zenpress_semantic_next_image_link' );
  * @param string attributes
  * @return string
  */
-function zenpress_next_posts_link_attributes( $attr ) {
+function autonom_next_posts_link_attributes( $attr ) {
 	return $attr . ' rel="prev"';
 }
-add_filter( 'next_posts_link_attributes', 'zenpress_next_posts_link_attributes' );
+add_filter( 'next_posts_link_attributes', 'autonom_next_posts_link_attributes' );
 
 /**
  * add rel-next attribute to previous_posts_link
@@ -156,23 +156,23 @@ add_filter( 'next_posts_link_attributes', 'zenpress_next_posts_link_attributes' 
  * @param string attributes
  * @return string
  */
-function zenpress_previous_posts_link_attributes( $attr ) {
+function autonom_previous_posts_link_attributes( $attr ) {
 	return $attr . ' rel="next"';
 }
-add_filter( 'previous_posts_link_attributes', 'zenpress_previous_posts_link_attributes' );
+add_filter( 'previous_posts_link_attributes', 'autonom_previous_posts_link_attributes' );
 
 /**
  *
  *
  */
-function zenpress_get_search_form( $form ) {
+function autonom_get_search_form( $form ) {
 	$form = preg_replace( '/<form/i', '<form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction"', $form );
 	$form = preg_replace( '/<\/form>/i', '<meta itemprop="target" content="' . home_url( '/?s={search} ' ) . '"/></form>', $form );
 	$form = preg_replace( '/<input type="search"/i', '<input type="search" itemprop="query-input"', $form );
 
 	return $form;
 }
-add_filter( 'get_search_form', 'zenpress_get_search_form' );
+add_filter( 'get_search_form', 'autonom_get_search_form' );
 
 /**
  * add semantics
@@ -180,7 +180,7 @@ add_filter( 'get_search_form', 'zenpress_get_search_form' );
  * @param string $id the class identifier
  * @return array
  */
-function zenpress_get_semantics( $id = null ) {
+function autonom_get_semantics( $id = null ) {
 	$classes = array();
 
 	// add default values
@@ -231,20 +231,20 @@ function zenpress_get_semantics( $id = null ) {
 			break;
 	}
 
-	$classes = apply_filters( 'zenpress_semantics', $classes, $id );
-	$classes = apply_filters( "zenpress_semantics_{$id}", $classes, $id );
+	$classes = apply_filters( 'autonom_semantics', $classes, $id );
+	$classes = apply_filters( "autonom_semantics_{$id}", $classes, $id );
 
 	return $classes;
 }
 
 /**
  * echos the semantic classes added via
- * the "zenpress_semantics" filters
+ * the "autonom_semantics" filters
  *
  * @param string $id the class identifier
  */
-function zenpress_get_the_semantics( $id ) {
-	$classes = zenpress_get_semantics( $id );
+function autonom_get_the_semantics( $id ) {
+	$classes = autonom_get_semantics( $id );
 
 	if ( ! $classes ) {
 		return;
@@ -261,12 +261,12 @@ function zenpress_get_the_semantics( $id ) {
 
 /**
  * echos the semantic classes added via
- * the "zenpress_semantics" filters
+ * the "autonom_semantics" filters
  *
  * @param string $id the class identifier
  */
-function zenpress_semantics( $id ) {
-	$classes = zenpress_get_semantics( $id );
+function autonom_semantics( $id ) {
+	$classes = autonom_get_semantics( $id );
 
 	if ( ! $classes ) {
 		return;
@@ -285,7 +285,7 @@ function zenpress_semantics( $id ) {
  * @param  array $links
  * @return array
  */
-function zenpress_term_links_tag( $links ) {
+function autonom_term_links_tag( $links ) {
 	$post = get_post();
 
 	$terms = get_the_terms( $post->ID, 'post_tag' );
@@ -309,4 +309,4 @@ function zenpress_term_links_tag( $links ) {
 	}
 	return $links;
 }
-add_filter( 'term_links-post_tag', 'zenpress_term_links_tag' );
+add_filter( 'term_links-post_tag', 'autonom_term_links_tag' );

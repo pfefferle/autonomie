@@ -1,12 +1,12 @@
 <?php
 /**
- * ZenPress ActivityPub
+ * Autonom ActivityPub
  *
  * Adds support for ActivityPub
  *
  * @link https://github.com/pfefferle/wordpress-activitypub
  *
- * @package ZenPress
+ * @package Autonom
  * @subpackage indieweb
  */
 
@@ -18,13 +18,13 @@
  *
  * @return array            the filtered meta array
  */
-function zenpress_activitypub_archive_author_meta( $meta, $author_id ) {
+function autonom_activitypub_archive_author_meta( $meta, $author_id ) {
 	// translators: how to follow
-	$meta[] = sprintf( __( 'Follow <code>%s</code> (fediverse)', 'zenpress' ), \Activitypub\get_webfinger_resource( $author_id ) );
+	$meta[] = sprintf( __( 'Follow <code>%s</code> (fediverse)', 'autonom' ), \Activitypub\get_webfinger_resource( $author_id ) );
 
 	return $meta;
 }
-add_filter( 'zenpress_archive_author_meta', 'zenpress_activitypub_archive_author_meta', 10, 2 );
+add_filter( 'autonom_archive_author_meta', 'autonom_activitypub_archive_author_meta', 10, 2 );
 
 /**
  * ActivityPub follower counter
@@ -34,7 +34,7 @@ add_filter( 'zenpress_archive_author_meta', 'zenpress_activitypub_archive_author
  *
  * @return array          the filtered counter
  */
-function zenpress_activitypub_followers( $followers, $author_id ) {
+function autonom_activitypub_followers( $followers, $author_id ) {
 	$activitypub_followers = get_user_option( 'activitypub_followers', $author_id );
 
 	if ( $activitypub_followers ) {
@@ -47,4 +47,4 @@ function zenpress_activitypub_followers( $followers, $author_id ) {
 
 	return $followers;
 }
-add_filter( 'zenpress_archive_author_followers', 'zenpress_activitypub_followers', 10, 2 );
+add_filter( 'autonom_archive_author_followers', 'autonom_activitypub_followers', 10, 2 );

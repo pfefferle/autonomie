@@ -4,8 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package ZenPress
- * @since ZenPress 1.0.0
+ * @package Autonom
+ * @since Autonom 1.0.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -18,9 +18,9 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?><?php zenpress_semantics( 'body' ); ?>>
+<body <?php body_class(); ?><?php autonom_semantics( 'body' ); ?>>
 <div id="page">
-	<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'zenpress' ); ?>"><?php _e( 'Skip to content', 'zenpress' ); ?></a></div>
+	<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'autonom' ); ?>"><?php _e( 'Skip to content', 'autonom' ); ?></a></div>
 	<?php do_action( 'before' ); ?>
 	<header id="site-header" class="site-header">
 		<div class="site-branding">
@@ -35,8 +35,8 @@
 				$site_title_element = 'div';
 			}
 			?>
-			<<?php echo $site_title_element; ?> id="site-title"<?php zenpress_semantics( 'site-title' ); ?>>
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php zenpress_semantics( 'site-url' ); ?>>
+			<<?php echo $site_title_element; ?> id="site-title"<?php autonom_semantics( 'site-title' ); ?>>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php autonom_semantics( 'site-url' ); ?>>
 				<?php bloginfo( 'name' ); ?>
 				</a>
 			</<?php echo $site_title_element; ?>>
@@ -45,10 +45,10 @@
 		</div>
 
 		<nav id="site-navigation" class="site-navigation">
-			<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'zenpress' ); ?></button>
+			<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'autonom' ); ?></button>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php get_template_part( 'templates/partials/page-banner', zenpress_get_archive_type() ); ?>
+		<?php get_template_part( 'templates/partials/page-banner', autonom_get_archive_type() ); ?>
 	</header><!-- #site-header -->

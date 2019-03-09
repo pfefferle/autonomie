@@ -2,8 +2,8 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package ZenPress
- * @since ZenPress 1.0.0
+ * @package Autonom
+ * @since Autonom 1.0.0
  */
 ?>
 	<div id="sidebar">

@@ -1,13 +1,13 @@
 {
-  "name": "ZenPress",
+  "name": "Autonom",
   "version": "1.0.0-beta-2",
-  "description": "ZenPress is a highly semantic, responsive, accessible and seo optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). ZenPress supports a lot of OpenWeb plugins and is fully IndieWeb compatible.",
+  "description": "Autonom is a highly semantic, responsive, accessible and seo optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). Autonom supports a lot of OpenWeb plugins and is fully IndieWeb compatible.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pfefferle/ZenPress.git"
+    "url": "https://github.com/pfefferle/Autonom.git"
   },
   "bugs": {
-    "url": "https://github.com/pfefferle/ZenPress/issues"
+    "url": "https://github.com/pfefferle/Autonom/issues"
   },
   "keywords": [
     "custom-menu",
@@ -40,7 +40,7 @@
     "name": "MIT",
     "url": "https://opensource.org/licenses/mit"
   },
-  "homepage": "https://github.com/pfefferle/ZenPress",
+  "homepage": "https://github.com/pfefferle/Autonom",
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-contrib-sass": "~0.9.2",

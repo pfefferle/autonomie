@@ -2,8 +2,8 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package ZenPress
- * @since ZenPress 1.0.0
+ * @package Autonom
+ * @since Autonom 1.0.0
  */
 
 get_header(); ?>
@@ -25,6 +25,6 @@ get_header(); ?>
 
 			</main><!-- #content -->
 
-			<?php zenpress_content_nav( 'nav-below' ); ?>
+			<?php autonom_content_nav( 'nav-below' ); ?>
 
 <?php get_footer(); ?>

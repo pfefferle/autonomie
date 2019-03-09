@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         options: {
           domainPath: 'languages',
           exclude: ['bin/.*', '.git/.*', 'vendor/.*', 'node_modules/.*'],
-          potFilename: 'zenpress.pot',
+          potFilename: 'autonom.pot',
           type: 'wp-theme',
           updateTimestamp: true
         }
