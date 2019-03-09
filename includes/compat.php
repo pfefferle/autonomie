@@ -1,13 +1,13 @@
 <?php
 /**
- * Autonom back compat handling
+ * Autonomie back compat handling
  *
  * Some functions to add backwards compatibility to older WordPress versions
  * or to add some new functions to be more (for example)  compatible
  *
- * @package Autonom
+ * @package Autonomie
  * @subpackage compat
- * @since Autonom 1.5.0
+ * @since Autonomie 1.5.0
  */
 
 /**
@@ -22,16 +22,16 @@
  * @param string $form
  * @return string
  */
-function autonom_comment_autocomplete( $fields ) {
+function autonomie_comment_autocomplete( $fields ) {
 	$fields['author'] = preg_replace( '/<input/', '<input autocomplete="nickname name" ', $fields['author'] );
 	$fields['email'] = preg_replace( '/<input/', '<input autocomplete="email" ', $fields['email'] );
 	$fields['url'] = preg_replace( '/<input/', '<input autocomplete="url" ', $fields['url'] );
 
 	return $fields;
 }
-add_filter( 'comment_form_default_fields', 'autonom_comment_autocomplete' );
+add_filter( 'comment_form_default_fields', 'autonomie_comment_autocomplete' );
 
-function autonom_query_format_standard( $query ) {
+function autonomie_query_format_standard( $query ) {
 	if (
 		isset( $query->query_vars['post_format'] ) &&
 		'post-format-standard' == $query->query_vars['post_format']
@@ -65,4 +65,4 @@ function autonom_query_format_standard( $query ) {
 		}
 	}
 }
-add_action( 'pre_get_posts', 'autonom_query_format_standard' );
+add_action( 'pre_get_posts', 'autonomie_query_format_standard' );

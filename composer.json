@@ -1,5 +1,5 @@
 {
-	"name": "pfefferle/wordpress-autonom",
+	"name": "pfefferle/wordpress-autonomie",
 	"description": "Pure Zen",
 	"require": {
 		"php": ">=5.6.0",
@@ -14,6 +14,6 @@
 		}
 	],
 	"extra": {
-		"installer-name": "autonom"
+		"installer-name": "autonomie"
 	}
 }

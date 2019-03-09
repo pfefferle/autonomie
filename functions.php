@@ -1,6 +1,6 @@
 <?php
 /**
- * Autonom functions and definitions
+ * Autonomie functions and definitions
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
@@ -18,11 +18,11 @@
  *
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
- * @package Autonom
- * @since Autonom 1.0.0
+ * @package Autonomie
+ * @since Autonomie 1.0.0
  */
 
-if ( ! function_exists( 'autonom_setup' ) ) :
+if ( ! function_exists( 'autonomie_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -30,19 +30,19 @@ if ( ! function_exists( 'autonom_setup' ) ) :
 	 * before the init hook. The init hook is too late for some features, such as indicating
 	 * support post thumbnails.
 	 *
-	 * To override autonom_setup() in a child theme, add your own autonom_setup to your child theme's
+	 * To override autonomie_setup() in a child theme, add your own autonomie_setup to your child theme's
 	 * functions.php file.
 	 */
-	function autonom_setup() {
+	function autonomie_setup() {
 		$content_width = 900;
 
 		/**
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
-		 * If you're building a theme based on autonom, use a find and replace
-		 * to change 'autonom' to the name of your theme in all the template files
+		 * If you're building a theme based on autonomie, use a find and replace
+		 * to change 'autonomie' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'autonom', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'autonomie', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head
 		add_theme_support( 'automatic-feed-links' );
@@ -52,7 +52,7 @@ if ( ! function_exists( 'autonom_setup' ) ) :
 		set_post_thumbnail_size( $content_width, 9999 ); // Unlimited height, soft crop
 
 		// Register custom image size for image post formats.
-		add_image_size( 'autonom-image-post', $content_width, 1250 );
+		add_image_size( 'autonomie-image-post', $content_width, 1250 );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -74,57 +74,57 @@ if ( ! function_exists( 'autonom_setup' ) ) :
 
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Blue', 'autonom' ),
+				'name'  => __( 'Blue', 'autonomie' ),
 				'slug'  => 'blue',
 				'color' => '#0073aa',
 			),
 			array(
-				'name'  => __( 'Lighter blue', 'autonom' ),
+				'name'  => __( 'Lighter blue', 'autonomie' ),
 				'slug'  => 'lighter-blue',
 				'color' => '#229fd8',
 			),
 			array(
-				'name'  => __( 'Blue jeans', 'autonom' ),
+				'name'  => __( 'Blue jeans', 'autonomie' ),
 				'slug'  => 'blue-jeans',
 				'color' => '#5bc0eb',
 			),
 			array(
-				'name'  => __( 'Orioles orange', 'autonom' ),
+				'name'  => __( 'Orioles orange', 'autonomie' ),
 				'slug'  => 'orioles-orange',
 				'color' => '#fa5b0f',
 			),
 			array(
-				'name'  => __( 'USC gold', 'autonom' ),
+				'name'  => __( 'USC gold', 'autonomie' ),
 				'slug'  => 'usc-gold',
 				'color' => '#ffcc00',
 			),
 			array(
-				'name'  => __( 'Gargoyle gas', 'autonom' ),
+				'name'  => __( 'Gargoyle gas', 'autonomie' ),
 				'slug'  => 'gargoyle-gas',
 				'color' => '#fde74c',
 			),
 			array(
-				'name'  => __( 'Yellow', 'autonom' ),
+				'name'  => __( 'Yellow', 'autonomie' ),
 				'slug'  => 'yellow',
 				'color' => '#fff9c0',
 			),
 			array(
-				'name'  => __( 'Android green', 'autonom' ),
+				'name'  => __( 'Android green', 'autonomie' ),
 				'slug'  => 'android-green',
 				'color' => '#9bc53d',
 			),
 			array(
-				'name'  => __( 'White', 'autonom' ),
+				'name'  => __( 'White', 'autonomie' ),
 				'slug'  => 'white',
 				'color' => '#fff',
 			),
 			array(
-				'name'  => __( 'Very light gray', 'autonom' ),
+				'name'  => __( 'Very light gray', 'autonomie' ),
 				'slug'  => 'very-light-gray',
 				'color' => '#eee',
 			),
 			array(
-				'name'  => __( 'Very dark gray', 'autonom' ),
+				'name'  => __( 'Very dark gray', 'autonomie' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#444',
 			)
@@ -132,7 +132,7 @@ if ( ! function_exists( 'autonom_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'autonom' ),
+			'primary' => __( 'Primary Menu', 'autonomie' ),
 		) );
 
 		// Add support for the Aside, Gallery Post Formats...
@@ -191,32 +191,32 @@ if ( ! function_exists( 'autonom_setup' ) ) :
 
 		//add_theme_support( 'amp' );
 	}
-endif; // autonom_setup
+endif; // autonomie_setup
 
 /**
- * Tell WordPress to run autonom_setup() when the 'after_setup_theme' hook is run.
+ * Tell WordPress to run autonomie_setup() when the 'after_setup_theme' hook is run.
  */
-add_action( 'after_setup_theme', 'autonom_setup' );
+add_action( 'after_setup_theme', 'autonomie_setup' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function autonom_pingback_header() {
+function autonomie_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%1$s" />', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'autonom_pingback_header' );
+add_action( 'wp_head', 'autonomie_pingback_header' );
 
 /**
  * Adds a rel-feed if the main page is not a list of posts
  */
-function autonom_publisher_feed_header() {
+function autonomie_publisher_feed_header() {
 	if ( is_front_page() && 0 !== (int) get_option( 'page_for_posts', 0 ) ) {
-		printf( PHP_EOL . '<link rel="feed" type="text/html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'POSH Feed', 'autonom' ) );
+		printf( PHP_EOL . '<link rel="feed" type="text/html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'POSH Feed', 'autonomie' ) );
 	}
 }
-add_action( 'wp_head', 'autonom_publisher_feed_header' );
+add_action( 'wp_head', 'autonomie_publisher_feed_header' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -225,55 +225,55 @@ add_action( 'wp_head', 'autonom_publisher_feed_header' );
  *
  * @global int $content_width
  */
-function autonom_content_width() {
+function autonomie_content_width() {
 	$content_width = 900;
 
-	$GLOBALS['content_width'] = apply_filters( 'autonom_content_width', $content_width );
+	$GLOBALS['content_width'] = apply_filters( 'autonomie_content_width', $content_width );
 }
-add_action( 'after_setup_theme', 'autonom_content_width', 0 );
+add_action( 'after_setup_theme', 'autonomie_content_width', 0 );
 
 /**
  * Set the default maxwith for the embeds
  */
-function autonom_embed_defaults() {
+function autonomie_embed_defaults() {
 	return array(
 		'width'  => 900,
 		'height' => 600,
 	);
 }
-add_filter( 'embed_defaults', 'autonom_embed_defaults' );
+add_filter( 'embed_defaults', 'autonomie_embed_defaults' );
 
 /**
  * Set the default with for the embeds
  * Fixes issues with Vimeo
  */
-function autonom_oembed_fetch_url( $provider ) {
+function autonomie_oembed_fetch_url( $provider ) {
 	$provider = add_query_arg( 'width', 900, $provider );
 	$provider = add_query_arg( 'height', 600, $provider );
 
 	return $provider;
 }
-add_filter( 'oembed_fetch_url', 'autonom_oembed_fetch_url', 99 );
+add_filter( 'oembed_fetch_url', 'autonomie_oembed_fetch_url', 99 );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
-function autonom_page_menu_args( $args ) {
+function autonomie_page_menu_args( $args ) {
 	$args['show_home'] = true;
 
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'autonom_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'autonomie_page_menu_args' );
 
-if ( ! function_exists( 'autonom_enqueue_scripts' ) ) :
+if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 	/**
 	 * Enqueue theme scripts
 	 *
 	 * @uses wp_enqueue_scripts() To enqueue scripts
 	 *
-	 * @since Autonom 1.0.0
+	 * @since Autonomie 1.0.0
 	 */
-	function autonom_enqueue_scripts() {
+	function autonomie_enqueue_scripts() {
 		/*
 		 * Adds JavaScript to pages with the comment form to support sites with
 		 * threaded comments (when in use).
@@ -290,18 +290,18 @@ if ( ! function_exists( 'autonom_enqueue_scripts' ) ) :
 			wp_enqueue_script( '', get_template_directory_uri() . '/js/html5shiv.min.js', false, '3.7.3' );
 		}
 
-		wp_enqueue_script( 'autonom-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'autonom-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'autonomie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'autonomie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
 		// Loads our main stylesheet.
-		wp_enqueue_style( 'autonom-style', get_stylesheet_uri() );
-		wp_enqueue_style( 'autonom-print-style', get_stylesheet_directory_uri() . '/css/print.css', array( 'autonom-style' ), '1.0.0', 'print' );
-		wp_enqueue_style( 'autonom-narrow-style', get_stylesheet_directory_uri() . '/css/narrow-width.css', array( 'autonom-style' ), '1.0.0', '(max-width: 800px)' );
-		wp_enqueue_style( 'autonom-default-style', get_stylesheet_directory_uri() . '/css/default-width.css', array( 'autonom-style' ), '1.0.0', '(min-width: 800px)' );
-		wp_enqueue_style( 'autonom-wide-style', get_stylesheet_directory_uri() . '/css/wide-width.css', array( 'autonom-style' ), '1.0.0', '(min-width: 1000px)' );
+		wp_enqueue_style( 'autonomie-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'autonomie-print-style', get_stylesheet_directory_uri() . '/css/print.css', array( 'autonomie-style' ), '1.0.0', 'print' );
+		wp_enqueue_style( 'autonomie-narrow-style', get_stylesheet_directory_uri() . '/css/narrow-width.css', array( 'autonomie-style' ), '1.0.0', '(max-width: 800px)' );
+		wp_enqueue_style( 'autonomie-default-style', get_stylesheet_directory_uri() . '/css/default-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 800px)' );
+		wp_enqueue_style( 'autonomie-wide-style', get_stylesheet_directory_uri() . '/css/wide-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 1000px)' );
 
 		wp_localize_script(
-			'autonom',
+			'autonomie',
 			'vars',
 			array(
 				'template_url' => get_template_directory_uri(),
@@ -319,25 +319,25 @@ if ( ! function_exists( 'autonom_enqueue_scripts' ) ) :
 				}' . PHP_EOL;
 			}
 
-			wp_add_inline_style( 'autonom-style', $css );
+			wp_add_inline_style( 'autonomie-style', $css );
 		}
 	}
 endif;
 
-add_action( 'wp_enqueue_scripts', 'autonom_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_scripts' );
 
-if ( ! function_exists( 'autonom_comment' ) ) :
+if ( ! function_exists( 'autonomie_comment' ) ) :
 	/**
 	 * Template for comments and pingbacks.
 	 *
 	 * To override this walker in a child theme without modifying the comments template
-	 * simply create your own autonom_comment(), and that function will be used instead.
+	 * simply create your own autonomie_comment(), and that function will be used instead.
 	 *
 	 * Used as a callback by wp_list_comments() for displaying the comments.
 	 *
-	 * @since Autonom 1.0.0
+	 * @since Autonomie 1.0.0
 	 */
-	function autonom_comment( $comment, $args, $depth ) {
+	function autonomie_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 
 		switch ( $comment->comment_type ):
@@ -347,7 +347,7 @@ if ( ! function_exists( 'autonom_comment' ) ) :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
-				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonom' ), ' ' ); ?></div>
+				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonomie' ), ' ' ); ?></div>
 				<div class="comment-content p-summary p-name" itemprop="text name description"><?php comment_text(); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
@@ -356,7 +356,7 @@ if ( ! function_exists( 'autonom_comment' ) ) :
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 						<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'autonom' ), get_comment_date(), get_comment_time() );
+						printf( __( '%1$s at %2$s', 'autonomie' ), get_comment_date(), get_comment_time() );
 						?>
 					</time></a>
 				</footer>
@@ -367,20 +367,20 @@ if ( ! function_exists( 'autonom_comment' ) ) :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
-				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonom' ), ' ' ); ?></div>
+				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonomie' ), ' ' ); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
 						<?php echo get_avatar( $comment, 40 ); ?>
 						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
 					</address><!-- .comment-author .vcard -->
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-						<em><?php _e( 'Your comment is awaiting moderation.', 'autonom' ); ?></em>
+						<em><?php _e( 'Your comment is awaiting moderation.', 'autonomie' ); ?></em>
 					<?php endif; ?>
 
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'autonom' ), get_comment_date(), get_comment_time() );
+						printf( __( '%1$s at %2$s', 'autonomie' ), get_comment_date(), get_comment_time() );
 					?>
 					</time></a>
 				</footer>
@@ -397,7 +397,7 @@ if ( ! function_exists( 'autonom_comment' ) ) :
 				break;
 		endswitch;
 	}
-endif; // ends check for autonom_comment()
+endif; // ends check for autonomie_comment()
 
 /**
  * All template functions
@@ -445,5 +445,5 @@ if ( class_exists('\Activitypub\Activitypub') ) {
 }
 
 /**
- * This theme was built with PHP, Semantic HTML, CSS, love, and Autonom.
+ * This theme was built with PHP, Semantic HTML, CSS, love, and Autonomie.
  */

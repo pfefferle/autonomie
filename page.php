@@ -7,8 +7,8 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Autonom
- * @since Autonom 1.0.0
+ * @package Autonomie
+ * @since Autonomie 1.0.0
  */
 
 get_header(); ?>

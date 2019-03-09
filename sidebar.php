@@ -2,8 +2,8 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package Autonom
- * @since Autonom 1.0.0
+ * @package Autonomie
+ * @since Autonomie 1.0.0
  */
 ?>
 	<div id="sidebar">

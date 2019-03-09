@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Autonom 1.0.0-beta-2\n"
+"Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-03-09 20:38:57+00:00\n"
+"POT-Creation-Date: 2019-03-09 20:48:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -326,18 +326,18 @@ msgid "Permalink to %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Autonom"
+msgid "Autonomie"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/pfefferle/Autonom"
+msgid "https://github.com/pfefferle/Autonomie"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Autonom is a highly semantic, responsive, accessible and seo optimized "
+"Autonomie is a highly semantic, responsive, accessible and seo optimized "
 "WordPress Theme. It provides HTML5 templates refined with microformats, "
-"microformats v2 and microdata (Schema.org). Autonom supports a lot of "
+"microformats v2 and microdata (Schema.org). Autonomie supports a lot of "
 "OpenWeb plugins and is fully IndieWeb compatible."
 msgstr ""
 

@@ -4,12 +4,12 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @package Autonom
- * @since Autonom 1.0.0
+ * @package Autonomie
+ * @since Autonomie 1.0.0
  */
 ?>
 
-<aside <?php autonom_post_id(); ?> <?php post_class(); ?><?php autonom_semantics( 'post' ); ?>>
+<aside <?php autonomie_post_id(); ?> <?php post_class(); ?><?php autonomie_semantics( 'post' ); ?>>
 	<?php get_template_part( 'templates/partials/entry-header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
@@ -17,10 +17,10 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
-	<?php autonom_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
+	<?php autonomie_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
 	<div class="entry-content e-content p-summary entry-title p-name" itemprop="name headline description articleBody">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'autonom' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'autonom' ), 'after' => '</div>' ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'autonomie' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

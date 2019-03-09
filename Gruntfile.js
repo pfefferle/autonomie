@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         options: {
           domainPath: 'languages',
           exclude: ['bin/.*', '.git/.*', 'vendor/.*', 'node_modules/.*'],
-          potFilename: 'autonom.pot',
+          potFilename: 'autonomie.pot',
           type: 'wp-theme',
           updateTimestamp: true
         }

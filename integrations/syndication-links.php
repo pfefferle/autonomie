@@ -1,38 +1,38 @@
 <?php
 /**
- * Autonom Syndication Links
+ * Autonomie Syndication Links
  *
  * Adds support for Syndication Links
  *
  * @link https://github.com/dshanske/syndication-links
  *
- * @package Autonom
+ * @package Autonomie
  * @subpackage indieweb
  */
 
 /**
  * Remove the integration of `the_content` filter
  */
-function autonom_syndication_links_init() {
+function autonomie_syndication_links_init() {
 	remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ) , 30 );
 }
-add_action( 'init', 'autonom_syndication_links_init' );
+add_action( 'init', 'autonomie_syndication_links_init' );
 
 /**
  * Remove the Syndication-Links CSS
  */
-function autonom_syndication_links_print_scripts() {
+function autonomie_syndication_links_print_scripts() {
 	wp_dequeue_style( 'syndication-style' );
 }
-add_action( 'wp_print_styles', 'autonom_syndication_links_print_scripts', 100 );
+add_action( 'wp_print_styles', 'autonomie_syndication_links_print_scripts', 100 );
 
 /**
  * Added links to the post-footer
  */
-function autonom_syndication_links() {
+function autonomie_syndication_links() {
 	if ( function_exists( 'get_syndication_links' ) ) {
-		_e( 'Syndication Links', 'autonom' );
+		_e( 'Syndication Links', 'autonomie' );
 		echo get_syndication_links( null, array( 'show_text_before' => null) );
 	}
 }
-add_action( 'autonom-entry-footer', 'autonom_syndication_links' );
+add_action( 'autonomie-entry-footer', 'autonomie_syndication_links' );

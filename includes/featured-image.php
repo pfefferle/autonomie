@@ -2,10 +2,10 @@
 /**
  * Adds post-thumbnail support :)
  *
- * @since Autonom 1.0.0
+ * @since Autonomie 1.0.0
  */
-function autonom_the_post_thumbnail( $before = '', $after = '' ) {
-	if ( autonom_has_full_width_featured_image() ) {
+function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
+	if ( autonomie_has_full_width_featured_image() ) {
 		return;
 	}
 
@@ -36,9 +36,9 @@ function autonom_the_post_thumbnail( $before = '', $after = '' ) {
 /**
  * Adds post-thumbnail support :)
  *
- * @since Autonom 1.0.0
+ * @since Autonomie 1.0.0
  */
-function autonom_content_post_thumbnail( $content ) {
+function autonomie_content_post_thumbnail( $content ) {
 	if ( '' != get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
 
@@ -62,12 +62,12 @@ function autonom_content_post_thumbnail( $content ) {
 
 	return $content;
 }
-add_filter( 'the_content', 'autonom_content_post_thumbnail' );
+add_filter( 'the_content', 'autonomie_content_post_thumbnail' );
 
 /**
  * Add a checkbox for Post Covers to the featured image metabox
  */
-function autonom_featured_image_meta( $content ) {
+function autonomie_featured_image_meta( $content ) {
 	// If we don't have a featured image, nothing to do.
 	if ( ! has_post_thumbnail() ) {
 		return $content;
@@ -75,7 +75,7 @@ function autonom_featured_image_meta( $content ) {
 	global $post;
 
 	// Text for checkbox
-	$text = __( 'Use as post cover (full-width)', 'autonom' );
+	$text = __( 'Use as post cover (full-width)', 'autonomie' );
 
 	// Get the current setting
 	$value = esc_attr( get_post_meta( $post->ID, 'full_width_featured_image', '1' ) );
@@ -83,25 +83,25 @@ function autonom_featured_image_meta( $content ) {
 	$label = '<input type="hidden" name="full_width_featured_image" value="0">';
 	$label .= '<label for="full_width_featured_image" class="selectit"><input name="full_width_featured_image" type="checkbox" id="full_width_featured_image" value="1" ' . checked( $value, 1, 0 ) . '> ' . $text . '</label>';
 
-	$label = wp_nonce_field( 'autonom_full_width_featured_image_meta', 'autonom_full_width_featured_image_meta_nonce' ) . $label;
+	$label = wp_nonce_field( 'autonomie_full_width_featured_image_meta', 'autonomie_full_width_featured_image_meta_nonce' ) . $label;
 	return $content .= $label;
 }
-add_filter( 'admin_post_thumbnail_html', 'autonom_featured_image_meta' );
+add_filter( 'admin_post_thumbnail_html', 'autonomie_featured_image_meta' );
 
 /**
  * Safe the Post Covers
  *
  * @param int $post_id The ID of the post being saved.
  */
-function autonom_save_post( $post_id ) {
+function autonomie_save_post( $post_id ) {
 	// check if the nonce is set.
-	if ( ! isset( $_POST['autonom_full_width_featured_image_meta_nonce'] ) ) {
+	if ( ! isset( $_POST['autonomie_full_width_featured_image_meta_nonce'] ) ) {
 		return $post_id;
 	}
-	$nonce = $_POST['autonom_full_width_featured_image_meta_nonce'];
+	$nonce = $_POST['autonomie_full_width_featured_image_meta_nonce'];
 
 	// verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $nonce, 'autonom_full_width_featured_image_meta' ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'autonomie_full_width_featured_image_meta' ) ) {
 		return $post_id;
 	}
 
@@ -126,7 +126,7 @@ function autonom_save_post( $post_id ) {
 	// update the meta field in the database.
 	update_post_meta( $post_id, 'full_width_featured_image', $mydata );
 }
-add_action( 'save_post', 'autonom_save_post', 5, 1 );
+add_action( 'save_post', 'autonomie_save_post', 5, 1 );
 
 /**
  * Return true if Auto-Set Featured Image as Post Cover is enabled and it hasn't
@@ -137,7 +137,7 @@ add_action( 'save_post', 'autonom_save_post', 5, 1 );
  * Returns false if not a Single post type or there is no Featured Image selected
  * or none of the above conditions are true.
  */
-function autonom_has_full_width_featured_image() {
+function autonomie_has_full_width_featured_image() {
 	// If this isn't a Single post type or we don't have a Featured Image set
 	if ( ! ( is_single() || is_page() ) || ! has_post_thumbnail() ) {
 		return false;
@@ -158,28 +158,28 @@ function autonom_has_full_width_featured_image() {
  *
  * @uses wp_enqueue_scripts() To enqueue scripts
  *
- * @since Autonom 1.0.0
+ * @since Autonomie 1.0.0
  */
-function autonom_enqueue_features_image_scripts() {
-	if ( is_singular() && autonom_has_full_width_featured_image() ) {
+function autonomie_enqueue_features_image_scripts() {
+	if ( is_singular() && autonomie_has_full_width_featured_image() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 		$css = '.entry-header {
 			background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(' . $image[0] . ') no-repeat center center scroll;
 		}' . PHP_EOL;
 
-		wp_add_inline_style( 'autonom-style', $css );
+		wp_add_inline_style( 'autonomie-style', $css );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'autonom_enqueue_features_image_scripts' );
+add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_features_image_scripts' );
 
 /**
  * Add full-width-featured-image to body class when displaying a post with Full Width Featured Image enabled
  */
-function autonom_full_width_featured_image_post_class( $classes ) {
-	if ( is_singular() && autonom_has_full_width_featured_image() ) {
+function autonomie_full_width_featured_image_post_class( $classes ) {
+	if ( is_singular() && autonomie_has_full_width_featured_image() ) {
 		$classes[] = 'has-full-width-featured-image';
 	}
 	return $classes;
 }
-add_filter( 'post_class', 'autonom_full_width_featured_image_post_class' );
+add_filter( 'post_class', 'autonomie_full_width_featured_image_post_class' );

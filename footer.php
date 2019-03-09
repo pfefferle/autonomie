@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package Autonom
- * @since Autonom 1.0.0
+ * @package Autonomie
+ * @since Autonomie 1.0.0
  */
 ?>
 	<footer id="colophon">
@@ -28,8 +28,8 @@
 		</div>
 
 		<div id="site-generator">
-			<?php do_action( 'autonom_credits' ); ?>
-			<?php printf( __( 'This site is powered by %1$s and styled with the %2$s theme', 'autonom' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://github.com/pfefferle/Autonom">Autonom</a>' ); ?>
+			<?php do_action( 'autonomie_credits' ); ?>
+			<?php printf( __( 'This site is powered by %1$s and styled with the %2$s theme', 'autonomie' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://github.com/pfefferle/Autonomie">Autonomie</a>' ); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

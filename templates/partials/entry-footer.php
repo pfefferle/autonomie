@@ -6,7 +6,7 @@
 				<span itemprop="name"><?php echo get_the_author(); ?></span>
 			</a>
 			<div class="note e-note" itemprop="description"><?php echo get_the_author_meta( 'description' ); ?></div>
-			<a class="subscribe" href="<?php echo get_author_feed_link( get_the_author_meta( 'ID' ) ); ?>"><i class="openwebicons-feed"></i> <?php _e( 'Subscribe to author feed', 'autonom' ); ?></a>
+			<a class="subscribe" href="<?php echo get_author_feed_link( get_the_author_meta( 'ID' ) ); ?>"><i class="openwebicons-feed"></i> <?php _e( 'Subscribe to author feed', 'autonomie' ); ?></a>
 		</address>
 
 		<?php
@@ -15,8 +15,8 @@
 		if ( $categories_list ) :
 		?>
 		<div class="cat-links">
-			<?php echo __( 'Categories', 'autonom' ); ?>
-			<?php printf( __( '%1$s', 'autonom' ), $categories_list ); ?>
+			<?php echo __( 'Categories', 'autonomie' ); ?>
+			<?php printf( __( '%1$s', 'autonomie' ), $categories_list ); ?>
 		</div>
 		<?php endif; // End if categories ?>
 
@@ -26,24 +26,24 @@
 		if ( $tags_list ) :
 		?>
 		<div class="tag-links" itemprop="keywords">
-			<?php echo __( 'Tags', 'autonom' ); ?>
-			<?php printf( __( '%1$s', 'autonom' ), $tags_list ); ?>
+			<?php echo __( 'Tags', 'autonomie' ); ?>
+			<?php printf( __( '%1$s', 'autonomie' ), $tags_list ); ?>
 		</div>
 		<?php endif; // End if $tags_list ?>
 
 		<?php dynamic_sidebar( 'entry-meta' ); ?>
-		<?php do_action( 'autonom-entry-footer' ); ?>
+		<?php do_action( 'autonomie-entry-footer' ); ?>
 
 		<?php // get_template_part( 'templates/partials/entry', 'nav' ); ?>
 
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-		<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'autonom' ), __( '1 Comment', 'autonom' ), __( '% Comments', 'autonom' ) ); ?></div>
+		<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'autonomie' ), __( '1 Comment', 'autonomie' ), __( '% Comments', 'autonomie' ) ); ?></div>
 		<?php endif; ?>
 	</footer><!-- #entry-meta -->
 <?php else : ?>
 	<footer class="entry-footer entry-meta">
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-		<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'autonom' ), __( '1 Comment', 'autonom' ), __( '% Comments', 'autonom' ) ); ?></div>
+		<div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'autonomie' ), __( '1 Comment', 'autonomie' ), __( '% Comments', 'autonomie' ) ); ?></div>
 		<?php endif; ?>
 	</footer><!-- #entry-meta -->
 <?php endif; ?>

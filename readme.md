@@ -1,4 +1,4 @@
-# Autonom #
+# Autonomie #
 **Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle)  
 **Tags:** white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, right-sidebar, two-columns, one-column, editor-style, featured-images, theme-options  
 **Requires at least:** 4.0  
@@ -11,13 +11,13 @@
 **License:** MIT  
 **License URI:** https://opensource.org/licenses/mit  
 
-Autonom is a highly semantic, responsive, accessible and search engine optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats2 and microdata (Schema.org). Autonom supports a lot of OpenWeb plugins and is fully IndieWeb compatible.
+Autonomie is a highly semantic, responsive, accessible and search engine optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats2 and microdata (Schema.org). Autonomie supports a lot of OpenWeb plugins and is fully IndieWeb compatible.
 
 ## Description ##
 
-Autonom is a "living theme". I use it for my own blog and so it may change completely over time. Why Autonom?
+Autonomie is a "living theme". I use it for my own blog and so it may change completely over time. Why Autonomie?
 
-"Autonom" is the german word for "autonomous" which is a synonym to independent!
+"Autonomie" is the german word for "autonomy" which is a synonym to independent!
 
 ### Thanks ###
 
@@ -33,7 +33,7 @@ Autonom is a "living theme". I use it for my own blog and so it may change compl
 
 ### Supported Websemantics ###
 
-Autonom' code is marked-up with microformats and microdata:
+Autonomie' code is marked-up with microformats and microdata:
 
 * used [microformats](http://microformats.org/):
 	* [hAtom](http://microformats.org/wiki/hatom)
@@ -56,9 +56,9 @@ Planned formats:
 * micormats (v2): hAudio and hMedia
 * microdata: http://schema.org/MediaObject
 
-### What are the WordPress features supported by Autonom? ###
+### What are the WordPress features supported by Autonomie? ###
 
-Autonom supports:
+Autonomie supports:
 
 * [Custom Post Formats](http://codex.wordpress.org/Post_Formats): aside, status, gallery, video, audio, chat, quote, link and image
 * [Post-Thumbnails](http://codex.wordpress.org/Post_Thumbnails)
@@ -81,7 +81,7 @@ From the [micrormats wiki](http://microformats.org/wiki/posh):
 > the right thing for the Web by using semantic markup. We need a simple short mnemonic term that
 > captures the essence of the concept, and is easily verbed (to posh, poshify, poshed up).
 
-Autonom is fully HTML5 compatible and uses a lot of the new tags, semantics and input-types.
+Autonomie is fully HTML5 compatible and uses a lot of the new tags, semantics and input-types.
 
 ## Changelog ##
 
@@ -97,7 +97,7 @@ The exceptions to this license are as follows:
 
 * The Bootstrap CSS by Twitter is licensed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
 * shiv is licensed under the [MIT license](http://opensource.org/licenses/MIT)
-* Autonom is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
+* Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
 * Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>
 * Genericons by Automattic - <http://genericons.com>
 * shiv - <https://github.com/afarkas/html5shiv>
