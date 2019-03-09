@@ -15,7 +15,7 @@ Autonomie is a highly semantic, responsive, accessible and search engine optimiz
 
 == Description ==
 
-Autonomie is a "living theme". I use it for my own blog and so it may change completely over time. Why Autonomie?
+"Autonomie" is a "living theme". I use it for my own blog and so it may change completely over time. Why Autonomie?
 
 "Autonomie" is the german word for "autonomy" which is a synonym to independent!
 
