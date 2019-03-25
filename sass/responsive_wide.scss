@@ -82,14 +82,14 @@ figure {
 	&.alignleft {
 		float: left;
 		margin-top: .3em;
-		margin-right: 1.2em;
+		margin-right: 2em;
 		margin-left: calc( 50% - 350px );
 	}
 
 	&.alignright {
 		float: right;
 		margin-top: .3em;
-		margin-left: 1.2em;
+		margin-left: 2em;
 		margin-right: calc( 50% - 350px );
 	}
 }
