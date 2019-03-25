@@ -19,3 +19,10 @@
 	display: block;
 	width: auto;
 }
+
+.wp-block-embed,
+.wp-block-preformatted,
+.wp-block-image,
+.entry-media {
+	padding: 20px 0;
+}

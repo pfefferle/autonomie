@@ -36,17 +36,14 @@
     "name": "Matthias Pfefferle",
     "url": "https://notiz.blog/"
   },
-  "license": {
-    "name": "MIT",
-    "url": "https://opensource.org/licenses/mit"
-  },
+  "license": "MIT",
   "homepage": "https://github.com/pfefferle/Autonomie",
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.0.4",
     "grunt-contrib-sass": "~0.9.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-replace": "^1.0.1",
-    "grunt-wp-i18n": "^1.0.2",
+    "grunt-wp-i18n": "^1.0.3",
     "grunt-wp-readme-to-markdown": "^2.0.1"
   }
 }
