@@ -293,8 +293,10 @@ if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 		wp_enqueue_script( 'autonomie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'autonomie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
+		wp_enqueue_style( 'dashicons' );
+
 		// Loads our main stylesheet.
-		wp_enqueue_style( 'autonomie-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'autonomie-style', get_stylesheet_uri(), array( 'dashicons' ) );
 		wp_enqueue_style( 'autonomie-print-style', get_stylesheet_directory_uri() . '/css/print.css', array( 'autonomie-style' ), '1.0.0', 'print' );
 		wp_enqueue_style( 'autonomie-narrow-style', get_stylesheet_directory_uri() . '/css/narrow-width.css', array( 'autonomie-style' ), '1.0.0', '(max-width: 800px)' );
 		wp_enqueue_style( 'autonomie-default-style', get_stylesheet_directory_uri() . '/css/default-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 800px)' );

@@ -99,5 +99,4 @@ The exceptions to this license are as follows:
 * shiv is licensed under the [MIT license](http://opensource.org/licenses/MIT)
 * Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
 * Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>
-* Genericons by Automattic - <http://genericons.com>
 * shiv - <https://github.com/afarkas/html5shiv>

@@ -8,8 +8,7 @@ module.exports = function(grunt) {
         options: {
           style: 'compressed',
           line_comments: false,
-          line_numbers: false,
-          sourcemap: 'none'
+          line_numbers: false
         },
         files: {
           'css/editor-style.css': 'sass/editor-style.scss',

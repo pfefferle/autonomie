@@ -142,6 +142,8 @@ $font_path: "font/openwebicons";
 		vertical-align: center;
 		font-smoothing: antialiased;
 		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
 	}
 	a [class^="#{$prefix}-"], a [class*=" #{$prefix}-"] {
 		display: inline-block;
@@ -188,6 +190,8 @@ $font_path: "font/openwebicons";
 	speak: none;
 	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 	margin-right: 5px;
 }
 

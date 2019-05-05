@@ -185,9 +185,12 @@ h4.entry-title {
 
 	&.post-format .entry-format:before {
 		display: inline-block;
-		font: normal 1.1em 'Genericons';
+		font: normal 1.1em 'Dashicons';
 		-webkit-font-smoothing: antialiased;
-		margin-right: 0;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		isolation: isolate;
+		margin-right: 5px;
 		position: relative;
 		text-decoration: inherit;
 		top: 2px;
@@ -254,15 +257,17 @@ h4.entry-title {
 
 	&:before {
 		display: inline-block;
-		font: normal 1.1em 'Genericons';
+		font: normal 1.1em 'Dashicons';
 		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
 		margin-right: 0;
 		position: relative;
 		text-decoration: inherit;
 		top: 2px;
 		vertical-align: text-middle;
-		margin-right: 6px;
-		content: '\f300';
+		margin-right: 5px;
+		content: "\f101";
 	}
 }
 
@@ -298,40 +303,40 @@ h4.entry-title {
 	}
 
 	&.format-quote .post-format .entry-format:before {
-		content: '\f106';
+		content: "\f122";
 	}
 
 	&.format-aside .post-format .entry-format:before {
-		content: '\f101';
+		content: "\f123";
 	}
 
 	&.format-video .post-format .entry-format:before {
-		content: '\f104';
+		content: "\f126";
 	}
 
 	&.format-audio .post-format .entry-format:before {
-		content: '\f109';
+		content: "\f127";
 	}
 
 	&.format-image .post-format .entry-format:before,
 	&.format-photo .post-format .entry-format:before {
-		content: '\f102';
+		content: "\f128";
 	}
 
 	&.format-gallery .post-format .entry-format:before {
-		content: '\f103';
+		content: "\f161";
 	}
 
 	&.format-link .post-format .entry-format:before {
-		content: '\f107';
+		content: "\f103";
 	}
 
 	&.format-status .post-format .entry-format:before {
-		content: '\f105';
+		content: "\f130";
 	}
 
 	&.format-standard .post-format .entry-format:before {
-		content: '\f100';
+		content: "\f123";
 	}
 }
 

@@ -22,18 +22,6 @@
 @import 'lato-font';
 @import 'merriweather-font';
 
-@font-face {
-	font-family: 'Genericons';
-	src: url('font/genericons/Genericons.eot');
-	src: url('font/genericons/Genericons.eot?#iefix') format('embedded-opentype'),
-		 url('font/genericons/Genericons.woff') format('woff'),
-		 url('font/genericons/Genericons.ttf') format('truetype'),
-		 url('font/genericons/Genericons.svg#genericonsregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
 @import 'vars';
 @import 'mixins';
 
