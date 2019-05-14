@@ -120,7 +120,7 @@ $font_path: "font/openwebicons";
 
 @mixin font_face {
 	@font-face {
-		font-family: 'OpenWeb Icons';
+		font-family: "OpenWeb Icons";
 		src: url("#{$font_path}/openwebicons.eot");
 		src: url("#{$font_path}/openwebicons.eot?#iefix") format("embedded-opentype"),
 			 url("#{$font_path}/openwebicons.woff2") format("woff2"),
@@ -134,7 +134,7 @@ $font_path: "font/openwebicons";
 
 @mixin simple_mapper {
 	[class^="#{$prefix}-"]:before, [class*=" #{$prefix}-"]:before {
-		font-family: 'OpenWeb Icons';
+		font-family: "OpenWeb Icons";
 		font-weight: normal;
 		font-style: normal;
 		display: inline-block;
@@ -181,7 +181,7 @@ $font_path: "font/openwebicons";
 
 [class^="icon-"]:before, [class*=" icon-"]:before,
 [class^="openwebicons-"]:before, [class*=" openwebicons-"]:before {
-	font-family: 'OpenWeb Icons';
+	font-family: "OpenWeb Icons";
 	font-weight: normal;
 	font-style: normal;
 	display: inline-block;

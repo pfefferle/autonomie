@@ -144,7 +144,7 @@ h4.entry-title {
 .gallery-caption,
 .page-link,
 .page-links {
-	font-family: Lato, sans-serif;
+	font-family: "Lato", sans-serif;
 	clear: both;
 	color: $gray;
 	display: block;
@@ -185,7 +185,7 @@ h4.entry-title {
 
 	&.post-format .entry-format:before {
 		display: inline-block;
-		font: normal 1.1em 'Dashicons';
+		font: normal 1.1em "Dashicons";
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
@@ -223,7 +223,7 @@ h4.entry-title {
 		margin: 70px 0;
 		border-top: 1px solid $border-gray;
 		border-bottom: 1px solid $border-gray;
-		font-family: 'Merriweather', serif;
+		font-family: "Merriweather", serif;
 		line-height: 1.5;
 		min-height: 100px;
 
@@ -257,7 +257,7 @@ h4.entry-title {
 
 	&:before {
 		display: inline-block;
-		font: normal 1.1em 'Dashicons';
+		font: normal 1.1em "Dashicons";
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
@@ -336,7 +336,7 @@ h4.entry-title {
 	}
 
 	&.format-standard .post-format .entry-format:before {
-		content: "\f123";
+		content: "\f478";
 	}
 }
 

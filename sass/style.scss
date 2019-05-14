@@ -19,15 +19,15 @@
  * Use it to make something cool, have fun, and share what you've learned with others.
  */
 
-@import 'lato-font';
-@import 'merriweather-font';
+@import "lato-font";
+@import "merriweather-font";
 
-@import 'vars';
-@import 'mixins';
+@import "vars";
+@import "mixins";
 
-@import 'openwebicons';
+@import "openwebicons";
 
-@import 'normalize';
+@import "normalize";
 
 // HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/
 
@@ -97,16 +97,16 @@ textarea {
 // Author's custom styles
 // =============================================================================
 
-@import 'form';
-@import 'page';
-@import 'comment';
-@import 'post';
-@import 'nav';
-@import 'table';
-@import 'media';
-@import 'sidebar';
-@import 'base';
-@import 'block';
+@import "form";
+@import "page";
+@import "comment";
+@import "post";
+@import "nav";
+@import "table";
+@import "media";
+@import "sidebar";
+@import "base";
+@import "block";
 
 // =============================================================================
 // Helper classes
@@ -151,4 +151,4 @@ textarea {
 	visibility: hidden;
 }
 
-@import 'integrations';
+@import "integrations";

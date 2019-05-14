@@ -4,7 +4,7 @@
 	margin: 0 auto;
 	border: 0;
 	width: $default-width;
-	font-family: Lato, sans-serif;
+	font-family: "Lato", sans-serif;
 
 	@include clearfix;
 
@@ -54,7 +54,7 @@
 			&.page_item_has_children,
 			&.menu-item-has-children {
 				& > a:after {
-					content: '+';
+					content: "+";
 					margin-left: 5px;
 				}
 			}
@@ -124,7 +124,7 @@
 				&.page_item_has_children,
 				&.menu-item-has-children {
 					& > a:after {
-						content: '+';
+						content: "+";
 						margin-left: 5px;
 					}
 				}

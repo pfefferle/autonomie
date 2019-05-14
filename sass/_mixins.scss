@@ -11,7 +11,7 @@
 
 	&:before,
 	&:after {
-		content: ' '; // 1
+		content: " "; // 1
 		display: table; // 2
 	}
 
@@ -23,7 +23,7 @@
 @mixin label {
 	a {
 		font-size: 1em;
-		font-family: Lato, sans-serif;
+		font-family: "Lato", sans-serif;
 		background-color: $background-gray;
 		border-radius: 3px;
 		color: $dark-gray;
@@ -64,7 +64,7 @@
 }
 
 @mixin meta-text {
-	font-family: Lato, sans-serif;
+	font-family: "Lato", sans-serif;
 	clear: both;
 	color: $light-gray;
 	display: block;

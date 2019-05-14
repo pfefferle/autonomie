@@ -1,5 +1,5 @@
 body .editor-styles-wrapper {
-	@import 'vars';
+	@import "vars";
 
 	/* Main column width */
 	.wp-block {
@@ -16,8 +16,8 @@ body .editor-styles-wrapper {
 		max-width: none;
 	}
 
-	@import 'mixins';
-	@import 'normalize';
-	@import 'base';
-	@import 'post';
+	@import "mixins";
+	@import "normalize";
+	@import "base";
+	@import "post";
 }
