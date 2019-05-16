@@ -18,7 +18,8 @@ function autonomie_post_kinds_init() {
 		add_filter( 'kind_icon_display', '__return_false', 10 );
 	}
 
-	remove_filter( 'the_content', array( 'Kind_View', 'content_response' ), 20 );
+	remove_filter( 'the_content', array( 'Kind_View', 'content_response' ), 9 );
+	remove_filter( 'the_excerpt', array( 'Kind_View', 'excerpt_response' ), 9 );
 	remove_action( 'wp_enqueue_scripts', array( 'Post_Kinds_Plugin', 'style_load' ) );
 }
 add_action( 'init', 'autonomie_post_kinds_init' );
