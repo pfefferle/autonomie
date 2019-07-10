@@ -10,7 +10,8 @@
 	width: $wide-width;
 }
 
-.entry-content .wp-block-image {
+.entry-content .wp-block-image.alignright,
+.entry-content .wp-block-image.alignleft {
 	width: $wide-width;
 	max-width: $wide-width;
 }
