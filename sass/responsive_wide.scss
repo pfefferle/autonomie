@@ -10,10 +10,16 @@
 	width: $wide-width;
 }
 
-.entry-content .alignright,
-.entry-content .alignleft {
-	width: $wide-width;
-	max-width: $wide-width;
+.entry-content {
+	.wp-block-image {
+		width: $wide-width;
+		max-width: $wide-width;
+	}
+
+	.wp-block-image.alignfull {
+		width: 100%;
+		max-width: 100%;
+	}
 }
 
 #sidebar {
