@@ -190,6 +190,7 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 		add_theme_support( 'indieweb' );
 
 		//add_theme_support( 'amp' );
+		add_theme_support( 'service_worker', true );
 	}
 endif; // autonomie_setup
 
