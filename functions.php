@@ -439,13 +439,15 @@ if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 	require( get_template_directory() . '/integrations/syndication-links.php' );
 }
 
-if ( class_exists('Post_Kinds_Plugin') ) {
+if ( class_exists( 'Post_Kinds_Plugin' ) ) {
 	require( get_template_directory() . '/integrations/post-kinds.php' );
 }
 
-if ( class_exists('\Activitypub\Activitypub') ) {
+if ( class_exists( '\Activitypub\Activitypub' ) ) {
 	require( get_template_directory() . '/integrations/activitypub.php' );
 }
+
+require( get_template_directory() . '/integrations/pwa.php' );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and Autonomie.
