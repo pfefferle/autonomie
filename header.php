@@ -19,6 +19,16 @@
 </head>
 
 <body <?php body_class(); ?><?php autonomie_semantics( 'body' ); ?>>
+<?php
+/**
+ * @see: https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
+ */
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} else {
+	do_action( 'wp_body_open' );
+}
+?>
 <div id="page">
 	<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'autonomie' ); ?>"><?php _e( 'Skip to content', 'autonomie' ); ?></a></div>
 	<?php do_action( 'before' ); ?>
