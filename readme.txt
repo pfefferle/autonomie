@@ -30,6 +30,7 @@ Autonomie is a highly semantic, responsive, accessible and search engine optimiz
 * Post Kinds: <https://wordpress.org/plugins/indieweb-post-kinds/>
 * Syndication Links: <https://wordpress.org/plugins/syndication-links/>
 * ActivityPub: <https://wordpress.org/plugins/activitypub/>
+* PWA: <https://wordpress.org/plugins/pwa/>
 
 = Supported Websemantics =
 
@@ -97,6 +98,7 @@ The exceptions to this license are as follows:
 
 * The Bootstrap CSS by Twitter is licensed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
 * shiv is licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
 * Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
 * Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>
 * shiv - <https://github.com/afarkas/html5shiv>
