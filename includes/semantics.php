@@ -109,6 +109,10 @@ function autonomie_pre_get_avatar_data( $args, $id_or_email ) {
 		$args['class'] = array();
 	}
 
+	if ( ! is_array( $args['class'] ) ) {
+		$args['class'] = array( $args['class'] );
+	}
+
 	// Adds a class for microformats v2
 	$args['class'] = array_unique( array_merge( $args['class'], array( 'u-photo' ) ) );
 	$args['extra_attr'] = 'itemprop="image"';

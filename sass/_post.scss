@@ -63,7 +63,8 @@
 }
 
 #primary .post:first-child,
-#primary .page:first-child {
+#primary .page:first-child,
+#primary .attachment:first-child {
 	margin-top: 50px;
 }
 
@@ -162,6 +163,10 @@ h4.entry-title {
 		float: left;
 		margin-right: 10px;
 	}
+}
+
+.entry-footer .author {
+	@include clearfix;
 }
 
 .entry-meta {

@@ -11,7 +11,8 @@
 }
 
 .entry-content {
-	.wp-block-image {
+	.wp-block-image,
+	.entry-attachment {
 		width: $wide-width;
 		max-width: $wide-width;
 	}
@@ -85,7 +86,9 @@
 	width: $default-width !important;
 }
 
-figure {
+figure,
+.wp-block-cover,
+.wp-block-gallery {
 	&.alignleft {
 		float: left;
 		margin-top: .3em;
