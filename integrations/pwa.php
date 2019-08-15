@@ -11,11 +11,6 @@
  */
 
 /**
- * Disable Navigation Preload
- */
-add_filter( 'wp_service_worker_navigation_preload', '__return_false' );
-
-/**
  * Description: With runtime caching of images, scripts, and styles.
  */
 
