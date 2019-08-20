@@ -78,6 +78,7 @@ add_action( 'pre_get_posts', 'autonomie_query_format_standard' );
  */
 function autonomie_add_lazy_loading( $content ) {
 	$content = preg_replace( '/(< [^>]*?)(\ssrc=)(.*?\/?>)/', '\1 loading="lazy" src=\3', $content );
+
 	return $content;
 }
-add_filter( 'the_content', 'autonomie_add_lazy_loading' );
+add_filter( 'the_content', 'autonomie_add_lazy_loading', 99 );
