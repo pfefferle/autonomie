@@ -29,17 +29,14 @@
 
 		.entry-title, .entry-meta, .entry-format {
 			color: $white;
-			color: var(--color-white);
 
 			a {
 				color: $white;
-				color: var(--color-white);
 			}
 		}
 
 		.entry-meta.post-format .entry-format::before {
 			color: $white;
-			color: var(--color-white);
 		}
 
 		.entry-header-wrapper {
@@ -61,7 +58,6 @@
 
 		.avatar {
 			border: 2px solid $white;
-			border-color: var(--color-white);
 		}
 	}
 }
