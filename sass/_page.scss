@@ -56,7 +56,6 @@
 				display: block;
 				margin: 12.5px auto;
 				border: 5px solid $white;
-				border-color: var(--color-white);
 			}
 
 			#page-title, #page-description, #page-meta {
@@ -116,12 +115,10 @@
 
 		a {
 			color: $white;
-			color: var(--color-white);
 		}
 
 		#page-title, #page-description, #page-meta {
 			color: $white;
-			color: var(--color-white);
 		}
 
 		.page-branding {
