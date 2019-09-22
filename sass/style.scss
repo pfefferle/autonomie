@@ -42,6 +42,7 @@
 
 html {
 	color: $dark-gray;
+	color: var(--color-dark-gray);
 	font-size: 1em;
 	line-height: 1.6;
 }
@@ -88,6 +89,7 @@ textarea {
 .browsehappy,
 .browserupgrade {
 	background: $gray;
+	background: var(--color-gray);
 	color: #000;
 	margin: .2em 0;
 	padding: .2em 0;

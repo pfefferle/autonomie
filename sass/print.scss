@@ -39,6 +39,7 @@ a[href^="javascript:"]:after {
 pre,
 blockquote {
 	border: 1px solid $gray;
+	border-color: var(--color-gray);
 	page-break-inside: avoid;
 }
 

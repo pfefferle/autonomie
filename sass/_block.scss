@@ -2,12 +2,14 @@
 	background-color: inherit;
 	color: inherit;
 	border: 1px solid $lighter-gray;
+	border-color: var(--color-lighter-gray);
 }
 
 .wp-block-preformatted {
 	background-color: inherit;
 	color: inherit;
 	border: 1px solid $lighter-gray;
+	border-color: var(--color-lighter-gray);
 }
 
 .wp-block-columns .aligncenter {

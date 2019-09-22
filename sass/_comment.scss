@@ -26,6 +26,7 @@
 	label {
 		display: block;
 		color: $gray;
+		color: var(--color-gray);
 	}
 
 	.says {
@@ -101,6 +102,7 @@ li.comment {
 	display: block;
 	font-family: Lato, sans-serif;
 	color: $gray;
+	color: var(--color-gray);
 }
 
 .comment-meta {
@@ -117,6 +119,7 @@ li.comment {
 .comment-reply-link,
 .logged-in-as a {
 	color: $gray;
+	color: var(--color-gray);
 	text-decoration: none;
 
 	&:hover {

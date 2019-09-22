@@ -29,14 +29,17 @@
 
 		.entry-title, .entry-meta, .entry-format {
 			color: $white;
+			color: var(--color-white);
 
 			a {
 				color: $white;
+				color: var(--color-white);
 			}
 		}
 
 		.entry-meta.post-format .entry-format::before {
 			color: $white;
+			color: var(--color-white);
 		}
 
 		.entry-header-wrapper {
@@ -58,6 +61,7 @@
 
 		.avatar {
 			border: 2px solid $white;
+			border-color: var(--color-white);
 		}
 	}
 }
@@ -101,6 +105,7 @@ h4.entry-title {
 		line-height: 1;
 		text-decoration: none;
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 
 		&:hover {
 			text-decoration: underline;
@@ -111,6 +116,7 @@ h4.entry-title {
 .entry-content,
 .entry-summary {
 	color: $dark-gray;
+	color: var(--color-dark-gray);
 	font-style: normal;
 	line-height: 2;
 	font-size: 1.1em;
@@ -148,10 +154,12 @@ h4.entry-title {
 	font-family: "Lato", sans-serif;
 	clear: both;
 	color: $gray;
+	color: var(--color-gray);
 	display: block;
 
 	a {
 		color: $gray;
+		color: var(--color-gray);
 		text-decoration: none;
 	}
 
@@ -184,6 +192,7 @@ h4.entry-title {
 	&.post-format span,
 	&.post-format .entry-format:before {
 		color: $lighter-gray;
+		color: var(--color-lighter-gray);
 		font-weight: bold;
 		text-transform: lowercase;
 	}
@@ -201,6 +210,7 @@ h4.entry-title {
 		top: 2px;
 		vertical-align: text-middle;
 		color: $lighter-gray;
+		color: var(--color-lighter-gray);
 	}
 
 	.entry-format {
@@ -211,6 +221,7 @@ h4.entry-title {
 		font-size: 1em;
 		line-height: 1.2;
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 	}
 
 	time {
@@ -246,11 +257,13 @@ h4.entry-title {
 			font-size: .9em;
 			margin-bottom: 10px;
 			color: $gray;
+			color: var(--color-gray);
 		}
 
 		.subscribe {
 			font-size: .8em;
 			color: $light-gray;
+			color: var(--color-light-gray);
 			vertical-align: bottom;
 		}
 	}
@@ -357,6 +370,7 @@ h4.entry-title {
 	display: block;
 	font-size: .8em;
 	color: $gray;
+	color: var(--color-gray);
 }
 
 .has-orioles-orange-background-color {
@@ -401,10 +415,12 @@ h4.entry-title {
 
 .has-white-background-color {
 	background-color: $white;
+	background-color: var(--color-white);
 }
 
 .has-white-color {
 	color: $white;
+	color: var(--color-white);
 }
 
 .has-very-light-gray-background-color {

@@ -22,7 +22,7 @@
 		a {
 			border-top: 0 none;
 			color: $dark-gray;
-			background: $white;
+			color: var(--color-dark-gray);
 			display: block;
 			line-height: 150%;
 			padding: 7.5px 0;
@@ -85,7 +85,9 @@
 
 			a {
 				background: $white;
+				background: var(--color-white);
 				color: $dark-gray;
+				color: var(--color-dark-gray);
 				border-top: 0 none;
 				line-height: 150%;
 				padding: 16px 20px;
@@ -101,6 +103,7 @@
 					& > a {
 						background: $dark-gray;
 						color: $white;
+						color: var(--color-white);
 					}
 				}
 
@@ -187,6 +190,7 @@
 
 	a:hover {
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 	}
 }
 
@@ -219,6 +223,7 @@
 		display: inline-block;
 		margin: 0 5px;
 		color: $light-gray;
+		color: var(--color-light-gray);
 	}
 
 	a {
@@ -227,11 +232,13 @@
 		&:hover {
 			text-decoration: underline;
 			color: $dark-gray;
+			color: var(--color-dark-gray);
 		}
 	}
 
 	.current {
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 	}
 }
 

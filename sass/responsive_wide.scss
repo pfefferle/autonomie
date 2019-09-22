@@ -110,12 +110,15 @@ p {
 		font-style: italic;
 		float: left;
 		color: $light-gray;
+		color: var(--color-light-gray);
 		padding: 1em 0 1em 0;
 		margin-right: 2.5em;
 		margin-left: calc( 50% - 450px );
 		width: 400px;
 		border-top: 1px solid $light-gray;
+		border-top-color: var(--color-light-gray);
 		border-bottom: 1px solid $light-gray;
+		border-bottom-color: var(--color-light-gray);
 	}
 
 	&.alignright {
@@ -123,12 +126,15 @@ p {
 		font-style: italic;
 		float: right;
 		color: $light-gray;
+		color: var(--color-light-gray);
 		padding: 1em 0 1em 0;
 		margin-left: 2.5em;
 		margin-right: calc( 50% - 450px );
 		width: 400px;
 		border-top: 1px solid $light-gray;
+		border-top-color: var(--color-light-gray);
 		border-bottom: 1px solid $light-gray;
+		border-bottom-color: var(--color-light-gray);
 	}
 }
 
@@ -148,6 +154,7 @@ p {
 			width: 25%;
 			margin-right: 75%;
 			border-top: 1px solid $light-gray;
+			border-top-color: var(--color-light-gray);
 			display: block;
 			content: "";
 			margin-bottom: 10px;
@@ -171,6 +178,7 @@ p {
 			width: 25%;
 			margin-left: 75%;
 			border-top: 1px solid $light-gray;
+			border-top-color: var(--color-light-gray);
 			display: block;
 			content: "";
 			margin-bottom: 10px;

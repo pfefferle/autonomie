@@ -41,6 +41,7 @@
 
 		a {
 			color: $dark-gray;
+			color: var(--color-dark-gray);
 		}
 
 		.page-branding {
@@ -55,6 +56,7 @@
 				display: block;
 				margin: 12.5px auto;
 				border: 5px solid $white;
+				border-color: var(--color-white);
 			}
 
 			#page-title, #page-description, #page-meta {
@@ -81,6 +83,7 @@
 			margin: 0 auto;
 			text-align: left;
 			color: $dark-gray;
+			color: var(--color-dark-gray);
 			font-size: 1.5em;
 			width: $wide-width;
 		}
@@ -113,10 +116,12 @@
 
 		a {
 			color: $white;
+			color: var(--color-white);
 		}
 
 		#page-title, #page-description, #page-meta {
 			color: $white;
+			color: var(--color-white);
 		}
 
 		.page-branding {
@@ -137,6 +142,7 @@
 #colophon {
 	width: 100%;
 	background-color: $background-gray;
+	background-color: var(--color-background-gray);
 	margin-top: 100px;
 
 	@include clearfix;
@@ -147,6 +153,7 @@
 	padding: 50px 0;
 	text-align: center;
 	background-color: $white;
+	background-color: var(--color-white);
 }
 
 .screen-reader-text,
@@ -180,6 +187,7 @@
 .post .notice,
 .error404 #searchform {
 	background: $light-gray;
+	background: var(--color-light-gray);
 	display: block;
 	padding: 1em;
 }

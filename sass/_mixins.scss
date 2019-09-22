@@ -25,8 +25,10 @@
 		font-size: 1em;
 		font-family: "Lato", sans-serif;
 		background-color: $background-gray;
+		background-color: var(--color-background-gray);
 		border-radius: 3px;
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 		line-height: 1;
 		padding: 5px 8px;
 		text-decoration: none;
@@ -42,10 +44,13 @@
 	a {
 		text-decoration: none;
 		color: $gray;
+		color: var(--color-gray);
 	}
 	color: $gray;
+	color: var(--color-gray);
 	border: 1px solid $border-gray;
 	background-color: $white;
+	background-color: var(--color-white);
 	border-radius: 50px;
 	padding: 10px 20px;
 
@@ -58,8 +63,11 @@
 	&:hover a,
 	&:active a {
 		border: 1px solid $gray;
+		border-color: var(--color-gray);
 		background-color: $gray;
+		background-color: var(--color-gray);
 		color: $white;
+		color: var(--color-white);
 	}
 }
 
@@ -67,10 +75,12 @@
 	font-family: "Lato", sans-serif;
 	clear: both;
 	color: $light-gray;
+	color: var(--color-light-gray);
 	display: block;
 
 	a {
 		color: $light-gray;
+		color: var(--color-light-gray);
 		text-decoration: none;
 	}
 

@@ -1,6 +1,9 @@
 body {
 	background-color: $white;
+	background-color: var(--color-background);
 	color: $dark-gray;
+	color: var(--color-dark-gray);
+
 	font-family: "Merriweather", serif;
 	font-weight: 400;
 	word-wrap: break-word;
@@ -16,6 +19,7 @@ address {
 
 a {
 	color: $dark-gray;
+	color: var(--color-dark-gray);
 }
 
 a:hover {
@@ -27,6 +31,7 @@ abbr {
 
 	&[title] {
 		border-bottom: 1px dotted $gray;
+		border-bottom-color: var(--color-gray);
 		cursor: help;
 	}
 }
@@ -34,6 +39,7 @@ abbr {
 blockquote,
 figure {
 	color: $gray;
+	color: var(--color-gray);
 	font-size: 1em;
 	font-style: italic;
 	position: relative;
@@ -43,6 +49,7 @@ figure {
 	figcaption,
 	cite {
 		color: $gray;
+		color: var(--color-gray);
 		display: block;
 		font-size: .7em;
 		font-style: normal;

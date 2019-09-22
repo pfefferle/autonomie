@@ -58,9 +58,11 @@ table tbody:first-child tr:first-child td {
 table tbody tr:nth-child(odd) td,
 table tbody tr:nth-child(odd) th {
 	background-color: $background-gray;
+	background-color: var(--color-background-gray);
 }
 
 table tbody tr:hover td,
 table tbody tr:hover th {
 	background-color: $background-gray;
+	background-color: var(--color-background-gray);
 }

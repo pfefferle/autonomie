@@ -36,17 +36,21 @@
 
 	input {
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 	}
 
 	button,
 	input[type="submit"] {
 		color: $dark-gray;
+		color: var(--color-dark-gray);
 		background-color: $white;
+		background-color: var(--color-white);
 		border: none;
 		padding: .5em 1em;
 
 		&:hover {
 			background-color: $gray;
+			background-color: var(--color-gray);
 		}
 	}
 }

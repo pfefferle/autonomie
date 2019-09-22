@@ -21,6 +21,7 @@ ul.relsyn {
 	height: 15px;
 	width: 15px;
 	color: $light-gray;
+	color: var(--color-light-gray);
 	fill: currentColor;
 	display: inline-block;
 }
