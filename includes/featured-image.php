@@ -183,3 +183,27 @@ function autonomie_full_width_featured_image_post_class( $classes ) {
 	return $classes;
 }
 add_filter( 'post_class', 'autonomie_full_width_featured_image_post_class' );
+
+function autonomie_register_meta() {
+	register_meta(
+		'post',
+		'full_width_featured_image',
+		array(
+			'show_in_rest' => true,
+			'single' => true,
+			'type' => 'boolean',
+		)
+	);
+}
+add_action( 'init', 'autonomie_register_meta' );
+
+function autonomie_enqueue_block_editor_assets() {
+	wp_enqueue_script(
+		'autonomie-block-editor',
+		get_template_directory_uri() . '/js/block-editor.js',
+		array( 'wp-editor', 'wp-i18n', 'wp-element', 'wp-compose', 'wp-components' ),
+		'1.0.0',
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'autonomie_enqueue_block_editor_assets', 9 );
