@@ -26,14 +26,14 @@ function wrapPostFeaturedImage( OriginalComponent ) {
 					props
 				),
 				el(
-					composedCheckBox
+					composedFullWidthFeaturedImageCheckBox
 				)
 			)
 		);
 	}
 }
 
-class CheckBoxCustom extends React.Component {
+class FullWidthFeaturedImageCheckBox extends React.Component {
 	render() {
 		const {
 			meta,
@@ -57,7 +57,7 @@ class CheckBoxCustom extends React.Component {
 	}
 }
 
-const composedCheckBox = wp.compose.compose( [
+const composedFullWidthFeaturedImageCheckBox = wp.compose.compose( [
 	withState( ( value ) => { isChecked: value } ),
 	withSelect( ( select ) => {
 		const currentMeta = select( 'core/editor' ).getCurrentPostAttribute( 'meta' );
@@ -75,4 +75,4 @@ const composedCheckBox = wp.compose.compose( [
 			dispatch( 'core/editor' ).editPost( { meta } );
 		},
 	} ) ),
-] )( CheckBoxCustom );
+] )( FullWidthFeaturedImageCheckBox );
