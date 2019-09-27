@@ -191,16 +191,15 @@ function autonomie_get_semantics( $id = null ) {
 			if ( ! is_singular() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/Blog', 'http://schema.org/WebPage' );
-			}
-			break;
-		case 'main':
-			if ( is_single() ) {
+			} elseif ( is_single() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
 			} elseif ( is_page() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/WebPage' );
 			}
+			break;
+		case 'main':
 			break;
 		case 'site-title':
 			if ( is_home() ) {
