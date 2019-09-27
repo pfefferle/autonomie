@@ -11,12 +11,12 @@ module.exports = function(grunt) {
           line_numbers: false
         },
         files: {
-          'css/editor-style.css': 'sass/editor-style.scss',
-          'css/print.css': 'sass/print.scss',
-          'css/narrow-width.css': 'sass/responsive_narrow.scss',
-          'css/default-width.css': 'sass/responsive_default.scss',
-          'css/wide-width.css': 'sass/responsive_wide.scss',
-          'style.css': 'sass/style.scss'
+          'assets/css/editor-style.css': 'assets/sass/editor-style.scss',
+          'assets/css/print.css': 'assets/sass/print.scss',
+          'assets/css/narrow-width.css': 'assets/sass/responsive_narrow.scss',
+          'assets/css/default-width.css': 'assets/sass/responsive_default.scss',
+          'assets/css/wide-width.css': 'assets/sass/responsive_wide.scss',
+          'style.css': 'assets/sass/style.scss'
         }
       }
     },

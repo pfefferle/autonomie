@@ -200,7 +200,7 @@ add_action( 'init', 'autonomie_register_meta' );
 function autonomie_enqueue_block_editor_assets() {
 	wp_enqueue_script(
 		'autonomie-block-editor',
-		get_template_directory_uri() . '/js/block-editor.js',
+		get_template_directory_uri() . '/assets/js/block-editor.js',
 		array( 'wp-editor', 'wp-i18n', 'wp-element', 'wp-compose', 'wp-components' ),
 		'1.0.0',
 		true
