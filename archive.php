@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-			<main id="primary">
+			<main id="primary" <?php autonomie_main_class(); ?><?php autonomie_semantics( 'main' ); ?>>
 
 				<?php if ( have_posts() ) : ?>
 

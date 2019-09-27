@@ -65,6 +65,43 @@ function autonomie_get_post_id() {
 	return apply_filters( 'autonomie_post_id', $post_id, get_the_ID() );
 }
 
+function autonomie_main_class( $class = '' ) {
+	// Separates class names with a single space, collates class names for body element
+	echo 'class="' . join( ' ', autonomie_get_main_class( $class ) ) . '"';
+}
+
+function autonomie_get_main_class( $class = '' ) {
+	$classes = array();
+
+	if ( is_singular() ) {
+		$classes = autonomie_get_post_classes( $classes );
+	}
+
+	if ( ! empty( $class ) ) {
+		if ( ! is_array( $class ) ) {
+			$class = preg_split( '#\s+#', $class );
+		}
+		$classes = array_merge( $classes, $class );
+	} else {
+		// Ensure that we always coerce class to being an array.
+		$class = array();
+	}
+
+	$classes = array_map( 'esc_attr', $classes );
+
+	/**
+	 * Filters the list of CSS main class names for the current post or page.
+	 *
+	 * @since 2.8.0
+	 *
+	 * @param string[] $classes An array of main class names.
+	 * @param string[] $class   An array of additional class names added to the main.
+	 */
+	$classes = apply_filters( 'autonomie_main_class', $classes, $class );
+
+	return array_unique( $classes );
+}
+
 function autonomie_get_the_archive_title() {
 	if ( is_archive() ) {
 		return get_the_archive_title();

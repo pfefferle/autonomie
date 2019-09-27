@@ -23,6 +23,12 @@
 function autonomie_body_classes( $classes ) {
 	$classes[] = get_theme_mod( 'autonomie_columns', 'multi' ) . '-column';
 
+	if ( ! is_singular() && ! is_404() ) {
+		$classes[] = 'hfeed';
+		$classes[] = 'h-feed';
+		$classes[] = 'feed';
+	}
+
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
 		$classes[] = 'single-author';
@@ -30,14 +36,6 @@ function autonomie_body_classes( $classes ) {
 
 	if ( get_header_image() ) {
 		$classes[] = 'custom-header';
-	}
-
-	if ( ! is_singular() && ! is_404() ) {
-		$classes[] = 'hfeed';
-		$classes[] = 'h-feed';
-		$classes[] = 'feed';
-	} else {
-		$classes = autonomie_get_post_classes( $classes );
 	}
 
 	return $classes;
@@ -193,7 +191,10 @@ function autonomie_get_semantics( $id = null ) {
 			if ( ! is_singular() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/Blog', 'http://schema.org/WebPage' );
-			} elseif ( is_single() ) {
+			}
+			break;
+		case 'main':
+			if ( is_single() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
 			} elseif ( is_page() ) {

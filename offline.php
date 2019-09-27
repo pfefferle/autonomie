@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-		<main id="primary">
+		<main id="primary" <?php autonomie_main_class(); ?><?php autonomie_semantics( 'main' ); ?>>
 
 			<article id="post-0" class="post error offline">
 				<header class="entry-header">
