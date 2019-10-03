@@ -23,8 +23,8 @@ a {
 }
 
 svg {
-	color: $dark-gray;
-	color: var(--color-dark-gray);
+	fill: $dark-gray;
+	fill: var(--color-dark-gray);
 }
 
 a:hover {
