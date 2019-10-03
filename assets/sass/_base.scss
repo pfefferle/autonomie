@@ -22,6 +22,11 @@ a {
 	color: var(--color-dark-gray);
 }
 
+svg {
+	color: $dark-gray;
+	color: var(--color-dark-gray);
+}
+
 a:hover {
 	text-decoration: none;
 }

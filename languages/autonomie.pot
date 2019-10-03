@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-09-24 19:21:38+00:00\n"
+"POT-Creation-Date: 2019-10-03 19:02:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -224,30 +224,30 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
-#: includes/template-functions.php:73
+#: includes/template-functions.php:110
 #. translators: The title of the search results page
 msgid "Search Results for: %s"
 msgstr ""
 
-#: includes/template-functions.php:97
+#: includes/template-functions.php:134
 msgid "Article"
 msgstr ""
 
-#: includes/template-functions.php:145
+#: includes/template-functions.php:182
 #. translators: list of followers
 msgid "%s Followers"
 msgstr ""
 
-#: includes/template-functions.php:147
+#: includes/template-functions.php:184
 #. translators: a post counter
 msgid "%s Posts"
 msgstr ""
 
-#: includes/template-functions.php:148
+#: includes/template-functions.php:185
 msgid "Subscribe"
 msgstr ""
 
-#: includes/template-functions.php:172
+#: includes/template-functions.php:209
 #. translators: Description for search results
 msgid "Found %1$s search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
