@@ -1,0 +1,28 @@
+:root {
+	--color-background: #{$white};
+	--color-white: #{$white};
+	--color-dark-gray: #{$dark-gray};
+	--color-gray: #{$gray};
+	--color-light-gray: #{$light-gray};
+	--color-lighter-gray: #{$lighter-gray};
+	--color-border-gray: #{$border-gray};
+	--color-background-gray: #{$background-gray};
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background: #{$dark-gray};
+		--color-white: #{$dark-gray};
+		--color-dark-gray: #{$white};
+		--color-gray: #{$white};
+		--color-light-gray: #{$white};
+		--color-lighter-gray: #{$white};
+		--color-border-gray: #{$light-gray};
+		--color-background-gray: #{$gray};
+	}
+
+	img {
+		filter: brightness(.8) contrast(1.2);
+	}
+}

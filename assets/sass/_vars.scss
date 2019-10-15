@@ -44,27 +44,3 @@ $very-dark-gray: #444;
 $wide-width: 900px;
 $default-width: $wide-width - 200px;
 $margin: ($wide-width - $default-width) / 2;
-
-:root {
-	--color-background: #{$white};
-	--color-white: #{$white};
-	--color-dark-gray: #{$dark-gray};
-	--color-gray: #{$gray};
-	--color-light-gray: #{$light-gray};
-	--color-lighter-gray: #{$lighter-gray};
-	--color-border-gray: #{$border-gray};
-	--color-background-gray: #{$background-gray};
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-background: #{$dark-gray};
-		--color-white: #{$dark-gray};
-		--color-dark-gray: #{$white};
-		--color-gray: #{$white};
-		--color-light-gray: #{$white};
-		--color-lighter-gray: #{$white};
-		--color-border-gray: #{$light-gray};
-		--color-background-gray: #{$gray};
-	}
-}

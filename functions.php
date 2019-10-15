@@ -220,6 +220,14 @@ function autonomie_publisher_feed_header() {
 add_action( 'wp_head', 'autonomie_publisher_feed_header' );
 
 /**
+ * Adds a rel-feed if the main page is not a list of posts
+ */
+function autonomie_header() {
+	printf( PHP_EOL . '<meta name="supported-color-schemes" content="light dark">' . PHP_EOL );
+}
+add_action( 'wp_head', 'autonomie_header' );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
