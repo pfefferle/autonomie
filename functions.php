@@ -252,6 +252,21 @@ function autonomie_embed_defaults() {
 }
 add_filter( 'embed_defaults', 'autonomie_embed_defaults' );
 
+function autonomie_login_logo() {
+	if ( ! has_site_icon() ) {
+		return;
+	}
+
+	?>
+	<style type="text/css">
+		body.login div#login h1 a {
+			background-image: url( <?php echo get_site_icon_url( 84 ); ?> );
+		}
+	</style>
+	<?php
+}
+add_action( 'login_enqueue_scripts', 'autonomie_login_logo' );
+
 /**
  * Set the default with for the embeds
  * Fixes issues with Vimeo
