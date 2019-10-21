@@ -38,7 +38,9 @@ html {
 .alignright,
 .alignleft,
 .wp-block-image .alignright,
-.wp-block-image .alignleft {
+.wp-block-image .alignleft,
+.wp-block-button.alignright,
+.wp-block-button.alignleft {
 	float: none;
 	clear: both;
 	margin: 1.2em auto;
@@ -58,6 +60,11 @@ html {
 	max-width: 90%;
 	margin: 1.2em auto;
 	box-sizing: border-box;
+}
+
+.entry-content > pre,
+.entry-content > table {
+	max-width: 100%;
 }
 
 .entry-header .entry-title {

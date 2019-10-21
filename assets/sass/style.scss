@@ -99,7 +99,6 @@ textarea {
 // Author's custom styles
 // =============================================================================
 
-@import "form";
 @import "page";
 @import "comment";
 @import "post";
@@ -109,6 +108,7 @@ textarea {
 @import "sidebar";
 @import "base";
 @import "block";
+@import "form";
 
 // =============================================================================
 // Helper classes

@@ -37,7 +37,7 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
-.wp-block-button,
+.wp-block-button a,
 .button {
 	@include button;
 }
@@ -51,5 +51,15 @@ a.button:active {
 .search-form {
 	.search-submit {
 		display: none;
+	}
+}
+
+.wp-block-button {
+	display: block;
+
+	&.alignleft,
+	&.alignright {
+		clear: both;
+		float: none;
 	}
 }

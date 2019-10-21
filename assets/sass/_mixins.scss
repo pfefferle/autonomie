@@ -46,6 +46,7 @@
 		color: $gray;
 		color: var(--color-gray);
 	}
+
 	color: $gray;
 	color: var(--color-gray);
 	border: 1px solid $border-gray;
@@ -53,6 +54,8 @@
 	background-color: var(--color-white);
 	border-radius: 50px;
 	padding: 10px 20px;
+	display: inline-block;
+	line-height: 1;
 
 	&:focus {
 		outline: 0;
