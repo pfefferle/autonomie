@@ -1,4 +1,4 @@
-<?php if ( is_singular() ) : ?>
+<?php if ( is_singular() || is_attachment() ) : ?>
 	<footer class="entry-footer entry-meta">
 		<address class="author p-author vcard hcard h-card" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
