@@ -1,6 +1,6 @@
 	<header class="entry-header">
 		<div class="entry-header-wrapper">
-			<?php if ( ! is_page() ) : ?>
+			<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta post-format">
 				<?php echo apply_filters( 'autonomie_post_format', sprintf(
 					'<a class="entry-format entry-format-%s" href="%s">%s</a>',

@@ -10,7 +10,7 @@
 ?>
 
 <article <?php autonomie_post_id(); ?> <?php post_class(); ?><?php autonomie_semantics( 'post' ); ?>>
-	<?php get_template_part( 'templates/partials/entry-header' ); ?>
+	<?php get_template_part( 'template-parts/entry-header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary p-summary" itemprop="description articleBody">
@@ -24,5 +24,5 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<?php get_template_part( 'templates/partials/entry-footer' ); ?>
+	<?php get_template_part( 'template-parts/entry-footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
