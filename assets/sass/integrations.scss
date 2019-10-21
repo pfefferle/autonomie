@@ -22,8 +22,12 @@ ul.relsyn {
 	width: 15px;
 	color: $light-gray;
 	color: var(--color-light-gray);
-	fill: currentColor;
 	display: inline-block;
+
+	svg {
+		fill: $light-gray;
+		fill: var(--color-light-gray);
+	}
 }
 
 .has-full-width-featured-image .entry-header .kind .svg-icon {
