@@ -130,6 +130,8 @@ function autonomie_get_post_format() {
 function autonomie_get_post_format_string() {
 	if ( get_post_format() ) {
 		return get_post_format();
+	} elseif ( 'attachment' === get_post_type() ) {
+		return __( 'Attachment', 'autonomie' );
 	} else {
 		return __( 'Article', 'autonomie' );
 	}

@@ -60,5 +60,5 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
-		<?php get_template_part( 'templates/partials/page-banner', autonomie_get_archive_type() ); ?>
+		<?php get_template_part( 'template-parts/page-banner', autonomie_get_archive_type() ); ?>
 	</header><!-- #site-header -->

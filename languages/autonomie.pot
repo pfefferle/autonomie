@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-10-21 18:42:56+00:00\n"
+"POT-Creation-Date: 2019-10-21 19:54:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -132,7 +132,7 @@ msgstr ""
 msgid "POSH Feed"
 msgstr ""
 
-#: functions.php:376 functions.php:396 image.php:32 image.php:100
+#: functions.php:376 functions.php:396
 msgid "Edit"
 msgstr ""
 
@@ -149,52 +149,12 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: image.php:22
-msgid ""
-"Published <time class=\"entry-date updated dt-updated\" datetime=\"%1$s\" "
-"itemprop=\"dateModified\">%2$s</time> at <a href=\"%3$s\" title=\"Link to "
-"full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return "
-"to %7$s\" rel=\"gallery\">%7$s</a>"
-msgstr ""
-
-#: image.php:36
-msgid "&larr; Previous"
-msgstr ""
-
-#: image.php:37
-msgid "Next &rarr;"
-msgstr ""
-
-#: image.php:86 templates/content-aside.php:23 templates/content-audio.php:23
+#: image-.php:63 templates/content-aside.php:23 templates/content-audio.php:23
 #: templates/content-chat.php:23 templates/content-gallery.php:23
 #: templates/content-image.php:23 templates/content-link.php:23
 #: templates/content-quote.php:23 templates/content-single.php:23
 #: templates/content-status.php:23 templates/content-video.php:23
 msgid "Pages:"
-msgstr ""
-
-#: image.php:92
-msgid ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
-"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
-"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
-msgstr ""
-
-#: image.php:94
-msgid ""
-"Comments are closed, but you can leave a trackback: <a "
-"class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" "
-"rel=\"trackback\">Trackback URL</a>."
-msgstr ""
-
-#: image.php:96
-msgid ""
-"Trackbacks are closed, but you can <a class=\"comment-link\" "
-"href=\"#respond\" title=\"Post a comment\">post a comment</a>."
-msgstr ""
-
-#: image.php:98
-msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
 #: includes/featured-image.php:78
@@ -291,50 +251,46 @@ msgstr ""
 msgid "Offline"
 msgstr ""
 
+#: template-parts/entry-footer.php:9
+msgid "Subscribe to author feed"
+msgstr ""
+
+#: template-parts/entry-footer.php:18
+#. translators: used between list items, there is a space after the comma
+msgid "Categories"
+msgstr ""
+
+#: template-parts/entry-footer.php:19 template-parts/entry-footer.php:30
+msgid "%1$s"
+msgstr ""
+
+#: template-parts/entry-footer.php:29
+#. translators: used between list items, there is a space after the comma
+msgid "Tags"
+msgstr ""
+
+#: template-parts/entry-footer.php:40 template-parts/entry-footer.php:46
+msgid "Leave a comment"
+msgstr ""
+
+#: template-parts/entry-footer.php:40 template-parts/entry-footer.php:46
+msgid "1 Comment"
+msgstr ""
+
+#: template-parts/entry-footer.php:40 template-parts/entry-footer.php:46
+msgid "% Comments"
+msgstr ""
+
+#: template-parts/entry-header.php:16
+msgid "Permalink to %s"
+msgstr ""
+
 #: templates/content-aside.php:22 templates/content-audio.php:22
 #: templates/content-chat.php:22 templates/content-gallery.php:22
 #: templates/content-image.php:22 templates/content-link.php:22
 #: templates/content-quote.php:22 templates/content-single.php:22
 #: templates/content-status.php:22 templates/content-video.php:22
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: templates/partials/entry-footer.php:9
-msgid "Subscribe to author feed"
-msgstr ""
-
-#: templates/partials/entry-footer.php:18
-#. translators: used between list items, there is a space after the comma
-msgid "Categories"
-msgstr ""
-
-#: templates/partials/entry-footer.php:19
-#: templates/partials/entry-footer.php:30
-msgid "%1$s"
-msgstr ""
-
-#: templates/partials/entry-footer.php:29
-#. translators: used between list items, there is a space after the comma
-msgid "Tags"
-msgstr ""
-
-#: templates/partials/entry-footer.php:40
-#: templates/partials/entry-footer.php:46
-msgid "Leave a comment"
-msgstr ""
-
-#: templates/partials/entry-footer.php:40
-#: templates/partials/entry-footer.php:46
-msgid "1 Comment"
-msgstr ""
-
-#: templates/partials/entry-footer.php:40
-#: templates/partials/entry-footer.php:46
-msgid "% Comments"
-msgstr ""
-
-#: templates/partials/entry-header.php:16
-msgid "Permalink to %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
