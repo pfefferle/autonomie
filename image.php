@@ -18,7 +18,7 @@ get_header(); ?>
 					<div class="entry-content e-content" itemprop="description">
 
 						<div class="entry-attachment">
-							<div class="attachment">
+							<figure class="attachment">
 								<?php
 								/**
 								 * Grab the IDs of all the image attachments in a gallery so we can get the URL of the next adjacent image in a gallery,
@@ -50,18 +50,17 @@ get_header(); ?>
 								$attachment_size = apply_filters( 'autonomie_attachment_size', 1200 );
 								echo wp_get_attachment_image( $post->ID, array( $attachment_size, $attachment_size ), null, array( 'itemprop' => 'image contentURL' ) ); // filterable image width with, essentially, no limit for image height.
 								?></a>
-							</div><!-- .attachment -->
 
-							<?php if ( ! empty( $post->post_excerpt ) ) : ?>
-							<div class="entry-caption">
-								<?php the_excerpt(); ?>
-							</div>
-							<?php endif; ?>
+								<?php if ( ! empty( $post->post_excerpt ) ) : ?>
+								<figcaption class="entry-caption">
+									<?php the_excerpt(); ?>
+								</figcaption>
+								<?php endif; ?>
+							</figure><!-- .attachment -->
 						</div><!-- .entry-attachment -->
 
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ), 'after' => '</div>' ) ); ?>
-
 					</div><!-- .entry-content -->
 
 					<?php get_template_part( 'template-parts/entry-footer' ); ?>
