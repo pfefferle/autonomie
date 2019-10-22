@@ -71,11 +71,13 @@
 
 		ul {
 			border: none;
-			bottom: 0;
-			left: 0;
+			background-color: $white;
+			background-color	: var(--color-white);
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 			margin-top: 0;
 			min-width: 190px;
 			position: absolute;
+
 			text-transform: none;
 			top: 100%;
 			visibility: hidden;
@@ -83,8 +85,6 @@
 			z-index: 598;
 
 			a {
-				background: $white;
-				background: var(--color-white);
 				color: $dark-gray;
 				color: var(--color-dark-gray);
 				border-top: 0 none;
@@ -96,15 +96,6 @@
 				float: none;
 				font-weight: normal;
 				position: relative;
-
-				&:hover,
-				&.focus {
-					& > a {
-						background: $dark-gray;
-						color: $white;
-						color: var(--color-white);
-					}
-				}
 
 				&:last-child {
 					& > a {
