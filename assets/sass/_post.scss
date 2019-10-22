@@ -137,8 +137,14 @@ h4.entry-title {
 	}
 
 	a {
-		text-decoration: underline $orioles-orange;
-		text-decoration: underline var(--color-orioles-orange);
+		text-decoration: underline;
+
+		@supports(text-decoration: underline $orioles-orange) {
+			text-decoration: underline $orioles-orange;
+			text-decoration: underline var(--color-orioles-orange);
+			text-decoration-thickness: 3px;
+  			text-underline-offset: 6px;
+		}
 	}
 }
 
