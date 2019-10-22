@@ -15,7 +15,6 @@
 		list-style: none;
 		margin: 0;
 		padding: 7.5px 0;
-		*display: inline-block;
 
 		@include clearfix;
 
@@ -168,7 +167,7 @@
 	}
 }
 
-#nav-below-123 {
+#nav-below {
 	.nav-previous {
 		position: fixed;
 		left: 20px;
