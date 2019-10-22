@@ -135,6 +135,11 @@ h4.entry-title {
 		padding: 30px calc( ( 100% - 700px ) / 2 );
 		margin: 0;
 	}
+
+	a {
+		text-decoration: underline $orioles-orange;
+		text-decoration: underline var(--color-orioles-orange);
+	}
 }
 
 .page-link,

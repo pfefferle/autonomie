@@ -7,6 +7,7 @@
 	--color-lighter-gray: #{$lighter-gray};
 	--color-border-gray: #{$border-gray};
 	--color-background-gray: #{$background-gray};
+	--color-orioles-orange: #{$orioles-orange};
 	color-scheme: light dark;
 }
 
@@ -20,6 +21,7 @@
 		--color-lighter-gray: #{$white};
 		--color-border-gray: #{$light-gray};
 		--color-background-gray: #{$gray};
+		--color-orioles-orange: #{$android-green};
 	}
 
 	img {
