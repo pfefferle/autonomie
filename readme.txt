@@ -101,4 +101,3 @@ The exceptions to this license are as follows:
 
 * Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
 * Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>
-* shiv - <https://github.com/afarkas/html5shiv>
