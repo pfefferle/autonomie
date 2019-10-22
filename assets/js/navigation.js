@@ -9,8 +9,6 @@
 
 	container = document.getElementById( 'site-navigation' );
 
-	console.log(container);
-
 	if ( ! container ) {
 		return;
 	}
