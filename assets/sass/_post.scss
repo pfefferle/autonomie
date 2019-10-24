@@ -139,11 +139,20 @@ h4.entry-title {
 	a {
 		text-decoration: underline;
 
-		@supports(text-decoration: underline $orioles-orange) {
-			text-decoration: underline $orioles-orange;
-			text-decoration: underline var(--color-orioles-orange);
+		@supports(text-decoration: underline $android-green) {
+			text-decoration: underline $android-green;
+			text-decoration: underline var(--color-android-green);
 			text-decoration-thickness: 3px;
-  			text-underline-offset: 6px;
+			text-underline-offset: 6px;
+		}
+
+		&:hover {
+			@supports(text-decoration: underline $android-green) {
+				text-decoration: underline $usc-gold;
+				text-decoration: underline var(--color-usc-gold);
+				text-decoration-thickness: 3px;
+				text-underline-offset: 6px;
+			}
 		}
 	}
 }
@@ -213,7 +222,7 @@ h4.entry-title {
 		isolation: isolate;
 		margin-right: 5px;
 		position: relative;
-		text-decoration: inherit;
+		text-decoration: none;
 		top: 2px;
 		vertical-align: text-middle;
 		color: $lighter-gray;
