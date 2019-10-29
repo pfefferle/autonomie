@@ -62,4 +62,8 @@ a.button:active {
 		clear: both;
 		float: none;
 	}
+
+	a, a:hover {
+		text-decoration: none;
+	}
 }
