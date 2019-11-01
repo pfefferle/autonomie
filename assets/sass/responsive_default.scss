@@ -48,6 +48,11 @@
 	box-sizing: border-box;
 }
 
+.entry-content > .wp-block-gallery,
+.entry-summary > .wp-block-gallery {
+	display: flex;
+}
+
 #sidebar {
 	width: 100%;
 
