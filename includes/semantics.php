@@ -5,10 +5,10 @@
  * Some functions to add backwards compatibility to older WordPress versions
  * Adds some awesome websemantics like microformats(2) and microdata
  *
- * @link http://microformats.org/wiki/microformats
- * @link http://microformats.org/wiki/microformats2
- * @link http://schema.org
- * @link http://indiewebcamp.com
+ * @link https://microformats.org/wiki/microformats
+ * @link https://microformats.org/wiki/microformats2
+ * @link https://schema.org
+ * @link https://indieweb.org
  *
  * @package Autonomie
  * @subpackage semantics

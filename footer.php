@@ -29,7 +29,7 @@
 
 		<div id="site-generator">
 			<?php do_action( 'autonomie_credits' ); ?>
-			<?php printf( __( 'This site is powered by %1$s and styled with the %2$s theme', 'autonomie' ), '<a href="http://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://github.com/pfefferle/Autonomie">Autonomie</a>' ); ?>
+			<?php printf( __( 'This site is powered by %1$s and styled with the %2$s theme', 'autonomie' ), '<a href="https://wordpress.org/" rel="generator">WordPress</a>', '<a href="https://notiz.blog/projects/autonomie/">Autonomie</a>' ); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
