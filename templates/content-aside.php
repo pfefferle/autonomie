@@ -24,5 +24,5 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<?php get_template_part( '../template-parts/entry-footer' ); ?>
+	<?php get_template_part( 'template-parts/entry-footer' ); ?>
 </aside><!-- #post-<?php the_ID(); ?> -->
