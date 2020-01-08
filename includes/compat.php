@@ -31,6 +31,11 @@ function autonomie_comment_autocomplete( $fields ) {
 }
 add_filter( 'comment_form_default_fields', 'autonomie_comment_autocomplete' );
 
+/**
+ * Fix archive for "standard" post type
+ *
+ * @param WP_Query $query
+ */
 function autonomie_query_format_standard( $query ) {
 	if (
 		isset( $query->query_vars['post_format'] ) &&
@@ -53,15 +58,18 @@ function autonomie_query_format_standard( $query ) {
 			unset( $query->query_vars['term'] );
 			unset( $query->query['post_format'] );
 
-			$query->set( 'tax_query', array(
-				'relation' => 'AND',
+			$query->set(
+				'tax_query',
 				array(
-					'taxonomy' => 'post_format',
-					'terms' => $terms,
-					'field' => 'slug',
-					'operator' => 'NOT IN',
-				),
-			));
+					'relation' => 'AND',
+					array(
+						'taxonomy' => 'post_format',
+						'terms' => $terms,
+						'field' => 'slug',
+						'operator' => 'NOT IN',
+					),
+				)
+			);
 		}
 	}
 }
