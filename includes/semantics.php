@@ -1,6 +1,6 @@
 <?php
 /**
- * Autonomie websemantics polyfill
+ * Autonomie Websemantics polyfill
  *
  * Some functions to add backwards compatibility to older WordPress versions
  * Adds some awesome websemantics like microformats(2) and microdata
