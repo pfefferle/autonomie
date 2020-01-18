@@ -53,9 +53,12 @@
 			&.page_item_has_children,
 			&.menu-item-has-children {
 				& > a:after {
-					content: "+";
+					content: "^";
 					margin-left: 5px;
 					text-decoration: none;
+					font-weight: bold;
+					display: inline-block;
+					transform: rotate(180deg);
 				}
 			}
 
@@ -117,7 +120,10 @@
 				&.page_item_has_children,
 				&.menu-item-has-children {
 					& > a:after {
-						content: "+";
+						content: ">";
+						text-decoration: none;
+						font-weight: bold;
+						transform: none;
 						margin-left: 5px;
 					}
 				}
