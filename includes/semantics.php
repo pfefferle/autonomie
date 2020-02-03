@@ -198,6 +198,9 @@ function autonomie_get_semantics( $id = null ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/WebPage' );
 			}
+
+			$classes['itemid'] = array( get_self_link() );
+
 			break;
 		case 'main':
 			break;
@@ -231,6 +234,7 @@ function autonomie_get_semantics( $id = null ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
 				$classes['itemref'] = array( 'site-publisher' );
+				$classes['itmeid'] = array( get_permalink() );
 			}
 			break;
 	}

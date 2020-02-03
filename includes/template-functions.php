@@ -27,7 +27,7 @@ if ( ! function_exists( 'autonomie_posted_on' ) ) :
 	 */
 	function autonomie_posted_on() {
 		// translators: the author byline
-		printf( __( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
+		printf( __( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
@@ -213,3 +213,18 @@ function autonomie_get_the_archive_description() {
 		return wpautop( $stats_text );
 	}
 }
+
+if ( ! function_exists( 'get_self_link' ) ) {
+	/**
+	 * Returns the link for the currently displayed feed.
+	 *
+	 * @since 5.3.0
+	 *
+	 * @return string Correct link for the atom:self element.
+	 */
+	function get_self_link() {
+		$host = @parse_url( home_url() );
+		return set_url_scheme( 'http://' . $host['host'] . wp_unslash( $_SERVER['REQUEST_URI'] ) );
+	}
+}
+
