@@ -129,7 +129,7 @@ $font_path: "assets/font/openwebicons";
 			 url("#{$font_path}/openwebicons.svg#openweb_iconsregular") format("svg");
 		font-weight: normal;
 		font-style: normal;
-		font-display: fallback;
+		font-display: swap;
 	}
 }
 
@@ -138,6 +138,7 @@ $font_path: "assets/font/openwebicons";
 		font-family: "OpenWeb Icons";
 		font-weight: normal;
 		font-style: normal;
+		font-display: swap;
 		display: inline-block;
 		text-decoration: inherit;
 		vertical-align: center;
@@ -185,7 +186,7 @@ $font_path: "assets/font/openwebicons";
 	font-family: "OpenWeb Icons";
 	font-weight: normal;
 	font-style: normal;
-	font-display: fallback;
+	font-display: swap;
 	display: inline-block;
 	text-decoration: none;
 	vertical-align: center;
