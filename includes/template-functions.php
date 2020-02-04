@@ -213,18 +213,3 @@ function autonomie_get_the_archive_description() {
 		return wpautop( $stats_text );
 	}
 }
-
-if ( ! function_exists( 'get_self_link' ) ) {
-	/**
-	 * Returns the link for the currently displayed feed.
-	 *
-	 * @since 5.3.0
-	 *
-	 * @return string Correct link for the atom:self element.
-	 */
-	function get_self_link() {
-		$host = @parse_url( home_url() );
-		return set_url_scheme( 'http://' . $host['host'] . wp_unslash( $_SERVER['REQUEST_URI'] ) );
-	}
-}
-
