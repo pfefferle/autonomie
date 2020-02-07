@@ -118,9 +118,10 @@ function autonomie_save_post( $post_id ) {
 	}
 
 	// sanitize user input.
-	$mydata = sanitize_text_field( $_POST['full_width_featured_image'] );
+	$full_width_featured_image = sanitize_text_field( $_POST['full_width_featured_image'] );
+
 	// update the meta field in the database.
-	update_post_meta( $post_id, 'full_width_featured_image', $mydata );
+	update_post_meta( $post_id, 'full_width_featured_image', $full_width_featured_image );
 }
 add_action( 'save_post', 'autonomie_save_post', 5, 1 );
 
