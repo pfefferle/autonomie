@@ -68,10 +68,6 @@ add_filter( 'the_content', 'autonomie_content_post_thumbnail' );
  * Add a checkbox for Post Covers to the featured image metabox
  */
 function autonomie_featured_image_meta( $content ) {
-	// If we don't have a featured image, nothing to do.
-	if ( ! has_post_thumbnail() ) {
-		return $content;
-	}
 	global $post;
 
 	// Text for checkbox
