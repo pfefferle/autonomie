@@ -181,6 +181,11 @@ function autonomie_full_width_featured_image_post_class( $classes ) {
 }
 add_filter( 'post_class', 'autonomie_full_width_featured_image_post_class' );
 
+/**
+ * Register the `full_width_featured_image` meta
+ *
+ * @return void
+ */
 function autonomie_register_meta() {
 	register_meta(
 		'post',
@@ -194,6 +199,11 @@ function autonomie_register_meta() {
 }
 add_action( 'init', 'autonomie_register_meta' );
 
+/**
+ * Enqueue the required block editor assets/JS files
+ *
+ * @return void
+ */
 function autonomie_enqueue_block_editor_assets() {
 	wp_enqueue_script(
 		'autonomie-block-editor',
