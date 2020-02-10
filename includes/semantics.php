@@ -194,6 +194,7 @@ function autonomie_get_semantics( $id = null ) {
 			} elseif ( is_single() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
+				$classes['itemref'] = array( 'site-publisher' );
 			} elseif ( is_page() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/WebPage' );
