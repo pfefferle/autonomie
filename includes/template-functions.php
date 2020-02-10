@@ -111,6 +111,11 @@ function autonomie_get_the_archive_title() {
 	}
 }
 
+/**
+ * Check if page banner is enabled
+ *
+ * @return void
+ */
 function autonomie_show_page_banner() {
 	if ( is_home() && ! display_header_text() ) {
 		return false;
@@ -123,10 +128,20 @@ function autonomie_show_page_banner() {
 	return false;
 }
 
+/**
+ * Adds support for standard post-format
+ *
+ * @return void
+ */
 function autonomie_get_post_format() {
 	return get_post_format() ? : 'standard';
 }
 
+/**
+ * Add support for Attachment and Article
+ *
+ * @return void
+ */
 function autonomie_get_post_format_string() {
 	if ( get_post_format() ) {
 		return get_post_format();
@@ -137,6 +152,12 @@ function autonomie_get_post_format_string() {
 	}
 }
 
+/**
+ * Adds support for "standard" post-format archive links
+ *
+ * @param [type] $post_format
+ * @return void
+ */
 function autonomie_get_post_format_link( $post_format ) {
 	if ( 'standard' !== $post_format ) {
 		return get_post_format_link( $post_format );
@@ -158,7 +179,7 @@ function autonomie_get_post_format_link( $post_format ) {
 }
 
 /**
- *
+ * Check archive type
  *
  * @return string
  */
