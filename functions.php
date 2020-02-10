@@ -443,6 +443,11 @@ require( get_template_directory() . '/includes/semantics.php' );
 require( get_template_directory() . '/includes/compat.php' );
 
 /**
+ * Feed extensions
+ */
+require( get_template_directory() . '/includes/feed.php' );
+
+/**
  * Compatibility with other plugins, mostly IndieWeb related
  */
 
