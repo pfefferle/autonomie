@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2019 Matthias Pfefferle
+# <!=Copyright (C) 2020 Matthias Pfefferle
 # This file is distributed under the MIT.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2019-12-17 11:02:56+00:00\n"
+"POT-Creation-Date: 2020-02-10 20:34:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -157,8 +157,44 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: includes/featured-image.php:78
+#: includes/featured-image.php:74
 msgid "Use as post cover (full-width)"
+msgstr ""
+
+#: includes/feed.php:61
+#. translators: 1: blog name, 2: separator(raquo), 3: post title
+msgid "%1$s %2$s %3$s Comments Feed"
+msgstr ""
+
+#: includes/feed.php:63
+#. translators: 1: blog name, 2: separator(raquo), 3: category name
+msgid "%1$s %2$s %3$s Category Feed"
+msgstr ""
+
+#: includes/feed.php:65
+#. translators: 1: blog name, 2: separator(raquo), 3: tag name
+msgid "%1$s %2$s %3$s Tag Feed"
+msgstr ""
+
+#: includes/feed.php:67
+#. translators: 1: blog name, 2: separator(raquo), 3: term name, 4: taxonomy
+#. singular name
+msgid "%1$s %2$s %3$s %4$s Feed"
+msgstr ""
+
+#: includes/feed.php:69
+#. translators: 1: blog name, 2: separator(raquo), 3: author name
+msgid "%1$s %2$s Posts by %3$s Feed"
+msgstr ""
+
+#: includes/feed.php:71
+#. translators: 1: blog name, 2: separator(raquo), 3: search phrase
+msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
+msgstr ""
+
+#: includes/feed.php:73
+#. translators: 1: blog name, 2: separator(raquo), 3: post type
+msgid "%1$s %2$s %3$s Post-Type Feed"
 msgstr ""
 
 #: includes/template-functions.php:13
@@ -174,9 +210,9 @@ msgid ""
 "fn p-name\" href=\"%6$s\" title=\"%7$s\" rel=\"author\" "
 "itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a></span></address> "
 "<span class=\"sep\"> | </span> <a href=\"%1$s\" title=\"%2$s\" "
-"rel=\"bookmark\" class=\"url u-url\"><time class=\"entry-date updated "
-"published dt-updated dt-published\" datetime=\"%3$s\" "
-"itemprop=\"dateModified datePublished\">%4$s</time></a>"
+"rel=\"bookmark\" class=\"url u-url\" itemprop=\"mainEntityOfPage\"><time "
+"class=\"entry-date updated published dt-updated dt-published\" "
+"datetime=\"%3$s\" itemprop=\"dateModified datePublished\">%4$s</time></a>"
 msgstr ""
 
 #: includes/template-functions.php:38
@@ -189,29 +225,29 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: includes/template-functions.php:134
+#: includes/template-functions.php:149
 msgid "Attachment"
 msgstr ""
 
-#: includes/template-functions.php:136
+#: includes/template-functions.php:151
 msgid "Article"
 msgstr ""
 
-#: includes/template-functions.php:184
+#: includes/template-functions.php:205
 #. translators: list of followers
 msgid "%s Followers"
 msgstr ""
 
-#: includes/template-functions.php:186
+#: includes/template-functions.php:207
 #. translators: a post counter
 msgid "%s Posts"
 msgstr ""
 
-#: includes/template-functions.php:187
+#: includes/template-functions.php:208
 msgid "Subscribe"
 msgstr ""
 
-#: includes/template-functions.php:211
+#: includes/template-functions.php:232
 #. translators: Description for search results
 msgid "Found %1$s search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
@@ -222,23 +258,31 @@ msgstr[1] ""
 msgid "Sidebar 1"
 msgstr ""
 
-#: includes/widgets.php:16
+#: includes/widgets.php:9
+msgid "A sidebar area"
+msgstr ""
+
+#: includes/widgets.php:17
 msgid "Sidebar 2"
 msgstr ""
 
-#: includes/widgets.php:18 includes/widgets.php:28
-msgid "An optional second sidebar area"
+#: includes/widgets.php:19
+msgid "A second sidebar area"
 msgstr ""
 
-#: includes/widgets.php:26
+#: includes/widgets.php:27
 msgid "Sidebar 3"
 msgstr ""
 
-#: includes/widgets.php:36
+#: includes/widgets.php:29
+msgid "A third sidebar area"
+msgstr ""
+
+#: includes/widgets.php:37
 msgid "Entry-Meta"
 msgstr ""
 
-#: includes/widgets.php:38
+#: includes/widgets.php:39
 msgid "Extend the Entry-Meta"
 msgstr ""
 
@@ -319,4 +363,10 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://notiz.blog/"
+msgstr ""
+
+#: includes/feed.php:59
+#. translators: Separator between blog name and feed type in feed links
+msgctxt "feed link"
+msgid "&raquo;"
 msgstr ""
