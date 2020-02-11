@@ -8,7 +8,7 @@
  */
 
 /**
- * Affs support for "standard" Post-Format
+ * Adds support for "standard" Post-Format
  *
  * @param string $post_format the post format slug
  *
