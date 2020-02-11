@@ -56,7 +56,6 @@ function autonomie_query_format_standard( $query ) {
 			unset( $query->query_vars['post_format'] );
 			unset( $query->query_vars['taxonomy'] );
 			unset( $query->query_vars['term'] );
-			unset( $query->query['post_format'] );
 
 			$query->set(
 				'tax_query',

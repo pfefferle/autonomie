@@ -123,6 +123,19 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 		}
 	}
 
+	// Add "standard" post-format feed discovery
+	global $wp_query;
+	if (
+		is_archive() &&
+		isset( $wp_query->query['post_format'] ) &&
+		'post-format-standard' === $wp_query->query['post_format']
+	) {
+		$feeds[]   = array(
+			'title' => sprintf( $args['posttypetitle'], get_bloginfo( 'name' ), $args['separator'], get_post_format_string( 'standard' ) ),
+			'href'  => autonomie_get_post_format_archive_feed_link( 'standard' ),
+		);
+	}
+
 	foreach ( $feeds as $feed ) {
 		if ( array_key_exists( 'href', $feed ) && array_key_exists( 'title', $feed ) ) {
 			printf( '<link rel="alternate" type="%s" title="%s" href="%s" />', esc_attr( feed_content_type() ), esc_attr( $feed['title'] ), esc_url( $feed['href'] ) );
