@@ -357,31 +357,6 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 	 */
 	function autonomie_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
-
-		switch ( $comment->comment_type ):
-			case 'pingback':
-			case 'trackback':
-			case 'webmention':
-		?>
-		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
-				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonomie' ), ' ' ); ?></div>
-				<div class="comment-content p-summary p-name" itemprop="text name description"><?php comment_text(); ?></div>
-				<footer class="comment-meta commentmetadata">
-					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
-					</address>
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
-						<?php
-						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'autonomie' ), get_comment_date(), get_comment_time() );
-						?>
-					</time></a>
-				</footer>
-			</article>
-		<?php
-				break;
-			default :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
@@ -412,8 +387,6 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 				</div><!-- .reply -->
 			</article><!-- #comment-## -->
 		<?php
-				break;
-		endswitch;
 	}
 endif; // ends check for autonomie_comment()
 

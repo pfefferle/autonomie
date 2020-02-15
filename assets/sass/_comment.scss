@@ -80,7 +80,7 @@ a.comment-reply-link {
 
 li.comment {
 	list-style: none outside none;
-	margin: 10px 0;
+	margin: 5px 0;
 
 	.comment-meta cite {
 		font-style: normal;
@@ -89,10 +89,6 @@ li.comment {
 
 	img.avatar {
 		float: left;
-	}
-
-	.reply {
-		margin-left: 58px;
 	}
 }
 
@@ -140,19 +136,12 @@ ol.commentlist {
 }
 
 ul.children {
-	padding-left: 58px;
-
-	.avatar {
-		margin-right: 10px;
-		width: 48px;
-		height: 48px;
-	}
+	padding-left: 25px;
 }
 
 .comment-content {
 	font-size: 1.1em;
 	line-height: 2em;
-	margin-left: 58px;
 
 	cite {
 		font-style: normal;
@@ -172,8 +161,10 @@ ul.children {
 		font-size: 0.9em;
 	}
 }
+
 .commentlist .odd article {
 }
+
 .bypostauthor {
 	color: inherit;
 }
