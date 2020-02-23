@@ -21,3 +21,11 @@
 	display: block;
 	width: auto;
 }
+
+.wp-block-cover p:not(.has-text-color) {
+	color: $white;
+}
+
+.entry-content .wp-block-cover {
+	display: flex;
+}
