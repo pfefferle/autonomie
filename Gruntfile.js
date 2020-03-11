@@ -20,25 +20,55 @@ module.exports = function(grunt) {
         }
       }
     },
-    replace: {
+    'string-replace': {
       style: {
         options: {
-          variables: {
-            'author': '<%= pkg.author.name %>',
-            'author_url': '<%= pkg.author.url %>',
-            'version': '<%= pkg.version %>',
-            'license': '<%= pkg.license.name %>',
-            'license_version': '<%= pkg.license.version %>',
-            'license_url': '<%= pkg.license.url %>',
-            'name': '<%= pkg.name %>',
-            'description': '<%= pkg.description %>',
-            'homepage': '<%= pkg.homepage %>',
-            'tags': '<%= pkg.keywords.join(", ") %>'
-          },
-          prefix: '@@'
+          replacements: [
+            {
+              pattern: '@@author',
+              replacement: '<%= pkg.author.name %>'
+            },
+            {
+              pattern: '@@author_url',
+              replacement: '<%= pkg.author.url %>'
+            },
+            {
+              pattern: '@@version',
+              replacement: '<%= pkg.version %>'
+            },
+            {
+              pattern: '@@license',
+              replacement: '<%= pkg.license.name %>'
+            },
+            {
+              pattern: '@@license_url',
+              replacement: 'https://opensource.org/licenses/<%= pkg.license %>'
+            },
+            {
+              pattern: '@@name',
+              replacement: '<%= pkg.name %>'
+            },
+            {
+              pattern: '@@description',
+              replacement: '<%= pkg.description %>'
+            },
+            {
+              pattern: '@@homepage',
+              replacement: '<%= pkg.homepage %>'
+            },
+            {
+              pattern: '@@tags',
+              replacement: '<%= pkg.keywords.join(", ") %>'
+            }
+          ]
         },
         files: [
-          {expand: true, flatten: true, src: ['style.css'], dest: ''}
+          {
+            expand: true,
+            flatten: true,
+            src: 'style.css',
+            dest: ''
+          }
         ]
       }
     },
@@ -49,7 +79,7 @@ module.exports = function(grunt) {
         },
       },
     },
-	makepot: {
+   makepot: {
       target: {
         options: {
           domainPath: 'languages',
@@ -71,10 +101,10 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-replace');
+  grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-wp-i18n');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'replace', 'wp_readme_to_markdown', 'makepot']);
+  grunt.registerTask('default', ['sass', 'string-replace', 'wp_readme_to_markdown', 'makepot']);
 };
