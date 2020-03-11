@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  const sass = require('node-sass');
 
   // Project configuration.
   grunt.initConfig({
@@ -6,9 +7,10 @@ module.exports = function(grunt) {
     sass: {
       main: {
         options: {
-          style: 'compressed',
-          line_comments: false,
-          line_numbers: false
+          implementation: sass,
+          outputStyle: 'compressed',
+          sourceComments: false,
+          sourceMap: true
         },
         files: {
           'assets/css/editor-style.css': 'assets/sass/editor-style.scss',
@@ -100,7 +102,7 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-wp-i18n');
