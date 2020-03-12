@@ -74,21 +74,23 @@ function autonomie_query_format_standard( $query ) {
 }
 add_action( 'pre_get_posts', 'autonomie_query_format_standard' );
 
-/**
- * Add lazy loading attribute
- *
- * @see https://www.webrocker.de/2019/08/20/wordpress-filter-for-lazy-loading-src/
- *
- * @param string $content
- *
- * @return string the filtered content
- */
-function autonomie_add_lazy_loading( $content ) {
-	$content = preg_replace( '/(<[^>]*?)(\ssrc=)(.*?\/?>)/', '\1 loading="lazy" src=\3', $content );
+if ( version_compare( get_bloginfo( 'version' ), '5.5', '>=' ) ) {
+	/**
+	 * Add lazy loading attribute
+	 *
+	 * @see https://www.webrocker.de/2019/08/20/wordpress-filter-for-lazy-loading-src/
+	 *
+	 * @param string $content
+	 *
+	 * @return string the filtered content
+	 */
+	function autonomie_add_lazy_loading( $content ) {
+		$content = preg_replace( '/(<[^>]*?)(\ssrc=)(.*?\/?>)/', '\1 loading="lazy" src=\3', $content );
 
-	return $content;
+		return $content;
+	}
+	add_filter( 'the_content', 'autonomie_add_lazy_loading', 99 );
 }
-add_filter( 'the_content', 'autonomie_add_lazy_loading', 99 );
 
 if ( ! function_exists( 'get_self_link' ) ) {
 	/**
