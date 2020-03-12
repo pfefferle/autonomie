@@ -74,7 +74,7 @@ function autonomie_query_format_standard( $query ) {
 }
 add_action( 'pre_get_posts', 'autonomie_query_format_standard' );
 
-if ( version_compare( get_bloginfo( 'version' ), '5.5', '>=' ) ) {
+if ( version_compare( get_bloginfo( 'version' ), '5.5', '<' ) ) {
 	/**
 	 * Add lazy loading attribute
 	 *
