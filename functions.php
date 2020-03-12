@@ -72,68 +72,73 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 
 		add_theme_support( 'align-wide' );
 
-		add_theme_support( 'editor-color-palette', array(
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => __( 'Blue', 'autonomie' ),
-				'slug'  => 'blue',
-				'color' => '#0073aa',
-			),
-			array(
-				'name'  => __( 'Lighter blue', 'autonomie' ),
-				'slug'  => 'lighter-blue',
-				'color' => '#229fd8',
-			),
-			array(
-				'name'  => __( 'Blue jeans', 'autonomie' ),
-				'slug'  => 'blue-jeans',
-				'color' => '#5bc0eb',
-			),
-			array(
-				'name'  => __( 'Orioles orange', 'autonomie' ),
-				'slug'  => 'orioles-orange',
-				'color' => '#fa5b0f',
-			),
-			array(
-				'name'  => __( 'USC gold', 'autonomie' ),
-				'slug'  => 'usc-gold',
-				'color' => '#ffcc00',
-			),
-			array(
-				'name'  => __( 'Gargoyle gas', 'autonomie' ),
-				'slug'  => 'gargoyle-gas',
-				'color' => '#fde74c',
-			),
-			array(
-				'name'  => __( 'Yellow', 'autonomie' ),
-				'slug'  => 'yellow',
-				'color' => '#fff9c0',
-			),
-			array(
-				'name'  => __( 'Android green', 'autonomie' ),
-				'slug'  => 'android-green',
-				'color' => '#9bc53d',
-			),
-			array(
-				'name'  => __( 'White', 'autonomie' ),
-				'slug'  => 'white',
-				'color' => '#fff',
-			),
-			array(
-				'name'  => __( 'Very light gray', 'autonomie' ),
-				'slug'  => 'very-light-gray',
-				'color' => '#eee',
-			),
-			array(
-				'name'  => __( 'Very dark gray', 'autonomie' ),
-				'slug'  => 'very-dark-gray',
-				'color' => '#444',
+				array(
+					'name'  => __( 'Blue', 'autonomie' ),
+					'slug'  => 'blue',
+					'color' => '#0073aa',
+				),
+				array(
+					'name'  => __( 'Lighter blue', 'autonomie' ),
+					'slug'  => 'lighter-blue',
+					'color' => '#229fd8',
+				),
+				array(
+					'name'  => __( 'Blue jeans', 'autonomie' ),
+					'slug'  => 'blue-jeans',
+					'color' => '#5bc0eb',
+				),
+				array(
+					'name'  => __( 'Orioles orange', 'autonomie' ),
+					'slug'  => 'orioles-orange',
+					'color' => '#fa5b0f',
+				),
+				array(
+					'name'  => __( 'USC gold', 'autonomie' ),
+					'slug'  => 'usc-gold',
+					'color' => '#ffcc00',
+				),
+				array(
+					'name'  => __( 'Gargoyle gas', 'autonomie' ),
+					'slug'  => 'gargoyle-gas',
+					'color' => '#fde74c',
+				),
+				array(
+					'name'  => __( 'Yellow', 'autonomie' ),
+					'slug'  => 'yellow',
+					'color' => '#fff9c0',
+				),
+				array(
+					'name'  => __( 'Android green', 'autonomie' ),
+					'slug'  => 'android-green',
+					'color' => '#9bc53d',
+				),
+				array(
+					'name'  => __( 'White', 'autonomie' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				),
+				array(
+					'name'  => __( 'Very light gray', 'autonomie' ),
+					'slug'  => 'very-light-gray',
+					'color' => '#eee',
+				),
+				array(
+					'name'  => __( 'Very dark gray', 'autonomie' ),
+					'slug'  => 'very-dark-gray',
+					'color' => '#444',
+				),
 			)
-		) );
+		);
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'autonomie' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'autonomie' ),
+			)
+		);
 
 		// Add support for the Aside, Gallery Post Formats...
 		add_theme_support(
@@ -366,7 +371,7 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 						<?php echo get_avatar( $comment, 40 ); ?>
 						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
 					</address><!-- .comment-author .vcard -->
-					<?php if ( '0' == $comment->comment_approved ) : ?>
+					<?php if ( '0' === $comment->comment_approved ) : ?>
 						<em><?php _e( 'Your comment is awaiting moderation.', 'autonomie' ); ?></em>
 					<?php endif; ?>
 
@@ -382,7 +387,15 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 
 				<div class="reply">
 					<?php
-					comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+					comment_reply_link(
+						array_merge(
+							$args,
+							array(
+								'depth' => $depth,
+								'max_depth' => $args['max_depth'],
+							)
+						)
+					);
 					?>
 				</div><!-- .reply -->
 			</article><!-- #comment-## -->
