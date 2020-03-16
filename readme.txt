@@ -92,12 +92,11 @@ Autonomie is fully HTML5 compatible and uses a lot of the new tags, semantics an
 
 == Resources ==
 
+* Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
+* Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>
+
 Unless otherwise specified, all the theme files, scripts and images are licensed under MIT License.
 
 The exceptions to this license are as follows:
 
 * The Bootstrap CSS by Twitter is licensed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
-* shiv is licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-* Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
-* Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>

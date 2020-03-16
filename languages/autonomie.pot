@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2020-03-11 17:53:15+00:00\n"
+"POT-Creation-Date: 2020-03-16 15:34:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,67 +80,67 @@ msgstr ""
 msgid "This site is powered by %1$s and styled with the %2$s theme"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:79
 msgid "Blue"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:84
 msgid "Lighter blue"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:89
 msgid "Blue jeans"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:94
 msgid "Orioles orange"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:99
 msgid "USC gold"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:104
 msgid "Gargoyle gas"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:109
 msgid "Yellow"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:114
 msgid "Android green"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:119
 msgid "White"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:124
 msgid "Very light gray"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:129
 msgid "Very dark gray"
 msgstr ""
 
-#: functions.php:135 header.php:58
+#: functions.php:139 header.php:58
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:222
 msgid "POSH Feed"
 msgstr ""
 
-#: functions.php:363
+#: functions.php:368
 msgid "Edit"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:375
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:376
+#: functions.php:381
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
 msgstr ""
