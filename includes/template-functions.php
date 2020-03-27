@@ -148,7 +148,7 @@ function autonomie_get_post_format_string() {
 	} elseif ( 'attachment' === get_post_type() ) {
 		return __( 'Attachment', 'autonomie' );
 	} else {
-		return __( 'Article', 'autonomie' );
+		return __( 'Text', 'autonomie' );
 	}
 }
 
