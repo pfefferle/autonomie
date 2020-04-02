@@ -235,7 +235,7 @@ function autonomie_get_semantics( $id = null ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'http://schema.org/BlogPosting' );
 				$classes['itemref'] = array( 'site-publisher' );
-				$classes['itmeid'] = array( get_permalink() );
+				$classes['itemid'] = array( get_permalink() );
 			}
 			break;
 	}
