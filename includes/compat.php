@@ -17,20 +17,30 @@
  */
 
 /**
- * adds the new  input types to the comment-form
+ * Adds the new  input types to the comment-form
  *
  * @param string $form
  * @return string
  */
 function autonomie_comment_autocomplete( $fields ) {
 	$fields['author'] = preg_replace( '/<input/', '<input autocomplete="nickname name" enterkeyhint="next" ', $fields['author'] );
-	$fields['email'] = preg_replace( '/<input/', '<input autocomplete="email" enterkeyhint="next" ', $fields['email'] );
-	$fields['url'] = preg_replace( '/<input/', '<input autocomplete="url" enterkeyhint="next" ', $fields['url'] );
-	$fields['cookies'] = preg_replace( '/<input/', '<input enterkeyhint="send" ', $fields['cookies'] );
+	$fields['email'] = preg_replace( '/<input/', '<input autocomplete="email" inputmode="email" enterkeyhint="next" ', $fields['email'] );
+	$fields['url'] = preg_replace( '/<input/', '<input autocomplete="url" inputmode="url" enterkeyhint="send" ', $fields['url'] );
 
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'autonomie_comment_autocomplete' );
+
+/**
+ * Adds the new HTML5 input types to the comment-text-area
+ *
+ * @param string $field
+ * @return string
+ */
+function autonomie_comment_field_input_type( $field ) {
+	return preg_replace( '/<textarea/', '<textarea enterkeyhint="next"', $field );
+}
+add_filter( 'comment_form_field_comment', 'autonomie_comment_field_input_type' );
 
 /**
  * Fix archive for "standard" post type
