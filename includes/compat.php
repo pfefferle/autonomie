@@ -26,6 +26,7 @@ function autonomie_comment_autocomplete( $fields ) {
 	$fields['author'] = preg_replace( '/<input/', '<input autocomplete="nickname name" enterkeyhint="next" ', $fields['author'] );
 	$fields['email'] = preg_replace( '/<input/', '<input autocomplete="email" enterkeyhint="next" ', $fields['email'] );
 	$fields['url'] = preg_replace( '/<input/', '<input autocomplete="url" enterkeyhint="next" ', $fields['url'] );
+	$fields['cookies'] = preg_replace( '/<input/', '<input enterkeyhint="send" ', $fields['cookies'] );
 
 	return $fields;
 }
