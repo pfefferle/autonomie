@@ -72,6 +72,6 @@
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'autonomie' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 'format' => '' ) ); ?>
+	<?php comment_form( array( 'format' => 'html5' ) ); ?>
 
 </div><!-- #comments -->
