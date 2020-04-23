@@ -338,7 +338,7 @@ if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 				}' . PHP_EOL;
 			} else {
 				$css = '.page-banner {
-					background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url(' . get_header_image() . ') no-repeat center center scroll;
+					background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url(' . get_header_image() . ') no-repeat center center scroll;
 				}' . PHP_EOL;
 			}
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2020-03-16 15:34:59+00:00\n"
+"POT-Creation-Date: 2020-04-23 10:16:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -230,7 +230,7 @@ msgid "Attachment"
 msgstr ""
 
 #: includes/template-functions.php:151
-msgid "Article"
+msgid "Text"
 msgstr ""
 
 #: includes/template-functions.php:205

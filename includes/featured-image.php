@@ -157,18 +157,18 @@ function autonomie_has_full_width_featured_image() {
  *
  * @since Autonomie 1.0.0
  */
-function autonomie_enqueue_features_image_scripts() {
+function autonomie_enqueue_featured_image_scripts() {
 	if ( is_singular() && autonomie_has_full_width_featured_image() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 		$css = '.entry-header {
-			background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(' . $image[0] . ') no-repeat center center scroll;
+			background: linear-gradient(190deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(' . $image[0] . ') no-repeat center center scroll;
 		}' . PHP_EOL;
 
 		wp_add_inline_style( 'autonomie-style', $css );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_features_image_scripts' );
+add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_featured_image_scripts' );
 
 /**
  * Add full-width-featured-image to body class when displaying a post with Full Width Featured Image enabled
