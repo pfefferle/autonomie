@@ -12,7 +12,7 @@ function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
 	if ( '' != get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
 
-		if ( $image['1'] < '350' ) {
+		if ( $image['1'] <= '400' ) {
 			return;
 		}
 
@@ -42,7 +42,7 @@ function autonomie_content_post_thumbnail( $content ) {
 	if ( '' != get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
 
-		if ( $image['1'] >= '350' ) {
+		if ( $image['1'] > '400' ) {
 			return $content;
 		}
 
