@@ -15,7 +15,7 @@
 
 get_header(); ?>
 
-		<main id="primary" <?php autonomie_main_class( 'h-news' ); ?><?php autonomie_semantics( 'main' ); ?>>
+		<main id="primary" <?php autonomie_main_class( 'h-now' ); ?><?php autonomie_semantics( 'main' ); ?>>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
