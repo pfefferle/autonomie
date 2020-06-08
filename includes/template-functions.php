@@ -27,11 +27,38 @@ if ( ! function_exists( 'autonomie_posted_on' ) ) :
 	 */
 	function autonomie_posted_on() {
 		// translators: the author byline
-		printf( __( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
+		printf(
+			// translators:
+			__( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
+			get_avatar( get_the_author_meta( 'ID' ), 40 ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			// translators:
+			esc_attr( sprintf( __( 'View all posts by %s', 'autonomie' ), get_the_author() ) ),
+			esc_html( get_the_author() )
+		);
+	}
+endif;
+
+if ( ! function_exists( 'autonomie_updated_on' ) ) :
+	/**
+	 * Prints HTML with meta information for the current update-date/time and author.
+	 * Create your own autonomie_updated_on to override in a child theme
+	 *
+	 * @since Autonomie 1.0.0
+	 */
+	function autonomie_updated_on() {
+		// translators: the author byline
+		printf(
+			// translators:
+			__( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
+			esc_url( get_permalink() ),
+			esc_attr( get_the_modified_time() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() ),
 			get_avatar( get_the_author_meta( 'ID' ), 40 ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			// translators:
