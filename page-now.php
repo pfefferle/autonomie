@@ -13,6 +13,8 @@
  * @since Autonomie 1.0.0
  */
 
+set_query_var( 'is_now', true );
+
 get_header(); ?>
 
 		<main id="primary" <?php autonomie_main_class( 'h-now' ); ?><?php autonomie_semantics( 'main' ); ?>>

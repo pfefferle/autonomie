@@ -21,7 +21,11 @@
 
 			<?php // if ( ! is_singular() ) : ?>
 			<div class="entry-meta">
+			<?php if ( get_query_var( 'is_now', false ) ) { ?>
+				<?php autonomie_updated_on(); ?>
+			<?php } else { ?>
 				<?php autonomie_posted_on(); ?>
+			<?php } ?>
 			</div>
 			<?php // endif; ?>
 		</div>
