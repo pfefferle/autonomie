@@ -232,7 +232,7 @@ function autonomie_get_archive_author_meta() {
 	$meta[] = sprintf( __( '%s Followers', 'autonomie' ), apply_filters( 'autonomie_archive_author_followers', 0, get_the_author_meta( 'ID' ) ) );
 	// translators: a post counter
 	$meta[] = sprintf( __( '%s Posts', 'autonomie' ), count_user_posts( get_the_author_meta( 'ID' ) ) );
-	$meta[] = sprintf( '<a rel="alternate" class="feed u-feed openwebicons-feed" href="%s">%s</a>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'autonomie' ) );
+	$meta[] = sprintf( '<indie-action do="follow" with="%1$s"><a rel="alternate" class="feed u-feed openwebicons-feed" href="%1$s">%2$s</a></indie-action>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'autonomie' ) );
 
 	$meta = apply_filters( 'autonomie_archive_author_meta', $meta, get_the_author_meta( 'ID' ) );
 
