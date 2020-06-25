@@ -57,6 +57,10 @@ Planned formats:
 * micormats (v2): hAudio and hMedia
 * microdata: http://schema.org/MediaObject
 
+= IndieWeb Specs =
+
+* [Webactions](https://indieweb.org/webactions) - A web action is the interface and user experience of taking a specific discrete action, across the web, from one site to another site or application.
+
 = What are the WordPress features supported by Autonomie? =
 
 Autonomie supports:
