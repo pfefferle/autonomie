@@ -28,7 +28,7 @@ function autonomie_get_post_format_archive_feed_link( $post_format, $feed = '' )
 	if ( get_option( 'permalink_structure' ) ) {
 		$link  = trailingslashit( $link );
 		$link .= 'feed/';
-		if ( $feed != $default_feed ) {
+		if ( $feed !== $default_feed ) {
 			$link .= "$feed/";
 		}
 	} else {
@@ -80,7 +80,7 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 	if ( is_singular() ) {
 		// add tag feeds
 		foreach ( wp_get_post_terms( get_the_ID(), array( 'post_tag', 'category' ) ) as $term ) {
-			$tax   = get_taxonomy( $term->taxonomy );
+			$tax = get_taxonomy( $term->taxonomy );
 
 			$feeds[] = array(
 				'title' => sprintf( $args['taxtitle'], get_bloginfo( 'name' ), $args['separator'], $term->name, $tax->labels->singular_name ),
@@ -96,7 +96,7 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 			'href'  => get_author_feed_link( $author_id ),
 		);
 
-		$feeds[]   = array(
+		$feeds[] = array(
 			'title' => sprintf( $args['posttypetitle'], get_bloginfo( 'name' ), $args['separator'], get_post_format_string( autonomie_get_post_format() ) ),
 			'href'  => autonomie_get_post_format_archive_feed_link( autonomie_get_post_format() ),
 		);
@@ -116,7 +116,7 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 		$post_formats[] = 'standard';
 
 		foreach ( $post_formats as $post_format ) {
-			$feeds[]   = array(
+			$feeds[] = array(
 				'title' => sprintf( $args['posttypetitle'], get_bloginfo( 'name' ), $args['separator'], get_post_format_string( $post_format ) ),
 				'href'  => autonomie_get_post_format_archive_feed_link( $post_format ),
 			);
@@ -130,7 +130,7 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 		isset( $wp_query->query['post_format'] ) &&
 		'post-format-standard' === $wp_query->query['post_format']
 	) {
-		$feeds[]   = array(
+		$feeds[] = array(
 			'title' => sprintf( $args['posttypetitle'], get_bloginfo( 'name' ), $args['separator'], get_post_format_string( 'standard' ) ),
 			'href'  => autonomie_get_post_format_archive_feed_link( 'standard' ),
 		);
