@@ -447,6 +447,11 @@ require( get_template_directory() . '/includes/featured-image.php' );
 require( get_template_directory() . '/includes/semantics.php' );
 
 /**
+ * Add Webactions support
+ */
+require( get_template_directory() . '/includes/webactions.php' );
+
+/**
  * Adds back compat handling for older WP versions
  */
 require( get_template_directory() . '/includes/compat.php' );
