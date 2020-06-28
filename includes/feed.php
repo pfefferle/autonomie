@@ -144,3 +144,36 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 	}
 }
 add_action( 'wp_head', 'autonomie_extend_singular_feed_discovery' );
+
+/**
+ * Undocumented function
+ *
+ * @return void
+ */
+function autonomie_feed_stylesheet( $feed ) {
+	if ( 'rss2' === $feed ) {
+		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", site_url( '/?feed-stylesheet=rss2' ) );
+	}
+
+	/* @todo build atom stylesheet
+	if ( 'atom' === $feed ) {
+		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl"?>' . "\n", site_url( '/?feed-stylesheet=atom' ) );
+	}
+	*/
+}
+add_action( 'rss_tag_pre', 'autonomie_feed_stylesheet' );
+
+function autonomie_load_feed_stylesheet() {
+	global $wp_query;
+
+	if ( ! isset( $wp_query->query['feed-stylesheet'] ) ) {
+		return;
+	}
+
+	if ( 'rss2' === $wp_query->query['feed-stylesheet'] ) {
+		header( 'Content-type: application/xml; charset=UTF-8' );
+		echo get_template_part( 'templates/rss2-stylesheet' );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'autonomie_load_feed_stylesheet' );
