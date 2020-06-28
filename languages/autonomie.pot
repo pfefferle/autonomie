@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0-beta-2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2020-04-23 10:16:09+00:00\n"
+"POT-Creation-Date: 2020-06-28 19:43:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,25 +54,25 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:33
+#: comments.php:34
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:40 comments.php:60
+#: comments.php:43 comments.php:63
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:41 comments.php:61
+#: comments.php:44 comments.php:64
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:42 comments.php:62
+#: comments.php:45 comments.php:65
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:72
+#: comments.php:75
 msgid "Comments are closed."
 msgstr ""
 
@@ -128,19 +128,19 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:224
 msgid "POSH Feed"
 msgstr ""
 
-#: functions.php:368
+#: functions.php:391
 msgid "Edit"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:398
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:381
+#: functions.php:404
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
 msgstr ""
@@ -201,8 +201,8 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: includes/template-functions.php:30
-#. translators: the author byline
+#: includes/template-functions.php:32 includes/template-functions.php:57
+#. translators:
 msgid ""
 "<address class=\"byline\"><span class=\"author p-author vcard hcard "
 "h-card\" itemprop=\"author\" itemscope "
@@ -215,39 +215,39 @@ msgid ""
 "datetime=\"%3$s\" itemprop=\"dateModified datePublished\">%4$s</time></a>"
 msgstr ""
 
-#: includes/template-functions.php:38
+#: includes/template-functions.php:40 includes/template-functions.php:65
 #. translators:
 msgid "View all posts by %s"
 msgstr ""
 
-#: includes/template-functions.php:110
+#: includes/template-functions.php:137
 #. translators: The title of the search results page
 msgid "Search Results for: %s"
 msgstr ""
 
-#: includes/template-functions.php:149
+#: includes/template-functions.php:176
 msgid "Attachment"
 msgstr ""
 
-#: includes/template-functions.php:151
+#: includes/template-functions.php:178
 msgid "Text"
 msgstr ""
 
-#: includes/template-functions.php:205
+#: includes/template-functions.php:232
 #. translators: list of followers
 msgid "%s Followers"
 msgstr ""
 
-#: includes/template-functions.php:207
+#: includes/template-functions.php:234
 #. translators: a post counter
 msgid "%s Posts"
 msgstr ""
 
-#: includes/template-functions.php:208
+#: includes/template-functions.php:235
 msgid "Subscribe"
 msgstr ""
 
-#: includes/template-functions.php:232
+#: includes/template-functions.php:259
 #. translators: Description for search results
 msgid "Found %1$s search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
@@ -288,7 +288,9 @@ msgstr ""
 
 #: integrations/activitypub.php:23
 #. translators: how to follow
-msgid "Follow <code>%s</code> (fediverse)"
+msgid ""
+"<indie-action do=\"follow\" width=\"%1$s\">Follow <code>%2$s</code> "
+"(fediverse)</indie-action>"
 msgstr ""
 
 #: integrations/syndication-links.php:34
@@ -341,6 +343,10 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#: templates/rss2-stylesheet.php:86
+msgid "This feed is powered by %1$s and styled with the %2$s theme"
+msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Autonomie"
 msgstr ""
@@ -363,6 +369,10 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://notiz.blog/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "\"/now\" Template"
 msgstr ""
 
 #: includes/feed.php:59
