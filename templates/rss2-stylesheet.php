@@ -28,14 +28,6 @@
 										<abbr title="Universal Subscription Mechanism">USM</abbr>
 									</a>
 								</li>
-								<li>
-									<a>
-										<xsl:attribute name="href">
-											<xsl:value-of select="concat('https://www.addtoany.com/?linkname=', /rss/channel/title, '&amp;type=feed&amp;linkurl=', /rss/channel/atom:link/@href)"/>
-										</xsl:attribute>
-										AddToAny
-									</a>
-								</li>
 							</ul>
 						</div>
 
