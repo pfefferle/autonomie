@@ -15,7 +15,7 @@
 			<body>
 				<div id="page">
 					<header id="site-header" class="site-header">
-						<div class="site-meta">RSS2 Feed of <xsl:value-of select="/rss/channel/title"/>. RSS readers can use the URL in the address bar.</div>
+						<div class="site-meta">RSS2 Feed of <xsl:value-of select="/rss/channel/title"/>. Feed readers can use the URL in the address bar.</div>
 						<div class="site-subscribe">
 							Subscribe:
 							<ul class="info">
@@ -58,7 +58,7 @@
 						</div>
 					</header>
 					<xsl:for-each select="/rss/channel/item">
-						<article classs="entry">
+						<article class="entry">
 							<h2 class="entry-title">
 								<a target="_blank">
 									<xsl:attribute name="href">

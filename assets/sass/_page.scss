@@ -58,7 +58,7 @@
 				border: 5px solid $white;
 			}
 
-			#page-title, #page-description, #page-meta {
+			#page-title, #page-description, #page-meta, #page-feed {
 				text-align: center;
 			}
 
@@ -71,13 +71,13 @@
 				padding: 12.5px 0;
 			}
 
-			#page-meta {
+			#page-meta, #page-feed {
 				font-size: 1em;
 				margin: 0 auto;
 			}
 		}
 
-		#page-title, #page-description, #page-meta {
+		#page-title, #page-description, #page-meta, #page-feed {
 			display: block;
 			margin: 0 auto;
 			text-align: left;
@@ -85,6 +85,10 @@
 			color: var(--color-dark-gray);
 			font-size: 1.5em;
 			width: $wide-width;
+		}
+
+		#page-feed {
+			font-size: 1em;
 		}
 
 		#page-title {

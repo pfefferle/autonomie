@@ -456,6 +456,11 @@ require( get_template_directory() . '/includes/widgets.php' );
 require( get_template_directory() . '/includes/featured-image.php' );
 
 /**
+ * All customizer functions
+ */
+require( get_template_directory() . '/includes/customizer.php' );
+
+/**
  * Adds some awesome websemantics like microformats(2) and microdata
  */
 require( get_template_directory() . '/includes/semantics.php' );

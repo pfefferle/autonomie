@@ -155,13 +155,10 @@ function autonomie_feed_stylesheet( $feed ) {
 		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", site_url( '/?feed-stylesheet=rss2' ) );
 	}
 
-	/* @todo build atom stylesheet
 	if ( 'atom' === $feed ) {
-		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl"?>' . "\n", site_url( '/?feed-stylesheet=atom' ) );
+		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", site_url( '/?feed-stylesheet=atom' ) );
 	}
-	*/
 }
-add_action( 'rss_tag_pre', 'autonomie_feed_stylesheet' );
 
 function autonomie_load_feed_stylesheet() {
 	global $wp_query;
@@ -172,11 +169,16 @@ function autonomie_load_feed_stylesheet() {
 
 	if ( 'rss2' === $wp_query->query['feed-stylesheet'] ) {
 		header( 'Content-type: application/xml; charset=UTF-8' );
-		echo get_template_part( 'templates/rss2-stylesheet' );
+		echo get_template_part( 'templates/feed-template-rss2' );
+		exit;
+	}
+
+	if ( 'atom' === $wp_query->query['feed-stylesheet'] ) {
+		header( 'Content-type: application/xml; charset=UTF-8' );
+		echo get_template_part( 'templates/feed-template-atom' );
 		exit;
 	}
 }
-add_action( 'template_redirect', 'autonomie_load_feed_stylesheet' );
 
 function autonomie_change_feed_content_type( $content_type, $type ) {
 	if ( in_array( $type, array( 'rss2', 'atom' ), true ) ) {
@@ -185,4 +187,9 @@ function autonomie_change_feed_content_type( $content_type, $type ) {
 
 	return $content_type;
 }
-add_filter( 'feed_content_type', 'autonomie_change_feed_content_type', 99, 2 );
+
+if ( get_theme_mod( 'autonomie_feed_templates', '0' ) === '1' ) {
+	add_action( 'rss_tag_pre', 'autonomie_feed_stylesheet' );
+	add_action( 'template_redirect', 'autonomie_load_feed_stylesheet' );
+	add_filter( 'feed_content_type', 'autonomie_change_feed_content_type', 99, 2 );
+}
