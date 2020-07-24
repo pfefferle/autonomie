@@ -181,7 +181,7 @@ function autonomie_load_feed_stylesheet() {
 }
 
 function autonomie_change_feed_content_type( $content_type, $type ) {
-	if ( in_array( $type, array( 'rss2', 'atom' ), true ) ) {
+	if ( is_feed() && in_array( $type, array( 'rss2', 'atom' ), true ) ) {
 		return 'text/xml';
 	}
 
