@@ -2,8 +2,8 @@
 Contributors: pfefferle
 Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, flexible-width, one-column, editor-style, featured-images, theme-options
 Requires at least: 4.0
-Tested up to: 5.0
-Stable tag: 1.0.0-beta-1
+Tested up to: 5.5
+Stable tag: 1.0.0
 Requires PHP: 5.6
 Author: Matthias Pfefferle
 Author URI: https://notiz.blog/

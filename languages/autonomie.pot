@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Autonomie 1.0.0-beta-2\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
-"POT-Creation-Date: 2020-07-21 13:28:10+00:00\n"
+"Project-Id-Version: Autonomie 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Autonomie\n"
+"POT-Creation-Date: 2020-07-29 11:34:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -351,10 +351,6 @@ msgstr ""
 
 #: template-parts/entry-header.php:16
 msgid "Permalink to %s"
-msgstr ""
-
-#: template-parts/page-banner.php:11
-msgid "The ... Feed"
 msgstr ""
 
 #: templates/content-aside.php:22 templates/content-audio.php:22
