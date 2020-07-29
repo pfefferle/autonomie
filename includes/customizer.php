@@ -18,7 +18,7 @@ function autonomie_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'autonomie_feed_templates',
 		array(
-			'default' => 'multi',
+			'default' => '0',
 			'transport' => 'refresh',
 			'sanitize_callback' => 'sanitize_key',
 		)
