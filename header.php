@@ -46,7 +46,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			}
 			?>
 			<<?php echo $site_title_element; ?> id="site-title"<?php autonomie_semantics( 'site-title' ); ?>>
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php autonomie_semantics( 'site-url' ); ?>>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"<?php autonomie_semantics( 'site-url' ); ?>>
 				<?php bloginfo( 'name' ); ?>
 				</a>
 			</<?php echo $site_title_element; ?>>
