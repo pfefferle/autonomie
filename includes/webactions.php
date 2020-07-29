@@ -1,6 +1,6 @@
 <?php
 /**
- * Add Webactions to the reply links in the comment section
+ * Add Webactions to the reply links in the comment section.
  *
  * @param string $link the html representation of the comment link
  * @param array $args associative array of options
@@ -16,7 +16,7 @@ function autonomie_webaction_comment_reply_link( $link, $args, $comment, $post )
 add_filter( 'comment_reply_link', 'autonomie_webaction_comment_reply_link', null, 4 );
 
 /**
- * Surround comment form with a reply action
+ * Surround comment form with a reply action.
  */
 function autonomie_webaction_comment_form_before() {
 	$post = get_queried_object();
@@ -26,7 +26,7 @@ function autonomie_webaction_comment_form_before() {
 add_action( 'comment_form_before', 'autonomie_webaction_comment_form_before', 0 );
 
 /**
- * Surround comment form with a reply action
+ * Surround comment form with a reply action.
  */
 function autonomie_webaction_comment_form_after() {
 	echo '</indie-action>';

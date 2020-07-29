@@ -146,20 +146,25 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 add_action( 'wp_head', 'autonomie_extend_singular_feed_discovery' );
 
 /**
- * Undocumented function
+ * Include Feed-Templates
  *
  * @return void
  */
 function autonomie_feed_stylesheet( $feed ) {
 	if ( 'rss2' === $feed ) {
-		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", site_url( '/?feed-stylesheet=rss2' ) );
+		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", esc_url( home_url( '/?feed-stylesheet=rss2' ) ) );
 	}
 
 	if ( 'atom' === $feed ) {
-		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", site_url( '/?feed-stylesheet=atom' ) );
+		printf( "\n" . '<?xml-stylesheet href="%s" type="text/xsl" media="screen" ?>' . "\n", esc_url( home_url( '/?feed-stylesheet=atom' ) ) );
 	}
 }
 
+/**
+ * Load Feed-Templates.
+ *
+ * @return void
+ */
 function autonomie_load_feed_stylesheet() {
 	global $wp_query;
 
@@ -180,6 +185,14 @@ function autonomie_load_feed_stylesheet() {
 	}
 }
 
+/**
+ * Undocumented function
+ *
+ * @param string $content_type The current Conten-Type
+ * @param string $type         The Feed-Type
+ *
+ * @return string The new Content-Type
+ */
 function autonomie_change_feed_content_type( $content_type, $type ) {
 	if ( is_feed() && in_array( $type, array( 'rss2', 'atom' ), true ) ) {
 		return 'text/xml';

@@ -9,7 +9,7 @@ function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
 		return;
 	}
 
-	if ( '' != get_the_post_thumbnail() ) {
+	if ( '' !== get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
 
 		if ( $image['1'] <= '400' ) {
@@ -21,7 +21,7 @@ function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
 		$post_format = get_post_format();
 
 		// use `u-photo` on photo/gallery posts
-		if ( in_array( $post_format, array( 'image', 'gallery' ) ) ) {
+		if ( in_array( $post_format, array( 'image', 'gallery' ), true ) ) {
 			$class .= ' u-photo';
 		} else { // otherwise use `u-featured`
 			$class .= ' u-featured';
@@ -39,7 +39,7 @@ function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
  * @since Autonomie 1.0.0
  */
 function autonomie_content_post_thumbnail( $content ) {
-	if ( '' != get_the_post_thumbnail() ) {
+	if ( '' !== get_the_post_thumbnail() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
 
 		if ( $image['1'] > '400' ) {
@@ -51,7 +51,7 @@ function autonomie_content_post_thumbnail( $content ) {
 		$post_format = get_post_format();
 
 		// use `u-photo` on photo/gallery posts
-		if ( in_array( $post_format, array( 'image', 'gallery' ) ) ) {
+		if ( in_array( $post_format, array( 'image', 'gallery' ), true ) ) {
 			$class .= ' u-photo';
 		} else { // otherwise use `u-featured`
 			$class .= ' u-featured';
@@ -107,7 +107,7 @@ function autonomie_save_post( $post_id ) {
 	}
 
 	// check the user's permissions.
-	if ( 'page' == $_POST['post_type'] ) {
+	if ( 'page' === $_POST['post_type'] ) {
 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return $post_id;
 		}
@@ -143,7 +143,7 @@ function autonomie_has_full_width_featured_image() {
 	$full_width_featured_image = get_post_meta( get_the_ID(), 'full_width_featured_image', true );
 
 	// If Use featured image as Post Cover has been checked in the Featured Image meta box, return true.
-	if ( '1' == $full_width_featured_image ) {
+	if ( '1' === $full_width_featured_image ) {
 		return true;
 	}
 

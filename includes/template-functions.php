@@ -1,7 +1,7 @@
 <?php
 if ( ! function_exists( 'autonomie_content_nav' ) ) :
 	/**
-	 * Display navigation to next/previous pages when applicable
+	 * Display navigation to next/previous pages when applicable.
 	 *
 	 * @since Autonomie 1.0.0
 	 */
@@ -21,7 +21,7 @@ endif; // autonomie_content_nav
 if ( ! function_exists( 'autonomie_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
-	 * Create your own autonomie_posted_on to override in a child theme
+	 * Create your own autonomie_posted_on to override in a child theme.
 	 *
 	 * @since Autonomie 1.0.0
 	 */
@@ -46,7 +46,7 @@ endif;
 if ( ! function_exists( 'autonomie_updated_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current update-date/time and author.
-	 * Create your own autonomie_updated_on to override in a child theme
+	 * Create your own autonomie_updated_on to override in a child theme.
 	 *
 	 * @since Autonomie 1.0.0
 	 */
@@ -71,7 +71,7 @@ endif;
 /**
  * Display the id for the post div.
  *
- * @param string $id.
+ * @param string $id
  */
 function autonomie_post_id( $post_id = null ) {
 	if ( $post_id ) {
@@ -139,9 +139,9 @@ function autonomie_get_the_archive_title() {
 }
 
 /**
- * Check if page banner is enabled
+ * Check if page banner is enabled.
  *
- * @return void
+ * @return boolean
  */
 function autonomie_show_page_banner() {
 	if ( is_home() && ! display_header_text() ) {
@@ -165,7 +165,7 @@ function autonomie_get_post_format() {
 }
 
 /**
- * Add support for Attachment and Article
+ * Add support for Attachment and Article.
  *
  * @return void
  */
@@ -180,9 +180,10 @@ function autonomie_get_post_format_string() {
 }
 
 /**
- * Adds support for "standard" post-format archive links
+ * Adds support for "standard" post-format archive links.
  *
- * @param [type] $post_format
+ * @param string $post_format
+ *
  * @return void
  */
 function autonomie_get_post_format_link( $post_format ) {
@@ -206,7 +207,7 @@ function autonomie_get_post_format_link( $post_format ) {
 }
 
 /**
- * Check archive type
+ * Check archive type.
  *
  * @return string
  */

@@ -74,7 +74,7 @@ function autonomie_comment_classes( $classes ) {
 add_filter( 'comment_class', 'autonomie_comment_classes', 99 );
 
 /**
- * encapsulates post-classes to use them on different tags
+ * Encapsulates post-classes to use them on different tags.
  */
 function autonomie_get_post_classes( $classes = array() ) {
 	// Adds a class for microformats v2
@@ -120,9 +120,10 @@ function autonomie_pre_get_avatar_data( $args, $id_or_email ) {
 add_filter( 'pre_get_avatar_data', 'autonomie_pre_get_avatar_data', 99, 2 );
 
 /**
- * add rel-prev attribute to previous_image_link
+ * Add rel-prev attribute to previous_image_link.
  *
  * @param string a-tag
+ *
  * @return string
  */
 function autonomie_semantic_previous_image_link( $link ) {
@@ -131,9 +132,10 @@ function autonomie_semantic_previous_image_link( $link ) {
 add_filter( 'previous_image_link', 'autonomie_semantic_previous_image_link' );
 
 /**
- * add rel-next attribute to next_image_link
+ * Add rel-next attribute to next_image_link.
  *
  * @param string a-tag
+ *
  * @return string
  */
 function autonomie_semantic_next_image_link( $link ) {
@@ -142,9 +144,10 @@ function autonomie_semantic_next_image_link( $link ) {
 add_filter( 'next_image_link', 'autonomie_semantic_next_image_link' );
 
 /**
- * add rel-prev attribute to next_posts_link_attributes
+ * Add rel-prev attribute to next_posts_link_attributes.
  *
- * @param string attributes
+ * @param string Attributes
+ *
  * @return string
  */
 function autonomie_next_posts_link_attributes( $attr ) {
@@ -153,9 +156,10 @@ function autonomie_next_posts_link_attributes( $attr ) {
 add_filter( 'next_posts_link_attributes', 'autonomie_next_posts_link_attributes' );
 
 /**
- * add rel-next attribute to previous_posts_link
+ * Add rel-next attribute to previous_posts_link.
  *
- * @param string attributes
+ * @param string Attributes
+ *
  * @return string
  */
 function autonomie_previous_posts_link_attributes( $attr ) {
@@ -177,9 +181,10 @@ function autonomie_get_search_form( $form ) {
 add_filter( 'get_search_form', 'autonomie_get_search_form' );
 
 /**
- * add semantics
+ * Add semantics.
  *
- * @param string $id the class identifier
+ * @param string $id The class identifier.
+ *
  * @return array
  */
 function autonomie_get_semantics( $id = null ) {
@@ -247,10 +252,9 @@ function autonomie_get_semantics( $id = null ) {
 }
 
 /**
- * echos the semantic classes added via
- * the "autonomie_semantics" filters
+ * Echos the semantic classes added via the "autonomie_semantics" filters.
  *
- * @param string $id the class identifier
+ * @param string $id The class identifier.
  */
 function autonomie_get_the_semantics( $id ) {
 	$classes = autonomie_get_semantics( $id );
@@ -269,10 +273,9 @@ function autonomie_get_the_semantics( $id ) {
 }
 
 /**
- * echos the semantic classes added via
- * the "autonomie_semantics" filters
+ * Echos the semantic classes added via the "autonomie_semantics" filters.
  *
- * @param string $id the class identifier
+ * @param string $id The class identifier.
  */
 function autonomie_semantics( $id ) {
 	$classes = autonomie_get_semantics( $id );
@@ -287,11 +290,12 @@ function autonomie_semantics( $id ) {
 }
 
 /**
- * Add `p-category` to tags links
+ * Add `p-category` to tags links.
  *
  * @link https://www.webrocker.de/2016/05/13/add-class-attribute-to-wordpress-the_tags-markup/
  *
  * @param  array $links
+ *
  * @return array
  */
 function autonomie_term_links_tag( $links ) {
