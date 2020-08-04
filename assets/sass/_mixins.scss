@@ -63,7 +63,9 @@
 	}
 
 	&:hover,
+	&:hover:visited,
 	&:active,
+	&:active:visited,
 	&:hover a,
 	&:active a {
 		border: 1px solid $gray;
