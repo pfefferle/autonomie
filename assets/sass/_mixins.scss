@@ -73,6 +73,11 @@
 		color: $white;
 		color: var(--color-white);
 	}
+
+	&:visited {
+		color: $gray;
+		color: var(--color-gray);
+	}
 }
 
 @mixin meta-text {

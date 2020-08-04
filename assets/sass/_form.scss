@@ -38,6 +38,7 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 .wp-block-button a,
+.wp-block-button__link,
 .button {
 	@include button;
 }
