@@ -35,4 +35,4 @@ function autonomie_syndication_links() {
 		echo get_syndication_links( null, array( 'show_text_before' => null) );
 	}
 }
-add_action( 'autonomie-entry-footer', 'autonomie_syndication_links' );
+add_action( 'autonomie_entry_footer', 'autonomie_syndication_links' );
