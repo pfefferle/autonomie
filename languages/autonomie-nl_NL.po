@@ -1,0 +1,431 @@
+# <!=Copyright (C) 2020 Matthias Pfefferle
+# This file is distributed under the MIT.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Autonomie 1.0.0-beta-2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ZenPress\n"
+"POT-Creation-Date: 2020-07-21 13:28:10+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-08-10 13:28+0000\n"
+"Last-Translator: Robert van Bregt\n"
+"Language-Team: Nederlands\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.4.1; wp-5.4.2"
+
+#: 404.php:15
+msgid "Well this is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Dit is een beetje beschamend, niet?"
+
+#: 404.php:19
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching, or one of the links below, can help."
+msgstr ""
+"Het lijkt er op dat we niet kunnen vinden waar je naar op zoek bent. "
+"Misschien kan zoeken helpen, of een van onderstaande koppelingen."
+
+#: 404.php:26
+msgid "Most Used Categories"
+msgstr "Meestgebruikte categorieën"
+
+#. translators: %1$s: smilie
+#: 404.php:34
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Probeer te kijken in de maandarchieven. %1$s"
+
+#: 500.php:15
+msgid "Internal Server Error"
+msgstr "Interne serverfout"
+
+#: 500.php:20
+msgid "More Details"
+msgstr "Meer details"
+
+#: archive.php:41 index.php:38
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: archive.php:45 index.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Het lijkt er op dat we niet kunnen vinden waar je naar op zoek bent. "
+"Misschien kan zoeken helpen."
+
+#: comments.php:16
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Dit bericht is beveiligd met een wachtwoord. Voer het wachtwoord in om "
+"reacties te bekijken."
+
+#: comments.php:34
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Eén gedachte over &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gedachten over &ldquo;%2$s&rdquo;"
+
+#: comments.php:43 comments.php:63
+msgid "Comment navigation"
+msgstr "Reactienavigatie"
+
+#: comments.php:44 comments.php:64
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: comments.php:45 comments.php:65
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwere reacties &rarr;"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Reacties zijn gesloten."
+
+#: footer.php:32
+msgid "This site is powered by %1$s and styled with the %2$s theme"
+msgstr "Deze site wordt aangestuurd door %1$s opgemaakt met het %2$s thema"
+
+#: functions.php:79
+msgid "Blue"
+msgstr "Blauw"
+
+#: functions.php:84
+msgid "Lighter blue"
+msgstr "Lichter blauw"
+
+#: functions.php:89
+msgid "Blue jeans"
+msgstr "Spijkerbroek"
+
+#: functions.php:94
+msgid "Orioles orange"
+msgstr "Orioles oranje"
+
+#: functions.php:99
+msgid "USC gold"
+msgstr "USC goud"
+
+#: functions.php:104
+msgid "Gargoyle gas"
+msgstr "Gargoyle gas"
+
+#: functions.php:109
+msgid "Yellow"
+msgstr "Geel"
+
+#: functions.php:114
+msgid "Android green"
+msgstr "Android-groen"
+
+#: functions.php:119
+msgid "White"
+msgstr "Wit"
+
+#: functions.php:124
+msgid "Very light gray"
+msgstr "Zeer lichtgrijs"
+
+#: functions.php:129
+msgid "Very dark gray"
+msgstr "Zeer donkergrijs"
+
+#: functions.php:139 header.php:58
+msgid "Primary Menu"
+msgstr "Hoofdmenu"
+
+#: functions.php:224
+msgid "POSH Feed"
+msgstr "POSH Feed"
+
+#: functions.php:391
+msgid "Edit"
+msgstr "Bewerken"
+
+#: functions.php:398
+msgid "Your comment is awaiting moderation."
+msgstr "Je bericht wacht op moderatie."
+
+#. translators: 1: date, 2: time
+#: functions.php:404
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: header.php:33
+msgid "Skip to content"
+msgstr "Spring naar inhoud"
+
+#: image.php:63 templates/content-aside.php:23 templates/content-audio.php:23
+#: templates/content-chat.php:23 templates/content-gallery.php:23
+#: templates/content-image.php:23 templates/content-link.php:23
+#: templates/content-quote.php:23 templates/content-single.php:23
+#: templates/content-status.php:23 templates/content-video.php:23
+msgid "Pages:"
+msgstr "Pagiana's:"
+
+#: includes/customizer.php:12
+msgid "Advanced Settings"
+msgstr "Geavanceerde instellingen"
+
+#: includes/customizer.php:13
+msgid "Enable/Discable some advanced Autonomie features."
+msgstr "In/uitschakelen enkele geavanceerde mogelijkheden van Autonomie."
+
+#: includes/customizer.php:30
+msgid "Feed Templates"
+msgstr "Feed-sjablonen"
+
+#: includes/customizer.php:31
+msgid ""
+"Enable/Discable XSL Templates for Feeds, similar to the old Feedburner "
+"Templates."
+msgstr ""
+"In/uitschakelen XSL-sjablonen voor Feeds, vergelijkbaar met de oude "
+"Feedburner-sjablonen."
+
+#: includes/featured-image.php:74
+msgid "Use as post cover (full-width)"
+msgstr "Gebruik als berichtomslag (volledige breedte)"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: post title
+#: includes/feed.php:61
+msgid "%1$s %2$s %3$s Comments Feed"
+msgstr "%1$s %2$s %3$s Reacties-feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: category name
+#: includes/feed.php:63
+msgid "%1$s %2$s %3$s Category Feed"
+msgstr "%1$s %2$s %3$s Categorie-feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: tag name
+#: includes/feed.php:65
+msgid "%1$s %2$s %3$s Tag Feed"
+msgstr "%1$s %2$s %3$s Label-feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: term name, 4: taxonomy
+#. singular name
+#: includes/feed.php:67
+msgid "%1$s %2$s %3$s %4$s Feed"
+msgstr "%1$s %2$s %3$s %4$s Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: author name
+#: includes/feed.php:69
+msgid "%1$s %2$s Posts by %3$s Feed"
+msgstr "%1$s %2$s Berichten door %3$s Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: search phrase
+#: includes/feed.php:71
+msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
+msgstr "%1$s %2$s Zoekresultaten voor &#8220;%3$s&#8221; Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: post type
+#: includes/feed.php:73
+msgid "%1$s %2$s %3$s Post-Type Feed"
+msgstr "%1$s %2$s %3$s Berichttype-feed"
+
+#: includes/template-functions.php:13
+msgid "Post navigation"
+msgstr "Berichtnavigatie"
+
+#. translators:
+#: includes/template-functions.php:32 includes/template-functions.php:57
+msgid ""
+"<address class=\"byline\"><span class=\"author p-author vcard hcard h-card\" "
+"itemprop=\"author\" itemscope itemtype=\"http://schema.org/Person\">%5$s <a "
+"class=\"url uid u-url u-uid fn p-name\" href=\"%6$s\" title=\"%7$s\" "
+"rel=\"author\" itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a>"
+"</span></address> <span class=\"sep\"> | </span> <a href=\"%1$s\" "
+"title=\"%2$s\" rel=\"bookmark\" class=\"url u-url\" "
+"itemprop=\"mainEntityOfPage\"><time class=\"entry-date updated published dt-"
+"updated dt-published\" datetime=\"%3$s\" itemprop=\"dateModified "
+"datePublished\">%4$s</time></a>"
+msgstr ""
+"<address class=\"byline\"><span class=\"author p-author vcard hcard h-card\" "
+"itemprop=\"author\" itemscope itemtype=\"http://schema.org/Person\">%5$s <a "
+"class=\"url uid u-url u-uid fn p-name\" href=\"%6$s\" title=\"%7$s\" "
+"rel=\"author\" itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a>"
+"</span></address> <span class=\"sep\"> | </span> <a href=\"%1$s\" "
+"title=\"%2$s\" rel=\"bookmark\" class=\"url u-url\" "
+"itemprop=\"mainEntityOfPage\"><time class=\"entry-date updated published dt-"
+"updated dt-published\" datetime=\"%3$s\" itemprop=\"dateModified "
+"datePublished\">%4$s</time></a>"
+
+#. translators:
+#: includes/template-functions.php:40 includes/template-functions.php:65
+msgid "View all posts by %s"
+msgstr "Bekijk alle berichten door %s"
+
+#. translators: The title of the search results page
+#: includes/template-functions.php:137
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: includes/template-functions.php:176
+msgid "Attachment"
+msgstr "Bijlage"
+
+#: includes/template-functions.php:178
+msgid "Text"
+msgstr "Tekst"
+
+#. translators: list of followers
+#: includes/template-functions.php:232
+msgid "%s Followers"
+msgstr "%s Volgers"
+
+#. translators: a post counter
+#: includes/template-functions.php:234
+msgid "%s Posts"
+msgstr "%s Berichten"
+
+#: includes/template-functions.php:235
+msgid "Subscribe"
+msgstr "Abonneren"
+
+#. translators: Description for search results
+#: includes/template-functions.php:259
+msgid "Found %1$s search result for <strong>%2$s</strong>."
+msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
+msgstr[0] "%1$s zoekresultaat gevonden voor <strong>%2$s</strong>."
+msgstr[1] "%1$s zoekresultaten gevonden voor <strong>%2$s</strong>."
+
+#: includes/widgets.php:7
+msgid "Sidebar 1"
+msgstr "Zijbalk 1"
+
+#: includes/widgets.php:9
+msgid "A sidebar area"
+msgstr "Een zijbalkgebied"
+
+#: includes/widgets.php:17
+msgid "Sidebar 2"
+msgstr "Zijbalk 2"
+
+#: includes/widgets.php:19
+msgid "A second sidebar area"
+msgstr "Een tweede zijbalkgebied"
+
+#: includes/widgets.php:27
+msgid "Sidebar 3"
+msgstr "Zijbalk 3"
+
+#: includes/widgets.php:29
+msgid "A third sidebar area"
+msgstr "Een derde zijbalkgebied"
+
+#: includes/widgets.php:37
+msgid "Entry-Meta"
+msgstr "Entry-Meta"
+
+#: includes/widgets.php:39
+msgid "Extend the Entry-Meta"
+msgstr "Entry-Meta uitbreiden"
+
+#. translators: how to follow
+#: integrations/activitypub.php:23
+msgid ""
+"<indie-action do=\"follow\" width=\"%1$s\">Follow <code>%2$s</code> "
+"(fediverse)</indie-action>"
+msgstr ""
+"<indie-action do=\"follow\" width=\"%1$s\">Volgen <code>%2$s</code> "
+"(fediverse)</indie-action>"
+
+#: integrations/syndication-links.php:34
+msgid "Syndication Links"
+msgstr "Syndicatiekoppelingen"
+
+#: offline.php:15
+msgid "Offline"
+msgstr "Offline"
+
+#: template-parts/entry-footer.php:9
+msgid "Subscribe to author feed"
+msgstr "Abonneer op auteurfeed"
+
+#. translators: used between list items, there is a space after the comma
+#: template-parts/entry-footer.php:18
+msgid "Categories"
+msgstr "Categorieën"
+
+#: template-parts/entry-footer.php:19 template-parts/entry-footer.php:30
+msgid "%1$s"
+msgstr "%1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: template-parts/entry-footer.php:29
+msgid "Tags"
+msgstr "Labels"
+
+#: template-parts/entry-footer.php:42
+msgid "Leave a comment"
+msgstr "Laat een reactie achter"
+
+#: template-parts/entry-footer.php:42
+msgid "1 Comment"
+msgstr "1 Reactie"
+
+#: template-parts/entry-footer.php:42
+msgid "% Comments"
+msgstr "% Reacties"
+
+#: template-parts/entry-header.php:16
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
+#: template-parts/page-banner.php:11
+msgid "The ... Feed"
+msgstr "The ... Feed"
+
+#: templates/content-aside.php:22 templates/content-audio.php:22
+#: templates/content-chat.php:22 templates/content-gallery.php:22
+#: templates/content-image.php:22 templates/content-link.php:22
+#: templates/content-quote.php:22 templates/content-single.php:22
+#: templates/content-status.php:22 templates/content-video.php:22
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
+
+#: templates/feed-template-atom.php:79 templates/feed-template-rss2.php:78
+msgid "This feed is powered by %1$s and styled with the %2$s theme"
+msgstr "Deze feed wordt aangestuurd door %1$s en opgemaakt met het %2$s thema"
+
+#. Theme Name of the plugin/theme
+msgid "Autonomie"
+msgstr "Autonomie"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/pfefferle/Autonomie"
+msgstr "https://github.com/pfefferle/Autonomie"
+
+#. Description of the plugin/theme
+msgid ""
+"Autonomie is a highly semantic, responsive, accessible and seo optimized "
+"WordPress Theme. It provides HTML5 templates refined with microformats, "
+"microformats v2 and microdata (Schema.org). Autonomie supports a lot of "
+"OpenWeb plugins and is fully IndieWeb compatible."
+msgstr ""
+"Autonomie is een zeer semantisch, responsive, toegankelijk and SEO-"
+"geoptimaliseerd WordPress-thema. Het biedt HTML5-sjablonen, verfijnd met "
+"microformats v2 en microdata (Schema.org). Autonomie ondersteunt veel "
+"OpenWeb-plugins en is volledig IndieWeb-compatibel."
+
+#. Author of the plugin/theme
+msgid "Matthias Pfefferle"
+msgstr "Matthias Pfefferle"
+
+#. Author URI of the plugin/theme
+msgid "https://notiz.blog/"
+msgstr "https://notiz.blog/"
+
+#. Template Name of the plugin/theme
+msgid "\"/now\" Template"
+msgstr "\"/now\" Sjabloon"
+
+#. translators: Separator between blog name and feed type in feed links
+#: includes/feed.php:59
+msgctxt "feed link"
+msgid "&raquo;"
+msgstr "&raquo;"
