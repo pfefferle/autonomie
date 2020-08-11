@@ -165,7 +165,7 @@ msgstr "Spring naar inhoud"
 #: templates/content-quote.php:23 templates/content-single.php:23
 #: templates/content-status.php:23 templates/content-video.php:23
 msgid "Pages:"
-msgstr "Pagiana's:"
+msgstr "Pagina's:"
 
 #: includes/customizer.php:12
 msgid "Advanced Settings"
