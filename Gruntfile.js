@@ -82,11 +82,11 @@ module.exports = function(grunt) {
         },
       },
     },
-   makepot: {
+    makepot: {
       target: {
         options: {
           domainPath: 'languages',
-          exclude: ['bin/.*', '.git/.*', 'vendor/.*', 'node_modules/.*'],
+          exclude: ['bin/.*', '.git/.*', 'vendor/.*', 'node_modules/.*', '_build/.*'],
           potFilename: 'autonomie.pot',
           type: 'wp-theme',
           updateTimestamp: true
@@ -98,6 +98,40 @@ module.exports = function(grunt) {
         files: ['**/*.scss'],
         tasks: ['default']
       }
+    },
+    copy: {
+      build: {
+        src: [
+          '**',
+          '!node_modules/**',
+          '!.**',
+          '!Gruntfile.js',
+          '!package.json',
+          '!package-lock.json',
+          '!composer.json',
+          '!docker-compose.yml',
+          '!phpcs.xml',
+          '!readme.md',
+          '!**/**.map'
+        ],
+        dest: '_build/',
+      },
+    },
+    clean: {
+      build: {
+        src: ['_build/']
+      }
+    },
+    compress: {
+      build: {
+        options: {
+          archive: '_build/<%= pkg.name %>.zip'
+        },
+        cwd: '_build/',
+        src: ['**/*'],
+        dest: '/',
+        expand: true
+      }
     }
   });
 
@@ -107,7 +141,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-wp-i18n');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task(s).
   grunt.registerTask('default', ['sass', 'string-replace', 'wp_readme_to_markdown', 'makepot']);
+
+  grunt.registerTask('build', ['default', 'clean:build', 'copy:build', 'compress:build']);
 };
