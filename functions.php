@@ -298,7 +298,7 @@ add_filter( 'wp_page_menu_args', 'autonomie_page_menu_args' );
 
 add_filter(
 	'wp_lazy_loading_enabled',
-	function( $result, $tag_name ) {
+	function( $default, $tag_name ) {
 		if ( in_array(
 			$tag_name,
 			array(
@@ -311,9 +311,9 @@ add_filter(
 		) ) {
 			return true;
 		}
-		return $result;
+		return $default;
 	},
-	10,
+	20,
 	2
 );
 
