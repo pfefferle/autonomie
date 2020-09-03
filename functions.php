@@ -296,27 +296,6 @@ function autonomie_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'autonomie_page_menu_args' );
 
-add_filter(
-	'wp_lazy_loading_enabled',
-	function( $default, $tag_name ) {
-		if ( in_array(
-			$tag_name,
-			array(
-				'img',
-				'audio',
-				'video',
-				'iframe',
-			),
-			true
-		) ) {
-			return true;
-		}
-		return $default;
-	},
-	20,
-	2
-);
-
 if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 	/**
 	 * Enqueue theme scripts
