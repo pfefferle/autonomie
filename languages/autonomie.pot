@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Autonomie\n"
-"POT-Creation-Date: 2020-08-04 10:10:06+00:00\n"
+"POT-Creation-Date: 2020-09-08 13:04:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -132,15 +132,15 @@ msgstr ""
 msgid "POSH Feed"
 msgstr ""
 
-#: functions.php:391
+#: functions.php:370
 msgid "Edit"
 msgstr ""
 
-#: functions.php:398
+#: functions.php:377
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:404
+#: functions.php:383
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
 msgstr ""
@@ -224,7 +224,7 @@ msgstr ""
 msgid ""
 "<address class=\"byline\"><span class=\"author p-author vcard hcard "
 "h-card\" itemprop=\"author\" itemscope "
-"itemtype=\"http://schema.org/Person\">%5$s <a class=\"url uid u-url u-uid "
+"itemtype=\"https://schema.org/Person\">%5$s <a class=\"url uid u-url u-uid "
 "fn p-name\" href=\"%6$s\" title=\"%7$s\" rel=\"author\" "
 "itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a></span></address> "
 "<span class=\"sep\"> | </span> <a href=\"%1$s\" title=\"%2$s\" "

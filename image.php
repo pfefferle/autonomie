@@ -12,7 +12,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>itemscope itemtype="http://schema.org/ImageObject">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>itemscope itemtype="https://schema.org/ImageObject">
 					<?php get_template_part( 'template-parts/entry-header' ); ?>
 
 					<div class="entry-content e-content" itemprop="description">

@@ -46,16 +46,16 @@ Autonomie' code is marked-up with microformats and microdata:
 	* [h-card](http://microformats.org/wiki/h-card)
 	* [Comment Draft](http://microformats.org/wiki/comment-brainstorming#microformats2_h-feed_p-comments)
 * used [microdata](http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html):
-	* http://schema.org/Blog
-	* http://schema.org/BlogPosting
-	* http://schema.org/Comment
-	* http://schema.org/WebPage
-	* http://schema.org/Person
+	* https://schema.org/Blog
+	* https://schema.org/BlogPosting
+	* https://schema.org/Comment
+	* https://schema.org/WebPage
+	* https://schema.org/Person
 
 Planned formats:
 
 * micormats (v2): hAudio and hMedia
-* microdata: http://schema.org/MediaObject
+* microdata: https://schema.org/MediaObject
 
 = IndieWeb Specs =
 
