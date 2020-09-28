@@ -32,6 +32,22 @@ Autonomie is a highly semantic, responsive, accessible and search engine optimiz
 * ActivityPub: <https://wordpress.org/plugins/activitypub/>
 * PWA: <https://wordpress.org/plugins/pwa/>
 
+### How to install/update the theme ###
+
+**Composer**
+
+Install:
+
+	$ composer require pfefferle/wordpress-autonomie --save
+
+Update:
+
+	$ composer update
+
+**GitHub Update**
+
+You can also use the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install and update the theme.
+
 ### Supported Websemantics ###
 
 Autonomie' code is marked-up with microformats and microdata:
