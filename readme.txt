@@ -44,7 +44,7 @@ Update:
 
 	$ composer update
 
-**GitHub Update**
+**GitHub Updater**
 
 You can also use the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install and update the theme.
 
