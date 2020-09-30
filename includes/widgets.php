@@ -48,5 +48,17 @@ function autonomie_widgets_init() {
 			'after_widget'  => '',
 		)
 	);
+
+	require( get_template_directory() . '/widgets/class-autonomie-author-widget.php' );
+	register_widget( 'Autonomie_Author_Widget' );
+
+	require( get_template_directory() . '/widgets/class-autonomie-taxonomy-widget.php' );
+	register_widget( 'Autonomie_Taxonomy_Widget' );
+
+	$preset_widgets = array(
+		'entry-meta' => array( 'autonomie-author-widget', 'autonomie-author-widget' ),
+	);
+
+	//update_option( 'sidebars_widgets', apply_filters( 'autonomie_preset_widgets', $preset_widgets ) );
 }
 add_action( 'widgets_init', 'autonomie_widgets_init' );

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Autonomie\n"
-"POT-Creation-Date: 2020-09-08 13:04:41+00:00\n"
+"POT-Creation-Date: 2020-09-30 13:02:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -319,38 +319,38 @@ msgstr ""
 msgid "Offline"
 msgstr ""
 
-#: template-parts/entry-footer.php:9
+#: template-parts/entry-author.php:7
 msgid "Subscribe to author feed"
 msgstr ""
 
-#: template-parts/entry-footer.php:18
-#. translators: used between list items, there is a space after the comma
-msgid "Categories"
-msgstr ""
-
-#: template-parts/entry-footer.php:19 template-parts/entry-footer.php:30
-msgid "%1$s"
-msgstr ""
-
-#: template-parts/entry-footer.php:29
-#. translators: used between list items, there is a space after the comma
-msgid "Tags"
-msgstr ""
-
-#: template-parts/entry-footer.php:42
+#: template-parts/entry-footer.php:11
 msgid "Leave a comment"
 msgstr ""
 
-#: template-parts/entry-footer.php:42
+#: template-parts/entry-footer.php:11
 msgid "1 Comment"
 msgstr ""
 
-#: template-parts/entry-footer.php:42
+#: template-parts/entry-footer.php:11
 msgid "% Comments"
 msgstr ""
 
 #: template-parts/entry-header.php:16
 msgid "Permalink to %s"
+msgstr ""
+
+#: template-parts/entry-taxonomy.php:7
+#. translators: used between list items, there is a space after the comma
+msgid "Categories"
+msgstr ""
+
+#: template-parts/entry-taxonomy.php:8 template-parts/entry-taxonomy.php:19
+msgid "%1$s"
+msgstr ""
+
+#: template-parts/entry-taxonomy.php:18
+#. translators: used between list items, there is a space after the comma
+msgid "Tags"
 msgstr ""
 
 #: templates/content-aside.php:22 templates/content-audio.php:22
