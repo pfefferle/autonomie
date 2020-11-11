@@ -480,6 +480,7 @@ if ( class_exists( '\Activitypub\Activitypub' ) ) {
 }
 
 require( get_template_directory() . '/integrations/pwa.php' );
+require( get_template_directory() . '/integrations/friends.php' );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and Autonomie.
