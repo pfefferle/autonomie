@@ -46,6 +46,8 @@ function autonomie_widgets_init() {
 			'description' => __( 'Extend the Entry-Meta', 'autonomie' ),
 			'before_widget' => '',
 			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
 		)
 	);
 
@@ -54,11 +56,29 @@ function autonomie_widgets_init() {
 
 	require( get_template_directory() . '/widgets/class-autonomie-taxonomy-widget.php' );
 	register_widget( 'Autonomie_Taxonomy_Widget' );
-
-	$preset_widgets = array(
-		'entry-meta' => array( 'autonomie-author-widget', 'autonomie-author-widget' ),
-	);
-
-	//update_option( 'sidebars_widgets', apply_filters( 'autonomie_preset_widgets', $preset_widgets ) );
 }
 add_action( 'widgets_init', 'autonomie_widgets_init' );
+
+/**
+ * Add entry-meta default widgets
+ *
+ * @param array $content Array of starter content.
+ * @param array $config  Array of theme-specific starter content configuration.
+ */
+function autonomie_starter_content_add_widget( $content, $config ) {
+	if ( ! isset( $content['widgets']['entry-meta'] ) ) {
+		$content['widgets']['entry-meta'] = array();
+	}
+
+	$content['widgets']['entry-meta'][] = array(
+		'autonomie-author-widget',
+		array(),
+	);
+	$content['widgets']['entry-meta'][] = array(
+		'autonomie-taxonomy-widget',
+		array(),
+	);
+
+	return $content;
+}
+add_filter( 'get_theme_starter_content', 'autonomie_starter_content_add_widget', 10, 2 );
