@@ -28,7 +28,16 @@ function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
 		}
 
 		echo $before;
-		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class, 'itemprop' => 'image', 'loading' => 'lazy' ) );
+
+		the_post_thumbnail(
+			'post-thumbnail',
+			array(
+				'class' => $class,
+				'itemprop' => 'image',
+				'loading' => 'lazy',
+			)
+		);
+
 		echo $after;
 	}
 }
@@ -57,7 +66,17 @@ function autonomie_content_post_thumbnail( $content ) {
 			$class .= ' u-featured';
 		}
 
-		return '<p>' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'class' => $class, 'itemprop' => 'image', 'loading' => 'lazy' ) ) . '</p>' . $content;
+		$thumbnail = get_the_post_thumbnail(
+			null,
+			'post-thumbnail',
+			array(
+				'class' => $class,
+				'itemprop' => 'image',
+				'loading' => 'lazy',
+			)
+		);
+
+		return sprintf( '<p>%s</p>%s', $thumbnail, $content );
 	}
 
 	return $content;
