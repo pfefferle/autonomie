@@ -50,7 +50,7 @@ add_filter( 'comment_form_field_comment', 'autonomie_comment_field_input_type' )
 function autonomie_query_format_standard( $query ) {
 	if (
 		isset( $query->query_vars['post_format'] ) &&
-		'post-format-standard' == $query->query_vars['post_format']
+		'post-format-standard' === $query->query_vars['post_format']
 	) {
 		$post_formats = get_theme_support( 'post-formats' );
 
