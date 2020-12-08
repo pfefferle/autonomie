@@ -19,6 +19,8 @@ Autonomie is a highly semantic, responsive, accessible and search engine optimiz
 
 "Autonomie" is the german word for "autonomy" which is a synonym to independent!
 
+The theme is based on the (in the IndieWeb community) popular SemPress Theme - <https://github.com/pfefferle/SemPress>
+
 = Thanks =
 
 * Greg Tangey ([Ruxton](https://github.com/Ruxton)) - for the "Post Kinds" and "Syndication Links" implementations
@@ -110,13 +112,27 @@ Autonomie is fully HTML5 compatible and uses a lot of the new tags, semantics an
 
 * initial release
 
-== Resources ==
+== Copyright ==
 
-* Autonomie is based on the SemPress Theme - <https://github.com/pfefferle/SemPress>
-* Some CSS is lend from Twitters Bootstrap - <http://twitter.github.com/bootstrap/>
+Autonomie WordPress Theme, Copyright 2016 Matthias Pfefferle
+Autonomie is distributed under the terms of the GNU GPL
 
-Unless otherwise specified, all the theme files, scripts and images are licensed under MIT License.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
 
-The exceptions to this license are as follows:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-* The Bootstrap CSS by Twitter is licensed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
+Autonomie bundles the following third-party resources:
+
+Some Bootstrap CSS, Copyright Twitter, Inc., The Bootstrap Authors
+License: MIT
+Source: https://github.com/twbs/bootstrap/
+
+Bundled header images, Copyright Alvin Engler
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://unsplash.com/@englr?photo=bIhpiQA009k

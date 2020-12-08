@@ -196,8 +196,97 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 		add_theme_support( 'microdata' );
 		add_theme_support( 'indieweb' );
 
-		//add_theme_support( 'amp' );
+		// enable service workers
 		add_theme_support( 'service_worker', true );
+
+		// add starter content
+		add_theme_support(
+			'starter-content',
+			array(
+				'widgets' => array(
+					'sidebar-1' => array(
+						'text_business_info',
+						'search',
+						'text_about',
+					),
+
+					'sidebar-2' => array(
+						'text_business_info',
+					),
+
+					'sidebar-3' => array(
+						'text_about',
+						'search',
+					),
+
+					'entry-meta' => array(),
+				),
+
+				'posts' => array(
+					'home',
+					'about' => array(
+						'thumbnail' => '{{image-sandwich}}',
+					),
+					'contact' => array(
+						'thumbnail' => '{{image-espresso}}',
+					),
+					'blog' => array(
+						'thumbnail' => '{{image-coffee}}',
+					),
+					'homepage-section' => array(
+						'thumbnail' => '{{image-espresso}}',
+					),
+				),
+
+				'attachments' => array(
+					'image-espresso' => array(
+						'post_title' => _x( 'Espresso', 'Theme starter content', 'autonomie' ),
+						'file' => 'assets/imag/espresso.jpg',
+					),
+					'image-sandwich' => array(
+						'post_title' => _x( 'Sandwich', 'Theme starter content', 'autonomie' ),
+						'file' => 'assets/imag/sandwich.jpg',
+					),
+					'image-coffee' => array(
+						'post_title' => _x( 'Coffee', 'Theme starter content', 'autonomie' ),
+						'file' => 'assets/imag/coffee.jpg',
+					),
+				),
+
+				'options' => array(
+					'show_on_front' => 'page',
+					'page_on_front' => '{{home}}',
+					'page_for_posts' => '{{blog}}',
+				),
+
+				'theme_mods' => array(
+					'panel_1' => '{{homepage-section}}',
+					'panel_2' => '{{about}}',
+					'panel_3' => '{{blog}}',
+					'panel_4' => '{{contact}}',
+				),
+
+				'nav_menus' => array(
+					'top' => array(
+						'name' => __( 'Top Menu', 'autonomie' ),
+						'items' => array(
+							'page_home',
+							'page_about',
+							'page_blog',
+							'page_contact',
+						),
+					),
+					'social' => array(
+						'name' => __( 'Social Links Menu', 'autonomie' ),
+						'items' => array(
+							'link_email',
+							'link_twitter',
+							'link_email',
+						),
+					),
+				),
+			)
+		);
 	}
 endif; // autonomie_setup
 
