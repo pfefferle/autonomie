@@ -108,17 +108,25 @@ add_filter( 'admin_post_thumbnail_html', 'autonomie_featured_image_meta', 10, 2 
 function autonomie_save_post( $post_id ) {
 	// if this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
+		return $post_id;
+	}
+
+	if ( ! array_key_exists( 'full_width_featured_image', $_POST ) ) {
+		return $post_id;
+	}
+
+	if ( ! array_key_exists( 'post_type', $_POST ) ) {
+		return $post_id;
 	}
 
 	// check the user's permissions.
 	if ( 'page' === $_POST['post_type'] ) {
 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
+			return $post_id;
 		}
 	} else {
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
+			return $post_id;
 		}
 	}
 
