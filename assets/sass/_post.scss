@@ -90,7 +90,8 @@ h3.entry-title,
 h4.entry-title {
 	margin: 0;
 	padding: 0;
-	font-size: 3.5em;
+	/*font-size: 3.5em;*/
+	font-size: 2em;
 	line-height: 1.2em;
 
 	a {
@@ -106,6 +107,16 @@ h4.entry-title {
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+.type-page,
+.format-standard {
+	h1.entry-title,
+	h2.entry-title,
+	h3.entry-title,
+	h4.entry-title {
+		font-size: 3.5em;
 	}
 }
 

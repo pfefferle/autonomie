@@ -79,10 +79,21 @@ blockquote {
 
 figure,
 .wp-block-pullquote {
+	padding: 0;
+	margin: 0;
+
 	small,
 	figcaption,
 	cite {
 		text-align: right;
+	}
+
+	blockquote {
+		hyphens: auto;
+		word-wrap: break-word;
+		border: none;
+		text-align: center;
+		font-size: 1.5em;
 	}
 }
 
@@ -103,17 +114,6 @@ code {
 	word-wrap: break-word;
 }
 
-figure blockquote,
-.wp-block-pullquote {
-	hyphens: auto;
-	word-wrap: break-word;
-	border: none;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-	font-size: 1.5em;
-}
-
 ins {
 	background: $yellow;
 	text-decoration: none;
@@ -132,27 +132,27 @@ h6 {
 }
 
 h1 {
-	font-size: 2.4em;
-}
-
-h2 {
 	font-size: 2.2em;
 }
 
-h3 {
+h2 {
 	font-size: 2.0em;
 }
 
-h4 {
+h3 {
 	font-size: 1.8em;
 }
 
-h5 {
+h4 {
 	font-size: 1.6em;
 }
 
-h6 {
+h5 {
 	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
 }
 
 hr {
