@@ -114,7 +114,7 @@ Autonomie is fully HTML5 compatible and uses a lot of the new tags, semantics an
 
 ## Copyright ##
 
-Autonomie WordPress Theme, Copyright 2016 Matthias Pfefferle
+Autonomie WordPress Theme, Copyright 2021 Matthias Pfefferle
 Autonomie is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -133,6 +133,5 @@ Some Bootstrap CSS, Copyright Twitter, Inc., The Bootstrap Authors
 License: MIT
 Source: https://github.com/twbs/bootstrap/
 
-Bundled header images, Copyright Alvin Engler
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://unsplash.com/@englr?photo=bIhpiQA009k
+Bundled images (starter content), Copyright Hendrik Cvetko
+License: GPL-2.0-or-later
