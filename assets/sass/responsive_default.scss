@@ -48,9 +48,13 @@
 	box-sizing: border-box;
 }
 
-.entry-content > .wp-block-gallery,
-.entry-summary > .wp-block-gallery {
-	display: flex;
+.entry-content,
+.entry-summary {
+	.wp-block-gallery,
+	.wp-block-columns,
+	.wp-block-media-text {
+		display: flex;
+	}
 }
 
 #sidebar {
