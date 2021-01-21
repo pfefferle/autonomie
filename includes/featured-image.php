@@ -28,7 +28,16 @@ function autonomie_the_post_thumbnail( $before = '', $after = '' ) {
 		}
 
 		echo $before;
-		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class, 'itemprop' => 'image', 'loading' => 'lazy' ) );
+
+		the_post_thumbnail(
+			'post-thumbnail',
+			array(
+				'class' => $class,
+				'itemprop' => 'image',
+				'loading' => 'lazy',
+			)
+		);
+
 		echo $after;
 	}
 }
@@ -57,7 +66,17 @@ function autonomie_content_post_thumbnail( $content ) {
 			$class .= ' u-featured';
 		}
 
-		return '<p>' . get_the_post_thumbnail( null, 'post-thumbnail', array( 'class' => $class, 'itemprop' => 'image', 'loading' => 'lazy' ) ) . '</p>' . $content;
+		$thumbnail = get_the_post_thumbnail(
+			null,
+			'post-thumbnail',
+			array(
+				'class' => $class,
+				'itemprop' => 'image',
+				'loading' => 'lazy',
+			)
+		);
+
+		return sprintf( '<p>%s</p>%s', $thumbnail, $content );
 	}
 
 	return $content;
@@ -67,22 +86,19 @@ add_filter( 'the_content', 'autonomie_content_post_thumbnail' );
 /**
  * Add a checkbox for Post Covers to the featured image metabox
  */
-function autonomie_featured_image_meta( $content ) {
-	global $post;
-
+function autonomie_featured_image_meta( $content, $post_id ) {
 	// Text for checkbox
 	$text = __( 'Use as post cover (full-width)', 'autonomie' );
 
 	// Get the current setting
-	$value = esc_attr( get_post_meta( $post->ID, 'full_width_featured_image', '1' ) );
+	$value = esc_attr( get_post_meta( $post_id, 'full_width_featured_image', '1' ) );
 	// Output the checkbox HTML
 	$label = '<input type="hidden" name="full_width_featured_image" value="0">';
 	$label .= '<label for="full_width_featured_image" class="selectit"><input name="full_width_featured_image" type="checkbox" id="full_width_featured_image" value="1" ' . checked( $value, 1, 0 ) . '> ' . $text . '</label>';
 
-	$label = wp_nonce_field( 'autonomie_full_width_featured_image_meta', 'autonomie_full_width_featured_image_meta_nonce' ) . $label;
-	return $content .= $label;
+	return $content . $label;
 }
-add_filter( 'admin_post_thumbnail_html', 'autonomie_featured_image_meta' );
+add_filter( 'admin_post_thumbnail_html', 'autonomie_featured_image_meta', 10, 2 );
 
 /**
  * Safe the Post Covers
@@ -90,19 +106,16 @@ add_filter( 'admin_post_thumbnail_html', 'autonomie_featured_image_meta' );
  * @param int $post_id The ID of the post being saved.
  */
 function autonomie_save_post( $post_id ) {
-	// check if the nonce is set.
-	if ( ! isset( $_POST['autonomie_full_width_featured_image_meta_nonce'] ) ) {
-		return $post_id;
-	}
-	$nonce = $_POST['autonomie_full_width_featured_image_meta_nonce'];
-
-	// verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $nonce, 'autonomie_full_width_featured_image_meta' ) ) {
-		return $post_id;
-	}
-
 	// if this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return $post_id;
+	}
+
+	if ( ! array_key_exists( 'full_width_featured_image', $_POST ) ) {
+		return $post_id;
+	}
+
+	if ( ! array_key_exists( 'post_type', $_POST ) ) {
 		return $post_id;
 	}
 
