@@ -206,6 +206,32 @@ endif; // autonomie_setup
  */
 add_action( 'after_setup_theme', 'autonomie_setup' );
 
+
+
+function autonomie_activate () {
+	update_option(
+		'sidebars_widgets',
+		array(
+			'wp_inactive_widgets' => array(),
+			'sidebar-1'           => array(
+				0 => 'search-2',
+				1 => 'recent-posts-2',
+				2 => 'recent-comments-2',
+			),
+			'sidebar-2'           => array(
+				0 => 'archives-2',
+			),
+			'sidebar-3'           => array(
+				0 => 'categories-2',
+				1 => 'meta-2',
+			),
+			'array_version'       => 3,
+		)
+	);
+}
+
+add_action('after_switch_theme', 'autonomie_activate');
+
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
