@@ -196,8 +196,90 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 		add_theme_support( 'microdata' );
 		add_theme_support( 'indieweb' );
 
-		//add_theme_support( 'amp' );
+		// enable service workers
 		add_theme_support( 'service_worker', true );
+
+		// add starter content
+		add_theme_support(
+			'starter-content',
+			array(
+				'widgets' => array(
+					'sidebar-1' => array(
+						'text_business_info',
+						'search',
+						'text_about',
+					),
+
+					'sidebar-2' => array(
+						'text_business_info',
+					),
+
+					'sidebar-3' => array(
+						'text_about',
+						'search',
+					),
+
+					'entry-meta' => array(),
+				),
+
+				'posts' => array(
+					'home',
+					'about' => array(
+						'thumbnail' => '{{image-sea}}',
+					),
+					'contact' => array(
+						'thumbnail' => '{{image-lights}}',
+					),
+					'blog' => array(
+						'thumbnail' => '{{image-beach}}',
+					),
+					'homepage-section' => array(
+						'thumbnail' => '{{image-lights}}',
+					),
+				),
+
+				'attachments' => array(
+					'image-beach' => array(
+						'post_title' => _x( 'Beach', 'Theme starter content', 'autonomie' ),
+						'file' => 'assets/images/beach.jpeg',
+					),
+					'image-sea' => array(
+						'post_title' => _x( 'Sea', 'Theme starter content', 'autonomie' ),
+						'file' => 'assets/images/sea.jpeg',
+					),
+					'image-lights' => array(
+						'post_title' => _x( 'Lights', 'Theme starter content', 'autonomie' ),
+						'file' => 'assets/images/lights.jpeg',
+					),
+				),
+
+				'options' => array(
+					'show_on_front' => 'page',
+					'page_on_front' => '{{home}}',
+					'page_for_posts' => '{{blog}}',
+					'header_image' => get_theme_file_uri( 'assets/images/beach.jpeg' ),
+				),
+
+				'theme_mods' => array(
+					'panel_1' => '{{homepage-section}}',
+					'panel_2' => '{{about}}',
+					'panel_3' => '{{blog}}',
+					'panel_4' => '{{contact}}',
+				),
+
+				'nav_menus' => array(
+					'primary' => array(
+						'name' => __( 'Top Menu', 'autonomie' ),
+						'items' => array(
+							'page_home',
+							'page_about',
+							'page_blog',
+							'page_contact',
+						),
+					),
+				),
+			)
+		);
 	}
 endif; // autonomie_setup
 
@@ -205,32 +287,6 @@ endif; // autonomie_setup
  * Tell WordPress to run autonomie_setup() when the 'after_setup_theme' hook is run.
  */
 add_action( 'after_setup_theme', 'autonomie_setup' );
-
-
-
-function autonomie_activate () {
-	update_option(
-		'sidebars_widgets',
-		array(
-			'wp_inactive_widgets' => array(),
-			'sidebar-1'           => array(
-				0 => 'search-2',
-				1 => 'recent-posts-2',
-				2 => 'recent-comments-2',
-			),
-			'sidebar-2'           => array(
-				0 => 'archives-2',
-			),
-			'sidebar-3'           => array(
-				0 => 'categories-2',
-				1 => 'meta-2',
-			),
-			'array_version'       => 3,
-		)
-	);
-}
-
-add_action('after_switch_theme', 'autonomie_activate');
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
