@@ -488,20 +488,6 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 endif; // ends check for autonomie_comment()
 
 /**
- * Add query args.
- *
- * @param array $vars The list of allowed query args.
- *
- * @return array The filtered query vars.
- */
-function autonomie_add_query_vars( $vars ) {
-	$vars[] = 'feed-stylesheet';
-
-	return $vars;
-}
-add_filter( 'query_vars', 'autonomie_add_query_vars' );
-
-/**
  * All template functions
  */
 require( get_template_directory() . '/includes/template-functions.php' );
