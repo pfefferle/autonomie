@@ -67,6 +67,7 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 				'gallery',
 				'caption',
 				'widgets',
+				'script',
 			)
 		);
 
