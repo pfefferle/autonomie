@@ -401,94 +401,96 @@ h4.entry-title {
 	color: var(--color-gray);
 }
 
-.has-orioles-orange-background-color {
-	background-color: $orioles-orange;
-}
+.entry-content {
+	.has-orioles-orange-background-color {
+		background-color: $orioles-orange;
+	}
 
-.has-orioles-orange-color {
-	color: $orioles-orange;
-}
+	.has-orioles-orange-color {
+		color: $orioles-orange;
+	}
 
-.has-blue-background-color {
-	background-color: $blue;
-}
+	.has-blue-background-color {
+		background-color: $blue;
+	}
 
-.has-blue-color {
-	color: $blue;
-}
+	.has-blue-color {
+		color: $blue;
+	}
 
-.has-lighter-blue-background-color {
-	background-color: $lighter-blue;
-}
+	.has-lighter-blue-background-color {
+		background-color: $lighter-blue;
+	}
 
-.has-lighter-blue-color {
-	color: $lighter-blue;
-}
+	.has-lighter-blue-color {
+		color: $lighter-blue;
+	}
 
-.has-blue-jeans-background-color {
-	background-color: $blue-jeans;
-}
+	.has-blue-jeans-background-color {
+		background-color: $blue-jeans;
+	}
 
-.has-blue-jeans-color {
-	color: $blue-jeans;
-}
+	.has-blue-jeans-color {
+		color: $blue-jeans;
+	}
 
-.has-usc-gold-background-color {
-	background-color: $usc-gold;
-}
+	.has-usc-gold-background-color {
+		background-color: $usc-gold;
+	}
 
-.has-usc-gold-color {
-	color: $usc-gold;
-}
+	.has-usc-gold-color {
+		color: $usc-gold;
+	}
 
-.has-gargoyle-gas-background-color {
-	background-color: $gargoyle-gas;
-}
+	.has-gargoyle-gas-background-color {
+		background-color: $gargoyle-gas;
+	}
 
-.has-gargoyle-gas-color {
-	color: $gargoyle-gas;
-}
+	.has-gargoyle-gas-color {
+		color: $gargoyle-gas;
+	}
 
-.has-yellow-background-color {
-	background-color: $yellow;
-}
+	.has-yellow-background-color {
+		background-color: $yellow;
+	}
 
-.has-yellow-color {
-	color: $yellow;
-}
+	.has-yellow-color {
+		color: $yellow;
+	}
 
-.has-android-green-background-color {
-	background-color: $android-green;
-}
+	.has-android-green-background-color {
+		background-color: $android-green;
+	}
 
-.has-android-green-color {
-	color: $android-green;
-}
+	.has-android-green-color {
+		color: $android-green;
+	}
 
-.has-white-background-color {
-	background-color: $white;
-	background-color: var(--color-white);
-}
+	.has-white-background-color {
+		background-color: $white;
+		background-color: var(--color-white);
+	}
 
-.has-white-color {
-	color: $white;
-	color: var(--color-white);
-}
+	.has-white-color {
+		color: $white;
+		color: var(--color-white);
+	}
 
-.has-very-light-gray-background-color {
-	background-color: $very-light-gray;
-}
+	.has-very-light-gray-background-color {
+		background-color: $very-light-gray;
+	}
 
-.has-very-light-gray-color {
-	color: $very-light-gray;
-}
+	.has-very-light-gray-color {
+		color: $very-light-gray;
+	}
 
-.has-very-dark-gray-background-color {
-	background-color: $very-dark-gray;
-}
+	.has-very-dark-gray-background-color {
+		background-color: $very-dark-gray;
+	}
 
-.has-very-dark-gray-color {
-	color: $very-dark-gray;
+	.has-very-dark-gray-color {
+		color: $very-dark-gray;
+	}
 }
 
 .sticky {
