@@ -8,7 +8,7 @@
 **Author:** Matthias Pfefferle  
 **Author URI:** https://notiz.blog/  
 **Donate link:** https://notiz.blog/donate/  
-**License:** MIT  
+**License:** GNU Affero General Public License
 **License URI:** https://opensource.org/licenses/mit  
 
 Autonomie is a highly semantic, responsive, accessible and search engine optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats2 and microdata (Schema.org). Autonomie supports a lot of OpenWeb plugins and is fully IndieWeb compatible.
@@ -114,18 +114,22 @@ Autonomie is fully HTML5 compatible and uses a lot of the new tags, semantics an
 
 ## Copyright ##
 
-Autonomie WordPress Theme, Copyright 2021 Matthias Pfefferle
-Autonomie is distributed under the terms of the GNU GPL
+Autonomie WordPress Theme,
+Copyright 2021 Matthias Pfefferle.
+Autonomie is distributed under the terms of the GNU Affero General Public License.
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Autonomie bundles the following third-party resources:
 
