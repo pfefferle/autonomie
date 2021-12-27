@@ -10,7 +10,7 @@ if ( ! function_exists( 'autonomie_content_nav' ) ) :
 		?>
 		<?php if ( is_home() || is_archive() || is_search() ) : // navigation links for home, archive, and search pages ?>
 		<nav id="archive-nav">
-			<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'autonomie' ); ?></h1>
+			<div class="assistive-text"><?php _e( 'Post navigation', 'autonomie' ); ?></div>
 			<?php echo paginate_links(); ?>
 		</nav><!-- #<?php echo $nav_id; ?> -->
 		<?php endif; ?>
