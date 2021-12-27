@@ -11,12 +11,19 @@
 			</div>
 			<?php endif; ?>
 
-			<?php if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'status' ), true ) && ! empty( get_the_title() ) ) : ?>
-			<h1 class="entry-title p-name" itemprop="name headline">
+			<?php
+			if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'status' ), true ) && ! empty( get_the_title() ) ) :
+				if ( is_singular() ) {
+					$title_element = 'h1';
+				} else {
+					$title_element = 'h2';
+				}
+			?>
+			<<?php echo $title_element; ?> class="entry-title p-name" itemprop="name headline">
 				<a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Permalink to %s', 'autonomie' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
 					<?php the_title(); ?>
 				</a>
-			</h1>
+			</<?php echo $title_element; ?>>
 			<?php endif; ?>
 
 			<?php // if ( ! is_singular() ) : ?>
