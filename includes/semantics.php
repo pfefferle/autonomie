@@ -115,6 +115,17 @@ function autonomie_pre_get_avatar_data( $args, $id_or_email ) {
 	$args['class'] = array_unique( array_merge( $args['class'], array( 'u-photo' ) ) );
 	$args['extra_attr'] = 'itemprop="image" loading="lazy"';
 
+	// Adds default alt attribute
+	if ( empty( $args['alt'] ) ) {
+		$username = get_the_author_meta( 'display_name', $id_or_email );
+
+		if ( $username ) {
+			$args['alt'] = sprintf( __( 'User Avatar of %s' ), $username );
+		} else {
+			$args['alt'] = __( 'User Avatar' );
+		}
+	}
+
 	return $args;
 }
 add_filter( 'pre_get_avatar_data', 'autonomie_pre_get_avatar_data', 99, 2 );
