@@ -114,6 +114,7 @@ function autonomie_pre_get_avatar_data( $args, $id_or_email ) {
 	// Adds a class for microformats v2
 	$args['class'] = array_unique( array_merge( $args['class'], array( 'u-photo' ) ) );
 	$args['extra_attr'] = 'itemprop="image" loading="lazy"';
+	$args['alt'] = sprintf( __( 'User Avatar of %s', 'autonomie' ), get_the_author_meta( 'display_name', $id_or_email ) );
 
 	return $args;
 }

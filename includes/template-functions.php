@@ -34,7 +34,7 @@ if ( ! function_exists( 'autonomie_posted_on' ) ) :
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
-			get_avatar( get_the_author_meta( 'ID' ), 40 ),
+			get_avatar( get_the_author_meta( 'ID' ), 40, '', sprintf( __( 'User Avatar of %s', 'autonomie' ), get_the_author_meta( 'display_name' ) ) ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			// translators:
 			esc_attr( sprintf( __( 'View all posts by %s', 'autonomie' ), get_the_author() ) ),
@@ -59,7 +59,7 @@ if ( ! function_exists( 'autonomie_updated_on' ) ) :
 			esc_attr( get_the_modified_time() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() ),
-			get_avatar( get_the_author_meta( 'ID' ), 40 ),
+			get_avatar( get_the_author_meta( 'ID' ), 40, '', sprintf( __( 'User Avatar of %s', 'autonomie' ), get_the_author_meta( 'display_name' ) ) ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			// translators:
 			esc_attr( sprintf( __( 'View all posts by %s', 'autonomie' ), get_the_author() ) ),
