@@ -145,6 +145,7 @@
 	background-color: $background-gray;
 	background-color: var(--color-background-gray);
 	margin-top: 100px;
+	content-visibility: auto;
 
 	@include clearfix;
 }
