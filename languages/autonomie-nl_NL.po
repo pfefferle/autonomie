@@ -88,7 +88,7 @@ msgstr "Reacties zijn gesloten."
 
 #: footer.php:31
 msgid "This site is powered by %1$s and styled with the %2$s theme"
-msgstr "Deze site wordt aangestuurd door %1$s opgemaakt met het %2$s thema"
+msgstr "Deze site wordt aangestuurd door %1$s en opgemaakt met het %2$s thema"
 
 #: functions.php:79
 msgid "Blue"
