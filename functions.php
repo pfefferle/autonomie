@@ -153,8 +153,7 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 				'video',
 				'audio',
 				'quote',
-				'script',
-				'style',
+				'chat',
 			)
 		);
 
