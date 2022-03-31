@@ -9,6 +9,9 @@ function autonomie_widgets_init() {
 	require( get_template_directory() . '/widgets/class-autonomie-taxonomy-widget.php' );
 	register_widget( 'Autonomie_Taxonomy_Widget' );
 
+	require( get_template_directory() . '/widgets/class-autonomie-share-widget.php' );
+	register_widget( 'Autonomie_Share_Widget' );
+
 	register_sidebar(
 		array(
 			'name' => __( 'Sidebar 1', 'autonomie' ),

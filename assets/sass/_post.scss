@@ -256,46 +256,6 @@ h4.entry-title {
 	}
 }
 
-.entry-footer {
-	@include clearfix;
-
-	margin-top: 30px;
-
-	.author {
-		padding: 50px 0;
-		margin: 70px 0;
-		border-top: 1px solid $border-gray;
-		border-bottom: 1px solid $border-gray;
-		font-family: "Merriweather", serif;
-		line-height: 1.5;
-		min-height: 100px;
-
-		.fn, .note, .subscribe {
-			margin-left: 140px;
-			display: block;
-		}
-
-		.fn {
-			font-size: 1.3em;
-			margin-bottom: 10px;
-		}
-
-		.note {
-			font-size: .9em;
-			margin-bottom: 10px;
-			color: $gray;
-			color: var(--color-gray);
-		}
-
-		.subscribe {
-			font-size: .8em;
-			color: $light-gray;
-			color: var(--color-light-gray);
-			vertical-align: bottom;
-		}
-	}
-}
-
 .comments-link {
 	font-size: 1.2em;
 	display: block;
