@@ -28,6 +28,12 @@ html {
 	font-size: 2em;
 }
 
+.entry-footer .author .fn,
+.entry-footer .author .note,
+.entry-footer .author .subscribe {
+	margin-left: inherit;
+}
+
 .entry-content,
 .entry-summary {
 	p.has-background {
