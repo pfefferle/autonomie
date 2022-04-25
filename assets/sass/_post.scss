@@ -251,7 +251,8 @@ h4.entry-title {
 		color: var(--color-dark-gray);
 	}
 
-	time {
+	.entry-date,
+	.entry-duration {
 		font-size: .8em;
 	}
 }

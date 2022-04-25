@@ -262,3 +262,22 @@ function autonomie_get_the_archive_description() {
 		return wpautop( $stats_text );
 	}
 }
+
+/**
+ * Estimated reading time
+ */
+function autonomie_reading_time() {
+	$content = get_post_field( 'post_content' );
+	$word_count = str_word_count( strip_tags( $content ) );
+	$readingtime = ceil( $word_count / 200 );
+
+	printf(
+		_n(
+			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minute</time> read</span>',
+			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minutes</time> read</span>',
+			$readingtime,
+			'autonomie'
+		),
+		number_format_i18n( $readingtime )
+	);
+}

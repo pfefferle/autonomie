@@ -33,6 +33,7 @@
 			<?php } else { ?>
 				<?php autonomie_posted_on(); ?>
 			<?php } ?>
+			· <?php autonomie_reading_time(); ?>
 			</div>
 			<?php // endif; ?>
 		</div>
