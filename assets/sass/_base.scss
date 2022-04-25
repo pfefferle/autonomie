@@ -110,7 +110,11 @@ blockquote {
 }
 
 code {
-	word-wrap: break-word;
+	background-color: var(--color-dark-gray);
+	color: var(--color-white);
+	border-radius: 0.3em;
+	padding: 4px 5px 5px;
+	white-space: nowrap;
 }
 
 ins {
@@ -172,4 +176,12 @@ pre {
 	padding: 50px;
 	white-space: pre-wrap;
 	word-wrap: break-word;
+
+	code {
+		background-color: inherit;
+		color: inherit;
+		border-radius: inherit;
+		padding: 0;
+		white-space: inherit;
+	}
 }

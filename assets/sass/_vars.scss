@@ -40,4 +40,4 @@ $very-dark-gray: #444;
 // Dimensions
 $wide-width: 900px;
 $default-width: $wide-width - 200px;
-$margin: ($wide-width - $default-width) / 2;
+$margin: calc(($wide-width - $default-width) / 2);
