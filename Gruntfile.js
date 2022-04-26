@@ -85,11 +85,12 @@ module.exports = function(grunt) {
     makepot: {
       target: {
         options: {
-          domainPath: 'languages',
+          domainPath: '/languages',
           exclude: ['bin/.*', '.git/.*', 'vendor/.*', 'node_modules/.*', '_build/.*'],
           potFilename: 'autonomie.pot',
           type: 'wp-theme',
-          updateTimestamp: true
+          updateTimestamp: true,
+          mainFile: 'style.css'
         }
       }
     },

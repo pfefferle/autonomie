@@ -1,0 +1,487 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Autonomie\n"
+"POT-Creation-Date: 2022-04-26 11:08+0200\n"
+"PO-Revision-Date: 2022-04-26 11:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: 404.php:15
+msgid "Well this is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Nun, das ist etwas peinlich, nicht wahr?"
+
+#: 404.php:19
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching, or one of the links below, can help."
+msgstr ""
+"Es scheint, dass wir nicht finden können, was Sie suchen. Vielleicht hilft "
+"Ihnen die Suchfunktion oder ein anderer Link auf dieser Seite."
+
+#: 404.php:26
+msgid "Most Used Categories"
+msgstr "Meistgenutzte Kategorien"
+
+#. translators: %1$s: smilie
+#: 404.php:34
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Versuch es mal im monatlichen Archiv. %1$s"
+
+#: 500.php:15
+msgid "Internal Server Error"
+msgstr "Interner Server-Fehler"
+
+#: 500.php:20
+msgid "More Details"
+msgstr "Mehr Details"
+
+#: archive.php:41 index.php:38
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: archive.php:45 index.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Es scheint, dass wir nicht finden können, was du suchst. Vielleicht kann die "
+"Suche helfen."
+
+#: assets/js/block-editor.js:47 includes/featured-image.php:91
+msgid "Use as post cover (full-width)"
+msgstr "Verwendung als Beitrags-Cover (volle Breite)"
+
+#: comments.php:16
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Dieser Beitrag ist passwortgeschützt. Geben Sie das Passwort ein, um "
+"Kommentare anzuzeigen."
+
+#: comments.php:34
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Kommentar zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#: comments.php:43 comments.php:63
+msgid "Comment navigation"
+msgstr "Kommentar Navigation"
+
+#: comments.php:44 comments.php:64
+msgid "&larr; Older Comments"
+msgstr "&larr; Ältere Kommentare"
+
+#: comments.php:45 comments.php:65
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: footer.php:31
+#, php-format
+msgid "This site is powered by %1$s and styled with the %2$s theme"
+msgstr ""
+
+#: functions.php:80
+msgid "Blue"
+msgstr "Blau"
+
+#: functions.php:85
+msgid "Lighter blue"
+msgstr "Helleres Blau"
+
+#: functions.php:90
+msgid "Blue jeans"
+msgstr "Blaue Jeans"
+
+#: functions.php:95
+msgid "Orioles orange"
+msgstr "Orioles Orange"
+
+#: functions.php:100
+msgid "USC gold"
+msgstr "USC-Gold"
+
+#: functions.php:105
+msgid "Gargoyle gas"
+msgstr "Gargoyle gas"
+
+#: functions.php:110
+msgid "Yellow"
+msgstr "Gelb"
+
+#: functions.php:115
+msgid "Android green"
+msgstr "Android Grün"
+
+#: functions.php:120
+msgid "White"
+msgstr "Weiß"
+
+#: functions.php:125
+msgid "Very light gray"
+msgstr "Sehr helles Grau"
+
+#: functions.php:130
+msgid "Very dark gray"
+msgstr "Sehr dunkles Grau"
+
+#: functions.php:140 header.php:58
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: functions.php:239
+msgctxt "Theme starter content"
+msgid "Beach"
+msgstr "Strand"
+
+#: functions.php:243
+msgctxt "Theme starter content"
+msgid "Sea"
+msgstr "Meer"
+
+#: functions.php:247
+msgctxt "Theme starter content"
+msgid "Lights"
+msgstr "Lichter"
+
+#: functions.php:268
+msgid "Top Menu"
+msgstr "Top Menü"
+
+#: functions.php:302
+msgid "POSH Feed"
+msgstr "POSH-Feed"
+
+#: functions.php:449
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: functions.php:456
+msgid "Your comment is awaiting moderation."
+msgstr "Ihr Kommentar wartet auf Moderation."
+
+#. translators: 1: date, 2: time
+#: functions.php:462
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+#: image.php:63 templates/content-aside.php:23 templates/content-audio.php:23
+#: templates/content-chat.php:23 templates/content-gallery.php:23
+#: templates/content-image.php:23 templates/content-link.php:23
+#: templates/content-quote.php:23 templates/content-single.php:23
+#: templates/content-status.php:23 templates/content-video.php:23
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: includes/customizer.php:12
+msgid "Advanced Settings"
+msgstr "Erweiterte Einstellungen"
+
+#: includes/customizer.php:13
+msgid "Enable/Disable some advanced Autonomie features."
+msgstr "Aktivieren/Deaktivieren Sie einige erweiterte Autonomie-Funktionen."
+
+#. translators: Separator between blog name and feed type in feed links
+#: includes/feed.php:59
+msgctxt "feed link"
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: post title
+#: includes/feed.php:61
+#, php-format
+msgid "%1$s %2$s %3$s Comments Feed"
+msgstr "%1$s %2$s %3$s Kommentar-Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: category name
+#: includes/feed.php:63
+#, php-format
+msgid "%1$s %2$s %3$s Category Feed"
+msgstr "%1$s %2$s %3$s Kategorie-Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: tag name
+#: includes/feed.php:65
+#, php-format
+msgid "%1$s %2$s %3$s Tag Feed"
+msgstr "%1$s %2$s %3$s Tag-Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: term name, 4: taxonomy singular name
+#: includes/feed.php:67
+#, php-format
+msgid "%1$s %2$s %3$s %4$s Feed"
+msgstr "%1$s %2$s %3$s %4$s Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: author name
+#: includes/feed.php:69
+#, php-format
+msgid "%1$s %2$s Posts by %3$s Feed"
+msgstr "%1$s %2$s Beiträge von %3$s-Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: search phrase
+#: includes/feed.php:71
+#, php-format
+msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
+msgstr "%1$s %2$s Suchergebnisse für &#8220;%3$s&#8221; Feed"
+
+#. translators: 1: blog name, 2: separator(raquo), 3: post type
+#: includes/feed.php:73
+#, php-format
+msgid "%1$s %2$s %3$s Post-Type Feed"
+msgstr "%1$s %2$s %3$s Post-Type-Feed"
+
+#: includes/semantics.php:123
+#, php-format
+msgid "User Avatar of %s"
+msgstr "Benutzerbild von %s"
+
+#: includes/semantics.php:125
+msgid "User Avatar"
+msgstr "Benutzerbild"
+
+#: includes/template-functions.php:13
+msgid "Post navigation"
+msgstr "Beitragsnavigation"
+
+#. translators:
+#: includes/template-functions.php:32 includes/template-functions.php:57
+#, php-format
+msgid ""
+"<address class=\"byline\"><span class=\"author p-author vcard hcard h-card\" "
+"itemprop=\"author\" itemscope itemtype=\"https://schema.org/Person\">%5$s <a "
+"class=\"url uid u-url u-uid fn p-name\" href=\"%6$s\" title=\"%7$s\" rel="
+"\"author\" itemprop=\"url\"><span itemprop=\"name\">%8$s</span></a></span></"
+"address> <span class=\"sep\"> | </span> <a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\" class=\"url u-url\" itemprop=\"mainEntityOfPage\"><time class="
+"\"entry-date updated published dt-updated dt-published\" datetime=\"%3$s\" "
+"itemprop=\"dateModified datePublished\">%4$s</time></a>"
+msgstr ""
+
+#. translators:
+#: includes/template-functions.php:40 includes/template-functions.php:65
+#, php-format
+msgid "View all posts by %s"
+msgstr "Zeige alle Beiträge von %s"
+
+#. translators: The title of the search results page
+#: includes/template-functions.php:137
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: includes/template-functions.php:176
+msgid "Attachment"
+msgstr "Anhang"
+
+#: includes/template-functions.php:178
+msgid "Text"
+msgstr "Text"
+
+#. translators: list of followers
+#: includes/template-functions.php:233
+#, php-format
+msgid "%s Followers"
+msgstr "%s Follower"
+
+#. translators: a post counter
+#: includes/template-functions.php:235
+#, php-format
+msgid "%s Posts"
+msgstr "%s Beiträge"
+
+#: includes/template-functions.php:236
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+#. translators: Description for search results
+#: includes/template-functions.php:260
+#, php-format
+msgid "Found %1$s search result for <strong>%2$s</strong>."
+msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
+msgstr[0] "%1$s Suchergebnis gefunden für <strong>%2$s</strong>."
+msgstr[1] "%1$s Suchergebnisse gefunden für <strong>%2$s</strong>."
+
+#: includes/template-functions.php:276
+#, php-format
+msgid ""
+"<span class=\"entry-duration\"><time datetime=\"PT%1$sM\" class=\"dt-duration"
+"\" itemprop=\"timeRequired\">%1$s minute</time> read</span>"
+msgid_plural ""
+"<span class=\"entry-duration\"><time datetime=\"PT%1$sM\" class=\"dt-duration"
+"\" itemprop=\"timeRequired\">%1$s minutes</time> read</span>"
+msgstr[0] ""
+"<span class=\"entry-duration\"><time datetime=\"PT%1$sM\" class=\"dt-duration"
+"\" itemprop=\"timeRequired\">%1$s Minute</time> zu lesen</span>"
+msgstr[1] ""
+"<span class=\"entry-duration\"><time datetime=\"PT%1$sM\" class=\"dt-duration"
+"\" itemprop=\"timeRequired\">%1$s Minuten</time> zu lesen</span>"
+
+#: includes/widgets.php:17
+msgid "Sidebar 1"
+msgstr "Seitenleiste 1"
+
+#: includes/widgets.php:19
+msgid "A sidebar area"
+msgstr "Ein Seitenleistenbereich"
+
+#: includes/widgets.php:29
+msgid "Sidebar 2"
+msgstr "Seitenleiste 2"
+
+#: includes/widgets.php:31
+msgid "A second sidebar area"
+msgstr "Ein zweiter Seitenleistenbereich"
+
+#: includes/widgets.php:41
+msgid "Sidebar 3"
+msgstr "Seitenleiste 3"
+
+#: includes/widgets.php:43
+msgid "A third sidebar area"
+msgstr "Ein dritter Seitenleistenbereich"
+
+#: includes/widgets.php:53
+msgid "Entry-Meta"
+msgstr "Entry-Meta"
+
+#: includes/widgets.php:55
+msgid "Extend the Entry-Meta"
+msgstr "Erweitere die Entry-Meta"
+
+#. translators: how to follow
+#: integrations/activitypub.php:23
+#, php-format
+msgid ""
+"<indie-action do=\"follow\" width=\"%1$s\">Follow <code>%2$s</code> "
+"(fediverse)</indie-action>"
+msgstr ""
+"<indie-action do=\"follow\" width=\"%1$s\">Folgen <code>%2$s</code> "
+"(fediverse)</indie-action>"
+
+#: integrations/syndication-links.php:34
+msgid "Syndication Links"
+msgstr "Syndizierungs-Links"
+
+#: offline.php:15
+msgid "Offline"
+msgstr "Offline"
+
+#: template-parts/entry-author.php:7
+msgid "Subscribe to author feed"
+msgstr "Autorenfeed abonnieren"
+
+#: template-parts/entry-footer.php:11
+msgid "Leave a comment"
+msgstr "Hinterlasse einen Kommentar"
+
+#: template-parts/entry-footer.php:11
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: template-parts/entry-footer.php:11
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: template-parts/entry-header.php:23
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalink zu %s"
+
+#: template-parts/entry-share.php:3
+msgid "share"
+msgstr "Teilen"
+
+#: template-parts/entry-share.php:10
+msgid "Shortlink"
+msgstr "Kurz-URL"
+
+#: template-parts/entry-share.php:14
+msgid "Permalink"
+msgstr "Permalink"
+
+#: template-parts/entry-share.php:22 template-parts/entry-share.php:27
+msgid "HTML"
+msgstr "HTML"
+
+#: template-parts/entry-taxonomy.php:7
+msgid "Categories"
+msgstr "Kategorien"
+
+#: template-parts/entry-taxonomy.php:8 template-parts/entry-taxonomy.php:19
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: template-parts/entry-taxonomy.php:18
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: templates/content-aside.php:22 templates/content-audio.php:22
+#: templates/content-chat.php:22 templates/content-gallery.php:22
+#: templates/content-image.php:22 templates/content-link.php:22
+#: templates/content-quote.php:22 templates/content-single.php:22
+#: templates/content-status.php:22 templates/content-video.php:22
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#. Theme Name of the plugin/theme
+msgid "Autonomie"
+msgstr "Autonomie"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/pfefferle/Autonomie"
+msgstr "https://github.com/pfefferle/Autonomie"
+
+#. Description of the plugin/theme
+msgid ""
+"Autonomie is a highly semantic, responsive, accessible and seo optimized "
+"WordPress Theme. It provides HTML5 templates refined with microformats, "
+"microformats v2 and microdata (Schema.org). Autonomie supports a lot of "
+"OpenWeb plugins and is fully IndieWeb compatible."
+msgstr ""
+"Autonomie ist ein hochgradig semantisches, reaktionsschnelles, zugängliches "
+"und SEO-optimiertes WordPress-Theme. Es bietet HTML5-Vorlagen, die mit "
+"Mikroformaten, Mikroformaten v2 und Mikrodaten (Schema.org) verfeinert "
+"wurden. Autonomie unterstützt viele OpenWeb-Plugins und ist vollständig "
+"IndieWeb-kompatibel."
+
+#. Author of the plugin/theme
+msgid "Matthias Pfefferle"
+msgstr "Matthias Pfefferle"
+
+#. Author URI of the plugin/theme
+msgid "https://notiz.blog/"
+msgstr "https://notiz.blog/"
+
+#. Template Name of the plugin/theme
+msgid "\"/now\" Template"
+msgstr "Vorlage \"/now\""
+
+#~ msgid "Feed Templates"
+#~ msgstr "Feed-Vorlagen"
