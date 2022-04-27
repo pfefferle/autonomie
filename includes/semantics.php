@@ -207,9 +207,9 @@ function autonomie_get_semantics( $id = null ) {
 			if ( is_search() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/Blog', 'https://schema.org/SearchResultsPage' );
-			} elseif ( ! is_singular() ) {
+			} elseif ( is_author() ) {
 				$classes['itemscope'] = array( '' );
-				$classes['itemtype'] = array( 'https://schema.org/Blog', 'https://schema.org/WebPage' );
+				$classes['itemtype'] = array( 'https://schema.org/Blog', 'https://schema.org/ProfilePage' );
 			} elseif ( is_single() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/BlogPosting' );
@@ -217,6 +217,9 @@ function autonomie_get_semantics( $id = null ) {
 			} elseif ( is_page() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/WebPage' );
+			} elseif ( ! is_singular() ) {
+				$classes['itemscope'] = array( '' );
+				$classes['itemtype'] = array( 'https://schema.org/Blog', 'https://schema.org/WebPage' );
 			}
 
 			$classes['itemid'] = array( get_self_link() );
@@ -249,7 +252,6 @@ function autonomie_get_semantics( $id = null ) {
 			}
 			break;
 		case 'post':
-		case 'page':
 			if ( ! is_singular() ) {
 				$classes['itemprop'] = array( 'blogPost' );
 				$classes['itemscope'] = array( '' );

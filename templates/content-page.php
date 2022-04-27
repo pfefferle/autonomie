@@ -9,7 +9,7 @@
  */
 ?>
 
-<article <?php autonomie_post_id(); ?> <?php post_class(); ?><?php autonomie_semantics( 'page' ); ?>>
+<article <?php autonomie_post_id(); ?> <?php post_class(); ?><?php autonomie_semantics( 'post' ); ?>>
 	<?php get_template_part( 'template-parts/entry-header' ); ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
