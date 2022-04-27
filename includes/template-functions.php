@@ -273,8 +273,8 @@ function autonomie_reading_time() {
 
 	printf(
 		_n(
-			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minute</time> read</span>',
-			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minutes</time> read</span>',
+			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minute</time> to read</span>',
+			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minutes</time> to read</span>',
 			$readingtime,
 			'autonomie'
 		),
