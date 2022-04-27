@@ -204,7 +204,10 @@ function autonomie_get_semantics( $id = null ) {
 	// add default values
 	switch ( $id ) {
 		case 'body':
-			if ( ! is_singular() ) {
+			if ( is_search() ) {
+				$classes['itemscope'] = array( '' );
+				$classes['itemtype'] = array( 'https://schema.org/Blog', 'https://schema.org/SearchResultsPage' );
+			} elseif ( ! is_singular() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/Blog', 'https://schema.org/WebPage' );
 			} elseif ( is_single() ) {
@@ -246,6 +249,7 @@ function autonomie_get_semantics( $id = null ) {
 			}
 			break;
 		case 'post':
+		case 'page':
 			if ( ! is_singular() ) {
 				$classes['itemprop'] = array( 'blogPost' );
 				$classes['itemscope'] = array( '' );

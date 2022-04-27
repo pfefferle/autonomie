@@ -27,7 +27,15 @@ if ( ! function_exists( 'autonomie_posted_by' ) ) :
 	 */
 	function autonomie_posted_by() {
 		printf(
-			'<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="https://schema.org/Person">%1$s <a class="url uid u-url u-uid fn p-name" href="%2$s" title="%3$s" rel="author" itemprop="url"><span itemprop="name">%4$s</span></a></span></address>',
+			'<address class="byline">
+				<span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="https://schema.org/Person">
+					%1$s
+					<a class="url uid u-url u-uid fn p-name" href="%2$s" title="%3$s" rel="author">
+						<span itemprop="name">%4$s</span>
+					</a>
+					<link itemprop="url" href="%2$s" />
+				</span>
+			</address>',
 			get_avatar( get_the_author_meta( 'ID' ), 40),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			// translators:
