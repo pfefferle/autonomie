@@ -18,23 +18,17 @@ if ( ! function_exists( 'autonomie_content_nav' ) ) :
 	}
 endif; // autonomie_content_nav
 
-if ( ! function_exists( 'autonomie_posted_on' ) ) :
+if ( ! function_exists( 'autonomie_posted_by' ) ) :
 	/**
-	 * Prints HTML with meta information for the current post-date/time and author.
-	 * Create your own autonomie_posted_on to override in a child theme.
+	 * Prints HTML with meta information for the current author.
+	 * Create your own autonomie_posted_by to override in a child theme.
 	 *
 	 * @since Autonomie 1.0.0
 	 */
-	function autonomie_posted_on() {
-		// translators: the author byline
+	function autonomie_posted_by() {
 		printf(
-			// translators:
-			__( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="https://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			get_avatar( get_the_author_meta( 'ID' ), 40 ),
+			'<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="https://schema.org/Person">%1$s <a class="url uid u-url u-uid fn p-name" href="%2$s" title="%3$s" rel="author" itemprop="url"><span itemprop="name">%4$s</span></a></span></address>',
+			get_avatar( get_the_author_meta( 'ID' ), 40),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			// translators:
 			esc_attr( sprintf( __( 'View all posts by %s', 'autonomie' ), get_the_author() ) ),
@@ -43,27 +37,48 @@ if ( ! function_exists( 'autonomie_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'autonomie_updated_on' ) ) :
+if ( ! function_exists( 'autonomie_posted_on' ) ) :
 	/**
-	 * Prints HTML with meta information for the current update-date/time and author.
-	 * Create your own autonomie_updated_on to override in a child theme.
+	 * Prints HTML with meta information for the current post-date/time.
+	 * Create your own autonomie_posted_on to override in a child theme.
 	 *
 	 * @since Autonomie 1.0.0
 	 */
-	function autonomie_updated_on() {
+	function autonomie_posted_on( $type = 'published' ) {
+		global $query;
+
+		if ( ! in_array( $type, array( 'published', 'updated' ) ) ) {
+			$type = 'published';
+		}
+
+		if ( get_query_var( 'is_now', false ) ) {
+			$type = 'updated';
+		}
+
+		if ( 'updated' === $type ) {
+			// updated
+			$time      = get_the_modified_time();
+			$date_c    = get_the_modified_date( 'c' );
+			$date      = get_the_modified_date();
+			$item_prop = 'dateModified';
+		} else {
+			// published
+			$time      = get_the_time();
+			$date_c    = get_the_date( 'c' );
+			$date      = get_the_date();
+			$item_prop = 'datePublished';
+		}
+
 		// translators: the author byline
 		printf(
 			// translators:
-			__( '<address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="https://schema.org/Person">%5$s <a class="url uid u-url u-uid fn p-name" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address> <span class="sep"> | </span> <a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">%4$s</time></a>', 'autonomie' ),
+			'<a href="%1$s" title="%2$s" rel="bookmark" class="url u-url" itemprop="mainEntityOfPage"><time class="entry-date %5$s dt-%5$s" datetime="%3$s" itemprop="%6$s">%4$s</time></a>',
 			esc_url( get_permalink() ),
-			esc_attr( get_the_modified_time() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() ),
-			get_avatar( get_the_author_meta( 'ID' ), 40 ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			// translators:
-			esc_attr( sprintf( __( 'View all posts by %s', 'autonomie' ), get_the_author() ) ),
-			esc_html( get_the_author() )
+			esc_attr( $time ),
+			esc_attr( $date_c ),
+			esc_html( $date ),
+			esc_html( $type ),
+			esc_html( $item_prop ),
 		);
 	}
 endif;

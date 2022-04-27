@@ -28,12 +28,7 @@
 
 			<?php // if ( ! is_singular() ) : ?>
 			<div class="entry-meta">
-			<?php if ( get_query_var( 'is_now', false ) ) { ?>
-				<?php autonomie_updated_on(); ?>
-			<?php } else { ?>
-				<?php autonomie_posted_on(); ?>
-			<?php } ?>
-			· <?php autonomie_reading_time(); ?>
+				<?php autonomie_posted_by(); ?> <span class="sep"> · </span> <?php autonomie_posted_on(); ?> <span class="sep"> · </span> <?php autonomie_reading_time(); ?>
 			</div>
 			<?php // endif; ?>
 		</div>

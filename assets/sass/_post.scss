@@ -305,7 +305,7 @@ h4.entry-title {
 
 	@include clearfix;
 
-	.sep {
+	.sep:first-of-type {
 		display: none;
 	}
 
