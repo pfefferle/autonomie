@@ -143,7 +143,10 @@ img.wp-post-image {
 			padding: 0.5rem;
 		}
 	}
-	margin: 0 auto;
+}
+
+.entry-content .wp-block-gallery {
+	margin: inherit auto;
 }
 
 .entry-attachment img {
