@@ -136,11 +136,14 @@ img.wp-post-image {
 	max-width: auto;
 }
 
-.wp-block-gallery .blocks-gallery-image,
-.wp-block-gallery .blocks-gallery-item {
-	figcaption {
-		padding: 0.5rem;
+.wp-block-gallery {
+	.blocks-gallery-image,
+	.blocks-gallery-item {
+		figcaption {
+			padding: 0.5rem;
+		}
 	}
+	margin: 0 auto;
 }
 
 .entry-attachment img {
