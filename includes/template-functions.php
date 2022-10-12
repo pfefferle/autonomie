@@ -316,6 +316,11 @@ function autonomie_the_content() {
 		return;
 	}
 
+	if ( is_singular() ) {
+		the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'autonomie' ) );
+		return;
+	}
+
 	$count = str_word_count( strip_tags( get_the_content() ) );
 
 	if ( AUTONOMIE_EXCERPT && ( false === get_post_format() || $count > AUTONOMIE_EXCERPT_COUNT ) ) {
