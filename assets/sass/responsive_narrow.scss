@@ -41,6 +41,11 @@ html {
 	}
 }
 
+.entry-footer .author {
+	width: 100%;
+	max-width: 100%;
+}
+
 .alignright,
 .alignleft,
 .wp-block-image .alignright,
@@ -57,7 +62,7 @@ html {
 .entry-content > form,
 .entry-content > div,
 .entry-header,
-.entry-footer,
+.entry-footer > *,
 .entry-reaction,
 #comments,
 #nav-above,

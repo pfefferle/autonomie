@@ -2,10 +2,6 @@
 .page {
 	#primary .post,
 	#primary .page {
-		.comments-link {
-			display: none;
-		}
-
 		&.has-full-width-featured-image {
 			margin-top: 0px;
 		}
@@ -168,6 +164,50 @@ h4.entry-title {
 	}
 }
 
+.entry-actions {
+	display: block;
+	padding-top: 30px;
+	position: relative;
+
+	@include clearfix;
+}
+
+#entry-share {
+	display: inline-block;
+	font-size: 1em;
+	font-family: "Lato", sans-serif;
+	background-color: $background-gray;
+	background-color: var(--color-background-gray);
+	border: none;
+	border-radius: 3px;
+	color: $dark-gray;
+	color: var(--color-dark-gray);
+	line-height: inherit;
+	padding: 3px 7px;
+	text-decoration: none;
+	float: right;
+
+	&:hover {
+		background-color: $light-green;
+		color: $dark-green;
+	}
+
+	&:before {
+		display: inline-block;
+		font: normal 1.1em "Dashicons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		margin-right: 0;
+		position: relative;
+		text-decoration: none;
+		top: 2px;
+		vertical-align: text-middle;
+		margin-right: 5px;
+		content: "";
+	}
+}
+
 .page-link,
 .page-links {
 	margin-bottom: 1em;
@@ -258,8 +298,8 @@ h4.entry-title {
 }
 
 .comments-link {
-	font-size: 1.2em;
-	display: block;
+	font-size: 1em;
+	display: inline-block;
 
 	&:before {
 		display: inline-block;

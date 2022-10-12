@@ -19,7 +19,7 @@
 .entry-content > form,
 .entry-content > div,
 .entry-header,
-.entry-footer,
+.entry-footer > *,
 .entry-reaction,
 #comments,
 #nav-above,
@@ -38,6 +38,12 @@
 	.wp-block-media-text {
 		display: flex;
 	}
+}
+
+.entry-footer .author {
+	width: $default-width + 80;
+	max-width: $default-width + 80;
+	margin: 70px auto;
 }
 
 #sidebar {

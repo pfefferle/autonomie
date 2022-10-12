@@ -15,5 +15,6 @@
         citation_options.style.display = 'none';
       }
     }
+    return false;
   }
 })();
