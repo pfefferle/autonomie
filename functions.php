@@ -455,9 +455,6 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 						<?php echo get_avatar( $comment, 40 ); ?>
 						<?php printf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ); ?>
 					</address><!-- .comment-author .vcard -->
-					<?php if ( '0' === $comment->comment_approved ) : ?>
-						<em><?php _e( 'Your comment is awaiting moderation.', 'autonomie' ); ?></em>
-					<?php endif; ?>
 
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published dt-updated dt-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
 					<?php
@@ -466,6 +463,10 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 					?>
 					</time></a>
 				</footer>
+
+				<?php if ( '0' === $comment->comment_approved ) : ?>
+					<p><em><?php _e( 'Your comment is awaiting moderation.', 'autonomie' ); ?></em></p>
+				<?php endif; ?>
 
 				<div class="comment-content e-content p-summary p-name" itemprop="text name description"><?php comment_text(); ?></div>
 
