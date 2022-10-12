@@ -12,17 +12,11 @@
 <article <?php autonomie_post_id(); ?> <?php post_class(); ?><?php autonomie_semantics( 'post' ); ?>>
 	<?php get_template_part( 'template-parts/entry-header' ); ?>
 
-	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
-	<div class="entry-summary p-summary" itemprop="description articleBody">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php else : ?>
 	<?php autonomie_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
 	<div class="entry-title p-name entry-content e-content" itemprop="name headline description articleBody">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'autonomie' ) ); ?>
+		<?php autonomie_the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	<?php endif; ?>
 
 	<?php get_template_part( 'template-parts/entry-footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

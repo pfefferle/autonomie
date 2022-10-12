@@ -34,6 +34,9 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 	 * functions.php file.
 	 */
 	function autonomie_setup() {
+		defined( 'AUTONOMIE_EXCERPT' ) || define( 'AUTONOMIE_EXCERPT', false );
+		defined( 'AUTONOMIE_EXCERPT_COUNT' ) || define( 'AUTONOMIE_EXCERPT_COUNT', 100 );
+
 		$content_width = 900;
 
 		/**

@@ -304,3 +304,23 @@ function autonomie_reading_time() {
 		number_format_i18n( $readingtime )
 	);
 }
+
+/**
+ * Add possibility to use `the_excerpt` instead of `the_content` for longer posts
+ *
+ * @return void
+ */
+function autonomie_the_content() {
+	if ( is_search() ) {
+		the_excerpt();
+		return;
+	}
+
+	$count = str_word_count( strip_tags( get_the_content() ) );
+
+	if ( AUTONOMIE_EXCERPT && ( false === get_post_format() || $count > AUTONOMIE_EXCERPT_COUNT ) ) {
+		the_excerpt();
+	} else {
+		the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'autonomie' ) );
+	}
+}
