@@ -73,6 +73,16 @@ html {
 	box-sizing: border-box;
 }
 
+.type-page,
+.format-standard {
+	h1.entry-title,
+	h2.entry-title,
+	h3.entry-title,
+	h4.entry-title {
+		font-size: 3em;
+	}
+}
+
 .entry-content > pre,
 .entry-content > table {
 	max-width: 100%;
