@@ -1,5 +1,11 @@
 ( function() {
-  document.getElementById('entry-share').onclick = function share() {
+  entry_share = document.getElementById('entry-share');
+
+  if ( ! entry_share ) {
+    return false;
+  }
+
+  entry_share.onclick = function share() {
     if (navigator.share) {
       navigator.share(
         {
