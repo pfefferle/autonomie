@@ -115,7 +115,7 @@ $icons: apml "\f001" "#AFDD63",
 		indieauth "\f094" "monochrome";
 
 // set "icon" as default prefix
-$prefix: icon;
+$prefix: openwebicons;
 $font_path: "assets/font/openwebicons";
 
 @mixin font_face {
@@ -181,7 +181,6 @@ $font_path: "assets/font/openwebicons";
 
 @include font_face;
 
-[class^="icon-"]:before, [class*=" icon-"]:before,
 [class^="openwebicons-"]:before, [class*=" openwebicons-"]:before {
 	font-family: "OpenWeb Icons";
 	font-weight: normal;
@@ -198,20 +197,17 @@ $font_path: "assets/font/openwebicons";
 	margin-right: 5px;
 }
 
-a [class^="icon-"], a [class*=" icon-"],
 a [class^="openwebicons-"], a [class*=" openwebicons-"] {
 	display: inline-block;
 	text-decoration: inherit;
 }
 
-li[class^="icon-"], li[class*=" icon-"],
 li[class^="openwebicons-"], li[class*=" openwebicons-"] {
 	display: block;
 }
 
 // iterate icons
 @each $icon in $icons {
-	.icon-#{nth($icon, 1)}:before,
 	.openwebicons-#{nth($icon, 1)}:before {
 		content: "#{nth($icon, 2)}";
 	}
@@ -221,7 +217,6 @@ li[class^="openwebicons-"], li[class*=" openwebicons-"] {
 @each $icon in $icons {
 	// check if icon has a color
 	@if nth($icon, 3) != "monochrome" {
-		.icon-#{nth($icon, 1)}-colored:before,
 		.openwebicons-#{nth($icon, 1)}-colored:before {
 			content: "#{nth($icon, 2)}";
 			color: #{nth($icon, 3)};
