@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2023 Matthias Pfefferle
+# <!=Copyright (C) 2024 Matthias Pfefferle
 # This file is distributed under the MIT.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/autonomie\n"
-"POT-Creation-Date: 2023-12-04 19:31:39+00:00\n"
+"POT-Creation-Date: 2024-01-08 16:23:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -232,36 +232,40 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: includes/template-functions.php:199
+#: includes/template-functions.php:197
 msgid "Attachment"
 msgstr ""
 
-#: includes/template-functions.php:201
+#: includes/template-functions.php:199
+msgid "Page"
+msgstr ""
+
+#: includes/template-functions.php:206
 msgid "Text"
 msgstr ""
 
-#: includes/template-functions.php:256
+#: includes/template-functions.php:265
 #. translators: list of followers
 msgid "%s Followers"
 msgstr ""
 
-#: includes/template-functions.php:258
+#: includes/template-functions.php:267
 #. translators: a post counter
 msgid "%s Posts"
 msgstr ""
 
-#: includes/template-functions.php:259
+#: includes/template-functions.php:268
 msgid "Subscribe"
 msgstr ""
 
-#: includes/template-functions.php:283
+#: includes/template-functions.php:292
 #. translators: Description for search results
 msgid "Found %1$s search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/template-functions.php:298
+#: includes/template-functions.php:307
 msgid ""
 "<span class=\"entry-duration\"><time datetime=\"PT%1$sM\" "
 "class=\"dt-duration\" itemprop=\"timeRequired\">%1$s minute</time> to "
@@ -273,7 +277,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/template-functions.php:320 includes/template-functions.php:329
+#: includes/template-functions.php:329 includes/template-functions.php:338
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -340,7 +344,7 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: template-parts/entry-header.php:23
+#: template-parts/entry-header.php:22
 msgid "Permalink to %s"
 msgstr ""
 

@@ -1,15 +1,14 @@
 	<header class="entry-header">
 		<div class="entry-header-wrapper">
-			<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta post-format">
 				<?php echo apply_filters( 'autonomie_post_format', sprintf(
-					'<a class="entry-format entry-format-%s" href="%s">%s</a>',
+					'<a class="entry-format entry-format-%s entry-type-%s" href="%s">%s</a>',
 					autonomie_get_post_format(),
+					get_post_type(),
 					esc_url( autonomie_get_post_format_link( autonomie_get_post_format() ) ),
 					autonomie_get_post_format_string()
 				) ); ?>
 			</div>
-			<?php endif; ?>
 
 			<?php
 			if ( ! in_array( get_post_format(), array( 'aside', 'quote', 'status' ), true ) && ! empty( get_the_title() ) ) :

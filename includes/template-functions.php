@@ -193,10 +193,15 @@ function autonomie_get_post_format() {
  * @return void
  */
 function autonomie_get_post_format_string() {
-	if ( get_post_format() ) {
-		return get_post_format();
-	} elseif ( 'attachment' === get_post_type() ) {
+	if ( 'attachment' === get_post_type() ) {
 		return __( 'Attachment', 'autonomie' );
+	} elseif ( 'page' === get_post_type() ) {
+		return __( 'Page', 'autonomie' );
+	} elseif ( 'post' !== get_post_type() ) {
+		$post_type_obj = get_post_type_object( get_post_type() );
+		return $post_type_obj->labels->singular_name;
+	} elseif ( get_post_format() ) {
+		return get_post_format();
 	} else {
 		return __( 'Text', 'autonomie' );
 	}
@@ -210,6 +215,14 @@ function autonomie_get_post_format_string() {
  * @return void
  */
 function autonomie_get_post_format_link( $post_format ) {
+	if ( in_array( get_post_type(), array( 'page', 'attachment' ), true ) ) {
+		return get_permalink();
+	}
+
+	if ( 'post' !== get_post_type() ) {
+		return get_post_type_archive_link( get_post_type() );
+	}
+
 	if ( 'standard' !== $post_format ) {
 		return get_post_format_link( $post_format );
 	}

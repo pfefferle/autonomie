@@ -9,7 +9,7 @@
  */
 ?>
 
-<article <?php autonomie_post_id(); ?> <?php post_class(); ?><?php autonomie_semantics( 'post' ); ?>>
+<article <?php autonomie_post_id(); ?> <?php post_class( 'post' ); ?><?php autonomie_semantics( 'post' ); ?>>
 	<?php get_template_part( 'template-parts/entry-header' ); ?>
 
 	<?php autonomie_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
