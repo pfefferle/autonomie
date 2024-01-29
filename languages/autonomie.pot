@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/autonomie\n"
-"POT-Creation-Date: 2024-01-08 16:23:03+00:00\n"
+"POT-Creation-Date: 2024-01-29 15:06:19+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -244,28 +244,28 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: includes/template-functions.php:265
+#: includes/template-functions.php:269
 #. translators: list of followers
 msgid "%s Followers"
 msgstr ""
 
-#: includes/template-functions.php:267
+#: includes/template-functions.php:271
 #. translators: a post counter
 msgid "%s Posts"
 msgstr ""
 
-#: includes/template-functions.php:268
+#: includes/template-functions.php:272
 msgid "Subscribe"
 msgstr ""
 
-#: includes/template-functions.php:292
+#: includes/template-functions.php:296
 #. translators: Description for search results
 msgid "Found %1$s search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/template-functions.php:307
+#: includes/template-functions.php:311
 msgid ""
 "<span class=\"entry-duration\"><time datetime=\"PT%1$sM\" "
 "class=\"dt-duration\" itemprop=\"timeRequired\">%1$s minute</time> to "
@@ -277,7 +277,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/template-functions.php:329 includes/template-functions.php:338
+#: includes/template-functions.php:333 includes/template-functions.php:342
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
