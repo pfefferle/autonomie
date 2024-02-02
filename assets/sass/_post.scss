@@ -106,6 +106,12 @@ h4.entry-title {
 	}
 }
 
+.format-quote, .format-aside, .format-status {
+	.entry-content {
+		font-size: 1.5em;
+	}
+}
+
 .type-page,
 .format-standard {
 	h1.entry-title,
@@ -121,7 +127,6 @@ h4.entry-title {
 	color: $dark-gray;
 	color: var(--color-dark-gray);
 	font-style: normal;
-	line-height: 2;
 	font-size: 1.2em;
 	margin: 0 auto;
 
