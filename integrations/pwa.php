@@ -26,8 +26,6 @@ add_filter(
 	function ( $args ) {
 		$args['cacheName'] = 'pages';
 
-		$args['plugins']['expiration']['maxEntries'] = 50;
-
 		return $args;
 	}
 );
