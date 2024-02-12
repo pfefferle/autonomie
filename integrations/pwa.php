@@ -43,7 +43,8 @@ add_action(
 				'cacheName' => 'assets',
 				'plugins'   => array(
 					'expiration' => array(
-						'maxEntries' => 60,
+						'maxEntries'    => 60,
+						'maxAgeSeconds' => 60 * 60 * 24,
 					),
 				),
 			)
@@ -57,7 +58,8 @@ add_action(
 				'cacheName' => 'images',
 				'plugins'   => array(
 					'expiration' => array(
-						'maxEntries' => 60,
+						'maxEntries'    => 60,
+						'maxAgeSeconds' => 60 * 60 * 24,
 					),
 				),
 			)
