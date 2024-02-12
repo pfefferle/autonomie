@@ -41,12 +41,6 @@ add_action(
 			array(
 				'strategy'  => WP_Service_Worker_Caching_Routes::STRATEGY_NETWORK_FIRST,
 				'cacheName' => 'assets',
-				'plugins'   => array(
-					'expiration' => array(
-						'maxEntries'    => 60,
-						'maxAgeSeconds' => 60 * 60 * 24,
-					),
-				),
 			)
 		);
 
@@ -56,12 +50,6 @@ add_action(
 			array(
 				'strategy'  => WP_Service_Worker_Caching_Routes::STRATEGY_CACHE_FIRST,
 				'cacheName' => 'images',
-				'plugins'   => array(
-					'expiration' => array(
-						'maxEntries'    => 60,
-						'maxAgeSeconds' => 60 * 60 * 24,
-					),
-				),
 			)
 		);
 	}
