@@ -511,3 +511,12 @@ h4.entry-title {
 	color: inherit;
 	/** nothing special */
 }
+
+.wp-block-footnotes {
+	border-top: solid 1px lightgray;
+	margin-top: 2em;
+	padding-top: 2em;
+	font-size: .8em;
+	padding-left: 0;
+	list-style-position: inside;
+}
