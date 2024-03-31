@@ -401,10 +401,10 @@ if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 
 		// Loads our main stylesheet.
 		wp_enqueue_style( 'autonomie-style', get_stylesheet_uri(), array( 'dashicons' ) );
-		wp_enqueue_style( 'autonomie-print-style', get_stylesheet_directory_uri() . '/assets/css/print.css', array( 'autonomie-style' ), '1.0.0', 'print' );
-		wp_enqueue_style( 'autonomie-narrow-style', get_stylesheet_directory_uri() . '/assets/css/narrow-width.css', array( 'autonomie-style' ), '1.0.0', '(max-width: 800px)' );
-		wp_enqueue_style( 'autonomie-default-style', get_stylesheet_directory_uri() . '/assets/css/default-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 800px)' );
-		wp_enqueue_style( 'autonomie-wide-style', get_stylesheet_directory_uri() . '/assets/css/wide-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 1000px)' );
+		wp_enqueue_style( 'autonomie-print-style', get_template_directory_uri() . '/assets/css/print.css', array( 'autonomie-style' ), '1.0.0', 'print' );
+		wp_enqueue_style( 'autonomie-narrow-style', get_template_directory_uri() . '/assets/css/narrow-width.css', array( 'autonomie-style' ), '1.0.0', '(max-width: 800px)' );
+		wp_enqueue_style( 'autonomie-default-style', get_template_directory_uri() . '/assets/css/default-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 800px)' );
+		wp_enqueue_style( 'autonomie-wide-style', get_template_directory_uri() . '/assets/css/wide-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 1000px)' );
 
 		wp_localize_script(
 			'autonomie',
