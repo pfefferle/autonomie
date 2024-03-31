@@ -395,7 +395,6 @@ if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 		}
 
 		wp_enqueue_script( 'autonomie-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'autonomie-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'autonomie-share', get_template_directory_uri() . '/assets/js/share.js', array(), '1.0.0', true );
 
 		wp_enqueue_style( 'dashicons' );
