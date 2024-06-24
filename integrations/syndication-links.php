@@ -31,8 +31,10 @@ add_action( 'wp_print_styles', 'autonomie_syndication_links_print_scripts', 100 
  */
 function autonomie_syndication_links() {
 	if ( function_exists( 'get_syndication_links' ) ) {
+		echo '<div class="syndication-links">';
 		_e( 'Syndication Links', 'autonomie' );
 		echo get_syndication_links( null, array( 'show_text_before' => null) );
+		echo '</div>';
 	}
 }
 add_action( 'autonomie_entry_footer', 'autonomie_syndication_links' );
