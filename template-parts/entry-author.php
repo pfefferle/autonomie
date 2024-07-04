@@ -5,4 +5,5 @@
 	</a>
 	<div class="note e-note" itemprop="description"><?php echo get_the_author_meta( 'description' ); ?></div>
 	<a class="subscribe" href="<?php echo get_author_feed_link( get_the_author_meta( 'ID' ) ); ?>"><i class="openwebicons-feed"></i> <?php _e( 'Subscribe to author feed', 'autonomie' ); ?></a>
+	<link itemprop="url" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" />
 </address>
