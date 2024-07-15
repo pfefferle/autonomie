@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/autonomie\n"
-"POT-Creation-Date: 2024-06-24 13:38:27+00:00\n"
+"POT-Creation-Date: 2024-07-15 14:19:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -320,7 +320,7 @@ msgid ""
 "(fediverse)</indie-action>"
 msgstr ""
 
-#: integrations/syndication-links.php:34
+#: integrations/syndication-links.php:35
 msgid "Syndication Links"
 msgstr ""
 
