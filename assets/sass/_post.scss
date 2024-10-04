@@ -1,7 +1,6 @@
 .single,
 .page {
-	#primary .post,
-	#primary .page {
+	#primary article {
 		&.has-full-width-featured-image {
 			margin-top: 0px;
 		}
@@ -58,16 +57,13 @@
 	}
 }
 
-#primary .post:first-child,
-#primary .page:first-child,
-#primary .attachment:first-child {
+#primary article:first-child {
 	margin-top: 50px;
 }
 
 .home,
 .archive {
-	#primary .post,
-	#primary .page {
+	#primary article {
 		&:after {
 			content: "";
 			border-top: 1px solid $border-gray;
@@ -345,9 +341,7 @@ h4.entry-title {
 	}
 }
 
-#primary .post,
-#primary .page,
-#primary .attachment {
+#primary article {
 	padding: 0;
 	margin-top: 100px;
 	position: relative;
