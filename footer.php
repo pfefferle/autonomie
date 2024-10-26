@@ -9,22 +9,7 @@
  */
 ?>
 	<footer id="colophon">
-		<?php get_sidebar(); ?>
-
-		<div id="site-publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-			<meta itemprop="name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>" />
-			<meta itemprop="url" content="<?php echo esc_url( home_url( '/' ) ); ?>" />
-			<?php
-			if ( has_custom_logo() ) {
-				$image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) );
-				?>
-				<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-					<meta itemprop="url" content="<?php echo current( $image ); ?>" />
-					<meta itemprop="width" content="<?php echo next( $image ); ?>" />
-					<meta itemprop="height" content="<?php echo next( $image ); ?>" />
-				</div>
-			<?php } ?>
-		</div>
+		<?php block_template_part( 'footer' ); ?>
 
 		<div id="site-generator">
 			<?php do_action( 'autonomie_credits' ); ?>

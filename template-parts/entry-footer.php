@@ -7,7 +7,8 @@
 			<?php get_template_part( 'template-parts/entry', 'share' ); ?>
 		</div>
 
-		<?php dynamic_sidebar( 'entry-meta' ); ?>
+		<?php get_template_part( 'template-parts/entry', 'author' ); ?>
+		<?php get_template_part( 'template-parts/entry', 'taxonomy' ); ?>
 		<?php do_action( 'autonomie_entry_footer' ); ?>
 
 		<?php // get_template_part( 'template-parts/entry', 'nav' ); ?>

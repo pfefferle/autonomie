@@ -187,6 +187,9 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
+		// This theme supports block template parts
+		add_theme_support( 'block-template-parts' );
+
 		/**
 		 * Draw attention to supported WebSemantics
 		 */
@@ -197,88 +200,6 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 
 		// enable service workers
 		add_theme_support( 'service_worker', true );
-
-		// add starter content
-		add_theme_support(
-			'starter-content',
-			array(
-				'widgets' => array(
-					'sidebar-1' => array(
-						'text_business_info',
-						'search',
-						'text_about',
-					),
-
-					'sidebar-2' => array(
-						'text_business_info',
-					),
-
-					'sidebar-3' => array(
-						'text_about',
-						'search',
-					),
-
-					'entry-meta' => array(),
-				),
-
-				'posts' => array(
-					'home',
-					'about' => array(
-						'thumbnail' => '{{image-sea}}',
-					),
-					'contact' => array(
-						'thumbnail' => '{{image-lights}}',
-					),
-					'blog' => array(
-						'thumbnail' => '{{image-beach}}',
-					),
-					'homepage-section' => array(
-						'thumbnail' => '{{image-lights}}',
-					),
-				),
-
-				'attachments' => array(
-					'image-beach' => array(
-						'post_title' => _x( 'Beach', 'Theme starter content', 'autonomie' ),
-						'file' => 'assets/images/beach.jpeg',
-					),
-					'image-sea' => array(
-						'post_title' => _x( 'Sea', 'Theme starter content', 'autonomie' ),
-						'file' => 'assets/images/sea.jpeg',
-					),
-					'image-lights' => array(
-						'post_title' => _x( 'Lights', 'Theme starter content', 'autonomie' ),
-						'file' => 'assets/images/lights.jpeg',
-					),
-				),
-
-				'options' => array(
-					'show_on_front' => 'page',
-					'page_on_front' => '{{home}}',
-					'page_for_posts' => '{{blog}}',
-					'header_image' => get_theme_file_uri( 'assets/images/beach.jpeg' ),
-				),
-
-				'theme_mods' => array(
-					'panel_1' => '{{homepage-section}}',
-					'panel_2' => '{{about}}',
-					'panel_3' => '{{blog}}',
-					'panel_4' => '{{contact}}',
-				),
-
-				'nav_menus' => array(
-					'primary' => array(
-						'name' => __( 'Top Menu', 'autonomie' ),
-						'items' => array(
-							'page_home',
-							'page_about',
-							'page_blog',
-							'page_contact',
-						),
-					),
-				),
-			)
-		);
 	}
 endif; // autonomie_setup
 
@@ -403,9 +324,6 @@ if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 		// Loads our main stylesheet.
 		wp_enqueue_style( 'autonomie-style', get_stylesheet_uri(), array( 'dashicons' ) );
 		wp_enqueue_style( 'autonomie-print-style', get_stylesheet_directory_uri() . '/assets/css/print.css', array( 'autonomie-style' ), '1.0.0', 'print' );
-		wp_enqueue_style( 'autonomie-narrow-style', get_stylesheet_directory_uri() . '/assets/css/narrow-width.css', array( 'autonomie-style' ), '1.0.0', '(max-width: 800px)' );
-		wp_enqueue_style( 'autonomie-default-style', get_stylesheet_directory_uri() . '/assets/css/default-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 800px)' );
-		wp_enqueue_style( 'autonomie-wide-style', get_stylesheet_directory_uri() . '/assets/css/wide-width.css', array( 'autonomie-style' ), '1.0.0', '(min-width: 1000px)' );
 
 		wp_localize_script(
 			'autonomie',
@@ -494,19 +412,9 @@ endif; // ends check for autonomie_comment()
 require( get_template_directory() . '/includes/template-functions.php' );
 
 /**
- * Widget handling
- */
-require( get_template_directory() . '/includes/widgets.php' );
-
-/**
  * Adds the featured image functionality
  */
 require( get_template_directory() . '/includes/featured-image.php' );
-
-/**
- * All customizer functions
- */
-require( get_template_directory() . '/includes/customizer.php' );
 
 /**
  * Adds some awesome websemantics like microformats(2) and microdata

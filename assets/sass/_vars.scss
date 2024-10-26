@@ -38,6 +38,6 @@ $very-light-gray: #eee;
 $very-dark-gray: #444;
 
 // Dimensions
-$wide-width: 900px;
-$default-width: $wide-width - 200px;
+$wide-width: var(--wp--style--global--wide-size);
+$default-width: var(--wp--style--global--content-size);
 $margin: calc(($wide-width - $default-width) / 2);

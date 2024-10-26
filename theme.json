@@ -1,0 +1,143 @@
+{
+  "$schema": "https:\/\/schemas.wp.org\/trunk\/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {},
+    "layout": {
+        "contentSize": "700px",
+        "wideSize": "1200px"
+    },
+    "typography": {
+      "fluid": true,
+      "fontSizes": [
+        {
+          "name": "meta",
+          "slug": "meta",
+          "size": "0.9em"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "fontFamily": "Lato, sans serif",
+          "name": "Lato",
+          "slug": "sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Lato Light",
+              "fontWeight": "normal",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/lato/lato-v13-latin-300.woff2" ]
+            },
+            {
+              "fontFamily": "Lato Light Italic",
+              "fontWeight": "normal",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/lato/lato-v13-latin-300italic.woff2" ]
+            },
+            {
+              "fontFamily": "Lato Bold",
+              "fontWeight": "bold",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/lato/lato-v13-latin-700.woff2" ]
+            },
+            {
+              "fontFamily": "Lato Bold Italic",
+              "fontWeight": "bold",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/lato/lato-v13-latin-700italic.woff2" ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "Merriweather, serif",
+          "name": "Merriweather",
+          "slug": "serif",
+          "fontFace": [
+            {
+              "fontFamily": "Merriweather Light",
+              "fontWeight": "normal",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/merriweather/merriweather-v15-latin-300.woff2" ]
+            },
+            {
+              "fontFamily": "Merriweather Light Italic",
+              "fontWeight": "normal",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/merriweather/merriweather-v15-latin-300italic.woff2" ]
+            },
+            {
+              "fontFamily": "Merriweather Bold Italic",
+              "fontWeight": "bold",
+              "fontStyle": "italic",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/merriweather/merriweather-v15-latin-700italic.woff2" ]
+            },
+            {
+              "fontFamily": "Merriweather Bold",
+              "fontWeight": "bold",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "fontDisplay": "swap",
+              "src": [ "file:./assets/font/merriweather/merriweather-v15-latin-700.woff2" ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+      "fontSize": "var(--wp--preset--font-size--medium)"
+    },
+    "elements": {
+      "h1" : {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "normal"
+        }
+      },
+      "h2" : {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "normal"
+        }
+      }
+    },
+    "blocks": {
+      "core/heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "normal"
+        }
+      },
+      "core/quote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "normal"
+        }
+      },
+      "core/pullquote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--serif)",
+          "fontWeight": "normal"
+        }
+      }
+    }
+  }
+}
+

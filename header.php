@@ -35,9 +35,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 	<header id="site-header" class="site-header">
 		<div class="site-branding">
 			<?php
-			if ( has_custom_logo() ) {
-				echo get_custom_logo();
-			}
+
 
 			if ( is_home() ) {
 				$site_title_element = 'h1';

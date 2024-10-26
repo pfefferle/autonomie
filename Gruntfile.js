@@ -19,7 +19,6 @@ module.exports = function(grunt) {
           'assets/css/narrow-width.css': 'assets/sass/responsive_narrow.scss',
           'assets/css/default-width.css': 'assets/sass/responsive_default.scss',
           'assets/css/wide-width.css': 'assets/sass/responsive_wide.scss',
-          'style.css': 'assets/sass/style.scss'
         }
       }
     },
