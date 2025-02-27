@@ -25,7 +25,6 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	border-bottom: 1px solid #d1d5d7;
 
 	.search-form {
 		input {
@@ -51,8 +50,6 @@
 	width: 95%;
 	margin: 0 auto;
 	padding: 15px 0;
-
-	border-bottom: 1px solid #d1d5d7;
 
 	ul {
 		margin: inherit;

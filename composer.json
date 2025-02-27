@@ -15,5 +15,10 @@
 	],
 	"extra": {
 		"installer-name": "autonomie"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
