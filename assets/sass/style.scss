@@ -1,154 +1,142 @@
-/*!
- * Theme Name: @@name
- * Theme URI: @@homepage
- * Author: @@author
- * Author URI: @@author_url
- * Description: @@description
- * Version: @@version
- * License: @@license
- * License URI: @@license_url
- * Tags: @@tags
- * Text Domain: autonomie
- * Tested up to: 5.5
- * Requires PHP: 5.6
- *
- * GitHub Theme URI: pfefferle/autonomie
- * GitHub Theme URI: https://github.com/pfefferle/autonomie
- *
- * Use it to make something cool, have fun, and share what you've learned with others.
- */
+.medium-style-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-@import "vars";
-@import "mixins";
+    // Oberer Bereich mit Logo und Navigation
+    .header-top {
+        padding: 0.75rem var(--wp--preset--spacing--small);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-@import "openwebicons";
+    .wp-block-site-title {
+        font-family: var(--wp--preset--font-family--serif);
+        font-weight: 700;
 
-@import "normalize";
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
 
-// HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/
+    // Hauptnavigation (rechts oben)
+    .medium-navigation {
+        .wp-block-navigation {
+            &__container {
+                gap: 1.5rem;
+            }
 
-// What follows is the result of much research on cross-browser styling.
-// Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
-// Kroc Camen, and the H5BP dev community and team.
+            &-link {
+                color: rgba(0, 0, 0, 0.8);
+                font-family: var(--wp--preset--font-family--system);
+                font-size: 14px;
 
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
 
-// =============================================================================
-// Base styles: opinionated defaults
-// =============================================================================
+        .wp-block-button {
+            &.is-style-outline .wp-block-button__link {
+                border: 1px solid rgba(0, 0, 0, 0.8);
+                padding: 8px 16px;
+                border-radius: 99px;
+                font-size: 14px;
 
-html {
-	color: $dark-gray;
-	color: var(--color-dark-gray);
-	font-size: 1em;
-	line-height: 1.6;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+            }
+
+            &__link {
+                background-color: #000;
+                color: #fff;
+                padding: 8px 16px;
+                border-radius: 99px;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.9);
+                }
+            }
+        }
+    }
+
+    // Tab Navigation (unterer Bereich)
+    .header-tabs {
+        padding: 0 var(--wp--preset--spacing--small);
+        margin: 0;
+
+        .tab-navigation {
+            .wp-block-navigation-item {
+                padding: 1rem 0;
+                margin: 0;
+                position: relative;
+
+                .wp-block-navigation-item__content {
+                    color: rgba(0, 0, 0, 0.6);
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 0;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #000;
+                    }
+                }
+
+                &.active {
+                    .wp-block-navigation-item__content {
+                        color: #000;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: #000;
+                    }
+                }
+            }
+        }
+    }
 }
 
-// Remove text-shadow in selection highlight: h5bp.com/i
-// These selection rule sets have to be separate.
-// Customize the background color to match your design.
-
-::-moz-selection,
-::selection {
-	background: #b3d4fc;
-	text-shadow: none;
+// Offset für den Content wegen fixed header
+body {
+    padding-top: 105px; // Angepasst für die zweizeilige Navigation
 }
 
-// Remove the gap between images, videos, audio and canvas and the bottom of
-// their containers: h5bp.com/i/440
+// Mobile Anpassungen
+@media (max-width: 781px) {
+    .medium-style-header {
+        .header-top {
+            .wp-block-columns {
+                gap: 1rem;
+            }
+        }
 
-audio,
-canvas,
-img,
-svg,
-video {
-	vertical-align: middle;
+        .wp-block-navigation__container {
+            gap: 1rem;
+        }
+
+        .header-tabs {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+
+            .tab-navigation {
+                .wp-block-navigation__container {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
 }
-
-// Remove default fieldset styles.
-
-fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-
-// Allow only vertical resizing of textareas.
-
-textarea {
-	resize: vertical;
-}
-
-// =============================================================================
-// Browse Happy prompt
-// =============================================================================
-
-.browsehappy,
-.browserupgrade {
-	background: $gray;
-	background: var(--color-gray);
-	color: #000;
-	margin: .2em 0;
-	padding: .2em 0;
-}
-
-// =============================================================================
-// Author's custom styles
-// =============================================================================
-
-@import "page";
-@import "comment";
-@import "post";
-@import "nav";
-@import "table";
-@import "media";
-@import "sidebar";
-@import "base";
-@import "block";
-@import "form";
-@import "widgets";
-
-// =============================================================================
-// Helper classes
-// =============================================================================
-
-// Hide from both screenreaders and browsers: h5bp.com/u
-
-.hidden {
-	display: none !important;
-	visibility: hidden;
-}
-
-// Hide only visually, but have it available for screenreaders: h5bp.com/v
-
-.visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
-
-// Extends the .visuallyhidden class to allow the element to be focusable
-// when navigated to via the keyboard: h5bp.com/p
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-	clip: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
-}
-
-// Hide visually and from screenreaders, but maintain layout
-
-.invisible {
-	visibility: hidden;
-}
-
-@import "integrations";
-@import "darkmode";

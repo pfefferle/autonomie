@@ -74,76 +74,6 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 			)
 		);
 
-		add_theme_support( 'align-wide' );
-
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Blue', 'autonomie' ),
-					'slug'  => 'blue',
-					'color' => '#0073aa',
-				),
-				array(
-					'name'  => __( 'Lighter blue', 'autonomie' ),
-					'slug'  => 'lighter-blue',
-					'color' => '#229fd8',
-				),
-				array(
-					'name'  => __( 'Blue jeans', 'autonomie' ),
-					'slug'  => 'blue-jeans',
-					'color' => '#5bc0eb',
-				),
-				array(
-					'name'  => __( 'Orioles orange', 'autonomie' ),
-					'slug'  => 'orioles-orange',
-					'color' => '#fa5b0f',
-				),
-				array(
-					'name'  => __( 'USC gold', 'autonomie' ),
-					'slug'  => 'usc-gold',
-					'color' => '#ffcc00',
-				),
-				array(
-					'name'  => __( 'Gargoyle gas', 'autonomie' ),
-					'slug'  => 'gargoyle-gas',
-					'color' => '#fde74c',
-				),
-				array(
-					'name'  => __( 'Yellow', 'autonomie' ),
-					'slug'  => 'yellow',
-					'color' => '#fff9c0',
-				),
-				array(
-					'name'  => __( 'Android green', 'autonomie' ),
-					'slug'  => 'android-green',
-					'color' => '#9bc53d',
-				),
-				array(
-					'name'  => __( 'White', 'autonomie' ),
-					'slug'  => 'white',
-					'color' => '#fff',
-				),
-				array(
-					'name'  => __( 'Very light gray', 'autonomie' ),
-					'slug'  => 'very-light-gray',
-					'color' => '#eee',
-				),
-				array(
-					'name'  => __( 'Very dark gray', 'autonomie' ),
-					'slug'  => 'very-dark-gray',
-					'color' => '#444',
-				),
-			)
-		);
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Menu', 'autonomie' ),
-			)
-		);
-
 		// Add support for the Aside, Gallery Post Formats...
 		add_theme_support(
 			'post-formats',
@@ -178,14 +108,6 @@ if ( ! function_exists( 'autonomie_setup' ) ) :
 				'width'  => 30,
 			)
 		);
-
-		// This theme supports a custom header
-		$custom_header_args = array(
-			'width'       => 1250,
-			'height'      => 600,
-			'header-text' => true,
-		);
-		add_theme_support( 'custom-header', $custom_header_args );
 
 		// This theme supports block template parts
 		add_theme_support( 'block-template-parts' );
@@ -288,16 +210,6 @@ function autonomie_oembed_fetch_url( $provider ) {
 }
 add_filter( 'oembed_fetch_url', 'autonomie_oembed_fetch_url', 99 );
 
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-function autonomie_page_menu_args( $args ) {
-	$args['show_home'] = true;
-
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'autonomie_page_menu_args' );
-
 if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 	/**
 	 * Enqueue theme scripts
@@ -315,8 +227,6 @@ if ( ! function_exists( 'autonomie_enqueue_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		wp_enqueue_script( 'autonomie-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'autonomie-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'autonomie-share', get_template_directory_uri() . '/assets/js/share.js', array(), '1.0.0', true );
 
 		wp_enqueue_style( 'dashicons' );

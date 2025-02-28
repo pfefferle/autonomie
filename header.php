@@ -35,7 +35,9 @@ if ( function_exists( 'wp_body_open' ) ) {
 	<header id="site-header" class="site-header">
 		<div class="site-branding">
 			<?php
-
+			if ( has_site_icon() ) {
+				echo '<img src="' . get_site_icon_url( 10 ) . '" alt="' . get_bloginfo( 'name' ) . '" class="site-icon">';
+			}
 
 			if ( is_home() ) {
 				$site_title_element = 'h1';
@@ -52,11 +54,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<?php get_search_form( true ); ?>
 		</div>
 
-		<nav id="site-navigation" class="site-navigation">
-			<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'autonomie' ); ?></button>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<?php block_template_part( 'navigation' ); ?>
 
 		<?php get_template_part( 'template-parts/page-banner', autonomie_get_archive_type() ); ?>
 	</header><!-- #site-header -->

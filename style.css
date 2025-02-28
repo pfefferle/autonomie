@@ -18,106 +18,158 @@
  * Use it to make something cool, have fun, and share what you've learned with others.
  */
 
-.site-branding {
-	max-width: var(--wp--style--global--wide-size);
-	width: 95%;
-	margin: 0px auto;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
-	.search-form {
-		input {
-			border: 1px solid #d1d5d7;
-			border-radius: 50px;
-			padding: 5px 15px;
-		}
-
-		.search-submit {
-			display: none;
-		}
-	}
-
-	#site-title {
-		flex-basis: 100%;
-		padding: 0;
-		font-size: 1.5em;
-	}
+.entry-content {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
 }
 
-.site-navigation {
-	max-width: var(--wp--style--global--wide-size);
-	width: 95%;
-	margin: 0 auto;
-	padding: 15px 0;
-
-	ul {
-		margin: inherit;
-		padding: inherit;
-		display: flex;
-		gap: 20px;
-
-		li {
-			list-style-type: none;
-		}
-	}
-
-}
-
-.menu-toggle {
-	display: none;
-}
-
-.entry-content,
-.entry-summary {
-	> object,
-	> embed,
-	> iframe,
-	> figure,
-	.wp-block-pullquote {
-		width: 100%;
-		max-width: var(--wp--style--global--wide-size);
-		box-sizing: border-box;
-
-		small,
-		figcaption,
-		cite {
-			margin-right: 1;
-		}
-	}
-
-	> table,
-	> pre {
-		width: 100%;
-		max-width: var(--wp--style--global--wide-size);
-		box-sizing: border-box;
-	}
-}
-
-.entry-content > *,
-.entry-summary > *,
-.entry-content > form,
-.entry-content > div,
-.entry-header,
-.entry-footer > *,
-.entry-reaction,
-#comments,
-#nav-above,
-#nav-below,
-.reaction-list,
-.wp-block-quote.is-style-large {
-	width: 95%;
-	display: block;
+.entry-content > * {
 	max-width: var(--wp--style--global--content-size);
-	margin: 1.2em auto;
-	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.entry-content,
-.entry-summary {
-	.wp-block-gallery,
-	.wp-block-columns,
-	.wp-block-media-text {
-		display: flex;
+.entry-content > .alignwide,
+.entry-content > .wp-block-pullquote {
+	max-width: var(--wp--style--global--wide-size);
+}
+
+.entry-content > .alignfull {
+	max-width: none;
+}
+
+.entry-content > .alignleft {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	margin-left: calc((100% - var(--wp--style--global--content-size)) / -2);
+}
+
+.entry-content > .alignright {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: 1em;
+	margin-right: calc((100% - var(--wp--style--global--content-size)) / -2);
+}
+
+.entry-header {
+	margin-bottom: 2rem;
+	max-width: var(--wp--style--global--content-size);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.entry-meta {
+
+}
+
+.site-header {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.site-branding {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2.5rem;
+}
+
+#site-title {
+	margin: 0;
+	padding: 0;
+	margin-right: auto;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-decoration: none;
+	font-family: var(--wp--preset--font-family--sans-serif);
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
+}
+
+.site-icon {
+	margin-right: 0.5rem;
+}
+
+.search-form {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	background: var(--wp--preset--color--light-gray);
+	border-radius: 25px;
+	padding: 0.5rem 1rem;
+	max-width: 300px;
+}
+
+.search-form .search-field {
+	border: none;
+	background: transparent;
+	padding: 0.5rem;
+	width: 10rem;
+	outline: none;
+	font-size: 0.9rem;
+
+	&:focus {
+		width: 200%;
+	}
+}
+
+.search-form .search-submit {
+	background: none;
+	border: none;
+	padding: 0.5rem;
+	cursor: pointer;
+	color: var(--wp--preset--color--primary);
+}
+
+.search-form .search-submit:hover {
+	color: var(--wp--preset--color--secondary);
+}
+
+/* Optional: Fügen Sie ein Suchsymbol hinzu, wenn Sie das Dashicons-Font von WordPress verwenden */
+.search-form .search-submit::before {
+	content: "\f179";
+	font-family: "dashicons";
+	font-size: 1.2rem;
+}
+
+/* Navigation */
+.site-navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: var(--wp--style--global--content-size);
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.site-navigation .wp-block-navigation__container {
+	gap: 3rem;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.site-navigation .wp-block-navigation-item__content {
+	color: rgba(0, 0, 0, 0.7);
+	text-decoration: none;
+	font-size: 15px;
+	padding: 0.5rem 0;
+}
+
+.site-navigation .wp-block-navigation-item.current-menu-item::after {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: currentColor;
 }

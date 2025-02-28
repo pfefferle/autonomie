@@ -3,7 +3,6 @@
   "version": 3,
   "settings": {
     "appearanceTools": true,
-    "useRootPaddingAwareAlignments": true,
     "color": {
       "palette": [
         {
@@ -25,6 +24,81 @@
           "name": "Text",
           "slug": "text",
           "color": "#333333"
+        },
+        {
+          "name": "Light Gray",
+          "slug": "light-gray",
+          "color": "#f5f5f5"
+        },
+        {
+          "name": "Blue",
+          "slug": "blue",
+          "color": "#0073aa"
+        },
+        {
+          "name": "Lighter Blue",
+          "slug": "lighter-blue",
+          "color": "#229fd8"
+        },
+        {
+          "name": "Blue Jeans",
+          "slug": "blue-jeans",
+          "color": "#5bc0eb"
+        },
+        {
+          "name": "Orioles Orange",
+          "slug": "orioles-orange",
+          "color": "#fa5b0f"
+        },
+        {
+          "name": "USC Gold",
+          "slug": "usc-gold",
+          "color": "#ffcc00"
+        },
+        {
+          "name": "Gargoyle Gas",
+          "slug": "gargoyle-gas",
+          "color": "#fde74c"
+        },
+        {
+          "name": "Yellow",
+          "slug": "yellow",
+          "color": "#fff9c0"
+        },
+        {
+          "name": "Android Green",
+          "slug": "android-green",
+          "color": "#9bc53d"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#fff"
+        },
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#000"
+        },
+        {
+          "name": "Dark Gray",
+          "slug": "dark-gray",
+          "color": "#444"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#fff"
+        },
+        {
+          "name": "Very light gray",
+          "slug": "very-light-gray",
+          "color": "#eee"
+        },
+        {
+          "name": "Very dark gray",
+          "slug": "very-dark-gray",
+          "color": "#444"
         }
       ],
       "gradients": [
@@ -67,7 +141,7 @@
         {
           "name": "meta",
           "slug": "meta",
-          "size": "0.9em"
+          "size": "1em"
         }
       ],
       "fontFamilies": [
@@ -150,12 +224,26 @@
           ]
         }
       ]
+    },
+    "custom": {
+      "navigation": {
+        "overlay": false,
+        "style": {
+          "spacing": {
+            "padding": {
+              "top": "1rem",
+              "bottom": "1rem"
+            }
+          }
+        }
+      }
     }
   },
   "styles": {
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--sans-serif)",
-      "fontSize": "var(--wp--preset--font-size--medium)"
+      "fontSize": "var(--wp--preset--font-size--medium)",
+      "lineHeight": "1.5"
     },
     "color": {
       "background": "var(--wp--preset--color--background)",
@@ -163,10 +251,10 @@
     },
     "spacing": {
       "padding": {
-        "top": "2rem",
-        "right": "1rem",
-        "bottom": "2rem",
-        "left": "1rem"
+        "top": "1rem",
+        "right": "2rem",
+        "bottom": "1rem",
+        "left": "2rem"
       },
       "margin": {
         "top": "0",
@@ -188,7 +276,7 @@
       },
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--primary)"
+          "text": "var(--wp--preset--color--dark-gray)"
         },
         ":hover": {
           "typography": {
@@ -211,7 +299,9 @@
         },
         "spacing": {
           "padding": {
-            "left": "1rem"
+            "left": "2rem",
+            "top": "0.5rem",
+            "bottom": "0.5rem"
           }
         },
         "border": {
@@ -226,17 +316,35 @@
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--serif)",
           "fontWeight": "normal"
+        },
+        "dimensions": {
+          "maxWidth": "var(--wp--style--global--wide-size)"
+        },
+        "spacing": {
+          "margin": {
+            "left": "auto",
+            "right": "auto"
+          }
         }
       },
       "core/paragraph": {
         "spacing": {
           "margin": {
-            "top": "1rem",
-            "bottom": "1rem"
+            "top": "2rem",
+            "bottom": "2rem",
+            "left": "auto",
+            "right": "auto"
           }
         },
         "dimensions": {
-          "width": "var(--wp--preset--layout--content-size)"
+          "maxWidth": "var(--wp--style--global--content-size)"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var(--wp--preset--color--primary)"
+            }
+          }
         }
       },
       "core/button": {
@@ -258,6 +366,24 @@
         },
         "border": {
           "radius": "4px"
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontSize": "1rem",
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--text)"
+        },
+        "elements": {
+          "link": {
+            ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--primary)"
+              }
+            }
+          }
         }
       }
     }
