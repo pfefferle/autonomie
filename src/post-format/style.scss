@@ -1,0 +1,36 @@
+/**
+ * Post Format Block Styles - Frontend and Editor
+ */
+
+.wp-block-autonomie-post-format {
+	display: inline-block;
+
+	a,
+	.format-display {
+		color: var(--wp--preset--color--lighter-gray);
+		font-weight: bold;
+		text-transform: lowercase;
+		text-decoration: none;
+		font-family: var(--wp--preset--font-family--sans-serif);
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25em;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.format-icon {
+		width: 1.2em;
+		height: 1.2em;
+		flex-shrink: 0;
+		fill: currentColor;
+	}
+}
+
+/* Hide on singular pages by default */
+.single .wp-block-autonomie-post-format,
+.page .wp-block-autonomie-post-format {
+	display: none;
+}

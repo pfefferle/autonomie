@@ -340,3 +340,288 @@ function autonomie_term_links_tag( $links ) {
 	return $links;
 }
 add_filter( 'term_links-post_tag', 'autonomie_term_links_tag' );
+
+/**
+ * Add microformats2 and schema.org classes to blocks for FSE theme.
+ *
+ * @since Autonomie 2.0.0
+ */
+
+/**
+ * Add h-entry and hentry classes to post template blocks and convert list to articles.
+ */
+function autonomie_render_block_post_template( $block_content, $block ) {
+	if ( ! is_singular() ) {
+		// Convert <ul> to <div> for semantic article container
+		$block_content = preg_replace(
+			'/<ul\s+class="([^"]*wp-block-post-template[^"]*)"/i',
+			'<div class="$1"',
+			$block_content,
+			1
+		);
+		$block_content = preg_replace(
+			'/<\/ul>/i',
+			'</div>',
+			$block_content,
+			1
+		);
+
+		// Convert <li> to <article> for each post
+		// Note: h-entry and hentry classes are already added by WordPress post_class() function
+		$block_content = preg_replace(
+			'/<li\s+class="([^"]*wp-block-post[^"]*)"/i',
+			'<article class="$1" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting"',
+			$block_content
+		);
+		$block_content = preg_replace(
+			'/<\/li>/i',
+			'</article>',
+			$block_content
+		);
+	}
+	return $block_content;
+}
+//add_filter( 'render_block_core/post-template', 'autonomie_render_block_post_template', 10, 2 );
+
+/**
+ * Add microformats2 classes to post title block.
+ */
+function autonomie_render_block_post_title( $block_content, $block ) {
+	// Add p-name class to post title
+	$block_content = preg_replace(
+		'/class="([^"]*wp-block-post-title[^"]*)"/i',
+		'class="$1 p-name entry-title" itemprop="name headline"',
+		$block_content,
+		1
+	);
+
+	// Add u-url to the link
+	$block_content = preg_replace(
+		'/<a([^>]*)href=/i',
+		'<a$1 class="u-url url" itemprop="url" href=',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-title', 'autonomie_render_block_post_title', 10, 2 );
+
+/**
+ * Add microformats2 classes to post content block.
+ */
+function autonomie_render_block_post_content( $block_content, $block ) {
+	// Add e-content class
+	$block_content = preg_replace(
+		'/class="([^"]*wp-block-post-content[^"]*)"/i',
+		'class="$1 e-content entry-content" itemprop="articleBody"',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-content', 'autonomie_render_block_post_content', 10, 2 );
+
+/**
+ * Add microformats2 classes to post excerpt block.
+ */
+function autonomie_render_block_post_excerpt( $block_content, $block ) {
+	// Add p-summary class
+	$block_content = preg_replace(
+		'/class="([^"]*wp-block-post-excerpt[^"]*)"/i',
+		'class="$1 p-summary entry-summary" itemprop="description"',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-excerpt', 'autonomie_render_block_post_excerpt', 10, 2 );
+
+/**
+ * Add microformats2 classes to post date block.
+ */
+function autonomie_render_block_post_date( $block_content, $block ) {
+	// Add dt-published class
+	$block_content = preg_replace(
+		'/<time([^>]*)class="([^"]*)"([^>]*)>/i',
+		'<time$1class="$2 dt-published published entry-date" itemprop="datePublished"$3>',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-date', 'autonomie_render_block_post_date', 10, 2 );
+
+/**
+ * Add microformats2 classes to post author block.
+ */
+function autonomie_render_block_post_author( $block_content, $block ) {
+	// Add h-card and p-author classes
+	$block_content = preg_replace(
+		'/class="([^"]*wp-block-post-author[^"]*)"/i',
+		'class="$1 h-card p-author author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person"',
+		$block_content,
+		1
+	);
+
+	// Add p-name to author name
+	$block_content = preg_replace(
+		'/class="([^"]*wp-block-post-author__name[^"]*)"/i',
+		'class="$1 p-name fn" itemprop="name"',
+		$block_content,
+		1
+	);
+
+	// Add u-url to author link
+	$block_content = preg_replace(
+		'/<a([^>]*class="[^"]*wp-block-post-author__name[^"]*")([^>]*)>/i',
+		'<a$1$2 class="u-url url" itemprop="url">',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-author', 'autonomie_render_block_post_author', 10, 2 );
+
+/**
+ * Add microformats2 classes to post featured image block.
+ */
+function autonomie_render_block_post_featured_image( $block_content, $block ) {
+	// Check post format to determine which microformat class to use
+	$post_format = get_post_format();
+
+	if ( 'image' === $post_format || 'gallery' === $post_format ) {
+		$mf_class = 'u-photo';
+	} else {
+		$mf_class = 'u-featured';
+	}
+
+	// Add microformat class to figure
+	$block_content = preg_replace(
+		'/class="([^"]*wp-block-post-featured-image[^"]*)"/i',
+		'class="$1 ' . $mf_class . '" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"',
+		$block_content,
+		1
+	);
+
+	// Add itemprop to img
+	$block_content = preg_replace(
+		'/<img([^>]*)>/i',
+		'<img$1 itemprop="url contentUrl">',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-featured-image', 'autonomie_render_block_post_featured_image', 10, 2 );
+
+/**
+ * Add microformats2 classes to post terms (categories/tags) block.
+ */
+function autonomie_render_block_post_terms( $block_content, $block ) {
+	// Add p-category class to each term link
+	$block_content = preg_replace(
+		'/<a([^>]*rel="tag"[^>]*)>/i',
+		'<a$1 class="p-category">',
+		$block_content
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-terms', 'autonomie_render_block_post_terms', 10, 2 );
+
+/**
+ * Add microformats2 classes to site title block.
+ */
+function autonomie_render_block_site_title( $block_content, $block ) {
+	if ( is_home() ) {
+		// Add p-name and itemprop to site title on home page
+		$block_content = preg_replace(
+			'/<([h1-6|p|div]+)([^>]*class="[^"]*wp-block-site-title[^"]*")([^>]*)>/i',
+			'<$1$2$3 class="p-name" itemprop="name">',
+			$block_content,
+			1
+		);
+
+		// Add u-url to link
+		$block_content = preg_replace(
+			'/<a([^>]*)class="([^"]*)"/i',
+			'<a$1class="$2 u-url url" itemprop="url"',
+			$block_content,
+			1
+		);
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/site-title', 'autonomie_render_block_site_title', 10, 2 );
+
+/**
+ * Add microformats2 h-feed class to query block on archive pages.
+ */
+function autonomie_render_block_query( $block_content, $block ) {
+	if ( ! is_singular() ) {
+		// Add h-feed class to query block
+		$block_content = preg_replace(
+			'/class="([^"]*wp-block-query[^"]*)"/i',
+			'class="$1 h-feed hfeed"',
+			$block_content,
+			1
+		);
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/query', 'autonomie_render_block_query', 10, 2 );
+
+/**
+ * Add microformats2 classes to comment blocks.
+ */
+function autonomie_render_block_comment_template( $block_content, $block ) {
+	// Add h-entry, h-cite classes to comment
+	$block_content = preg_replace(
+		'/<li([^>]*class="[^"]*comment[^"]*)"/i',
+		'<li$1 h-entry h-cite p-comment"',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/comment-template', 'autonomie_render_block_comment_template', 10, 2 );
+
+/**
+ * Add semantic HTML5 search element to search block.
+ */
+function autonomie_render_block_search( $block_content, $block ) {
+	// Wrap in search element and add schema.org SearchAction
+	$block_content = preg_replace(
+		'/<form/i',
+		'<search><form itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction"',
+		$block_content,
+		1
+	);
+
+	$block_content = preg_replace(
+		'/<\/form>/i',
+		'<meta itemprop="target" content="' . home_url( '/?s={s}' ) . '"/></form></search>',
+		$block_content,
+		1
+	);
+
+	// Add itemprop to search input
+	$block_content = preg_replace(
+		'/<input([^>]*)type="search"/i',
+		'<input$1type="search" enterkeyhint="search" itemprop="query-input"',
+		$block_content,
+		1
+	);
+
+	return $block_content;
+}
+add_filter( 'render_block_core/search', 'autonomie_render_block_search', 10, 2 );

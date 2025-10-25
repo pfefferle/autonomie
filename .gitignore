@@ -3,5 +3,6 @@
 /vendor/
 .DS_Store
 _build
+build/
 composer.lock
 package-lock.json

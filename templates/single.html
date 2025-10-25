@@ -1,0 +1,46 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained","contentSize":"700px"},"spacing":{"margin":{"top":"var:preset|spacing|70"}}} -->
+<main id="primary" class="wp-block-group">
+	<!-- wp:group {"tagName":"article","className":"h-entry hentry"} -->
+	<article class="wp-block-group h-entry hentry">
+		<!-- wp:group {"tagName":"header","className":"entry-header"} -->
+		<header class="wp-block-group entry-header">
+			<!-- wp:post-title {"level":1} /-->
+
+			<!-- wp:template-part {"slug":"post-meta","className":"entry-meta"} /-->
+		</header>
+		<!-- /wp:group -->
+
+		<!-- wp:post-featured-image {"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}} /-->
+
+		<!-- wp:post-content {"className":"entry-content e-content","layout":{"type":"constrained"}} /-->
+
+		<!-- wp:group {"tagName":"footer","className":"entry-footer","spacing":{"margin":{"top":"var:preset|spacing|70"}}} -->
+		<footer class="wp-block-group entry-footer">
+			<!-- wp:group {"className":"tag-links","layout":{"type":"flex","flexWrap":"wrap"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}} -->
+			<div class="wp-block-group tag-links">
+				<!-- wp:paragraph {"fontSize":"large"} -->
+				<p class="has-large-font-size">Tags:</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:post-terms {"term":"post_tag"} /-->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:separator {"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}} /-->
+
+			<!-- wp:post-author-biography {"className":"author h-card"} /-->
+		</footer>
+		<!-- /wp:group -->
+	</article>
+	<!-- /wp:group -->
+
+	<!-- wp:post-navigation-link {"type":"previous","showTitle":true,"linkLabel":true,"arrow":"arrow"} /-->
+	<!-- wp:post-navigation-link {"type":"next","showTitle":true,"linkLabel":true,"arrow":"arrow"} /-->
+
+	<!-- wp:post-comments {"className":"comments-area"} /-->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

@@ -1,7 +1,7 @@
 {
-  "name": "Autonomie",
-  "version": "1.0.0",
-  "description": "Autonomie is a highly semantic, responsive, accessible and seo optimized WordPress Theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). Autonomie supports a lot of OpenWeb plugins and is fully IndieWeb compatible.",
+  "name": "autonomie",
+  "version": "2.0.0",
+  "description": "Autonomie is a highly semantic, responsive, accessible and SEO-optimized Full Site Editing (FSE) WordPress theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). Autonomie supports IndieWeb and is fully compatible with modern block-based editing.",
   "repository": {
     "type": "git",
     "url": "https://github.com/pfefferle/Autonomie.git"
@@ -10,27 +10,24 @@
     "url": "https://github.com/pfefferle/Autonomie/issues"
   },
   "keywords": [
-    "custom-menu",
-    "custom-colors",
-    "custom-header",
-    "custom-logo",
-    "featured-image-header",
-    "flexible-header",
-    "sticky-post",
+    "block-templates",
+    "block-patterns",
+    "full-site-editing",
+    "fse",
     "microformats",
+    "microformats2",
+    "schema-org",
+    "indieweb",
+    "semantic-html",
     "rtl-language-support",
     "translation-ready",
-    "full-width-template",
     "post-formats",
     "threaded-comments",
-    "footer-widgets",
     "one-column",
     "editor-style",
     "featured-images",
-    "theme-options",
     "blog",
-    "news",
-    "photography",
+    "accessibility-ready",
     "wide-blocks"
   ],
   "author": {
@@ -39,17 +36,32 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/pfefferle/Autonomie",
+  "scripts": {
+    "start": "wp-env start",
+    "stop": "wp-env stop",
+    "clean": "wp-env clean",
+    "destroy": "wp-env destroy",
+    "logs": "wp-env logs",
+    "wp": "wp-env run cli wp",
+    "validate:composer": "composer validate --no-check-all",
+    "lint:php": "composer run-script lint",
+    "format": "prettier --write '**/*.{json,md}'",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore vendor",
+    "test": "echo 'No tests configured yet' && exit 0",
+    "prebuild": "node build-scripts/extract-icons.js",
+    "build": "wp-scripts build",
+    "predev": "node build-scripts/extract-icons.js",
+    "dev": "wp-scripts start"
+  },
   "devDependencies": {
-    "grunt": "^1.5.2",
-    "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-compress": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-sass": "~2.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^4.0.0",
-    "grunt-string-replace": "^1.3.1",
-    "grunt-wp-i18n": "^1.0.3",
-    "grunt-wp-readme-to-markdown": "^2.1.0",
-    "sass": "^1.51.0"
+    "@wordpress/env": "^10.11.0",
+    "@wordpress/icons": "^11.0.0",
+    "@wordpress/scripts": "^30.7.0",
+    "markdownlint-cli": "^0.42.0",
+    "prettier": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
