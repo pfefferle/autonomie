@@ -298,22 +298,23 @@ a.comment-reply-link:hover,
 }
 
 .entry-meta .wp-block-post-author__content {
-	display: flex;
-	align-items: baseline;
-	gap: 0.3em;
+	display: inline;
+}
+
+.entry-meta .wp-block-post-author__byline,
+.entry-meta .wp-block-post-author__name {
+	display: inline;
+	margin: 0;
 }
 
 .entry-meta .wp-block-post-author__byline {
-	flex-shrink: 0;
 	font-size: 0.85em;
 	color: var(--wp--preset--color--lighter-gray);
-	margin: 0;
+	margin-right: 0.3em;
 }
 
 .entry-meta .wp-block-post-author__name {
-	white-space: nowrap;
 	font-size: inherit;
-	margin: 0;
 }
 
 .entry-meta .wp-block-post-date,
