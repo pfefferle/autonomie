@@ -495,6 +495,43 @@ function autonomie_tag_processor_merge_space_attr( $processor, $attribute, $new_
 }
 
 /**
+ * Remove one or more classes from the current tag in a tag processor.
+ *
+ * @param WP_HTML_Tag_Processor $processor Tag processor instance.
+ * @param array                 $classes   Classes to remove.
+ */
+function autonomie_tag_processor_remove_classes( $processor, $classes ) {
+	$current_classes = $processor->get_attribute( 'class' );
+
+	if ( ! is_string( $current_classes ) || '' === trim( $current_classes ) ) {
+		return;
+	}
+
+	$remove_classes = array_filter( array_map( 'trim', $classes ) );
+	$merged_classes = preg_split( '/\s+/', trim( $current_classes ) );
+
+	if ( empty( $remove_classes ) || empty( $merged_classes ) ) {
+		return;
+	}
+
+	$merged_classes = array_values(
+		array_filter(
+			$merged_classes,
+			function( $class ) use ( $remove_classes ) {
+				return ! in_array( $class, $remove_classes, true );
+			}
+		)
+	);
+
+	if ( empty( $merged_classes ) ) {
+		$processor->remove_attribute( 'class' );
+		return;
+	}
+
+	$processor->set_attribute( 'class', implode( ' ', $merged_classes ) );
+}
+
+/**
  * Add schema.org attributes to post template items on non-singular views.
  */
 function autonomie_render_block_post_template( $block_content, $block ) {
@@ -528,6 +565,28 @@ function autonomie_render_block_post_template( $block_content, $block ) {
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/post-template', 'autonomie_render_block_post_template', 10, 2 );
+
+/**
+ * Ensure singular pages do not nest h-entry on article group wrappers.
+ */
+function autonomie_render_block_group( $block_content, $block ) {
+	if ( ! is_singular() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	if ( empty( $block['attrs']['tagName'] ) || 'article' !== strtolower( $block['attrs']['tagName'] ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( $processor->next_tag() ) {
+		autonomie_tag_processor_remove_classes( $processor, array( 'h-entry', 'hentry' ) );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/group', 'autonomie_render_block_group', 10, 2 );
 
 /**
  * Add microformats2 classes to post title block.
