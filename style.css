@@ -372,6 +372,8 @@ a.comment-reply-link:hover,
 
 .video-hero .wp-block-embed {
 	position: relative;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
 }
 
 .video-hero .alignfull {
