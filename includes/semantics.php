@@ -21,7 +21,7 @@
  * @since Autonomie 1.0.0
  */
 function autonomie_body_classes( $classes ) {
-	$classes[] = get_theme_mod( 'autonomie_columns', 'multi' ) . '-column';
+	$classes[] = 'multi-column';
 
 	if ( ! is_singular() && ! is_404() ) {
 		$classes[] = 'hfeed';

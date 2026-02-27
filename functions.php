@@ -204,9 +204,33 @@ function autonomie_register_blocks() {
 	register_block_type( __DIR__ . '/build/post-format' );
 
 	// Dynamic block: renders the first video/embed extracted from the post content
+	// Register a minimal editor script so the Site Editor recognizes the block
+	wp_register_script(
+		'autonomie-video-hero-editor',
+		'',
+		array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
+		'1.0.0'
+	);
+	wp_add_inline_script(
+		'autonomie-video-hero-editor',
+		'( function() {
+			var el = wp.element.createElement;
+			wp.blocks.registerBlockType( "autonomie/video-hero", {
+				title: "Video Hero",
+				icon: "video-alt3",
+				category: "theme",
+				edit: function( props ) {
+					return el( "div", wp.blockEditor.useBlockProps( {
+						style: { textAlign: "center", color: "#757575", padding: "2em", background: "#0f0f0f" }
+					} ), el( "p", { style: { color: "#aaa" } }, "Video Hero" ) );
+				},
+			} );
+		} )();'
+	);
 	register_block_type(
 		'autonomie/video-hero',
 		array(
+			'editor_script'   => 'autonomie-video-hero-editor',
 			'render_callback' => 'autonomie_render_video_hero',
 		)
 	);

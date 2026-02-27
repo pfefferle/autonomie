@@ -215,7 +215,8 @@ a.comment-reply-link:hover,
 	line-height: 0;
 }
 
-.site-header .wp-block-site-logo img {
+.site-header .wp-block-site-logo img,
+.site-header .wp-block-site-logo svg {
 	display: block;
 	border-radius: 4px;
 }
@@ -297,6 +298,14 @@ a.comment-reply-link:hover,
 	display: flex;
 	align-items: baseline;
 	gap: 0.3em;
+}
+
+.entry-meta .wp-block-post-author__byline {
+	flex-shrink: 0;
+}
+
+.entry-meta .wp-block-post-author__name {
+	white-space: nowrap;
 }
 
 .entry-meta .wp-block-post-author__byline {
@@ -713,6 +722,18 @@ input[type="search"] {
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+.entry-content .alignleft {
+	float: left;
+	margin-right: var(--wp--preset--spacing--50);
+	margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.entry-content .alignright {
+	float: right;
+	margin-left: var(--wp--preset--spacing--50);
+	margin-bottom: var(--wp--preset--spacing--30);
 }
 
 /* ==========================================================================
