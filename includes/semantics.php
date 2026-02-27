@@ -38,7 +38,7 @@ function autonomie_body_classes( $classes ) {
 		$classes[] = 'custom-header';
 	}
 
-	return $classes;
+	return array_values( array_unique( $classes ) );
 }
 add_filter( 'body_class', 'autonomie_body_classes' );
 
@@ -439,10 +439,23 @@ add_filter( 'term_links-post_tag', 'autonomie_term_links_tag' );
  * @param array                 $classes   Classes to add.
  */
 function autonomie_tag_processor_add_classes( $processor, $classes ) {
+	$current_classes = $processor->get_attribute( 'class' );
+	$merged_classes  = array();
+
+	if ( is_string( $current_classes ) && '' !== trim( $current_classes ) ) {
+		$merged_classes = preg_split( '/\s+/', trim( $current_classes ) );
+	}
+
 	foreach ( $classes as $class ) {
-		if ( ! empty( $class ) ) {
-			$processor->add_class( $class );
+		$class = trim( $class );
+
+		if ( '' !== $class && ! in_array( $class, $merged_classes, true ) ) {
+			$merged_classes[] = $class;
 		}
+	}
+
+	if ( ! empty( $merged_classes ) ) {
+		$processor->set_attribute( 'class', implode( ' ', $merged_classes ) );
 	}
 }
 
