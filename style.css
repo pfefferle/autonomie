@@ -707,6 +707,11 @@ input[type="search"] {
    Block Overrides
    ========================================================================== */
 
+.wp-block-embed iframe {
+	max-width: 100%;
+	height: auto;
+}
+
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	width: 200px;
 	margin-left: auto;
