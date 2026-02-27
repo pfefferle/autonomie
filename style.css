@@ -709,7 +709,6 @@ input[type="search"] {
 
 .wp-block-embed iframe {
 	max-width: 100%;
-	height: auto;
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
