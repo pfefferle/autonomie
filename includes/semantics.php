@@ -68,7 +68,6 @@ add_filter( 'post_class', 'autonomie_post_classes', 99 );
  * @since Autonomie 1.4.0
  */
 function autonomie_comment_classes( $classes ) {
-	$classes[] = 'h-entry';
 	$classes[] = 'h-cite';
 	$classes[] = 'p-comment';
 	$classes[] = 'comment';
@@ -796,11 +795,12 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
+	$classes   = array( 'h-cite', 'p-comment' );
 
-	// Add h-entry, h-cite classes to each comment list item.
+	// Add semantic classes to each comment list item.
 	while ( $processor->next_tag( array( 'tag_name' => 'li' ) ) ) {
 		if ( $processor->has_class( 'comment' ) ) {
-			autonomie_tag_processor_add_classes( $processor, array( 'h-entry', 'h-cite', 'p-comment' ) );
+			autonomie_tag_processor_add_classes( $processor, $classes );
 		}
 	}
 
