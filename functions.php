@@ -377,12 +377,16 @@ function autonomie_strip_embed_alignment( $html, $block ) {
 		return $html;
 	}
 
+	if ( empty( $block['blockName'] ) || false === strpos( $block['blockName'], 'embed' ) ) {
+		return $html;
+	}
+
 	$html = preg_replace( '/\balignwide\b/', '', $html );
 	$html = preg_replace( '/\balignfull\b/', '', $html );
 
 	return $html;
 }
-add_filter( 'render_block_core/embed', 'autonomie_strip_embed_alignment', 10, 2 );
+add_filter( 'render_block', 'autonomie_strip_embed_alignment', 10, 2 );
 
 /**
  * Register block patterns category
