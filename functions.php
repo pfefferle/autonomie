@@ -363,6 +363,28 @@ function autonomie_filter_video_content( $content ) {
 add_filter( 'the_content', 'autonomie_filter_video_content', 5 );
 
 /**
+ * Strip wide/full alignment from embeds on archive pages.
+ *
+ * Embeds stored with alignwide/alignfull break on archives where the
+ * content area is narrower. Removing the classes lets them fit naturally.
+ *
+ * @param string   $html  The block HTML.
+ * @param array    $block The parsed block.
+ * @return string  Filtered HTML.
+ */
+function autonomie_strip_embed_alignment( $html, $block ) {
+	if ( is_singular() ) {
+		return $html;
+	}
+
+	$html = preg_replace( '/\balignwide\b/', '', $html );
+	$html = preg_replace( '/\balignfull\b/', '', $html );
+
+	return $html;
+}
+add_filter( 'render_block_core/embed', 'autonomie_strip_embed_alignment', 10, 2 );
+
+/**
  * Register block patterns category
  */
 function autonomie_register_block_pattern_category() {

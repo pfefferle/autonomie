@@ -420,11 +420,6 @@ a.comment-reply-link:hover,
 	font-size: 1.35em;
 }
 
-/* On archive: ignore wide/full alignment on embeds */
-.wp-block-post-template .format-video .wp-block-embed.alignfull,
-.wp-block-post-template .format-video .wp-block-embed.alignwide {
-	max-width: 100%;
-}
 
 /* ==========================================================================
    Post Reactions Link (archive/homepage)
