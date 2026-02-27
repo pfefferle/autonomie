@@ -215,8 +215,7 @@ a.comment-reply-link:hover,
 	line-height: 0;
 }
 
-.site-header .wp-block-site-logo img,
-.site-header .wp-block-site-logo svg {
+.site-header .wp-block-site-logo > * {
 	display: block;
 	border-radius: 4px;
 }
