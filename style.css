@@ -4,7 +4,7 @@
  * Author: Matthias Pfefferle
  * Author URI: https://notiz.blog/
  * Description: Autonomie is a highly semantic, responsive, accessible and SEO-optimized Full Site Editing (FSE) WordPress theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). Autonomie supports the IndieWeb and is fully compatible with modern block-based editing.
- * Version: 2.0.0
+ * Version: 2.0.1
  * License: MIT
  * License URI: https://opensource.org/licenses/MIT
  * Tags: block-templates, block-patterns, full-site-editing, microformats, rtl-language-support, translation-ready, post-formats, threaded-comments, one-column, editor-style, featured-images, blog, accessibility-ready, indieweb, semantic-html, wide-blocks
@@ -211,6 +211,10 @@ a.comment-reply-link:hover,
 	margin-bottom: var(--wp--preset--spacing--60);
 }
 
+.site-header .site-branding {
+	gap: 0.35em;
+}
+
 .site-header .wp-block-site-logo {
 	line-height: 0;
 }
@@ -301,19 +305,13 @@ a.comment-reply-link:hover,
 
 .entry-meta .wp-block-post-author__byline {
 	flex-shrink: 0;
-}
-
-.entry-meta .wp-block-post-author__name {
-	white-space: nowrap;
-}
-
-.entry-meta .wp-block-post-author__byline {
 	font-size: 0.85em;
 	color: var(--wp--preset--color--lighter-gray);
 	margin: 0;
 }
 
 .entry-meta .wp-block-post-author__name {
+	white-space: nowrap;
 	font-size: inherit;
 	margin: 0;
 }
