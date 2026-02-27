@@ -367,6 +367,11 @@ a.comment-reply-link:hover,
 .video-hero {
 	background-color: #0f0f0f;
 	padding: var(--wp--preset--spacing--40) 0;
+	overflow: hidden;
+}
+
+.video-hero .wp-block-embed {
+	position: relative;
 }
 
 .video-hero .alignfull {
