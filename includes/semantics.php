@@ -735,29 +735,6 @@ function autonomie_render_block_site_title( $block_content, $block ) {
 add_filter( 'render_block_core/site-title', 'autonomie_render_block_site_title', 10, 2 );
 
 /**
- * Add microformats2 h-feed class to query block on archive pages.
- */
-function autonomie_render_block_query( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
-
-	if ( ! is_singular() ) {
-		$processor = new WP_HTML_Tag_Processor( $block_content );
-
-		// Add h-feed class to query block.
-		if ( $processor->next_tag( array( 'class_name' => 'wp-block-query' ) ) ) {
-			autonomie_tag_processor_add_classes( $processor, array( 'h-feed', 'hfeed' ) );
-		}
-
-		return $processor->get_updated_html();
-	}
-
-	return $block_content;
-}
-add_filter( 'render_block_core/query', 'autonomie_render_block_query', 10, 2 );
-
-/**
  * Add microformats2 classes to comment blocks.
  */
 function autonomie_render_block_comment_template( $block_content, $block ) {
