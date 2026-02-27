@@ -7,23 +7,25 @@
 
 	a,
 	.format-display {
-		color: var(--wp--preset--color--lighter-gray);
-		font-weight: bold;
+		color: var(--wp--preset--color--light-gray);
+		font-size: 0.75em;
+		font-weight: 600;
 		text-transform: lowercase;
+		letter-spacing: 0.05em;
 		text-decoration: none;
 		font-family: var(--wp--preset--font-family--sans-serif);
 		display: inline-flex;
 		align-items: center;
-		gap: 0.25em;
+		gap: 0.3em;
 	}
 
 	a:hover {
-		text-decoration: underline;
+		color: var(--wp--preset--color--primary);
 	}
 
 	.format-icon {
-		width: 1.2em;
-		height: 1.2em;
+		width: 1em;
+		height: 1em;
 		flex-shrink: 0;
 		fill: currentColor;
 	}

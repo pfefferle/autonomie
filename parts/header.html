@@ -1,19 +1,23 @@
-<!-- wp:group {"tagName":"header","className":"site-header","layout":{"type":"constrained","contentSize":"700px"}} -->
-<header class="wp-block-group site-header">
-	<!-- wp:group {"className":"site-branding","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"},"margin":{"top":"0","bottom":"0"}}} -->
-	<div class="wp-block-group site-branding">
-		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-		<div class="wp-block-group">
-			<!-- wp:site-logo {"width":30,"shouldSyncIcon":true} /-->
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"}} -->
+<div class="wp-block-group">
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group">
+		<!-- wp:group {"className":"site-branding","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"spacing":{"blockGap":"0.6em"}} -->
+		<div class="wp-block-group site-branding">
+			<!-- wp:site-logo {"width":28,"shouldSyncIcon":true} /-->
 
-			<!-- wp:site-title {"level":0,"fontSize":"large","spacing":{"margin":{"top":"0","bottom":"0"}}} /-->
+			<!-- wp:site-title {"level":0,"spacing":{"margin":{"top":"0","bottom":"0"}}} /-->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+		<!-- wp:group {"className":"site-header-right","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"spacing":{"blockGap":"var:preset|spacing|40"}} -->
+		<div class="wp-block-group site-header-right">
+			<!-- wp:navigation {"overlayMenu":"mobile","className":"site-navigation","layout":{"type":"flex"}} /-->
+
+			<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"width":180,"widthUnit":"px"} /-->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center"}} /-->
-</header>
+</div>
 <!-- /wp:group -->

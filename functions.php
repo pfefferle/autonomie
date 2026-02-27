@@ -209,6 +209,31 @@ function autonomie_register_block_patterns() {
 add_action( 'init', 'autonomie_register_block_patterns' );
 
 /**
+ * Add post-format-specific templates to the template hierarchy.
+ *
+ * Enables templates like single-post-format-status.html, single-post-format-aside.html, etc.
+ *
+ * @param string[] $templates The list of template candidates.
+ * @return string[] Modified template candidates.
+ */
+function autonomie_post_format_template_hierarchy( $templates ) {
+	$post = get_queried_object();
+
+	if ( ! $post || 'post' !== get_post_type( $post ) ) {
+		return $templates;
+	}
+
+	$format = get_post_format( $post );
+
+	if ( $format ) {
+		array_unshift( $templates, 'single-post-format-' . $format );
+	}
+
+	return $templates;
+}
+add_filter( 'single_template_hierarchy', 'autonomie_post_format_template_hierarchy' );
+
+/**
  * Add pingback url auto-discovery header for singularly identifiable articles
  */
 function autonomie_pingback_header() {

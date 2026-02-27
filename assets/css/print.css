@@ -1,3 +1,90 @@
-*,*:before,*:after,*:first-letter,*:first-line{background:rgba(0,0,0,0) !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}a[href^="#"]:after,a[href^="javascript:"]:after{content:""}pre,blockquote{border:1px solid #4f575a;border-color:var(--color-gray);page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}
+/**
+ * Print Styles
+ *
+ * Loaded with media="print" via wp_enqueue_style in functions.php.
+ * Uses theme.json CSS custom properties for consistency.
+ */
 
-/*# sourceMappingURL=print.css.map */
+*,
+*::before,
+*::after,
+*::first-letter,
+*::first-line {
+	background: transparent !important;
+	color: #000 !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+
+a,
+a:visited {
+	text-decoration: underline;
+}
+
+a[href]::after {
+	content: " (" attr(href) ")";
+}
+
+abbr[title]::after {
+	content: " (" attr(title) ")";
+}
+
+/* Don't show links for fragment identifiers or javascript: */
+a[href^="#"]::after,
+a[href^="javascript:"]::after {
+	content: "";
+}
+
+/* Don't show URL for image links or navigation links */
+.wp-block-navigation a[href]::after,
+.wp-block-site-title a[href]::after,
+a[href] img + ::after {
+	content: "";
+}
+
+pre,
+blockquote {
+	border: 1px solid var(--wp--preset--color--gray);
+	page-break-inside: avoid;
+}
+
+thead {
+	display: table-header-group;
+}
+
+tr,
+img {
+	page-break-inside: avoid;
+}
+
+img {
+	max-width: 100% !important;
+	filter: none !important;
+}
+
+p,
+h2,
+h3 {
+	orphans: 3;
+	widows: 3;
+}
+
+h2,
+h3 {
+	page-break-after: avoid;
+}
+
+/* Hide elements that serve no purpose in print */
+.wp-block-navigation,
+.wp-block-search,
+.wp-block-comment-reply-link,
+.comment-reply-link,
+.wp-block-query-pagination,
+.site-header {
+	display: none !important;
+}
+
+/* Ensure content area uses full width */
+.wp-site-blocks {
+	max-width: 100%;
+}

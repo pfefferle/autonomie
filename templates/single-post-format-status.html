@@ -1,30 +1,19 @@
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"default"},"spacing":{"margin":{"top":"var:preset|spacing|60"}}} -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|60"}}} -->
 <main id="primary" class="wp-block-group">
-	<!-- wp:group {"tagName":"article","className":"h-entry hentry","layout":{"type":"default"}} -->
-	<article class="wp-block-group h-entry hentry">
-		<!-- wp:group {"tagName":"header","className":"entry-header","layout":{"type":"constrained"}} -->
-		<header class="wp-block-group entry-header">
-			<!-- wp:post-title {"level":1} /-->
+	<!-- wp:group {"tagName":"article","className":"h-entry hentry format-status","layout":{"type":"constrained"}} -->
+	<article class="wp-block-group h-entry hentry format-status">
+		<!-- wp:template-part {"slug":"post-meta","className":"status-header"} /-->
 
-			<!-- wp:template-part {"slug":"post-meta","className":"entry-meta"} /-->
-		</header>
-		<!-- /wp:group -->
-
-		<!-- wp:post-featured-image {"align":"wide","spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}} /-->
-
-		<!-- wp:post-content {"className":"entry-content e-content","layout":{"type":"constrained"}} /-->
+		<!-- wp:post-content {"className":"entry-content e-content status-content","layout":{"type":"constrained"}} /-->
 
 		<!-- wp:group {"tagName":"footer","className":"entry-footer","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}} -->
 		<footer class="wp-block-group entry-footer">
 			<!-- wp:post-terms {"term":"post_tag","prefix":"Tags: ","className":"tag-links","spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}} /-->
-
-			<!-- wp:separator {"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}} /-->
-
-			<!-- wp:post-author-biography {"className":"author h-card"} /-->
 		</footer>
 		<!-- /wp:group -->
+
 	</article>
 	<!-- /wp:group -->
 
