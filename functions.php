@@ -303,7 +303,14 @@ function autonomie_render_video_hero() {
 		$html  = wp_oembed_get( $url );
 
 		if ( ! $html ) {
-			return '';
+			// Fall back to block rendering (or plain URL) when oEmbed lookup fails.
+			$fallback = render_block( $block );
+
+			if ( ! empty( trim( $fallback ) ) ) {
+				return '<div class="video-hero">' . $fallback . '</div>';
+			}
+
+			return '<div class="video-hero"><p><a href="' . esc_url( $url ) . '">' . esc_html( $url ) . '</a></p></div>';
 		}
 
 		// Build CSS classes matching core/embed output for proper responsive sizing

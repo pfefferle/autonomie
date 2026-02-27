@@ -123,7 +123,28 @@ if ( ! function_exists( 'get_self_link' ) ) {
 	 * @return string Correct link for the atom:self element.
 	 */
 	function get_self_link() {
-		$host = @parse_url( home_url() );
-		return set_url_scheme( 'http://' . $host['host'] . wp_unslash( $_SERVER['REQUEST_URI'] ) );
+		$host = wp_parse_url( home_url(), PHP_URL_HOST );
+
+		if ( ! is_string( $host ) || '' === $host ) {
+			$host = wp_parse_url( network_home_url(), PHP_URL_HOST );
+		}
+
+		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '/';
+
+		if ( ! is_string( $request_uri ) || '' === $request_uri ) {
+			$request_uri = '/';
+		}
+
+		if ( ! is_string( $host ) || '' === $host ) {
+			$server_host = isset( $_SERVER['HTTP_HOST'] ) ? wp_unslash( $_SERVER['HTTP_HOST'] ) : '';
+
+			if ( is_string( $server_host ) && '' !== $server_host ) {
+				$host = $server_host;
+			} else {
+				return set_url_scheme( home_url( $request_uri ) );
+			}
+		}
+
+		return set_url_scheme( 'http://' . $host . $request_uri );
 	}
 }
