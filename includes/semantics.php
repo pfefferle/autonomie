@@ -29,6 +29,10 @@ function autonomie_body_classes( $classes ) {
 		$classes[] = 'feed';
 	}
 
+	if ( is_singular() ) {
+		$classes[] = 'h-entry';
+	}
+
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
 		$classes[] = 'single-author';
