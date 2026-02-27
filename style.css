@@ -352,6 +352,74 @@ a.comment-reply-link:hover,
 }
 
 /* ==========================================================================
+   Post Format: Video
+   YouTube/Vimeo-inspired — video first, title + meta below
+   ========================================================================== */
+
+/* Video hero — extracted first embed, displayed above the title */
+.video-hero {
+	background-color: #0f0f0f;
+	padding: var(--wp--preset--spacing--40) 0;
+}
+
+.video-hero .alignfull {
+	max-width: none;
+}
+
+.video-hero .alignwide {
+	max-width: var(--wp--style--global--wide-size, 900px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.video-hero .wp-block-embed:not(.alignfull):not(.alignwide) {
+	max-width: var(--wp--style--global--wide-size, 900px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Video hero caption — outside the dark area, right-aligned */
+.video-hero-caption {
+	max-width: var(--wp--style--global--wide-size, 900px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.video-hero-caption figcaption {
+	font-family: var(--wp--preset--font-family--sans-serif);
+	font-size: 0.8em;
+	color: var(--wp--preset--color--light-gray);
+	text-align: right;
+	padding: 0.5em 0;
+}
+
+/* Title below video — slightly smaller, tighter */
+.format-video .video-meta .wp-block-post-title {
+	font-size: 1.75em;
+	margin-bottom: 0;
+}
+
+/* Tighten meta + footer into one visual subline */
+.format-video .video-meta {
+	margin-bottom: 0;
+}
+
+.format-video .entry-footer {
+	margin-top: var(--wp--preset--spacing--30);
+}
+
+/* On archive: smaller title — video is the hero */
+.wp-block-post-template .format-video .wp-block-post-title {
+	font-size: 1.35em;
+}
+
+/* On archive: ignore wide/full alignment on embeds */
+.wp-block-post-template .format-video .wp-block-embed.alignfull,
+.wp-block-post-template .format-video .wp-block-embed.alignwide {
+	max-width: 100%;
+}
+
+/* ==========================================================================
    Post Reactions Link (archive/homepage)
    ========================================================================== */
 
@@ -628,6 +696,7 @@ input[type="search"] {
 	min-width: 190px;
 }
 
+
 /* ==========================================================================
    Wide and Full-Width Alignment
    ========================================================================== */
@@ -668,6 +737,35 @@ input[type="search"] {
 	font-family: var(--wp--preset--font-family--sans-serif);
 	font-weight: 700;
 	font-size: 1em;
+}
+
+/* ==========================================================================
+   Post Format: Aside
+   ========================================================================== */
+
+.format-aside .wp-block-post-title {
+	display: none;
+}
+
+.format-aside .entry-content,
+.format-aside .wp-block-post-content {
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+
+.format-aside .wp-block-post-author__byline {
+	display: none;
+}
+
+.format-aside .wp-block-post-author__name {
+	font-family: var(--wp--preset--font-family--sans-serif);
+	font-weight: 700;
+	font-size: 1em;
+}
+
+/* On archive: hide title */
+.wp-block-post-template .format-aside .wp-block-post-title {
+	display: none;
 }
 
 /* ==========================================================================

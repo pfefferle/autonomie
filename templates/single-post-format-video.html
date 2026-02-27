@@ -1,0 +1,50 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"default"},"spacing":{"margin":{"top":"var:preset|spacing|60"}}} -->
+<main id="primary" class="wp-block-group">
+	<!-- wp:group {"tagName":"article","className":"h-entry hentry format-video","layout":{"type":"default"}} -->
+	<article class="wp-block-group h-entry hentry format-video">
+		<!-- wp:autonomie/video-hero /-->
+
+		<!-- wp:group {"tagName":"header","className":"video-meta","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}} -->
+		<header class="wp-block-group video-meta">
+			<!-- wp:post-title {"level":1} /-->
+
+			<!-- wp:template-part {"slug":"post-meta","className":"entry-meta"} /-->
+		</header>
+		<!-- /wp:group -->
+
+		<!-- wp:post-content {"className":"entry-content e-content video-content","layout":{"type":"constrained"}} /-->
+
+		<!-- wp:group {"tagName":"footer","className":"entry-footer","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}} -->
+		<footer class="wp-block-group entry-footer">
+			<!-- wp:post-terms {"term":"post_tag","prefix":"Tags: ","className":"tag-links","spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}} /-->
+
+			<!-- wp:separator {"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}} /-->
+
+			<!-- wp:post-author-biography {"className":"author h-card"} /-->
+		</footer>
+		<!-- /wp:group -->
+	</article>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"post-navigation","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|55"}}} -->
+	<div class="wp-block-group post-navigation">
+		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+		<div class="wp-block-group">
+			<!-- wp:post-navigation-link {"type":"previous","showTitle":true,"linkLabel":true,"arrow":"arrow"} /-->
+			<!-- wp:post-navigation-link {"type":"next","showTitle":true,"linkLabel":true,"arrow":"arrow"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"comments-area","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|90"}}} -->
+	<div class="wp-block-group comments-area">
+		<!-- wp:post-comments /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

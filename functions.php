@@ -110,6 +110,10 @@ function autonomie_setup() {
 	// Add support for block template parts
 	add_theme_support( 'block-template-parts' );
 
+	// Editor styles — required for add_editor_style() scoping in block themes
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'assets/css/editor.css' );
+
 	/**
 	 * Semantic Web Support
 	 * Draw attention to supported web semantics
@@ -156,9 +160,36 @@ function autonomie_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_scripts' );
 
 /**
+ * Set the default max-width for embeds to match the wide size.
+ */
+function autonomie_embed_defaults() {
+	return array(
+		'width'  => 900,
+		'height' => 600,
+	);
+}
+add_filter( 'embed_defaults', 'autonomie_embed_defaults' );
+
+/**
+ * Set the default width for oEmbed requests.
+ * Fixes issues with Vimeo and other providers.
+ */
+function autonomie_oembed_fetch_url( $provider ) {
+	$provider = add_query_arg( 'width', 900, $provider );
+	$provider = add_query_arg( 'height', 600, $provider );
+
+	return $provider;
+}
+add_filter( 'oembed_fetch_url', 'autonomie_oembed_fetch_url', 99 );
+
+/**
  * Enqueue block editor assets
  * Note: Editor styles are handled by theme.json
  * Currently no editor-specific scripts needed for FSE
+ */
+/**
+ * Enqueue block editor scripts
+ * Note: Editor styles are loaded via add_editor_style() in autonomie_setup()
  */
 function autonomie_editor_assets() {
 	// Reserved for future editor-specific scripts if needed
@@ -171,8 +202,164 @@ add_action( 'enqueue_block_editor_assets', 'autonomie_editor_assets' );
 function autonomie_register_blocks() {
 	// Register post format block from build directory
 	register_block_type( __DIR__ . '/build/post-format' );
+
+	// Dynamic block: renders the first video/embed extracted from the post content
+	register_block_type(
+		'autonomie/video-hero',
+		array(
+			'render_callback' => 'autonomie_render_video_hero',
+		)
+	);
 }
 add_action( 'init', 'autonomie_register_blocks' );
+
+/**
+ * Extract the first video/embed block from a video format post.
+ *
+ * Uses the block parser to find the first core/embed or core/video block.
+ * Stores the serialized block for rendering and the remaining blocks
+ * for filtered content output.
+ *
+ * @param int $post_id The post ID.
+ * @return array|null Extracted data or null.
+ */
+function autonomie_extract_video_hero( $post_id = null ) {
+	static $cache = array();
+
+	if ( ! $post_id ) {
+		$post = get_post();
+		if ( ! $post ) {
+			return null;
+		}
+		$post_id = $post->ID;
+	} else {
+		$post = get_post( $post_id );
+	}
+
+	if ( isset( $cache[ $post_id ] ) ) {
+		return $cache[ $post_id ];
+	}
+
+	$cache[ $post_id ] = null;
+
+	if ( ! $post || 'video' !== get_post_format( $post ) ) {
+		return null;
+	}
+
+	$blocks = parse_blocks( $post->post_content );
+
+	// Find the first non-empty block (skip whitespace-only freeform blocks)
+	$first_index = null;
+	foreach ( $blocks as $index => $block ) {
+		if ( ! empty( $block['blockName'] ) ) {
+			$first_index = $index;
+			break;
+		}
+	}
+
+	// Only extract if the very first block is a video/embed
+	if ( null === $first_index || ! in_array( $blocks[ $first_index ]['blockName'], array( 'core/embed', 'core/video' ), true ) ) {
+		return null;
+	}
+
+	$video_block = $blocks[ $first_index ];
+	unset( $blocks[ $first_index ] );
+
+	$cache[ $post_id ] = array(
+		'video_block'      => $video_block,
+		'remaining_blocks' => $blocks,
+	);
+
+	return $cache[ $post_id ];
+}
+
+/**
+ * Render callback for the autonomie/video-hero block.
+ *
+ * Outputs the first video/embed extracted from the post content.
+ * Manually calls wp_oembed_get() since do_blocks() can't process
+ * oEmbeds reliably when called within the template rendering pipeline.
+ *
+ * @return string The rendered video HTML.
+ */
+function autonomie_render_video_hero() {
+	if ( ! is_singular() ) {
+		return '';
+	}
+
+	$data = autonomie_extract_video_hero();
+
+	if ( ! $data ) {
+		return '';
+	}
+
+	$block = $data['video_block'];
+
+	// For core/embed, get the oEmbed HTML from the URL attribute
+	if ( 'core/embed' === $block['blockName'] && ! empty( $block['attrs']['url'] ) ) {
+		$url   = $block['attrs']['url'];
+		$align = ! empty( $block['attrs']['align'] ) ? ' align' . $block['attrs']['align'] : '';
+		$html  = wp_oembed_get( $url, array( 'width' => 900 ) );
+
+		if ( ! $html ) {
+			return '';
+		}
+
+		// Build CSS classes matching core/embed output for proper responsive sizing
+		$provider = ! empty( $block['attrs']['providerNameSlug'] ) ? ' is-provider-' . $block['attrs']['providerNameSlug'] : '';
+		$classes  = 'wp-block-embed' . $align . ' is-type-video wp-block-embed-youtube' . $provider . ' wp-embed-aspect-16-9 wp-has-aspect-ratio';
+
+		// Extract caption from innerHTML if present
+		$caption = '';
+		if ( preg_match( '/<figcaption[^>]*>(.*?)<\/figcaption>/s', $block['innerHTML'], $matches ) ) {
+			$caption = '<figcaption class="wp-element-caption">' . $matches[1] . '</figcaption>';
+		}
+
+		return sprintf(
+			'<div class="video-hero"><figure class="%s"><div class="wp-block-embed__wrapper">%s</div></figure></div>%s',
+			esc_attr( $classes ),
+			$html,
+			$caption ? '<div class="video-hero-caption">' . $caption . '</div>' : ''
+		);
+	}
+
+	// For core/video, render through the standard block pipeline
+	if ( 'core/video' === $block['blockName'] ) {
+		return '<div class="video-hero">' . render_block( $block ) . '</div>';
+	}
+
+	return '';
+}
+
+/**
+ * Filter the post content to remove the first video/embed on video format posts.
+ *
+ * Works in tandem with autonomie_extract_video_hero() — only removes the block
+ * if it was already extracted for the video-hero block.
+ *
+ * @param string $content The post content.
+ * @return string Filtered content without the first video/embed.
+ */
+function autonomie_filter_video_content( $content ) {
+	if ( ! is_singular() ) {
+		return $content;
+	}
+
+	$data = autonomie_extract_video_hero();
+
+	if ( ! $data ) {
+		return $content;
+	}
+
+	// Re-serialize remaining blocks and render them
+	$output = '';
+	foreach ( $data['remaining_blocks'] as $block ) {
+		$output .= serialize_block( $block );
+	}
+
+	return do_blocks( $output );
+}
+add_filter( 'the_content', 'autonomie_filter_video_content', 5 );
 
 /**
  * Register block patterns category
