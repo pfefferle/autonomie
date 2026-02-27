@@ -700,29 +700,11 @@ input[type="search"] {
 
 
 /* ==========================================================================
-   Wide and Full-Width Alignment
+   Float Alignment
+   WordPress core doesn't constrain floats within the content area in
+   constrained layouts, so we position them with calculated margins.
    ========================================================================== */
 
-.entry-content .alignwide {
-	max-width: var(--wp--style--global--wide-size, 900px);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.entry-content .alignfull {
-	max-width: none;
-	width: 100vw;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-/*
- * Float alignment fix for FSE constrained layouts:
- * The content container is full-width; children are centered via max-width.
- * Floated blocks are excluded from that constraint, so we position them
- * within the content area using calculated margins.
- */
 .entry-content .alignleft {
 	float: left;
 	margin-left: max(16px, calc((100% - var(--wp--style--global--content-size)) / 2));
