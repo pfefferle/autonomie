@@ -730,14 +730,14 @@ input[type="search"] {
  */
 .entry-content .alignleft {
 	float: left;
-	margin-left: max(16px, calc((100% - var(--wp--style--global--content-size, 700px)) / 2));
+	margin-left: max(16px, calc((100% - var(--wp--style--global--content-size)) / 2));
 	margin-right: var(--wp--preset--spacing--50);
 	margin-bottom: var(--wp--preset--spacing--30);
 }
 
 .entry-content .alignright {
 	float: right;
-	margin-right: max(16px, calc((100% - var(--wp--style--global--content-size, 700px)) / 2));
+	margin-right: max(16px, calc((100% - var(--wp--style--global--content-size)) / 2));
 	margin-left: var(--wp--preset--spacing--50);
 	margin-bottom: var(--wp--preset--spacing--30);
 }
