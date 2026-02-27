@@ -266,7 +266,7 @@ function autonomie_extract_video_hero( $post_id = null ) {
 
 	$cache[ $post_id ] = null;
 
-	if ( ! $post || 'video' !== get_post_format( $post ) ) {
+	if ( ! $post || 'video' !== get_post_format( $post ) || ! has_blocks( $post ) ) {
 		return null;
 	}
 
