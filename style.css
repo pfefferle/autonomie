@@ -370,10 +370,10 @@ a.comment-reply-link:hover,
 	overflow: hidden;
 }
 
-/* Ensure responsive embed sizing works inside video-hero
-   (WordPress core rules can break when privacy plugins wrap the iframe) */
+/* Responsive embed sizing inside video-hero */
 .video-hero .wp-block-embed__wrapper {
 	position: relative;
+	overflow: hidden;
 }
 
 .video-hero .wp-has-aspect-ratio .wp-block-embed__wrapper::before {
