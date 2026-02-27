@@ -367,6 +367,27 @@ a.comment-reply-link:hover,
 .video-hero {
 	background-color: #0f0f0f;
 	padding: var(--wp--preset--spacing--40) 0;
+	overflow: hidden;
+}
+
+/* Ensure responsive embed sizing works inside video-hero
+   (WordPress core rules can break when privacy plugins wrap the iframe) */
+.video-hero .wp-block-embed__wrapper {
+	position: relative;
+}
+
+.video-hero .wp-has-aspect-ratio .wp-block-embed__wrapper::before {
+	content: "";
+	display: block;
+	padding-top: 56.25%;
+}
+
+.video-hero .wp-has-aspect-ratio iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .video-hero .alignfull {
