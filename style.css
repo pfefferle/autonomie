@@ -722,14 +722,22 @@ input[type="search"] {
 	transform: translateX(-50%);
 }
 
+/*
+ * Float alignment fix for FSE constrained layouts:
+ * The content container is full-width; children are centered via max-width.
+ * Floated blocks are excluded from that constraint, so we position them
+ * within the content area using calculated margins.
+ */
 .entry-content .alignleft {
 	float: left;
+	margin-left: max(16px, calc((100% - var(--wp--style--global--content-size, 700px)) / 2));
 	margin-right: var(--wp--preset--spacing--50);
 	margin-bottom: var(--wp--preset--spacing--30);
 }
 
 .entry-content .alignright {
 	float: right;
+	margin-right: max(16px, calc((100% - var(--wp--style--global--content-size, 700px)) / 2));
 	margin-left: var(--wp--preset--spacing--50);
 	margin-bottom: var(--wp--preset--spacing--30);
 }
