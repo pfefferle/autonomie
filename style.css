@@ -367,27 +367,6 @@ a.comment-reply-link:hover,
 .video-hero {
 	background-color: #0f0f0f;
 	padding: var(--wp--preset--spacing--40) 0;
-	overflow: hidden;
-}
-
-/* Responsive embed sizing inside video-hero */
-.video-hero .wp-block-embed__wrapper {
-	position: relative;
-	overflow: hidden;
-}
-
-.video-hero .wp-has-aspect-ratio .wp-block-embed__wrapper::before {
-	content: "";
-	display: block;
-	padding-top: 56.25%;
-}
-
-.video-hero .wp-has-aspect-ratio iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 }
 
 .video-hero .alignfull {
@@ -706,10 +685,6 @@ input[type="search"] {
 /* ==========================================================================
    Block Overrides
    ========================================================================== */
-
-.wp-block-embed iframe {
-	max-width: 100%;
-}
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	width: 200px;

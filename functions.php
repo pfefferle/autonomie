@@ -160,29 +160,6 @@ function autonomie_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_scripts' );
 
 /**
- * Set the default max-width for embeds to match the wide size.
- */
-function autonomie_embed_defaults() {
-	return array(
-		'width'  => 900,
-		'height' => 600,
-	);
-}
-add_filter( 'embed_defaults', 'autonomie_embed_defaults' );
-
-/**
- * Set the default width for oEmbed requests.
- * Fixes issues with Vimeo and other providers.
- */
-function autonomie_oembed_fetch_url( $provider ) {
-	$provider = add_query_arg( 'width', 900, $provider );
-	$provider = add_query_arg( 'height', 600, $provider );
-
-	return $provider;
-}
-add_filter( 'oembed_fetch_url', 'autonomie_oembed_fetch_url', 99 );
-
-/**
  * Enqueue block editor assets
  * Note: Editor styles are handled by theme.json
  * Currently no editor-specific scripts needed for FSE
@@ -323,7 +300,7 @@ function autonomie_render_video_hero() {
 	if ( 'core/embed' === $block['blockName'] && ! empty( $block['attrs']['url'] ) ) {
 		$url   = $block['attrs']['url'];
 		$align = ! empty( $block['attrs']['align'] ) ? ' align' . $block['attrs']['align'] : '';
-		$html  = wp_oembed_get( $url, array( 'width' => 900 ) );
+		$html  = wp_oembed_get( $url );
 
 		if ( ! $html ) {
 			return '';
