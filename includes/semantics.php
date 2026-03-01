@@ -775,8 +775,8 @@ function autonomie_render_block_post_author( $block_content, $block ) {
 		return $block_content;
 	}
 
-	$processor          = new WP_HTML_Tag_Processor( $block_content );
-	$author_name_found  = false;
+	$processor         = new WP_HTML_Tag_Processor( $block_content );
+	$author_name_found = false;
 
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-post-author' ) ) ) {
 		autonomie_tag_processor_add_classes( $processor, array( 'h-card', 'p-author', 'author', 'vcard' ) );
