@@ -1004,9 +1004,14 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 	$classes   = array( 'h-cite', 'p-comment' );
 
-	// Add semantic classes to comment items and author wrappers.
+	// Add semantic classes to comment bodies and author wrappers.
 	while ( $processor->next_tag() ) {
+		// Avoid nesting comment microformats on wrapper list items.
 		if ( 'LI' === $processor->get_tag() && $processor->has_class( 'comment' ) ) {
+			autonomie_tag_processor_remove_classes( $processor, $classes );
+		}
+
+		if ( $processor->has_class( 'comment-body' ) ) {
 			autonomie_tag_processor_add_classes( $processor, $classes );
 		}
 
@@ -1032,11 +1037,23 @@ function autonomie_render_block_post_comments( $block_content, $block ) {
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
-	while ( $processor->next_tag( array( 'class_name' => 'comment-author' ) ) ) {
-		autonomie_tag_processor_add_classes( $processor, array( 'p-author', 'author', 'vcard', 'hcard', 'h-card' ) );
-		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'creator' ) );
-		$processor->set_attribute( 'itemscope', '' );
-		$processor->set_attribute( 'itemtype', 'https://schema.org/Person' );
+	while ( $processor->next_tag() ) {
+		// Avoid nested comment parsing: keep h-cite/p-comment off wrapper <li> nodes.
+		if ( 'LI' === $processor->get_tag() && $processor->has_class( 'comment' ) ) {
+			autonomie_tag_processor_remove_classes( $processor, array( 'h-cite', 'p-comment' ) );
+		}
+
+		// Attach comment microformats to the actual comment body element.
+		if ( $processor->has_class( 'comment-body' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'h-cite', 'p-comment' ) );
+		}
+
+		if ( $processor->has_class( 'comment-author' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'p-author', 'author', 'vcard', 'hcard', 'h-card' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'creator' ) );
+			$processor->set_attribute( 'itemscope', '' );
+			$processor->set_attribute( 'itemtype', 'https://schema.org/Person' );
+		}
 	}
 
 	return $processor->get_updated_html();
