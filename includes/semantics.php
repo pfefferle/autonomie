@@ -886,11 +886,47 @@ function autonomie_render_block_site_logo( $block_content, $block ) {
 		$processor->set_attribute( 'itemtype', 'https://schema.org/ImageObject' );
 	}
 
-	if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
-		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url', 'contentUrl' ) );
+	if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url' ) );
 	}
 
-	return $processor->get_updated_html();
+	if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'contentUrl' ) );
+	}
+
+	$updated_content = $processor->get_updated_html();
+	$logo_id         = 0;
+
+	if ( ! empty( $block['attrs']['id'] ) ) {
+		$logo_id = (int) $block['attrs']['id'];
+	}
+
+	if ( ! $logo_id ) {
+		$logo_id = (int) get_theme_mod( 'custom_logo' );
+	}
+
+	$logo_url = '';
+
+	if ( $logo_id ) {
+		$logo_url = wp_get_attachment_image_url( $logo_id, 'full' );
+	}
+
+	if ( is_string( $logo_url ) && '' !== $logo_url ) {
+		$logo_url_escaped = esc_url( $logo_url );
+		$meta_markup      = '<meta itemprop="url" content="' . $logo_url_escaped . '" /><meta itemprop="contentUrl" content="' . $logo_url_escaped . '" />';
+		$updated          = preg_replace(
+			'/(<[^>]*\bclass=(["\'])[^"\']*\bwp-block-site-logo\b[^"\']*\2[^>]*>)/i',
+			'$1' . $meta_markup,
+			$updated_content,
+			1
+		);
+
+		if ( is_string( $updated ) ) {
+			$updated_content = $updated;
+		}
+	}
+
+	return $updated_content;
 }
 add_filter( 'render_block_core/site-logo', 'autonomie_render_block_site_logo', 10, 2 );
 
