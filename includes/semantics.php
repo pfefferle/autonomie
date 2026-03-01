@@ -1021,6 +1021,16 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 			$processor->set_attribute( 'itemscope', '' );
 			$processor->set_attribute( 'itemtype', 'https://schema.org/Person' );
 		}
+
+		if ( $processor->has_class( 'fn' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'p-name' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'name' ) );
+		}
+
+		if ( 'A' === $processor->get_tag() && $processor->has_class( 'url' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'u-url' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url' ) );
+		}
 	}
 
 	return $processor->get_updated_html();
@@ -1053,6 +1063,16 @@ function autonomie_render_block_post_comments( $block_content, $block ) {
 			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'creator' ) );
 			$processor->set_attribute( 'itemscope', '' );
 			$processor->set_attribute( 'itemtype', 'https://schema.org/Person' );
+		}
+
+		if ( $processor->has_class( 'fn' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'p-name' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'name' ) );
+		}
+
+		if ( 'A' === $processor->get_tag() && $processor->has_class( 'url' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'u-url' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url' ) );
 		}
 	}
 
