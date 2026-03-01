@@ -3,6 +3,8 @@
 /vendor/
 .DS_Store
 _build
-build/
+build/*
+!build/post-format/
+!build/post-format/**
 composer.lock
 package-lock.json

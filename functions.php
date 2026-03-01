@@ -177,8 +177,8 @@ add_action( 'enqueue_block_editor_assets', 'autonomie_editor_assets' );
  * Register custom blocks
  */
 function autonomie_register_blocks() {
-	// Register post format block from build directory
-	register_block_type( __DIR__ . '/build/post-format' );
+	// Register post format block from block metadata (JS editor + PHP render API).
+	register_block_type_from_metadata( __DIR__ . '/build/post-format' );
 
 	// Dynamic block: renders the first video/embed extracted from the post content
 	// Register a minimal editor script so the Site Editor recognizes the block
