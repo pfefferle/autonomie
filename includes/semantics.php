@@ -305,7 +305,7 @@ function autonomie_get_semantics( $id = null ) {
 			} elseif ( is_single() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/BlogPosting' );
-				$classes['itemref'] = array( 'site-publisher' );
+				$classes['itemref'] = array( 'site-branding-publisher' );
 			} elseif ( is_page() ) {
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/WebPage' );
@@ -348,7 +348,7 @@ function autonomie_get_semantics( $id = null ) {
 				$classes['itemprop'] = array( 'blogPost' );
 				$classes['itemscope'] = array( '' );
 				$classes['itemtype'] = array( 'https://schema.org/BlogPosting' );
-				$classes['itemref'] = array( 'site-publisher' );
+				$classes['itemref'] = array( 'site-branding-publisher' );
 				$classes['itemid'] = array( get_permalink() );
 			}
 			break;
@@ -541,15 +541,11 @@ function autonomie_render_block_post_template( $block_content, $block ) {
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
-	while ( $processor->next_tag( array( 'tag_name' => 'li' ) ) ) {
-		if ( ! $processor->has_class( 'wp-block-post' ) ) {
-			continue;
-		}
-
+	while ( $processor->next_tag( array( 'class_name' => 'wp-block-post' ) ) ) {
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'blogPost' ) );
 		$processor->set_attribute( 'itemscope', '' );
 		$processor->set_attribute( 'itemtype', 'https://schema.org/BlogPosting' );
-		$processor->set_attribute( 'itemref', 'site-publisher' );
+		$processor->set_attribute( 'itemref', 'site-branding-publisher' );
 
 		$classes = $processor->get_attribute( 'class' );
 
@@ -587,6 +583,81 @@ function autonomie_render_block_group( $block_content, $block ) {
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/group', 'autonomie_render_block_group', 10, 2 );
+
+/**
+ * Add page-level schema.org semantics to the non-singular main container.
+ */
+function autonomie_render_block_main_group_semantics( $block_content, $block ) {
+	if ( is_singular() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	if ( empty( $block['attrs']['tagName'] ) || 'main' !== strtolower( $block['attrs']['tagName'] ) ) {
+		return $block_content;
+	}
+
+	$body_semantics = autonomie_get_semantics( 'body' );
+
+	if ( empty( $body_semantics ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( ! $processor->next_tag() ) {
+		return $block_content;
+	}
+
+	if ( ! empty( $body_semantics['itemscope'] ) ) {
+		$processor->set_attribute( 'itemscope', '' );
+	}
+
+	if ( ! empty( $body_semantics['itemtype'] ) ) {
+		$processor->set_attribute( 'itemtype', implode( ' ', $body_semantics['itemtype'] ) );
+	}
+
+	if ( ! empty( $body_semantics['itemid'] ) ) {
+		$processor->set_attribute( 'itemid', $body_semantics['itemid'][0] );
+	}
+
+	$processor->set_attribute( 'itemref', 'site-branding-publisher' );
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/group', 'autonomie_render_block_main_group_semantics', 11, 2 );
+
+/**
+ * Re-use the existing header branding (logo + site title) as Blog publisher.
+ */
+function autonomie_render_block_group_site_branding_publisher( $block_content, $block ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	if ( empty( $block['attrs']['className'] ) || ! is_string( $block['attrs']['className'] ) ) {
+		return $block_content;
+	}
+
+	$class_name = ' ' . $block['attrs']['className'] . ' ';
+
+	if ( false === strpos( $class_name, ' site-branding ' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( ! $processor->next_tag() ) {
+		return $block_content;
+	}
+
+	$processor->set_attribute( 'id', 'site-branding-publisher' );
+	autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'publisher' ) );
+	$processor->set_attribute( 'itemscope', '' );
+	$processor->set_attribute( 'itemtype', 'https://schema.org/Organization' );
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/group', 'autonomie_render_block_group_site_branding_publisher', 12, 2 );
 
 /**
  * Add microformats2 classes to post title block.
@@ -781,7 +852,7 @@ function autonomie_render_block_site_title( $block_content, $block ) {
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
-	if ( is_home() ) {
+	if ( ! is_singular() ) {
 		if ( $processor->next_tag( array( 'class_name' => 'wp-block-site-title' ) ) ) {
 			autonomie_tag_processor_add_classes( $processor, array( 'p-name' ) );
 			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'name' ) );
@@ -798,6 +869,30 @@ function autonomie_render_block_site_title( $block_content, $block ) {
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/site-title', 'autonomie_render_block_site_title', 10, 2 );
+
+/**
+ * Add schema properties to the existing site logo for publisher semantics.
+ */
+function autonomie_render_block_site_logo( $block_content, $block ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-site-logo' ) ) ) {
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'logo' ) );
+		$processor->set_attribute( 'itemscope', '' );
+		$processor->set_attribute( 'itemtype', 'https://schema.org/ImageObject' );
+	}
+
+	if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url', 'contentUrl' ) );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/site-logo', 'autonomie_render_block_site_logo', 10, 2 );
 
 /**
  * Add semantics to query title block.
