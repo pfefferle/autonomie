@@ -242,18 +242,26 @@ a.comment-reply-link:hover,
 	line-height: 0;
 }
 
-.site-header .wp-block-search__inside-wrapper {
+.wp-block-search .wp-block-search__inside-wrapper {
 	border: 1px solid var(--wp--preset--color--border-gray);
 	border-radius: 50px;
+	overflow: hidden;
+}
+
+.wp-block-search .wp-block-search__input {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	padding: 5px 12px;
+	max-width: 100%;
+	background-color: transparent;
 }
 
 .site-header .wp-block-search__input {
-	border: none;
-	padding: 4px 12px;
 	font-size: 0.85rem;
 }
 
-.site-header .wp-block-search__button {
+.wp-block-search .wp-block-search__button {
 	border: none;
 	background: transparent;
 	color: var(--wp--preset--color--light-gray);
@@ -673,7 +681,7 @@ textarea {
 	background-color: var(--wp--preset--color--white);
 }
 
-input[type="search"] {
+input[type="search"]:not(.wp-block-search__input) {
 	border: 1px solid var(--wp--preset--color--border-gray);
 	border-radius: 50px;
 	padding: 5px 15px;
