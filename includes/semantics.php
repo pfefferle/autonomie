@@ -1004,16 +1004,38 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 	$classes   = array( 'h-cite', 'p-comment' );
 
-	// Add semantic classes to each comment list item.
-	while ( $processor->next_tag( array( 'tag_name' => 'li' ) ) ) {
-		if ( $processor->has_class( 'comment' ) ) {
+	// Add semantic classes to comment items and author wrappers.
+	while ( $processor->next_tag() ) {
+		if ( 'LI' === $processor->get_tag() && $processor->has_class( 'comment' ) ) {
 			autonomie_tag_processor_add_classes( $processor, $classes );
+		}
+
+		if ( $processor->has_class( 'comment-author' ) ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'h-card', 'hcard' ) );
 		}
 	}
 
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/comment-template', 'autonomie_render_block_comment_template', 10, 2 );
+
+/**
+ * Add author h-card classes to rendered post comments markup.
+ */
+function autonomie_render_block_post_comments( $block_content, $block ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	while ( $processor->next_tag( array( 'class_name' => 'comment-author' ) ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'h-card', 'hcard' ) );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/post-comments', 'autonomie_render_block_post_comments', 10, 2 );
 
 /**
  * Add semantic HTML5 search element to search block.
