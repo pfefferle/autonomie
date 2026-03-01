@@ -220,7 +220,7 @@ a.comment-reply-link:hover,
 	background-color: transparent;
 }
 
-.site-header .wp-block-search__input {
+.site-header-search.wp-block-search .wp-block-search__input {
 	font-size: 0.85rem;
 }
 
@@ -636,7 +636,7 @@ input[type="search"]:not(.wp-block-search__input) {
 
 .format-status .entry-content,
 .format-status .wp-block-post-content {
-	font-size: 1.25em;
+	font-size: 1.5em;
 	line-height: 1.6;
 }
 

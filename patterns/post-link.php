@@ -15,6 +15,10 @@
 		<!-- wp:post-title {"level":1,"className":"entry-title p-name"} /-->
 
 		<!-- wp:template-part {"slug":"post-meta","className":"entry-meta"} /-->
+
+<!-- wp:spacer {"height":"var:preset|spacing|35"} -->
+<div style="height:var(--wp--preset--spacing--35)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 	</header>
 	<!-- /wp:group -->
 

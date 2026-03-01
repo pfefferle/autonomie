@@ -12,12 +12,16 @@
 ?>
 <!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
 <div class="wp-block-query">
-	<!-- wp:post-template -->
+	<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|100"}}} -->
 		<!-- wp:autonomie/post-format {"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}} /-->
 
 		<!-- wp:post-title {"isLink":true,"linkTarget":"_self"} /-->
 
 		<!-- wp:template-part {"slug":"post-meta","className":"entry-meta"} /-->
+
+<!-- wp:spacer {"height":"var:preset|spacing|35"} -->
+<div style="height:var(--wp--preset--spacing--35)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
 		<!-- wp:post-featured-image {"isLink":true} /-->
 
@@ -36,8 +40,6 @@
 		<!-- wp:paragraph {"align":"center"} -->
 		<p class="has-text-align-center"><?php echo esc_html_x( 'No posts found. Please try another search.', 'Message when no posts are found in a query loop.', 'autonomie' ); ?></p>
 		<!-- /wp:paragraph -->
-
-		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
 	<!-- /wp:query-no-results -->
 </div>
 <!-- /wp:query -->

@@ -7,20 +7,10 @@
 
 	a,
 	.format-display {
-		color: var(--wp--preset--color--light-gray);
-		font-size: 0.75em;
-		font-weight: 600;
-		text-transform: lowercase;
-		letter-spacing: 0.05em;
 		text-decoration: none;
-		font-family: var(--wp--preset--font-family--sans-serif);
 		display: inline-flex;
 		align-items: center;
 		gap: 0.3em;
-	}
-
-	a:hover {
-		color: var(--wp--preset--color--primary);
 	}
 
 	.format-icon {
@@ -29,10 +19,4 @@
 		flex-shrink: 0;
 		fill: currentColor;
 	}
-}
-
-/* Hide on singular pages by default */
-.single .wp-block-autonomie-post-format,
-.page .wp-block-autonomie-post-format {
-	display: none;
 }
