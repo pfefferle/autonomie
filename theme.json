@@ -993,7 +993,10 @@
       },
       "core/comment-author-name": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--sans-serif)"
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+          "fontSize": "var(--wp--custom--meta--font-size)",
+          "lineHeight": "var(--wp--custom--meta--line-height)",
+          "fontWeight": "var(--wp--custom--meta--font-weight)"
         },
         "elements": {
           "link": {
@@ -1016,16 +1019,24 @@
       },
       "core/comment-date": {
         "typography": {
-          "fontSize": "0.7em"
+          "fontSize": "var(--wp--custom--meta--font-size)",
+          "lineHeight": "var(--wp--custom--meta--line-height)",
+          "fontWeight": "var(--wp--custom--meta--font-weight)"
         },
         "color": {
           "text": "var(--wp--preset--color--gray)"
         }
       },
+      "core/comment-reply-link": {
+        "typography": {
+          "fontSize": "var(--wp--custom--meta--font-size)",
+          "lineHeight": "var(--wp--custom--meta--line-height)",
+          "fontWeight": "var(--wp--custom--meta--font-weight)"
+        }
+      },
       "core/comment-content": {
         "typography": {
-          "fontSize": "1.1em",
-          "lineHeight": "2"
+          "lineHeight": "1.6"
         }
       },
       "core/navigation": {
@@ -1090,7 +1101,7 @@
       "core/comments": {
         "spacing": {
           "margin": {
-            "top": "var(--wp--preset--spacing--90)"
+            "top": "0"
           }
         }
       }
@@ -1115,6 +1126,11 @@
     {
       "name": "query-loop",
       "title": "Query Loop",
+      "area": "uncategorized"
+    },
+    {
+      "name": "comments",
+      "title": "Comments",
       "area": "uncategorized"
     }
   ],

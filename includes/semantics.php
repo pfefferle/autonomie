@@ -1011,8 +1011,11 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 			autonomie_tag_processor_remove_classes( $processor, $classes );
 		}
 
-		if ( $processor->has_class( 'comment-body' ) ) {
+		if ( $processor->has_class( 'comment-body' ) || $processor->has_class( 'wp-block-columns' ) ) {
 			autonomie_tag_processor_add_classes( $processor, $classes );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'comment' ) );
+			$processor->set_attribute( 'itemscope', '' );
+			$processor->set_attribute( 'itemtype', 'https://schema.org/Comment' );
 		}
 
 		if ( $processor->has_class( 'comment-author' ) ) {
@@ -1038,6 +1041,68 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 add_filter( 'render_block_core/comment-template', 'autonomie_render_block_comment_template', 10, 2 );
 
 /**
+ * Add semantics to the comment author name block.
+ */
+function autonomie_render_block_comment_author_name( $block_content, $block ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-comment-author-name' ) ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'fn', 'p-name' ) );
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'name' ) );
+	}
+
+	if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'u-url', 'url' ) );
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url' ) );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/comment-author-name', 'autonomie_render_block_comment_author_name', 10, 2 );
+
+/**
+ * Add semantics to the comment date block.
+ */
+function autonomie_render_block_comment_date( $block_content, $block ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( $processor->next_tag( array( 'tag_name' => 'time' ) ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'updated', 'published', 'dt-updated', 'dt-published' ) );
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'dateCreated' ) );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/comment-date', 'autonomie_render_block_comment_date', 10, 2 );
+
+/**
+ * Add semantics to the comment content block.
+ */
+function autonomie_render_block_comment_content( $block_content, $block ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+		return $block_content;
+	}
+
+	$processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-comment-content' ) ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'e-content', 'p-summary', 'p-name' ) );
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'text', 'name', 'description' ) );
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/comment-content', 'autonomie_render_block_comment_content', 10, 2 );
+
+/**
  * Add author h-card classes to rendered post comments markup.
  */
 function autonomie_render_block_post_comments( $block_content, $block ) {
@@ -1056,6 +1121,9 @@ function autonomie_render_block_post_comments( $block_content, $block ) {
 		// Attach comment microformats to the actual comment body element.
 		if ( $processor->has_class( 'comment-body' ) ) {
 			autonomie_tag_processor_add_classes( $processor, array( 'h-cite', 'p-comment' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'comment' ) );
+			$processor->set_attribute( 'itemscope', '' );
+			$processor->set_attribute( 'itemtype', 'https://schema.org/Comment' );
 		}
 
 		if ( $processor->has_class( 'comment-author' ) ) {
