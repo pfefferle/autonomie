@@ -300,6 +300,17 @@
 		"custom": {
 			"postFormats": {
 				"support": true
+			},
+			"layout": {
+				"navSubmenuMinWidth": "12rem",
+				"navFontSize": "0.9rem",
+				"navFontSizeMobile": "0.9rem",
+				"headerSearchWidth": "clamp(8rem, 26vw, 11rem)",
+				"headerSearchWidthCompact": "clamp(6rem, 22vw, 8.5rem)",
+				"headerSearchWidthMobile": "clamp(7rem, 34vw, 9.5rem)",
+				"headerTitleCompactSize": "clamp(1.1rem, 2.3vw, 1.35rem)",
+				"navTogglePadding": "0.4rem",
+				"navItemFontSizeMobile": "0.9rem"
 			}
 		}
 	},
