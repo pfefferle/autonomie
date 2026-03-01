@@ -31,6 +31,7 @@ function autonomie_body_classes( $classes ) {
 
 	if ( is_singular() ) {
 		$classes[] = 'h-entry';
+		$classes[] = 'hentry';
 	}
 
 	// Adds a class of single-author to blogs with only 1 published author
@@ -318,6 +319,11 @@ function autonomie_get_semantics( $id = null ) {
 
 			break;
 		case 'main':
+			if ( is_single() ) {
+				$classes['itemprop'] = array( 'mainEntity' );
+			} elseif ( is_page() ) {
+				$classes['itemprop'] = array( 'mainContentOfPage' );
+			}
 			break;
 		case 'site-title':
 			if ( is_home() ) {
@@ -542,6 +548,7 @@ function autonomie_render_block_post_template( $block_content, $block ) {
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
 	while ( $processor->next_tag( array( 'class_name' => 'wp-block-post' ) ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'h-entry', 'hentry' ) );
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'blogPost' ) );
 		$processor->set_attribute( 'itemscope', '' );
 		$processor->set_attribute( 'itemtype', 'https://schema.org/BlogPosting' );
@@ -563,7 +570,7 @@ function autonomie_render_block_post_template( $block_content, $block ) {
 add_filter( 'render_block_core/post-template', 'autonomie_render_block_post_template', 10, 2 );
 
 /**
- * Ensure singular pages do not nest h-entry on article group wrappers.
+ * Ensure singular article group wrappers do not duplicate h-entry classes.
  */
 function autonomie_render_block_group( $block_content, $block ) {
 	if ( ! is_singular() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
@@ -585,10 +592,10 @@ function autonomie_render_block_group( $block_content, $block ) {
 add_filter( 'render_block_core/group', 'autonomie_render_block_group', 10, 2 );
 
 /**
- * Add page-level schema.org semantics to the non-singular main container.
+ * Add page-level schema.org semantics to the main container.
  */
 function autonomie_render_block_main_group_semantics( $block_content, $block ) {
-	if ( is_singular() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
 		return $block_content;
 	}
 
@@ -620,7 +627,17 @@ function autonomie_render_block_main_group_semantics( $block_content, $block ) {
 		$processor->set_attribute( 'itemid', $body_semantics['itemid'][0] );
 	}
 
-	$processor->set_attribute( 'itemref', 'site-branding-publisher' );
+	if ( ! empty( $body_semantics['itemref'] ) ) {
+		$processor->set_attribute( 'itemref', implode( ' ', $body_semantics['itemref'] ) );
+	} else {
+		$processor->set_attribute( 'itemref', 'site-branding-publisher' );
+	}
+
+	$main_semantics = autonomie_get_semantics( 'main' );
+
+	if ( ! empty( $main_semantics['itemprop'] ) ) {
+		$processor->set_attribute( 'itemprop', implode( ' ', $main_semantics['itemprop'] ) );
+	}
 
 	return $processor->get_updated_html();
 }

@@ -70,7 +70,7 @@ function autonomie_setup() {
 
 	/**
 	 * Post Format Support
-	 * All 9 post formats with corresponding block patterns
+	 * Enable all supported WordPress post formats
 	 */
 	add_theme_support(
 		'post-formats',
@@ -368,20 +368,6 @@ function autonomie_filter_video_content( $content ) {
 	return do_blocks( $output );
 }
 add_filter( 'the_content', 'autonomie_filter_video_content', 5 );
-
-/**
- * Register block patterns category
- */
-function autonomie_register_block_pattern_category() {
-	register_block_pattern_category(
-		'autonomie',
-		array(
-			'label' => __( 'Autonomie', 'autonomie' ),
-		)
-	);
-}
-add_action( 'init', 'autonomie_register_block_pattern_category' );
-
 
 /**
  * Add post-format-specific templates to the template hierarchy.

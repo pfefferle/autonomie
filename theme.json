@@ -1111,6 +1111,11 @@
       "name": "post-meta",
       "title": "Post Meta",
       "area": "uncategorized"
+    },
+    {
+      "name": "query-loop",
+      "title": "Query Loop",
+      "area": "uncategorized"
     }
   ],
   "customTemplates": [
