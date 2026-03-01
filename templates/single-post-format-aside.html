@@ -4,7 +4,11 @@
 <main id="primary" class="wp-block-group">
 	<!-- wp:group {"tagName":"article","className":"format-aside","layout":{"type":"constrained"}} -->
 	<article class="wp-block-group format-aside">
-		<!-- wp:template-part {"slug":"post-meta","className":"aside-header"} /-->
+		<!-- wp:group {"tagName":"header","className":"entry-header","layout":{"type":"constrained"}} -->
+		<header class="wp-block-group entry-header">
+			<!-- wp:template-part {"slug":"post-meta","className":"entry-meta"} /-->
+		</header>
+		<!-- /wp:group -->
 
 		<!-- wp:post-content {"className":"entry-content e-content aside-content","layout":{"type":"constrained"}} /-->
 
@@ -21,7 +25,7 @@
 	</article>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"post-navigation","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|55"}}} -->
+	<!-- wp:group {"className":"post-navigation","layout":{"type":"constrained"},"spacing":{"margin":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}} -->
 	<div class="wp-block-group post-navigation">
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 		<div class="wp-block-group">

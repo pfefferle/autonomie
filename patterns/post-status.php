@@ -16,6 +16,6 @@
 	</header>
 	<!-- /wp:group -->
 
-	<!-- wp:post-content {"className":"entry-content e-content","style":{"typography":{"fontSize":"1.5em"}},"layout":{"type":"constrained"}} /-->
+	<!-- wp:post-content {"className":"entry-content e-content","fontSize":"large","layout":{"type":"constrained"}} /-->
 </article>
 <!-- /wp:group -->

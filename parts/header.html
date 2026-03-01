@@ -1,18 +1,18 @@
-<!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"className":"site-header-layout","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"},"spacing":{"blockGap":"var:preset|spacing|40"}} -->
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"},"style":{"spacing":{"padding":{"top":"var:custom|header|paddingBlock","bottom":"var:custom|header|paddingBlock"},"margin":{"bottom":"var:custom|header|marginBottom"}}}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--custom--header--margin-bottom);padding-top:var(--wp--custom--header--padding-block);padding-bottom:var(--wp--custom--header--padding-block)">
+	<!-- wp:group {"className":"site-header-layout","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"},"spacing":{"blockGap":"var:custom|header|gap"}} -->
 	<div class="wp-block-group site-header-layout">
-		<!-- wp:group {"className":"site-branding","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"spacing":{"blockGap":"0.35em"}} -->
+		<!-- wp:group {"className":"site-branding","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"spacing":{"blockGap":"var:custom|header|brandingGap"}} -->
 		<div class="wp-block-group site-branding">
 			<!-- wp:site-logo {"width":28,"shouldSyncIcon":true,"style":{"border":{"radius":"4px"}}} /-->
 
-			<!-- wp:site-title {"level":0,"spacing":{"margin":{"top":"0","bottom":"0"}}} /-->
+			<!-- wp:site-title {"level":0} /-->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"className":"site-header-right","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"spacing":{"blockGap":"var:preset|spacing|40"}} -->
+		<!-- wp:group {"className":"site-header-right","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"right"},"spacing":{"blockGap":"var:custom|header|rightGap"}} -->
 		<div class="wp-block-group site-header-right">
-			<!-- wp:navigation {"overlayMenu":"mobile","className":"site-navigation","layout":{"type":"flex","flexWrap":"nowrap"}} /-->
+			<!-- wp:navigation {"overlayMenu":"mobile","className":"site-navigation","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} /-->
 
 			<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"className":"site-header-search"} /-->
 		</div>

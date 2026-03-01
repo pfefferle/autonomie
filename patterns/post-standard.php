@@ -18,7 +18,7 @@
 	</header>
 	<!-- /wp:group -->
 
-	<!-- wp:post-featured-image {"className":"u-featured","style":{"spacing":{"margin":{"top":"30px","bottom":"30px"}}}} /-->
+	<!-- wp:post-featured-image {"className":"u-featured","style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} /-->
 
 	<!-- wp:post-content {"className":"entry-content e-content","layout":{"type":"constrained"}} /-->
 </article>

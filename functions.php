@@ -382,26 +382,6 @@ function autonomie_register_block_pattern_category() {
 }
 add_action( 'init', 'autonomie_register_block_pattern_category' );
 
-/**
- * Register block patterns
- * NOTE: Temporarily disabled while patterns are being fixed
- */
-function autonomie_register_block_patterns() {
-	// TODO: Fix pattern files to return arrays instead of outputting HTML
-	// $pattern_files = glob( get_template_directory() . '/patterns/*.php' );
-	//
-	// if ( ! $pattern_files ) {
-	// 	return;
-	// }
-	//
-	// foreach ( $pattern_files as $pattern_file ) {
-	// 	register_block_pattern(
-	// 		'autonomie/' . basename( $pattern_file, '.php' ),
-	// 		require $pattern_file
-	// 	);
-	// }
-}
-add_action( 'init', 'autonomie_register_block_patterns' );
 
 /**
  * Add post-format-specific templates to the template hierarchy.
