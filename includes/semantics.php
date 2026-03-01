@@ -1011,7 +1011,10 @@ function autonomie_render_block_comment_template( $block_content, $block ) {
 		}
 
 		if ( $processor->has_class( 'comment-author' ) ) {
-			autonomie_tag_processor_add_classes( $processor, array( 'h-card', 'hcard' ) );
+			autonomie_tag_processor_add_classes( $processor, array( 'p-author', 'author', 'vcard', 'hcard', 'h-card' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'creator' ) );
+			$processor->set_attribute( 'itemscope', '' );
+			$processor->set_attribute( 'itemtype', 'https://schema.org/Person' );
 		}
 	}
 
@@ -1030,7 +1033,10 @@ function autonomie_render_block_post_comments( $block_content, $block ) {
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
 	while ( $processor->next_tag( array( 'class_name' => 'comment-author' ) ) ) {
-		autonomie_tag_processor_add_classes( $processor, array( 'h-card', 'hcard' ) );
+		autonomie_tag_processor_add_classes( $processor, array( 'p-author', 'author', 'vcard', 'hcard', 'h-card' ) );
+		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'creator' ) );
+		$processor->set_attribute( 'itemscope', '' );
+		$processor->set_attribute( 'itemtype', 'https://schema.org/Person' );
 	}
 
 	return $processor->get_updated_html();
