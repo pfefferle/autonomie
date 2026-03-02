@@ -3,7 +3,6 @@
  */
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps } from '@wordpress/block-editor';
-import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
 import {
 	quote,
@@ -75,8 +74,9 @@ const Edit = ( { context } ) => {
 			const formatTermIds = post.format || [];
 			let postFormat = 'standard';
 
+			let link = '';
+
 			if ( formatTermIds.length > 0 ) {
-				// Get the term slug
 				const formatTerm = getEntityRecord(
 					'taxonomy',
 					'post_format',
@@ -85,16 +85,6 @@ const Edit = ( { context } ) => {
 				if ( formatTerm ) {
 					postFormat = formatTerm.slug.replace( 'post-format-', '' );
 				}
-			}
-
-			// Get format archive link
-			let link = '';
-			if ( formatTermIds.length > 0 ) {
-				const formatTerm = getEntityRecord(
-					'taxonomy',
-					'post_format',
-					formatTermIds[ 0 ]
-				);
 				if ( formatTerm && formatTerm.link ) {
 					link = formatTerm.link;
 				}

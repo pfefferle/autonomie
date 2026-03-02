@@ -160,20 +160,6 @@ function autonomie_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_scripts' );
 
 /**
- * Enqueue block editor assets
- * Note: Editor styles are handled by theme.json
- * Currently no editor-specific scripts needed for FSE
- */
-/**
- * Enqueue block editor scripts
- * Note: Editor styles are loaded via add_editor_style() in autonomie_setup()
- */
-function autonomie_editor_assets() {
-	// Reserved for future editor-specific scripts if needed
-}
-add_action( 'enqueue_block_editor_assets', 'autonomie_editor_assets' );
-
-/**
  * Register custom blocks
  */
 function autonomie_register_blocks() {
@@ -186,7 +172,7 @@ function autonomie_register_blocks() {
 		'autonomie-video-hero-editor',
 		'',
 		array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
-		'1.0.0'
+		wp_get_theme()->get( 'Version' )
 	);
 	wp_add_inline_script(
 		'autonomie-video-hero-editor',
@@ -419,40 +405,6 @@ require get_template_directory() . '/includes/compat.php';
 
 // WebActions support (IndieWeb comment interactions)
 require get_template_directory() . '/includes/webactions.php';
-
-/**
- * Add theme support for block styles
- */
-function autonomie_register_block_styles() {
-	// Register custom block styles here if needed
-	// Example:
-	// register_block_style(
-	// 	'core/quote',
-	// 	array(
-	// 		'name'  => 'fancy-quote',
-	// 		'label' => __( 'Fancy Quote', 'autonomie' ),
-	// 	)
-	// );
-}
-add_action( 'init', 'autonomie_register_block_styles' );
-
-/**
- * Prevent orphans in post titles and content
- * Replaces the last space in a string with a non-breaking space
- */
-function autonomie_prevent_orphans( $text ) {
-	$text = rtrim( $text );
-	$space = strrpos( $text, ' ' );
-
-	if ( false !== $space ) {
-		$text = substr( $text, 0, $space ) . '&nbsp;' . substr( $text, $space + 1 );
-	}
-
-	return $text;
-}
-// Uncomment to enable orphan prevention
-// add_filter( 'the_title', 'autonomie_prevent_orphans' );
-// add_filter( 'the_content', 'autonomie_prevent_orphans' );
 
 /**
  * FSE Theme Compatibility Check

@@ -21,8 +21,6 @@
  * @since Autonomie 1.0.0
  */
 function autonomie_body_classes( $classes ) {
-	$classes[] = get_theme_mod( 'autonomie_columns', 'multi' ) . '-column';
-
 	if ( ! is_singular() && ! is_404() ) {
 		$classes[] = 'hfeed';
 		$classes[] = 'h-feed';
@@ -37,10 +35,6 @@ function autonomie_body_classes( $classes ) {
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
 		$classes[] = 'single-author';
-	}
-
-	if ( get_header_image() ) {
-		$classes[] = 'custom-header';
 	}
 
 	return array_values( array_unique( $classes ) );
@@ -96,11 +90,6 @@ function autonomie_get_post_classes( $classes = array() ) {
  * @since Autonomie 1.0.0
  */
 function autonomie_author_link( $link ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		// Adds a class for microformats v2.
-		return preg_replace( '/(class\s*=\s*[\"|\'])/i', '${1}u-url ', $link );
-	}
-
 	$processor = new WP_HTML_Tag_Processor( $link );
 
 	if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
@@ -128,16 +117,16 @@ function autonomie_pre_get_avatar_data( $args, $id_or_email ) {
 
 	// Adds a class for microformats v2
 	$args['class'] = array_unique( array_merge( $args['class'], array( 'u-photo' ) ) );
-	$args['extra_attr'] .= ' itemprop="image" loading="lazy"';
+	$args['extra_attr'] = ( $args['extra_attr'] ?? '' ) . ' itemprop="image" loading="lazy"';
 
 	// Adds default alt attribute
 	if ( empty( $args['alt'] ) ) {
 		$username = get_the_author_meta( 'display_name', $id_or_email );
 
 		if ( $username ) {
-			$args['alt'] = sprintf( __( 'User Avatar of %s' ), $username );
+			$args['alt'] = sprintf( __( 'User Avatar of %s', 'autonomie' ), $username );
 		} else {
-			$args['alt'] = __( 'User Avatar' );
+			$args['alt'] = __( 'User Avatar', 'autonomie' );
 		}
 	}
 
@@ -153,10 +142,6 @@ add_filter( 'pre_get_avatar_data', 'autonomie_pre_get_avatar_data', 99, 2 );
  * @return string
  */
 function autonomie_semantic_previous_image_link( $link ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return preg_replace( '/<a/i', '<a rel="prev"', $link );
-	}
-
 	$processor = new WP_HTML_Tag_Processor( $link );
 
 	if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
@@ -176,10 +161,6 @@ add_filter( 'previous_image_link', 'autonomie_semantic_previous_image_link' );
  * @return string
  */
 function autonomie_semantic_next_image_link( $link ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return preg_replace( '/<a/i', '<a rel="next"', $link );
-	}
-
 	$processor = new WP_HTML_Tag_Processor( $link );
 
 	if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
@@ -220,14 +201,6 @@ add_filter( 'previous_posts_link_attributes', 'autonomie_previous_posts_link_att
  *
  */
 function autonomie_add_search_form_semantics( $form ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		$form = preg_replace( '/<form/i', '<search><form itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction"', $form );
-		$form = preg_replace( '/<\/form>/i', '<meta itemprop="target" content="' . home_url( '/?s={query}' ) . '"/></form></search>', $form );
-		$form = preg_replace( '/<input type="search"/i', '<input type="search" enterkeyhint="search" itemprop="query"', $form );
-
-		return $form;
-	}
-
 	$processor  = new WP_HTML_Tag_Processor( $form );
 	$form_found = false;
 
@@ -416,6 +389,10 @@ function autonomie_semantics( $id ) {
 function autonomie_term_links_tag( $links ) {
 	$post = get_post();
 
+	if ( ! $post ) {
+		return $links;
+	}
+
 	$terms = get_the_terms( $post->ID, 'post_tag' );
 
 	if ( is_wp_error( $terms ) ) {
@@ -433,7 +410,7 @@ function autonomie_term_links_tag( $links ) {
 		if ( is_wp_error( $link ) ) {
 			return $link;
 		}
-		$links[] = '<a class="p-category" href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
+		$links[] = '<a class="p-category" href="' . esc_url( $link ) . '" rel="tag">' . esc_html( $term->name ) . '</a>';
 	}
 	return $links;
 }
@@ -541,7 +518,7 @@ function autonomie_tag_processor_remove_classes( $processor, $classes ) {
  * Add schema.org attributes to post template items on non-singular views.
  */
 function autonomie_render_block_post_template( $block_content, $block ) {
-	if ( is_singular() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+	if ( is_singular() ) {
 		return $block_content;
 	}
 
@@ -573,7 +550,7 @@ add_filter( 'render_block_core/post-template', 'autonomie_render_block_post_temp
  * Ensure singular article group wrappers do not duplicate h-entry classes.
  */
 function autonomie_render_block_group( $block_content, $block ) {
-	if ( ! is_singular() || ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+	if ( ! is_singular() ) {
 		return $block_content;
 	}
 
@@ -595,9 +572,6 @@ add_filter( 'render_block_core/group', 'autonomie_render_block_group', 10, 2 );
  * Add page-level schema.org semantics to the main container.
  */
 function autonomie_render_block_main_group_semantics( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	if ( empty( $block['attrs']['tagName'] ) || 'main' !== strtolower( $block['attrs']['tagName'] ) ) {
 		return $block_content;
@@ -647,9 +621,6 @@ add_filter( 'render_block_core/group', 'autonomie_render_block_main_group_semant
  * Re-use the existing header branding (logo + site title) as Blog publisher.
  */
 function autonomie_render_block_group_site_branding_publisher( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	if ( empty( $block['attrs']['className'] ) || ! is_string( $block['attrs']['className'] ) ) {
 		return $block_content;
@@ -680,9 +651,6 @@ add_filter( 'render_block_core/group', 'autonomie_render_block_group_site_brandi
  * Add microformats2 classes to post title block.
  */
 function autonomie_render_block_post_title( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor      = new WP_HTML_Tag_Processor( $block_content );
 	$title_updated  = false;
@@ -714,9 +682,6 @@ add_filter( 'render_block_core/post-title', 'autonomie_render_block_post_title',
  * Add microformats2 classes to post content block.
  */
 function autonomie_render_block_post_content( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -733,9 +698,6 @@ add_filter( 'render_block_core/post-content', 'autonomie_render_block_post_conte
  * Add microformats2 classes to post excerpt block.
  */
 function autonomie_render_block_post_excerpt( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -752,9 +714,6 @@ add_filter( 'render_block_core/post-excerpt', 'autonomie_render_block_post_excer
  * Add microformats2 classes to post date block.
  */
 function autonomie_render_block_post_date( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -771,9 +730,6 @@ add_filter( 'render_block_core/post-date', 'autonomie_render_block_post_date', 1
  * Add microformats2 classes to post author block.
  */
 function autonomie_render_block_post_author( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor         = new WP_HTML_Tag_Processor( $block_content );
 	$author_name_found = false;
@@ -804,9 +760,6 @@ add_filter( 'render_block_core/post-author', 'autonomie_render_block_post_author
  * Add microformats2 classes to post featured image block.
  */
 function autonomie_render_block_post_featured_image( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	// Check post format to determine which microformat class to use
 	$post_format = get_post_format();
@@ -840,9 +793,6 @@ add_filter( 'render_block_core/post-featured-image', 'autonomie_render_block_pos
  * Add microformats2 classes to post terms (categories/tags) block.
  */
 function autonomie_render_block_post_terms( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -863,9 +813,6 @@ add_filter( 'render_block_core/post-terms', 'autonomie_render_block_post_terms',
  * Add microformats2 classes to site title block.
  */
 function autonomie_render_block_site_title( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -891,9 +838,6 @@ add_filter( 'render_block_core/site-title', 'autonomie_render_block_site_title',
  * Add schema properties to the existing site logo for publisher semantics.
  */
 function autonomie_render_block_site_logo( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -951,9 +895,6 @@ add_filter( 'render_block_core/site-logo', 'autonomie_render_block_site_logo', 1
  * Add semantics to query title block.
  */
 function autonomie_render_block_query_title( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	if ( ! is_singular() && ! is_home() ) {
 		$processor = new WP_HTML_Tag_Processor( $block_content );
@@ -974,9 +915,6 @@ add_filter( 'render_block_core/query-title', 'autonomie_render_block_query_title
  * Add semantics to term description block.
  */
 function autonomie_render_block_term_description( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	if ( ! is_singular() ) {
 		$processor = new WP_HTML_Tag_Processor( $block_content );
@@ -997,9 +935,6 @@ add_filter( 'render_block_core/term-description', 'autonomie_render_block_term_d
  * Add microformats2 classes to comment blocks.
  */
 function autonomie_render_block_comment_template( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 	$classes   = array( 'h-cite', 'p-comment' );
@@ -1044,9 +979,6 @@ add_filter( 'render_block_core/comment-template', 'autonomie_render_block_commen
  * Add semantics to the comment author name block.
  */
 function autonomie_render_block_comment_author_name( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -1068,9 +1000,6 @@ add_filter( 'render_block_core/comment-author-name', 'autonomie_render_block_com
  * Add semantics to the comment date block.
  */
 function autonomie_render_block_comment_date( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -1087,9 +1016,6 @@ add_filter( 'render_block_core/comment-date', 'autonomie_render_block_comment_da
  * Add semantics to the comment content block.
  */
 function autonomie_render_block_comment_content( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
@@ -1106,9 +1032,6 @@ add_filter( 'render_block_core/comment-content', 'autonomie_render_block_comment
  * Add author h-card classes to rendered post comments markup.
  */
 function autonomie_render_block_post_comments( $block_content, $block ) {
-	if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
-		return $block_content;
-	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 

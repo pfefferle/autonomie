@@ -1,6 +1,6 @@
 {
   "name": "autonomie",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Autonomie is a highly semantic, responsive, accessible and SEO-optimized Full Site Editing (FSE) WordPress theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). Autonomie supports IndieWeb and is fully compatible with modern block-based editing.",
   "repository": {
     "type": "git",
@@ -45,6 +45,8 @@
     "wp": "wp-env run cli wp",
     "validate:composer": "composer validate --no-check-all",
     "lint:php": "composer run-script lint",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css": "wp-scripts lint-style",
     "format": "prettier --write '**/*.{json,md}'",
     "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore vendor",
     "test": "echo 'No tests configured yet' && exit 0",
@@ -57,6 +59,7 @@
     "@wordpress/env": "^10.11.0",
     "@wordpress/icons": "^11.0.0",
     "@wordpress/scripts": "^30.7.0",
+    "copy-webpack-plugin": "^12.0.0",
     "markdownlint-cli": "^0.42.0",
     "prettier": "^3.3.3"
   },

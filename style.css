@@ -56,6 +56,7 @@ p, ul, ol, blockquote {
 
 ::selection {
 	background: #b3d4fc;
+	color: #000;
 }
 
 abbr {
@@ -218,9 +219,6 @@ a.comment-reply-link:hover,
 	padding: 5px 12px;
 	max-width: 100%;
 	background-color: transparent;
-}
-
-.site-header-search.wp-block-search .wp-block-search__input {
 	font-size: 0.85rem;
 }
 
@@ -582,6 +580,15 @@ select:focus-visible {
 		--wp--preset--color--black: #ffffff;
 		--wp--preset--color--android-green: #b8d977;
 		--wp--preset--color--usc-gold: #ffe066;
+	}
+
+	::selection {
+		background: #3a6fa0;
+		color: #fff;
+	}
+
+	ins {
+		background: rgba(255, 249, 192, 0.15);
 	}
 
 	img:not(.avatar):not([class*="wp-block-site-logo"]) {

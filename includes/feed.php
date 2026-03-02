@@ -52,7 +52,7 @@ function autonomie_get_post_format_link( $post_format ) {
  *
  * @param string $post_format the post format slug
  *
- * @return void
+ * @return string|false The post format archive feed link or false.
  */
 function autonomie_get_post_format_archive_feed_link( $post_format, $feed = '' ) {
 	$default_feed = get_default_feed();
@@ -129,6 +129,10 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 		}
 
 		$post = get_post();
+
+		if ( ! $post ) {
+			return;
+		}
 
 		$author_id = $post->post_author;
 		$feeds[]   = array(
