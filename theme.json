@@ -92,6 +92,16 @@
           "color": "#000000"
         },
         {
+          "name": "Base",
+          "slug": "base",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Contrast",
+          "slug": "contrast",
+          "color": "#373d3f"
+        },
+        {
           "name": "Background",
           "slug": "background",
           "color": "#ffffff"

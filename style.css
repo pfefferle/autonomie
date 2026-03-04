@@ -565,6 +565,8 @@ select:focus-visible {
 
 @media (prefers-color-scheme: dark) {
 	:root {
+		--wp--preset--color--base: #373d3f;
+		--wp--preset--color--contrast: #ffffff;
 		--wp--preset--color--background: #373d3f;
 		--wp--preset--color--text: #ffffff;
 		--wp--preset--color--primary: #5bc0eb;
