@@ -112,7 +112,7 @@ function autonomie_setup() {
 
 	// Editor styles — required for add_editor_style() scoping in block themes
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'assets/css/editor.css' );
+	add_editor_style( 'style.css' );
 
 	/**
 	 * Semantic Web Support

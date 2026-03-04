@@ -28,10 +28,6 @@
    Base / Typography
    ========================================================================== */
 
-:root {
-	color-scheme: light dark;
-}
-
 body {
 	word-wrap: break-word;
 }
@@ -55,8 +51,8 @@ p, ul, ol, blockquote {
 }
 
 ::selection {
-	background: #b3d4fc;
-	color: #000;
+	background: light-dark(#b3d4fc, #3a6fa0);
+	color: light-dark(#000, #fff);
 }
 
 abbr {
@@ -69,7 +65,7 @@ abbr[title] {
 }
 
 ins {
-	background: var(--wp--preset--color--yellow);
+	background: light-dark(var(--wp--preset--color--yellow), rgba(255, 249, 192, 0.15));
 	text-decoration: none;
 }
 
@@ -87,14 +83,7 @@ blockquote small {
 	text-align: left;
 }
 
-figure figcaption,
-.wp-block-image figcaption {
-	color: var(--wp--preset--color--gray);
-	font-size: 0.7em;
-	font-style: normal;
-	font-weight: normal;
-}
-
+/* Caption text-align can't be set in theme.json */
 figure figcaption {
 	text-align: right;
 }
@@ -104,48 +93,7 @@ figure figcaption {
 }
 
 /* ==========================================================================
-   Shared Patterns: Meta Text
-   Sans-serif, light-gray — used across entry-meta, entry-footer, comments
-   ========================================================================== */
-
-.entry-footer,
-.comment-meta,
-.comment-notes,
-.logged-in-as,
-.comment-respond label,
-.required-field-message {
-	font-family: var(--wp--preset--font-family--sans-serif);
-	color: var(--wp--preset--color--light-gray);
-}
-
-/* Meta links — base */
-.entry-footer a,
-.comment-metadata a,
-a.comment-reply-link,
-.site-footer a,
-.logged-in-as a {
-	color: var(--wp--preset--color--light-gray);
-	text-decoration: none;
-}
-
-/* Meta links — hover with underline */
-.entry-footer a:hover,
-.comment-metadata a:hover,
-.site-footer a:hover,
-.logged-in-as a:hover {
-	color: var(--wp--preset--color--primary);
-	text-decoration: underline;
-}
-
-/* Meta links — hover without underline (subtle interactive elements) */
-a.comment-reply-link:hover,
-.comment-author .fn a:hover,
-.site-header .wp-block-search__button:hover {
-	color: var(--wp--preset--color--primary);
-}
-
-/* ==========================================================================
-   Shared Patterns: Section Headings
+   Section Headings
    Comment titles, reply form title
    ========================================================================== */
 
@@ -207,6 +155,7 @@ a.comment-reply-link:hover,
 }
 
 .site-header-search.wp-block-search .wp-block-search__inside-wrapper {
+	background-color: var(--wp--preset--color--base);
 	border: 1px solid var(--wp--preset--color--border-gray);
 	border-radius: 50px;
 	overflow: hidden;
@@ -280,14 +229,6 @@ a.comment-reply-link:hover,
 	flex: 0 0 auto;
 	width: auto;
 	margin: 0 var(--wp--custom--meta--byline-gap) 0 0;
-}
-
-/* ==========================================================================
-   Entry Footer
-   ========================================================================== */
-
-.entry-footer .wp-block-post-terms__prefix {
-	color: var(--wp--preset--color--lighter-gray);
 }
 
 /* ==========================================================================
@@ -431,7 +372,7 @@ textarea {
 input,
 textarea {
 	max-width: 90%;
-	background-color: var(--wp--preset--color--white);
+	background-color: var(--wp--preset--color--base);
 }
 
 input[type="search"]:not(.wp-block-search__input) {
@@ -444,23 +385,6 @@ input[type="search"]:not(.wp-block-search__input) {
 .search-form .search-submit {
 	display: none;
 }
-
-/* ==========================================================================
-   Block Overrides
-   ========================================================================== */
-
-.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-	width: 200px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-block-navigation .wp-block-navigation__submenu-container {
-	background-color: var(--wp--preset--color--white);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	border: 1px solid var(--wp--preset--color--border-gray);
-}
-
 
 /* ==========================================================================
    Float Alignment
@@ -516,82 +440,11 @@ input[type="search"]:not(.wp-block-search__input) {
 }
 
 /* ==========================================================================
-   Accessibility
-   ========================================================================== */
-
-.screen-reader-text,
-.assistive-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	width: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	word-wrap: normal !important;
-}
-
-.screen-reader-text:focus,
-.assistive-text:focus {
-	background-color: var(--wp--preset--color--very-light-gray);
-	clip: auto !important;
-	clip-path: none;
-	color: var(--wp--preset--color--gray);
-	display: block;
-	font-size: 1em;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary);
-	outline-offset: 2px;
-}
-
-/* ==========================================================================
-   Dark Mode
+   Dark Mode — colors are handled via light-dark() in theme.json.
+   Only non-color overrides that cannot use light-dark() remain here.
    ========================================================================== */
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--wp--preset--color--base: #373d3f;
-		--wp--preset--color--contrast: #ffffff;
-		--wp--preset--color--background: #373d3f;
-		--wp--preset--color--text: #ffffff;
-		--wp--preset--color--primary: #5bc0eb;
-		--wp--preset--color--lighter-blue: #8dd6f0;
-		--wp--preset--color--dark-gray: #ffffff;
-		--wp--preset--color--gray: #eeeeee;
-		--wp--preset--color--light-gray: #d1d5d7;
-		--wp--preset--color--lighter-gray: #b6bdbf;
-		--wp--preset--color--border-gray: #677275;
-		--wp--preset--color--background-gray: #4f575a;
-		--wp--preset--color--very-light-gray: #4f575a;
-		--wp--preset--color--white: #373d3f;
-		--wp--preset--color--black: #ffffff;
-		--wp--preset--color--android-green: #b8d977;
-		--wp--preset--color--usc-gold: #ffe066;
-	}
-
-	::selection {
-		background: #3a6fa0;
-		color: #fff;
-	}
-
-	ins {
-		background: rgba(255, 249, 192, 0.15);
-	}
 
 	img:not(.avatar):not([class*="wp-block-site-logo"]) {
 		filter: brightness(0.8) contrast(1.2);
