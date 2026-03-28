@@ -1187,6 +1187,11 @@
       "name": "comments",
       "title": "Comments",
       "area": "uncategorized"
+    },
+    {
+      "name": "navigation-overlay",
+      "title": "Navigation Overlay",
+      "area": "navigation-overlay"
     }
   ],
   "customTemplates": [
