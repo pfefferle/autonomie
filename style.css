@@ -125,6 +125,7 @@ figure figcaption {
 .site-header .site-branding {
 	min-width: 0;
 	flex: 1 1 auto;
+	gap: var(--wp--custom--header--branding-gap);
 }
 
 .site-header .wp-block-site-title {
