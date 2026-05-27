@@ -470,7 +470,7 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 		$GLOBALS['comment'] = $comment;
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment <?php echo $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+			<article id="comment-<?php comment_ID(); ?>" class="comment <?php echo esc_attr( $comment->comment_type ); ?>" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
 				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonomie' ), ' ' ); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="https://schema.org/Person">
