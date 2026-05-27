@@ -17,7 +17,7 @@
 		<?php if ( comments_open() || ( '0' !== get_comments_number() && ! comments_open() ) ) : ?>
 		<div class="entry-actions">
 			<indie-action do="reply" width="<?php the_permalink(); ?>"><div class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'autonomie' ), __( '1 Comment', 'autonomie' ), __( '% Comments', 'autonomie' ) ); ?></div></indie-action>
-		<div>
+		</div>
 		<?php endif; ?>
 	</footer><!-- #entry-meta -->
 <?php endif; ?>
