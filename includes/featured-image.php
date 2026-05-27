@@ -104,29 +104,31 @@ add_filter( 'admin_post_thumbnail_html', 'autonomie_featured_image_meta', 10, 2 
  * Safe the Post Covers
  *
  * @param int $post_id The ID of the post being saved.
+ *
+ * @return void
  */
 function autonomie_save_post( $post_id ) {
 	// if this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return $post_id;
+		return;
 	}
 
 	if ( ! array_key_exists( 'full_width_featured_image', $_POST ) ) {
-		return $post_id;
+		return;
 	}
 
 	if ( ! array_key_exists( 'post_type', $_POST ) ) {
-		return $post_id;
+		return;
 	}
 
 	// check the user's permissions.
 	if ( 'page' === $_POST['post_type'] ) {
 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return $post_id;
+			return;
 		}
 	} else {
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return $post_id;
+			return;
 		}
 	}
 
@@ -148,14 +150,14 @@ add_action( 'save_post', 'autonomie_save_post', 5, 1 );
  * or none of the above conditions are true.
  */
 function autonomie_has_full_width_featured_image() {
-	// If this isn't a Single post type or we don't have a Featured Image set
+	// If this isn't a Single post type, or we don't have a Featured Image set.
 	if ( ! ( is_single() || is_page() ) || ! has_post_thumbnail() ) {
 		return false;
 	}
 
 	$full_width_featured_image = get_post_meta( get_the_ID(), 'full_width_featured_image', true );
 
-	// If Use featured image as Post Cover has been checked in the Featured Image meta box, return true.
+	// If "Use featured image as Post Cover" has been checked in the Featured Image meta box, return true.
 	if ( '1' === $full_width_featured_image ) {
 		return true;
 	}

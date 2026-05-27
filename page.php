@@ -15,7 +15,10 @@ get_header(); ?>
 
 		<main id="primary" <?php autonomie_main_class(); ?><?php autonomie_semantics( 'main' ); ?>>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php get_template_part( 'templates/content', 'page' ); ?>
 
@@ -25,4 +28,5 @@ get_header(); ?>
 
 		</main><!-- #content -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

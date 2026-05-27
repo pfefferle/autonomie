@@ -2,12 +2,12 @@
 /**
  * Add Webactions to the reply links in the comment section.
  *
- * @param string $link the html representation of the comment link
- * @param array $args associative array of options
- * @param int $comment ID of comment being replied to
- * @param int $post ID of post that comment is going to be displayed on
+ * @param string     $link    The HTML markup for the comment reply link.
+ * @param array      $args    An array of arguments overriding the defaults.
+ * @param WP_Comment $comment The object of the comment being replied.
+ * @param WP_Post    $post    The WP_Post object.
  *
- * @return string the new reply link
+ * @return string The new reply link.
  */
 function autonomie_webaction_comment_reply_link( $link, $args, $comment, $post ) {
 	$permalink = get_permalink( $post->ID );

@@ -10,7 +10,7 @@ function autonomie_customize_register( $wp_customize ) {
 		'autonomie_settings_section',
 		array(
 			'title' => __( 'Advanced Settings', 'autonomie' ),
-			'description' => __( 'Enable/Disable some advanced Autonomie features.', 'autonomie' ), //Descriptive tooltip
+			'description' => __( 'Enable/Disable some advanced Autonomie features.', 'autonomie' ), //Descriptive tooltip.
 			'priority' => 35,
 		)
 	);

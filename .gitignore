@@ -2,6 +2,7 @@
 /node_modules/
 /vendor/
 .DS_Store
+.idea
 _build
 composer.lock
 package-lock.json

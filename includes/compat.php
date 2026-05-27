@@ -19,8 +19,8 @@
 /**
  * Adds the new  input types to the comment-form
  *
- * @param string $form
- * @return string
+ * @param array $fields The comment form fields.
+ * @return array
  */
 function autonomie_comment_autocomplete( $fields ) {
 	$fields['author'] = preg_replace( '/<input/', '<input autocomplete="nickname name" enterkeyhint="next" ', $fields['author'] );
@@ -64,9 +64,11 @@ function autonomie_query_format_standard( $query ) {
 			}
 			$query->is_tax = null;
 
-			unset( $query->query_vars['post_format'] );
-			unset( $query->query_vars['taxonomy'] );
-			unset( $query->query_vars['term'] );
+			unset(
+				$query->query_vars['post_format'],
+				$query->query_vars['taxonomy'],
+				$query->query_vars['term']
+			);
 
 			$query->set(
 				'tax_query',
@@ -103,7 +105,7 @@ add_filter( 'the_content', 'autonomie_add_lazy_loading', 99 );
 
 add_filter(
 	'wp_lazy_loading_enabled',
-	function( $default, $tag_name, $context ) {
+	function ( $default, $tag_name, $context ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.defaultFound
 		if ( 'the_content' === $context ) {
 			return false;
 		}
