@@ -175,6 +175,12 @@ figure figcaption {
 	line-height: 0;
 }
 
+/* page-list has no native vertical option outside a Navigation block */
+.navigation-overlay-menu.wp-block-page-list {
+	flex-direction: column;
+	align-items: flex-end;
+}
+
 
 /* ==========================================================================
    Entry Meta (post-meta template part)

@@ -1115,6 +1115,14 @@
               "textDecoration": "none"
             },
             ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--primary)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            },
+            ":focus": {
               "typography": {
                 "textDecoration": "underline"
               }
