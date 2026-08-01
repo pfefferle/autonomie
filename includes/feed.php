@@ -8,11 +8,51 @@
  */
 
 /**
+ * Get the current post format, defaulting to 'standard'
+ *
+ * @return string
+ */
+function autonomie_get_post_format() {
+	return get_post_format() ? : 'standard';
+}
+
+/**
+ * Get post format archive link, with support for "standard" format
+ *
+ * @param string $post_format The post format slug
+ *
+ * @return string|false The post format link or false
+ */
+function autonomie_get_post_format_link( $post_format ) {
+	if ( in_array( get_post_type(), array( 'page', 'attachment' ), true ) ) {
+		return get_permalink();
+	}
+
+	if ( 'standard' !== $post_format ) {
+		return get_post_format_link( $post_format );
+	}
+
+	global $wp_rewrite;
+
+	$termlink = $wp_rewrite->get_extra_permastruct( 'post_format' );
+
+	if ( empty( $termlink ) ) {
+		$termlink = '?post_format=standard';
+		$termlink = home_url( $termlink );
+	} else {
+		$termlink = str_replace( '%post_format%', 'standard', $termlink );
+		$termlink = home_url( user_trailingslashit( $termlink, 'category' ) );
+	}
+
+	return $termlink;
+}
+
+/**
  * Adds support for "standard" Post-Format
  *
  * @param string $post_format the post format slug
  *
- * @return void
+ * @return string|false The post format archive feed link or false.
  */
 function autonomie_get_post_format_archive_feed_link( $post_format, $feed = '' ) {
 	$default_feed = get_default_feed();
@@ -89,6 +129,10 @@ function autonomie_extend_singular_feed_discovery( $args = array() ) {
 		}
 
 		$post = get_post();
+
+		if ( ! $post ) {
+			return;
+		}
 
 		$author_id = $post->post_author;
 		$feeds[]   = array(

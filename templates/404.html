@@ -1,0 +1,45 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main id="primary" class="wp-block-group">
+	<!-- wp:group {"tagName":"article","className":"error404"} -->
+	<article class="wp-block-group error404">
+		<!-- wp:group {"tagName":"header","className":"entry-header"} -->
+		<header class="wp-block-group entry-header">
+			<!-- wp:heading {"level":1,"fontSize":"huge"} -->
+			<h1 class="wp-block-heading has-huge-font-size">404 - Page Not Found</h1>
+			<!-- /wp:heading -->
+		</header>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"tagName":"div","className":"entry-content"} -->
+		<div class="wp-block-group entry-content">
+			<!-- wp:paragraph -->
+			<p>It looks like nothing was found at this location. Maybe try a search?</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+
+			<!-- wp:spacer {"height":"var:preset|spacing|70"} /-->
+
+			<!-- wp:heading {"level":2} -->
+			<h2 class="wp-block-heading">Recent Posts</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:latest-posts {"postsToShow":5,"displayPostDate":true,"displayFeaturedImage":false} /-->
+
+			<!-- wp:spacer {"height":"var:preset|spacing|70"} /-->
+
+			<!-- wp:heading {"level":2} -->
+			<h2 class="wp-block-heading">Categories</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:categories /-->
+		</div>
+		<!-- /wp:group -->
+	</article>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer"} /-->
