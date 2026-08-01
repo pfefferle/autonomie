@@ -1167,6 +1167,50 @@
             "top": "0"
           }
         }
+      },
+      "core/comment-reply-link": {
+        "color": {
+          "background": "var(--wp--preset--color--white)"
+        },
+        "border": {
+          "radius": "50px",
+          "width": "1px",
+          "style": "solid",
+          "color": "var(--wp--preset--color--border-gray)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.4em",
+            "right": "1em",
+            "bottom": "0.4em",
+            "left": "1em"
+          },
+          "margin": {
+            "top": "var(--wp--preset--spacing--30)"
+          }
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--small)",
+          "lineHeight": "1"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var(--wp--preset--color--gray)"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--primary)"
+              },
+              "typography": {
+                "textDecoration": "none"
+              }
+            }
+          }
+        }
       }
     }
   },

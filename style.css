@@ -175,10 +175,56 @@ figure figcaption {
 	line-height: 0;
 }
 
-/* page-list has no native vertical option outside a Navigation block */
+/* ==========================================================================
+   Navigation Overlay (mobile menu)
+   Styles the responsive navigation overlay. Scoped to the open state and to
+   core navigation classes so it looks the same whether the site renders core's
+   default overlay or the custom overlay template part (newer Gutenberg only).
+   ========================================================================== */
+
+/* Stack the menu and search top-down, aligned to the right edge, clearing the
+   close button at the top. */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	flex-direction: column;
+	align-items: flex-end;
+	row-gap: var(--wp--preset--spacing--60);
+	padding-top: var(--wp--preset--spacing--78);
+}
+
+/* Large, vertically stacked menu links (page-list has no native vertical
+   option outside a Navigation block). */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-page-list,
 .navigation-overlay-menu.wp-block-page-list {
 	flex-direction: column;
 	align-items: flex-end;
+	row-gap: var(--wp--preset--spacing--35);
+	font-size: var(--wp--preset--font-size--x-large);
+}
+
+/* Child pages render inline, right-aligned, without submenu chrome. */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	align-items: flex-end;
+	row-gap: var(--wp--preset--spacing--35);
+}
+
+/* Search sits above the menu and spans the column width. */
+.wp-block-navigation__responsive-container.is-menu-open .site-header-search {
+	order: -1;
+	width: 100%;
+	max-width: 320px;
+	margin-left: auto;
+}
+
+/* Roomier, easier-to-hit close button. */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+	padding: var(--wp--preset--spacing--30);
+	border-radius: 50%;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:hover,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:focus {
+	background-color: var(--wp--preset--color--very-light-gray);
 }
 
 
