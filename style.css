@@ -119,9 +119,10 @@ figure figcaption {
 }
 
 /* Reply link as a pill button. Reuses the shared button tokens (custom.button)
-   so it stays in sync with core buttons. Targets the link itself (not the block
-   wrapper), so it also covers Fediverse reply links, which share the
-   .comment-reply-link class, without boxing the surrounding widget. */
+   so it stays in sync with core buttons — change the token, both update.
+   Targets the reply link element itself, so it styles both the core reply link
+   and the ActivityPub Fediverse reply link (they share the .comment-reply-link
+   class) without boxing the surrounding widget. */
 .comment-reply-link {
 	display: inline-block;
 	margin-top: var(--wp--preset--spacing--30);
@@ -213,15 +214,16 @@ figure figcaption {
 /* Generous, self-contained padding. Don't rely on core's root-padding clamp,
    which collapses to a tight 1rem with this theme's root padding. */
 .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) {
-	padding: var(--wp--preset--spacing--78) var(--wp--preset--spacing--50);
+	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--50) var(--wp--preset--spacing--78);
 }
 
-/* Stack the menu and search top-down, aligned to the right edge. */
+/* Stack the menu and search top-down, aligned to the right edge. The top pad
+   keeps the content clear of the absolutely positioned close button. */
 .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) .wp-block-navigation__responsive-container-content {
 	flex-direction: column;
 	align-items: flex-end;
 	row-gap: var(--wp--preset--spacing--60);
-	padding-top: 0;
+	padding-top: var(--wp--preset--spacing--60);
 }
 
 /* Large, vertically stacked menu links. */
@@ -246,23 +248,6 @@ figure figcaption {
 	width: 100%;
 	max-width: 320px;
 	margin-left: auto;
-}
-
-/* Inset the close button to line up with the overlay padding. */
-.wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) .wp-block-navigation__responsive-container-close {
-	top: var(--wp--preset--spacing--50);
-	right: var(--wp--preset--spacing--50);
-}
-
-/* Roomier, easier-to-hit close button (both overlay paths). */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
-	padding: var(--wp--preset--spacing--30);
-	border-radius: 50%;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:hover,
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:focus {
-	background-color: var(--wp--preset--color--very-light-gray);
 }
 
 /* Custom overlay template part (newer Gutenberg): page-list has no native
