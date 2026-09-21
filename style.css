@@ -73,6 +73,14 @@ address {
 	font-style: normal;
 }
 
+/* Reset the browser's default 40px inline margin. In constrained layouts core
+   overrides it with margin auto, but in flow layouts (e.g. archive post
+   content) it leaks through and indents every quote. */
+blockquote {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 blockquote cite::before,
 blockquote small::before {
 	content: "\2014 \00A0";
@@ -81,6 +89,22 @@ blockquote small::before {
 blockquote cite,
 blockquote small {
 	text-align: left;
+}
+
+/* Code blocks: the inner code element inherits the block's background and
+   colors (ported from the classic theme's pre code reset), so the block's own
+   padding is the only padding — no nested box when a syntax highlighter paints
+   the code element. */
+.wp-block-code code {
+	background: inherit;
+	color: inherit;
+	padding: 0;
+}
+
+/* Footnotes have no list indent (padding-left 0 in theme.json), so keep the
+   markers inside the text column instead of hanging into the margin. */
+.wp-block-footnotes {
+	list-style-position: inside;
 }
 
 /* Caption text-align can't be set in theme.json */
