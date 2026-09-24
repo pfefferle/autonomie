@@ -10,18 +10,24 @@
  * @return string the new reply link
  */
 function autonomie_webaction_comment_reply_link( $link, $args, $comment, $post ) {
+	if ( ! $post ) {
+		return $link;
+	}
 	$permalink = get_permalink( $post->ID );
 	return '<indie-action do="reply" with="' . esc_url( add_query_arg( 'replytocom', $comment->comment_ID, $permalink ) ) . '">' . $link . '</indie-action>';
 }
-add_filter( 'comment_reply_link', 'autonomie_webaction_comment_reply_link', null, 4 );
+add_filter( 'comment_reply_link', 'autonomie_webaction_comment_reply_link', 10, 4 );
 
 /**
  * Surround comment form with a reply action.
  */
 function autonomie_webaction_comment_form_before() {
 	$post = get_queried_object();
+	if ( ! $post ) {
+		return;
+	}
 	$permalink = get_permalink( $post->ID );
-	echo '<indie-action do="reply" with="' . $permalink . '">';
+	echo '<indie-action do="reply" with="' . esc_url( $permalink ) . '">';
 }
 add_action( 'comment_form_before', 'autonomie_webaction_comment_form_before', 0 );
 

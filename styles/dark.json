@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Dark",
+  "styles": {
+    "css": ":root { color-scheme: dark; }"
+  },
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Base",
+          "slug": "base",
+          "color": "#373d3f"
+        },
+        {
+          "name": "Contrast",
+          "slug": "contrast",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#5bc0eb"
+        },
+        {
+          "name": "Lighter Blue",
+          "slug": "lighter-blue",
+          "color": "#8dd6f0"
+        },
+        {
+          "name": "Blue Jeans",
+          "slug": "blue-jeans",
+          "color": "#5bc0eb"
+        },
+        {
+          "name": "Orioles Orange",
+          "slug": "orioles-orange",
+          "color": "#fa5b0f"
+        },
+        {
+          "name": "USC Gold",
+          "slug": "usc-gold",
+          "color": "#ffe066"
+        },
+        {
+          "name": "Gargoyle Gas",
+          "slug": "gargoyle-gas",
+          "color": "#fde74c"
+        },
+        {
+          "name": "Yellow",
+          "slug": "yellow",
+          "color": "#fff9c0"
+        },
+        {
+          "name": "Android Green",
+          "slug": "android-green",
+          "color": "#b8d977"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#373d3f"
+        },
+        {
+          "name": "Very Light Gray",
+          "slug": "very-light-gray",
+          "color": "#4f575a"
+        },
+        {
+          "name": "Background Gray",
+          "slug": "background-gray",
+          "color": "#4f575a"
+        },
+        {
+          "name": "Border Gray",
+          "slug": "border-gray",
+          "color": "#677275"
+        },
+        {
+          "name": "Lighter Gray",
+          "slug": "lighter-gray",
+          "color": "#b6bdbf"
+        },
+        {
+          "name": "Light Gray",
+          "slug": "light-gray",
+          "color": "#d1d5d7"
+        },
+        {
+          "name": "Gray",
+          "slug": "gray",
+          "color": "#eeeeee"
+        },
+        {
+          "name": "Dark Gray",
+          "slug": "dark-gray",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Background",
+          "slug": "background",
+          "color": "#373d3f"
+        },
+        {
+          "name": "Text",
+          "slug": "text",
+          "color": "#ffffff"
+        }
+      ]
+    }
+  }
+}
