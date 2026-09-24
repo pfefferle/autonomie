@@ -91,6 +91,34 @@ blockquote small {
 	text-align: left;
 }
 
+/* Inline code: theme.json has no code element, so style it here. A light chip
+   instead of the classic theme's dark pill, so it doesn't overpower running
+   text. Colors come from the light-dark() palette, so dark mode just works. */
+:where(code, kbd, samp) {
+	font-family: var(--wp--preset--font-family--monospace);
+	font-size: 0.875em;
+}
+
+:not(pre) > code,
+kbd {
+	background: var(--wp--preset--color--very-light-gray);
+	color: var(--wp--preset--color--dark-gray);
+	border-radius: 0.3em;
+	padding: 0.1em 0.35em;
+	overflow-wrap: anywhere;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+kbd {
+	border: 1px solid var(--wp--preset--color--border-gray);
+	border-bottom-width: 2px;
+}
+
+a > code {
+	color: inherit;
+}
+
 /* Code blocks: the inner code element inherits the block's background and
    colors (ported from the classic theme's pre code reset), so the block's own
    padding is the only padding — no nested box when a syntax highlighter paints

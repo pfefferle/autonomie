@@ -354,6 +354,11 @@
               ]
             }
           ]
+        },
+        {
+          "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, \"Liberation Mono\", monospace",
+          "name": "Monospace",
+          "slug": "monospace"
         }
       ]
     },
@@ -997,12 +1002,18 @@
         },
         "border": {
           "radius": "0.3em"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--monospace)"
         }
       },
       "core/preformatted": {
         "color": {
           "background": "var(--wp--preset--color--black)",
           "text": "var(--wp--preset--color--white)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--monospace)"
         },
         "spacing": {
           "padding": {
