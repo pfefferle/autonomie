@@ -488,7 +488,7 @@ add_filter( 'default_template_types', 'autonomie_register_post_format_template_t
 /**
  * Use the template type titles for post format templates saved in the Site Editor without a title.
  *
- * Core builds the "Not found" title from the slug when a saved template has no title,
+ * Core builds the "Not found" title from the slug when a saved template has no title (or the slug as title),
  * so the title is added while the templates are loaded.
  *
  * @param WP_Post[] $posts The queried posts.
@@ -504,7 +504,7 @@ function autonomie_post_format_template_titles( $posts, $query ) {
 	$types = autonomie_post_format_template_types();
 
 	foreach ( $posts as $post ) {
-		if ( isset( $types[ $post->post_name ] ) && '' === $post->post_title ) {
+		if ( isset( $types[ $post->post_name ] ) && in_array( $post->post_title, array( '', $post->post_name ), true ) ) {
 			$post->post_title   = $types[ $post->post_name ]['title'];
 			$post->post_excerpt = $types[ $post->post_name ]['description'];
 		}
