@@ -776,6 +776,11 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 	$width     = isset( $metadata['width'] ) ? (int) $metadata['width'] : 0;
 	$auto_size = $width && empty( $block['attrs']['aspectRatio'] ) && empty( $block['attrs']['width'] ) && empty( $block['attrs']['height'] );
 
+	// Full-width images (post cover) always span the whole width.
+	if ( isset( $block['attrs']['align'] ) && 'full' === $block['attrs']['align'] ) {
+		$auto_size = false;
+	}
+
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
 	// Add microformat class to figure.
@@ -788,7 +793,6 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 		// Float small images right, next to the text.
 		if ( $auto_size && $width <= 400 ) {
 			$processor->remove_class( 'alignwide' );
-			$processor->remove_class( 'alignfull' );
 			$processor->add_class( 'alignright' );
 		}
 	}

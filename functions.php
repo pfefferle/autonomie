@@ -160,6 +160,27 @@ function autonomie_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_scripts' );
 
 /**
+ * Enqueue the "Use as post cover" checkbox for the featured image panel.
+ */
+function autonomie_enqueue_featured_image_cover() {
+	$screen = get_current_screen();
+
+	if ( ! $screen || 'post' !== $screen->post_type ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'autonomie-featured-image-cover',
+		get_template_directory_uri() . '/assets/js/featured-image-cover.js',
+		array( 'wp-hooks', 'wp-element', 'wp-components', 'wp-data', 'wp-i18n', 'wp-editor' ),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+	wp_set_script_translations( 'autonomie-featured-image-cover', 'autonomie' );
+}
+add_action( 'enqueue_block_editor_assets', 'autonomie_enqueue_featured_image_cover' );
+
+/**
  * Register custom blocks
  */
 function autonomie_register_blocks() {
