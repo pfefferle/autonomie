@@ -244,7 +244,7 @@ function autonomie_extract_video_hero( $post_id = null ) {
 		$post = get_post( $post_id );
 	}
 
-	if ( isset( $cache[ $post_id ] ) ) {
+	if ( array_key_exists( $post_id, $cache ) ) {
 		return $cache[ $post_id ];
 	}
 
@@ -282,24 +282,26 @@ function autonomie_extract_video_hero( $post_id = null ) {
 }
 
 /**
- * Hide the featured image on single video posts that show a video hero.
+ * Skip the featured image on single video posts that show a video hero.
  *
- * @param string   $block_content The block content.
- * @param array    $block         The block.
- * @param WP_Block $instance      The block instance.
+ * @param string|null $pre_render   The pre-rendered content.
+ * @param array       $parsed_block The block being rendered.
  *
- * @return string The filtered block content.
+ * @return string|null The pre-rendered content.
  */
-function autonomie_hide_featured_image_for_video_hero( $block_content, $block, $instance = null ) {
-	$post_id = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
-
-	if ( is_singular() && (int) get_queried_object_id() === (int) $post_id && autonomie_extract_video_hero( $post_id ) ) {
+function autonomie_hide_featured_image_for_video_hero( $pre_render, $parsed_block ) {
+	if (
+		'core/post-featured-image' === $parsed_block['blockName'] &&
+		is_singular() &&
+		get_queried_object_id() === get_the_ID() &&
+		autonomie_extract_video_hero( get_the_ID() )
+	) {
 		return '';
 	}
 
-	return $block_content;
+	return $pre_render;
 }
-add_filter( 'render_block_core/post-featured-image', 'autonomie_hide_featured_image_for_video_hero', 10, 3 );
+add_filter( 'pre_render_block', 'autonomie_hide_featured_image_for_video_hero', 10, 2 );
 
 /**
  * Render callback for the autonomie/video-hero block.
@@ -322,6 +324,9 @@ function autonomie_render_video_hero() {
 	}
 
 	$block = $data['video_block'];
+
+	// The hero is not rendered by the embed block, so load its styles here.
+	wp_enqueue_style( 'wp-block-embed' );
 
 	// For core/embed, get the oEmbed HTML from the URL attribute
 	if ( 'core/embed' === $block['blockName'] && ! empty( $block['attrs']['url'] ) ) {

@@ -771,14 +771,14 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 	}
 
 	// Original width of the image, to not upscale it and to float small images.
-	$post_id   = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
-	$metadata  = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
-	$width     = isset( $metadata['width'] ) ? (int) $metadata['width'] : 0;
-	$auto_size = $width && empty( $block['attrs']['aspectRatio'] ) && empty( $block['attrs']['width'] ) && empty( $block['attrs']['height'] );
+	// Skipped for images sized in the editor and for full-width images (post cover).
+	$width = 0;
+	$attrs = $block['attrs'];
 
-	// Full-width images (post cover) always span the whole width.
-	if ( isset( $block['attrs']['align'] ) && 'full' === $block['attrs']['align'] ) {
-		$auto_size = false;
+	if ( empty( $attrs['aspectRatio'] ) && empty( $attrs['width'] ) && empty( $attrs['height'] ) && ( $attrs['align'] ?? '' ) !== 'full' ) {
+		$post_id  = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
+		$metadata = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
+		$width    = isset( $metadata['width'] ) ? (int) $metadata['width'] : 0;
 	}
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
@@ -791,7 +791,7 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 		$processor->set_attribute( 'itemtype', 'https://schema.org/ImageObject' );
 
 		// Float small images right, next to the text.
-		if ( $auto_size && $width <= 400 ) {
+		if ( $width && $width <= 400 ) {
 			$processor->remove_class( 'alignwide' );
 			$processor->add_class( 'alignright' );
 		}
@@ -802,7 +802,7 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url', 'contentUrl' ) );
 
 		// Do not upscale images that are smaller than the container.
-		if ( $auto_size ) {
+		if ( $width ) {
 			$style = trim( (string) $processor->get_attribute( 'style' ), '; ' );
 			$style = ( $style ? $style . ';' : '' ) . 'max-width:' . $width . 'px;';
 			$processor->set_attribute( 'style', $style );

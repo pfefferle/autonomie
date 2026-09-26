@@ -12,18 +12,17 @@
   const TEMPLATE = 'single-full-width-image';
 
   function CoverCheckbox() {
-    const { checked, hasImage, isPost } = useSelect( ( select ) => {
+    const { checked, hasImage } = useSelect( ( select ) => {
       const editor = select( 'core/editor' );
 
       return {
         checked: editor.getEditedPostAttribute( 'template' ) === TEMPLATE,
         hasImage: !! editor.getEditedPostAttribute( 'featured_media' ),
-        isPost: editor.getCurrentPostType() === 'post',
       };
     }, [] );
     const { editPost } = useDispatch( 'core/editor' );
 
-    if ( ! isPost || ! hasImage ) {
+    if ( ! hasImage ) {
       return null;
     }
 
