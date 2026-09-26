@@ -261,6 +261,26 @@ function autonomie_extract_video_hero( $post_id = null ) {
 }
 
 /**
+ * Hide the featured image on single video posts that show a video hero.
+ *
+ * @param string   $block_content The block content.
+ * @param array    $block         The block.
+ * @param WP_Block $instance      The block instance.
+ *
+ * @return string The filtered block content.
+ */
+function autonomie_hide_featured_image_for_video_hero( $block_content, $block, $instance = null ) {
+	$post_id = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
+
+	if ( is_singular() && (int) get_queried_object_id() === (int) $post_id && autonomie_extract_video_hero( $post_id ) ) {
+		return '';
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/post-featured-image', 'autonomie_hide_featured_image_for_video_hero', 10, 3 );
+
+/**
  * Render callback for the autonomie/video-hero block.
  *
  * Outputs the first video/embed extracted from the post content.
