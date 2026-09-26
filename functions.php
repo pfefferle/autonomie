@@ -446,6 +446,75 @@ function autonomie_post_format_template_hierarchy( $templates ) {
 add_filter( 'single_template_hierarchy', 'autonomie_post_format_template_hierarchy' );
 
 /**
+ * Titles and descriptions of the post format templates.
+ *
+ * Without them, core reads `single-post-format-aside` as a template for the post with
+ * the slug `format-aside` and shows "Not found: Post (format-aside)".
+ *
+ * @return array[] Template types, keyed by slug.
+ */
+function autonomie_post_format_template_types() {
+	return array(
+		'single-post-format-aside'  => array(
+			'title'       => __( 'Single Posts: Aside', 'autonomie' ),
+			'description' => __( 'Displays single posts with the aside post format.', 'autonomie' ),
+		),
+		'single-post-format-status' => array(
+			'title'       => __( 'Single Posts: Status', 'autonomie' ),
+			'description' => __( 'Displays single posts with the status post format.', 'autonomie' ),
+		),
+		'single-post-format-video'  => array(
+			'title'       => __( 'Single Posts: Video', 'autonomie' ),
+			'description' => __( 'Displays single posts with the video post format.', 'autonomie' ),
+		),
+	);
+}
+
+/**
+ * Register the post format templates as template types.
+ *
+ * This also hides them from the "Template" dropdown in the post editor,
+ * because they are picked by post format.
+ *
+ * @param array[] $types The default template types.
+ *
+ * @return array[] The filtered template types.
+ */
+function autonomie_register_post_format_template_types( $types ) {
+	return array_merge( $types, autonomie_post_format_template_types() );
+}
+add_filter( 'default_template_types', 'autonomie_register_post_format_template_types' );
+
+/**
+ * Use the template type titles for post format templates saved in the Site Editor without a title.
+ *
+ * Core builds the "Not found" title from the slug when a saved template has no title,
+ * so the title is added while the templates are loaded.
+ *
+ * @param WP_Post[] $posts The queried posts.
+ * @param WP_Query  $query The query.
+ *
+ * @return WP_Post[] The filtered posts.
+ */
+function autonomie_post_format_template_titles( $posts, $query ) {
+	if ( 'wp_template' !== $query->get( 'post_type' ) ) {
+		return $posts;
+	}
+
+	$types = autonomie_post_format_template_types();
+
+	foreach ( $posts as $post ) {
+		if ( isset( $types[ $post->post_name ] ) && '' === $post->post_title ) {
+			$post->post_title   = $types[ $post->post_name ]['title'];
+			$post->post_excerpt = $types[ $post->post_name ]['description'];
+		}
+	}
+
+	return $posts;
+}
+add_filter( 'posts_results', 'autonomie_post_format_template_titles', 10, 2 );
+
+/**
  * Add pingback url auto-discovery header for singularly identifiable articles
  */
 function autonomie_pingback_header() {
