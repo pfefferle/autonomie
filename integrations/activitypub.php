@@ -23,7 +23,7 @@ function autonomie_activitypub_archive_author_meta( $meta, $author_id ) {
 		// translators:
 		__( '<indie-action do="follow" with="%1$s">Follow <code>%2$s</code> (fediverse)</indie-action>', 'autonomie' ),
 		get_author_posts_url( $author_id ),
-		\Activitypub\get_webfinger_resource( $author_id )
+		\Activitypub\Webfinger::get_user_resource( $author_id )
 	);
 
 	return $meta;
