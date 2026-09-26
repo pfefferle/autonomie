@@ -363,6 +363,16 @@ figure figcaption {
 }
 
 /* ==========================================================================
+   Featured Image
+   ========================================================================== */
+
+/* Center images that are capped at their own width (see semantics.php). */
+.wp-block-post-featured-image img {
+	display: block;
+	margin-inline: auto;
+}
+
+/* ==========================================================================
    Post Format: Video
    YouTube/Vimeo-inspired — video first, title + meta below
    ========================================================================== */

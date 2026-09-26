@@ -759,7 +759,7 @@ add_filter( 'render_block_core/post-author', 'autonomie_render_block_post_author
 /**
  * Add microformats2 classes to post featured image block.
  */
-function autonomie_render_block_post_featured_image( $block_content, $block ) {
+function autonomie_render_block_post_featured_image( $block_content, $block, $instance = null ) {
 
 	// Check post format to determine which microformat class to use
 	$post_format = get_post_format();
@@ -783,11 +783,21 @@ function autonomie_render_block_post_featured_image( $block_content, $block ) {
 	// Add itemprop to img.
 	if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url', 'contentUrl' ) );
+
+		// Do not upscale images that are smaller than the container.
+		$post_id  = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
+		$metadata = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
+		$width    = isset( $metadata['width'] ) ? (int) $metadata['width'] : 0;
+		if ( $width && empty( $block['attrs']['aspectRatio'] ) && empty( $block['attrs']['width'] ) && empty( $block['attrs']['height'] ) ) {
+			$style = trim( (string) $processor->get_attribute( 'style' ), '; ' );
+			$style = ( $style ? $style . ';' : '' ) . 'max-width:' . $width . 'px;';
+			$processor->set_attribute( 'style', $style );
+		}
 	}
 
 	return $processor->get_updated_html();
 }
-add_filter( 'render_block_core/post-featured-image', 'autonomie_render_block_post_featured_image', 10, 2 );
+add_filter( 'render_block_core/post-featured-image', 'autonomie_render_block_post_featured_image', 10, 3 );
 
 /**
  * Add microformats2 classes to post terms (categories/tags) block.
