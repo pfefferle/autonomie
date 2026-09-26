@@ -3,10 +3,10 @@
  * Register widgetized area and update sidebar with default widgets.
  */
 function autonomie_widgets_init() {
-	require( get_template_directory() . '/widgets/class-autonomie-author-widget.php' );
+	require get_template_directory() . '/widgets/class-autonomie-author-widget.php';
 	register_widget( 'Autonomie_Author_Widget' );
 
-	require( get_template_directory() . '/widgets/class-autonomie-taxonomy-widget.php' );
+	require get_template_directory() . '/widgets/class-autonomie-taxonomy-widget.php';
 	register_widget( 'Autonomie_Taxonomy_Widget' );
 
 	register_sidebar(
@@ -83,7 +83,7 @@ function autonomie_starter_content_add_widget( $content, $config ) {
 }
 add_filter( 'get_theme_starter_content', 'autonomie_starter_content_add_widget', 10, 2 );
 
-function autonomie_activate () {
+function autonomie_activate() {
 	// Set up default widgets for default theme.
 	update_option(
 		'widget_autonomie-author',
@@ -126,4 +126,4 @@ function autonomie_activate () {
 	);
 }
 
-add_action('after_switch_theme', 'autonomie_activate');
+add_action( 'after_switch_theme', 'autonomie_activate' );

@@ -6,7 +6,6 @@ if ( ! function_exists( 'autonomie_content_nav' ) ) :
 	 * @since Autonomie 1.0.0
 	 */
 	function autonomie_content_nav( $nav_id ) {
-		global $wp_query;
 		?>
 		<?php if ( is_home() || is_archive() || is_search() ) : // navigation links for home, archive, and search pages ?>
 		<nav id="archive-nav">
@@ -36,7 +35,7 @@ if ( ! function_exists( 'autonomie_posted_by' ) ) :
 					<link itemprop="url" href="%2$s" />
 				</span>
 			</address>',
-			get_avatar( get_the_author_meta( 'ID' ), 40),
+			get_avatar( get_the_author_meta( 'ID' ), 40 ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			// translators:
 			esc_attr( sprintf( __( 'View all posts by %s', 'autonomie' ), get_the_author() ) ),
@@ -53,9 +52,8 @@ if ( ! function_exists( 'autonomie_posted_on' ) ) :
 	 * @since Autonomie 1.0.0
 	 */
 	function autonomie_posted_on( $type = 'published' ) {
-		global $query;
 
-		if ( ! in_array( $type, array( 'published', 'updated' ) ) ) {
+		if ( ! in_array( $type, array( 'published', 'updated' ), true ) ) {
 			$type = 'published';
 		}
 
@@ -94,7 +92,7 @@ endif;
 /**
  * Display the id for the post div.
  *
- * @param string $id
+ * @param string|null $post_id The post id.
  */
 function autonomie_post_id( $post_id = null ) {
 	if ( $post_id ) {
@@ -115,12 +113,12 @@ function autonomie_get_post_id() {
 	return apply_filters( 'autonomie_post_id', $post_id, get_the_ID() );
 }
 
-function autonomie_main_class( $class = '' ) {
+function autonomie_main_class( $class = '' ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.classFound
 	// Separates class names with a single space, collates class names for body element
-	echo 'class="' . join( ' ', autonomie_get_main_class( $class ) ) . '"';
+	echo 'class="' . implode( ' ', autonomie_get_main_class( $class ) ) . '"';
 }
 
-function autonomie_get_main_class( $class = '' ) {
+function autonomie_get_main_class( $class = '' ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.classFound
 	$classes = array();
 
 	if ( is_singular() ) {
@@ -155,10 +153,14 @@ function autonomie_get_main_class( $class = '' ) {
 function autonomie_get_the_archive_title() {
 	if ( is_archive() ) {
 		return get_the_archive_title();
-	} elseif ( is_search() ) {
+	}
+
+	if ( is_search() ) {
 		// translators: The title of the search results page
 		return sprintf( __( 'Search Results for: %s', 'autonomie' ), '<span>' . get_search_query() . '</span>' );
 	}
+
+	// TODO: Consider to add a default return value.
 }
 
 /**
@@ -181,27 +183,32 @@ function autonomie_show_page_banner() {
 /**
  * Adds support for standard post-format
  *
- * @return void
+ * @return string
  */
 function autonomie_get_post_format() {
-	return get_post_format() ? : 'standard';
+	// phpcs:ignore Universal.Operators.DisallowShortTernary.Found -- Verified correct usage.
+	return get_post_format() ?: 'standard';
 }
 
 /**
  * Add support for Attachment and Article.
  *
- * @return void
+ * @return string
  */
 function autonomie_get_post_format_string() {
 	if ( 'attachment' === get_post_type() ) {
 		return __( 'Attachment', 'autonomie' );
-	} elseif ( 'page' === get_post_type() ) {
-		return __( 'Page', 'autonomie' );
-	} elseif ( get_post_format() ) {
-		return get_post_format();
-	} else {
-		return __( 'Text', 'autonomie' );
 	}
+
+	if ( 'page' === get_post_type() ) {
+		return __( 'Page', 'autonomie' );
+	}
+
+	if ( get_post_format() ) {
+		return get_post_format();
+	}
+
+	return __( 'Text', 'autonomie' );
 }
 
 /**
@@ -209,7 +216,7 @@ function autonomie_get_post_format_string() {
  *
  * @param string $post_format
  *
- * @return void
+ * @return string
  */
 function autonomie_get_post_format_link( $post_format ) {
 	if ( in_array( get_post_type(), array( 'page', 'attachment' ), true ) ) {
@@ -222,17 +229,17 @@ function autonomie_get_post_format_link( $post_format ) {
 
 	global $wp_rewrite;
 
-	$termlink = $wp_rewrite->get_extra_permastruct( 'post_format' );
+	$term_link = $wp_rewrite->get_extra_permastruct( 'post_format' );
 
-	if ( empty( $termlink ) ) {
-		$termlink = '?post_format=standard';
-		$termlink = home_url( $termlink );
+	if ( empty( $term_link ) ) {
+		$term_link = '?post_format=standard';
+		$term_link = home_url( $term_link );
 	} else {
-		$termlink = str_replace( '%post_format%', 'standard', $termlink );
-		$termlink = home_url( user_trailingslashit( $termlink, 'category' ) );
+		$term_link = str_replace( '%post_format%', 'standard', $term_link );
+		$term_link = home_url( user_trailingslashit( $term_link, 'category' ) );
 	}
 
-	return $termlink;
+	return $term_link;
 }
 
 /**
@@ -258,11 +265,21 @@ function autonomie_get_archive_type() {
 function autonomie_get_archive_author_meta() {
 	$meta = array();
 
-	// translators: list of followers
-	$meta[] = sprintf( __( '%s Followers', 'autonomie' ), apply_filters( 'autonomie_archive_author_followers', 0, get_the_author_meta( 'ID' ) ) );
-	// translators: a post counter
-	$meta[] = sprintf( __( '%s Posts', 'autonomie' ), count_user_posts( get_the_author_meta( 'ID' ) ) );
-	$meta[] = sprintf( '<indie-action do="follow" with="%1$s"><a rel="alternate" class="feed u-feed openwebicons-feed" href="%1$s">%2$s</a></indie-action>', get_author_feed_link( get_the_author_meta( 'ID' ) ), __( 'Subscribe', 'autonomie' ) );
+	$meta[] = sprintf(
+		// translators: list of followers
+		__( '%s Followers', 'autonomie' ),
+		apply_filters( 'autonomie_archive_author_followers', 0, get_the_author_meta( 'ID' ) )
+	);
+	$meta[] = sprintf(
+		// translators: a post counter
+		__( '%s Posts', 'autonomie' ),
+		count_user_posts( get_the_author_meta( 'ID' ) )
+	);
+	$meta[] = sprintf(
+		'<indie-action do="follow" with="%1$s"><a rel="alternate" class="feed u-feed openwebicons-feed" href="%1$s">%2$s</a></indie-action>',
+		get_author_feed_link( get_the_author_meta( 'ID' ) ),
+		__( 'Subscribe', 'autonomie' )
+	);
 
 	$meta = apply_filters( 'autonomie_archive_author_meta', $meta, get_the_author_meta( 'ID' ) );
 
@@ -277,11 +294,17 @@ function autonomie_get_archive_author_meta() {
 function autonomie_get_the_archive_description() {
 	if ( is_home() ) {
 		return get_bloginfo( 'description' );
-	} elseif ( is_author() ) {
+	}
+
+	if ( is_author() ) {
 		return get_the_author_meta( 'description' );
-	} elseif ( is_archive() ) {
+	}
+
+	if ( is_archive() ) {
 		return get_the_archive_description();
-	} elseif ( is_search() ) {
+	}
+
+	if ( is_search() ) {
 		// @see https://github.com/raamdev/independent-publisher/blob/513e7ff71312f585f13eb1460b4d9bc74d0b59bd/inc/template-tags.php#L674
 		global $wp_query;
 		$total = $wp_query->found_posts;
@@ -290,6 +313,8 @@ function autonomie_get_the_archive_description() {
 
 		return wpautop( $stats_text );
 	}
+
+	// TODO: Consider to add a default return value.
 }
 
 /**
@@ -301,9 +326,10 @@ function autonomie_reading_time() {
 	$readingtime = ceil( $word_count / 200 );
 
 	printf(
+		// translators: %1$s = reading time in minutes.
 		_n(
-			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minute</time> to read</span>',
-			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minutes</time> to read</span>',
+			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minute</time> to read</span>', // phpcs:ignore WordPress.WP.I18n.NoHtmlWrappedStrings
+			'<span class="entry-duration"><time datetime="PT%1$sM" class="dt-duration" itemprop="timeRequired">%1$s minutes</time> to read</span>', // phpcs:ignore WordPress.WP.I18n.NoHtmlWrappedStrings
 			$readingtime,
 			'autonomie'
 		),

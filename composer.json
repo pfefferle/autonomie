@@ -2,7 +2,7 @@
 	"name": "pfefferle/wordpress-autonomie",
 	"description": "Pure Zen",
 	"require": {
-		"php": ">=5.6.0",
+		"php": ">=7.4.0",
 		"composer/installers": "~2.2"
 	},
 	"type": "wordpress-theme",
@@ -15,5 +15,10 @@
 	],
 	"extra": {
 		"installer-name": "autonomie"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }

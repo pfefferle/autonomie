@@ -31,7 +31,16 @@
 		<h2 id="comments-title">
 			<?php
 				printf(
-					_n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'autonomie' ),
+					/* translators:
+					%1$s: number of comments, mind to add this if your language uses singular for more than just n=1
+					%2$s: post title
+					*/
+					_n(
+						'One thought on &ldquo;%2$s&rdquo;', // phpcs:ignore WordPress.WP.I18n.MissingSingularPlaceholder -- Translator instructions added.
+						'%1$s thoughts on &ldquo;%2$s&rdquo;',
+						get_comments_number(),
+						'autonomie'
+					),
 					number_format_i18n( get_comments_number() ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -54,7 +63,12 @@
 				 * define autonomie_comment() and that will be used instead.
 				 * See autonomie_comment() in autonomie/functions.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'autonomie_comment', 'format' => '' ) );
+				wp_list_comments(
+					array(
+						'callback' => 'autonomie_comment',
+						'format' => '',
+					)
+				);
 			?>
 		</ol>
 

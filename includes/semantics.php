@@ -52,9 +52,9 @@ function autonomie_post_classes( $classes ) {
 
 	if ( ! is_singular() ) {
 		return autonomie_get_post_classes( $classes );
-	} else {
-		return $classes;
 	}
+
+	return $classes;
 }
 add_filter( 'post_class', 'autonomie_post_classes', 99 );
 
@@ -120,6 +120,7 @@ function autonomie_pre_get_avatar_data( $args, $id_or_email ) {
 		$username = get_the_author_meta( 'display_name', $id_or_email );
 
 		if ( $username ) {
+			// translators: %s: username
 			$args['alt'] = sprintf( __( 'User Avatar of %s' ), $username );
 		} else {
 			$args['alt'] = __( 'User Avatar' );
@@ -133,7 +134,7 @@ add_filter( 'pre_get_avatar_data', 'autonomie_pre_get_avatar_data', 99, 2 );
 /**
  * Add rel-prev attribute to previous_image_link.
  *
- * @param string a-tag
+ * @param string $link The a-tag to filter.
  *
  * @return string
  */
@@ -145,7 +146,7 @@ add_filter( 'previous_image_link', 'autonomie_semantic_previous_image_link' );
 /**
  * Add rel-next attribute to next_image_link.
  *
- * @param string a-tag
+ * @param string $link The a-tag to filter.
  *
  * @return string
  */
@@ -157,7 +158,7 @@ add_filter( 'next_image_link', 'autonomie_semantic_next_image_link' );
 /**
  * Add rel-prev attribute to next_posts_link_attributes.
  *
- * @param string Attributes
+ * @param string $attr Attributes.
  *
  * @return string
  */
@@ -169,7 +170,7 @@ add_filter( 'next_posts_link_attributes', 'autonomie_next_posts_link_attributes'
 /**
  * Add rel-next attribute to previous_posts_link.
  *
- * @param string Attributes
+ * @param string $attr Attributes.
  *
  * @return string
  */
@@ -277,13 +278,13 @@ function autonomie_get_the_semantics( $id ) {
 	$classes = autonomie_get_semantics( $id );
 
 	if ( ! $classes ) {
-		return;
+		return '';
 	}
 
 	$class = '';
 
 	foreach ( $classes as $key => $value ) {
-		$class .= ' ' . esc_attr( $key ) . '="' . esc_attr( join( ' ', $value ) ) . '"';
+		$class .= ' ' . esc_attr( $key ) . '="' . esc_attr( implode( ' ', $value ) ) . '"';
 	}
 
 	return $class;
@@ -302,7 +303,7 @@ function autonomie_semantics( $id ) {
 	}
 
 	foreach ( $classes as $key => $value ) {
-		echo ' ' . esc_attr( $key ) . '="' . esc_attr( join( ' ', $value ) ) . '"';
+		echo ' ' . esc_attr( $key ) . '="' . esc_attr( implode( ' ', $value ) ) . '"';
 	}
 }
 
@@ -325,7 +326,7 @@ function autonomie_term_links_tag( $links ) {
 	}
 
 	if ( empty( $terms ) ) {
-		return false;
+		return array();
 	}
 
 	$links = array();

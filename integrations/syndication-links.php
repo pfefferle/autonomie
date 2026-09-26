@@ -14,7 +14,7 @@
  * Remove the integration of `the_content` filter
  */
 function autonomie_syndication_links_init() {
-	remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ) , 30 );
+	remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ), 30 );
 }
 add_action( 'init', 'autonomie_syndication_links_init' );
 
@@ -33,7 +33,7 @@ function autonomie_syndication_links() {
 	if ( function_exists( 'get_syndication_links' ) ) {
 		echo '<div class="syndication-links">';
 		_e( 'Syndication Links', 'autonomie' );
-		echo get_syndication_links( null, array( 'show_text_before' => null) );
+		echo get_syndication_links( null, array( 'show_text_before' => null ) );
 		echo '</div>';
 	}
 }

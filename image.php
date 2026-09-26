@@ -10,7 +10,10 @@ get_header(); ?>
 
 			<main id="primary" <?php autonomie_main_class(); ?><?php autonomie_semantics( 'main' ); ?>>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>itemscope itemtype="https://schema.org/ImageObject">
 					<?php get_template_part( 'template-parts/entry-header' ); ?>
@@ -24,13 +27,24 @@ get_header(); ?>
 								 * Grab the IDs of all the image attachments in a gallery so we can get the URL of the next adjacent image in a gallery,
 								 * or the first image (if we're looking at the last image in a gallery), or, in a gallery of one, just the link to that image file
 								 */
-								$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+								$attachments = array_values(
+									get_children(
+										array(
+											'post_parent' => $post->post_parent,
+											'post_status' => 'inherit',
+											'post_type' => 'attachment',
+											'post_mime_type' => 'image',
+											'order' => 'ASC',
+											'orderby' => 'menu_order ID',
+										)
+									)
+								);
 								foreach ( $attachments as $k => $attachment ) {
 									if ( $attachment->ID == $post->ID ) {
 										break;
 									}
 								}
-								$k++;
+								++$k;
 								// If there is more than 1 attachment in a gallery
 								if ( count( $attachments ) > 1 ) {
 									if ( isset( $attachments[ $k ] ) ) {
@@ -46,10 +60,12 @@ get_header(); ?>
 								}
 								?>
 
-								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-								$attachment_size = apply_filters( 'autonomie_attachment_size', 1200 );
-								echo wp_get_attachment_image( $post->ID, array( $attachment_size, $attachment_size ), null, array( 'itemprop' => 'image contentURL' ) ); // filterable image width with, essentially, no limit for image height.
-								?></a>
+								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment">
+													<?php
+													$attachment_size = apply_filters( 'autonomie_attachment_size', 1200 );
+													echo wp_get_attachment_image( $post->ID, array( $attachment_size, $attachment_size ), null, array( 'itemprop' => 'image contentURL' ) ); // filterable image width with, essentially, no limit for image height.
+													?>
+								</a>
 
 								<?php if ( ! empty( $post->post_excerpt ) ) : ?>
 								<figcaption class="entry-caption">
@@ -60,7 +76,14 @@ get_header(); ?>
 						</div><!-- .entry-attachment -->
 
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ), 'after' => '</div>' ) ); ?>
+						<?php
+						wp_link_pages(
+							array(
+								'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ),
+								'after' => '</div>',
+							)
+						);
+						?>
 					</div><!-- .entry-content -->
 
 					<?php get_template_part( 'template-parts/entry-footer' ); ?>
@@ -72,4 +95,5 @@ get_header(); ?>
 
 			</main><!-- #content -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

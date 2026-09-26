@@ -15,7 +15,14 @@
 	<?php autonomie_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
 	<div class="entry-title p-name entry-content e-content" itemprop="name headline description articleBody">
 		<?php autonomie_the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ), 'after' => '</div>' ) ); ?>
+		<?php
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-link">' . __( 'Pages:', 'autonomie' ),
+				'after' => '</div>',
+			)
+		);
+		?>
 	</div><!-- .entry-content -->
 
 	<?php get_template_part( 'template-parts/entry-footer' ); ?>

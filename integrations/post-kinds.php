@@ -11,7 +11,7 @@
  */
 
 /**
- * Removes native Post-Kinds implementation
+ * Removes native Post-Kinds implementation.
  */
 function autonomie_post_kinds_init() {
 	if ( method_exists( 'Kind_Taxonomy', 'get_icon' ) ) {
@@ -25,9 +25,7 @@ function autonomie_post_kinds_init() {
 add_action( 'init', 'autonomie_post_kinds_init' );
 
 /**
- * Adds the reply-context above the article body
- *
- * @return string the reply-context
+ * Adds the reply-context above the article body.
  */
 function autonomie_post_kinds_content() {
 	printf( '<div class="entry-reaction">%s</div>', Kind_View::get_display() );
@@ -35,10 +33,10 @@ function autonomie_post_kinds_content() {
 add_action( 'autonomie_before_entry_content', 'autonomie_post_kinds_content' );
 
 /**
- * Replace the Post-Format header with the Post-Kinds header
+ * Replace the Post-Format header with the Post-Kinds header.
  *
- * @param  string $post_format_html Post-Format html
- * @return string                   Post-Kind html
+ * @param  string $post_format_html Post-Format html.
+ * @return string                   Post-Kind html.
  */
 function autonomie_post_kinds_format( $post_format_html ) {
 	if ( ! get_post_kind_slug() ) {

@@ -470,7 +470,7 @@ if ( ! function_exists( 'autonomie_comment' ) ) :
 		$GLOBALS['comment'] = $comment;
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+			<article id="comment-<?php comment_ID(); ?>" class="comment <?php echo esc_attr( $comment->comment_type ); ?>" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
 				<div class="edit-link"><?php edit_comment_link( __( 'Edit', 'autonomie' ), ' ' ); ?></div>
 				<footer class="comment-meta commentmetadata">
 					<address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="https://schema.org/Person">
@@ -513,42 +513,42 @@ endif; // ends check for autonomie_comment()
 /**
  * All template functions
  */
-require( get_template_directory() . '/includes/template-functions.php' );
+require get_template_directory() . '/includes/template-functions.php';
 
 /**
  * Widget handling
  */
-require( get_template_directory() . '/includes/widgets.php' );
+require get_template_directory() . '/includes/widgets.php';
 
 /**
  * Adds the featured image functionality
  */
-require( get_template_directory() . '/includes/featured-image.php' );
+require get_template_directory() . '/includes/featured-image.php';
 
 /**
  * All customizer functions
  */
-require( get_template_directory() . '/includes/customizer.php' );
+require get_template_directory() . '/includes/customizer.php';
 
 /**
  * Adds some awesome websemantics like microformats(2) and microdata
  */
-require( get_template_directory() . '/includes/semantics.php' );
+require get_template_directory() . '/includes/semantics.php';
 
 /**
  * Add Webactions support
  */
-require( get_template_directory() . '/includes/webactions.php' );
+require get_template_directory() . '/includes/webactions.php';
 
 /**
  * Adds back compat handling for older WP versions
  */
-require( get_template_directory() . '/includes/compat.php' );
+require get_template_directory() . '/includes/compat.php';
 
 /**
  * Feed extensions
  */
-require( get_template_directory() . '/includes/feed.php' );
+require get_template_directory() . '/includes/feed.php';
 
 /**
  * Compatibility with other plugins, mostly IndieWeb related
@@ -559,15 +559,15 @@ if ( defined( 'SYNDICATION_LINKS_VERSION' ) ) {
 	 * Adds Indieweb Syndcation Links
 	 * if github.com/dshanske/syndication-links is activated
 	 */
-	require( get_template_directory() . '/integrations/syndication-links.php' );
+	require get_template_directory() . '/integrations/syndication-links.php';
 }
 
 if ( class_exists( 'Post_Kinds_Plugin' ) ) {
-	require( get_template_directory() . '/integrations/post-kinds.php' );
+	require get_template_directory() . '/integrations/post-kinds.php';
 }
 
 if ( class_exists( '\Activitypub\Activitypub' ) ) {
-	require( get_template_directory() . '/integrations/activitypub.php' );
+	require get_template_directory() . '/integrations/activitypub.php';
 }
 
 /**
