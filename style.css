@@ -415,40 +415,7 @@ figure figcaption {
 	overflow: hidden;
 }
 
-.video-hero .wp-block-embed {
-	position: relative;
-	aspect-ratio: 16 / 9;
-	overflow: hidden;
-}
-
-.video-hero .alignfull {
-	max-width: none;
-}
-
-.video-hero .alignwide {
-	max-width: var(--wp--style--global--wide-size, 900px);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* Videos without alignment keep the content width, like in the post content. */
-.video-hero > :not(.alignfull):not(.alignwide) {
-	max-width: var(--wp--style--global--content-size, 700px);
-	margin-left: auto;
-	margin-right: auto;
-}
-
 /* Video hero caption — outside the dark area, right-aligned */
-.video-hero-caption {
-	max-width: var(--wp--style--global--wide-size, 900px);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.video-hero:has(> :not(.alignfull):not(.alignwide)) + .video-hero-caption {
-	max-width: var(--wp--style--global--content-size, 700px);
-}
-
 .video-hero-caption figcaption {
 	font-family: var(--wp--preset--font-family--sans-serif);
 	font-size: 0.8em;

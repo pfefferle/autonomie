@@ -328,44 +328,63 @@ function autonomie_render_video_hero() {
 	// The hero is not rendered by the embed block, so load its styles here.
 	wp_enqueue_style( 'wp-block-embed' );
 
+	// Core's constrained layout sizes the video by its alignment (content, wide or full width).
+	$hero = '<div class="video-hero is-layout-constrained">%s</div>';
+
 	// For core/embed, get the oEmbed HTML from the URL attribute
 	if ( 'core/embed' === $block['blockName'] && ! empty( $block['attrs']['url'] ) ) {
-		$url   = $block['attrs']['url'];
-		$align = ! empty( $block['attrs']['align'] ) ? ' align' . $block['attrs']['align'] : '';
-		$html  = wp_oembed_get( $url );
+		$attrs = $block['attrs'];
+		$align = ! empty( $attrs['align'] ) ? 'align' . $attrs['align'] : '';
+		$html  = wp_oembed_get( $attrs['url'] );
 
 		if ( ! $html ) {
 			// Fall back to block rendering (or plain URL) when oEmbed lookup fails.
-			$fallback = render_block( $block );
+			$fallback = trim( render_block( $block ) );
 
-			if ( ! empty( trim( $fallback ) ) ) {
-				return '<div class="video-hero">' . $fallback . '</div>';
+			if ( '' === $fallback ) {
+				$fallback = '<p><a href="' . esc_url( $attrs['url'] ) . '">' . esc_html( $attrs['url'] ) . '</a></p>';
 			}
 
-			return '<div class="video-hero"><p><a href="' . esc_url( $url ) . '">' . esc_html( $url ) . '</a></p></div>';
+			return sprintf( $hero, $fallback );
 		}
 
-		// Build CSS classes matching core/embed output for proper responsive sizing
-		$provider = ! empty( $block['attrs']['providerNameSlug'] ) ? ' is-provider-' . $block['attrs']['providerNameSlug'] : '';
-		$classes  = 'wp-block-embed' . $align . ' is-type-video wp-block-embed-youtube' . $provider . ' wp-embed-aspect-16-9 wp-has-aspect-ratio';
+		// Build the same classes as core/embed, so core's responsive embed styles apply.
+		$classes = array( 'wp-block-embed', $align );
+
+		if ( ! empty( $attrs['type'] ) ) {
+			$classes[] = 'is-type-' . $attrs['type'];
+		}
+
+		if ( ! empty( $attrs['providerNameSlug'] ) ) {
+			$classes[] = 'is-provider-' . $attrs['providerNameSlug'];
+			$classes[] = 'wp-block-embed-' . $attrs['providerNameSlug'];
+		}
+
+		$classes[] = ! empty( $attrs['className'] ) ? $attrs['className'] : 'wp-embed-aspect-16-9 wp-has-aspect-ratio';
 
 		// Extract caption from innerHTML if present
 		$caption = '';
 		if ( preg_match( '/<figcaption[^>]*>(.*?)<\/figcaption>/s', $block['innerHTML'], $matches ) ) {
-			$caption = '<figcaption class="wp-element-caption">' . $matches[1] . '</figcaption>';
+			$caption = sprintf(
+				'<div class="video-hero-caption is-layout-constrained"><figcaption class="%s">%s</figcaption></div>',
+				esc_attr( trim( 'wp-element-caption ' . $align ) ),
+				$matches[1]
+			);
 		}
 
 		return sprintf(
-			'<div class="video-hero"><figure class="%s"><div class="wp-block-embed__wrapper">%s</div></figure></div>%s',
-			esc_attr( $classes ),
-			$html,
-			$caption ? '<div class="video-hero-caption">' . $caption . '</div>' : ''
-		);
+			$hero,
+			sprintf(
+				'<figure class="%s"><div class="wp-block-embed__wrapper">%s</div></figure>',
+				esc_attr( implode( ' ', array_filter( $classes ) ) ),
+				$html
+			)
+		) . $caption;
 	}
 
 	// For core/video, render through the standard block pipeline
 	if ( 'core/video' === $block['blockName'] ) {
-		return '<div class="video-hero">' . render_block( $block ) . '</div>';
+		return sprintf( $hero, render_block( $block ) );
 	}
 
 	return '';

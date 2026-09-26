@@ -792,8 +792,8 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 
 		// Float small images right, next to the text.
 		if ( $width && $width <= 400 ) {
-			$processor->remove_class( 'alignwide' );
-			$processor->add_class( 'alignright' );
+			autonomie_tag_processor_remove_classes( $processor, array( 'alignwide' ) );
+			autonomie_tag_processor_add_classes( $processor, array( 'alignright' ) );
 		}
 	}
 
