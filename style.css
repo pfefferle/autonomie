@@ -372,6 +372,37 @@ figure figcaption {
 	margin-inline: auto;
 }
 
+/* Small featured images float right inside the text column (see semantics.php). */
+.wp-block-post-featured-image.alignright {
+	float: right;
+	width: auto;
+	margin-inline-start: 2em;
+	margin-inline-end: max(0px, calc((100% - var(--wp--style--global--content-size)) / 2));
+	margin-top: var(--wp--preset--spacing--60);
+	margin-bottom: var(--wp--preset--spacing--60);
+}
+
+/* Core sets `display: flow-root` on post content, which blocks the text from wrapping around the float. */
+.wp-block-group:has(> .wp-block-post-featured-image.alignright) + .wp-block-post-content,
+.wp-block-post-featured-image.alignright + .wp-block-post-content {
+	display: block;
+}
+
+.wp-block-group:has(> .wp-block-post-featured-image.alignright) + .wp-block-post-content::after,
+.wp-block-post-featured-image.alignright + .wp-block-post-content::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media (max-width: 600px) {
+
+	.wp-block-post-featured-image.alignright {
+		float: none;
+		margin-inline: auto;
+	}
+}
+
 /* ==========================================================================
    Post Format: Video
    YouTube/Vimeo-inspired — video first, title + meta below

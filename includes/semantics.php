@@ -770,6 +770,12 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 		$mf_class = 'u-featured';
 	}
 
+	// Original width of the image, to not upscale it and to float small images.
+	$post_id   = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
+	$metadata  = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
+	$width     = isset( $metadata['width'] ) ? (int) $metadata['width'] : 0;
+	$auto_size = $width && empty( $block['attrs']['aspectRatio'] ) && empty( $block['attrs']['width'] ) && empty( $block['attrs']['height'] );
+
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
 	// Add microformat class to figure.
@@ -778,6 +784,13 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'image' ) );
 		$processor->set_attribute( 'itemscope', '' );
 		$processor->set_attribute( 'itemtype', 'https://schema.org/ImageObject' );
+
+		// Float small images right, next to the text.
+		if ( $auto_size && $width <= 400 ) {
+			$processor->remove_class( 'alignwide' );
+			$processor->remove_class( 'alignfull' );
+			$processor->add_class( 'alignright' );
+		}
 	}
 
 	// Add itemprop to img.
@@ -785,10 +798,7 @@ function autonomie_render_block_post_featured_image( $block_content, $block, $in
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'url', 'contentUrl' ) );
 
 		// Do not upscale images that are smaller than the container.
-		$post_id  = isset( $instance->context['postId'] ) ? $instance->context['postId'] : get_the_ID();
-		$metadata = wp_get_attachment_metadata( get_post_thumbnail_id( $post_id ) );
-		$width    = isset( $metadata['width'] ) ? (int) $metadata['width'] : 0;
-		if ( $width && empty( $block['attrs']['aspectRatio'] ) && empty( $block['attrs']['width'] ) && empty( $block['attrs']['height'] ) ) {
+		if ( $auto_size ) {
 			$style = trim( (string) $processor->get_attribute( 'style' ), '; ' );
 			$style = ( $style ? $style . ';' : '' ) . 'max-width:' . $width . 'px;';
 			$processor->set_attribute( 'style', $style );
