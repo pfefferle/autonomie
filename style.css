@@ -443,8 +443,9 @@ figure figcaption {
 	margin-right: auto;
 }
 
-.video-hero .wp-block-embed:not(.alignfull):not(.alignwide) {
-	max-width: var(--wp--style--global--wide-size, 900px);
+/* Videos without alignment keep the content width, like in the post content. */
+.video-hero > :not(.alignfull):not(.alignwide) {
+	max-width: var(--wp--style--global--content-size, 700px);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -454,6 +455,10 @@ figure figcaption {
 	max-width: var(--wp--style--global--wide-size, 900px);
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.video-hero:has(> :not(.alignfull):not(.alignwide)) + .video-hero-caption {
+	max-width: var(--wp--style--global--content-size, 700px);
 }
 
 .video-hero-caption figcaption {
