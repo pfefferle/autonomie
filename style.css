@@ -314,37 +314,36 @@ figure figcaption {
    Entry Meta (post-meta template part)
    ========================================================================== */
 
+/* Flow the meta like a line of text, so it wraps word by word on small screens. */
 .wp-block-group.entry-meta {
-	align-items: center;
-	gap: 0;
-	row-gap: var(--wp--custom--meta--row-gap);
+	display: block;
 }
 
-.wp-block-group.entry-meta > * {
-	display: inline-flex;
-	align-items: center;
+.wp-block-group.entry-meta * {
+	display: inline;
+	margin: 0;
 }
 
-.wp-block-group.entry-meta > *:not(:first-child)::before {
-	content: "\00B7";
+/* The trailing space lets lines break after the separator, not before it. */
+.wp-block-group.entry-meta > :not(:first-child)::before {
+	content: "\00B7\0020";
 	color: var(--wp--preset--color--lighter-gray);
-	margin: 0 var(--wp--custom--meta--separator-gap);
+	margin-left: var(--wp--custom--meta--separator-gap);
 }
 
-.wp-block-group.entry-meta .wp-block-post-author {
-	display: inline-flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	gap: var(--wp--custom--meta--avatar-gap);
+.wp-block-group.entry-meta time {
+	white-space: nowrap;
 }
 
-.wp-block-group.entry-meta .wp-block-post-author__avatar {
-	margin-right: 0;
+.wp-block-group.entry-meta .wp-block-post-author__avatar img {
+	width: 2em;
+	height: 2em;
+	vertical-align: middle;
+	margin-right: var(--wp--custom--meta--avatar-gap);
 }
 
-.wp-block-group.entry-meta .wp-block-post-author__content {
-	display: inline-flex;
-	align-items: center;
+.wp-block-group.entry-meta .wp-block-post-author__byline {
+	margin-right: var(--wp--custom--meta--byline-gap);
 }
 
 .wp-block-group.entry-meta .wp-block-post-author__byline,
@@ -353,13 +352,6 @@ figure figcaption {
 	line-height: inherit;
 	font-weight: inherit;
 	color: var(--wp--preset--color--light-gray);
-}
-
-.wp-block-group.entry-meta .wp-block-post-author__byline {
-	display: inline-block;
-	flex: 0 0 auto;
-	width: auto;
-	margin: 0 var(--wp--custom--meta--byline-gap) 0 0;
 }
 
 /* ==========================================================================

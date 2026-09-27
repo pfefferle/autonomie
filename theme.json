@@ -383,14 +383,13 @@
         }
       },
       "meta": {
-        "fontSize": "1rem",
+        "fontSize": "clamp(0.8rem, 0.7rem + 0.5vw, 1rem)",
         "lineHeight": "1.35",
         "fontWeight": "400",
         "marginBlock": "0",
         "avatarGap": "0.45em",
-        "rowGap": "0.25em",
         "bylineGap": "0.3em",
-        "separatorGap": "0.4em"
+        "separatorGap": "0.25em"
       },
       "postFormats": {
         "support": true
