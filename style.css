@@ -152,7 +152,7 @@ figure figcaption {
 #comments,
 #reply-title {
 	padding: 0;
-	font-size: 1.75rem;
+	font-size: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
 	font-weight: 300;
 	line-height: 1.25;
 }
@@ -168,6 +168,54 @@ figure figcaption {
 #reply-title small {
 	font-size: 0.5em;
 	margin-left: 0.5em;
+}
+
+/* Threaded comments, Mastodon style: one flat column with the avatar left of
+   the text, and a line from a comment's avatar down to its first reply. */
+.wp-block-comment-template ol {
+	padding-inline-start: 0;
+}
+
+.wp-block-comment-template .comment-body {
+	position: relative;
+	padding-inline-start: calc(32px + var(--wp--preset--spacing--30));
+}
+
+.wp-block-comment-template .comment-body .wp-block-avatar {
+	position: absolute;
+	z-index: 1;
+	inset-inline-start: 0;
+	top: var(--wp--preset--spacing--35);
+}
+
+/* The line runs behind the avatar down to the end of the comment ... */
+.wp-block-comment-template li:has(> ol) > .comment-body::after,
+.wp-block-comment-template ol > li > .comment-body::before {
+	content: "";
+	position: absolute;
+	inset-inline-start: 15px;
+	border-inline-start: 2px solid var(--wp--preset--color--border-gray);
+}
+
+.wp-block-comment-template li:has(> ol) > .comment-body::after {
+	top: var(--wp--preset--spacing--35);
+	bottom: 0;
+}
+
+/* ... and continues into the avatar of the first reply. */
+.wp-block-comment-template ol > li > .comment-body::before {
+	top: 0;
+	height: var(--wp--preset--spacing--35);
+}
+
+/* Every other reply starts a new branch: a divider above, and only a short stub
+   above the avatar that marks it as a reply. */
+.wp-block-comment-template li:not(:first-child) > .comment-body {
+	border-top: 1px solid var(--wp--preset--color--border-gray);
+}
+
+.wp-block-comment-template ol > li:not(:first-child) > .comment-body::before {
+	height: calc(var(--wp--preset--spacing--35) - 4px);
 }
 
 /* Reply link as a pill button. Reuses the shared button tokens (custom.button)

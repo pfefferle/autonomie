@@ -1101,12 +1101,27 @@
       },
       "core/comment-date": {
         "typography": {
-          "fontSize": "var(--wp--custom--meta--font-size)",
+          "fontSize": "var(--wp--preset--font-size--small)",
           "lineHeight": "var(--wp--custom--meta--line-height)",
           "fontWeight": "var(--wp--custom--meta--font-weight)"
         },
         "color": {
-          "text": "var(--wp--preset--color--gray)"
+          "text": "var(--wp--preset--color--light-gray)"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var(--wp--preset--color--light-gray)"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
         }
       },
       "core/comment-reply-link": {

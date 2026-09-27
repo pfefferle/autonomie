@@ -1023,18 +1023,27 @@ add_filter( 'render_block_core/comment-author-name', 'autonomie_render_block_com
 /**
  * Add semantics to the comment date block.
  */
-function autonomie_render_block_comment_date( $block_content, $block ) {
+function autonomie_render_block_comment_date( $block_content, $block, $instance = null ) {
 
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 
 	if ( $processor->next_tag( array( 'tag_name' => 'time' ) ) ) {
 		autonomie_tag_processor_add_classes( $processor, array( 'updated', 'published', 'dt-updated', 'dt-published' ) );
 		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'dateCreated' ) );
+
+		// Show the full date on hover, e.g. for relative dates ("3 days ago").
+		if ( ! empty( $instance->context['commentId'] ) ) {
+			$comment_id = $instance->context['commentId'];
+			$processor->set_attribute(
+				'title',
+				get_comment_date( get_option( 'date_format' ), $comment_id ) . ' ' . get_comment_date( get_option( 'time_format' ), $comment_id )
+			);
+		}
 	}
 
 	return $processor->get_updated_html();
 }
-add_filter( 'render_block_core/comment-date', 'autonomie_render_block_comment_date', 10, 2 );
+add_filter( 'render_block_core/comment-date', 'autonomie_render_block_comment_date', 10, 3 );
 
 /**
  * Add semantics to the comment content block.
