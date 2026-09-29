@@ -1231,6 +1231,11 @@
       "name": "single-full-width-image",
       "title": "Full-width featured image",
       "postTypes": ["post"]
+    },
+    {
+      "name": "page-full-width-image",
+      "title": "Full-width featured image",
+      "postTypes": ["page"]
     }
   ]
 }

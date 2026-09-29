@@ -1,7 +1,7 @@
 /**
  * Adds a "Use as post cover (full-width)" checkbox to the featured image panel.
  *
- * The checkbox switches the post to the "Full-width featured image" template.
+ * The checkbox switches the post or page to its "Full-width featured image" template.
  */
 ( function ( wp ) {
   const { createElement: el, Fragment } = wp.element;
@@ -9,20 +9,25 @@
   const { useSelect, useDispatch } = wp.data;
   const { __ } = wp.i18n;
 
-  const TEMPLATE = 'single-full-width-image';
+  const TEMPLATES = {
+    post: 'single-full-width-image',
+    page: 'page-full-width-image',
+  };
 
   function CoverCheckbox() {
-    const { checked, hasImage } = useSelect( ( select ) => {
+    const { template, checked, hasImage } = useSelect( ( select ) => {
       const editor = select( 'core/editor' );
+      const slug = TEMPLATES[ editor.getCurrentPostType() ];
 
       return {
-        checked: editor.getEditedPostAttribute( 'template' ) === TEMPLATE,
+        template: slug,
+        checked: !! slug && editor.getEditedPostAttribute( 'template' ) === slug,
         hasImage: !! editor.getEditedPostAttribute( 'featured_media' ),
       };
     }, [] );
     const { editPost } = useDispatch( 'core/editor' );
 
-    if ( ! hasImage ) {
+    if ( ! template || ! hasImage ) {
       return null;
     }
 
@@ -30,7 +35,7 @@
       __nextHasNoMarginBottom: true,
       label: __( 'Use as post cover (full-width)', 'autonomie' ),
       checked,
-      onChange: ( value ) => editPost( { template: value ? TEMPLATE : '' } ),
+      onChange: ( value ) => editPost( { template: value ? template : '' } ),
     } );
   }
 

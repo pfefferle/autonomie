@@ -165,7 +165,7 @@ add_action( 'wp_enqueue_scripts', 'autonomie_enqueue_scripts' );
 function autonomie_enqueue_featured_image_cover() {
 	$screen = get_current_screen();
 
-	if ( ! $screen || 'post' !== $screen->post_type ) {
+	if ( ! $screen || ! in_array( $screen->post_type, array( 'post', 'page' ), true ) ) {
 		return;
 	}
 
