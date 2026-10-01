@@ -81,6 +81,17 @@ blockquote {
 	margin-right: 0;
 }
 
+/* theme.json only styles the quote block, so bare blockquotes (comments,
+   classic content) get the same look here. */
+:where(blockquote:not(.wp-block-quote, .wp-block-pullquote blockquote)) {
+	padding-left: var(--wp--preset--spacing--55);
+	border-left: 3px solid var(--wp--preset--color--border-gray);
+	color: var(--wp--preset--color--gray);
+	font-family: var(--wp--preset--font-family--serif);
+	font-style: italic;
+	line-height: 1.8;
+}
+
 blockquote cite::before,
 blockquote small::before {
 	content: "\2014 \00A0";
