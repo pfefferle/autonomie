@@ -590,6 +590,15 @@ input[type="search"]:not(.wp-block-search__input) {
 	margin-bottom: var(--wp--preset--spacing--30);
 }
 
+@media (max-width: 600px) {
+
+	.entry-content .alignleft,
+	.entry-content .alignright {
+		float: none;
+		margin-inline: auto;
+	}
+}
+
 /* ==========================================================================
    Post Format: Status
    ========================================================================== */
