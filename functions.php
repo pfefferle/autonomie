@@ -300,9 +300,12 @@ function autonomie_extract_video_hero( $post_id = null ) {
  * @return string|null The pre-rendered content.
  */
 function autonomie_hide_featured_image_for_video_hero( $pre_render, $parsed_block ) {
+	global $_wp_current_template_content;
+
 	if (
 		'core/post-featured-image' === $parsed_block['blockName'] &&
 		is_singular() &&
+		has_block( 'autonomie/video-hero', (string) $_wp_current_template_content ) &&
 		get_queried_object_id() === get_the_ID() &&
 		autonomie_extract_video_hero( get_the_ID() )
 	) {
@@ -414,7 +417,10 @@ function autonomie_render_video_hero() {
  * @return string Filtered content without the first video/embed.
  */
 function autonomie_filter_video_content( $content ) {
-	if ( ! is_singular() ) {
+	global $_wp_current_template_content;
+
+	// Only strip the video if the current template shows it in the hero.
+	if ( ! is_singular() || ! has_block( 'autonomie/video-hero', (string) $_wp_current_template_content ) ) {
 		return $content;
 	}
 
@@ -445,7 +451,7 @@ add_filter( 'the_content', 'autonomie_filter_video_content', 5 );
 function autonomie_post_format_template_hierarchy( $templates ) {
 	$post = get_queried_object();
 
-	if ( ! $post || 'post' !== get_post_type( $post ) ) {
+	if ( ! $post instanceof WP_Post ) {
 		return $templates;
 	}
 
