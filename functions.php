@@ -250,7 +250,17 @@ function autonomie_extract_video_hero( $post_id = null ) {
 
 	$cache[ $post_id ] = null;
 
-	if ( ! $post || 'video' !== get_post_format( $post ) || ! has_blocks( $post ) ) {
+	if ( ! $post || ! has_blocks( $post ) ) {
+		return null;
+	}
+
+	$media_blocks = array(
+		'video' => array( 'core/embed', 'core/video' ),
+		'audio' => array( 'core/embed', 'core/audio' ),
+	);
+	$format       = get_post_format( $post );
+
+	if ( ! isset( $media_blocks[ $format ] ) ) {
 		return null;
 	}
 
@@ -266,7 +276,7 @@ function autonomie_extract_video_hero( $post_id = null ) {
 	}
 
 	// Only extract if the very first block is a video/embed
-	if ( null === $first_index || ! in_array( $blocks[ $first_index ]['blockName'], array( 'core/embed', 'core/video' ), true ) ) {
+	if ( null === $first_index || ! in_array( $blocks[ $first_index ]['blockName'], $media_blocks[ $format ], true ) ) {
 		return null;
 	}
 
@@ -360,7 +370,11 @@ function autonomie_render_video_hero() {
 			$classes[] = 'wp-block-embed-' . $attrs['providerNameSlug'];
 		}
 
-		$classes[] = ! empty( $attrs['className'] ) ? $attrs['className'] : 'wp-embed-aspect-16-9 wp-has-aspect-ratio';
+		if ( ! empty( $attrs['className'] ) ) {
+			$classes[] = $attrs['className'];
+		} elseif ( 'video' === get_post_format() ) {
+			$classes[] = 'wp-embed-aspect-16-9 wp-has-aspect-ratio';
+		}
 
 		// Extract caption from innerHTML if present
 		$caption = '';
@@ -382,8 +396,8 @@ function autonomie_render_video_hero() {
 		) . $caption;
 	}
 
-	// For core/video, render through the standard block pipeline
-	if ( 'core/video' === $block['blockName'] ) {
+	// For core/video and core/audio, render through the standard block pipeline
+	if ( in_array( $block['blockName'], array( 'core/video', 'core/audio' ), true ) ) {
 		return sprintf( $hero, render_block( $block ) );
 	}
 
@@ -455,6 +469,10 @@ add_filter( 'single_template_hierarchy', 'autonomie_post_format_template_hierarc
  */
 function autonomie_post_format_template_types() {
 	return array(
+		'single-post-format-audio'  => array(
+			'title'       => __( 'Single Posts: Audio', 'autonomie' ),
+			'description' => __( 'Displays single posts with the audio post format.', 'autonomie' ),
+		),
 		'single-post-format-aside'  => array(
 			'title'       => __( 'Single Posts: Aside', 'autonomie' ),
 			'description' => __( 'Displays single posts with the aside post format.', 'autonomie' ),
