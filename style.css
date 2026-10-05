@@ -566,8 +566,13 @@ textarea {
 
 input,
 textarea {
-	max-width: 90%;
 	background-color: var(--wp--preset--color--base);
+}
+
+/* Constrain form fields without squeezing input-based buttons. */
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]),
+textarea {
+	max-width: 90%;
 }
 
 input[type="search"]:not(.wp-block-search__input) {
