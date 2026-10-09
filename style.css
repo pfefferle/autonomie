@@ -81,9 +81,9 @@ blockquote {
 	margin-right: 0;
 }
 
-/* theme.json only styles the quote block, so bare blockquotes (comments,
-   classic content) get the same look here. */
-:where(blockquote:not(.wp-block-quote, .wp-block-pullquote blockquote)) {
+/* theme.json only styles the quote block, so bare blockquotes (classic
+   content) get the same look here. */
+:where(blockquote:not(.wp-block-quote, .wp-block-pullquote blockquote, .wp-block-comment-content blockquote)) {
 	box-sizing: border-box;
 	padding-left: var(--wp--preset--spacing--78);
 	color: var(--wp--preset--color--contrast);
@@ -92,13 +92,23 @@ blockquote {
 	line-height: 1.4;
 }
 
+/* Comments keep the classic quote: a left border instead of the large mark. */
+:where(.wp-block-comment-content blockquote) {
+	padding-left: var(--wp--preset--spacing--55);
+	border-left: 3px solid var(--wp--preset--color--border-gray);
+	color: var(--wp--preset--color--gray);
+	font-family: var(--wp--preset--font-family--serif);
+	font-style: italic;
+	line-height: 1.8;
+}
+
 /* Large quotation mark in the indent, drawn as a mask so it takes the accent
    color in light and dark mode. */
-blockquote:not(.wp-block-pullquote blockquote) {
+blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockquote) {
 	position: relative;
 }
 
-blockquote:not(.wp-block-pullquote blockquote)::before {
+blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockquote)::before {
 	content: "";
 	position: absolute;
 	top: 0.3em;
@@ -113,11 +123,11 @@ blockquote:not(.wp-block-pullquote blockquote)::before {
    the paragraphs. Smaller screens keep it in the indent, the gutter is too
    narrow for it. */
 @media (min-width: 900px) {
-	blockquote:not(.wp-block-pullquote blockquote) {
+	blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockquote) {
 		padding-left: 0;
 	}
 
-	blockquote:not(.wp-block-pullquote blockquote)::before {
+	blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockquote)::before {
 		left: calc(-1 * var(--wp--preset--spacing--78));
 	}
 }
@@ -133,7 +143,7 @@ blockquote small {
 }
 
 /* Small sans-serif source line under the quote. */
-blockquote :is(cite, small) {
+blockquote:not(.wp-block-comment-content blockquote) :is(cite, small) {
 	display: block;
 	margin-top: var(--wp--preset--spacing--30);
 	font-family: var(--wp--preset--font-family--sans-serif);
