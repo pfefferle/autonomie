@@ -154,6 +154,12 @@ blockquote :is(cite, small) {
 	line-height: 1.3;
 }
 
+/* Wide pullquotes keep the source line in the content column. */
+.wp-block-pullquote :is(cite, small) {
+	max-width: var(--wp--style--global--content-size);
+	margin-inline: auto;
+}
+
 /* Inline code: theme.json has no code element, so style it here. A light chip
    instead of the classic theme's dark pill, so it doesn't overpower running
    text. Colors come from the light-dark() palette, so dark mode just works. */
@@ -665,6 +671,18 @@ input[type="search"]:not(.wp-block-search__input) {
 		float: none;
 		margin-inline: auto;
 	}
+}
+
+/* Post lists keep every post in the content column, so wide blocks have no
+   room to grow. Let wide and full blocks break out to the wide size there,
+   centered on the column. */
+.wp-block-post-template .entry-content > :is(.alignwide, .alignfull) {
+	position: relative;
+	left: 50%;
+	width: min(var(--wp--style--global--wide-size), 100vw - var(--wp--style--root--padding-left) - var(--wp--style--root--padding-right));
+	max-width: none;
+	margin-inline: 0;
+	translate: -50%;
 }
 
 /* ==========================================================================
