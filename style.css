@@ -92,14 +92,13 @@ blockquote {
 	line-height: 1.4;
 }
 
-/* Comments keep the classic quote: a left border instead of the large mark. */
+/* Comments keep the text size and a left line instead of the large mark. */
 :where(.wp-block-comment-content blockquote) {
 	padding-left: var(--wp--preset--spacing--55);
-	border-left: 3px solid var(--wp--preset--color--border-gray);
-	color: var(--wp--preset--color--gray);
+	border-left: 3px solid var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--serif);
-	font-style: italic;
-	line-height: 1.8;
+	line-height: 1.4;
 }
 
 /* Large quotation mark in the indent, drawn as a mask so it takes the accent
@@ -143,7 +142,7 @@ blockquote small {
 }
 
 /* Small sans-serif source line under the quote. */
-blockquote:not(.wp-block-comment-content blockquote) :is(cite, small) {
+blockquote :is(cite, small) {
 	display: block;
 	margin-top: var(--wp--preset--spacing--30);
 	font-family: var(--wp--preset--font-family--sans-serif);
