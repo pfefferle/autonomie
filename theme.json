@@ -195,6 +195,7 @@
     "typography": {
       "fluid": true,
       "customFontSize": true,
+      "defaultFontSizes": false,
       "fontSizes": [
         {
           "name": "Small",
