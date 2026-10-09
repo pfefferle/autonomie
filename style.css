@@ -88,6 +88,7 @@ blockquote {
 	padding-left: var(--wp--preset--spacing--78);
 	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--serif);
+	font-weight: 300;
 	font-size: var(--wp--preset--font-size--large);
 	line-height: 1.4;
 }
@@ -98,6 +99,7 @@ blockquote {
 	border-left: 3px solid var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--serif);
+	font-weight: 300;
 	line-height: 1.4;
 }
 
@@ -131,13 +133,8 @@ blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockqu
 	}
 }
 
-/* Quote posts: the quote is the content, so the mark sits above it and the
-   title steps back. Single views have the format on the body, archives on
-   the post. */
-:is(.single-format-quote, .format-quote) .wp-block-post-title {
-	font-size: var(--wp--preset--font-size--large);
-}
-
+/* Quote posts: the quote is the content, so the mark sits above it. Single
+   views have the format on the body, archives on the post. */
 :is(.single-format-quote, .format-quote) .entry-content > blockquote:first-child {
 	margin-top: var(--wp--preset--spacing--60);
 	padding-left: 0;
@@ -167,6 +164,7 @@ blockquote :is(cite, small) {
 	font-family: var(--wp--preset--font-family--sans-serif);
 	font-size: var(--wp--preset--font-size--small);
 	font-style: normal;
+	font-weight: 400;
 	line-height: 1.3;
 }
 
