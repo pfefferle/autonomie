@@ -84,12 +84,42 @@ blockquote {
 /* theme.json only styles the quote block, so bare blockquotes (comments,
    classic content) get the same look here. */
 :where(blockquote:not(.wp-block-quote, .wp-block-pullquote blockquote)) {
-	padding-left: var(--wp--preset--spacing--55);
-	border-left: 3px solid var(--wp--preset--color--border-gray);
-	color: var(--wp--preset--color--gray);
+	box-sizing: border-box;
+	padding-left: var(--wp--preset--spacing--78);
+	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--serif);
-	font-style: italic;
-	line-height: 1.8;
+	font-size: var(--wp--preset--font-size--large);
+	line-height: 1.4;
+}
+
+/* Large quotation mark in the indent, drawn as a mask so it takes the accent
+   color in light and dark mode. */
+blockquote:not(.wp-block-pullquote blockquote) {
+	position: relative;
+}
+
+blockquote:not(.wp-block-pullquote blockquote)::before {
+	content: "";
+	position: absolute;
+	top: 0.3em;
+	left: 0;
+	width: var(--wp--preset--spacing--60);
+	aspect-ratio: 81 / 75;
+	background-color: var(--wp--preset--color--primary);
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 81 75'%3E%3Cpath d='M46.5537 74.5643C54.3389 72.8986 60.9844 69.8213 66.5077 65.3326C72.0222 60.8438 75.7394 55.8202 77.6419 50.2619C79.2288 45.4136 80.1844 38.0756 80.5 28.2213V0H45.9575V34.4109H64.6578C64.6578 40.6794 63.9038 45.5715 62.3959 49.0608C59.6956 55.1715 54.4178 59.3446 46.5537 61.5714V74.5643ZM1.09617 74.5643C8.7148 72.3375 14.3959 70.0405 18.1307 67.6558C24.4869 63.5265 29.1685 57.5298 32.1844 49.6657C34.008 44.5808 34.9636 37.4356 35.0425 28.2213V0H0.5V34.4109H19.2003C19.2003 42.8274 17.8501 48.903 15.1499 52.6377C12.4496 56.3725 7.76795 59.3446 1.09617 61.5714V74.5643Z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Wide screens: hang the mark in the margin so the quote text lines up with
+   the paragraphs. Smaller screens keep it in the indent, the gutter is too
+   narrow for it. */
+@media (min-width: 900px) {
+	blockquote:not(.wp-block-pullquote blockquote) {
+		padding-left: 0;
+	}
+
+	blockquote:not(.wp-block-pullquote blockquote)::before {
+		left: calc(-1 * var(--wp--preset--spacing--78));
+	}
 }
 
 blockquote cite::before,
@@ -100,6 +130,16 @@ blockquote small::before {
 blockquote cite,
 blockquote small {
 	text-align: left;
+}
+
+/* Small sans-serif source line under the quote. */
+blockquote :is(cite, small) {
+	display: block;
+	margin-top: var(--wp--preset--spacing--30);
+	font-family: var(--wp--preset--font-family--sans-serif);
+	font-size: var(--wp--preset--font-size--small);
+	font-style: normal;
+	line-height: 1.3;
 }
 
 /* Inline code: theme.json has no code element, so style it here. A light chip
