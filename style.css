@@ -131,6 +131,25 @@ blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockqu
 	}
 }
 
+/* Quote posts: the quote is the content, so the mark sits above it and the
+   title steps back. Single views have the format on the body, archives on
+   the post. */
+:is(.single-format-quote, .format-quote) .wp-block-post-title {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+:is(.single-format-quote, .format-quote) .entry-content > blockquote:first-child {
+	margin-top: var(--wp--preset--spacing--60);
+	padding-left: 0;
+	padding-top: calc(var(--wp--preset--spacing--60) + var(--wp--preset--spacing--40));
+	font-size: var(--wp--preset--font-size--x-large);
+}
+
+:is(.single-format-quote, .format-quote) .entry-content > blockquote:first-child::before {
+	top: 0;
+	left: 0;
+}
+
 blockquote cite::before,
 blockquote small::before {
 	content: "\2014 \00A0";
