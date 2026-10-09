@@ -934,6 +934,7 @@
           "text": "var(--wp--preset--color--contrast)"
         },
         "spacing": {
+          "blockGap": "var(--wp--preset--spacing--35)",
           "padding": {
             "left": "var(--wp--preset--spacing--78)",
             "top": "0",
