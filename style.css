@@ -675,8 +675,10 @@ input[type="search"]:not(.wp-block-search__input) {
 
 /* Post lists keep every post in the content column, so wide blocks have no
    room to grow. Let wide and full blocks break out to the wide size there,
-   centered on the column. */
-.wp-block-post-template .entry-content > :is(.alignwide, .alignfull) {
+   centered on the column. Featured images get the same room, they are
+   capped at their own width (see semantics.php) and stay centered. */
+.wp-block-post-template .entry-content > :is(.alignwide, .alignfull),
+.wp-block-post-template .wp-block-post-featured-image:not(.alignright) {
 	position: relative;
 	left: 50%;
 	width: min(var(--wp--style--global--wide-size), 100vw - var(--wp--style--root--padding-left) - var(--wp--style--root--padding-right));
