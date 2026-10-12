@@ -613,6 +613,11 @@ function autonomie_render_block_main_group_semantics( $block_content, $block ) {
 		$processor->set_attribute( 'itemprop', implode( ' ', $main_semantics['itemprop'] ) );
 	}
 
+	// The "/now" page, see https://nownownow.com/about.
+	if ( is_page( 'now' ) ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'h-now' ) );
+	}
+
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/group', 'autonomie_render_block_main_group_semantics', 11, 2 );
