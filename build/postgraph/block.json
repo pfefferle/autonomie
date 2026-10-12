@@ -1,0 +1,87 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "autonomie/postgraph",
+  "title": "Postgraph",
+  "category": "theme",
+  "icon": "grid-view",
+  "description": "A GitHub-style contribution graph of your posts per day.",
+  "keywords": [
+    "contributions",
+    "heatmap",
+    "archive",
+    "calendar",
+    "github"
+  ],
+  "textdomain": "autonomie",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "weeks": {
+      "type": "integer",
+      "default": 53
+    },
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "showTotal": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMonths": {
+      "type": "boolean",
+      "default": true
+    },
+    "showWeekdays": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLegend": {
+      "type": "boolean",
+      "default": true
+    },
+    "linkDays": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "styles": [
+    {
+      "name": "system",
+      "label": "System",
+      "isDefault": true
+    },
+    {
+      "name": "light",
+      "label": "Light"
+    },
+    {
+      "name": "dark",
+      "label": "Dark"
+    }
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "color": {
+      "text": true,
+      "background": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

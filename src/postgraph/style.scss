@@ -1,0 +1,148 @@
+/*
+ * Postgraph - GitHub-style contribution graph.
+ *
+ * Colors can be overridden by themes via the --postgraph-level-* custom properties.
+ */
+.wp-block-autonomie-postgraph {
+	--postgraph-cell: 11px;
+	--postgraph-gap: 3px;
+	--postgraph-radius: 2px;
+	--postgraph-level-0: #eff2f5;
+	--postgraph-level-1: #aceebb;
+	--postgraph-level-2: #4ac26b;
+	--postgraph-level-3: #2da44e;
+	--postgraph-level-4: #116329;
+	--postgraph-step: calc(var(--postgraph-cell) + var(--postgraph-gap));
+
+	display: grid;
+	grid-template-columns: minmax(0, max-content);
+	justify-content: center;
+	gap: 0.5em;
+	min-width: 0;
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+/* Dark palette, either always or, unless forced light, following the visitor's system setting. */
+.wp-block-autonomie-postgraph.is-style-dark {
+	--postgraph-level-0: #151b23;
+	--postgraph-level-1: #033a16;
+	--postgraph-level-2: #196c2e;
+	--postgraph-level-3: #2ea043;
+	--postgraph-level-4: #56d364;
+}
+
+@media (prefers-color-scheme: dark) {
+	.wp-block-autonomie-postgraph:not(.is-style-light) {
+		--postgraph-level-0: #151b23;
+		--postgraph-level-1: #033a16;
+		--postgraph-level-2: #196c2e;
+		--postgraph-level-3: #2ea043;
+		--postgraph-level-4: #56d364;
+	}
+}
+
+.wp-block-autonomie-postgraph .postgraph__body {
+	display: flex;
+	gap: 0.5em;
+	min-width: 0;
+}
+
+/* Keep the newest weeks visible when the graph does not fit. */
+.wp-block-autonomie-postgraph .postgraph__scroll {
+	flex: 0 1 auto;
+	min-width: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	overscroll-behavior-x: contain;
+	scrollbar-width: thin;
+	direction: rtl;
+}
+
+.wp-block-autonomie-postgraph .postgraph__inner {
+	direction: ltr;
+	display: grid;
+	gap: 0.5em;
+	width: max-content;
+}
+
+.wp-block-autonomie-postgraph .postgraph__months {
+	display: grid;
+	grid-template-columns: repeat(var(--postgraph-weeks), var(--postgraph-step));
+	opacity: 0.7;
+	white-space: nowrap;
+}
+
+.wp-block-autonomie-postgraph .postgraph__weekdays {
+	display: grid;
+	grid-template-rows: repeat(7, var(--postgraph-step));
+	align-items: center;
+	flex-shrink: 0;
+	opacity: 0.7;
+}
+
+/* Line up with the grid below the month labels (1em line + 0.5em gap). */
+.wp-block-autonomie-postgraph .has-months .postgraph__weekdays {
+	padding-top: 1.5em;
+}
+
+.wp-block-autonomie-postgraph .postgraph__grid {
+	display: grid;
+	grid-template-columns: repeat(var(--postgraph-weeks), var(--postgraph-step));
+	grid-template-rows: repeat(7, var(--postgraph-step));
+	grid-auto-flow: column;
+}
+
+.wp-block-autonomie-postgraph .postgraph__day {
+	display: block;
+	width: var(--postgraph-cell);
+	height: var(--postgraph-cell);
+	border-radius: var(--postgraph-radius);
+	outline: 1px solid rgb(31 35 40 / 5%);
+	outline-offset: -1px;
+	background: var(--postgraph-level-0);
+}
+
+.wp-block-autonomie-postgraph .postgraph__day[data-level="1"] {
+	background: var(--postgraph-level-1);
+}
+
+.wp-block-autonomie-postgraph .postgraph__day[data-level="2"] {
+	background: var(--postgraph-level-2);
+}
+
+.wp-block-autonomie-postgraph .postgraph__day[data-level="3"] {
+	background: var(--postgraph-level-3);
+}
+
+.wp-block-autonomie-postgraph .postgraph__day[data-level="4"] {
+	background: var(--postgraph-level-4);
+}
+
+.wp-block-autonomie-postgraph a.postgraph__day:hover,
+.wp-block-autonomie-postgraph a.postgraph__day:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 0;
+}
+
+.wp-block-autonomie-postgraph .postgraph__total {
+	margin: 0;
+	font-size: 1.1667em;
+}
+
+.wp-block-autonomie-postgraph .postgraph__legend {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: var(--postgraph-gap);
+}
+
+.wp-block-autonomie-postgraph .postgraph__legend span:first-child {
+	margin-inline-end: 0.25em;
+	opacity: 0.7;
+}
+
+.wp-block-autonomie-postgraph .postgraph__legend span:last-child {
+	margin-inline-start: 0.25em;
+	opacity: 0.7;
+}

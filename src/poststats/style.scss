@@ -1,0 +1,59 @@
+/**
+ * Poststats Block Styles - Frontend and Editor
+ */
+
+.wp-block-autonomie-poststats {
+	.poststats__numbers {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+		gap: var(--wp--preset--spacing--55);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: flex;
+			flex-direction: column;
+			gap: var(--wp--preset--spacing--30);
+		}
+
+		strong {
+			font-family: var(--wp--preset--font-family--serif);
+			font-size: var(--wp--preset--font-size--huge);
+			line-height: 1;
+		}
+
+		span {
+			color: var(--wp--preset--color--light-gray);
+			font-size: var(--wp--custom--meta--font-size);
+			line-height: var(--wp--custom--meta--line-height);
+		}
+	}
+
+	.poststats__list {
+		padding: 0;
+		list-style-position: inside;
+
+		li {
+			display: flex;
+			justify-content: space-between;
+			gap: var(--wp--preset--spacing--40);
+			border-bottom: 1px solid var(--wp--preset--color--very-light-gray);
+			padding-block: var(--wp--preset--spacing--30);
+		}
+
+		li > :last-child {
+			color: var(--wp--preset--color--light-gray);
+			font-variant-numeric: tabular-nums;
+			text-align: right;
+		}
+	}
+
+	ol.poststats__list li {
+		display: list-item;
+
+		> :last-child {
+			float: right;
+		}
+	}
+}

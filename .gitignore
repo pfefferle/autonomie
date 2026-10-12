@@ -6,5 +6,9 @@ _build
 build/*
 !build/post-format/
 !build/post-format/**
+!build/postgraph/
+!build/postgraph/**
+!build/poststats/
+!build/poststats/**
 composer.lock
 package-lock.json

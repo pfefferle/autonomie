@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "autonomie/poststats",
+  "title": "Poststats",
+  "category": "theme",
+  "icon": "chart-bar",
+  "description": "Key numbers, reactions by type, posting streaks and trending tags.",
+  "keywords": [
+    "statistics",
+    "archive",
+    "streak",
+    "comments",
+    "tags"
+  ],
+  "textdomain": "autonomie",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

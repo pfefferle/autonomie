@@ -187,6 +187,12 @@ function autonomie_register_blocks() {
 	// Register post format block from block metadata (JS editor + PHP render API).
 	register_block_type_from_metadata( __DIR__ . '/build/post-format' );
 
+	// Register the postgraph block, a GitHub-style contribution graph of the posts per day.
+	register_block_type_from_metadata( __DIR__ . '/build/postgraph' );
+
+	// Register the poststats block: key numbers, reactions, streaks and trending tags.
+	register_block_type_from_metadata( __DIR__ . '/build/poststats' );
+
 	// Dynamic block: renders the first video/embed extracted from the post content
 	// Register a minimal editor script so the Site Editor recognizes the block
 	wp_register_script(
@@ -581,6 +587,12 @@ require get_template_directory() . '/includes/compat.php';
 
 // WebActions support (IndieWeb comment interactions)
 require get_template_directory() . '/includes/webactions.php';
+
+// Postgraph block helpers
+require get_template_directory() . '/includes/postgraph.php';
+
+// Poststats block helpers
+require get_template_directory() . '/includes/poststats.php';
 
 /**
  * FSE Theme Compatibility Check

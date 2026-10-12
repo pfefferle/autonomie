@@ -19,6 +19,22 @@ filteredPlugins.push(
 				from: 'src/post-format/block.json',
 				to: 'post-format/block.json',
 			},
+			{
+				from: 'src/postgraph/*.php',
+				to: 'postgraph/[name][ext]',
+			},
+			{
+				from: 'src/postgraph/block.json',
+				to: 'postgraph/block.json',
+			},
+			{
+				from: 'src/poststats/*.php',
+				to: 'poststats/[name][ext]',
+			},
+			{
+				from: 'src/poststats/block.json',
+				to: 'poststats/block.json',
+			},
 		],
 	} )
 );
@@ -29,6 +45,16 @@ module.exports = {
 		'post-format/index': path.resolve(
 			process.cwd(),
 			'src/post-format',
+			'index.js'
+		),
+		'postgraph/index': path.resolve(
+			process.cwd(),
+			'src/postgraph',
+			'index.js'
+		),
+		'poststats/index': path.resolve(
+			process.cwd(),
+			'src/poststats',
 			'index.js'
 		),
 	},

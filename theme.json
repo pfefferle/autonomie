@@ -1239,6 +1239,11 @@
       "name": "page-now",
       "title": "/now",
       "postTypes": ["page"]
+    },
+    {
+      "name": "page-archive",
+      "title": "Archive",
+      "postTypes": ["page"]
     }
   ]
 }
