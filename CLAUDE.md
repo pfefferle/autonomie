@@ -18,7 +18,7 @@ We are on the `fse` branch. The work is in two phases:
 ## Commands
 
 ```bash
-# Build the custom block (src/post-format → build/post-format)
+# Build the custom blocks (src/* → build/*)
 npm run build
 
 # Watch mode for development
@@ -29,17 +29,17 @@ npm run start       # Start wp-env
 npm run stop        # Stop wp-env
 
 # Linting
-npm run lint:php    # PHP CodeSniffer (WordPress-Core ruleset)
+npm run lint:php    # Broken: composer.json has no `lint` script or PHPCS dependency
 npm run lint:md     # Markdown linting
 npm run format      # Prettier for JSON/MD files
 ```
 
-No test suite is configured yet.
+No test suite is configured yet. For PHP linting, run a `phpcs` that has the WordPress standards installed (e.g. from a sibling plugin's `vendor/bin`) with `--standard=phpcs.xml`.
 
 ## Development Workflow
 
 1. `npm run start` boots wp-env at http://localhost:8887 (admin: admin/password)
-2. `npm run dev` watches `src/post-format/` and rebuilds on change
+2. `npm run dev` watches `src/` and rebuilds on change
 3. Edit `theme.json` for design tokens, block styles, and layout — changes are live-reloaded
 4. Edit `style.css` for styles that can't be expressed in theme.json (pseudo-elements, complex selectors, dark mode)
 5. Edit `templates/` and `parts/` for block template markup
@@ -51,14 +51,20 @@ No test suite is configured yet.
 ### FSE Block Theme Structure
 
 - **`theme.json`** — Primary design system (version 3): colors, typography, spacing, layout (700px content / 900px wide), per-block styles. Most styling lives here, not in CSS files.
-- **`templates/`** — 6 HTML block templates (index, single, page, archive, search, 404)
-- **`parts/`** — 3 template parts (header, footer, post-meta)
-- **`patterns/`** — 10 block patterns, one per post format (standard, aside, quote, link, image, gallery, video, audio, status, chat). Note: pattern registration is currently disabled in functions.php due to inconsistent return formats — `post-aside.php` returns differently from the rest. This needs fixing before Phase 2.
+- **`templates/`** — block templates: index, home, single, page, archive, search, 404, the post format templates (`single-post-format-{aside,audio,status,video}`), and the custom templates registered in `theme.json` `customTemplates`: Blank (`blank`), Full-width featured image, /now (`page-now`) and Archive (`page-archive`). `page-now` and `page-archive` also apply automatically to the pages with the slugs `now` and `archive`.
+- **`parts/`** — template parts: header, footer, post-meta, query-loop, comments, navigation-overlay
+- **`patterns/`** — PHP patterns, registered automatically by core: archive, blank (random empty-page text), navigation-overlay, now-meta. Core caches the list of pattern files per theme version, so bump the version (or run `wp eval 'wp_get_theme()->delete_pattern_cache();'`) after adding one.
 - **`style.css`** — Only styles that can't be expressed in theme.json: pseudo-elements, complex selectors, dark mode (`prefers-color-scheme: dark`), tables, forms, comments, accessibility helpers.
 
-### Custom Block: `autonomie/post-format`
+### Custom Blocks
 
-Single custom block in `src/post-format/` displaying the post format icon and archive link.
+- `autonomie/post-format` — post format icon and archive link (details below)
+- `autonomie/postgraph` — GitHub-style posts-per-day graph, ported from the `wordpress-postgraph` plugin; helpers in `includes/postgraph.php`
+- `autonomie/poststats` — key numbers, reactions by comment type, posting streaks, trending tags; helpers in `includes/poststats.php`
+
+Each lives in `src/<name>/`, is built to `build/<name>/` (tracked in git via `.gitignore` exceptions) and registered in `autonomie_register_blocks()`.
+
+#### `autonomie/post-format`
 
 - `src/post-format/index.js` — Editor component (React/JSX)
 - `src/post-format/render.php` — Server-side render
@@ -68,10 +74,11 @@ Single custom block in `src/post-format/` displaying the post format icon and ar
 
 ### PHP Includes
 
-- **`includes/semantics.php`** — Core file (~630 lines). Adds microformats2 classes and Schema.org microdata to block output via `render_block` filters for core blocks (post-template, post-title, post-content, post-date, post-author, etc.) and classic WordPress filters (body_class, post_class, etc.).
+- **`includes/semantics.php`** — Core file (~1100 lines). Adds microformats2 classes and Schema.org microdata to block output via `render_block` filters for core blocks (post-template, post-title, post-content, post-date, post-author, etc.) and classic WordPress filters (body_class, post_class, etc.).
 - **`includes/feed.php`** — Feed discovery links, per-format feed URLs
 - **`includes/compat.php`** — Backward compatibility: comment form enhancements, "standard" post format archive support, lazy loading
 - **`includes/webactions.php`** — IndieWeb webaction wrappers for comment links
+- **`includes/postgraph.php`**, **`includes/poststats.php`** — Query and cache helpers for the two stats blocks
 
 ### Architecture Decisions
 
@@ -97,9 +104,8 @@ The plan is to create social-media-inspired templates for each post format:
 - **Chat** → Conversation thread
 
 Implementation approach:
-1. Fix pattern registration (inconsistent format in `post-aside.php` vs others)
-2. Use `single_template_hierarchy` filter to load format-specific templates from `templates/single-format-{format}.html`
-3. Create format-specific template parts in `parts/`
+1. Use `single_template_hierarchy` filter to load format-specific templates from `templates/single-post-format-{format}.html` (in place for aside, audio, status, video)
+2. Create format-specific template parts in `parts/`
 
 ### Classic Theme Reference
 

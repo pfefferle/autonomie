@@ -4,7 +4,7 @@
  * Author: Matthias Pfefferle
  * Author URI: https://notiz.blog/
  * Description: Autonomie is a highly semantic, responsive, accessible and SEO-optimized Full Site Editing (FSE) WordPress theme. It provides HTML5 templates refined with microformats, microformats v2 and microdata (Schema.org). Autonomie supports the IndieWeb and is fully compatible with modern block-based editing.
- * Version: 2.0.5
+ * Version: 2.0.6
  * License: MIT
  * License URI: https://opensource.org/licenses/MIT
  * Tags: block-templates, block-patterns, full-site-editing, microformats, rtl-language-support, translation-ready, post-formats, threaded-comments, one-column, editor-style, featured-images, blog, accessibility-ready, indieweb, semantic-html, wide-blocks
@@ -351,14 +351,14 @@ figure figcaption {
 	}
 }
 
-.site-header-search.wp-block-search .wp-block-search__inside-wrapper {
+:is(.site-header-search, .wp-block-search__button-inside).wp-block-search .wp-block-search__inside-wrapper {
 	background-color: var(--wp--preset--color--base);
 	border: 1px solid var(--wp--preset--color--border-gray);
 	border-radius: 50px;
 	overflow: hidden;
 }
 
-.site-header-search.wp-block-search .wp-block-search__input {
+:is(.site-header-search, .wp-block-search__button-inside).wp-block-search .wp-block-search__input {
 	-webkit-appearance: none;
 	appearance: none;
 	border: none;
@@ -368,7 +368,7 @@ figure figcaption {
 	font-size: 0.85rem;
 }
 
-.site-header-search.wp-block-search .wp-block-search__button {
+:is(.site-header-search, .wp-block-search__button-inside).wp-block-search .wp-block-search__button {
 	border: none;
 	background: transparent;
 	color: var(--wp--preset--color--light-gray);
@@ -644,7 +644,7 @@ textarea {
 }
 
 /* Constrain form fields without squeezing input-based buttons. */
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]),
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not(.wp-block-search__input),
 textarea {
 	max-width: 90%;
 }

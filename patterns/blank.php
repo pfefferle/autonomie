@@ -22,13 +22,13 @@ $autonomie_blank = wp_rand( 1, 3 );
 <?php else : ?>
 <!-- wp:paragraph -->
 <p>
-<?php
-printf(
-	// translators: %s: the link to this page.
-	esc_html__( '%s is intentionally left _blank.', 'autonomie' ),
-	sprintf( '<a href="%s" target="_blank" rel="noopener">%s</a>', esc_url( get_permalink() ), esc_html__( 'This page', 'autonomie' ) )
-);
-?>
+	<?php
+	printf(
+		// translators: %s: the link to this page.
+		esc_html__( '%s is intentionally left _blank.', 'autonomie' ),
+		sprintf( '<a href="%s" target="_blank" rel="noopener">%s</a>', esc_url( get_permalink() ), esc_html__( 'This page', 'autonomie' ) )
+	);
+	?>
 </p>
 <!-- /wp:paragraph -->
 <?php endif; ?>

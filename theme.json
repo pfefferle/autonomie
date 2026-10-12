@@ -105,11 +105,6 @@
           "name": "Background",
           "slug": "background",
           "color": "light-dark(#ffffff, #373d3f)"
-        },
-        {
-          "name": "Text",
-          "slug": "text",
-          "color": "light-dark(#373d3f, #ffffff)"
         }
       ],
       "custom": true,
@@ -401,7 +396,7 @@
     "css": ":root { color-scheme: light dark; }",
     "color": {
       "background": "var(--wp--preset--color--background)",
-      "text": "var(--wp--preset--color--text)"
+      "text": "var(--wp--preset--color--contrast)"
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--sans-serif)",
