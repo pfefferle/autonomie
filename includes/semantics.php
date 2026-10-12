@@ -32,6 +32,11 @@ function autonomie_body_classes( $classes ) {
 		$classes[] = 'hentry';
 	}
 
+	// The "/now" page, see https://nownownow.com/about.
+	if ( is_page( 'now' ) ) {
+		$classes[] = 'h-now';
+	}
+
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( ! is_multi_author() ) {
 		$classes[] = 'single-author';
@@ -611,11 +616,6 @@ function autonomie_render_block_main_group_semantics( $block_content, $block ) {
 
 	if ( ! empty( $main_semantics['itemprop'] ) ) {
 		$processor->set_attribute( 'itemprop', implode( ' ', $main_semantics['itemprop'] ) );
-	}
-
-	// The "/now" page, see https://nownownow.com/about.
-	if ( is_page( 'now' ) ) {
-		autonomie_tag_processor_add_classes( $processor, array( 'h-now' ) );
 	}
 
 	return $processor->get_updated_html();
