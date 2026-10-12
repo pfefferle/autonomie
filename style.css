@@ -425,11 +425,20 @@ figure figcaption {
 	margin-left: auto;
 }
 
-/* Custom overlay template part (newer Gutenberg): page-list has no native
-   vertical option outside a Navigation block. */
-.navigation-overlay-menu.wp-block-page-list {
-	flex-direction: column;
-	align-items: flex-end;
+/* Child pages in the overlay end with a corner that points up to their parent. */
+.wp-block-navigation.navigation-overlay-menu .has-child.open-always > .wp-block-navigation__submenu-container {
+	padding-right: 0;
+}
+
+.navigation-overlay-menu .wp-block-navigation__submenu-container .wp-block-navigation-item__content::after {
+	content: "";
+	display: inline-block;
+	width: 0.75em;
+	height: 0.5em;
+	margin-left: 0.4em;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	vertical-align: 0.3em;
 }
 
 
