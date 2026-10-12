@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autonomie\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/autonomie\n"
-"POT-Creation-Date: 2026-10-12T13:25:37+00:00\n"
+"POT-Creation-Date: 2026-10-12T14:03:27+00:00\n"
 "PO-Revision-Date: 2022-04-27 10:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -45,6 +45,46 @@ msgstr "Matthias Pfefferle"
 #: style.css
 msgid "https://notiz.blog/"
 msgstr "https://notiz.blog/"
+
+#: build/colophon/render.php:47
+msgid "Software"
+msgstr "Software"
+
+#. translators: 1: Linked "WordPress", 2: Linked theme name, 3: Linked theme author, 4: Linked theme license.
+#: build/colophon/render.php:52
+#, php-format
+msgid "This site runs on %1$s with the %2$s theme by %3$s, licensed under %4$s."
+msgstr "Diese Website läuft mit %1$s und dem Theme %2$s von %3$s, lizenziert unter %4$s."
+
+#: build/colophon/render.php:62
+msgid "Plugins"
+msgstr "Plugins"
+
+#: build/colophon/render.php:71
+msgid "Typography"
+msgstr "Typografie"
+
+#. translators: %s: List of font names.
+#: build/colophon/render.php:76
+#, php-format
+msgid "Set in %s, served from this site."
+msgstr "Gesetzt in %s, ausgeliefert von dieser Website."
+
+#: build/colophon/render.php:83
+msgid "Standards"
+msgstr "Standards"
+
+#: build/colophon/render.php:90
+msgid "Feeds"
+msgstr "Feeds"
+
+#: build/colophon/render.php:92
+msgid "Posts"
+msgstr "Beiträge"
+
+#: build/colophon/render.php:93 includes/poststats.php:38
+msgid "Comments"
+msgstr "Kommentare"
 
 #. translators: %d: Number of weeks.
 #: build/postgraph/render.php:15
@@ -146,40 +186,40 @@ msgstr[1] "%s Tage"
 msgid "Trending tags of the last 30 days"
 msgstr "Angesagte Schlagwörter der letzten 30 Tage"
 
-#: functions.php:485
+#: functions.php:488
 msgid "Single Posts: Audio"
 msgstr "Einzelne Beiträge: Audio"
 
-#: functions.php:486
+#: functions.php:489
 msgid "Displays single posts with the audio post format."
 msgstr "Zeigt einzelne Beiträge mit dem Beitragsformat Audio an."
 
-#: functions.php:489
+#: functions.php:492
 msgid "Single Posts: Aside"
 msgstr "Einzelne Beiträge: Kurzmitteilung"
 
-#: functions.php:490
+#: functions.php:493
 msgid "Displays single posts with the aside post format."
 msgstr "Zeigt einzelne Beiträge mit dem Beitragsformat Kurzmitteilung an."
 
-#: functions.php:493
+#: functions.php:496
 msgid "Single Posts: Status"
 msgstr "Einzelne Beiträge: Status"
 
-#: functions.php:494
+#: functions.php:497
 msgid "Displays single posts with the status post format."
 msgstr "Zeigt einzelne Beiträge mit dem Beitragsformat Status an."
 
-#: functions.php:497
+#: functions.php:500
 msgid "Single Posts: Video"
 msgstr "Einzelne Beiträge: Video"
 
-#: functions.php:498
+#: functions.php:501
 msgid "Displays single posts with the video post format."
 msgstr "Zeigt einzelne Beiträge mit dem Beitragsformat Video an."
 
 #. translators: %s: WordPress version number
-#: functions.php:620
+#: functions.php:623
 #, php-format
 msgid "Autonomie requires WordPress version 6.4 or higher. You are running version %s. Please upgrade WordPress to use this theme."
 msgstr "Autonomie benötigt WordPress 6.4 oder höher. Du verwendest Version %s. Bitte aktualisiere WordPress, um dieses Theme zu nutzen."
@@ -232,39 +272,35 @@ msgstr "%1$s %2$s Suchergebnisse für &#8220;%3$s&#8221; Feed"
 msgid "%1$s %2$s %3$s Post-Type Feed"
 msgstr "%1$s %2$s %3$s Post-Type-Feed"
 
-#: includes/poststats.php:46
-msgid "Comments"
-msgstr "Kommentare"
-
-#: includes/poststats.php:47
+#: includes/poststats.php:39
 msgid "Pingbacks"
 msgstr "Pingbacks"
 
-#: includes/poststats.php:48
+#: includes/poststats.php:40
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: includes/poststats.php:49
+#: includes/poststats.php:41
 msgid "Webmentions"
 msgstr "Webmentions"
 
-#: includes/poststats.php
+#: includes/poststats.php:42
 msgid "Mentions"
 msgstr "Erwähnungen"
 
-#: includes/poststats.php:50
+#: includes/poststats.php:43
 msgid "Likes"
 msgstr "Likes"
 
-#: includes/poststats.php:51
+#: includes/poststats.php:44
 msgid "Reposts"
 msgstr "Reposts"
 
-#: includes/poststats.php:52
+#: includes/poststats.php:45
 msgid "Quotes"
 msgstr "Zitate"
 
-#: includes/poststats.php:53
+#: includes/poststats.php:46
 msgid "Favorites"
 msgstr "Favoriten"
 
@@ -288,20 +324,20 @@ msgid "A posts per day graph and lists of all years, months, categories and tags
 msgstr "Eine Grafik der Beiträge pro Tag und Listen aller Jahre, Monate, Kategorien und Schlagwörter."
 
 #: patterns/archive.php:18
-msgid "Years"
-msgstr "Jahre"
-
-#: patterns/archive.php:24
-msgid "Months"
-msgstr "Monate"
-
-#: patterns/archive.php:30
 msgid "Categories"
 msgstr "Kategorien"
 
-#: patterns/archive.php:36
+#: patterns/archive.php:24
 msgid "Tags"
 msgstr "Schlagwörter"
+
+#: patterns/archive.php:30
+msgid "Years"
+msgstr "Jahre"
+
+#: patterns/archive.php:36
+msgid "Months"
+msgstr "Monate"
 
 #: patterns/blank.php
 msgctxt "Pattern title"
@@ -354,6 +390,41 @@ msgstr "Autor und Datum der letzten Aktualisierung für die „/now“-Seite."
 #: patterns/now-meta.php:19
 msgid "Last updated:"
 msgstr "Zuletzt aktualisiert:"
+
+#: build/colophon/block.json
+msgctxt "block title"
+msgid "Colophon"
+msgstr "Kolophon"
+
+#: build/colophon/block.json
+msgctxt "block description"
+msgid "How this site is made: software, plugins, fonts, standards and feeds."
+msgstr "Wie diese Website gemacht ist: Software, Plugins, Schriften, Standards und Feeds."
+
+#: build/colophon/block.json
+msgctxt "block keyword"
+msgid "colophon"
+msgstr ""
+
+#: build/colophon/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr ""
+
+#: build/colophon/block.json
+msgctxt "block keyword"
+msgid "software"
+msgstr ""
+
+#: build/colophon/block.json
+msgctxt "block keyword"
+msgid "plugins"
+msgstr ""
+
+#: build/colophon/block.json
+msgctxt "block keyword"
+msgid "fonts"
+msgstr ""
 
 #: build/post-format/block.json
 msgctxt "block title"
@@ -709,6 +780,11 @@ msgstr "/now"
 msgctxt "Custom template name"
 msgid "Archive"
 msgstr "Archiv"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Colophon"
+msgstr "Kolophon"
 
 #: styles/dark.json
 msgctxt "Style variation name"

@@ -1239,6 +1239,11 @@
       "name": "page-archive",
       "title": "Archive",
       "postTypes": ["page"]
+    },
+    {
+      "name": "page-colophon",
+      "title": "Colophon",
+      "postTypes": ["page"]
     }
   ]
 }

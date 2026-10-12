@@ -35,6 +35,14 @@ filteredPlugins.push(
 				from: 'src/poststats/block.json',
 				to: 'poststats/block.json',
 			},
+			{
+				from: 'src/colophon/*.php',
+				to: 'colophon/[name][ext]',
+			},
+			{
+				from: 'src/colophon/block.json',
+				to: 'colophon/block.json',
+			},
 		],
 	} )
 );
@@ -55,6 +63,11 @@ module.exports = {
 		'poststats/index': path.resolve(
 			process.cwd(),
 			'src/poststats',
+			'index.js'
+		),
+		'colophon/index': path.resolve(
+			process.cwd(),
+			'src/colophon',
 			'index.js'
 		),
 	},

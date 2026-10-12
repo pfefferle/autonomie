@@ -193,6 +193,9 @@ function autonomie_register_blocks() {
 	// Register the poststats block: key numbers, reactions, streaks and trending tags.
 	register_block_type_from_metadata( __DIR__ . '/build/poststats' );
 
+	// Register the colophon block: software, plugins, fonts, standards and feeds.
+	register_block_type_from_metadata( __DIR__ . '/build/colophon' );
+
 	// Dynamic block: renders the first video/embed extracted from the post content
 	// Register a minimal editor script so the Site Editor recognizes the block
 	wp_register_script(
