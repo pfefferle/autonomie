@@ -331,6 +331,12 @@ figure figcaption {
 	min-width: 0;
 }
 
+/* Keep the overlay toggle visible next to the inline menu on wide screens. */
+.site-header .site-navigation .wp-block-navigation__responsive-container-open:not(.always-shown) {
+	display: flex;
+	order: 1;
+}
+
 .site-header .site-header-search {
 	min-width: 0;
 }
