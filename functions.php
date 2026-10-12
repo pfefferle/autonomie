@@ -539,6 +539,24 @@ function autonomie_post_format_template_titles( $posts, $query ) {
 add_filter( 'posts_results', 'autonomie_post_format_template_titles', 10, 2 );
 
 /**
+ * Show a random, slightly nerdy "blank" on empty pages using the Blank template.
+ *
+ * @see https://indieweb.org/blank
+ *
+ * @param string $block_content The block content.
+ *
+ * @return string The filtered block content.
+ */
+function autonomie_blank_template_default_content( $block_content ) {
+	if ( '' !== $block_content || ! is_page_template( 'blank' ) ) {
+		return $block_content;
+	}
+
+	return sprintf( '<div class="entry-content wp-block-post-content">%s</div>', do_blocks( '<!-- wp:pattern {"slug":"autonomie/blank"} /-->' ) );
+}
+add_filter( 'render_block_core/post-content', 'autonomie_blank_template_default_content', 9 );
+
+/**
  * Add pingback url auto-discovery header for singularly identifiable articles
  */
 function autonomie_pingback_header() {
