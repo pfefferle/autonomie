@@ -15,18 +15,6 @@
 <!-- wp:autonomie/poststats /-->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Years', 'autonomie' ); ?></h2>
-<!-- /wp:heading -->
-
-<!-- wp:archives {"type":"yearly","showPostCounts":true} /-->
-
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Months', 'autonomie' ); ?></h2>
-<!-- /wp:heading -->
-
-<!-- wp:archives {"showPostCounts":true} /-->
-
-<!-- wp:heading -->
 <h2 class="wp-block-heading"><?php esc_html_e( 'Categories', 'autonomie' ); ?></h2>
 <!-- /wp:heading -->
 
@@ -37,3 +25,15 @@
 <!-- /wp:heading -->
 
 <!-- wp:tag-cloud /-->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><?php esc_html_e( 'Years', 'autonomie' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:archives {"type":"yearly","showPostCounts":true} /-->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><?php esc_html_e( 'Months', 'autonomie' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:archives {"showPostCounts":true} /-->
