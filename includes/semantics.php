@@ -33,7 +33,7 @@ function autonomie_body_classes( $classes ) {
 	}
 
 	// The "/now" page, see https://nownownow.com/about.
-	if ( is_page( 'now' ) ) {
+	if ( is_page( 'now' ) || is_page_template( 'page-now' ) ) {
 		$classes[] = 'h-now';
 	}
 
@@ -720,11 +720,23 @@ add_filter( 'render_block_core/post-excerpt', 'autonomie_render_block_post_excer
  */
 function autonomie_render_block_post_date( $block_content, $block ) {
 
-	$processor = new WP_HTML_Tag_Processor( $block_content );
+	$processor   = new WP_HTML_Tag_Processor( $block_content );
+	$is_modified = $processor->next_tag() && $processor->has_class( 'wp-block-post-date__modified-date' );
 
-	if ( $processor->next_tag( array( 'tag_name' => 'time' ) ) ) {
-		autonomie_tag_processor_add_classes( $processor, array( 'dt-published', 'published', 'entry-date' ) );
-		autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'datePublished' ) );
+	// A linked date links to the permalink.
+	if ( $processor->next_tag() && 'A' === $processor->get_tag() ) {
+		autonomie_tag_processor_add_classes( $processor, array( 'u-url', 'url' ) );
+		$processor->next_tag();
+	}
+
+	if ( 'TIME' === $processor->get_tag() ) {
+		if ( $is_modified ) {
+			autonomie_tag_processor_add_classes( $processor, array( 'dt-updated', 'updated', 'entry-date' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'dateModified' ) );
+		} else {
+			autonomie_tag_processor_add_classes( $processor, array( 'dt-published', 'published', 'entry-date' ) );
+			autonomie_tag_processor_merge_space_attr( $processor, 'itemprop', array( 'datePublished' ) );
+		}
 	}
 
 	return $processor->get_updated_html();

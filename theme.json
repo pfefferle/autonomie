@@ -1234,6 +1234,11 @@
       "name": "page-full-width-image",
       "title": "Full-width featured image",
       "postTypes": ["page"]
+    },
+    {
+      "name": "page-now",
+      "title": "/now",
+      "postTypes": ["page"]
     }
   ]
 }

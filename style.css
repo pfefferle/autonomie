@@ -449,6 +449,7 @@ figure figcaption {
 /* Flow the meta like a line of text, so it wraps word by word on small screens. */
 .wp-block-group.entry-meta {
 	display: block;
+	color: var(--wp--preset--color--light-gray);
 }
 
 .wp-block-group.entry-meta * {
