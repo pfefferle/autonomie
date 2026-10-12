@@ -27,26 +27,19 @@ function autonomie_poststats_get_first_post() {
 /**
  * Get the label of a comment type.
  *
- * Uses the labels the ActivityPub and Webmention plugins register for their types.
+ * Unknown types fall back to the type name.
  *
  * @param string $type The comment type.
  *
  * @return string The (plural) label.
  */
 function autonomie_poststats_get_comment_type_label( $type ) {
-	global $activitypub_comment_types, $webmention_comment_types;
-
-	foreach ( array( $activitypub_comment_types, $webmention_comment_types ) as $types ) {
-		if ( isset( $types[ $type ]['label'] ) ) {
-			return $types[ $type ]['label'];
-		}
-	}
-
 	$labels = array(
 		'comment'    => __( 'Comments', 'autonomie' ),
 		'pingback'   => __( 'Pingbacks', 'autonomie' ),
 		'trackback'  => __( 'Trackbacks', 'autonomie' ),
 		'webmention' => __( 'Webmentions', 'autonomie' ),
+		'mention'    => __( 'Mentions', 'autonomie' ),
 		'like'       => __( 'Likes', 'autonomie' ),
 		'repost'     => __( 'Reposts', 'autonomie' ),
 		'quote'      => __( 'Quotes', 'autonomie' ),

@@ -248,6 +248,10 @@ msgstr "Trackbacks"
 msgid "Webmentions"
 msgstr "Webmentions"
 
+#: includes/poststats.php
+msgid "Mentions"
+msgstr "Erwähnungen"
+
 #: includes/poststats.php:50
 msgid "Likes"
 msgstr "Likes"
