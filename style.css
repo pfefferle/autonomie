@@ -432,26 +432,13 @@ figure figcaption {
 	overscroll-behavior: contain;
 }
 
-/* Child pages that open on click expand in place under their parent, not as
-   a dropdown box. */
-.wp-block-navigation.navigation-overlay-menu .has-child {
-	flex-wrap: wrap;
-	justify-content: flex-end;
-}
-
-.wp-block-navigation.navigation-overlay-menu .has-child .wp-block-navigation__submenu-container {
-	position: static;
-	flex-basis: 100%;
-	align-items: flex-end;
+/* Child pages in the overlay align with the right edge of their parent. */
+.wp-block-navigation.navigation-overlay-menu .has-child.open-always > .wp-block-navigation__submenu-container {
 	padding-right: 0;
-	border: none;
-	background-color: transparent;
-	color: inherit;
 }
 
 /* The quieter meta color marks them as child pages. */
-.wp-block-navigation.navigation-overlay-menu .has-child .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	padding-right: 0;
+.wp-block-navigation.navigation-overlay-menu .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
 	color: var(--wp--preset--color--light-gray);
 }
 
