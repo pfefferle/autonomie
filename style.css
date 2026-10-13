@@ -383,7 +383,7 @@ figure figcaption {
       are scoped with :not(.disable-default-overlay) to match core's own
       specificity, so they win by source order (theme loads after core).
    2. The custom overlay template part (newer Gutenberg) — styled via block
-      attributes; only the page-list needs the nudge at the end.
+      attributes; only the container background and the page-list need CSS.
    ========================================================================== */
 
 /* Generous, self-contained padding. Don't rely on core's root-padding clamp,
@@ -425,20 +425,34 @@ figure figcaption {
 	margin-left: auto;
 }
 
-/* Child pages in the overlay end with a corner that points up to their parent. */
-.wp-block-navigation.navigation-overlay-menu .has-child.open-always > .wp-block-navigation__submenu-container {
-	padding-right: 0;
+/* Core leaves the container of a custom overlay transparent, so color it to
+   keep the page from showing through on overscroll and behind iOS toolbars. */
+.wp-block-navigation__responsive-container.is-menu-open.disable-default-overlay {
+	background-color: var(--wp--preset--color--base);
+	overscroll-behavior: contain;
 }
 
-.navigation-overlay-menu .wp-block-navigation__submenu-container .wp-block-navigation-item__content::after {
-	content: "";
-	display: inline-block;
-	width: 0.75em;
-	height: 0.5em;
-	margin-left: 0.4em;
-	border-right: 2px solid currentColor;
-	border-bottom: 2px solid currentColor;
-	vertical-align: 0.3em;
+/* Child pages that open on click expand in place under their parent, not as
+   a dropdown box. */
+.wp-block-navigation.navigation-overlay-menu .has-child {
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+.wp-block-navigation.navigation-overlay-menu .has-child .wp-block-navigation__submenu-container {
+	position: static;
+	flex-basis: 100%;
+	align-items: flex-end;
+	padding-right: 0;
+	border: none;
+	background-color: transparent;
+	color: inherit;
+}
+
+/* The quieter meta color marks them as child pages. */
+.wp-block-navigation.navigation-overlay-menu .has-child .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding-right: 0;
+	color: var(--wp--preset--color--light-gray);
 }
 
 

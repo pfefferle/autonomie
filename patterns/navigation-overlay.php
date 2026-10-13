@@ -23,7 +23,7 @@
 
 		<!-- wp:search {"label":"<?php esc_attr_e( 'Search', 'autonomie' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'Search…', 'autonomie' ); ?>","buttonText":"<?php esc_attr_e( 'Search', 'autonomie' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"className":"site-header-search navigation-overlay-search"} /-->
 
-		<!-- wp:navigation {"overlayMenu":"never","submenuVisibility":"always","showSubmenuIcon":false,"fontSize":"medium","className":"navigation-overlay-menu","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
+		<!-- wp:navigation {"overlayMenu":"never","submenuVisibility":"click","showSubmenuIcon":false,"fontSize":"medium","className":"navigation-overlay-menu","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
 			<!-- wp:page-list /-->
 		<!-- /wp:navigation -->
 	</div>
