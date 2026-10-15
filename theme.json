@@ -1045,19 +1045,6 @@
           "blockGap": "var(--wp--preset--spacing--40)"
         }
       },
-      "core/footnotes": {
-        "typography": {
-          "fontSize": "0.7rem"
-        },
-        "spacing": {
-          "margin": {
-            "top": "var(--wp--preset--spacing--60)"
-          },
-          "padding": {
-            "left": "0"
-          }
-        }
-      },
       "core/comment-author-name": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--sans-serif)",

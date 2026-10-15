@@ -198,9 +198,14 @@ a > code {
 	padding: 0;
 }
 
-/* Footnotes have no list indent (padding-left 0 in theme.json), so keep the
-   markers inside the text column instead of hanging into the margin. */
+/* Styled here instead of in theme.json, because core only prints a block's
+   theme.json styles when the block renders, and plugins (e.g. RSS Club) add
+   the footnotes list as plain markup. No list indent, so the markers stay
+   inside the text column instead of hanging into the margin. */
 .wp-block-footnotes {
+	margin-top: var(--wp--preset--spacing--60);
+	padding-left: 0;
+	font-size: 0.7rem;
 	list-style-position: inside;
 }
 
