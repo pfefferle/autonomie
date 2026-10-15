@@ -209,6 +209,25 @@ figure figcaption {
 	text-align: right;
 }
 
+/* A short centered rule, as in the classic theme. theme.json only reaches the
+   separator block, so plain <hr> tags from classic content are styled here. */
+hr {
+	width: 200px;
+	border: 0;
+	border-top: 1px solid var(--wp--preset--color--border-gray);
+}
+
+hr.is-style-wide,
+hr.is-style-dots {
+	width: auto;
+}
+
+/* The block gets its margin from theme.json; the layout's block gap would
+   win over a bare element selector. */
+hr:not(.wp-block-separator) {
+	margin: var(--wp--preset--spacing--78) auto;
+}
+
 .avatar {
 	border-radius: 50%;
 }
