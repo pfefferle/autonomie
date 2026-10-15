@@ -205,7 +205,7 @@ a > code {
 .wp-block-footnotes {
 	margin-top: var(--wp--preset--spacing--60);
 	padding-left: 0;
-	font-size: 0.7rem;
+	font-size: var(--wp--custom--meta--font-size);
 	list-style-position: inside;
 }
 
