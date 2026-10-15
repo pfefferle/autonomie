@@ -204,6 +204,21 @@ a > code {
 	list-style-position: inside;
 }
 
+.wp-block-footnotes li {
+	margin-inline-start: 0;
+	padding-inline-start: 0;
+}
+
+/* A short rule above the footnotes, like the one under the archive title.
+   Pseudo-elements can't be set in theme.json. */
+.wp-block-footnotes::before {
+	content: "";
+	display: block;
+	width: var(--wp--preset--spacing--70);
+	margin-bottom: var(--wp--preset--spacing--50);
+	border-top: 1px solid var(--wp--preset--color--border-gray);
+}
+
 /* Caption text-align can't be set in theme.json */
 figure figcaption {
 	text-align: right;
