@@ -296,6 +296,12 @@ hr:not(.wp-block-separator) {
 	top: var(--wp--preset--spacing--35);
 }
 
+/* The editor makes every block wrapper relative, so the avatar would anchor to
+   its own group instead of the comment. */
+.wp-block-comment-template .comment-body :is(.comment-meta, .comment-author) {
+	position: static;
+}
+
 /* The line runs behind the avatar down to the end of the comment ... */
 .wp-block-comment-template li:has(> ol) > .comment-body::after,
 .wp-block-comment-template ol > li > .comment-body::before {
@@ -597,7 +603,8 @@ hr:not(.wp-block-separator) {
 	margin-top: var(--wp--preset--spacing--40);
 }
 
-.post-reactions a::before {
+/* On the block class, so the icon shows wherever the block is inserted. */
+.wp-block-post-comments-link a::before {
 	content: "";
 	display: inline-block;
 	width: 1em;
