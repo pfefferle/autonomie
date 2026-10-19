@@ -12,5 +12,7 @@ build/*
 !build/poststats/**
 !build/colophon/
 !build/colophon/**
+!build/share/
+!build/share/**
 composer.lock
 package-lock.json

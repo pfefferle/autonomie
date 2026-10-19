@@ -1,0 +1,187 @@
+// Looks like the tag links next to it: meta typography, light gray, primary on hover.
+// The wrapper gets the meta line height too, so its line box matches the tags line.
+.wp-block-autonomie-share {
+	font-size: var(--wp--custom--meta--font-size);
+	line-height: var(--wp--custom--meta--line-height);
+}
+
+.wp-block-autonomie-share__button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3em;
+	padding: 0;
+	border: none;
+	background: none;
+	color: var(--wp--preset--color--light-gray);
+	font-family: var(--wp--preset--font-family--sans-serif);
+	font-size: var(--wp--custom--meta--font-size);
+	font-weight: var(--wp--custom--meta--font-weight);
+	line-height: var(--wp--custom--meta--line-height);
+	vertical-align: top;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		color: var(--wp--preset--color--primary);
+		text-decoration: underline;
+	}
+
+	svg {
+		flex: none;
+		width: 1.1em;
+		height: 1.1em;
+	}
+}
+
+// The dialog is a port of the ActivityPub plugin's modal (remote reply in the
+// comment section), so both look the same. A native <dialog> replaces the overlay div.
+.wp-block-autonomie-share__modal {
+	--autonomie-share-modal-background-color: var(--wp--preset--color--base, var(--wp--preset--color--background, #fff));
+	--autonomie-share-modal-border-color: var(--wp--preset--color--contrast-3, var(--wp--preset--color--light-gray, #e2e4e7));
+	--autonomie-share-modal-radius: var(--wp--custom--border--radius--medium, 8px);
+	--autonomie-share-modal-shadow: var(--wp--preset--shadow--natural, 0 5px 15px rgba(0, 0, 0, 0.3));
+
+	box-sizing: border-box;
+	max-width: min(660px, calc(100% - 2rem));
+	width: 100%;
+	padding: 0;
+	background-color: var(--autonomie-share-modal-background-color);
+	border: 1px solid var(--autonomie-share-modal-border-color);
+	border-radius: var(--autonomie-share-modal-radius);
+	box-shadow: var(--autonomie-share-modal-shadow);
+	color: var(--wp--preset--color--contrast, #1e1e1e);
+	font-size: inherit;
+	overflow: hidden;
+	flex-direction: column;
+	max-height: calc(100vh - 2rem);
+	animation: autonomie-share-modal-appear 0.2s ease-out;
+
+	&[open] {
+		display: flex;
+	}
+
+	&::backdrop {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.wp-block-autonomie-share__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 2rem 1.5rem 2rem;
+	border-bottom: 1px solid var(--autonomie-share-modal-border-color);
+	flex-shrink: 0;
+
+	.wp-block-autonomie-share__close {
+		background: transparent;
+		border: none;
+		padding: 0.5rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		border-radius: var(--autonomie-share-modal-radius);
+		color: inherit;
+
+		&:active {
+			border: none;
+			padding: 0.5rem;
+		}
+	}
+}
+
+.wp-block-autonomie-share__title {
+	margin: 0 !important;
+	font-size: 130%;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.wp-block-autonomie-share__content {
+	overflow-y: auto;
+}
+
+.wp-block-autonomie-share__section {
+	padding: 1.5rem 2rem;
+	border-bottom: 1px solid var(--autonomie-share-modal-border-color, var(--wp--preset--color--light-gray, #f0f0f0));
+
+	&:last-child {
+		border-bottom: none;
+		padding-bottom: 2rem;
+	}
+
+	h4 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 110%;
+	}
+}
+
+.wp-block-autonomie-share__description {
+	margin-bottom: 1rem;
+	color: inherit;
+}
+
+.wp-block-autonomie-share__button-group {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 0.5rem;
+	gap: 0.5rem;
+
+	input[type],
+	textarea {
+		flex: 1;
+		min-width: 0;
+		margin: 0;
+		font-size: 1em;
+		font-family: inherit;
+		line-height: 1;
+		padding: calc(0.667em + 2px) !important;
+		border: 1px solid var(--autonomie-share-modal-border-color, #949494) !important;
+		background-color: var(--autonomie-share-modal-background-color, #fff) !important;
+		color: inherit !important;
+		box-sizing: border-box;
+		border-radius: 0;
+	}
+
+	// The citation runs over several lines, and the global form styles cap textareas at 90%.
+	textarea {
+		max-width: none;
+		line-height: inherit;
+		resize: vertical;
+
+		+ button {
+			align-self: flex-start;
+		}
+	}
+
+	button {
+		min-width: 22.5%;
+		width: auto;
+		padding: calc(0.667em + 2px) 1.5em;
+		font-size: 1em;
+		font-family: inherit;
+		line-height: 1;
+		background-color: var(--wp--preset--color--contrast, #1e1e1e);
+		color: var(--wp--preset--color--base, #fff);
+		border: none;
+		cursor: pointer;
+		box-sizing: border-box;
+	}
+}
+
+@keyframes autonomie-share-modal-appear {
+
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

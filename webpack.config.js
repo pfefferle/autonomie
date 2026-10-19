@@ -43,6 +43,14 @@ filteredPlugins.push(
 				from: 'src/colophon/block.json',
 				to: 'colophon/block.json',
 			},
+			{
+				from: 'src/share/*.php',
+				to: 'share/[name][ext]',
+			},
+			{
+				from: 'src/share/block.json',
+				to: 'share/block.json',
+			},
 		],
 	} )
 );
@@ -69,6 +77,16 @@ module.exports = {
 			process.cwd(),
 			'src/colophon',
 			'index.js'
+		),
+		'share/index': path.resolve(
+			process.cwd(),
+			'src/share',
+			'index.js'
+		),
+		'share/view': path.resolve(
+			process.cwd(),
+			'src/share',
+			'view.js'
 		),
 	},
 	output: {

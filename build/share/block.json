@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "autonomie/share",
+  "title": "Share",
+  "category": "theme",
+  "icon": "share",
+  "description": "A share button that opens a dialog with the permalink, shortlink and a citation to copy.",
+  "keywords": [
+    "share",
+    "cite",
+    "permalink",
+    "shortlink",
+    "indieweb"
+  ],
+  "textdomain": "autonomie",
+  "usesContext": [
+    "postId"
+  ],
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

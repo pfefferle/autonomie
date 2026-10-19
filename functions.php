@@ -196,6 +196,9 @@ function autonomie_register_blocks() {
 	// Register the colophon block: software, plugins, fonts, standards and feeds.
 	register_block_type_from_metadata( __DIR__ . '/build/colophon' );
 
+	// Register the share block: a button that opens a dialog with links and a citation to copy.
+	register_block_type_from_metadata( __DIR__ . '/build/share' );
+
 	// Dynamic block: renders the first video/embed extracted from the post content
 	// Register a minimal editor script so the Site Editor recognizes the block
 	wp_register_script(
