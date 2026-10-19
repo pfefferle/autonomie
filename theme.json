@@ -1178,6 +1178,16 @@
       "area": "uncategorized"
     },
     {
+      "name": "post-footer",
+      "title": "Post Footer",
+      "area": "uncategorized"
+    },
+    {
+      "name": "post-navigation",
+      "title": "Post Navigation",
+      "area": "uncategorized"
+    },
+    {
       "name": "query-loop",
       "title": "Query Loop",
       "area": "uncategorized"
