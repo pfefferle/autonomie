@@ -533,6 +533,35 @@ hr:not(.wp-block-separator) {
 	color: var(--wp--preset--color--light-gray);
 }
 
+/* Tags as hashtag chips, like Mastodon's hashtag bar: a "#" in front, a light
+   background and no comma between them. The gap replaces the separator. */
+.wp-block-post-terms.taxonomy-post_tag {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4em;
+}
+
+.wp-block-post-terms.taxonomy-post_tag .wp-block-post-terms__separator {
+	display: none;
+}
+
+.wp-block-post-terms.taxonomy-post_tag a {
+	padding: 0.25em 0.75em;
+	border-radius: 0.3em;
+	background: var(--wp--preset--color--very-light-gray);
+	font-weight: 500;
+}
+
+.wp-block-post-terms.taxonomy-post_tag a:hover,
+.wp-block-post-terms.taxonomy-post_tag a:focus {
+	background: var(--wp--preset--color--border-gray);
+	text-decoration: none;
+}
+
+.wp-block-post-terms.taxonomy-post_tag a::before {
+	content: "#";
+}
+
 /* ==========================================================================
    Featured Image
    ========================================================================== */
