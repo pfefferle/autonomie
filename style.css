@@ -604,6 +604,20 @@ hr:not(.wp-block-separator) {
 }
 
 /* ==========================================================================
+   Video Block
+   Core scales videos to the full width, so portrait videos grow taller than
+   the screen. Fit them into the viewport height instead.
+   ========================================================================== */
+
+.wp-block-video video {
+	display: block;
+	width: auto;
+	max-width: 100%;
+	max-height: 85svh;
+	margin-inline: auto;
+}
+
+/* ==========================================================================
    Post Format: Video
    YouTube/Vimeo-inspired — video first, title + meta below
    ========================================================================== */
