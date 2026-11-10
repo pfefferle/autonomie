@@ -799,7 +799,7 @@
         "elements": {
           "link": {
             "color": {
-              "text": "var(--wp--preset--color--dark-gray)"
+              "text": "var(--wp--preset--color--contrast)"
             },
             "typography": {
               "textDecoration": "none"
