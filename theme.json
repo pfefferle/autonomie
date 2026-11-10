@@ -813,7 +813,7 @@
         "elements": {
           "link": {
             "color": {
-              "text": "var(--wp--preset--color--primary)"
+              "text": "var(--wp--preset--color--contrast)"
             },
             "typography": {
               "textDecoration": "underline",
