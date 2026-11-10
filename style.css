@@ -40,6 +40,7 @@ body {
 
 .wp-site-blocks > main {
 	flex-grow: 1;
+	margin-bottom: var(--wp--preset--spacing--80);
 }
 
 h1, h2, h3, h4, h5, h6, caption, figcaption {
@@ -791,6 +792,27 @@ input[type="search"]:not(.wp-block-search__input) {
 	max-width: none;
 	margin-inline: 0;
 	translate: -50%;
+}
+
+/* Page numbers with some room between them. The current page is a bold chip,
+   like the tags, so it stands out from the linked numbers. */
+.wp-block-query-pagination-numbers {
+	display: inline-flex;
+	gap: 0.4em;
+}
+
+.wp-block-query-pagination .page-numbers {
+	display: inline-block;
+	box-sizing: border-box;
+	min-width: 2em;
+	padding: 0.25em 0.5em;
+	border-radius: 0.3em;
+	text-align: center;
+}
+
+.wp-block-query-pagination .page-numbers.current {
+	background: var(--wp--preset--color--very-light-gray);
+	font-weight: 700;
 }
 
 /* ==========================================================================

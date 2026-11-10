@@ -661,7 +661,7 @@
         },
         "spacing": {
           "margin": {
-            "top": "var(--wp--preset--spacing--60)"
+            "top": "var(--wp--preset--spacing--100)"
           }
         },
         "elements": {
@@ -823,7 +823,7 @@
             },
             ":hover": {
               "typography": {
-                "textDecorationColor": "var(--wp--preset--color--usc-gold)"
+                "textDecoration": "none"
               }
             }
           }
