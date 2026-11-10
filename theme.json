@@ -606,11 +606,8 @@
               "textDecoration": "none"
             },
             ":hover": {
-              "color": {
-                "text": "var(--wp--preset--color--primary)"
-              },
               "typography": {
-                "textDecoration": "none"
+                "textDecoration": "underline"
               }
             }
           }
@@ -704,8 +701,8 @@
               "textDecoration": "none"
             },
             ":hover": {
-              "color": {
-                "text": "var(--wp--preset--color--primary)"
+              "typography": {
+                "textDecoration": "underline"
               }
             }
           }
@@ -852,9 +849,6 @@
               "textDecoration": "none"
             },
             ":hover": {
-              "color": {
-                "text": "var(--wp--preset--color--primary)"
-              },
               "typography": {
                 "textDecoration": "underline"
               }
@@ -882,9 +876,6 @@
               "textDecoration": "none"
             },
             ":hover": {
-              "color": {
-                "text": "var(--wp--preset--color--primary)"
-              },
               "typography": {
                 "textDecoration": "underline"
               }
@@ -912,9 +903,6 @@
               "textDecoration": "none"
             },
             ":hover": {
-              "color": {
-                "text": "var(--wp--preset--color--primary)"
-              },
               "typography": {
                 "textDecoration": "underline"
               }
@@ -1064,9 +1052,6 @@
               "textDecoration": "none"
             },
             ":hover": {
-              "color": {
-                "text": "var(--wp--preset--color--primary)"
-              },
               "typography": {
                 "textDecoration": "underline"
               }
