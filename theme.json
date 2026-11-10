@@ -14,7 +14,7 @@
         {
           "name": "Contrast",
           "slug": "contrast",
-          "color": "light-dark(#373d3f, #ffffff)"
+          "color": "light-dark(#1f2426, #ffffff)"
         },
         {
           "name": "Primary",
@@ -815,6 +815,9 @@
       "core/post-content": {
         "elements": {
           "link": {
+            "color": {
+              "text": "var(--wp--preset--color--primary)"
+            },
             "typography": {
               "textDecoration": "underline",
               "textDecorationColor": "var(--wp--preset--color--android-green)",
