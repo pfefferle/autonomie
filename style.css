@@ -85,11 +85,11 @@ blockquote {
    content) get the same look here. */
 :where(blockquote:not(.wp-block-quote, .wp-block-pullquote blockquote, .wp-block-comment-content blockquote)) {
 	box-sizing: border-box;
-	padding-left: var(--wp--preset--spacing--78);
+	padding-left: var(--wp--preset--spacing--70);
 	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--serif);
 	font-weight: 500;
-	font-size: var(--wp--preset--font-size--large);
+	font-size: 1.35rem;
 	line-height: 1.4;
 }
 
@@ -112,9 +112,9 @@ blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockqu
 blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockquote)::before {
 	content: "";
 	position: absolute;
-	top: 0.3em;
+	top: 0.25em;
 	left: 0;
-	width: var(--wp--preset--spacing--60);
+	width: var(--wp--preset--spacing--50);
 	aspect-ratio: 81 / 75;
 	background-color: var(--wp--preset--color--primary);
 	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 81 75'%3E%3Cpath d='M46.5537 74.5643C54.3389 72.8986 60.9844 69.8213 66.5077 65.3326C72.0222 60.8438 75.7394 55.8202 77.6419 50.2619C79.2288 45.4136 80.1844 38.0756 80.5 28.2213V0H45.9575V34.4109H64.6578C64.6578 40.6794 63.9038 45.5715 62.3959 49.0608C59.6956 55.1715 54.4178 59.3446 46.5537 61.5714V74.5643ZM1.09617 74.5643C8.7148 72.3375 14.3959 70.0405 18.1307 67.6558C24.4869 63.5265 29.1685 57.5298 32.1844 49.6657C34.008 44.5808 34.9636 37.4356 35.0425 28.2213V0H0.5V34.4109H19.2003C19.2003 42.8274 17.8501 48.903 15.1499 52.6377C12.4496 56.3725 7.76795 59.3446 1.09617 61.5714V74.5643Z'/%3E%3C/svg%3E") no-repeat center / contain;
@@ -129,7 +129,7 @@ blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockqu
 	}
 
 	blockquote:not(.wp-block-pullquote blockquote, .wp-block-comment-content blockquote)::before {
-		left: calc(-1 * var(--wp--preset--spacing--78));
+		left: calc(-1 * var(--wp--preset--spacing--70));
 	}
 }
 
