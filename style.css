@@ -91,7 +91,7 @@ blockquote {
 	font-family: var(--wp--preset--font-family--serif);
 	font-weight: 500;
 	font-size: 1.35rem;
-	line-height: 1.4;
+	line-height: 1.6;
 }
 
 /* Comments keep the text size and a left line instead of the large mark. */
@@ -101,7 +101,7 @@ blockquote {
 	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--serif);
 	font-weight: 500;
-	line-height: 1.4;
+	line-height: 1.6;
 }
 
 /* Large quotation mark in the indent, drawn as a mask so it takes the accent
