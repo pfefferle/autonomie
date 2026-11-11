@@ -912,24 +912,29 @@
       },
       "core/quote": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serif)",
-          "fontWeight": "500",
-          "fontSize": "calc(1.35rem)",
           "lineHeight": "1.6"
         },
         "color": {
           "text": "var(--wp--preset--color--contrast)"
         },
         "spacing": {
-          "blockGap": "var(--wp--preset--spacing--35)",
+          "blockGap": "var(--wp--preset--spacing--40)",
           "padding": {
-            "left": "var(--wp--preset--spacing--70)",
-            "top": "0",
-            "bottom": "0"
+            "top": "var(--wp--preset--spacing--40)",
+            "right": "var(--wp--preset--spacing--55)",
+            "bottom": "var(--wp--preset--spacing--40)",
+            "left": "var(--wp--preset--spacing--55)"
           },
           "margin": {
             "top": "var(--wp--preset--spacing--50)",
             "bottom": "var(--wp--preset--spacing--50)"
+          }
+        },
+        "border": {
+          "left": {
+            "style": "solid",
+            "color": "currentColor",
+            "width": "2px"
           }
         }
       },
