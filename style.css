@@ -242,13 +242,16 @@ a > code {
 
 	/* Captions go into the same margin, next to the top of their figure. Only
 	   for figures at the width of the content column: wide, full and floated
-	   ones have no free margin next to them, and the table block scrolls
-	   sideways, so a caption outside of it would be cut off. */
-	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter):has(> figcaption) {
+	   ones have no free margin next to them. The table block scrolls sideways,
+	   which would cut off a caption outside of it, so only tables with fixed
+	   cells take part: they never get wider than the column and don't need to
+	   scroll. */
+	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-block-table:has(> table.has-fixed-layout)):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter):has(> figcaption) {
 		position: relative;
+		overflow: visible;
 	}
 
-	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter) > figcaption {
+	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-block-table:has(> table.has-fixed-layout)):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter) > figcaption {
 		position: absolute;
 		top: 0;
 		left: calc(100% + var(--wp--preset--spacing--55));
