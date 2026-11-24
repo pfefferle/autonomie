@@ -90,6 +90,9 @@ blockquote {
 	border-left: 2px solid currentColor;
 	color: var(--wp--preset--color--contrast);
 	line-height: 1.6;
+	font-family: var(--wp--preset--font-family--serif);
+	font-style: italic;
+	font-weight: 300;
 }
 
 /* The padding already spaces the content, like core does for the quote block. */
@@ -111,15 +114,34 @@ blockquote small {
 	text-align: left;
 }
 
-/* Small sans-serif source line under the quote. */
+/* The margin stays here: inside quote blocks with a block gap, the gap wins. */
 blockquote :is(cite, small) {
 	display: block;
 	margin-top: var(--wp--preset--spacing--30);
+}
+
+/* Small sans-serif source line under the quote. Quote and pullquote blocks get
+   it from theme.json (elements.cite); this covers bare blockquotes and <small>. */
+:where(blockquote:not(.wp-block-quote, .wp-block-pullquote blockquote)) :is(cite, small),
+blockquote small {
 	font-family: var(--wp--preset--font-family--sans-serif);
 	font-size: var(--wp--preset--font-size--small);
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.3;
+}
+
+/* Epigraph, as in Tufte's books: the quote style comes from theme.json, the
+   source set apart on the right can't be set there. */
+.wp-block-quote.is-style-epigraph :is(cite, small) {
+	text-align: right;
+}
+
+/* New thought: a section opens with its first line in small caps instead of
+   a heading. The space above comes from theme.json. */
+p.is-style-newthought::first-line {
+	font-variant: small-caps;
+	letter-spacing: 0.05em;
 }
 
 /* Wide pullquotes keep the source line in the content column. */
@@ -225,18 +247,8 @@ hr:not(.wp-block-separator) {
    Comment titles, reply form title
    ========================================================================== */
 
-#comments,
-#reply-title {
-	padding: 0;
-	font-size: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
-	font-weight: 300;
-	line-height: 1.25;
-}
-
-#comments {
-	margin: 0 0 var(--wp--preset--spacing--60) 0;
-}
-
+/* The comments title and the reply title get their type from theme.json. Core
+   resets the reply title's bottom margin with a selector theme.json can't beat. */
 #reply-title {
 	margin: 0 0 var(--wp--preset--spacing--40) 0;
 }
@@ -610,10 +622,6 @@ hr:not(.wp-block-separator) {
    Post Reactions Link (archive/homepage)
    ========================================================================== */
 
-.post-reactions {
-	margin-top: var(--wp--preset--spacing--40);
-}
-
 /* On the block class, so the icon shows wherever the block is inserted. */
 .wp-block-post-comments-link a::before {
 	content: "";
@@ -641,45 +649,70 @@ hr:not(.wp-block-separator) {
    Tables
    ========================================================================== */
 
-table {
-	border-collapse: separate;
-	border-spacing: 0;
-	table-layout: fixed;
+/* Three rules, as in Tufte's books: above the table, under the head and
+   below the table. No lines between rows, no stripes. The calendar block keeps its own grid. The cell rules
+   are one class more specific than core's .wp-block-table td, so the order
+   of the stylesheets doesn't matter, and borders set on a table block in
+   the editor still win. */
+table:not(.wp-calendar-table) {
+	border-collapse: collapse;
+	border-block: 1px solid currentColor;
 	width: 100%;
+	font-size: var(--wp--custom--meta--font-size);
 }
 
-table th {
-	font-weight: bold;
+table:not(.wp-calendar-table) thead {
+	border: 0;
+	border-bottom: 1px solid currentColor;
 }
 
-table thead th {
-	vertical-align: bottom;
+table:not(.wp-calendar-table) tfoot {
+	border: 0;
+	border-top: 1px solid currentColor;
 }
 
-table th,
-table td {
-	border-top: 1px solid var(--wp--preset--color--border-gray);
-	padding: 10px;
+table:not(.wp-calendar-table) tbody + tbody {
+	border-top: 1px solid currentColor;
+}
+
+table:not(.wp-calendar-table) :is(th, td) {
+	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--35);
+	border: 0;
+	line-height: 1.4;
 	text-align: left;
 	vertical-align: top;
 }
 
-table caption + thead tr:first-child th,
-table caption + thead tr:first-child td,
-table colgroup + thead tr:first-child th,
-table colgroup + thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-	border-top: 0;
+table:not(.wp-calendar-table) th {
+	font-weight: bold;
 }
 
-table tbody + tbody {
-	border-top: 2px solid var(--wp--preset--color--border-gray);
+table:not(.wp-calendar-table) thead th {
+	vertical-align: bottom;
 }
 
-table tbody tr:nth-child(odd) td,
-table tbody tr:nth-child(odd) th {
-	background-color: var(--wp--preset--color--background-gray);
+/* Flush with the text column. */
+table:not(.wp-calendar-table) :is(th, td):first-child {
+	padding-left: 0;
+}
+
+table:not(.wp-calendar-table) :is(th, td):last-child {
+	padding-right: 0;
+}
+
+/* The "Stripes" style keeps its rows. Core paints them #f0f0f0, which turns
+   white text unreadable in dark mode, and adds a second rule under the
+   caption. Striped rows need the outer cell padding back. */
+.wp-block-table.is-style-stripes table tbody tr:nth-child(odd) {
+	background-color: var(--wp--preset--color--very-light-gray);
+}
+
+figure.wp-block-table.is-style-stripes {
+	border-bottom: 0;
+}
+
+.wp-block-table.is-style-stripes table :is(th, td):is(:first-child, :last-child) {
+	padding-inline: var(--wp--preset--spacing--35);
 }
 
 /* ==========================================================================

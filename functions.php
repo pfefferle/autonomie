@@ -234,6 +234,30 @@ function autonomie_register_blocks() {
 add_action( 'init', 'autonomie_register_blocks' );
 
 /**
+ * Register block styles taken from Edward Tufte's books: an epigraph for the
+ * quote block and a "new thought" opening line for paragraphs. The styles
+ * themselves live in style.css.
+ */
+function autonomie_register_block_styles() {
+	register_block_style(
+		'core/quote',
+		array(
+			'name'  => 'epigraph',
+			'label' => __( 'Epigraph', 'autonomie' ),
+		)
+	);
+
+	register_block_style(
+		'core/paragraph',
+		array(
+			'name'  => 'newthought',
+			'label' => __( 'New thought', 'autonomie' ),
+		)
+	);
+}
+add_action( 'init', 'autonomie_register_block_styles' );
+
+/**
  * Extract the first video/embed block from a video format post.
  *
  * Uses the block parser to find the first core/embed or core/video block.
