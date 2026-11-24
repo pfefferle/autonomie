@@ -51,6 +51,23 @@ p, ul, ol, blockquote {
 	text-wrap: pretty;
 }
 
+/* Headings in classic content get the same space above as heading blocks,
+   which get it from theme.json. theme.json can't reach them: in the content
+   the layout's block gap wins over its element styles. */
+.wp-block-post-content > :is(h1, h2, h3, h4, h5, h6):not(.wp-block-heading):not(:first-child) {
+	margin-block-start: var(--wp--preset--spacing--70);
+}
+
+/* Bare lists from classic content look like list blocks, which get their
+   indent and item spacing from theme.json. */
+.wp-block-post-content :is(ul, ol):not([class]) {
+	padding-left: var(--wp--preset--spacing--50);
+}
+
+.wp-block-post-content :is(ul, ol):not([class]) > li:not(:first-child) {
+	margin-top: 0.25rem;
+}
+
 ::selection {
 	background: light-dark(#b3d4fc, #3a6fa0);
 	color: light-dark(#000, #fff);
@@ -256,7 +273,9 @@ a > code {
    anchor positioning. Only when the browser supports it and only for list
    entries with an anchor; otherwise, and in the editor, the list stays at
    the end. A note starts next to its reference, or below the note before it
-   when their references are close together. */
+   when their references are close together. Where the reference can't be
+   an anchor (Firefox, inside a "New thought" paragraph), the note starts next
+   to the paragraph instead. */
 @supports (anchor-name: --a) {
 	@media (min-width: 1240px) {
 		.wp-block-post-content:has(.wp-block-footnotes li[style*="position-anchor"]) {
@@ -265,11 +284,18 @@ a > code {
 
 		.wp-block-footnotes li[style*="position-anchor"] {
 			position: absolute;
-			top: max(anchor(top), calc(anchor(var(--fn-previous, --fn-none) bottom, calc(-1 * var(--wp--preset--spacing--35))) + var(--wp--preset--spacing--35)));
+			top: max(anchor(top, anchor(var(--fn-block, --fn-none) top)), calc(anchor(var(--fn-previous, --fn-none) bottom, calc(-1 * var(--wp--preset--spacing--35))) + var(--wp--preset--spacing--35)));
 			left: calc(50% + var(--wp--style--global--content-size) / 2 + var(--wp--preset--spacing--55));
 			width: 13.75rem;
 			margin: 0;
 			line-height: var(--wp--custom--meta--line-height);
+			list-style: none;
+		}
+
+		/* The note's own number instead of the list counter, which browsers
+		   count differently for positioned items. */
+		.wp-block-footnotes li[style*="position-anchor"]::before {
+			content: attr(data-fn-number) ". ";
 		}
 
 		/* The list itself is empty there, so no rule and no space for it. */
@@ -286,19 +312,15 @@ a > code {
 /* Captions go into the right margin on wide screens, where there is room
    next to the content column. Media queries can't be set in theme.json. */
 @media (min-width: 1240px) {
-	/* Captions sit next to the top of their figure,
-	   at the edge of the content column, also for narrower centered figures
-	   like classic captions. Wide, full and floated figures have no free
-	   margin next to them. The table block scrolls sideways,
-	   which would cut off a caption outside of it, so only tables with fixed
-	   cells take part: they never get wider than the column and don't need to
-	   scroll. */
-	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-block-table:has(> table.has-fixed-layout), .wp-caption):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter):has(> figcaption) {
+	/* Captions sit next to the top of their figure, at the edge of the content
+	   column, also for narrower centered figures like classic captions. Wide,
+	   full and floated figures have no free margin next to them. Table
+	   captions stay below the table. */
+	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-caption):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter):has(> figcaption) {
 		position: relative;
-		overflow: visible;
 	}
 
-	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-block-table:has(> table.has-fixed-layout), .wp-caption):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter) > figcaption {
+	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-caption):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter) > figcaption {
 		position: absolute;
 		top: 0;
 		left: calc(50% + var(--wp--style--global--content-size) / 2 + var(--wp--preset--spacing--55));

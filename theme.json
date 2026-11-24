@@ -827,6 +827,20 @@
           }
         }
       },
+      "core/list": {
+        "spacing": {
+          "padding": {
+            "left": "var(--wp--preset--spacing--50)"
+          }
+        }
+      },
+      "core/list-item": {
+        "spacing": {
+          "margin": {
+            "top": "0.25rem"
+          }
+        }
+      },
       "core/post-title": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--serif)",

@@ -22,18 +22,37 @@ function autonomie_render_block_post_content_sidenotes( $block_content ) {
 		return $block_content;
 	}
 
-	$anchor    = function ( $id ) {
+	$anchor     = function ( $id ) {
 		return '--fn-' . preg_replace( '/[^a-zA-Z0-9_-]/', '', $id );
 	};
+	$containers = array( 'P', 'LI', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'BLOCKQUOTE', 'FIGCAPTION', 'TD', 'TH', 'DT', 'DD' );
+
+	// The references in the text, and the paragraph (or list item, heading,
+	// cell) each one is in. That one is an anchor too: Firefox doesn't accept a
+	// reference inside a paragraph styled with ::first-line (the "New thought"
+	// style) as an anchor, then the note starts next to the paragraph instead.
 	$processor = new WP_HTML_Tag_Processor( $block_content );
 	$ids       = array();
+	$blocks    = array();
+	$container = 0;
 
-	// The references in the text.
-	while ( $processor->next_tag( 'sup' ) ) {
+	while ( $processor->next_tag() ) {
+		$tag = $processor->get_tag();
+
+		if ( in_array( $tag, $containers, true ) ) {
+			++$container;
+			continue;
+		}
+
+		if ( 'SUP' !== $tag ) {
+			continue;
+		}
+
 		$id = $processor->get_attribute( 'data-fn' );
 
 		if ( is_string( $id ) && '' !== $id ) {
-			$ids[ $id ] = true;
+			$ids[ $id ]              = $container;
+			$blocks[ $container ][] = $anchor( 'p-' . $id );
 			$processor->set_attribute( 'style', 'anchor-name:' . $anchor( $id ) );
 		}
 	}
@@ -42,23 +61,43 @@ function autonomie_render_block_post_content_sidenotes( $block_content ) {
 		return $block_content;
 	}
 
-	// The entries in the footnotes list, which comes after the text. Each one
-	// is an anchor too and knows the one before it, so style.css can start a
-	// note below the previous one when their references are close together.
+	// The containers of the references, and the entries in the footnotes list,
+	// which comes after the text. Each entry is an anchor too and knows the one
+	// before it, so style.css can start a note below the previous one when
+	// their references are close together. The number is written out too:
+	// browsers don't agree on the list counter of absolutely positioned list
+	// items (Firefox keeps counting across lists).
 	$processor = new WP_HTML_Tag_Processor( $processor->get_updated_html() );
+	$container = 0;
 	$previous  = '';
+	$number    = 0;
 
-	while ( $processor->next_tag( 'li' ) ) {
-		$id = $processor->get_attribute( 'id' );
+	while ( $processor->next_tag() ) {
+		$tag = $processor->get_tag();
+
+		if ( ! in_array( $tag, $containers, true ) ) {
+			continue;
+		}
+
+		++$container;
+
+		if ( isset( $blocks[ $container ] ) ) {
+			$style = trim( (string) $processor->get_attribute( 'style' ), '; ' );
+			$style = ( $style ? $style . ';' : '' ) . 'anchor-name:' . implode( ',', $blocks[ $container ] );
+			$processor->set_attribute( 'style', $style );
+		}
+
+		$id = 'LI' === $tag ? $processor->get_attribute( 'id' ) : null;
 
 		if ( is_string( $id ) && isset( $ids[ $id ] ) ) {
-			$style = 'position-anchor:' . $anchor( $id ) . ';anchor-name:' . $anchor( 'note-' . $id );
+			$style = 'position-anchor:' . $anchor( $id ) . ';anchor-name:' . $anchor( 'note-' . $id ) . ';--fn-block:' . $anchor( 'p-' . $id );
 
 			if ( $previous ) {
 				$style .= ';--fn-previous:' . $anchor( 'note-' . $previous );
 			}
 
 			$processor->set_attribute( 'style', $style );
+			$processor->set_attribute( 'data-fn-number', (string) ++$number );
 			$previous = $id;
 		}
 	}
