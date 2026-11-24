@@ -1,17 +1,20 @@
 /*
  * Postgraph - GitHub-style contribution graph.
  *
- * Colors can be overridden by themes via the --postgraph-level-* custom properties.
+ * Colors can be overridden via the --postgraph-level-* custom properties. By
+ * default they come from the theme palette: empty days are barely there, days
+ * with posts use four strengths of the primary color. The palette colors are
+ * light-dark() values, so they follow the color scheme.
  */
 .wp-block-autonomie-postgraph {
 	--postgraph-cell: 11px;
 	--postgraph-gap: 3px;
-	--postgraph-radius: 2px;
-	--postgraph-level-0: #eff2f5;
-	--postgraph-level-1: #aceebb;
-	--postgraph-level-2: #4ac26b;
-	--postgraph-level-3: #2da44e;
-	--postgraph-level-4: #116329;
+	--postgraph-radius: 0;
+	--postgraph-level-0: color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent);
+	--postgraph-level-1: color-mix(in srgb, var(--wp--preset--color--primary) 30%, transparent);
+	--postgraph-level-2: color-mix(in srgb, var(--wp--preset--color--primary) 55%, transparent);
+	--postgraph-level-3: color-mix(in srgb, var(--wp--preset--color--primary) 80%, transparent);
+	--postgraph-level-4: var(--wp--preset--color--primary);
 	--postgraph-step: calc(var(--postgraph-cell) + var(--postgraph-gap));
 
 	display: grid;
@@ -23,23 +26,13 @@
 	line-height: 1;
 }
 
-/* Dark palette, either always or, unless forced light, following the visitor's system setting. */
-.wp-block-autonomie-postgraph.is-style-dark {
-	--postgraph-level-0: #151b23;
-	--postgraph-level-1: #033a16;
-	--postgraph-level-2: #196c2e;
-	--postgraph-level-3: #2ea043;
-	--postgraph-level-4: #56d364;
+/* The light and dark styles fix the color scheme, the default follows the page. */
+.wp-block-autonomie-postgraph.is-style-light {
+	color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-	.wp-block-autonomie-postgraph:not(.is-style-light) {
-		--postgraph-level-0: #151b23;
-		--postgraph-level-1: #033a16;
-		--postgraph-level-2: #196c2e;
-		--postgraph-level-3: #2ea043;
-		--postgraph-level-4: #56d364;
-	}
+.wp-block-autonomie-postgraph.is-style-dark {
+	color-scheme: dark;
 }
 
 .wp-block-autonomie-postgraph .postgraph__body {
@@ -98,8 +91,6 @@
 	width: var(--postgraph-cell);
 	height: var(--postgraph-cell);
 	border-radius: var(--postgraph-radius);
-	outline: 1px solid rgb(31 35 40 / 5%);
-	outline-offset: -1px;
 	background: var(--postgraph-level-0);
 }
 
