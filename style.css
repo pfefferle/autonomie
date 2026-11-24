@@ -58,12 +58,8 @@ p, ul, ol, blockquote {
 	margin-block-start: var(--wp--preset--spacing--70);
 }
 
-/* Bare lists from classic content look like list blocks, which get their
-   indent and item spacing from theme.json. */
-.wp-block-post-content :is(ul, ol):not([class]) {
-	padding-left: var(--wp--preset--spacing--50);
-}
-
+/* Bare lists from classic content get the item spacing of list blocks, which
+   get it from theme.json. */
 .wp-block-post-content :is(ul, ol):not([class]) > li:not(:first-child) {
 	margin-top: 0.25rem;
 }
@@ -168,10 +164,12 @@ p.is-style-newthought::first-line {
 	letter-spacing: 0.05em;
 }
 
-/* Wide pullquotes keep the source line in the content column. */
+/* Wide pullquotes keep the source line in the content column, aligned like
+   the quote above it (centered, unless set otherwise in the editor). */
 .wp-block-pullquote :is(cite, small) {
 	max-width: var(--wp--style--global--content-size);
 	margin-inline: auto;
+	text-align: inherit;
 }
 
 /* Inline code: theme.json has no code element, so style it here. A light chip
@@ -312,17 +310,18 @@ a > code {
 /* Captions go into the right margin on wide screens, where there is room
    next to the content column. Media queries can't be set in theme.json. */
 @media (min-width: 1240px) {
-	/* Captions sit next to the top of their figure, at the edge of the content
-	   column, also for narrower centered figures like classic captions. Wide,
-	   full and floated figures have no free margin next to them. Table
-	   captions stay below the table. */
+	/* Captions sit next to the bottom of their figure, at the edge of the
+	   content column, also for narrower centered figures like classic
+	   captions. At the bottom, they stay clear of a footnote from the text
+	   just above the figure. Wide, full and floated figures have no free
+	   margin next to them. Table captions stay below the table. */
 	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-caption):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter):has(> figcaption) {
 		position: relative;
 	}
 
 	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery, .wp-caption):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter) > figcaption {
 		position: absolute;
-		top: 0;
+		bottom: 0;
 		left: calc(50% + var(--wp--style--global--content-size) / 2 + var(--wp--preset--spacing--55));
 		width: 13.75rem;
 		margin: 0;
@@ -344,9 +343,15 @@ a > code {
 	max-width: 100%;
 }
 
+/* As a block, so no line gap sits between the image and its caption. */
+.wp-caption img {
+	display: block;
+}
+
 /* Captions from classic content ([caption] shortcode) look like block
    captions; theme.json's caption element only reaches the block markup. */
 .wp-caption-text {
+	margin-top: 0.5em;
 	color: var(--wp--preset--color--light-gray);
 	font-size: 0.7em;
 	font-style: normal;
@@ -788,11 +793,14 @@ hr:not(.wp-block-separator) {
    Tables
    ========================================================================== */
 
-/* Three rules, as in Tufte's books: above the table, under the head and
-   below the table. No lines between rows, no stripes. The calendar block keeps its own grid. The cell rules
-   are one class more specific than core's .wp-block-table td, so the order
-   of the stylesheets doesn't matter, and borders set on a table block in
-   the editor still win. */
+/* Tables as in Tufte's books: three rules, strong above and below the table,
+   light under the head (and above a footer). No lines between rows, no bold
+   head. Numbers line up when their column is aligned right in
+   the editor, so header cells only get a start alignment when the editor
+   didn't set one. The calendar block keeps its own grid. The cell rules are
+   one class more specific than core's .wp-block-table td, so the order of
+   the stylesheets doesn't matter, and borders set on a table block in the
+   editor still win. */
 table:not(.wp-calendar-table) {
 	border-collapse: collapse;
 	border-block: 1px solid currentColor;
@@ -800,30 +808,38 @@ table:not(.wp-calendar-table) {
 	font-size: var(--wp--custom--meta--font-size);
 }
 
+/* Bare tables from classic content get the space of table blocks, which
+   get it from theme.json. */
+.wp-block-post-content > table {
+	margin-block: var(--wp--preset--spacing--60);
+}
+
+table:not(.wp-calendar-table) :is(thead, tfoot) {
+	border: 0;
+}
+
 table:not(.wp-calendar-table) thead {
-	border: 0;
-	border-bottom: 1px solid currentColor;
+	border-bottom: 1px solid var(--wp--preset--color--border-gray);
 }
 
-table:not(.wp-calendar-table) tfoot {
-	border: 0;
-	border-top: 1px solid currentColor;
-}
-
+table:not(.wp-calendar-table) tfoot,
 table:not(.wp-calendar-table) tbody + tbody {
-	border-top: 1px solid currentColor;
+	border-top: 1px solid var(--wp--preset--color--border-gray);
 }
 
 table:not(.wp-calendar-table) :is(th, td) {
 	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--35);
 	border: 0;
 	line-height: 1.4;
-	text-align: left;
 	vertical-align: top;
 }
 
 table:not(.wp-calendar-table) th {
-	font-weight: bold;
+	font-weight: 400;
+}
+
+table:not(.wp-calendar-table) th:not([class*="has-text-align-"]) {
+	text-align: start;
 }
 
 table:not(.wp-calendar-table) thead th {
