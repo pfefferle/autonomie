@@ -222,32 +222,71 @@ a > code {
 	border-top: 1px solid var(--wp--preset--color--border-gray);
 }
 
-/* Sidenotes (see semantics.php): hidden until there is room for them to the
-   right of the content column. Then they float into that margin and the list
-   at the end is only kept for screen readers. Floats, negative margins and
-   media queries can't be set in theme.json. */
-.sidenote {
-	display: none;
+/* Category, year and month lists with post counts: no bullets, the name on
+   the left and the count as a quiet number on the right, like the lists of
+   the poststats block. The counts lose their brackets in semantics.php.
+   Lists without counts (e.g. on the 404 page) keep their look. */
+:is(.wp-block-categories-list, .wp-block-archives-list):has(.count) {
+	padding-left: 0;
+	list-style: none;
 }
 
-@media (min-width: 1240px) {
-	.sidenote {
-		display: block;
-		float: right;
-		clear: right;
-		position: relative;
-		width: 13.75rem;
-		margin-right: calc(-13.75rem - var(--wp--preset--spacing--55));
-		margin-bottom: var(--wp--preset--spacing--35);
-		color: var(--wp--preset--color--light-gray);
-		font-size: var(--wp--custom--meta--font-size);
-		font-style: normal;
-		font-weight: 400;
-		line-height: var(--wp--custom--meta--line-height);
-		text-align: left;
-	}
+:is(.wp-block-categories-list, .wp-block-archives-list):has(.count) li {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0 var(--wp--preset--spacing--40);
+	padding-block: 0.2em;
+}
 
-	/* Captions go into the same margin, next to the top of their figure and
+/* Subcategories go below their parent, indented. */
+.wp-block-categories-list:has(.count) .children {
+	flex-basis: 100%;
+	padding-left: var(--wp--preset--spacing--40);
+	list-style: none;
+}
+
+:is(.wp-block-categories-list, .wp-block-archives-list) .count {
+	color: var(--wp--preset--color--light-gray);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Sidenotes (see template-functions.php): on wide screens each footnote moves
+   from the list into the right margin, next to its reference, with CSS
+   anchor positioning. Only when the browser supports it and only for list
+   entries with an anchor; otherwise, and in the editor, the list stays at
+   the end. A note starts next to its reference, or below the note before it
+   when their references are close together. */
+@supports (anchor-name: --a) {
+	@media (min-width: 1240px) {
+		.wp-block-post-content:has(.wp-block-footnotes li[style*="position-anchor"]) {
+			position: relative;
+		}
+
+		.wp-block-footnotes li[style*="position-anchor"] {
+			position: absolute;
+			top: max(anchor(top), calc(anchor(var(--fn-previous, --fn-none) bottom, calc(-1 * var(--wp--preset--spacing--35))) + var(--wp--preset--spacing--35)));
+			left: calc(50% + var(--wp--style--global--content-size) / 2 + var(--wp--preset--spacing--55));
+			width: 13.75rem;
+			margin: 0;
+			line-height: var(--wp--custom--meta--line-height);
+		}
+
+		/* The list itself is empty there, so no rule and no space for it. */
+		.wp-block-footnotes:has(li[style*="position-anchor"]) {
+			margin: 0;
+		}
+
+		.wp-block-footnotes:has(li[style*="position-anchor"])::before {
+			display: none;
+		}
+	}
+}
+
+/* Captions go into the right margin on wide screens, where there is room
+   next to the content column. Media queries can't be set in theme.json. */
+@media (min-width: 1240px) {
+	/* Captions sit next to the top of their figure,
 	   at the edge of the content column, also for narrower centered figures
 	   like classic captions. Wide, full and floated figures have no free
 	   margin next to them. The table block scrolls sideways,
@@ -269,15 +308,6 @@ a > code {
 		font-size: var(--wp--custom--meta--font-size);
 		line-height: var(--wp--custom--meta--line-height);
 		text-align: left;
-	}
-
-	.wp-block-post-content .wp-block-footnotes {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		clip-path: inset(50%);
-		white-space: nowrap;
 	}
 }
 

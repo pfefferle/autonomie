@@ -827,6 +827,34 @@
           }
         }
       },
+      "core/categories": {
+        "elements": {
+          "link": {
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
+        }
+      },
+      "core/archives": {
+        "elements": {
+          "link": {
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
+        }
+      },
       "core/post-title": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--serif)",

@@ -38,8 +38,16 @@
 			display: flex;
 			justify-content: space-between;
 			gap: var(--wp--preset--spacing--40);
-			border-bottom: 1px solid var(--wp--preset--color--very-light-gray);
-			padding-block: var(--wp--preset--spacing--30);
+			padding-block: 0.2em;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover,
+		a:focus {
+			text-decoration: underline;
 		}
 
 		li > :last-child {

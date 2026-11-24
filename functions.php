@@ -609,6 +609,9 @@ add_action( 'wp_head', 'autonomie_pingback_header' );
 // Semantic HTML functions (microformats2, schema.org)
 require get_template_directory() . '/includes/semantics.php';
 
+// Template functions (presentation changes to block and list output)
+require get_template_directory() . '/includes/template-functions.php';
+
 // Feed customization
 require get_template_directory() . '/includes/feed.php';
 
