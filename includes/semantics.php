@@ -700,6 +700,56 @@ function autonomie_render_block_post_content( $block_content, $block ) {
 add_filter( 'render_block_core/post-content', 'autonomie_render_block_post_content', 10, 2 );
 
 /**
+ * Sidenotes, as in Tufte's books: put a copy of each footnote next to its
+ * reference. style.css shows them in the right margin on wide screens and
+ * hides the list at the end there; on smaller screens nothing changes. The
+ * copy is hidden from screen readers, they keep the list.
+ *
+ * @param string   $block_content The rendered post content.
+ * @param array    $block         The parsed block.
+ * @param WP_Block $instance      The block instance.
+ * @return string The post content with sidenotes.
+ */
+function autonomie_render_block_post_content_sidenotes( $block_content, $block, $instance = null ) {
+	$post_id = isset( $instance->context['postId'] ) ? (int) $instance->context['postId'] : get_the_ID();
+
+	if ( ! $post_id || false === strpos( $block_content, 'data-fn=' ) ) {
+		return $block_content;
+	}
+
+	$footnotes = json_decode( (string) get_post_meta( $post_id, 'footnotes', true ), true );
+
+	if ( ! is_array( $footnotes ) ) {
+		return $block_content;
+	}
+
+	$notes = array();
+	foreach ( $footnotes as $footnote ) {
+		if ( isset( $footnote['id'], $footnote['content'] ) ) {
+			$notes[ $footnote['id'] ] = $footnote['content'];
+		}
+	}
+
+	return preg_replace_callback(
+		'#<sup\b[^>]*\bdata-fn="([^"]+)"[^>]*>(.*?)</sup>#s',
+		function ( $matches ) use ( $notes ) {
+			if ( ! isset( $notes[ $matches[1] ] ) ) {
+				return $matches[0];
+			}
+
+			return sprintf(
+				'%1$s<span class="sidenote" aria-hidden="true"><sup>%2$s</sup> %3$s</span>',
+				$matches[0],
+				esc_html( wp_strip_all_tags( $matches[2] ) ),
+				wp_kses_post( $notes[ $matches[1] ] )
+			);
+		},
+		$block_content
+	);
+}
+add_filter( 'render_block_core/post-content', 'autonomie_render_block_post_content_sidenotes', 10, 3 );
+
+/**
  * Add microformats2 classes to post excerpt block.
  */
 function autonomie_render_block_post_excerpt( $block_content, $block ) {

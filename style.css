@@ -195,6 +195,7 @@ a > code {
 .wp-block-footnotes {
 	margin-top: var(--wp--preset--spacing--60);
 	padding-left: 0;
+	color: var(--wp--preset--color--light-gray);
 	font-size: var(--wp--custom--meta--font-size);
 	list-style-position: inside;
 }
@@ -212,6 +213,61 @@ a > code {
 	width: var(--wp--preset--spacing--70);
 	margin-bottom: var(--wp--preset--spacing--50);
 	border-top: 1px solid var(--wp--preset--color--border-gray);
+}
+
+/* Sidenotes (see semantics.php): hidden until there is room for them to the
+   right of the content column. Then they float into that margin and the list
+   at the end is only kept for screen readers. Floats, negative margins and
+   media queries can't be set in theme.json. */
+.sidenote {
+	display: none;
+}
+
+@media (min-width: 1240px) {
+	.sidenote {
+		display: block;
+		float: right;
+		clear: right;
+		position: relative;
+		width: 13.75rem;
+		margin-right: calc(-13.75rem - var(--wp--preset--spacing--55));
+		margin-bottom: var(--wp--preset--spacing--35);
+		color: var(--wp--preset--color--light-gray);
+		font-size: var(--wp--custom--meta--font-size);
+		font-style: normal;
+		font-weight: 400;
+		line-height: var(--wp--custom--meta--line-height);
+		text-align: left;
+	}
+
+	/* Captions go into the same margin, next to the top of their figure. Only
+	   for figures at the width of the content column: wide, full and floated
+	   ones have no free margin next to them, and the table block scrolls
+	   sideways, so a caption outside of it would be cut off. */
+	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter):has(> figcaption) {
+		position: relative;
+	}
+
+	.wp-block-post-content > :is(.wp-block-image, .wp-block-video, .wp-block-audio, .wp-block-embed, .wp-block-gallery):not(.alignwide, .alignfull, .alignleft, .alignright, .aligncenter) > figcaption {
+		position: absolute;
+		top: 0;
+		left: calc(100% + var(--wp--preset--spacing--55));
+		width: 13.75rem;
+		margin: 0;
+		color: var(--wp--preset--color--light-gray);
+		font-size: var(--wp--custom--meta--font-size);
+		line-height: var(--wp--custom--meta--line-height);
+		text-align: left;
+	}
+
+	.wp-block-post-content .wp-block-footnotes {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
 }
 
 /* Caption text-align can't be set in theme.json */
