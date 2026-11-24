@@ -140,7 +140,7 @@ function autonomie_enqueue_scripts() {
 		'autonomie-style',
 		get_stylesheet_uri(),
 		array(),
-		wp_get_theme()->get( 'Version' )
+		filemtime( get_stylesheet_directory() . '/style.css' )
 	);
 
 	// Print styles
@@ -148,7 +148,7 @@ function autonomie_enqueue_scripts() {
 		'autonomie-print',
 		get_template_directory_uri() . '/assets/css/print.css',
 		array( 'autonomie-style' ),
-		wp_get_theme()->get( 'Version' ),
+		filemtime( get_template_directory() . '/assets/css/print.css' ),
 		'print'
 	);
 
@@ -173,7 +173,7 @@ function autonomie_enqueue_featured_image_cover() {
 		'autonomie-featured-image-cover',
 		get_template_directory_uri() . '/assets/js/featured-image-cover.js',
 		array( 'wp-hooks', 'wp-element', 'wp-components', 'wp-data', 'wp-i18n', 'wp-editor' ),
-		wp_get_theme()->get( 'Version' ),
+		filemtime( get_template_directory() . '/assets/js/featured-image-cover.js' ),
 		true
 	);
 	wp_set_script_translations( 'autonomie-featured-image-cover', 'autonomie' );
@@ -631,7 +631,7 @@ require get_template_directory() . '/includes/poststats.php';
 function autonomie_check_theme_support() {
 	global $wp_version;
 
-	if ( version_compare( $wp_version, '6.4', '<' ) ) {
+	if ( version_compare( $wp_version, '6.6', '<' ) ) {
 		add_action( 'admin_notices', 'autonomie_upgrade_notice' );
 	}
 }
@@ -647,7 +647,7 @@ function autonomie_upgrade_notice() {
 			<?php
 			printf(
 				/* translators: %s: WordPress version number */
-				esc_html__( 'Autonomie requires WordPress version 6.4 or higher. You are running version %s. Please upgrade WordPress to use this theme.', 'autonomie' ),
+				esc_html__( 'Autonomie requires WordPress version 6.6 or higher. You are running version %s. Please upgrade WordPress to use this theme.', 'autonomie' ),
 				esc_html( $GLOBALS['wp_version'] )
 			);
 			?>

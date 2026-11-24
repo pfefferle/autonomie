@@ -498,7 +498,7 @@
       },
       "caption": {
         "color": {
-          "text": "var(--wp--preset--color--gray)"
+          "text": "var(--wp--preset--color--light-gray)"
         },
         "typography": {
           "fontSize": "0.7em",

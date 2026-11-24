@@ -221,8 +221,8 @@ msgstr "Zeigt einzelne Beiträge mit dem Beitragsformat Video an."
 #. translators: %s: WordPress version number
 #: functions.php:623
 #, php-format
-msgid "Autonomie requires WordPress version 6.4 or higher. You are running version %s. Please upgrade WordPress to use this theme."
-msgstr "Autonomie benötigt WordPress 6.4 oder höher. Du verwendest Version %s. Bitte aktualisiere WordPress, um dieses Theme zu nutzen."
+msgid "Autonomie requires WordPress version 6.6 or higher. You are running version %s. Please upgrade WordPress to use this theme."
+msgstr "Autonomie benötigt WordPress 6.6 oder höher. Du verwendest Version %s. Bitte aktualisiere WordPress, um dieses Theme zu nutzen."
 
 #. translators: Separator between blog name and feed type in feed links
 #: includes/feed.php:99

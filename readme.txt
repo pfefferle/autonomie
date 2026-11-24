@@ -1,7 +1,7 @@
 === Autonomie ===
 Contributors: pfefferle
 Tags: custom-menu, custom-colors, custom-header, custom-logo, featured-image-header, flexible-header, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, footer-widgets, one-column, editor-style, featured-images, theme-options, blog, news, photography, entertainment, wide-blocks
-Requires at least: 4.0
+Requires at least: 6.6
 Tested up to: 5.5
 Stable tag: 1.0.0
 Requires PHP: 5.6

@@ -9,7 +9,7 @@
  * License URI: https://opensource.org/licenses/MIT
  * Tags: block-templates, block-patterns, full-site-editing, microformats, rtl-language-support, translation-ready, post-formats, threaded-comments, one-column, editor-style, featured-images, blog, accessibility-ready, indieweb, semantic-html, wide-blocks
  * Text Domain: autonomie
- * Requires at least: 6.4
+ * Requires at least: 6.6
  * Tested up to: 6.7
  * Requires PHP: 7.4
  *
@@ -58,6 +58,12 @@ p, ul, ol, blockquote {
 
 abbr {
 	font-variant: small-caps;
+}
+
+/* Footnote numbers and other raised or lowered text don't stretch their line. */
+sup,
+sub {
+	line-height: 0;
 }
 
 abbr[title] {

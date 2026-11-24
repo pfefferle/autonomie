@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Autonomie is a WordPress **Full Site Editing (FSE) block theme** (v2.0.0) focused on semantic HTML — microformats, microformats2, and Schema.org microdata. It is fully IndieWeb-compatible. Recently migrated from a classic PHP theme to the FSE architecture (branch: `fse`).
 
-Requires WordPress 6.4+, PHP 7.4+, Node.js 18.0+.
+Requires WordPress 6.6+, PHP 7.4+, Node.js 18.0+.
 
 ## Roadmap / Current Status
 
