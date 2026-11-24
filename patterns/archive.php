@@ -14,8 +14,8 @@
 
 <!-- wp:autonomie/poststats /-->
 
-<!-- wp:columns -->
-<div class="wp-block-columns">
+<!-- wp:columns {"style":{"spacing":{"margin":{"top":"var:preset|spacing|70"}}}} -->
+<div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--70)">
 	<!-- wp:column -->
 	<div class="wp-block-column">
 		<!-- wp:heading -->

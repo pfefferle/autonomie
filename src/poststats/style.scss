@@ -41,15 +41,6 @@
 			padding-block: 0.2em;
 		}
 
-		a {
-			text-decoration: none;
-		}
-
-		a:hover,
-		a:focus {
-			text-decoration: underline;
-		}
-
 		li > :last-child {
 			color: var(--wp--preset--color--light-gray);
 			font-variant-numeric: tabular-nums;
