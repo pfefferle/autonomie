@@ -989,6 +989,9 @@
         },
         "elements": {
           "cite": {
+            "color": {
+              "text": "var(--wp--preset--color--light-gray)"
+            },
             "typography": {
               "fontFamily": "var(--wp--preset--font-family--sans-serif)",
               "fontSize": "var(--wp--preset--font-size--small)",
@@ -1046,6 +1049,9 @@
         },
         "elements": {
           "cite": {
+            "color": {
+              "text": "var(--wp--preset--color--light-gray)"
+            },
             "typography": {
               "fontFamily": "var(--wp--preset--font-family--sans-serif)",
               "fontSize": "var(--wp--preset--font-size--small)",
